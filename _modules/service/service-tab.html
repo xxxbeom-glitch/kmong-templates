@@ -7,12 +7,33 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --service-color-bg: #fafafa;
+      --service-color-text: #000000;
+      --service-color-visual: #efeff8;
+      --service-font-size-title: 58px;
+      --service-font-size-desc: 24px;
+      --service-font-size-point: 20px;
+      --service-font-size-card-title: 30px;
+      --service-font-size-card-desc: 20px;
+      --service-line-height-title: 1.4;
+      --service-line-height-desc: 1.58;
+      --service-line-height-point: 1.58;
+      --service-line-height-card-title: 1.4;
+      --service-line-height-card-desc: 1.56;
+      --service-gap-title-desc: 26px;
+      --service-gap-head-grid: 97px;
+      --service-gap-row: 56px;
+      --service-gap-cards: 24px;
+      --service-gap-visual-body: 30px;
+      --service-gap-point-body: 16px;
+      --service-gap-card-title-desc: 16px;
+      --service-card-width: 588px;
+      --service-visual-height: 401px;
+      --service-card-padding-bottom: 40px;
+      --service-radius-card: 16px;
+      --service-wrap-width: 1200px;
+      --service-section-padding-top: 100px;
+      --service-section-padding-bottom: 100px;
     }
 
     *,
@@ -29,23 +50,11 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-text);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      border: none;
-      background: none;
-      cursor: pointer;
-      font: inherit;
+      color: var(--service-color-text);
     }
 
     .wrap {
-      max-width: 1200px;
+      max-width: var(--service-wrap-width);
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -63,109 +72,104 @@
 
     /* SERVICE */
     .service-tab {
-      background-color: var(--color-bg-soft);
-      padding: 100px 0;
+      background-color: var(--service-color-bg);
+      padding: var(--service-section-padding-top) 0 var(--service-section-padding-bottom);
+    }
+
+    .service-tab > .wrap {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .service-tab__head {
       text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .service-tab__label {
-      font-size: 13px;
-      color: var(--color-primary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: var(--service-gap-head-grid);
     }
 
     .service-tab__title {
-      font-size: 36px;
+      font-size: var(--service-font-size-title);
       font-weight: 700;
-      color: var(--color-text);
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-title);
+      margin-bottom: var(--service-gap-title-desc);
     }
 
-    .service-tab__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 60px;
-    }
-
-    .service-tab__btn {
-      padding: 12px 28px;
-      border-radius: 99px;
-      font-size: 14px;
+    .service-tab__desc {
+      font-size: var(--service-font-size-desc);
       font-weight: 500;
-      color: var(--color-text);
-      background-color: var(--color-white);
-      border: 1px solid #dddddd;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-desc);
     }
 
-    .service-tab__btn.is-active {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      border: none;
-    }
-
-    .service-tab__panel {
-      display: none;
-    }
-
-    .service-tab__panel.is-active {
-      display: block;
-    }
-
-    .service-tab__content {
+    .service-tab__grid {
       display: flex;
-      align-items: center;
-      gap: 0;
+      flex-direction: column;
+      gap: var(--service-gap-row);
     }
 
-    .service-tab__visual {
-      flex: 1;
-      height: 420px;
-      background-color: #c8d8d6;
-      border-radius: var(--radius-card);
+    .service-tab__row {
+      display: flex;
+      gap: var(--service-gap-cards);
     }
 
-    .service-tab__text {
-      flex: 1;
-      padding-left: 60px;
+    .service-tab__card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 var(--service-card-width);
+      width: var(--service-card-width);
+      border-radius: var(--service-radius-card);
+      overflow: hidden;
     }
 
-    .service-tab__text-label {
-      font-size: 13px;
-      color: var(--color-primary);
-      margin-bottom: 12px;
+    .service-tab__card-visual {
+      flex-shrink: 0;
+      height: var(--service-visual-height);
+      background-color: var(--service-color-visual);
+      border-radius: var(--service-radius-card);
+      overflow: hidden;
     }
 
-    .service-tab__text-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 16px;
+    .service-tab__card-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: var(--service-color-visual);
     }
 
-    .service-tab__text-desc {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--color-text);
-      opacity: 0.7;
-      margin-bottom: 32px;
+    .service-tab__card-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--service-gap-point-body);
+      margin-top: var(--service-gap-visual-body);
+      padding-bottom: var(--service-card-padding-bottom);
     }
 
-    .service-tab__cta {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: var(--radius-btn);
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      font-size: 15px;
+    .service-tab__card-point {
+      font-size: var(--service-font-size-point);
       font-weight: 600;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-point);
+    }
+
+    .service-tab__card-text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--service-gap-card-title-desc);
+    }
+
+    .service-tab__card-title {
+      font-size: var(--service-font-size-card-title);
+      font-weight: 700;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-card-title);
+    }
+
+    .service-tab__card-desc {
+      font-size: var(--service-font-size-card-desc);
+      font-weight: 500;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-card-desc);
     }
 
     @media (max-width: 768px) {
@@ -173,37 +177,47 @@
         padding: 60px 0;
       }
 
-      .service-tab__title {
-        font-size: 24px;
+      .service-tab > .wrap {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
-      .service-tab__buttons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+      .service-tab__head {
         margin-bottom: 40px;
       }
 
-      .service-tab__btn {
-        width: 100%;
-        text-align: center;
+      .service-tab__title {
+        font-size: 32px;
       }
 
-      .service-tab__content {
+      .service-tab__desc {
+        font-size: 16px;
+      }
+
+      .service-tab__grid {
+        gap: 24px;
+      }
+
+      .service-tab__row {
         flex-direction: column;
+        gap: 24px;
       }
 
-      .service-tab__visual {
+      .service-tab__card {
+        flex: none;
         width: 100%;
+      }
+
+      .service-tab__card-visual {
         height: 240px;
       }
 
-      .service-tab__text {
-        padding-left: 0;
-        padding-top: 24px;
+      .service-tab__card-title {
+        font-size: 24px;
       }
 
-      .service-tab__text-title {
-        font-size: 22px;
+      .service-tab__card-desc {
+        font-size: 16px;
       }
     }
   </style>
@@ -214,62 +228,57 @@
   <section class="service-tab fade-in">
     <div class="wrap">
       <header class="service-tab__head">
-        <p class="service-tab__label">Service</p>
-        <h2 class="service-tab__title">서비스 상세 안내</h2>
+        <h2 class="service-tab__title">당신의 신체 변화를 위한 가장 과학적인 솔루션</h2>
+        <p class="service-tab__desc">데이터를 통해 검증된 알고리즘이 설계하는 체계적인 관리 시스템을 확인하세요</p>
       </header>
 
-      <div class="service-tab__buttons" role="tablist">
-        <button type="button" class="service-tab__btn is-active" data-tab="tab-a" role="tab" aria-selected="true">서비스 A</button>
-        <button type="button" class="service-tab__btn" data-tab="tab-b" role="tab" aria-selected="false">서비스 B</button>
-        <button type="button" class="service-tab__btn" data-tab="tab-c" role="tab" aria-selected="false">서비스 C</button>
-        <button type="button" class="service-tab__btn" data-tab="tab-d" role="tab" aria-selected="false">서비스 D</button>
-      </div>
+      <div class="service-tab__grid">
+        <div class="service-tab__row">
+          <article class="service-tab__card">
+            <div class="service-tab__card-visual" aria-hidden="true"></div>
+            <div class="service-tab__card-body">
+              <p class="service-tab__card-point">Point 1</p>
+              <div class="service-tab__card-text">
+                <h3 class="service-tab__card-title">우리는 다른 방식으로<br>서비스를 제공합니다</h3>
+                <p class="service-tab__card-desc">신체 데이터를 측정하고 대사 과정을 추적하여<br>현재 상태를 완벽하게 파악</p>
+              </div>
+            </div>
+          </article>
 
-      <div class="service-tab__panel is-active" id="tab-a" role="tabpanel">
-        <div class="service-tab__content">
-          <div class="service-tab__visual" aria-hidden="true"></div>
-          <div class="service-tab__text">
-            <p class="service-tab__text-label">Service A</p>
-            <h3 class="service-tab__text-title">서비스 A 타이틀</h3>
-            <p class="service-tab__text-desc">서비스 A에 대한 상세 설명 문구입니다. 고객의 니즈에 맞춘 맞춤형 솔루션을 제공합니다.</p>
-            <a href="#" class="service-tab__cta">자세히 보기</a>
-          </div>
+          <article class="service-tab__card">
+            <div class="service-tab__card-visual" aria-hidden="true"></div>
+            <div class="service-tab__card-body">
+              <p class="service-tab__card-point">Point 2</p>
+              <div class="service-tab__card-text">
+                <h3 class="service-tab__card-title">우리는 다른 방식으로<br>서비스를 제공합니다</h3>
+                <p class="service-tab__card-desc">목표 체중에 도달하기까지 필요한 매일의 영양 섭취량과<br>최적의 운동 강도를 실시간으로 조정</p>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
 
-      <div class="service-tab__panel" id="tab-b" role="tabpanel">
-        <div class="service-tab__content">
-          <div class="service-tab__visual" aria-hidden="true"></div>
-          <div class="service-tab__text">
-            <p class="service-tab__text-label">Service B</p>
-            <h3 class="service-tab__text-title">서비스 B 타이틀</h3>
-            <p class="service-tab__text-desc">서비스 B에 대한 상세 설명 문구입니다. 효율적인 프로세스로 빠른 결과를 제공합니다.</p>
-            <a href="#" class="service-tab__cta">자세히 보기</a>
-          </div>
-        </div>
-      </div>
+        <div class="service-tab__row">
+          <article class="service-tab__card">
+            <div class="service-tab__card-visual" aria-hidden="true"></div>
+            <div class="service-tab__card-body">
+              <p class="service-tab__card-point">Point 3</p>
+              <div class="service-tab__card-text">
+                <h3 class="service-tab__card-title">지속 가능한 라이프스타일</h3>
+                <p class="service-tab__card-desc">일회성 관리가 아닌, 평생 유지 가능한 올바른 식습관과<br>운동 습관 형성을 목표</p>
+              </div>
+            </div>
+          </article>
 
-      <div class="service-tab__panel" id="tab-c" role="tabpanel">
-        <div class="service-tab__content">
-          <div class="service-tab__visual" aria-hidden="true"></div>
-          <div class="service-tab__text">
-            <p class="service-tab__text-label">Service C</p>
-            <h3 class="service-tab__text-title">서비스 C 타이틀</h3>
-            <p class="service-tab__text-desc">서비스 C에 대한 상세 설명 문구입니다. 전문가 팀이 체계적으로 지원합니다.</p>
-            <a href="#" class="service-tab__cta">자세히 보기</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-tab__panel" id="tab-d" role="tabpanel">
-        <div class="service-tab__content">
-          <div class="service-tab__visual" aria-hidden="true"></div>
-          <div class="service-tab__text">
-            <p class="service-tab__text-label">Service D</p>
-            <h3 class="service-tab__text-title">서비스 D 타이틀</h3>
-            <p class="service-tab__text-desc">서비스 D에 대한 상세 설명 문구입니다. 지속적인 관리와 사후 지원까지 책임집니다.</p>
-            <a href="#" class="service-tab__cta">자세히 보기</a>
-          </div>
+          <article class="service-tab__card">
+            <div class="service-tab__card-visual" aria-hidden="true"></div>
+            <div class="service-tab__card-body">
+              <p class="service-tab__card-point">Point 4</p>
+              <div class="service-tab__card-text">
+                <h3 class="service-tab__card-title">인터랙티브 피드백 루프</h3>
+                <p class="service-tab__card-desc">데이터 기반의 실시간 응원 메시지가 당신의 의지를 매일 새롭게 한다.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -279,32 +288,6 @@
   <script>
     (function () {
       "use strict";
-
-      var tabButtons = document.querySelectorAll(".service-tab__btn");
-      var tabPanels = document.querySelectorAll(".service-tab__panel");
-
-      tabButtons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var targetId = btn.getAttribute("data-tab");
-
-          tabButtons.forEach(function (item) {
-            item.classList.remove("is-active");
-            item.setAttribute("aria-selected", "false");
-          });
-
-          tabPanels.forEach(function (panel) {
-            panel.classList.remove("is-active");
-          });
-
-          btn.classList.add("is-active");
-          btn.setAttribute("aria-selected", "true");
-
-          var targetPanel = document.getElementById(targetId);
-          if (targetPanel) {
-            targetPanel.classList.add("is-active");
-          }
-        });
-      });
 
       var targets = document.querySelectorAll(".fade-in");
 

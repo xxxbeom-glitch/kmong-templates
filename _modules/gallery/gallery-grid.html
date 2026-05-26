@@ -7,12 +7,19 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --gallery-color-bg: #fafafa;
+      --gallery-color-text: #000000;
+      --gallery-color-image: #efeff8;
+      --gallery-font-size-title: 58px;
+      --gallery-line-height-title: 1.4;
+      --gallery-gap-head-track: 80px;
+      --gallery-track-gap: 26px;
+      --gallery-item-width: 560px;
+      --gallery-item-height: 644px;
+      --gallery-radius-image: 16px;
+      --gallery-section-padding-top: 100px;
+      --gallery-section-padding-bottom: 100px;
+      --gallery-track-speed: 36s;
     }
 
     *,
@@ -29,12 +36,12 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-text);
+      color: var(--gallery-color-text);
+      overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    ul {
+      list-style: none;
     }
 
     .wrap {
@@ -56,54 +63,67 @@
 
     /* GALLERY */
     .gallery-grid {
-      background-color: var(--color-white);
-      padding: 100px 0;
+      background-color: var(--gallery-color-bg);
+      padding: var(--gallery-section-padding-top) 0 var(--gallery-section-padding-bottom);
+    }
+
+    .gallery-grid__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--gallery-gap-head-track);
     }
 
     .gallery-grid__head {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
       text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .gallery-grid__label {
-      font-size: 13px;
-      color: var(--color-primary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
     }
 
     .gallery-grid__title {
-      font-size: 36px;
+      font-size: var(--gallery-font-size-title);
       font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 16px;
+      color: var(--gallery-color-text);
+      line-height: var(--gallery-line-height-title);
     }
 
-    .gallery-grid__desc {
-      font-size: 15px;
-      color: var(--color-text);
-      opacity: 0.6;
+    .gallery-grid__stage {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
     }
 
-    .gallery-grid__list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 240px 240px;
-      gap: 12px;
+    .gallery-grid__track {
+      display: flex;
+      gap: var(--gallery-track-gap);
+      width: max-content;
+      animation: gallery-grid-scroll var(--gallery-track-speed) linear infinite;
+      will-change: transform;
+    }
+
+    .gallery-grid__track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes gallery-grid-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .gallery-grid__item {
-      position: relative;
-      display: block;
-      border-radius: var(--radius-card);
+      flex: 0 0 var(--gallery-item-width);
+      width: var(--gallery-item-width);
+      height: var(--gallery-item-height);
+      border-radius: var(--gallery-radius-image);
+      background-color: var(--gallery-color-image);
       overflow: hidden;
-      background-color: #c8d8d6;
-    }
-
-    .gallery-grid__item--large {
-      grid-row: span 2;
-      height: 100%;
     }
 
     .gallery-grid__item img {
@@ -111,67 +131,32 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background-color: #c8d8d6;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-grid__overlay {
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .gallery-grid__item:hover img {
-      transform: scale(1.04);
-    }
-
-    .gallery-grid__item:hover .gallery-grid__overlay {
-      opacity: 1;
-    }
-
-    .gallery-grid__more {
-      display: block;
-      width: fit-content;
-      margin: 60px auto 0;
-      padding: 14px 40px;
-      border: 2px solid var(--color-primary);
-      border-radius: var(--radius-btn);
-      background-color: transparent;
-      color: var(--color-primary);
-      font-size: 15px;
-      font-weight: 600;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .gallery-grid__more:hover {
-      background-color: var(--color-primary);
-      color: var(--color-white);
+      background-color: var(--gallery-color-image);
     }
 
     @media (max-width: 768px) {
       .gallery-grid {
-        padding: 60px 0;
+        padding: 60px 0 80px;
+      }
+
+      .gallery-grid__inner {
+        gap: 40px;
       }
 
       .gallery-grid__title {
-        font-size: 24px;
+        font-size: 32px;
       }
 
-      .gallery-grid__head {
-        margin-bottom: 40px;
+      .gallery-grid__item {
+        flex: 0 0 280px;
+        width: 280px;
+        height: 322px;
       }
+    }
 
-      .gallery-grid__list {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-      }
-
-      .gallery-grid__item,
-      .gallery-grid__item--large {
-        grid-row: auto;
-        height: 200px;
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-grid__track {
+        animation: none;
       }
     }
   </style>
@@ -180,37 +165,23 @@
 
   <!-- GALLERY START -->
   <section class="gallery-grid fade-in">
-    <div class="wrap">
+    <div class="gallery-grid__inner">
       <header class="gallery-grid__head">
-        <p class="gallery-grid__label">Gallery</p>
-        <h2 class="gallery-grid__title">갤러리</h2>
-        <p class="gallery-grid__desc">다양한 작업물과 순간을 확인하세요</p>
+        <h2 class="gallery-grid__title">당신의 신체 데이터가 증명하는<br>완벽한 변화의 기록</h2>
       </header>
 
-      <div class="gallery-grid__list">
-        <a href="#" class="gallery-grid__item gallery-grid__item--large">
-          <img src="" alt="갤러리 이미지 1">
-          <span class="gallery-grid__overlay"></span>
-        </a>
-        <a href="#" class="gallery-grid__item">
-          <img src="" alt="갤러리 이미지 2">
-          <span class="gallery-grid__overlay"></span>
-        </a>
-        <a href="#" class="gallery-grid__item">
-          <img src="" alt="갤러리 이미지 3">
-          <span class="gallery-grid__overlay"></span>
-        </a>
-        <a href="#" class="gallery-grid__item">
-          <img src="" alt="갤러리 이미지 4">
-          <span class="gallery-grid__overlay"></span>
-        </a>
-        <a href="#" class="gallery-grid__item">
-          <img src="" alt="갤러리 이미지 5">
-          <span class="gallery-grid__overlay"></span>
-        </a>
+      <div class="gallery-grid__stage">
+        <ul class="gallery-grid__track" aria-hidden="true">
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+          <li class="gallery-grid__item"></li>
+        </ul>
       </div>
-
-      <a href="#" class="gallery-grid__more">더보기</a>
     </div>
   </section>
   <!-- GALLERY END -->
@@ -218,6 +189,16 @@
   <script>
     (function () {
       "use strict";
+
+      var track = document.querySelector(".gallery-grid__track");
+
+      if (track) {
+        var items = Array.prototype.slice.call(track.children);
+
+        items.forEach(function (item) {
+          track.appendChild(item.cloneNode(true));
+        });
+      }
 
       var targets = document.querySelectorAll(".fade-in");
 

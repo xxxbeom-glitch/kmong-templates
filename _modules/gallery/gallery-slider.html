@@ -7,12 +7,23 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --gallery-color-bg: #fafafa;
+      --gallery-color-text: #000000;
+      --gallery-color-image: #efeff8;
+      --gallery-color-nav: #d9d9d9;
+      --gallery-font-size-title: 54px;
+      --gallery-line-height-title: 1.34;
+      --gallery-gap-head-track: 80px;
+      --gallery-track-gap: 26px;
+      --gallery-item-width: 1200px;
+      --gallery-item-height: 644px;
+      --gallery-radius-image: 16px;
+      --gallery-nav-size: 64px;
+      --gallery-nav-gap: 20px;
+      --gallery-title-max-width: 690px;
+      --gallery-wrap-width: 1200px;
+      --gallery-section-padding-top: 100px;
+      --gallery-section-padding-bottom: 100px;
     }
 
     *,
@@ -29,212 +40,275 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-white);
+      color: var(--gallery-color-text);
       overflow-x: hidden;
     }
 
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
     .wrap {
-      max-width: 1200px;
+      max-width: var(--gallery-wrap-width);
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* GALLERY SLIDER */
-    .gallery-slider {
-      background-color: #111111;
-      padding-top: 100px;
-      padding-bottom: 100px;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
     }
 
-    .gallery-slider__label {
-      font-size: 13px;
-      color: var(--color-primary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* GALLERY */
+    .gallery-slider {
+      background-color: var(--gallery-color-bg);
+      padding: var(--gallery-section-padding-top) 0 var(--gallery-section-padding-bottom);
+    }
+
+    .gallery-slider__head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: var(--gallery-gap-head-track);
     }
 
     .gallery-slider__title {
-      font-size: 36px;
+      max-width: var(--gallery-title-max-width);
+      font-size: var(--gallery-font-size-title);
       font-weight: 700;
-      color: var(--color-white);
-      margin-bottom: 60px;
+      color: var(--gallery-color-text);
+      line-height: var(--gallery-line-height-title);
+    }
+
+    .gallery-slider__nav {
+      display: flex;
+      align-items: center;
+      gap: var(--gallery-nav-gap);
+      flex-shrink: 0;
+    }
+
+    .gallery-slider__nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--gallery-nav-size);
+      height: var(--gallery-nav-size);
+      background-color: var(--gallery-color-nav);
+      color: var(--gallery-color-text);
+      transition: opacity 0.2s ease;
+    }
+
+    .gallery-slider__nav-btn:hover:not(:disabled) {
+      opacity: 0.85;
+    }
+
+    .gallery-slider__nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .gallery-slider__nav-btn::before {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+    }
+
+    .gallery-slider__nav-btn--prev::before {
+      transform: rotate(-135deg);
+      margin-left: 4px;
+    }
+
+    .gallery-slider__nav-btn--next::before {
+      transform: rotate(45deg);
+      margin-right: 4px;
     }
 
     .gallery-slider__stage {
-      position: relative;
       width: 100vw;
       margin-left: calc(50% - 50vw);
       overflow: hidden;
     }
 
-    .gallery-slider__stage::before,
-    .gallery-slider__stage::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 120px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .gallery-slider__stage::before {
-      left: 0;
-      background: linear-gradient(to right, #111111, transparent);
-    }
-
-    .gallery-slider__stage::after {
-      right: 0;
-      background: linear-gradient(to left, #111111, transparent);
-    }
-
-    .gallery-slider__rows {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
     .gallery-slider__track {
       display: flex;
-      gap: 16px;
+      gap: var(--gallery-track-gap);
       width: max-content;
-      animation-duration: 30s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      padding-left: max(20px, calc((100vw - var(--gallery-wrap-width)) / 2));
+      transition: transform 0.5s ease;
+      will-change: transform;
     }
 
-    .gallery-slider__track:hover {
-      animation-play-state: paused;
-    }
-
-    .gallery-slider__track--left {
-      animation-name: scrollLeft;
-    }
-
-    .gallery-slider__track--right {
-      animation-name: scrollRight;
-    }
-
-    @keyframes scrollLeft {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    @keyframes scrollRight {
-      0% {
-        transform: translateX(-50%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    .gallery-slider__card {
-      flex-shrink: 0;
-      width: 320px;
-      height: 220px;
-      border-radius: var(--radius-card);
+    .gallery-slider__item {
+      flex: 0 0 var(--gallery-item-width);
+      width: var(--gallery-item-width);
+      height: var(--gallery-item-height);
+      border-radius: var(--gallery-radius-image);
+      background-color: var(--gallery-color-image);
       overflow: hidden;
     }
 
-    .gallery-slider__card-inner {
+    .gallery-slider__item img {
+      display: block;
       width: 100%;
       height: 100%;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-slider__card:hover .gallery-slider__card-inner {
-      transform: scale(1.04);
-    }
-
-    .gallery-slider__card--c1 .gallery-slider__card-inner {
-      background-color: #c8d8d6;
-    }
-
-    .gallery-slider__card--c2 .gallery-slider__card-inner {
-      background-color: #b8ceca;
-    }
-
-    .gallery-slider__card--c3 .gallery-slider__card-inner {
-      background-color: #a8bec0;
+      object-fit: cover;
+      background-color: var(--gallery-color-image);
     }
 
     @media (max-width: 768px) {
       .gallery-slider {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding: 60px 0 80px;
       }
 
-      .gallery-slider__title {
-        font-size: 24px;
+      .gallery-slider__head {
+        flex-direction: column;
+        align-items: flex-start;
         margin-bottom: 40px;
       }
 
-      .gallery-slider__stage::before,
-      .gallery-slider__stage::after {
-        width: 60px;
+      .gallery-slider__title {
+        font-size: 28px;
       }
 
-      .gallery-slider__card {
-        width: 220px;
-        height: 160px;
+      .gallery-slider__nav-btn {
+        width: 48px;
+        height: 48px;
+      }
+
+      .gallery-slider__track {
+        padding-left: 20px;
+      }
+
+      .gallery-slider__item {
+        flex: 0 0 min(100vw - 40px, 320px);
+        width: min(100vw - 40px, 320px);
+        height: 172px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- GALLERY SLIDER START -->
-  <section class="gallery-slider">
-    <header class="wrap">
-      <p class="gallery-slider__label">Gallery</p>
-      <h2 class="gallery-slider__title">갤러리</h2>
-    </header>
+  <!-- GALLERY START -->
+  <section class="gallery-slider fade-in">
+    <div class="wrap">
+      <header class="gallery-slider__head">
+        <h2 class="gallery-slider__title">당신의 신체 데이터가 증명하는<br>완벽한 변화의 기록</h2>
+        <div class="gallery-slider__nav">
+          <button type="button" class="gallery-slider__nav-btn gallery-slider__nav-btn--prev" aria-label="이전 슬라이드"></button>
+          <button type="button" class="gallery-slider__nav-btn gallery-slider__nav-btn--next" aria-label="다음 슬라이드"></button>
+        </div>
+      </header>
+    </div>
 
     <div class="gallery-slider__stage">
-      <div class="gallery-slider__rows">
-        <div class="gallery-slider__track gallery-slider__track--left" aria-hidden="true">
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-        </div>
-
-        <div class="gallery-slider__track gallery-slider__track--right" aria-hidden="true">
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
-          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
-        </div>
-      </div>
+      <ul class="gallery-slider__track">
+        <li class="gallery-slider__item" aria-hidden="true"></li>
+        <li class="gallery-slider__item" aria-hidden="true"></li>
+        <li class="gallery-slider__item" aria-hidden="true"></li>
+      </ul>
     </div>
   </section>
-  <!-- GALLERY SLIDER END -->
+  <!-- GALLERY END -->
 
   <script>
     (function () {
       "use strict";
+
+      var track = document.querySelector(".gallery-slider__track");
+      var prevBtn = document.querySelector(".gallery-slider__nav-btn--prev");
+      var nextBtn = document.querySelector(".gallery-slider__nav-btn--next");
+      var fadeTargets = document.querySelectorAll(".fade-in");
+
+      if (!track || !prevBtn || !nextBtn) return;
+
+      var index = 0;
+      var items = track.querySelectorAll(".gallery-slider__item");
+      var total = items.length;
+
+      function getStep() {
+        if (!items[0]) return 0;
+        var styles = getComputedStyle(track);
+        var gap = parseFloat(styles.gap) || 26;
+        return items[0].offsetWidth + gap;
+      }
+
+      function getMaxIndex() {
+        var stage = track.parentElement;
+        if (!stage || total <= 1) return 0;
+        var maxScroll = Math.max(0, track.scrollWidth - stage.offsetWidth);
+        var step = getStep();
+        if (step <= 0) return 0;
+        return Math.round(maxScroll / step);
+      }
+
+      function updateSlider() {
+        var maxIndex = getMaxIndex();
+        if (index > maxIndex) index = maxIndex;
+        if (index < 0) index = 0;
+
+        track.style.transform = "translateX(" + -index * getStep() + "px)";
+        prevBtn.disabled = index <= 0;
+        nextBtn.disabled = index >= maxIndex;
+      }
+
+      prevBtn.addEventListener("click", function () {
+        if (index > 0) {
+          index -= 1;
+          updateSlider();
+        }
+      });
+
+      nextBtn.addEventListener("click", function () {
+        if (index < getMaxIndex()) {
+          index += 1;
+          updateSlider();
+        }
+      });
+
+      window.addEventListener("resize", updateSlider);
+      updateSlider();
+
+      if (fadeTargets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        fadeTargets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        fadeTargets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
     })();
   </script>
 </body>

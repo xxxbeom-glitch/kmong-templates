@@ -7,12 +7,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --trust-color-bg: #fafafa;
+      --trust-color-text: #000000;
+      --trust-color-card: #f3f3f9;
+      --trust-font-size-title: 58px;
+      --trust-font-size-desc: 24px;
+      --trust-font-size-label: 24px;
+      --trust-font-size-value: 44px;
+      --trust-line-height-title: 1.4;
+      --trust-line-height-desc: 1.58;
+      --trust-line-height-label: 1.58;
+      --trust-line-height-value: 1.58;
+      --trust-gap-title-desc: 26px;
+      --trust-gap-head-grid: 80px;
+      --trust-grid-gap: 24px;
+      --trust-gap-label-value: 6px;
+      --trust-card-height: 290px;
+      --trust-radius-card: 12px;
+      --trust-section-padding-top: 100px;
+      --trust-section-padding-bottom: 181px;
     }
 
     *,
@@ -29,7 +42,11 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-white);
+      color: var(--trust-color-text);
+    }
+
+    ul {
+      list-style: none;
     }
 
     .wrap {
@@ -51,81 +68,90 @@
 
     /* TRUST */
     .trust-dark {
-      background-color: #0d1b2a;
-      padding: 100px 0;
+      background-color: var(--trust-color-bg);
+      padding: var(--trust-section-padding-top) 0 var(--trust-section-padding-bottom);
+    }
+
+    .trust-dark__head {
+      text-align: center;
+      margin-bottom: var(--trust-gap-head-grid);
     }
 
     .trust-dark__title {
-      font-size: 40px;
+      font-size: var(--trust-font-size-title);
       font-weight: 700;
-      color: var(--color-white);
-      text-align: center;
-      line-height: 1.4;
-      margin-bottom: 60px;
+      color: var(--trust-color-text);
+      line-height: var(--trust-line-height-title);
+      margin-bottom: var(--trust-gap-title-desc);
     }
 
-    .trust-dark__list {
+    .trust-dark__desc {
+      font-size: var(--trust-font-size-desc);
+      font-weight: 500;
+      color: var(--trust-color-text);
+      line-height: var(--trust-line-height-desc);
+    }
+
+    .trust-dark__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--trust-grid-gap);
+    }
+
+    .trust-dark__card {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .trust-dark__item {
-      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--trust-gap-label-value);
+      min-height: var(--trust-card-height);
+      padding: 24px;
+      border-radius: var(--trust-radius-card);
+      background-color: var(--trust-color-card);
       text-align: center;
-      padding: 0 24px;
-      border-left: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .trust-dark__item:first-child {
-      border-left: none;
     }
 
     .trust-dark__label {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.6);
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
+      font-size: var(--trust-font-size-label);
+      font-weight: 500;
+      color: var(--trust-color-text);
+      line-height: var(--trust-line-height-label);
     }
 
-    .trust-dark__number {
-      font-size: 56px;
-      font-weight: 700;
-      color: var(--color-white);
-      line-height: 1.2;
-    }
-
-    .trust-dark__unit {
-      color: var(--color-primary);
+    .trust-dark__value {
+      font-size: var(--trust-font-size-value);
+      font-weight: 800;
+      color: var(--trust-color-text);
+      line-height: var(--trust-line-height-value);
     }
 
     @media (max-width: 768px) {
       .trust-dark {
-        padding: 60px 0;
+        padding: 60px 0 80px;
       }
 
-      .trust-dark__title {
-        font-size: 26px;
+      .trust-dark__head {
         margin-bottom: 40px;
       }
 
-      .trust-dark__list {
-        flex-direction: column;
+      .trust-dark__title {
+        font-size: 32px;
       }
 
-      .trust-dark__item {
-        border-left: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 24px 0;
+      .trust-dark__desc {
+        font-size: 16px;
       }
 
-      .trust-dark__item:last-child {
-        border-bottom: none;
+      .trust-dark__grid {
+        grid-template-columns: 1fr;
       }
 
-      .trust-dark__number {
-        font-size: 36px;
+      .trust-dark__card {
+        min-height: 220px;
+      }
+
+      .trust-dark__value {
+        font-size: 32px;
       }
     }
   </style>
@@ -135,20 +161,38 @@
   <!-- TRUST START -->
   <section class="trust-dark fade-in">
     <div class="wrap">
-      <h2 class="trust-dark__title">숫자로 보는 신뢰,<br>우리의 성과를 확인하세요</h2>
+      <div class="trust-dark__head">
+        <h2 class="trust-dark__title">데이터로 증명하는 압도적인 신체 변화</h2>
+        <p class="trust-dark__desc">
+          단순히 굶는 다이어트가 아닌, 영양학적 근거와 과학적 트레이닝과<br>
+          개인의 대사율에 최적화된 독자적인 알고리즘으로 체계적인 성장
+        </p>
+      </div>
 
-      <ul class="trust-dark__list">
-        <li class="trust-dark__item">
-          <p class="trust-dark__label">누적 고객수</p>
-          <p class="trust-dark__number">30,000<span class="trust-dark__unit">+</span></p>
+      <ul class="trust-dark__grid">
+        <li class="trust-dark__card">
+          <p class="trust-dark__label">설립년도</p>
+          <p class="trust-dark__value" data-count="2021" data-suffix="년">0년</p>
         </li>
-        <li class="trust-dark__item">
-          <p class="trust-dark__label">누적 계약수</p>
-          <p class="trust-dark__number">250<span class="trust-dark__unit">+</span></p>
+        <li class="trust-dark__card">
+          <p class="trust-dark__label">프로젝트 수</p>
+          <p class="trust-dark__value" data-count="1500" data-suffix="+">0+</p>
         </li>
-        <li class="trust-dark__item">
-          <p class="trust-dark__label">운영 경력</p>
-          <p class="trust-dark__number">13<span class="trust-dark__unit">년</span></p>
+        <li class="trust-dark__card">
+          <p class="trust-dark__label">고객만족도</p>
+          <p class="trust-dark__value" data-count="99" data-suffix="%">0%</p>
+        </li>
+        <li class="trust-dark__card">
+          <p class="trust-dark__label">월 평균 문의수</p>
+          <p class="trust-dark__value" data-count="25000" data-suffix="건+" data-comma="true">0건+</p>
+        </li>
+        <li class="trust-dark__card">
+          <p class="trust-dark__label">누적 판매량</p>
+          <p class="trust-dark__value" data-count="300000" data-suffix="건+" data-comma="true">0건+</p>
+        </li>
+        <li class="trust-dark__card">
+          <p class="trust-dark__label">직원수</p>
+          <p class="trust-dark__value" data-count="350" data-suffix="명">0명</p>
         </li>
       </ul>
     </div>
@@ -159,21 +203,83 @@
     (function () {
       "use strict";
 
+      var DURATION = 1600;
+
+      function formatCount(value, useComma) {
+        if (!useComma) return String(value);
+        return value.toLocaleString("ko-KR");
+      }
+
+      function setCountValue(el, value) {
+        var suffix = el.getAttribute("data-suffix") || "";
+        var prefix = el.getAttribute("data-prefix") || "";
+        var useComma = el.getAttribute("data-comma") === "true";
+        el.textContent = prefix + formatCount(value, useComma) + suffix;
+      }
+
+      function animateCount(el) {
+        var target = Number(el.getAttribute("data-count"));
+        if (!target) return;
+
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / DURATION, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(target * eased);
+          setCountValue(el, current);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            setCountValue(el, target);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      function startCounters(section) {
+        var counters = section.querySelectorAll("[data-count]");
+        counters.forEach(function (el) {
+          if (el.dataset.counted === "true") return;
+          el.dataset.counted = "true";
+          animateCount(el);
+        });
+      }
+
+      function revealSection(section) {
+        section.classList.add("visible");
+        startCounters(section);
+      }
+
       var targets = document.querySelectorAll(".fade-in");
+      var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (targets.length === 0) return;
+
+      if (prefersReducedMotion) {
+        targets.forEach(function (el) {
+          revealSection(el);
+          el.querySelectorAll("[data-count]").forEach(function (counter) {
+            setCountValue(counter, Number(counter.getAttribute("data-count")));
+          });
+        });
+        return;
+      }
 
       if ("IntersectionObserver" in window) {
         var observer = new IntersectionObserver(
           function (entries) {
             entries.forEach(function (entry) {
               if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+                revealSection(entry.target);
                 observer.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.1 }
+          { threshold: 0.2 }
         );
 
         targets.forEach(function (el) {
@@ -181,7 +287,7 @@
         });
       } else {
         targets.forEach(function (el) {
-          el.classList.add("visible");
+          revealSection(el);
         });
       }
     })();

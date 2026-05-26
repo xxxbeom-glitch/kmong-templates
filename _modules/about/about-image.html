@@ -7,12 +7,19 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --about-color-bg: #fafafa;
+      --about-color-text: #000000;
+      --about-color-image: #f3f3f9;
+      --about-font-size-title: 54px;
+      --about-font-size-desc: 24px;
+      --about-line-height-title: 1.34;
+      --about-line-height-desc: 1.58;
+      --about-gap-title-desc: 26px;
+      --about-gap-content-image: 80px;
+      --about-visual-height-end: 785px;
+      --about-visual-height-start: 420px;
+      --about-section-padding-top: 100px;
+      --about-expand-scroll: 720px;
     }
 
     *,
@@ -29,16 +36,7 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-text);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
+      color: var(--about-color-text);
     }
 
     .wrap {
@@ -60,130 +58,78 @@
 
     /* ABOUT */
     .about-image {
-      background-color: var(--color-white);
-      padding: 100px 0;
+      background-color: var(--about-color-bg);
     }
 
-    .about-image__inner {
-      display: flex;
-      align-items: center;
-      gap: 0;
+    .about-image__track {
+      height: calc(100vh + var(--about-expand-scroll));
     }
 
-    .about-image__visual {
-      flex: 1;
-      height: 520px;
-      background-color: #c8d8d6;
-      border-radius: var(--radius-card);
-    }
-
-    .about-image__text {
-      flex: 1;
+    .about-image__sticky {
+      position: sticky;
+      top: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding-left: 80px;
+      gap: var(--about-gap-content-image);
+      min-height: 100vh;
+      padding-top: var(--about-section-padding-top);
+      padding-bottom: 40px;
     }
 
-    .about-image__label {
-      font-size: 13px;
-      color: var(--color-primary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+    .about-image__content {
+      width: 100%;
     }
 
     .about-image__title {
-      font-size: 40px;
+      max-width: 690px;
+      font-size: var(--about-font-size-title);
       font-weight: 700;
-      color: var(--color-text);
-      line-height: 1.3;
-      margin-bottom: 20px;
+      color: var(--about-color-text);
+      line-height: var(--about-line-height-title);
+      margin-bottom: var(--about-gap-title-desc);
     }
 
     .about-image__desc {
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--color-text);
-      opacity: 0.7;
-      margin-bottom: 36px;
-    }
-
-    .about-image__list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .about-image__list li {
-      position: relative;
-      padding-left: 28px;
-      font-size: 15px;
+      max-width: 1200px;
+      font-size: var(--about-font-size-desc);
       font-weight: 500;
-      color: var(--color-text);
+      color: var(--about-color-text);
+      line-height: var(--about-line-height-desc);
     }
 
-    .about-image__list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: var(--color-primary);
+    .about-image__visual-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
-    .about-image__list li::after {
-      content: "";
-      position: absolute;
-      left: 5px;
-      top: 8px;
-      width: 6px;
-      height: 3px;
-      border-left: 2px solid var(--color-white);
-      border-bottom: 2px solid var(--color-white);
-      transform: rotate(-45deg);
+    .about-image__visual {
+      width: 100%;
+      height: var(--about-visual-height-start);
+      background-color: var(--about-color-image);
+      will-change: width, height;
     }
 
-    .about-image__cta {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 14px 32px;
-      border-radius: var(--radius-btn);
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      font-size: 15px;
-      font-weight: 600;
-      transition: transform 0.2s ease;
-    }
-
-    .about-image__cta:hover {
-      transform: translateY(-2px);
+    .about-image__visual.is-full {
+      width: 100vw;
+      max-width: 100vw;
     }
 
     @media (max-width: 768px) {
-      .about-image {
-        padding: 60px 0;
-      }
-
-      .about-image__inner {
-        flex-direction: column;
-      }
-
-      .about-image__visual {
-        width: 100%;
-        height: 280px;
-      }
-
-      .about-image__text {
-        padding-left: 0;
-        padding-top: 32px;
+      :root {
+        --about-visual-height-end: 280px;
+        --about-visual-height-start: 200px;
+        --about-expand-scroll: 480px;
+        --about-section-padding-top: 60px;
+        --about-gap-content-image: 40px;
       }
 
       .about-image__title {
-        font-size: 26px;
+        font-size: 28px;
+      }
+
+      .about-image__desc {
+        font-size: 16px;
       }
     }
   </style>
@@ -192,26 +138,21 @@
 
   <!-- ABOUT START -->
   <section class="about-image fade-in">
-    <div class="wrap about-image__inner">
-      <div class="about-image__visual" aria-hidden="true"></div>
+    <div class="about-image__track">
+      <div class="about-image__sticky">
+        <div class="wrap">
+          <div class="about-image__content">
+            <h2 class="about-image__title">기술로 건강의 문턱을 낮추다</h2>
+            <p class="about-image__desc">
+              복잡한 영양 정보와 운동 이론을 몰라도 괜찮습니다.<br>
+              AI 코칭 시스템이 당신의 일상 속에서 가장 쉽고 지속 가능한 건강 습관을 만들어 드립니다.
+            </p>
+          </div>
+        </div>
 
-      <div class="about-image__text">
-        <p class="about-image__label">ABOUT US</p>
-        <h2 class="about-image__title">타이틀을 입력하세요</h2>
-        <p class="about-image__desc">
-          우리는 고객의 가치를 최우선으로 생각합니다.<br>
-          차별화된 접근 방식으로 더 나은 경험을 제공하며,<br>
-          지속적인 혁신을 통해 성장해 나가고 있습니다.
-        </p>
-
-        <ul class="about-image__list">
-          <li>포인트 항목 텍스트를 입력하세요</li>
-          <li>포인트 항목 텍스트를 입력하세요</li>
-          <li>포인트 항목 텍스트를 입력하세요</li>
-          <li>포인트 항목 텍스트를 입력하세요</li>
-        </ul>
-
-        <a href="#" class="about-image__cta">자세히 보기</a>
+        <div class="about-image__visual-wrap">
+          <div class="about-image__visual" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -221,9 +162,53 @@
     (function () {
       "use strict";
 
-      var targets = document.querySelectorAll(".fade-in");
+      var section = document.querySelector(".about-image");
+      var track = document.querySelector(".about-image__track");
+      var wrap = document.querySelector(".about-image .wrap");
+      var visual = document.querySelector(".about-image__visual");
+      var fadeTargets = document.querySelectorAll(".fade-in");
 
-      if (targets.length === 0) return;
+      if (!section || !track || !visual) return;
+
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
+
+      function getSizes() {
+        var styles = getComputedStyle(document.documentElement);
+        return {
+          heightStart: parseFloat(styles.getPropertyValue("--about-visual-height-start")),
+          heightEnd: parseFloat(styles.getPropertyValue("--about-visual-height-end"))
+        };
+      }
+
+      function updateVisual() {
+        var trackTop = track.offsetTop;
+        var trackHeight = track.offsetHeight;
+        var viewportHeight = window.innerHeight;
+        var scrollRange = Math.max(trackHeight - viewportHeight, 1);
+        var scrolled = window.scrollY - trackTop;
+        var progress = clamp(scrolled / scrollRange, 0, 1);
+        var wrapWidth = wrap ? wrap.clientWidth : Math.min(1200, window.innerWidth);
+        var fullWidth = window.innerWidth;
+        var sizes = getSizes();
+        var width = wrapWidth + (fullWidth - wrapWidth) * progress;
+        var height = sizes.heightStart + (sizes.heightEnd - sizes.heightStart) * progress;
+
+        visual.classList.toggle("is-full", progress >= 0.999);
+        visual.style.width = progress >= 0.999 ? "100vw" : width + "px";
+        visual.style.height = height + "px";
+      }
+
+      function onScroll() {
+        updateVisual();
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", updateVisual);
+      updateVisual();
+
+      if (fadeTargets.length === 0) return;
 
       if ("IntersectionObserver" in window) {
         var observer = new IntersectionObserver(
@@ -238,11 +223,11 @@
           { threshold: 0.1 }
         );
 
-        targets.forEach(function (el) {
+        fadeTargets.forEach(function (el) {
           observer.observe(el);
         });
       } else {
-        targets.forEach(function (el) {
+        fadeTargets.forEach(function (el) {
           el.classList.add("visible");
         });
       }

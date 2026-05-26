@@ -7,12 +7,30 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --service-color-bg: #fafafa;
+      --service-color-text: #000000;
+      --service-color-card: #f5f6f6;
+      --service-color-visual: #efeff8;
+      --service-font-size-title: 58px;
+      --service-font-size-desc: 24px;
+      --service-font-size-point: 20px;
+      --service-font-size-card-title: 30px;
+      --service-font-size-card-desc: 20px;
+      --service-line-height-title: 1.4;
+      --service-line-height-desc: 1.58;
+      --service-line-height-point: 1.58;
+      --service-line-height-card-title: 1.4;
+      --service-line-height-card-desc: 1.56;
+      --service-gap-head-cards: 80px;
+      --service-gap-title-desc: 26px;
+      --service-grid-gap: 24px;
+      --service-card-padding-x: 32px;
+      --service-card-body-gap: 16px;
+      --service-card-text-gap: 16px;
+      --service-card-visual-height: 271px;
+      --service-radius-card: 16px;
+      --service-section-padding-top: 100px;
+      --service-section-padding-bottom: 117px;
     }
 
     *,
@@ -29,7 +47,7 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-text);
+      color: var(--service-color-text);
     }
 
     ul {
@@ -55,99 +73,117 @@
 
     /* SERVICE */
     .service-grid {
-      background-color: var(--color-white);
-      padding: 100px 0;
+      background-color: var(--service-color-bg);
+      padding: var(--service-section-padding-top) 0 var(--service-section-padding-bottom);
     }
 
     .service-grid__head {
       text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .service-grid__label {
-      font-size: 13px;
-      color: var(--color-primary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: var(--service-gap-head-cards);
     }
 
     .service-grid__title {
-      font-size: 36px;
+      font-size: var(--service-font-size-title);
       font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 16px;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-title);
+      margin-bottom: var(--service-gap-title-desc);
     }
 
     .service-grid__desc {
-      font-size: 15px;
-      color: var(--color-text);
-      opacity: 0.6;
+      font-size: var(--service-font-size-desc);
+      font-weight: 500;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-desc);
     }
 
     .service-grid__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: var(--service-grid-gap);
     }
 
     .service-grid__card {
-      background-color: var(--color-white);
-      border: 1px solid #eeeeee;
-      border-radius: var(--radius-card);
-      padding: 36px 28px;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-grid__card:hover {
-      transform: translateY(-6px);
-      border-color: var(--color-primary);
-      box-shadow: 0 12px 32px rgba(42, 191, 176, 0.12);
-    }
-
-    .service-grid__icon {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background-color: var(--color-bg-soft);
-      border-radius: 12px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--color-primary);
+      flex-direction: column;
+      background-color: var(--service-color-card);
+      border-radius: var(--service-radius-card);
+      overflow: hidden;
+    }
+
+    .service-grid__card-visual {
+      flex-shrink: 0;
+      height: var(--service-card-visual-height);
+      background-color: var(--service-color-visual);
+      border-radius: var(--service-radius-card) var(--service-radius-card) 0 0;
+    }
+
+    .service-grid__card-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: var(--service-color-visual);
+    }
+
+    .service-grid__card-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--service-card-body-gap);
+      flex: 1;
+      padding: 30px var(--service-card-padding-x) 32px;
+    }
+
+    .service-grid__card-point {
+      font-size: var(--service-font-size-point);
+      font-weight: 600;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-point);
+    }
+
+    .service-grid__card-text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--service-card-text-gap);
     }
 
     .service-grid__card-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--color-text);
-      margin-bottom: 10px;
+      font-size: var(--service-font-size-card-title);
+      font-weight: 700;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-card-title);
     }
 
     .service-grid__card-desc {
-      font-size: 14px;
-      color: var(--color-text);
-      opacity: 0.6;
-      line-height: 1.7;
+      font-size: var(--service-font-size-card-desc);
+      font-weight: 500;
+      color: var(--service-color-text);
+      line-height: var(--service-line-height-card-desc);
     }
 
     @media (max-width: 768px) {
       .service-grid {
-        padding: 60px 0;
-      }
-
-      .service-grid__title {
-        font-size: 24px;
+        padding: 60px 0 80px;
       }
 
       .service-grid__head {
         margin-bottom: 40px;
       }
 
+      .service-grid__title {
+        font-size: 32px;
+      }
+
+      .service-grid__desc {
+        font-size: 16px;
+      }
+
       .service-grid__list {
         grid-template-columns: 1fr;
+      }
+
+      .service-grid__card-visual {
+        height: 200px;
       }
     }
   </style>
@@ -158,41 +194,40 @@
   <section class="service-grid fade-in">
     <div class="wrap">
       <header class="service-grid__head">
-        <p class="service-grid__label">Service</p>
-        <h2 class="service-grid__title">제공하는 서비스</h2>
-        <p class="service-grid__desc">다양한 서비스를 한곳에서 확인하세요</p>
+        <h2 class="service-grid__title">당신의 신체 변화를 위한 가장 과학적인 솔루션</h2>
+        <p class="service-grid__desc">데이터를 통해 검증된 알고리즘이 설계하는 체계적인 관리 시스템을 확인하세요</p>
       </header>
 
       <ul class="service-grid__list">
         <li class="service-grid__card">
-          <div class="service-grid__icon">01</div>
-          <h3 class="service-grid__card-title">서비스 타이틀</h3>
-          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+          <div class="service-grid__card-visual" aria-hidden="true"></div>
+          <div class="service-grid__card-body">
+            <p class="service-grid__card-point">Point 1</p>
+            <div class="service-grid__card-text">
+              <h3 class="service-grid__card-title">정밀 분석 시스템</h3>
+              <p class="service-grid__card-desc">신체 데이터를 측정하고 대사 과정을 추적하여 현재 상태를 완벽하게 파악</p>
+            </div>
+          </div>
         </li>
         <li class="service-grid__card">
-          <div class="service-grid__icon">02</div>
-          <h3 class="service-grid__card-title">서비스 타이틀</h3>
-          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+          <div class="service-grid__card-visual" aria-hidden="true"></div>
+          <div class="service-grid__card-body">
+            <p class="service-grid__card-point">Point 2</p>
+            <div class="service-grid__card-text">
+              <h3 class="service-grid__card-title">1:1 맞춤형 로드맵</h3>
+              <p class="service-grid__card-desc">목표 체중에 도달하기까지 필요한 매일의 영양 섭취량과 최적의 운동 강도를 실시간으로 조정</p>
+            </div>
+          </div>
         </li>
         <li class="service-grid__card">
-          <div class="service-grid__icon">03</div>
-          <h3 class="service-grid__card-title">서비스 타이틀</h3>
-          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
-        </li>
-        <li class="service-grid__card">
-          <div class="service-grid__icon">04</div>
-          <h3 class="service-grid__card-title">서비스 타이틀</h3>
-          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
-        </li>
-        <li class="service-grid__card">
-          <div class="service-grid__icon">05</div>
-          <h3 class="service-grid__card-title">서비스 타이틀</h3>
-          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
-        </li>
-        <li class="service-grid__card">
-          <div class="service-grid__icon">06</div>
-          <h3 class="service-grid__card-title">서비스 타이틀</h3>
-          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+          <div class="service-grid__card-visual" aria-hidden="true"></div>
+          <div class="service-grid__card-body">
+            <p class="service-grid__card-point">Point 3</p>
+            <div class="service-grid__card-text">
+              <h3 class="service-grid__card-title">지속 가능한 라이프스타일</h3>
+              <p class="service-grid__card-desc">일회성 관리가 아닌, 평생 유지 가능한 올바른 식습관과 운동 습관 형성을 목표</p>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
