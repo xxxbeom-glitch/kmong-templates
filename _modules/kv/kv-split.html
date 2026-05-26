@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kv-split</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* KV SPLIT */
+    .kv-split {
+      width: 100%;
+      height: 800px;
+    }
+
+    .kv-split__inner {
+      display: flex;
+      height: 100%;
+      max-width: none;
+      padding: 0;
+    }
+
+    .kv-split__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      background-color: var(--color-bg-soft);
+    }
+
+    .kv-split__sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      margin-bottom: 16px;
+    }
+
+    .kv-split__title {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .kv-split__desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--color-text);
+      opacity: 0.6;
+      margin-bottom: 40px;
+    }
+
+    .kv-split__btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .kv-split__btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .kv-split__btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .kv-split__btn--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .kv-split__btn--outline {
+      border: 2px solid var(--color-primary);
+      background-color: transparent;
+      color: var(--color-primary);
+    }
+
+    .kv-split__btn--outline:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .kv-split__visual {
+      flex: 1;
+      background-color: #c8d8d6;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 768px) {
+      .kv-split {
+        height: auto;
+      }
+
+      .kv-split__inner {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .kv-split__visual {
+        order: -1;
+        flex: none;
+        width: 100%;
+        height: 300px;
+      }
+
+      .kv-split__text {
+        padding: 48px 20px;
+      }
+
+      .kv-split__sub {
+        font-size: 11px;
+      }
+
+      .kv-split__title {
+        font-size: 32px;
+      }
+
+      .kv-split__desc {
+        font-size: 13px;
+      }
+
+      .kv-split__btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .kv-split__btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- KV -->
+  <section class="kv-split">
+    <div class="wrap kv-split__inner">
+      <div class="kv-split__text">
+        <p class="kv-split__sub">Subtitle Text</p>
+        <h1 class="kv-split__title">메인 타이틀을<br>입력하세요</h1>
+        <p class="kv-split__desc">서브 타이틀 또는 간단한 설명 문구를 입력합니다</p>
+        <div class="kv-split__btns">
+          <a href="#" class="kv-split__btn kv-split__btn--primary">시작하기</a>
+          <a href="#" class="kv-split__btn kv-split__btn--outline">더 알아보기</a>
+        </div>
+      </div>
+      <div class="kv-split__visual"></div>
+    </div>
+  </section>
+
+</body>
+</html>

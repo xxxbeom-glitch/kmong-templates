@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kv-center</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* KV CENTER */
+    .kv-center {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      background-color: #c8d8d6;
+      overflow: hidden;
+    }
+
+    .kv-center__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .kv-center .wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .kv-center__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .kv-center__sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--color-white);
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      margin-bottom: 16px;
+    }
+
+    .kv-center__title {
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .kv-center__desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .kv-center__btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .kv-center__btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .kv-center__btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .kv-center__btn--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .kv-center__btn--outline {
+      border: 2px solid var(--color-white);
+      background-color: transparent;
+      color: var(--color-white);
+    }
+
+    .kv-center__scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+
+    .kv-center__scroll-icon {
+      display: block;
+      width: 24px;
+      height: 40px;
+      border: 2px solid var(--color-white);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .kv-center__scroll-icon::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 4px;
+      height: 8px;
+      margin-left: -2px;
+      border-radius: 2px;
+      background-color: var(--color-white);
+      animation: kv-center-bounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes kv-center-bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(10px);
+        opacity: 0.4;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .kv-center {
+        height: 600px;
+      }
+
+      .kv-center__title {
+        font-size: 34px;
+      }
+
+      .kv-center__desc {
+        font-size: 14px;
+      }
+
+      .kv-center__btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .kv-center__btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- KV -->
+  <section class="kv-center">
+    <div class="kv-center__overlay"></div>
+
+    <div class="wrap">
+      <div class="kv-center__content">
+        <p class="kv-center__sub">Subtitle Text</p>
+        <h1 class="kv-center__title">메인 타이틀을<br>입력하세요</h1>
+        <p class="kv-center__desc">서브 타이틀 또는 간단한 설명 문구를 입력합니다</p>
+        <div class="kv-center__btns">
+          <a href="#" class="kv-center__btn kv-center__btn--primary">시작하기</a>
+          <a href="#" class="kv-center__btn kv-center__btn--outline">더 알아보기</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="kv-center__scroll" aria-hidden="true">
+      <span class="kv-center__scroll-icon"></span>
+    </div>
+  </section>
+
+</body>
+</html>
