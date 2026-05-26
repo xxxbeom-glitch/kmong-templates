@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>service-tab</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* SERVICE */
+    .service-tab {
+      background-color: var(--color-bg-soft);
+      padding: 100px 0;
+    }
+
+    .service-tab__head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .service-tab__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .service-tab__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .service-tab__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 60px;
+    }
+
+    .service-tab__btn {
+      padding: 12px 28px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text);
+      background-color: var(--color-white);
+      border: 1px solid #dddddd;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-tab__btn.is-active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+    }
+
+    .service-tab__panel {
+      display: none;
+    }
+
+    .service-tab__panel.is-active {
+      display: block;
+    }
+
+    .service-tab__content {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .service-tab__visual {
+      flex: 1;
+      height: 420px;
+      background-color: #c8d8d6;
+      border-radius: var(--radius-card);
+    }
+
+    .service-tab__text {
+      flex: 1;
+      padding-left: 60px;
+    }
+
+    .service-tab__text-label {
+      font-size: 13px;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+
+    .service-tab__text-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+
+    .service-tab__text-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--color-text);
+      opacity: 0.7;
+      margin-bottom: 32px;
+    }
+
+    .service-tab__cta {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .service-tab {
+        padding: 60px 0;
+      }
+
+      .service-tab__title {
+        font-size: 24px;
+      }
+
+      .service-tab__buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 40px;
+      }
+
+      .service-tab__btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .service-tab__content {
+        flex-direction: column;
+      }
+
+      .service-tab__visual {
+        width: 100%;
+        height: 240px;
+      }
+
+      .service-tab__text {
+        padding-left: 0;
+        padding-top: 24px;
+      }
+
+      .service-tab__text-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SERVICE START -->
+  <section class="service-tab fade-in">
+    <div class="wrap">
+      <header class="service-tab__head">
+        <p class="service-tab__label">Service</p>
+        <h2 class="service-tab__title">서비스 상세 안내</h2>
+      </header>
+
+      <div class="service-tab__buttons" role="tablist">
+        <button type="button" class="service-tab__btn is-active" data-tab="tab-a" role="tab" aria-selected="true">서비스 A</button>
+        <button type="button" class="service-tab__btn" data-tab="tab-b" role="tab" aria-selected="false">서비스 B</button>
+        <button type="button" class="service-tab__btn" data-tab="tab-c" role="tab" aria-selected="false">서비스 C</button>
+        <button type="button" class="service-tab__btn" data-tab="tab-d" role="tab" aria-selected="false">서비스 D</button>
+      </div>
+
+      <div class="service-tab__panel is-active" id="tab-a" role="tabpanel">
+        <div class="service-tab__content">
+          <div class="service-tab__visual" aria-hidden="true"></div>
+          <div class="service-tab__text">
+            <p class="service-tab__text-label">Service A</p>
+            <h3 class="service-tab__text-title">서비스 A 타이틀</h3>
+            <p class="service-tab__text-desc">서비스 A에 대한 상세 설명 문구입니다. 고객의 니즈에 맞춘 맞춤형 솔루션을 제공합니다.</p>
+            <a href="#" class="service-tab__cta">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-tab__panel" id="tab-b" role="tabpanel">
+        <div class="service-tab__content">
+          <div class="service-tab__visual" aria-hidden="true"></div>
+          <div class="service-tab__text">
+            <p class="service-tab__text-label">Service B</p>
+            <h3 class="service-tab__text-title">서비스 B 타이틀</h3>
+            <p class="service-tab__text-desc">서비스 B에 대한 상세 설명 문구입니다. 효율적인 프로세스로 빠른 결과를 제공합니다.</p>
+            <a href="#" class="service-tab__cta">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-tab__panel" id="tab-c" role="tabpanel">
+        <div class="service-tab__content">
+          <div class="service-tab__visual" aria-hidden="true"></div>
+          <div class="service-tab__text">
+            <p class="service-tab__text-label">Service C</p>
+            <h3 class="service-tab__text-title">서비스 C 타이틀</h3>
+            <p class="service-tab__text-desc">서비스 C에 대한 상세 설명 문구입니다. 전문가 팀이 체계적으로 지원합니다.</p>
+            <a href="#" class="service-tab__cta">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-tab__panel" id="tab-d" role="tabpanel">
+        <div class="service-tab__content">
+          <div class="service-tab__visual" aria-hidden="true"></div>
+          <div class="service-tab__text">
+            <p class="service-tab__text-label">Service D</p>
+            <h3 class="service-tab__text-title">서비스 D 타이틀</h3>
+            <p class="service-tab__text-desc">서비스 D에 대한 상세 설명 문구입니다. 지속적인 관리와 사후 지원까지 책임집니다.</p>
+            <a href="#" class="service-tab__cta">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SERVICE END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var tabButtons = document.querySelectorAll(".service-tab__btn");
+      var tabPanels = document.querySelectorAll(".service-tab__panel");
+
+      tabButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var targetId = btn.getAttribute("data-tab");
+
+          tabButtons.forEach(function (item) {
+            item.classList.remove("is-active");
+            item.setAttribute("aria-selected", "false");
+          });
+
+          tabPanels.forEach(function (panel) {
+            panel.classList.remove("is-active");
+          });
+
+          btn.classList.add("is-active");
+          btn.setAttribute("aria-selected", "true");
+
+          var targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.classList.add("is-active");
+          }
+        });
+      });
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

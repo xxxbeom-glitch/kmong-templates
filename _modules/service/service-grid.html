@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>service-grid</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* SERVICE */
+    .service-grid {
+      background-color: var(--color-white);
+      padding: 100px 0;
+    }
+
+    .service-grid__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .service-grid__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .service-grid__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+
+    .service-grid__desc {
+      font-size: 15px;
+      color: var(--color-text);
+      opacity: 0.6;
+    }
+
+    .service-grid__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-grid__card {
+      background-color: var(--color-white);
+      border: 1px solid #eeeeee;
+      border-radius: var(--radius-card);
+      padding: 36px 28px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-grid__card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-primary);
+      box-shadow: 0 12px 32px rgba(42, 191, 176, 0.12);
+    }
+
+    .service-grid__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-bg-soft);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .service-grid__card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 10px;
+    }
+
+    .service-grid__card-desc {
+      font-size: 14px;
+      color: var(--color-text);
+      opacity: 0.6;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .service-grid {
+        padding: 60px 0;
+      }
+
+      .service-grid__title {
+        font-size: 24px;
+      }
+
+      .service-grid__head {
+        margin-bottom: 40px;
+      }
+
+      .service-grid__list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SERVICE START -->
+  <section class="service-grid fade-in">
+    <div class="wrap">
+      <header class="service-grid__head">
+        <p class="service-grid__label">Service</p>
+        <h2 class="service-grid__title">제공하는 서비스</h2>
+        <p class="service-grid__desc">다양한 서비스를 한곳에서 확인하세요</p>
+      </header>
+
+      <ul class="service-grid__list">
+        <li class="service-grid__card">
+          <div class="service-grid__icon">01</div>
+          <h3 class="service-grid__card-title">서비스 타이틀</h3>
+          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+        </li>
+        <li class="service-grid__card">
+          <div class="service-grid__icon">02</div>
+          <h3 class="service-grid__card-title">서비스 타이틀</h3>
+          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+        </li>
+        <li class="service-grid__card">
+          <div class="service-grid__icon">03</div>
+          <h3 class="service-grid__card-title">서비스 타이틀</h3>
+          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+        </li>
+        <li class="service-grid__card">
+          <div class="service-grid__icon">04</div>
+          <h3 class="service-grid__card-title">서비스 타이틀</h3>
+          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+        </li>
+        <li class="service-grid__card">
+          <div class="service-grid__icon">05</div>
+          <h3 class="service-grid__card-title">서비스 타이틀</h3>
+          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+        </li>
+        <li class="service-grid__card">
+          <div class="service-grid__icon">06</div>
+          <h3 class="service-grid__card-title">서비스 타이틀</h3>
+          <p class="service-grid__card-desc">서비스에 대한 간단한 설명 문구입니다</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- SERVICE END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

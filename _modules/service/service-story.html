@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>service-story</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* SERVICE */
+    .service-story__block {
+      padding: 100px 0;
+    }
+
+    .service-story__block--white {
+      background-color: var(--color-white);
+    }
+
+    .service-story__block--soft {
+      background-color: var(--color-bg-soft);
+    }
+
+    .service-story__inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .service-story__block--reverse .service-story__inner {
+      flex-direction: row-reverse;
+    }
+
+    .service-story__visual {
+      flex: 1;
+      height: 480px;
+      background-color: #c8d8d6;
+      border-radius: var(--radius-card);
+    }
+
+    .service-story__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .service-story__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .service-story__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .service-story__desc {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--color-text);
+      opacity: 0.7;
+      margin-bottom: 36px;
+    }
+
+    .service-story__cta {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .service-story__cta:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .service-story__block {
+        padding: 60px 0;
+      }
+
+      .service-story__inner,
+      .service-story__block--reverse .service-story__inner {
+        flex-direction: column;
+      }
+
+      .service-story__visual {
+        width: 100%;
+        height: 260px;
+      }
+
+      .service-story__text {
+        padding: 0;
+      }
+
+      .service-story__title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SERVICE START -->
+  <section class="service-story fade-in">
+    <article class="service-story__block service-story__block--white">
+      <div class="wrap service-story__inner">
+        <div class="service-story__visual" aria-hidden="true"></div>
+        <div class="service-story__text">
+          <p class="service-story__label">Feature 01</p>
+          <h2 class="service-story__title">서비스 타이틀을 입력하세요</h2>
+          <p class="service-story__desc">서비스에 대한 설명 문구를 입력합니다.<br>고객의 니즈에 맞춘 맞춤형 솔루션을 제공합니다.<br>전문적인 프로세스로 최상의 결과를 약속합니다.</p>
+          <a href="#" class="service-story__cta">자세히 보기</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-story__block service-story__block--soft service-story__block--reverse">
+      <div class="wrap service-story__inner">
+        <div class="service-story__visual" aria-hidden="true"></div>
+        <div class="service-story__text">
+          <p class="service-story__label">Feature 02</p>
+          <h2 class="service-story__title">서비스 타이틀을 입력하세요</h2>
+          <p class="service-story__desc">서비스에 대한 설명 문구를 입력합니다.<br>체계적인 운영 시스템으로 안정적인 서비스를 제공합니다.<br>지속적인 개선을 통해 품질을 높여갑니다.</p>
+          <a href="#" class="service-story__cta">자세히 보기</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="service-story__block service-story__block--white">
+      <div class="wrap service-story__inner">
+        <div class="service-story__visual" aria-hidden="true"></div>
+        <div class="service-story__text">
+          <p class="service-story__label">Feature 03</p>
+          <h2 class="service-story__title">서비스 타이틀을 입력하세요</h2>
+          <p class="service-story__desc">서비스에 대한 설명 문구를 입력합니다.<br>고객과의 소통을 중시하며 신뢰를 쌓아갑니다.<br>사후 관리까지 책임지는 원스톱 서비스입니다.</p>
+          <a href="#" class="service-story__cta">자세히 보기</a>
+        </div>
+      </div>
+    </article>
+  </section>
+  <!-- SERVICE END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

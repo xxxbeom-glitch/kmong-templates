@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>notice-tab</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* NOTICE */
+    .notice-tab {
+      background-color: var(--color-bg-soft);
+      padding: 100px 0;
+    }
+
+    .notice-tab__head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .notice-tab__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .notice-tab__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .notice-tab__controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .notice-tab__tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .notice-tab__btn {
+      padding: 10px 24px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text);
+      background-color: var(--color-white);
+      border: 1px solid #dddddd;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .notice-tab__btn.is-active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+    }
+
+    .notice-tab__more {
+      font-size: 14px;
+      color: var(--color-primary);
+      font-weight: 500;
+      border-bottom: 1px solid var(--color-primary);
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .notice-tab__panel {
+      display: none;
+    }
+
+    .notice-tab__panel.is-active {
+      display: block;
+      animation: noticeFadeIn 0.2s ease forwards;
+    }
+
+    @keyframes noticeFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .notice-tab__list {
+      background-color: var(--color-white);
+      border-radius: var(--radius-card);
+      margin-top: 40px;
+      overflow: hidden;
+    }
+
+    .notice-tab__item {
+      display: flex;
+      align-items: center;
+      padding: 22px 32px;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+
+    .notice-tab__item:last-child {
+      border-bottom: none;
+    }
+
+    .notice-tab__item:hover {
+      background-color: var(--color-bg-soft);
+    }
+
+    .notice-tab__badge {
+      flex-shrink: 0;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-right: 12px;
+    }
+
+    .notice-tab__badge--new {
+      background-color: var(--color-primary);
+    }
+
+    .notice-tab__badge--event {
+      background-color: #ff6b6b;
+    }
+
+    .notice-tab__subject {
+      flex: 1;
+      min-width: 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .notice-tab__date {
+      flex-shrink: 0;
+      font-size: 13px;
+      color: var(--color-text);
+      opacity: 0.4;
+      margin-left: 16px;
+    }
+
+    .notice-tab__arrow {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--color-text);
+      opacity: 0.3;
+      margin-left: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .notice-tab {
+        padding: 60px 0;
+      }
+
+      .notice-tab__head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .notice-tab__title {
+        font-size: 24px;
+      }
+
+      .notice-tab__controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .notice-tab__item {
+        padding: 18px 20px;
+      }
+
+      .notice-tab__subject {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NOTICE START -->
+  <section class="notice-tab fade-in">
+    <div class="wrap">
+      <header class="notice-tab__head">
+        <div class="notice-tab__intro">
+          <p class="notice-tab__label">Notice</p>
+          <h2 class="notice-tab__title">공지사항</h2>
+        </div>
+
+        <div class="notice-tab__controls">
+          <div class="notice-tab__tabs" role="tablist">
+            <button type="button" class="notice-tab__btn is-active" data-tab="notice" role="tab" aria-selected="true">공지사항</button>
+            <button type="button" class="notice-tab__btn" data-tab="event" role="tab" aria-selected="false">이벤트</button>
+          </div>
+          <a href="#" class="notice-tab__more">더보기</a>
+        </div>
+      </header>
+
+      <div class="notice-tab__panel is-active" id="notice" role="tabpanel">
+        <ul class="notice-tab__list">
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__badge notice-tab__badge--new">NEW</span>
+              <span class="notice-tab__subject">공지사항 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.05.20</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__subject">공지사항 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.05.15</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__subject">공지사항 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.05.10</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__subject">공지사항 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.04.28</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__subject">공지사항 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.04.20</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="notice-tab__panel" id="event" role="tabpanel">
+        <ul class="notice-tab__list">
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__badge notice-tab__badge--event">이벤트</span>
+              <span class="notice-tab__subject">이벤트 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.05.18</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__badge notice-tab__badge--event">이벤트</span>
+              <span class="notice-tab__subject">이벤트 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.05.10</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__badge notice-tab__badge--event">이벤트</span>
+              <span class="notice-tab__subject">이벤트 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.04.30</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__subject">이벤트 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.04.15</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notice-tab__item">
+              <span class="notice-tab__subject">이벤트 제목을 입력하세요</span>
+              <span class="notice-tab__date">2025.04.05</span>
+              <span class="notice-tab__arrow" aria-hidden="true">›</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- NOTICE END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var tabButtons = document.querySelectorAll(".notice-tab__btn");
+      var tabPanels = document.querySelectorAll(".notice-tab__panel");
+
+      tabButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var targetId = btn.getAttribute("data-tab");
+
+          tabButtons.forEach(function (item) {
+            item.classList.remove("is-active");
+            item.setAttribute("aria-selected", "false");
+          });
+
+          tabPanels.forEach(function (panel) {
+            panel.classList.remove("is-active");
+          });
+
+          btn.classList.add("is-active");
+          btn.setAttribute("aria-selected", "true");
+
+          var targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.classList.add("is-active");
+          }
+        });
+      });
+
+      var fadeTargets = document.querySelectorAll(".fade-in");
+
+      if (fadeTargets.length > 0 && "IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        fadeTargets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        fadeTargets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

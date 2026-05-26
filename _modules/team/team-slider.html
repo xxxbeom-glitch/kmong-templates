@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>team-slider</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* TEAM */
+    .team-slider {
+      background-color: var(--color-white);
+      padding: 100px 0;
+    }
+
+    .team-slider__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .team-slider__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .team-slider__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .team-slider__wrap {
+      position: relative;
+    }
+
+    .team-slider__viewport {
+      overflow: hidden;
+    }
+
+    .team-slider__track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.4s ease;
+    }
+
+    .team-slider__item {
+      flex: 0 0 calc((100% - 48px) / 3);
+      background-color: var(--color-white);
+      border: 1px solid #eeeeee;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+
+    .team-slider__photo {
+      display: block;
+      width: 100%;
+      height: 280px;
+      background-color: #c8d8d6;
+      object-fit: cover;
+    }
+
+    .team-slider__body {
+      padding: 28px;
+    }
+
+    .team-slider__name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .team-slider__role {
+      font-size: 13px;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .team-slider__bio {
+      font-size: 14px;
+      color: var(--color-text);
+      opacity: 0.6;
+      line-height: 1.7;
+    }
+
+    .team-slider__arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--color-white);
+      border: 1px solid #eeeeee;
+      transform: translateY(-50%);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .team-slider__arrow:hover {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .team-slider__arrow:hover::before {
+      border-color: var(--color-white);
+    }
+
+    .team-slider__arrow--prev {
+      left: -24px;
+    }
+
+    .team-slider__arrow--next {
+      right: -24px;
+    }
+
+    .team-slider__arrow::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid var(--color-text);
+      border-right: 2px solid var(--color-text);
+      transition: border-color 0.3s ease;
+    }
+
+    .team-slider__arrow--prev::before {
+      transform: rotate(-135deg);
+      margin-left: 4px;
+    }
+
+    .team-slider__arrow--next::before {
+      transform: rotate(45deg);
+      margin-right: 4px;
+    }
+
+    .team-slider__dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 40px;
+    }
+
+    .team-slider__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #dddddd;
+      transition: width 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+    }
+
+    .team-slider__dot.is-active {
+      width: 24px;
+      border-radius: 99px;
+      background-color: var(--color-primary);
+    }
+
+    @media (max-width: 768px) {
+      .team-slider {
+        padding: 60px 0;
+      }
+
+      .team-slider__title {
+        font-size: 24px;
+      }
+
+      .team-slider__head {
+        margin-bottom: 40px;
+      }
+
+      .team-slider__item {
+        flex: 0 0 100%;
+      }
+
+      .team-slider__track {
+        gap: 0;
+      }
+
+      .team-slider__arrow--prev {
+        left: 8px;
+      }
+
+      .team-slider__arrow--next {
+        right: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TEAM START -->
+  <section class="team-slider fade-in">
+    <div class="wrap">
+      <header class="team-slider__head">
+        <p class="team-slider__label">Team</p>
+        <h2 class="team-slider__title">팀원 소개</h2>
+      </header>
+
+      <div class="team-slider__wrap">
+        <button type="button" class="team-slider__arrow team-slider__arrow--prev" aria-label="이전 슬라이드"></button>
+
+        <div class="team-slider__viewport">
+          <ul class="team-slider__track">
+            <li class="team-slider__item">
+              <img class="team-slider__photo" src="" alt="홍길동 프로필">
+              <div class="team-slider__body">
+                <h3 class="team-slider__name">홍길동</h3>
+                <p class="team-slider__role">대표 / 포지션</p>
+                <p class="team-slider__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+              </div>
+            </li>
+            <li class="team-slider__item">
+              <img class="team-slider__photo" src="" alt="홍길동 프로필">
+              <div class="team-slider__body">
+                <h3 class="team-slider__name">홍길동</h3>
+                <p class="team-slider__role">대표 / 포지션</p>
+                <p class="team-slider__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+              </div>
+            </li>
+            <li class="team-slider__item">
+              <img class="team-slider__photo" src="" alt="홍길동 프로필">
+              <div class="team-slider__body">
+                <h3 class="team-slider__name">홍길동</h3>
+                <p class="team-slider__role">대표 / 포지션</p>
+                <p class="team-slider__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+              </div>
+            </li>
+            <li class="team-slider__item">
+              <img class="team-slider__photo" src="" alt="홍길동 프로필">
+              <div class="team-slider__body">
+                <h3 class="team-slider__name">홍길동</h3>
+                <p class="team-slider__role">대표 / 포지션</p>
+                <p class="team-slider__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+              </div>
+            </li>
+            <li class="team-slider__item">
+              <img class="team-slider__photo" src="" alt="홍길동 프로필">
+              <div class="team-slider__body">
+                <h3 class="team-slider__name">홍길동</h3>
+                <p class="team-slider__role">대표 / 포지션</p>
+                <p class="team-slider__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+              </div>
+            </li>
+            <li class="team-slider__item">
+              <img class="team-slider__photo" src="" alt="홍길동 프로필">
+              <div class="team-slider__body">
+                <h3 class="team-slider__name">홍길동</h3>
+                <p class="team-slider__role">대표 / 포지션</p>
+                <p class="team-slider__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="team-slider__arrow team-slider__arrow--next" aria-label="다음 슬라이드"></button>
+      </div>
+
+      <div class="team-slider__dots"></div>
+    </div>
+  </section>
+  <!-- TEAM END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var section = document.querySelector(".team-slider");
+      var track = document.querySelector(".team-slider__track");
+      var items = document.querySelectorAll(".team-slider__item");
+      var prevBtn = document.querySelector(".team-slider__arrow--prev");
+      var nextBtn = document.querySelector(".team-slider__arrow--next");
+      var dotsWrap = document.querySelector(".team-slider__dots");
+      var viewport = document.querySelector(".team-slider__viewport");
+
+      var currentIndex = 0;
+      var visibleCount = 3;
+      var autoTimer = null;
+      var touchStartX = 0;
+
+      function getVisibleCount() {
+        return window.innerWidth <= 768 ? 1 : 3;
+      }
+
+      function getMaxIndex() {
+        return Math.max(0, items.length - visibleCount);
+      }
+
+      function buildDots() {
+        dotsWrap.innerHTML = "";
+        var total = getMaxIndex() + 1;
+
+        for (var i = 0; i < total; i++) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "team-slider__dot" + (i === currentIndex ? " is-active" : "");
+          dot.setAttribute("aria-label", "슬라이드 " + (i + 1));
+          dot.addEventListener("click", function (index) {
+            return function () {
+              goTo(index);
+            };
+          }(i));
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      function updateDots() {
+        var dots = dotsWrap.querySelectorAll(".team-slider__dot");
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle("is-active", i === currentIndex);
+        });
+      }
+
+      function updateSlide() {
+        var itemWidth = items[0].offsetWidth;
+        var gap = window.innerWidth <= 768 ? 0 : 24;
+        var offset = currentIndex * (itemWidth + gap);
+        track.style.transform = "translateX(-" + offset + "px)";
+        updateDots();
+      }
+
+      function goTo(index) {
+        currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+        updateSlide();
+      }
+
+      function goNext() {
+        if (currentIndex >= getMaxIndex()) {
+          goTo(0);
+        } else {
+          goTo(currentIndex + 1);
+        }
+      }
+
+      function goPrev() {
+        if (currentIndex <= 0) {
+          goTo(getMaxIndex());
+        } else {
+          goTo(currentIndex - 1);
+        }
+      }
+
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(goNext, 4000);
+      }
+
+      function stopAuto() {
+        if (autoTimer) {
+          clearInterval(autoTimer);
+          autoTimer = null;
+        }
+      }
+
+      function onResize() {
+        visibleCount = getVisibleCount();
+        if (currentIndex > getMaxIndex()) {
+          currentIndex = getMaxIndex();
+        }
+        buildDots();
+        updateSlide();
+      }
+
+      prevBtn.addEventListener("click", function () {
+        goPrev();
+      });
+
+      nextBtn.addEventListener("click", function () {
+        goNext();
+      });
+
+      section.addEventListener("mouseenter", stopAuto);
+      section.addEventListener("mouseleave", startAuto);
+
+      viewport.addEventListener("touchstart", function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      viewport.addEventListener("touchend", function (e) {
+        var touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            goNext();
+          } else {
+            goPrev();
+          }
+        }
+      }, { passive: true });
+
+      window.addEventListener("resize", onResize);
+      onResize();
+      startAuto();
+
+      var fadeTargets = document.querySelectorAll(".fade-in");
+
+      if (fadeTargets.length > 0 && "IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        fadeTargets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        fadeTargets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

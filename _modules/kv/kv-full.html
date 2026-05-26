@@ -1,16 +1,460 @@
-<!-- KV -->
-<section class="kv-full">
-  <div class="kv-full__overlay"></div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kv-full</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
 
-  <div class="wrap">
-    <div class="kv-full__content">
-      <p class="kv-full__sub">your health, our priority</p>
-      <h1 class="kv-full__title">믿을 수 있는 진료,<br>OO 의원이 함께합니다</h1>
-      <a href="#" class="kv-full__cta">진료 안내 보기</a>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      background-color: var(--color-white);
+      box-shadow: 0 2px 12px rgba(26, 26, 46, 0.08);
+    }
+
+    .header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      gap: 24px;
+    }
+
+    .header__logo img {
+      display: block;
+      width: 120px;
+      height: 40px;
+      background-color: #c8d8d6;
+      border-radius: 4px;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-left: auto;
+    }
+
+    .header__nav a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-white);
+      transition: color 0.3s ease;
+    }
+
+    .header.scrolled .header__nav a {
+      color: var(--color-text);
+    }
+
+    .header__nav a:hover {
+      color: var(--color-primary);
+    }
+
+    .header__cta {
+      flex-shrink: 0;
+      padding: 10px 22px;
+      border-radius: var(--radius-btn);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-white);
+      transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header.scrolled .hamburger span {
+      background-color: var(--color-text);
+    }
+
+    .header.is-open .hamburger span {
+      background-color: var(--color-white);
+    }
+
+    .header.is-open .hamburger span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .header.is-open .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .header.is-open .hamburger span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      background-color: var(--color-text);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .nav-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-overlay__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-overlay__nav a {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--color-white);
+    }
+
+    .nav-overlay__cta {
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* KV */
+    .kv-full {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-color: #c8d8d6;
+      overflow: hidden;
+    }
+
+    .kv-full__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .kv-full .wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+      padding-bottom: 120px;
+    }
+
+    .kv-full__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .kv-full__sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--color-white);
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      margin-bottom: 16px;
+    }
+
+    .kv-full__title {
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: 32px;
+    }
+
+    .kv-full__btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .kv-full__btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .kv-full__btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .kv-full__btn--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .kv-full__btn--outline {
+      border: 2px solid var(--color-white);
+      background-color: transparent;
+      color: var(--color-white);
+    }
+
+    .kv-full__scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+
+    .kv-full__scroll-icon {
+      display: block;
+      width: 24px;
+      height: 40px;
+      border: 2px solid var(--color-white);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .kv-full__scroll-icon::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 4px;
+      height: 8px;
+      margin-left: -2px;
+      border-radius: 2px;
+      background-color: var(--color-white);
+      animation: kv-bounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes kv-bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(10px);
+        opacity: 0.4;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header .wrap {
+        height: 60px;
+      }
+
+      .header__nav,
+      .header__cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .kv-full__title {
+        font-size: 34px;
+      }
+
+      .kv-full__btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .kv-full__btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER START -->
+  <header class="header">
+    <div class="wrap">
+      <a href="/" class="header__logo">
+        <img src="" alt="로고">
+      </a>
+
+      <nav class="header__nav">
+        <a href="#">메뉴1</a>
+        <a href="#">메뉴2</a>
+        <a href="#">메뉴3</a>
+        <a href="#">메뉴4</a>
+      </nav>
+
+      <a href="#" class="header__cta">문의하기</a>
+
+      <button type="button" class="hamburger" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </div>
 
-  <div class="kv-full__scroll" aria-hidden="true">
-    <span class="kv-full__scroll-icon"></span>
-  </div>
-</section>
+    <div class="nav-overlay">
+      <nav class="nav-overlay__nav">
+        <a href="#">메뉴1</a>
+        <a href="#">메뉴2</a>
+        <a href="#">메뉴3</a>
+        <a href="#">메뉴4</a>
+      </nav>
+      <a href="#" class="nav-overlay__cta">문의하기</a>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- KV START -->
+  <main>
+    <section class="kv-full">
+      <div class="kv-full__overlay"></div>
+
+      <div class="wrap">
+        <div class="kv-full__content">
+          <p class="kv-full__sub">Subtitle Text</p>
+          <h1 class="kv-full__title">메인 타이틀을<br>입력하세요</h1>
+          <div class="kv-full__btns">
+            <a href="#" class="kv-full__btn kv-full__btn--primary">시작하기</a>
+            <a href="#" class="kv-full__btn kv-full__btn--outline">더 알아보기</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kv-full__scroll" aria-hidden="true">
+        <span class="kv-full__scroll-icon"></span>
+      </div>
+    </section>
+  </main>
+  <!-- KV END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var header = document.querySelector(".header");
+      var hamburger = document.querySelector(".hamburger");
+      var navOverlay = document.querySelector(".nav-overlay");
+      var overlayLinks = document.querySelectorAll(".nav-overlay__nav a, .nav-overlay__cta");
+
+      function closeOverlay() {
+        navOverlay.classList.remove("open");
+        header.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      function openOverlay() {
+        navOverlay.classList.add("open");
+        header.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      if (hamburger && navOverlay) {
+        hamburger.addEventListener("click", function () {
+          if (navOverlay.classList.contains("open")) {
+            closeOverlay();
+          } else {
+            openOverlay();
+          }
+        });
+      }
+
+      overlayLinks.forEach(function (link) {
+        link.addEventListener("click", closeOverlay);
+      });
+
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+
+        if (header) {
+          if (scrollY >= 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

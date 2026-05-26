@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery-grid</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      background-color: var(--color-white);
+      padding: 100px 0;
+    }
+
+    .gallery-grid__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .gallery-grid__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .gallery-grid__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+
+    .gallery-grid__desc {
+      font-size: 15px;
+      color: var(--color-text);
+      opacity: 0.6;
+    }
+
+    .gallery-grid__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 240px 240px;
+      gap: 12px;
+    }
+
+    .gallery-grid__item {
+      position: relative;
+      display: block;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background-color: #c8d8d6;
+    }
+
+    .gallery-grid__item--large {
+      grid-row: span 2;
+      height: 100%;
+    }
+
+    .gallery-grid__item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #c8d8d6;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-grid__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-grid__item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-grid__item:hover .gallery-grid__overlay {
+      opacity: 1;
+    }
+
+    .gallery-grid__more {
+      display: block;
+      width: fit-content;
+      margin: 60px auto 0;
+      padding: 14px 40px;
+      border: 2px solid var(--color-primary);
+      border-radius: var(--radius-btn);
+      background-color: transparent;
+      color: var(--color-primary);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .gallery-grid__more:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        padding: 60px 0;
+      }
+
+      .gallery-grid__title {
+        font-size: 24px;
+      }
+
+      .gallery-grid__head {
+        margin-bottom: 40px;
+      }
+
+      .gallery-grid__list {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+      }
+
+      .gallery-grid__item,
+      .gallery-grid__item--large {
+        grid-row: auto;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GALLERY START -->
+  <section class="gallery-grid fade-in">
+    <div class="wrap">
+      <header class="gallery-grid__head">
+        <p class="gallery-grid__label">Gallery</p>
+        <h2 class="gallery-grid__title">갤러리</h2>
+        <p class="gallery-grid__desc">다양한 작업물과 순간을 확인하세요</p>
+      </header>
+
+      <div class="gallery-grid__list">
+        <a href="#" class="gallery-grid__item gallery-grid__item--large">
+          <img src="" alt="갤러리 이미지 1">
+          <span class="gallery-grid__overlay"></span>
+        </a>
+        <a href="#" class="gallery-grid__item">
+          <img src="" alt="갤러리 이미지 2">
+          <span class="gallery-grid__overlay"></span>
+        </a>
+        <a href="#" class="gallery-grid__item">
+          <img src="" alt="갤러리 이미지 3">
+          <span class="gallery-grid__overlay"></span>
+        </a>
+        <a href="#" class="gallery-grid__item">
+          <img src="" alt="갤러리 이미지 4">
+          <span class="gallery-grid__overlay"></span>
+        </a>
+        <a href="#" class="gallery-grid__item">
+          <img src="" alt="갤러리 이미지 5">
+          <span class="gallery-grid__overlay"></span>
+        </a>
+      </div>
+
+      <a href="#" class="gallery-grid__more">더보기</a>
+    </div>
+  </section>
+  <!-- GALLERY END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

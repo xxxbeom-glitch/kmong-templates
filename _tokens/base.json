@@ -1,0 +1,378 @@
+{
+  "typography": {
+    "font-family-base": {
+      "value": "'SUIT', sans-serif",
+      "type": "fontFamilies",
+      "description": "기본 폰트 패밀리"
+    },
+    "font-size-xs": {
+      "value": "11px",
+      "type": "fontSizes",
+      "description": "배지/태그"
+    },
+    "font-size-sm": {
+      "value": "13px",
+      "type": "fontSizes",
+      "description": "라벨/캡션/날짜"
+    },
+    "font-size-md": {
+      "value": "14px",
+      "type": "fontSizes",
+      "description": "본문 보조"
+    },
+    "font-size-base": {
+      "value": "15px",
+      "type": "fontSizes",
+      "description": "본문 기본"
+    },
+    "font-size-lg": {
+      "value": "16px",
+      "type": "fontSizes",
+      "description": "본문 강조"
+    },
+    "font-size-xl": {
+      "value": "18px",
+      "type": "fontSizes",
+      "description": "카드 타이틀"
+    },
+    "font-size-2xl": {
+      "value": "24px",
+      "type": "fontSizes",
+      "description": "섹션 타이틀 MO"
+    },
+    "font-size-3xl": {
+      "value": "28px",
+      "type": "fontSizes",
+      "description": "탭 콘텐츠 타이틀"
+    },
+    "font-size-4xl": {
+      "value": "36px",
+      "type": "fontSizes",
+      "description": "섹션 타이틀 PC"
+    },
+    "font-size-5xl": {
+      "value": "40px",
+      "type": "fontSizes",
+      "description": "섹션 타이틀 대형"
+    },
+    "font-size-6xl": {
+      "value": "48px",
+      "type": "fontSizes",
+      "description": "KV 타이틀 MO"
+    },
+    "font-size-7xl": {
+      "value": "56px",
+      "type": "fontSizes",
+      "description": "KV 타이틀 PC"
+    },
+    "font-size-8xl": {
+      "value": "64px",
+      "type": "fontSizes",
+      "description": "ABOUT 타이포"
+    },
+    "font-weight-light": {
+      "value": "300",
+      "type": "fontWeights",
+      "description": "부제목/설명"
+    },
+    "font-weight-regular": {
+      "value": "400",
+      "type": "fontWeights",
+      "description": "본문"
+    },
+    "font-weight-medium": {
+      "value": "500",
+      "type": "fontWeights",
+      "description": "메뉴/강조 본문"
+    },
+    "font-weight-semibold": {
+      "value": "600",
+      "type": "fontWeights",
+      "description": "버튼/소제목"
+    },
+    "font-weight-bold": {
+      "value": "700",
+      "type": "fontWeights",
+      "description": "타이틀"
+    },
+    "font-weight-extrabold": {
+      "value": "800",
+      "type": "fontWeights",
+      "description": "대형 타이포"
+    },
+    "line-height-tight": {
+      "value": "1.2",
+      "type": "lineHeights",
+      "description": "대형 타이틀"
+    },
+    "line-height-normal": {
+      "value": "1.4",
+      "type": "lineHeights",
+      "description": "일반 타이틀"
+    },
+    "line-height-relaxed": {
+      "value": "1.7",
+      "type": "lineHeights",
+      "description": "카드 설명"
+    },
+    "line-height-loose": {
+      "value": "1.85",
+      "type": "lineHeights",
+      "description": "본문/후기"
+    },
+    "line-height-spacious": {
+      "value": "1.9",
+      "type": "lineHeights",
+      "description": "긴 설명 텍스트"
+    },
+    "letter-spacing-tight": {
+      "value": "0",
+      "type": "letterSpacing",
+      "description": "일반 본문"
+    },
+    "letter-spacing-normal": {
+      "value": "0.05em",
+      "type": "letterSpacing",
+      "description": "메뉴/소제목"
+    },
+    "letter-spacing-wide": {
+      "value": "0.1em",
+      "type": "letterSpacing",
+      "description": "섹션 라벨"
+    },
+    "letter-spacing-wider": {
+      "value": "0.15em",
+      "type": "letterSpacing",
+      "description": "ABOUT 라벨"
+    }
+  },
+  "spacing": {
+    "space-1": {
+      "value": "4px",
+      "type": "spacing",
+      "description": "최소 간격"
+    },
+    "space-2": {
+      "value": "8px",
+      "type": "spacing",
+      "description": "배지 패딩"
+    },
+    "space-3": {
+      "value": "12px",
+      "type": "spacing",
+      "description": "라벨 하단 여백"
+    },
+    "space-4": {
+      "value": "16px",
+      "type": "spacing",
+      "description": "기본 요소 간격"
+    },
+    "space-5": {
+      "value": "20px",
+      "type": "spacing",
+      "description": "카드 내부 간격"
+    },
+    "space-6": {
+      "value": "24px",
+      "type": "spacing",
+      "description": "리스트 아이템"
+    },
+    "space-7": {
+      "value": "28px",
+      "type": "spacing",
+      "description": "버튼 패딩"
+    },
+    "space-8": {
+      "value": "32px",
+      "type": "spacing",
+      "description": "CTA 버튼 패딩"
+    },
+    "space-9": {
+      "value": "36px",
+      "type": "spacing",
+      "description": "카드 패딩"
+    },
+    "space-10": {
+      "value": "40px",
+      "type": "spacing",
+      "description": "섹션 내부 간격"
+    },
+    "space-12": {
+      "value": "48px",
+      "type": "spacing",
+      "description": "푸터 패딩"
+    },
+    "space-15": {
+      "value": "60px",
+      "type": "spacing",
+      "description": "섹션 패딩 MO"
+    },
+    "space-20": {
+      "value": "80px",
+      "type": "spacing",
+      "description": "섹션 패딩 중간"
+    },
+    "space-25": {
+      "value": "100px",
+      "type": "spacing",
+      "description": "섹션 패딩 PC"
+    },
+    "space-30": {
+      "value": "120px",
+      "type": "spacing",
+      "description": "섹션 패딩 대형"
+    },
+    "radius-sm": {
+      "value": "4px",
+      "type": "borderRadius",
+      "description": "배지/태그"
+    },
+    "radius-btn": {
+      "value": "6px",
+      "type": "borderRadius",
+      "description": "버튼"
+    },
+    "radius-md": {
+      "value": "12px",
+      "type": "borderRadius",
+      "description": "카드"
+    },
+    "radius-lg": {
+      "value": "20px",
+      "type": "borderRadius",
+      "description": "큰 카드"
+    },
+    "radius-full": {
+      "value": "99px",
+      "type": "borderRadius",
+      "description": "탭 버튼/pill"
+    },
+    "radius-circle": {
+      "value": "50%",
+      "type": "borderRadius",
+      "description": "아바타/아이콘"
+    },
+    "wrap-max-width": {
+      "value": "1200px",
+      "type": "dimension",
+      "description": "컨텐츠 최대 너비"
+    },
+    "wrap-padding": {
+      "value": "0 20px",
+      "type": "spacing",
+      "description": "좌우 여백"
+    },
+    "breakpoint-mo": {
+      "value": "768px",
+      "type": "dimension",
+      "description": "모바일 분기점"
+    },
+    "header-height-pc": {
+      "value": "80px",
+      "type": "dimension",
+      "description": "헤더 높이 PC"
+    },
+    "header-height-mo": {
+      "value": "60px",
+      "type": "dimension",
+      "description": "헤더 높이 MO"
+    }
+  },
+  "colors": {
+    "color-primary": {
+      "value": "#2ABFB0",
+      "type": "color",
+      "description": "메인 컬러"
+    },
+    "color-primary-dark": {
+      "value": "#1FA99B",
+      "type": "color",
+      "description": "호버 상태"
+    },
+    "color-primary-light": {
+      "value": "#E8F9F7",
+      "type": "color",
+      "description": "배경 포인트"
+    },
+    "color-text": {
+      "value": "#1A1A2E",
+      "type": "color",
+      "description": "기본 텍스트"
+    },
+    "color-text-sub": {
+      "value": "rgba(26,26,46,0.6)",
+      "type": "color",
+      "description": "보조 텍스트"
+    },
+    "color-text-muted": {
+      "value": "rgba(26,26,46,0.4)",
+      "type": "color",
+      "description": "흐린 텍스트"
+    },
+    "color-white": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "흰색"
+    },
+    "color-bg-soft": {
+      "value": "#F4FDFB",
+      "type": "color",
+      "description": "연한 민트 배경"
+    },
+    "color-bg-light": {
+      "value": "#F8F8F8",
+      "type": "color",
+      "description": "연한 회색 배경"
+    },
+    "color-border": {
+      "value": "#EEEEEE",
+      "type": "color",
+      "description": "기본 선"
+    },
+    "color-border-dark": {
+      "value": "rgba(255,255,255,0.1)",
+      "type": "color",
+      "description": "어두운 배경 선"
+    },
+    "color-dark-1": {
+      "value": "#1A1A2E",
+      "type": "color",
+      "description": "가장 어두운 배경"
+    },
+    "color-dark-2": {
+      "value": "#0d1b2a",
+      "type": "color",
+      "description": "TRUST 다크 배경"
+    },
+    "color-dark-3": {
+      "value": "#111111",
+      "type": "color",
+      "description": "갤러리/푸터 배경"
+    },
+    "color-dark-4": {
+      "value": "#1e1e1e",
+      "type": "color",
+      "description": "카드 배경 (다크)"
+    },
+    "color-new": {
+      "value": "#2ABFB0",
+      "type": "color",
+      "description": "NEW 배지"
+    },
+    "color-event": {
+      "value": "#FF6B6B",
+      "type": "color",
+      "description": "이벤트 배지"
+    },
+    "color-star": {
+      "value": "#FFB800",
+      "type": "color",
+      "description": "별점"
+    },
+    "color-placeholder": {
+      "value": "#c8d8d6",
+      "type": "color",
+      "description": "이미지 placeholder"
+    }
+  }
+}

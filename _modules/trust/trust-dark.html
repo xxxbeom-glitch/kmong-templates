@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>trust-bar</title>
+  <title>trust-dark</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
@@ -32,10 +32,6 @@
       color: var(--color-white);
     }
 
-    ul {
-      list-style: none;
-    }
-
     .wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -54,84 +50,82 @@
     }
 
     /* TRUST */
-    .trust-bar {
-      background-color: #111111;
-      padding: 80px 0;
+    .trust-dark {
+      background-color: #0d1b2a;
+      padding: 100px 0;
     }
 
-    .trust-bar__card {
-      background-color: #1e1e1e;
-      border-radius: 20px;
-      padding: 60px 80px;
-    }
-
-    .trust-bar__list {
-      display: flex;
-      align-items: stretch;
-    }
-
-    .trust-bar__item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .trust-dark__title {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--color-white);
       text-align: center;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      line-height: 1.4;
+      margin-bottom: 60px;
     }
 
-    .trust-bar__item:last-child {
-      border-right: none;
+    .trust-dark__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    .trust-bar__number {
-      font-size: 52px;
+    .trust-dark__item {
+      flex: 1;
+      text-align: center;
+      padding: 0 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .trust-dark__item:first-child {
+      border-left: none;
+    }
+
+    .trust-dark__label {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .trust-dark__number {
+      font-size: 56px;
       font-weight: 700;
       color: var(--color-white);
       line-height: 1.2;
     }
 
-    .trust-bar__plus {
+    .trust-dark__unit {
       color: var(--color-primary);
-      font-size: 32px;
-    }
-
-    .trust-bar__label {
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.5);
-      margin-top: 10px;
     }
 
     @media (max-width: 768px) {
-      .trust-bar {
-        padding: 50px 0;
+      .trust-dark {
+        padding: 60px 0;
       }
 
-      .trust-bar__card {
-        padding: 40px 24px;
+      .trust-dark__title {
+        font-size: 26px;
+        margin-bottom: 40px;
       }
 
-      .trust-bar__list {
+      .trust-dark__list {
         flex-direction: column;
       }
 
-      .trust-bar__item {
-        border-right: none;
+      .trust-dark__item {
+        border-left: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 24px 0;
       }
 
-      .trust-bar__item:last-child {
+      .trust-dark__item:last-child {
         border-bottom: none;
       }
 
-      .trust-bar__number {
+      .trust-dark__number {
         font-size: 36px;
-      }
-
-      .trust-bar__plus {
-        font-size: 24px;
       }
     }
   </style>
@@ -139,24 +133,24 @@
 <body>
 
   <!-- TRUST START -->
-  <section class="trust-bar fade-in">
+  <section class="trust-dark fade-in">
     <div class="wrap">
-      <div class="trust-bar__card">
-        <ul class="trust-bar__list">
-          <li class="trust-bar__item">
-            <p class="trust-bar__number">24,600건<span class="trust-bar__plus">+</span></p>
-            <p class="trust-bar__label">누적 이용자수</p>
-          </li>
-          <li class="trust-bar__item">
-            <p class="trust-bar__number">15,032건<span class="trust-bar__plus">+</span></p>
-            <p class="trust-bar__label">누적 계약수</p>
-          </li>
-          <li class="trust-bar__item">
-            <p class="trust-bar__number">99<span class="trust-bar__plus">%</span></p>
-            <p class="trust-bar__label">고객만족도</p>
-          </li>
-        </ul>
-      </div>
+      <h2 class="trust-dark__title">숫자로 보는 신뢰,<br>우리의 성과를 확인하세요</h2>
+
+      <ul class="trust-dark__list">
+        <li class="trust-dark__item">
+          <p class="trust-dark__label">누적 고객수</p>
+          <p class="trust-dark__number">30,000<span class="trust-dark__unit">+</span></p>
+        </li>
+        <li class="trust-dark__item">
+          <p class="trust-dark__label">누적 계약수</p>
+          <p class="trust-dark__number">250<span class="trust-dark__unit">+</span></p>
+        </li>
+        <li class="trust-dark__item">
+          <p class="trust-dark__label">운영 경력</p>
+          <p class="trust-dark__number">13<span class="trust-dark__unit">년</span></p>
+        </li>
+      </ul>
     </div>
   </section>
   <!-- TRUST END -->

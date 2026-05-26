@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>team-card</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* TEAM */
+    .team-card {
+      background-color: var(--color-bg-soft);
+      padding: 100px 0;
+    }
+
+    .team-card__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .team-card__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .team-card__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+
+    .team-card__desc {
+      font-size: 15px;
+      color: var(--color-text);
+      opacity: 0.6;
+    }
+
+    .team-card__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .team-card__item {
+      background-color: var(--color-white);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card__item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-card__photo {
+      display: block;
+      width: 100%;
+      height: 260px;
+      background-color: #c8d8d6;
+      object-fit: cover;
+    }
+
+    .team-card__bar {
+      height: 3px;
+      background-color: var(--color-primary);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.3s ease;
+    }
+
+    .team-card__item:hover .team-card__bar {
+      transform: scaleX(1);
+    }
+
+    .team-card__body {
+      padding: 24px;
+    }
+
+    .team-card__name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .team-card__role {
+      font-size: 13px;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .team-card__bio {
+      font-size: 14px;
+      color: var(--color-text);
+      opacity: 0.6;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .team-card {
+        padding: 60px 0;
+      }
+
+      .team-card__title {
+        font-size: 24px;
+      }
+
+      .team-card__head {
+        margin-bottom: 40px;
+      }
+
+      .team-card__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-card__list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TEAM START -->
+  <section class="team-card fade-in">
+    <div class="wrap">
+      <header class="team-card__head">
+        <p class="team-card__label">Team</p>
+        <h2 class="team-card__title">팀원 소개</h2>
+        <p class="team-card__desc">전문성과 경험을 갖춘 팀원들을 소개합니다</p>
+      </header>
+
+      <ul class="team-card__list">
+        <li class="team-card__item">
+          <img class="team-card__photo" src="" alt="홍길동 프로필">
+          <div class="team-card__bar"></div>
+          <div class="team-card__body">
+            <h3 class="team-card__name">홍길동</h3>
+            <p class="team-card__role">대표 / 포지션</p>
+            <p class="team-card__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+          </div>
+        </li>
+        <li class="team-card__item">
+          <img class="team-card__photo" src="" alt="홍길동 프로필">
+          <div class="team-card__bar"></div>
+          <div class="team-card__body">
+            <h3 class="team-card__name">홍길동</h3>
+            <p class="team-card__role">대표 / 포지션</p>
+            <p class="team-card__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+          </div>
+        </li>
+        <li class="team-card__item">
+          <img class="team-card__photo" src="" alt="홍길동 프로필">
+          <div class="team-card__bar"></div>
+          <div class="team-card__body">
+            <h3 class="team-card__name">홍길동</h3>
+            <p class="team-card__role">대표 / 포지션</p>
+            <p class="team-card__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+          </div>
+        </li>
+        <li class="team-card__item">
+          <img class="team-card__photo" src="" alt="홍길동 프로필">
+          <div class="team-card__bar"></div>
+          <div class="team-card__body">
+            <h3 class="team-card__name">홍길동</h3>
+            <p class="team-card__role">대표 / 포지션</p>
+            <p class="team-card__bio">10년 이상의 경력으로 프로젝트를 이끌어온 전문가입니다</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- TEAM END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

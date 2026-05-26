@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>footer-minimal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* FOOTER */
+    .footer-minimal {
+      background-color: #111111;
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    .footer-minimal__logo {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-minimal__logo img {
+      display: block;
+      width: 120px;
+      height: 40px;
+      background-color: #c8d8d6;
+      border-radius: 4px;
+      margin: 0 auto;
+    }
+
+    .footer-minimal__info {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .footer-minimal__info span {
+      color: rgba(255, 255, 255, 0.15);
+    }
+
+    .footer-minimal__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-minimal__copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .footer-minimal__legal {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-minimal__legal a {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+      transition: color 0.3s ease;
+    }
+
+    .footer-minimal__legal a:hover {
+      color: var(--color-white);
+    }
+
+    @media (max-width: 768px) {
+      .footer-minimal__info {
+        font-size: 12px;
+      }
+
+      .footer-minimal__bottom {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FOOTER START -->
+  <footer class="footer-minimal">
+    <div class="wrap">
+      <a href="#" class="footer-minimal__logo">
+        <img src="" alt="로고">
+      </a>
+
+      <p class="footer-minimal__info">
+        상호명: OO 주식회사 <span>·</span>
+        대표자: 대표 홍길동 <span>·</span>
+        사업자등록번호: 000-00-00000 <span>·</span>
+        주소: 서울특별시 OO구 OO로 000, OO빌딩 0층 <span>·</span>
+        전화: 000-0000-0000 <span>·</span>
+        이메일: info@example.com <span>·</span>
+        운영시간: 평일 09:00 - 18:00 (주말/공휴일 휴무)
+      </p>
+
+      <div class="footer-minimal__bottom">
+        <p class="footer-minimal__copy">ⓒ 2025 OO 주식회사. All rights reserved.</p>
+        <div class="footer-minimal__legal">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+</body>
+</html>

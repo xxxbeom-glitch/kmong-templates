@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery-slider</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-white);
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* GALLERY SLIDER */
+    .gallery-slider {
+      background-color: #111111;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .gallery-slider__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .gallery-slider__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 60px;
+    }
+
+    .gallery-slider__stage {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+    }
+
+    .gallery-slider__stage::before,
+    .gallery-slider__stage::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .gallery-slider__stage::before {
+      left: 0;
+      background: linear-gradient(to right, #111111, transparent);
+    }
+
+    .gallery-slider__stage::after {
+      right: 0;
+      background: linear-gradient(to left, #111111, transparent);
+    }
+
+    .gallery-slider__rows {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .gallery-slider__track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation-duration: 30s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .gallery-slider__track:hover {
+      animation-play-state: paused;
+    }
+
+    .gallery-slider__track--left {
+      animation-name: scrollLeft;
+    }
+
+    .gallery-slider__track--right {
+      animation-name: scrollRight;
+    }
+
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes scrollRight {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .gallery-slider__card {
+      flex-shrink: 0;
+      width: 320px;
+      height: 220px;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+
+    .gallery-slider__card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-slider__card:hover .gallery-slider__card-inner {
+      transform: scale(1.04);
+    }
+
+    .gallery-slider__card--c1 .gallery-slider__card-inner {
+      background-color: #c8d8d6;
+    }
+
+    .gallery-slider__card--c2 .gallery-slider__card-inner {
+      background-color: #b8ceca;
+    }
+
+    .gallery-slider__card--c3 .gallery-slider__card-inner {
+      background-color: #a8bec0;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-slider {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      .gallery-slider__title {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+
+      .gallery-slider__stage::before,
+      .gallery-slider__stage::after {
+        width: 60px;
+      }
+
+      .gallery-slider__card {
+        width: 220px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GALLERY SLIDER START -->
+  <section class="gallery-slider">
+    <header class="wrap">
+      <p class="gallery-slider__label">Gallery</p>
+      <h2 class="gallery-slider__title">갤러리</h2>
+    </header>
+
+    <div class="gallery-slider__stage">
+      <div class="gallery-slider__rows">
+        <div class="gallery-slider__track gallery-slider__track--left" aria-hidden="true">
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+        </div>
+
+        <div class="gallery-slider__track gallery-slider__track--right" aria-hidden="true">
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c1"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c2"><div class="gallery-slider__card-inner"></div></div>
+          <div class="gallery-slider__card gallery-slider__card--c3"><div class="gallery-slider__card-inner"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- GALLERY SLIDER END -->
+
+  <script>
+    (function () {
+      "use strict";
+    })();
+  </script>
+</body>
+</html>

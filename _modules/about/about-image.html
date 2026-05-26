@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about-image</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --color-primary: #2abfb0;
+      --color-white: #ffffff;
+      --color-text: #1a1a2e;
+      --color-bg-soft: #f4fdfb;
+      --radius-btn: 6px;
+      --radius-card: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* ABOUT */
+    .about-image {
+      background-color: var(--color-white);
+      padding: 100px 0;
+    }
+
+    .about-image__inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .about-image__visual {
+      flex: 1;
+      height: 520px;
+      background-color: #c8d8d6;
+      border-radius: var(--radius-card);
+    }
+
+    .about-image__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 80px;
+    }
+
+    .about-image__label {
+      font-size: 13px;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .about-image__title {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .about-image__desc {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--color-text);
+      opacity: 0.7;
+      margin-bottom: 36px;
+    }
+
+    .about-image__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .about-image__list li {
+      position: relative;
+      padding-left: 28px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .about-image__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+    }
+
+    .about-image__list li::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      width: 6px;
+      height: 3px;
+      border-left: 2px solid var(--color-white);
+      border-bottom: 2px solid var(--color-white);
+      transform: rotate(-45deg);
+    }
+
+    .about-image__cta {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .about-image__cta:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .about-image {
+        padding: 60px 0;
+      }
+
+      .about-image__inner {
+        flex-direction: column;
+      }
+
+      .about-image__visual {
+        width: 100%;
+        height: 280px;
+      }
+
+      .about-image__text {
+        padding-left: 0;
+        padding-top: 32px;
+      }
+
+      .about-image__title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ABOUT START -->
+  <section class="about-image fade-in">
+    <div class="wrap about-image__inner">
+      <div class="about-image__visual" aria-hidden="true"></div>
+
+      <div class="about-image__text">
+        <p class="about-image__label">ABOUT US</p>
+        <h2 class="about-image__title">타이틀을 입력하세요</h2>
+        <p class="about-image__desc">
+          우리는 고객의 가치를 최우선으로 생각합니다.<br>
+          차별화된 접근 방식으로 더 나은 경험을 제공하며,<br>
+          지속적인 혁신을 통해 성장해 나가고 있습니다.
+        </p>
+
+        <ul class="about-image__list">
+          <li>포인트 항목 텍스트를 입력하세요</li>
+          <li>포인트 항목 텍스트를 입력하세요</li>
+          <li>포인트 항목 텍스트를 입력하세요</li>
+          <li>포인트 항목 텍스트를 입력하세요</li>
+        </ul>
+
+        <a href="#" class="about-image__cta">자세히 보기</a>
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
