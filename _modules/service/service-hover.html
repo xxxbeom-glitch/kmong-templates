@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>service-hover</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --service-color-bg: #fafafa;
+      --service-color-card: #f5f6f6;
+      --service-color-text: #000000;
+      --service-font-size-title: 58px;
+      --service-font-size-desc: 24px;
+      --service-font-size-card-title: 30px;
+      --service-font-size-card-desc: 20px;
+      --service-line-height-title: 1.4;
+      --service-line-height-desc: 1.58;
+      --service-line-height-card-title: 1.4;
+      --service-line-height-card-desc: 1.56;
+      --service-gap-title-desc: 26px;
+      --service-gap-head-cards: 80px;
+      --service-gap-cards: 24px;
+      --service-card-padding-x: 26px;
+      --service-card-padding-y: 48px;
+      --service-card-radius: 16px;
+      --service-page-padding-x: 64px;
+      --service-section-padding-top: 100px;
+      --service-section-padding-bottom: 100px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      color: var(--service-color-text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* SERVICE */
+    .service-hover {
+      background-color: var(--service-color-bg);
+      padding: var(--service-section-padding-top) 0 var(--service-section-padding-bottom);
+    }
+
+    .service-hover__head {
+      text-align: center;
+      margin-bottom: var(--service-gap-head-cards);
+    }
+
+    .service-hover__title {
+      margin-bottom: var(--service-gap-title-desc);
+      font-size: var(--service-font-size-title);
+      font-weight: 700;
+      line-height: var(--service-line-height-title);
+    }
+
+    .service-hover__desc {
+      font-size: var(--service-font-size-desc);
+      font-weight: 500;
+      line-height: var(--service-line-height-desc);
+    }
+
+    .service-hover__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--service-gap-cards);
+      width: 100%;
+      padding: 0 var(--service-page-padding-x);
+    }
+
+    .service-hover__card {
+      position: relative;
+      min-height: 551px;
+      border-radius: var(--service-card-radius);
+      background-color: var(--service-color-card);
+      padding: var(--service-card-padding-y) var(--service-card-padding-x);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .service-hover__card-content {
+      position: absolute;
+      left: var(--service-card-padding-x);
+      right: var(--service-card-padding-x);
+      bottom: var(--service-card-padding-y);
+    }
+
+    .service-hover__card-title {
+      font-size: var(--service-font-size-card-title);
+      font-weight: 700;
+      line-height: var(--service-line-height-card-title);
+    }
+
+    .service-hover__card-copy {
+      margin-top: 10px;
+      font-size: var(--service-font-size-card-desc);
+      font-weight: 500;
+      line-height: var(--service-line-height-card-desc);
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease, max-height 0.25s ease;
+    }
+
+    .service-hover__card:hover .service-hover__card-copy {
+      opacity: 1;
+      max-height: 120px;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .service-hover__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .service-hover {
+        padding: 60px 0;
+      }
+
+      .service-hover__head {
+        margin-bottom: 40px;
+      }
+
+      .service-hover__title {
+        font-size: 32px;
+      }
+
+      .service-hover__desc {
+        font-size: 16px;
+      }
+
+      .service-hover__grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+      }
+
+      .service-hover__card {
+        min-height: 360px;
+      }
+
+      .service-hover__card-copy {
+        opacity: 1;
+        max-height: 120px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SERVICE START -->
+  <section class="service-hover fade-in">
+    <div class="wrap">
+      <header class="service-hover__head">
+        <h2 class="service-hover__title">당신의 신체 변화를 위한 가장 과학적인 솔루션</h2>
+        <p class="service-hover__desc">데이터를 통해 검증된 알고리즘이 설계하는 체계적인 관리 시스템을 확인하세요</p>
+      </header>
+    </div>
+
+    <div class="service-hover__grid">
+      <article class="service-hover__card">
+        <div class="service-hover__card-content">
+          <h3 class="service-hover__card-title">정밀 분석 시스템</h3>
+          <p class="service-hover__card-copy">신체 데이터를 측정하고 대사 과정을 추적하여 현재 상태를 완벽하게 파악</p>
+        </div>
+      </article>
+
+      <article class="service-hover__card">
+        <div class="service-hover__card-content">
+          <h3 class="service-hover__card-title">1:1 맞춤형 로드맵</h3>
+          <p class="service-hover__card-copy">목표 체중에 도달하기까지 필요한 매일의 영양 섭취량과 최적의 운동 강도를 실시간으로 조정</p>
+        </div>
+      </article>
+
+      <article class="service-hover__card">
+        <div class="service-hover__card-content">
+          <h3 class="service-hover__card-title">지속가능한 라이프 스타일</h3>
+          <p class="service-hover__card-copy">일회성 관리가 아닌, 평생 유지 가능한 올바른 식습관과 운동 습관 형성을 목표</p>
+        </div>
+      </article>
+
+      <article class="service-hover__card">
+        <div class="service-hover__card-content">
+          <h3 class="service-hover__card-title">인터렉티브 피드백 루프</h3>
+          <p class="service-hover__card-copy">데이터 기반의 실시간 응원 메시지가 당신의 의지를 매일 새롭게 한다.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- SERVICE END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

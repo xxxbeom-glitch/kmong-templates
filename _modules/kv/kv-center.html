@@ -7,12 +7,32 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --kv-color-bg: #fafafa;
+      --kv-color-text: #000000;
+      --kv-color-primary: #3842ff;
+      --kv-color-btn-secondary: #e5e8ee;
+      --kv-color-logo: #e3e5eb;
+      --kv-font-size-title: 70px;
+      --kv-font-size-desc: 26px;
+      --kv-font-size-nav: 20px;
+      --kv-font-size-btn: 24px;
+      --kv-line-height-title: 1.44;
+      --kv-line-height-desc: 1.5;
+      --kv-line-height-nav: 1.5;
+      --kv-line-height-btn: 1.5;
+      --kv-gap-title-desc: 32px;
+      --kv-gap-copy-btns: 52px;
+      --kv-gap-btns: 18px;
+      --kv-gap-nav: 36px;
+      --kv-radius-btn: 12px;
+      --kv-btn-min-width: 168px;
+      --kv-btn-height: 74px;
+      --kv-logo-width: 180px;
+      --kv-logo-height: 76px;
+      --kv-header-height: 76px;
+      --kv-section-min-height: 1080px;
+      --kv-padding-top: 36px;
+      --kv-wrap-width: 1200px;
     }
 
     *,
@@ -29,7 +49,7 @@
     body {
       font-family: "SUIT", sans-serif;
       line-height: 1.6;
-      color: var(--color-text);
+      color: var(--kv-color-text);
     }
 
     a {
@@ -45,76 +65,52 @@
     }
 
     .wrap {
-      max-width: 1200px;
+      max-width: var(--kv-wrap-width);
       margin: 0 auto;
       padding: 0 20px;
     }
 
     /* HEADER */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: transparent;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    .kv-header {
+      flex-shrink: 0;
     }
 
-    .header.scrolled {
-      background-color: var(--color-white);
-      box-shadow: 0 2px 12px rgba(26, 26, 46, 0.08);
-    }
-
-    .header .wrap {
+    .kv-header .wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      min-height: var(--kv-header-height);
       gap: 24px;
     }
 
-    .header__logo img {
+    .kv-header__logo {
       display: block;
-      width: 120px;
-      height: 40px;
-      background-color: #c8d8d6;
-      border-radius: 4px;
+      flex-shrink: 0;
+      width: var(--kv-logo-width);
+      height: var(--kv-logo-height);
+      background-color: var(--kv-color-logo);
     }
 
-    .header__nav {
+    .kv-header__nav {
       display: flex;
       align-items: center;
-      gap: 36px;
+      gap: var(--kv-gap-nav);
       margin-left: auto;
     }
 
-    .header__nav a {
-      font-size: 15px;
+    .kv-header__nav a {
+      font-size: var(--kv-font-size-nav);
       font-weight: 500;
-      color: var(--color-white);
-      transition: color 0.3s ease;
+      color: var(--kv-color-text);
+      line-height: var(--kv-line-height-nav);
+      white-space: nowrap;
     }
 
-    .header.scrolled .header__nav a {
-      color: var(--color-text);
+    .kv-header__nav a:hover {
+      color: var(--kv-color-primary);
     }
 
-    .header__nav a:hover {
-      color: var(--color-primary);
-    }
-
-    .header__cta {
-      flex-shrink: 0;
-      padding: 10px 22px;
-      border-radius: var(--radius-btn);
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .hamburger {
+    .kv-header__hamburger {
       display: none;
       flex-direction: column;
       justify-content: center;
@@ -124,35 +120,27 @@
       flex-shrink: 0;
     }
 
-    .hamburger span {
+    .kv-header__hamburger span {
       display: block;
       width: 100%;
       height: 2px;
-      background-color: var(--color-white);
-      transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+      background-color: var(--kv-color-text);
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .header.scrolled .hamburger span {
-      background-color: var(--color-text);
-    }
-
-    .header.is-open .hamburger span {
-      background-color: var(--color-white);
-    }
-
-    .header.is-open .hamburger span:nth-child(1) {
+    .kv-header.is-open .kv-header__hamburger span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
 
-    .header.is-open .hamburger span:nth-child(2) {
+    .kv-header.is-open .kv-header__hamburger span:nth-child(2) {
       opacity: 0;
     }
 
-    .header.is-open .hamburger span:nth-child(3) {
+    .kv-header.is-open .kv-header__hamburger span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
 
-    .nav-overlay {
+    .kv-header__overlay {
       position: fixed;
       inset: 0;
       z-index: 999;
@@ -160,109 +148,97 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 32px;
-      background-color: var(--color-text);
+      gap: 28px;
+      background-color: var(--kv-color-text);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    .nav-overlay.open {
+    .kv-header__overlay.open {
       opacity: 1;
       visibility: visible;
     }
 
-    .nav-overlay__nav {
+    .kv-header__overlay-nav {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
     }
 
-    .nav-overlay__nav a {
+    .kv-header__overlay-nav a {
       font-size: 24px;
       font-weight: 500;
-      color: var(--color-white);
-    }
-
-    .nav-overlay__cta {
-      padding: 12px 28px;
-      border-radius: var(--radius-btn);
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      font-size: 16px;
-      font-weight: 600;
+      color: #ffffff;
     }
 
     /* KV */
     .kv-center {
-      position: relative;
-      width: 100%;
-      height: 800px;
-      background-color: #c8d8d6;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: var(--kv-section-min-height);
+      background-color: var(--kv-color-bg);
+      padding-top: var(--kv-padding-top);
     }
 
-    .kv-center__overlay {
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.45);
-      z-index: 1;
-    }
-
-    .kv-center .wrap {
-      position: relative;
-      z-index: 2;
+    .kv-center__body {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
     }
 
-    .kv-center__content {
+    .kv-center__copy {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: var(--kv-gap-copy-btns);
+      max-width: 893px;
     }
 
-    .kv-center__sub {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--color-white);
-      letter-spacing: 0.1em;
-      text-transform: lowercase;
-      margin-bottom: 16px;
+    .kv-center__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--kv-gap-title-desc);
     }
 
     .kv-center__title {
-      font-size: 56px;
+      font-size: var(--kv-font-size-title);
       font-weight: 700;
-      color: var(--color-white);
-      line-height: 1.3;
-      margin-bottom: 16px;
+      color: var(--kv-color-text);
+      line-height: var(--kv-line-height-title);
     }
 
     .kv-center__desc {
-      font-size: 16px;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 40px;
+      font-size: var(--kv-font-size-desc);
+      font-weight: 500;
+      color: var(--kv-color-text);
+      line-height: var(--kv-line-height-desc);
     }
 
     .kv-center__btns {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--kv-gap-btns);
     }
 
     .kv-center__btn {
-      display: inline-block;
-      padding: 14px 32px;
-      border-radius: var(--radius-btn);
-      font-size: 0.9375rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: var(--kv-btn-min-width);
+      min-height: var(--kv-btn-height);
+      padding: 10px 24px;
+      border-radius: var(--kv-radius-btn);
+      font-size: var(--kv-font-size-btn);
       font-weight: 500;
-      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+      line-height: var(--kv-line-height-btn);
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .kv-center__btn:hover {
@@ -270,182 +246,121 @@
     }
 
     .kv-center__btn--primary {
-      background-color: var(--color-primary);
-      color: var(--color-white);
+      background-color: var(--kv-color-primary);
+      color: #ffffff;
     }
 
-    .kv-center__btn--outline {
-      border: 2px solid var(--color-white);
-      background-color: transparent;
-      color: var(--color-white);
-    }
-
-    .kv-center__scroll {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      z-index: 2;
-      transform: translateX(-50%);
-    }
-
-    .kv-center__scroll-icon {
-      display: block;
-      width: 24px;
-      height: 40px;
-      border: 2px solid var(--color-white);
-      border-radius: 12px;
-      position: relative;
-    }
-
-    .kv-center__scroll-icon::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      width: 4px;
-      height: 8px;
-      margin-left: -2px;
-      border-radius: 2px;
-      background-color: var(--color-white);
-      animation: kv-bounce 1.6s ease-in-out infinite;
-    }
-
-    @keyframes kv-bounce {
-      0%,
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      50% {
-        transform: translateY(10px);
-        opacity: 0.4;
-      }
+    .kv-center__btn--secondary {
+      background-color: var(--kv-color-btn-secondary);
+      color: var(--kv-color-text);
     }
 
     @media (max-width: 768px) {
-      .header .wrap {
-        height: 60px;
+      .kv-center {
+        min-height: 100vh;
+        padding-top: 20px;
       }
 
-      .header__nav,
-      .header__cta {
+      .kv-header__nav {
         display: none;
       }
 
-      .hamburger {
+      .kv-header__hamburger {
         display: flex;
       }
 
-      .kv-center {
-        height: 600px;
-      }
-
       .kv-center__title {
-        font-size: 34px;
+        font-size: 36px;
       }
 
       .kv-center__desc {
-        font-size: 14px;
+        font-size: 18px;
       }
 
       .kv-center__btns {
         flex-direction: column;
         width: 100%;
-        max-width: 280px;
       }
 
       .kv-center__btn {
         width: 100%;
-        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER START -->
-  <header class="header">
-    <div class="wrap">
-      <a href="/" class="header__logo">
-        <img src="" alt="로고">
-      </a>
-
-      <nav class="header__nav">
-        <a href="#">메뉴1</a>
-        <a href="#">메뉴2</a>
-        <a href="#">메뉴3</a>
-        <a href="#">메뉴4</a>
-      </nav>
-
-      <a href="#" class="header__cta">문의하기</a>
-
-      <button type="button" class="hamburger" aria-label="메뉴 열기">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <div class="nav-overlay">
-      <nav class="nav-overlay__nav">
-        <a href="#">메뉴1</a>
-        <a href="#">메뉴2</a>
-        <a href="#">메뉴3</a>
-        <a href="#">메뉴4</a>
-      </nav>
-      <a href="#" class="nav-overlay__cta">문의하기</a>
-    </div>
-  </header>
-  <!-- HEADER END -->
-
   <!-- KV START -->
-  <main>
-    <section class="kv-center">
-      <div class="kv-center__overlay"></div>
-
+  <section class="kv-center">
+    <header class="kv-header">
       <div class="wrap">
-        <div class="kv-center__content">
-          <p class="kv-center__sub">Subtitle Text</p>
-          <h1 class="kv-center__title">메인 타이틀을<br>입력하세요</h1>
-          <p class="kv-center__desc">서브 타이틀 또는 간단한 설명 문구를 입력합니다</p>
-          <div class="kv-center__btns">
-            <a href="#" class="kv-center__btn kv-center__btn--primary">시작하기</a>
-            <a href="#" class="kv-center__btn kv-center__btn--outline">더 알아보기</a>
-          </div>
+        <a href="/" class="kv-header__logo" aria-label="로고"></a>
+
+        <nav class="kv-header__nav">
+          <a href="#">첫번째 메뉴</a>
+          <a href="#">두번째 메뉴</a>
+          <a href="#">세번째 메뉴</a>
+          <a href="#">네번째 메뉴</a>
+        </nav>
+
+        <button type="button" class="kv-header__hamburger" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="kv-header__overlay">
+        <nav class="kv-header__overlay-nav">
+          <a href="#">첫번째 메뉴</a>
+          <a href="#">두번째 메뉴</a>
+          <a href="#">세번째 메뉴</a>
+          <a href="#">네번째 메뉴</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrap kv-center__body">
+      <div class="kv-center__copy">
+        <div class="kv-center__text">
+          <h1 class="kv-center__title">데이터가 만드는 최적의 피지컬,<br>나만을 위한 AI 코치</h1>
+          <p class="kv-center__desc">당신의 체성분과 생활 패턴을 정밀하게 분석하여 가장 효율적인 식단과<br>운동 루틴을 설계해요</p>
+        </div>
+        <div class="kv-center__btns">
+          <a href="#" class="kv-center__btn kv-center__btn--primary">시작하기</a>
+          <a href="#" class="kv-center__btn kv-center__btn--secondary">더 알아보기</a>
         </div>
       </div>
-
-      <div class="kv-center__scroll" aria-hidden="true">
-        <span class="kv-center__scroll-icon"></span>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
   <!-- KV END -->
 
   <script>
     (function () {
       "use strict";
 
-      var header = document.querySelector(".header");
-      var hamburger = document.querySelector(".hamburger");
-      var navOverlay = document.querySelector(".nav-overlay");
-      var overlayLinks = document.querySelectorAll(".nav-overlay__nav a, .nav-overlay__cta");
+      var header = document.querySelector(".kv-header");
+      var hamburger = document.querySelector(".kv-header__hamburger");
+      var overlay = document.querySelector(".kv-header__overlay");
+      var overlayLinks = document.querySelectorAll(".kv-header__overlay-nav a");
 
       function closeOverlay() {
-        navOverlay.classList.remove("open");
+        if (!overlay || !header) return;
+        overlay.classList.remove("open");
         header.classList.remove("is-open");
         document.body.style.overflow = "";
       }
 
       function openOverlay() {
-        navOverlay.classList.add("open");
+        if (!overlay || !header) return;
+        overlay.classList.add("open");
         header.classList.add("is-open");
         document.body.style.overflow = "hidden";
       }
 
-      if (hamburger && navOverlay) {
+      if (hamburger && overlay) {
         hamburger.addEventListener("click", function () {
-          if (navOverlay.classList.contains("open")) {
+          if (overlay.classList.contains("open")) {
             closeOverlay();
           } else {
             openOverlay();
@@ -456,21 +371,6 @@
       overlayLinks.forEach(function (link) {
         link.addEventListener("click", closeOverlay);
       });
-
-      function onScroll() {
-        var scrollY = window.scrollY || window.pageYOffset;
-
-        if (header) {
-          if (scrollY >= 50) {
-            header.classList.add("scrolled");
-          } else {
-            header.classList.remove("scrolled");
-          }
-        }
-      }
-
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
     })();
   </script>
 </body>

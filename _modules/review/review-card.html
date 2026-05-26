@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>review-card</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --review-color-bg: #fafafa;
+      --review-color-text: #000000;
+      --review-color-text-muted: #2b2b2c;
+      --review-color-text-inverse: #ffffff;
+      --review-color-card-light: #ffffff;
+      --review-color-card-dark: #2b2b2c;
+      --review-color-card-border: #f1f4f8;
+      --review-color-avatar: #d9d9d9;
+      --review-color-star: #ffc832;
+      --review-font-size-title: 58px;
+      --review-font-size-desc: 24px;
+      --review-font-size-body: 20px;
+      --review-line-height-title: 1.4;
+      --review-line-height-desc: 1.58;
+      --review-line-height-body: 1.56;
+      --review-gap-title-desc: 26px;
+      --review-gap-head-cards: 80px;
+      --review-gap-cards: 24px;
+      --review-gap-stars-body: 26px;
+      --review-gap-body-profile: 18px;
+      --review-gap-profile-text: 6px;
+      --review-gap-profile-items: 16px;
+      --review-card-padding-x: 26px;
+      --review-card-padding-y: 48px;
+      --review-card-radius: 16px;
+      --review-card-min-height: 367px;
+      --review-page-padding-x: 64px;
+      --review-section-padding-top: 100px;
+      --review-section-padding-bottom: 100px;
+      --review-avatar-size: 77px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--review-color-text);
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* REVIEW */
+    .review-card {
+      background-color: var(--review-color-bg);
+      padding: var(--review-section-padding-top) 0 var(--review-section-padding-bottom);
+    }
+
+    .review-card__head {
+      text-align: center;
+      margin-bottom: var(--review-gap-head-cards);
+    }
+
+    .review-card__title {
+      font-size: var(--review-font-size-title);
+      font-weight: 700;
+      line-height: var(--review-line-height-title);
+      margin-bottom: var(--review-gap-title-desc);
+    }
+
+    .review-card__desc {
+      font-size: var(--review-font-size-desc);
+      font-weight: 500;
+      line-height: var(--review-line-height-desc);
+    }
+
+    .review-card__list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--review-gap-cards);
+      width: 100%;
+      padding: 0 var(--review-page-padding-x);
+      list-style: none;
+    }
+
+    .review-card__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: var(--review-card-min-height);
+      padding: var(--review-card-padding-y) var(--review-card-padding-x);
+      border-radius: var(--review-card-radius);
+      background-color: var(--review-color-card-light);
+      border: 1px solid var(--review-color-card-border);
+    }
+
+    .review-card__item--featured {
+      background-color: var(--review-color-card-dark);
+      border-color: transparent;
+    }
+
+    .review-card__stars {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: var(--review-gap-stars-body);
+    }
+
+    .review-card__stars img {
+      display: block;
+      width: 36px;
+      height: auto;
+    }
+
+    .review-card__body {
+      font-size: var(--review-font-size-body);
+      font-weight: 500;
+      line-height: var(--review-line-height-body);
+      color: var(--review-color-text-muted);
+      margin-bottom: var(--review-gap-body-profile);
+    }
+
+    .review-card__item--featured .review-card__body {
+      color: var(--review-color-text-inverse);
+    }
+
+    .review-card__profile {
+      display: flex;
+      align-items: center;
+      gap: var(--review-gap-profile-items);
+    }
+
+    .review-card__avatar {
+      flex-shrink: 0;
+      width: var(--review-avatar-size);
+      height: var(--review-avatar-size);
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: var(--review-color-avatar);
+    }
+
+    .review-card__meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--review-gap-profile-text);
+    }
+
+    .review-card__name,
+    .review-card__info {
+      font-size: var(--review-font-size-body);
+      font-weight: 500;
+      line-height: var(--review-line-height-body);
+      color: var(--review-color-text-muted);
+    }
+
+    .review-card__item--featured .review-card__name,
+    .review-card__item--featured .review-card__info {
+      color: var(--review-color-text-inverse);
+    }
+
+    @media (max-width: 1024px) {
+      .review-card__list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .review-card {
+        padding: 60px 0;
+      }
+
+      .review-card__head {
+        margin-bottom: 40px;
+      }
+
+      .review-card__title {
+        font-size: 32px;
+      }
+
+      .review-card__desc {
+        font-size: 16px;
+      }
+
+      .review-card__list {
+        padding: 0 20px;
+      }
+
+      .review-card__item {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- REVIEW START -->
+  <section class="review-card fade-in">
+    <div class="wrap">
+      <header class="review-card__head">
+        <h2 class="review-card__title">데이터가 바꾼 일상, 직접 경험한 이들의 목소리</h2>
+        <p class="review-card__desc">시행착오 없는 최적의 경로를 통해 목표를 달성한 사용자들의 생생한 기록을 확인해보세요</p>
+      </header>
+    </div>
+
+    <ul class="review-card__list">
+      <li class="review-card__item">
+        <div class="review-card__stars" aria-label="별점 5점">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+        </div>
+        <p class="review-card__body">운동을 어떻게 시작해야 할지 몰라 늘 제자리걸음이었습니다. 이 서비스는 제 신체 데이터를 바탕으로 매일 필요한 운동량과 식단을 딱딱 정해주니 고민할 필요가 없더군요. 3개월 만에 체지방률 6% 감량이라는 목표를 이뤘습니다</p>
+        <div class="review-card__profile">
+          <img class="review-card__avatar" src="../../_imgs/review_01.png" alt="uea**** 프로필">
+          <div class="review-card__meta">
+            <p class="review-card__name">uea****</p>
+            <p class="review-card__info">26세 / 자영업</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="review-card__item review-card__item--featured">
+        <div class="review-card__stars" aria-label="별점 5점">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+        </div>
+        <p class="review-card__body">잦은 야근과 외근으로 규칙적인 운동이 불가능했는데, 제 생활 패턴을 학습한 AI가 가능한 시간대에 맞춰 최적의 루틴을 제시해 주니 꾸준히 지속할 수 있었습니다. 이제는 일상의 활력이 완전히 달라졌습니다</p>
+        <div class="review-card__profile">
+          <img class="review-card__avatar" src="../../_imgs/review_02.png" alt="gem**** 프로필">
+          <div class="review-card__meta">
+            <p class="review-card__name">gem****</p>
+            <p class="review-card__info">32세 / 개발자</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="review-card__item">
+        <div class="review-card__stars" aria-label="별점 5점">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+          <img src="../../_imgs/review_star.svg" alt="" width="36" height="37">
+        </div>
+        <p class="review-card__body">운동을 어떻게 시작해야 할지 몰라 늘 제자리걸음이었습니다. 이 서비스는 제 신체 데이터를 바탕으로 매일 필요한 운동량과 식단을 딱딱 정해주니 고민할 필요가 없더군요. 3개월 만에 체지방률 6% 감량이라는 목표를 이뤘습니다</p>
+        <div class="review-card__profile">
+          <img class="review-card__avatar" src="../../_imgs/review_01.png" alt="uea**** 프로필">
+          <div class="review-card__meta">
+            <p class="review-card__name">uea****</p>
+            <p class="review-card__info">26세 / 자영업</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <!-- REVIEW END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

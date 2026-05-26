@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact-cta</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --contact-color-bg: #f0f0f0;
+      --contact-color-text: #000000;
+      --contact-color-primary: #3842ff;
+      --contact-color-btn-text: #ffffff;
+      --contact-font-size-title: 58px;
+      --contact-font-size-desc: 24px;
+      --contact-font-size-btn: 24px;
+      --contact-line-height-title: 1.4;
+      --contact-line-height-desc: 1.58;
+      --contact-line-height-btn: 1.5;
+      --contact-gap-title-desc: 26px;
+      --contact-gap-head-btn: 50px;
+      --contact-btn-min-width: 218px;
+      --contact-btn-height: 74px;
+      --contact-btn-radius: 12px;
+      --contact-section-padding-y: 82px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--contact-color-text);
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* CONTACT */
+    .contact-cta {
+      background-color: var(--contact-color-bg);
+      padding: var(--contact-section-padding-y) 0;
+    }
+
+    .contact-cta__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--contact-gap-head-btn);
+    }
+
+    .contact-cta__head {
+      max-width: 1200px;
+    }
+
+    .contact-cta__title {
+      font-size: var(--contact-font-size-title);
+      font-weight: 700;
+      line-height: var(--contact-line-height-title);
+      margin-bottom: var(--contact-gap-title-desc);
+    }
+
+    .contact-cta__desc {
+      font-size: var(--contact-font-size-desc);
+      font-weight: 500;
+      line-height: var(--contact-line-height-desc);
+    }
+
+    .contact-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: var(--contact-btn-min-width);
+      min-height: var(--contact-btn-height);
+      padding: 10px 24px;
+      border: none;
+      border-radius: var(--contact-btn-radius);
+      background-color: var(--contact-color-primary);
+      font-family: inherit;
+      font-size: var(--contact-font-size-btn);
+      font-weight: 500;
+      line-height: var(--contact-line-height-btn);
+      color: var(--contact-color-btn-text);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .contact-cta {
+        padding: 60px 0;
+      }
+
+      .contact-cta__title {
+        font-size: 32px;
+      }
+
+      .contact-cta__desc {
+        font-size: 16px;
+      }
+
+      .contact-cta__btn {
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CONTACT START -->
+  <section class="contact-cta fade-in">
+    <div class="wrap">
+      <div class="contact-cta__inner">
+        <header class="contact-cta__head">
+          <h2 class="contact-cta__title">당신의 목표, 전문가와 상담하십시오</h2>
+          <p class="contact-cta__desc">AI 코칭과 관련된 궁금한 점이나 맞춤형 상담이 필요하다면 언제든 문의 바랍니다</p>
+        </header>
+        <a href="#" class="contact-cta__btn">지금 문의하기</a>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var targets = document.querySelectorAll(".fade-in");
+
+      if (targets.length === 0) return;
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        targets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact-form</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --contact-color-bg: #fafafa;
+      --contact-color-text: #000000;
+      --contact-color-field-bg: #ffffff;
+      --contact-color-field-border: #efefef;
+      --contact-color-field-border-active: #000000;
+      --contact-color-placeholder: rgba(0, 0, 0, 0.2);
+      --contact-color-primary: #3842ff;
+      --contact-font-size-title: 58px;
+      --contact-font-size-desc: 24px;
+      --contact-font-size-label: 30px;
+      --contact-font-size-field: 24px;
+      --contact-font-size-btn: 28px;
+      --contact-line-height-title: 1.4;
+      --contact-line-height-desc: 1.58;
+      --contact-line-height-label: 1.4;
+      --contact-line-height-field: 1.58;
+      --contact-line-height-btn: 1.5;
+      --contact-gap-title-desc: 26px;
+      --contact-gap-head-form: 80px;
+      --contact-gap-form-rows: 48px;
+      --contact-gap-form-cols: 24px;
+      --contact-gap-label-field: 14px;
+      --contact-gap-form-btn: 40px;
+      --contact-field-height: 80px;
+      --contact-textarea-height: 204px;
+      --contact-field-padding-x: 26px;
+      /* Figma: placeholder y=21 within 80px field (24px/158% line ≈ 38px) */
+      --contact-field-padding-y: 21px;
+      --contact-textarea-padding-top: 32px;
+      --contact-textarea-padding: var(--contact-textarea-padding-top) var(--contact-field-padding-x);
+      --contact-field-radius: 16px;
+      --contact-btn-width: 471px;
+      --contact-btn-height: 100px;
+      --contact-btn-radius: 12px;
+      --contact-btn-padding: 10px;
+      --contact-color-btn-text: #ffffff;
+      --contact-section-padding-top: 82px;
+      --contact-section-padding-bottom: 100px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SUIT", sans-serif;
+      line-height: 1.6;
+      color: var(--contact-color-text);
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      background-color: var(--contact-color-bg);
+      padding: var(--contact-section-padding-top) 0 var(--contact-section-padding-bottom);
+    }
+
+    .contact-form__head {
+      text-align: center;
+      margin-bottom: var(--contact-gap-head-form);
+    }
+
+    .contact-form__title {
+      font-size: var(--contact-font-size-title);
+      font-weight: 700;
+      line-height: var(--contact-line-height-title);
+      margin-bottom: var(--contact-gap-title-desc);
+    }
+
+    .contact-form__desc {
+      font-size: var(--contact-font-size-desc);
+      font-weight: 500;
+      line-height: var(--contact-line-height-desc);
+    }
+
+    .contact-form__body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--contact-gap-form-rows);
+    }
+
+    .contact-form__row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--contact-gap-form-cols);
+    }
+
+    .contact-form__row--full {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-form__group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--contact-gap-label-field);
+    }
+
+    .contact-form__label {
+      font-size: var(--contact-font-size-label);
+      font-weight: 700;
+      line-height: var(--contact-line-height-label);
+    }
+
+    .contact-form__control {
+      position: relative;
+      border-radius: var(--contact-field-radius);
+      background-color: var(--contact-color-field-bg);
+      /* 1px stroke without shrinking inner box (Figma inside stroke ≈ 80px content) */
+      box-shadow: 0 0 0 1px var(--contact-color-field-border);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .contact-form__control:not(.contact-form__control--textarea) {
+      height: var(--contact-field-height);
+      min-height: var(--contact-field-height);
+    }
+
+    .contact-form__control--textarea {
+      min-height: var(--contact-textarea-height);
+    }
+
+    .contact-form__control.is-focused,
+    .contact-form__control:focus-within {
+      box-shadow: 0 0 0 1px var(--contact-color-field-border-active);
+    }
+
+    .contact-form__control.is-filled {
+      box-shadow: 0 0 0 1px var(--contact-color-field-border);
+    }
+
+    .contact-form__control.is-focused.is-filled,
+    .contact-form__control.is-filled:focus-within {
+      box-shadow: 0 0 0 1px var(--contact-color-field-border-active);
+    }
+
+    .contact-form__dropdown {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .contact-form__input {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: var(--contact-field-padding-y) var(--contact-field-padding-x);
+      border: none;
+      border-radius: var(--contact-field-radius);
+      background: transparent;
+      font-family: inherit;
+      font-size: var(--contact-font-size-field);
+      font-weight: 500;
+      line-height: var(--contact-line-height-field);
+      color: var(--contact-color-text);
+      outline: none;
+    }
+
+    .contact-form__textarea {
+      display: block;
+      width: 100%;
+      min-height: var(--contact-textarea-height);
+      padding: var(--contact-textarea-padding);
+      border: none;
+      border-radius: var(--contact-field-radius);
+      background: transparent;
+      font-family: inherit;
+      font-size: var(--contact-font-size-field);
+      font-weight: 500;
+      line-height: var(--contact-line-height-field);
+      color: var(--contact-color-text);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    .contact-form__input::placeholder,
+    .contact-form__textarea::placeholder {
+      color: var(--contact-color-placeholder);
+    }
+
+    .contact-form__dropdown-trigger {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      min-height: 0;
+      padding: var(--contact-field-padding-y) var(--contact-field-padding-x);
+      border: none;
+      border-radius: var(--contact-field-radius);
+      background: transparent;
+      font-family: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .contact-form__dropdown-value {
+      flex: 1;
+      font-size: var(--contact-font-size-field);
+      font-weight: 500;
+      line-height: var(--contact-line-height-field);
+      color: var(--contact-color-text);
+    }
+
+    .contact-form__dropdown-value.is-placeholder {
+      color: var(--contact-color-placeholder);
+    }
+
+    .contact-form__dropdown-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-form__control.is-open .contact-form__dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .contact-form__dropdown-list {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 10;
+      display: none;
+      width: 100%;
+      max-height: 240px;
+      overflow-y: auto;
+      list-style: none;
+      border: 1px solid var(--contact-color-field-border);
+      border-radius: var(--contact-field-radius);
+      background-color: var(--contact-color-field-bg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-form__control.is-open .contact-form__dropdown-list {
+      display: block;
+    }
+
+    .contact-form__dropdown-option {
+      width: 100%;
+      padding: 16px var(--contact-field-padding-x);
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: var(--contact-font-size-field);
+      font-weight: 500;
+      line-height: var(--contact-line-height-field);
+      color: var(--contact-color-text);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .contact-form__dropdown-option:hover,
+    .contact-form__dropdown-option.is-active {
+      background-color: var(--contact-color-bg);
+    }
+
+    .contact-form__dropdown-option.is-selected {
+      font-weight: 700;
+    }
+
+    .contact-form__actions {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--contact-gap-form-btn);
+    }
+
+    .contact-form__submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: var(--contact-btn-width);
+      width: var(--contact-btn-width);
+      max-width: 100%;
+      height: var(--contact-btn-height);
+      padding: var(--contact-btn-padding);
+      border: none;
+      border-radius: var(--contact-btn-radius);
+      background-color: var(--contact-color-primary);
+      font-family: inherit;
+      font-size: var(--contact-font-size-btn);
+      font-weight: 500;
+      line-height: var(--contact-line-height-btn);
+      color: var(--contact-color-btn-text);
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-form__submit:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .contact-form {
+        padding: 60px 0;
+      }
+
+      .contact-form__head {
+        margin-bottom: 40px;
+      }
+
+      .contact-form__title {
+        font-size: 32px;
+      }
+
+      .contact-form__desc {
+        font-size: 16px;
+      }
+
+      .contact-form__label {
+        font-size: 22px;
+      }
+
+      .contact-form__row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form__actions {
+        margin-top: 32px;
+      }
+
+      .contact-form__submit {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CONTACT START -->
+  <section class="contact-form fade-in">
+    <div class="wrap">
+      <header class="contact-form__head">
+        <h2 class="contact-form__title">당신의 목표, 전문가와 상담하십시오</h2>
+        <p class="contact-form__desc">AI 코칭과 관련된 궁금한 점이나 맞춤형 상담이 필요하다면 언제든 문의 바랍니다</p>
+      </header>
+
+      <form class="contact-form__body" action="#" method="post" novalidate>
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-name">이름</label>
+            <div class="contact-form__control">
+              <input class="contact-form__input" type="text" id="contact-name" name="name" placeholder="본인의 이름을 입력해주세요" autocomplete="name">
+            </div>
+          </div>
+
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-phone">연락처</label>
+            <div class="contact-form__control">
+              <input class="contact-form__input" type="tel" id="contact-phone" name="phone" placeholder="연락처를 입력해주세요" autocomplete="tel">
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-email">이메일</label>
+            <div class="contact-form__control">
+              <input class="contact-form__input" type="email" id="contact-email" name="email" placeholder="이메일을 입력해주세요" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="contact-form__group">
+            <span class="contact-form__label" id="contact-category-label">카테고리</span>
+            <div class="contact-form__control contact-form__dropdown" data-contact-dropdown>
+              <button
+                type="button"
+                class="contact-form__dropdown-trigger"
+                id="contact-category"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="contact-category-label contact-category-value"
+              >
+                <span class="contact-form__dropdown-value is-placeholder" id="contact-category-value">카테고리를 선택해주세요</span>
+                <svg class="contact-form__dropdown-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15L18 21L24 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <ul class="contact-form__dropdown-list" role="listbox" aria-labelledby="contact-category-label" hidden>
+                <li>
+                  <button type="button" class="contact-form__dropdown-option" role="option" data-value="membership">멤버십 문의</button>
+                </li>
+                <li>
+                  <button type="button" class="contact-form__dropdown-option" role="option" data-value="coaching">AI 코칭 상담</button>
+                </li>
+                <li>
+                  <button type="button" class="contact-form__dropdown-option" role="option" data-value="partnership">제휴 문의</button>
+                </li>
+                <li>
+                  <button type="button" class="contact-form__dropdown-option" role="option" data-value="etc">기타 문의</button>
+                </li>
+              </ul>
+              <input type="hidden" name="category" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form__row contact-form__row--full">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-message">상담내용</label>
+            <div class="contact-form__control contact-form__control--textarea">
+              <textarea class="contact-form__textarea" id="contact-message" name="message" placeholder="내용을 입력해주세요"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form__actions">
+          <button type="submit" class="contact-form__submit">지금 문의하기</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- CONTACT END -->
+
+  <script>
+    (function () {
+      "use strict";
+
+      var fadeTargets = document.querySelectorAll(".fade-in");
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        fadeTargets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        fadeTargets.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+
+      function updateFieldState(field) {
+        var control = field.closest(".contact-form__control");
+        if (!control) return;
+
+        var hasValue = field.value.trim().length > 0;
+        control.classList.toggle("is-filled", hasValue);
+      }
+
+      function bindTextFields() {
+        var fields = document.querySelectorAll(".contact-form__input, .contact-form__textarea");
+
+        fields.forEach(function (field) {
+          updateFieldState(field);
+
+          field.addEventListener("focus", function () {
+            var control = field.closest(".contact-form__control");
+            if (control) control.classList.add("is-focused");
+          });
+
+          field.addEventListener("blur", function () {
+            var control = field.closest(".contact-form__control");
+            if (control) control.classList.remove("is-focused");
+            updateFieldState(field);
+          });
+
+          field.addEventListener("input", function () {
+            updateFieldState(field);
+          });
+        });
+      }
+
+      function bindDropdowns() {
+        var dropdowns = document.querySelectorAll("[data-contact-dropdown]");
+
+        dropdowns.forEach(function (dropdown) {
+          var control = dropdown;
+          var trigger = dropdown.querySelector(".contact-form__dropdown-trigger");
+          var valueEl = dropdown.querySelector(".contact-form__dropdown-value");
+          var list = dropdown.querySelector(".contact-form__dropdown-list");
+          var hiddenInput = dropdown.querySelector('input[type="hidden"]');
+          var options = dropdown.querySelectorAll(".contact-form__dropdown-option");
+          var activeIndex = -1;
+
+          if (!trigger || !valueEl || !list || !hiddenInput) return;
+
+          function setOpen(isOpen) {
+            control.classList.toggle("is-open", isOpen);
+            control.classList.toggle("is-focused", isOpen);
+            trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            list.hidden = !isOpen;
+
+            if (!isOpen) {
+              activeIndex = -1;
+              options.forEach(function (option) {
+                option.classList.remove("is-active");
+              });
+            }
+          }
+
+          function selectOption(option) {
+            var label = option.textContent.trim();
+            var value = option.getAttribute("data-value") || label;
+
+            valueEl.textContent = label;
+            valueEl.classList.remove("is-placeholder");
+            hiddenInput.value = value;
+
+            options.forEach(function (item) {
+              item.classList.toggle("is-selected", item === option);
+            });
+
+            control.classList.add("is-filled");
+            setOpen(false);
+            trigger.focus();
+          }
+
+          function moveActive(step) {
+            if (!control.classList.contains("is-open")) return;
+
+            var nextIndex = activeIndex + step;
+            if (nextIndex < 0) nextIndex = options.length - 1;
+            if (nextIndex >= options.length) nextIndex = 0;
+
+            activeIndex = nextIndex;
+            options.forEach(function (option, index) {
+              option.classList.toggle("is-active", index === activeIndex);
+            });
+
+            options[activeIndex].scrollIntoView({ block: "nearest" });
+          }
+
+          trigger.addEventListener("focus", function () {
+            control.classList.add("is-focused");
+          });
+
+          trigger.addEventListener("blur", function () {
+            window.setTimeout(function () {
+              if (!control.contains(document.activeElement)) {
+                control.classList.remove("is-focused");
+              }
+            }, 0);
+          });
+
+          trigger.addEventListener("click", function () {
+            setOpen(!control.classList.contains("is-open"));
+          });
+
+          trigger.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowDown") {
+              event.preventDefault();
+              if (!control.classList.contains("is-open")) setOpen(true);
+              moveActive(1);
+            }
+
+            if (event.key === "ArrowUp") {
+              event.preventDefault();
+              if (!control.classList.contains("is-open")) setOpen(true);
+              moveActive(-1);
+            }
+
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              if (!control.classList.contains("is-open")) {
+                setOpen(true);
+                return;
+              }
+              if (activeIndex >= 0 && options[activeIndex]) {
+                selectOption(options[activeIndex]);
+              }
+            }
+
+            if (event.key === "Escape") {
+              setOpen(false);
+            }
+          });
+
+          options.forEach(function (option, index) {
+            option.addEventListener("mouseenter", function () {
+              activeIndex = index;
+              options.forEach(function (item, itemIndex) {
+                item.classList.toggle("is-active", itemIndex === index);
+              });
+            });
+
+            option.addEventListener("click", function () {
+              selectOption(option);
+            });
+          });
+
+          document.addEventListener("click", function (event) {
+            if (!dropdown.contains(event.target)) {
+              setOpen(false);
+            }
+          });
+        });
+      }
+
+      bindTextFields();
+      bindDropdowns();
+    })();
+  </script>
+</body>
+</html>

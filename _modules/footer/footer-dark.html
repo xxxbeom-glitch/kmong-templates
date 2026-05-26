@@ -7,216 +7,157 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap">
   <style>
     :root {
-      --color-primary: #2abfb0;
-      --color-white: #ffffff;
-      --color-text: #1a1a2e;
-      --color-bg-soft: #f4fdfb;
-      --radius-btn: 6px;
-      --radius-card: 12px;
+      --footer-bg: #000000;
+      --footer-text: #ffffff;
+      --footer-muted: rgba(255, 255, 255, 0.62);
+      --footer-faint: rgba(255, 255, 255, 0.42);
+      --footer-line: rgba(255, 255, 255, 0.14);
+      --footer-chip: rgba(255, 255, 255, 0.08);
+      --footer-logo: #e3e5eb;
+      --footer-width: 1200px;
+      --footer-space-top: 100px;
+      --footer-space-bottom: 32px;
+      --footer-gap-cols: 48px;
+      --footer-gap-links: 12px;
+      --footer-radius: 16px;
     }
 
     *,
     *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+    *::after { box-sizing: border-box; }
 
-    * {
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; }
 
     body {
       font-family: "SUIT", sans-serif;
-      line-height: 1.6;
-      color: var(--color-white);
+      color: var(--footer-text);
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
-      max-width: 1200px;
+      max-width: var(--footer-width);
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* FOOTER */
-    .footer-dark {
-      background-color: #1a1a2e;
-    }
-
-    .footer-dark__top {
-      padding: 80px 0 40px;
-    }
+    .footer-dark { background: var(--footer-bg); }
+    .footer-dark__top { padding: var(--footer-space-top) 0 48px; }
 
     .footer-dark__grid {
-      display: flex;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+      gap: var(--footer-gap-cols);
     }
 
-    .footer-dark__col {
-      flex: 1;
-    }
-
-    .footer-dark__logo img {
-      display: block;
-      width: 120px;
-      height: 40px;
-      background-color: #c8d8d6;
-      border-radius: 4px;
-      margin-bottom: 20px;
+    .footer-dark__logo {
+      width: 180px;
+      height: 52px;
+      border-radius: 8px;
+      background: var(--footer-logo);
+      margin-bottom: 24px;
     }
 
     .footer-dark__intro {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.5);
+      font-size: 16px;
+      line-height: 1.58;
+      color: var(--footer-muted);
       margin-bottom: 24px;
     }
 
     .footer-dark__sns {
       display: flex;
-      gap: 8px;
+      gap: 10px;
     }
 
     .footer-dark__sns a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--footer-chip);
       font-size: 12px;
       font-weight: 700;
-      color: var(--color-white);
-      transition: background-color 0.3s ease;
-    }
-
-    .footer-dark__sns a:hover {
-      background-color: var(--color-primary);
     }
 
     .footer-dark__title {
-      font-size: 13px;
+      font-size: 20px;
       font-weight: 700;
-      color: var(--color-white);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      line-height: 1.4;
+      margin-bottom: 18px;
     }
 
     .footer-dark__links a {
       display: block;
+      font-size: 16px;
+      line-height: 1.56;
+      color: var(--footer-muted);
+      margin-bottom: var(--footer-gap-links);
+    }
+
+    .footer-dark__info p {
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 10px;
-      transition: color 0.3s ease;
+      line-height: 1.7;
+      color: var(--footer-faint);
+      margin-bottom: 6px;
     }
 
-    .footer-dark__links a:hover {
-      color: var(--color-white);
-    }
-
-    .footer-dark__info {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.4);
-      line-height: 1.9;
-    }
-
-    .footer-dark__divider {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+    .footer-dark__divider { border-top: 1px solid var(--footer-line); }
 
     .footer-dark__bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 24px 0;
+      padding: 24px 0 var(--footer-space-bottom);
     }
 
-    .footer-dark__copy {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.3);
-    }
-
-    .footer-dark__legal {
-      display: flex;
-      gap: 20px;
-    }
-
-    .footer-dark__legal a {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.4);
-      transition: color 0.3s ease;
-    }
-
-    .footer-dark__legal a:hover {
-      color: var(--color-white);
-    }
+    .footer-dark__copy { font-size: 14px; color: var(--footer-faint); }
+    .footer-dark__legal { display: flex; gap: 18px; }
+    .footer-dark__legal a { font-size: 14px; color: var(--footer-muted); }
 
     @media (max-width: 768px) {
-      .footer-dark__top {
-        padding: 60px 0 32px;
-      }
-
-      .footer-dark__grid {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .footer-dark__bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .footer-dark__top { padding: 60px 0 36px; }
+      .footer-dark__grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-dark__bottom { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
   <!-- FOOTER START -->
   <footer class="footer-dark">
     <div class="wrap">
       <div class="footer-dark__top">
         <div class="footer-dark__grid">
-          <div class="footer-dark__col">
-            <a href="#" class="footer-dark__logo">
-              <img src="" alt="로고">
-            </a>
-            <p class="footer-dark__intro">고객과 함께 성장하는 OO 주식회사입니다.</p>
+          <section>
+            <div class="footer-dark__logo" aria-hidden="true"></div>
+            <p class="footer-dark__intro">고객의 변화가 오래 지속되도록 데이터 기반 서비스를 설계합니다.</p>
             <div class="footer-dark__sns">
               <a href="#" aria-label="Facebook">F</a>
-              <a href="#" aria-label="Twitter">T</a>
               <a href="#" aria-label="Instagram">I</a>
+              <a href="#" aria-label="Youtube">Y</a>
             </div>
-          </div>
+          </section>
 
-          <nav class="footer-dark__col footer-dark__links">
+          <nav class="footer-dark__links" aria-label="Service">
             <p class="footer-dark__title">Service</p>
             <a href="#">서비스 소개</a>
-            <a href="#">이용 안내</a>
-            <a href="#">요금 안내</a>
-            <a href="#">자주 묻는 질문</a>
+            <a href="#">프로그램 안내</a>
+            <a href="#">이용 요금</a>
             <a href="#">문의하기</a>
           </nav>
 
-          <nav class="footer-dark__col footer-dark__links">
+          <nav class="footer-dark__links" aria-label="Company">
             <p class="footer-dark__title">Company</p>
             <a href="#">회사 소개</a>
-            <a href="#">채용 정보</a>
+            <a href="#">팀 소개</a>
             <a href="#">공지사항</a>
-            <a href="#">이벤트</a>
             <a href="#">블로그</a>
           </nav>
 
-          <div class="footer-dark__col footer-dark__info">
+          <section class="footer-dark__info">
             <p class="footer-dark__title">Info</p>
             <p>상호명: OO 주식회사</p>
             <p>대표자: 대표 홍길동</p>
@@ -224,15 +165,14 @@
             <p>주소: 서울특별시 OO구 OO로 000, OO빌딩 0층</p>
             <p>전화: 000-0000-0000</p>
             <p>이메일: info@example.com</p>
-            <p>운영시간: 평일 09:00 - 18:00 (주말/공휴일 휴무)</p>
-          </div>
+          </section>
         </div>
       </div>
 
       <div class="footer-dark__divider"></div>
 
       <div class="footer-dark__bottom">
-        <p class="footer-dark__copy">ⓒ 2025 OO 주식회사. All rights reserved.</p>
+        <p class="footer-dark__copy">ⓒ 2026 OO 주식회사. All rights reserved.</p>
         <div class="footer-dark__legal">
           <a href="#">이용약관</a>
           <a href="#">개인정보처리방침</a>
@@ -241,6 +181,5 @@
     </div>
   </footer>
   <!-- FOOTER END -->
-
 </body>
 </html>
