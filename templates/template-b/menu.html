@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴 소개 — 모닝테이블</title>
+  <link rel="stylesheet" href="../../_tokens/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-logo">모닝테이블</a>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a href="menu.html" class="site-nav__link" data-nav="menu">메뉴소개</a></li>
+          <li class="site-nav__item"><a href="about.html" class="site-nav__link" data-nav="about">매장소개</a></li>
+          <li class="site-nav__item"><a href="reservation.html" class="site-nav__link site-nav__link--cta" data-nav="reservation">예약문의</a></li>
+          <li class="site-nav__item"><a href="sns.html" class="site-nav__link" data-nav="sns">SNS이벤트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">메뉴 소개</h1>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="tabs" data-tabs="menu">
+          <ul class="tabs__nav" role="tablist">
+            <li><button type="button" class="tabs__btn is-active" role="tab">브런치</button></li>
+            <li><button type="button" class="tabs__btn" role="tab">식사</button></li>
+            <li><button type="button" class="tabs__btn" role="tab">음료</button></li>
+            <li><button type="button" class="tabs__btn" role="tab">디저트</button></li>
+          </ul>
+
+          <div class="tabs__panel is-active" role="tabpanel">
+            <div class="card-grid card-grid--3">
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">에그 베네딕트</h3>
+                  <p class="menu-card__desc">수란과 홀랜데이즈, 아보카도 토스트</p>
+                  <p class="menu-card__price">18,000원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">모닝 플레이트</h3>
+                  <p class="menu-card__desc">스크램블 에그, 베이컨, 샐러드, 빵</p>
+                  <p class="menu-card__price">17,000원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">리코타 팬케이크</h3>
+                  <p class="menu-card__desc">메이플 시럽, 계절 과일</p>
+                  <p class="menu-card__price">15,000원</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel">
+            <div class="card-grid card-grid--3">
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">트러플 크림 파스타</h3>
+                  <p class="menu-card__desc">생크림 베이스, 트러플 오일</p>
+                  <p class="menu-card__price">16,500원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">비프 스테이크 샐러드</h3>
+                  <p class="menu-card__desc">미디엄 레어 스테이크, 믹스 그린</p>
+                  <p class="menu-card__price">19,500원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">버섯 리조또</h3>
+                  <p class="menu-card__desc">표고, 새송이, 파마산</p>
+                  <p class="menu-card__price">15,500원</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel">
+            <div class="card-grid card-grid--3">
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">플랫 화이트</h3>
+                  <p class="menu-card__desc">더블 샷 에스프레소</p>
+                  <p class="menu-card__price">5,500원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">시그니처 라떼</h3>
+                  <p class="menu-card__desc">바닐라빈 시럽, 직접 로스팅 원두</p>
+                  <p class="menu-card__price">6,000원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">유기농 에이드</h3>
+                  <p class="menu-card__desc">레몬 / 자몽 / 청포도</p>
+                  <p class="menu-card__price">6,500원</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel">
+            <div class="card-grid card-grid--3">
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">크랜베리 스콘</h3>
+                  <p class="menu-card__desc">클럽티드 버터, 수제 잼</p>
+                  <p class="menu-card__price">4,500원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">티라미수 컵</h3>
+                  <p class="menu-card__desc">마스카포네, 에스프레소 시럽</p>
+                  <p class="menu-card__price">7,000원</p>
+                </div>
+              </article>
+              <article class="menu-card">
+                <span class="menu-card__ph ph" aria-hidden="true"></span>
+                <div class="menu-card__body">
+                  <h3 class="menu-card__name">베리 요거트 볼</h3>
+                  <p class="menu-card__desc">그래놀라, 믹스 베리</p>
+                  <p class="menu-card__price">12,000원</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__name">모닝테이블 Morning Table</p>
+      <div class="site-footer__info">
+        <p>서울특별시 마포구 연남로 000 모닝테이블 1층</p>
+        <p>전화 02-000-0000</p>
+        <p>영업시간 화–일 09:00–21:00 · 월요일 휴무</p>
+      </div>
+      <p class="site-footer__copy">© 2026 Morning Table. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

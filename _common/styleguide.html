@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens — Styleguide</title>
+  <link rel="stylesheet" href="../_tokens/tokens.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+    }
+
+    .sg {
+      --sg-bg: var(--color-gray-50);
+      --sg-surface: #ffffff;
+      --sg-text: var(--color-gray-900);
+      --sg-muted: var(--color-gray-500);
+      --sg-border: var(--color-gray-200);
+      --sg-code-bg: var(--color-gray-100);
+      font-family: var(--typography-medium-body-m-font-family);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--sg-text);
+      background: var(--sg-bg);
+      min-height: 100vh;
+    }
+
+    .theme-toggle:checked ~ .sg {
+      --sg-bg: var(--color-gray-900);
+      --sg-surface: var(--color-gray-800);
+      --sg-text: var(--color-gray-50);
+      --sg-muted: var(--color-gray-400);
+      --sg-border: var(--color-gray-700);
+      --sg-code-bg: var(--color-gray-800);
+    }
+
+    .sg-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      background: var(--sg-surface);
+      border-bottom: 1px solid var(--sg-border);
+    }
+
+    .sg-header__title { font-size: 1.125rem; font-weight: 700; }
+    .sg-header__sub { font-size: 0.8125rem; color: var(--sg-muted); margin-top: 0.125rem; }
+
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--sg-code-bg);
+      border: 1px solid var(--sg-border);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .theme-toggle:not(:checked) ~ .sg .theme-btn__dark { display: none; }
+    .theme-toggle:checked ~ .sg .theme-btn__light { display: none; }
+
+    .sg-main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+    .sg-section { margin-bottom: 4rem; }
+    .sg-section__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--sg-border);
+    }
+    .sg-section__desc { color: var(--sg-muted); font-size: 0.875rem; margin: 0.75rem 0 1.5rem; }
+
+    code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.6875rem;
+      color: var(--sg-muted);
+      background: var(--sg-code-bg);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      word-break: break-all;
+    }
+
+    /* Colors */
+    .palette { margin-bottom: 2rem; }
+    .palette__name { font-size: 0.875rem; font-weight: 600; text-transform: capitalize; color: var(--sg-muted); margin-bottom: 0.75rem; }
+    .palette__swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 0.75rem; }
+    .swatch__color { height: 56px; border-radius: var(--radius-md); border: 1px solid var(--sg-border); }
+    .swatch__meta { margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.125rem; }
+    .swatch__hex { font-size: 0.6875rem; color: var(--sg-muted); font-family: ui-monospace, monospace; }
+
+    /* Typography */
+    .type-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      padding: 0.75rem;
+      background: var(--sg-code-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--sg-border);
+    }
+
+    .type-nav__link {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      color: var(--sg-muted);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .type-nav__link:hover {
+      background: var(--sg-surface);
+      color: var(--sg-text);
+    }
+
+    .type-scale {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--sg-border);
+    }
+
+    .type-scale:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .type-scale__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--sg-text);
+      margin-bottom: 0.25rem;
+    }
+
+    .type-scale__desc {
+      font-size: 0.8125rem;
+      color: var(--sg-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 1fr minmax(220px, 300px);
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--sg-border);
+    }
+
+    .type-row:last-child { border-bottom: none; }
+
+    .type-row__sample { margin: 0; word-break: keep-all; }
+
+    .type-row__meta { display: flex; flex-direction: column; gap: 0.25rem; }
+
+    .type-row__hierarchy {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--sg-text);
+    }
+
+    .type-row__desc {
+      font-size: 0.6875rem;
+      color: var(--sg-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .type-small-display {
+      font-family: var(--typography-small-display-font-family);
+      font-weight: var(--typography-small-display-font-weight);
+      font-size: var(--typography-small-display-font-size);
+      line-height: var(--typography-small-display-line-height);
+      letter-spacing: var(--typography-small-display-letter-spacing);
+    }
+
+    .type-small-h1 {
+      font-family: var(--typography-small-h1-font-family);
+      font-weight: var(--typography-small-h1-font-weight);
+      font-size: var(--typography-small-h1-font-size);
+      line-height: var(--typography-small-h1-line-height);
+      letter-spacing: var(--typography-small-h1-letter-spacing);
+    }
+
+    .type-small-h2 {
+      font-family: var(--typography-small-h2-font-family);
+      font-weight: var(--typography-small-h2-font-weight);
+      font-size: var(--typography-small-h2-font-size);
+      line-height: var(--typography-small-h2-line-height);
+      letter-spacing: var(--typography-small-h2-letter-spacing);
+    }
+
+    .type-small-h3 {
+      font-family: var(--typography-small-h3-font-family);
+      font-weight: var(--typography-small-h3-font-weight);
+      font-size: var(--typography-small-h3-font-size);
+      line-height: var(--typography-small-h3-line-height);
+      letter-spacing: var(--typography-small-h3-letter-spacing);
+    }
+
+    .type-small-h4 {
+      font-family: var(--typography-small-h4-font-family);
+      font-weight: var(--typography-small-h4-font-weight);
+      font-size: var(--typography-small-h4-font-size);
+      line-height: var(--typography-small-h4-line-height);
+      letter-spacing: var(--typography-small-h4-letter-spacing);
+    }
+
+    .type-small-subheading {
+      font-family: var(--typography-small-subheading-font-family);
+      font-weight: var(--typography-small-subheading-font-weight);
+      font-size: var(--typography-small-subheading-font-size);
+      line-height: var(--typography-small-subheading-line-height);
+      letter-spacing: var(--typography-small-subheading-letter-spacing);
+    }
+
+    .type-small-body-l {
+      font-family: var(--typography-small-body-l-font-family);
+      font-weight: var(--typography-small-body-l-font-weight);
+      font-size: var(--typography-small-body-l-font-size);
+      line-height: var(--typography-small-body-l-line-height);
+      letter-spacing: var(--typography-small-body-l-letter-spacing);
+    }
+
+    .type-small-body-m {
+      font-family: var(--typography-small-body-m-font-family);
+      font-weight: var(--typography-small-body-m-font-weight);
+      font-size: var(--typography-small-body-m-font-size);
+      line-height: var(--typography-small-body-m-line-height);
+      letter-spacing: var(--typography-small-body-m-letter-spacing);
+    }
+
+    .type-small-body-s {
+      font-family: var(--typography-small-body-s-font-family);
+      font-weight: var(--typography-small-body-s-font-weight);
+      font-size: var(--typography-small-body-s-font-size);
+      line-height: var(--typography-small-body-s-line-height);
+      letter-spacing: var(--typography-small-body-s-letter-spacing);
+    }
+
+    .type-small-caption {
+      font-family: var(--typography-small-caption-font-family);
+      font-weight: var(--typography-small-caption-font-weight);
+      font-size: var(--typography-small-caption-font-size);
+      line-height: var(--typography-small-caption-line-height);
+      letter-spacing: var(--typography-small-caption-letter-spacing);
+    }
+
+    .type-small-label {
+      font-family: var(--typography-small-label-font-family);
+      font-weight: var(--typography-small-label-font-weight);
+      font-size: var(--typography-small-label-font-size);
+      line-height: var(--typography-small-label-line-height);
+      letter-spacing: var(--typography-small-label-letter-spacing);
+    }
+
+    .type-small-cta-l {
+      font-family: var(--typography-small-cta-l-font-family);
+      font-weight: var(--typography-small-cta-l-font-weight);
+      font-size: var(--typography-small-cta-l-font-size);
+      line-height: var(--typography-small-cta-l-line-height);
+      letter-spacing: var(--typography-small-cta-l-letter-spacing);
+    }
+
+    .type-small-cta-m {
+      font-family: var(--typography-small-cta-m-font-family);
+      font-weight: var(--typography-small-cta-m-font-weight);
+      font-size: var(--typography-small-cta-m-font-size);
+      line-height: var(--typography-small-cta-m-line-height);
+      letter-spacing: var(--typography-small-cta-m-letter-spacing);
+    }
+
+    .type-small-cta-s {
+      font-family: var(--typography-small-cta-s-font-family);
+      font-weight: var(--typography-small-cta-s-font-weight);
+      font-size: var(--typography-small-cta-s-font-size);
+      line-height: var(--typography-small-cta-s-line-height);
+      letter-spacing: var(--typography-small-cta-s-letter-spacing);
+    }
+
+    .type-small-overline {
+      font-family: var(--typography-small-overline-font-family);
+      font-weight: var(--typography-small-overline-font-weight);
+      font-size: var(--typography-small-overline-font-size);
+      line-height: var(--typography-small-overline-line-height);
+      letter-spacing: var(--typography-small-overline-letter-spacing);
+    }
+
+    .type-small-helper {
+      font-family: var(--typography-small-helper-font-family);
+      font-weight: var(--typography-small-helper-font-weight);
+      font-size: var(--typography-small-helper-font-size);
+      line-height: var(--typography-small-helper-line-height);
+      letter-spacing: var(--typography-small-helper-letter-spacing);
+    }
+
+    .type-medium-display {
+      font-family: var(--typography-medium-display-font-family);
+      font-weight: var(--typography-medium-display-font-weight);
+      font-size: var(--typography-medium-display-font-size);
+      line-height: var(--typography-medium-display-line-height);
+      letter-spacing: var(--typography-medium-display-letter-spacing);
+    }
+
+    .type-medium-h1 {
+      font-family: var(--typography-medium-h1-font-family);
+      font-weight: var(--typography-medium-h1-font-weight);
+      font-size: var(--typography-medium-h1-font-size);
+      line-height: var(--typography-medium-h1-line-height);
+      letter-spacing: var(--typography-medium-h1-letter-spacing);
+    }
+
+    .type-medium-h2 {
+      font-family: var(--typography-medium-h2-font-family);
+      font-weight: var(--typography-medium-h2-font-weight);
+      font-size: var(--typography-medium-h2-font-size);
+      line-height: var(--typography-medium-h2-line-height);
+      letter-spacing: var(--typography-medium-h2-letter-spacing);
+    }
+
+    .type-medium-h3 {
+      font-family: var(--typography-medium-h3-font-family);
+      font-weight: var(--typography-medium-h3-font-weight);
+      font-size: var(--typography-medium-h3-font-size);
+      line-height: var(--typography-medium-h3-line-height);
+      letter-spacing: var(--typography-medium-h3-letter-spacing);
+    }
+
+    .type-medium-h4 {
+      font-family: var(--typography-medium-h4-font-family);
+      font-weight: var(--typography-medium-h4-font-weight);
+      font-size: var(--typography-medium-h4-font-size);
+      line-height: var(--typography-medium-h4-line-height);
+      letter-spacing: var(--typography-medium-h4-letter-spacing);
+    }
+
+    .type-medium-subheading {
+      font-family: var(--typography-medium-subheading-font-family);
+      font-weight: var(--typography-medium-subheading-font-weight);
+      font-size: var(--typography-medium-subheading-font-size);
+      line-height: var(--typography-medium-subheading-line-height);
+      letter-spacing: var(--typography-medium-subheading-letter-spacing);
+    }
+
+    .type-medium-body-l {
+      font-family: var(--typography-medium-body-l-font-family);
+      font-weight: var(--typography-medium-body-l-font-weight);
+      font-size: var(--typography-medium-body-l-font-size);
+      line-height: var(--typography-medium-body-l-line-height);
+      letter-spacing: var(--typography-medium-body-l-letter-spacing);
+    }
+
+    .type-medium-body-m {
+      font-family: var(--typography-medium-body-m-font-family);
+      font-weight: var(--typography-medium-body-m-font-weight);
+      font-size: var(--typography-medium-body-m-font-size);
+      line-height: var(--typography-medium-body-m-line-height);
+      letter-spacing: var(--typography-medium-body-m-letter-spacing);
+    }
+
+    .type-medium-body-s {
+      font-family: var(--typography-medium-body-s-font-family);
+      font-weight: var(--typography-medium-body-s-font-weight);
+      font-size: var(--typography-medium-body-s-font-size);
+      line-height: var(--typography-medium-body-s-line-height);
+      letter-spacing: var(--typography-medium-body-s-letter-spacing);
+    }
+
+    .type-medium-caption {
+      font-family: var(--typography-medium-caption-font-family);
+      font-weight: var(--typography-medium-caption-font-weight);
+      font-size: var(--typography-medium-caption-font-size);
+      line-height: var(--typography-medium-caption-line-height);
+      letter-spacing: var(--typography-medium-caption-letter-spacing);
+    }
+
+    .type-medium-label {
+      font-family: var(--typography-medium-label-font-family);
+      font-weight: var(--typography-medium-label-font-weight);
+      font-size: var(--typography-medium-label-font-size);
+      line-height: var(--typography-medium-label-line-height);
+      letter-spacing: var(--typography-medium-label-letter-spacing);
+    }
+
+    .type-medium-cta-l {
+      font-family: var(--typography-medium-cta-l-font-family);
+      font-weight: var(--typography-medium-cta-l-font-weight);
+      font-size: var(--typography-medium-cta-l-font-size);
+      line-height: var(--typography-medium-cta-l-line-height);
+      letter-spacing: var(--typography-medium-cta-l-letter-spacing);
+    }
+
+    .type-medium-cta-m {
+      font-family: var(--typography-medium-cta-m-font-family);
+      font-weight: var(--typography-medium-cta-m-font-weight);
+      font-size: var(--typography-medium-cta-m-font-size);
+      line-height: var(--typography-medium-cta-m-line-height);
+      letter-spacing: var(--typography-medium-cta-m-letter-spacing);
+    }
+
+    .type-medium-cta-s {
+      font-family: var(--typography-medium-cta-s-font-family);
+      font-weight: var(--typography-medium-cta-s-font-weight);
+      font-size: var(--typography-medium-cta-s-font-size);
+      line-height: var(--typography-medium-cta-s-line-height);
+      letter-spacing: var(--typography-medium-cta-s-letter-spacing);
+    }
+
+    .type-medium-overline {
+      font-family: var(--typography-medium-overline-font-family);
+      font-weight: var(--typography-medium-overline-font-weight);
+      font-size: var(--typography-medium-overline-font-size);
+      line-height: var(--typography-medium-overline-line-height);
+      letter-spacing: var(--typography-medium-overline-letter-spacing);
+    }
+
+    .type-medium-helper {
+      font-family: var(--typography-medium-helper-font-family);
+      font-weight: var(--typography-medium-helper-font-weight);
+      font-size: var(--typography-medium-helper-font-size);
+      line-height: var(--typography-medium-helper-line-height);
+      letter-spacing: var(--typography-medium-helper-letter-spacing);
+    }
+
+    .type-large-display {
+      font-family: var(--typography-large-display-font-family);
+      font-weight: var(--typography-large-display-font-weight);
+      font-size: var(--typography-large-display-font-size);
+      line-height: var(--typography-large-display-line-height);
+      letter-spacing: var(--typography-large-display-letter-spacing);
+    }
+
+    .type-large-h1 {
+      font-family: var(--typography-large-h1-font-family);
+      font-weight: var(--typography-large-h1-font-weight);
+      font-size: var(--typography-large-h1-font-size);
+      line-height: var(--typography-large-h1-line-height);
+      letter-spacing: var(--typography-large-h1-letter-spacing);
+    }
+
+    .type-large-h2 {
+      font-family: var(--typography-large-h2-font-family);
+      font-weight: var(--typography-large-h2-font-weight);
+      font-size: var(--typography-large-h2-font-size);
+      line-height: var(--typography-large-h2-line-height);
+      letter-spacing: var(--typography-large-h2-letter-spacing);
+    }
+
+    .type-large-h3 {
+      font-family: var(--typography-large-h3-font-family);
+      font-weight: var(--typography-large-h3-font-weight);
+      font-size: var(--typography-large-h3-font-size);
+      line-height: var(--typography-large-h3-line-height);
+      letter-spacing: var(--typography-large-h3-letter-spacing);
+    }
+
+    .type-large-h4 {
+      font-family: var(--typography-large-h4-font-family);
+      font-weight: var(--typography-large-h4-font-weight);
+      font-size: var(--typography-large-h4-font-size);
+      line-height: var(--typography-large-h4-line-height);
+      letter-spacing: var(--typography-large-h4-letter-spacing);
+    }
+
+    .type-large-subheading {
+      font-family: var(--typography-large-subheading-font-family);
+      font-weight: var(--typography-large-subheading-font-weight);
+      font-size: var(--typography-large-subheading-font-size);
+      line-height: var(--typography-large-subheading-line-height);
+      letter-spacing: var(--typography-large-subheading-letter-spacing);
+    }
+
+    .type-large-body-l {
+      font-family: var(--typography-large-body-l-font-family);
+      font-weight: var(--typography-large-body-l-font-weight);
+      font-size: var(--typography-large-body-l-font-size);
+      line-height: var(--typography-large-body-l-line-height);
+      letter-spacing: var(--typography-large-body-l-letter-spacing);
+    }
+
+    .type-large-body-m {
+      font-family: var(--typography-large-body-m-font-family);
+      font-weight: var(--typography-large-body-m-font-weight);
+      font-size: var(--typography-large-body-m-font-size);
+      line-height: var(--typography-large-body-m-line-height);
+      letter-spacing: var(--typography-large-body-m-letter-spacing);
+    }
+
+    .type-large-body-s {
+      font-family: var(--typography-large-body-s-font-family);
+      font-weight: var(--typography-large-body-s-font-weight);
+      font-size: var(--typography-large-body-s-font-size);
+      line-height: var(--typography-large-body-s-line-height);
+      letter-spacing: var(--typography-large-body-s-letter-spacing);
+    }
+
+    .type-large-caption {
+      font-family: var(--typography-large-caption-font-family);
+      font-weight: var(--typography-large-caption-font-weight);
+      font-size: var(--typography-large-caption-font-size);
+      line-height: var(--typography-large-caption-line-height);
+      letter-spacing: var(--typography-large-caption-letter-spacing);
+    }
+
+    .type-large-label {
+      font-family: var(--typography-large-label-font-family);
+      font-weight: var(--typography-large-label-font-weight);
+      font-size: var(--typography-large-label-font-size);
+      line-height: var(--typography-large-label-line-height);
+      letter-spacing: var(--typography-large-label-letter-spacing);
+    }
+
+    .type-large-cta-l {
+      font-family: var(--typography-large-cta-l-font-family);
+      font-weight: var(--typography-large-cta-l-font-weight);
+      font-size: var(--typography-large-cta-l-font-size);
+      line-height: var(--typography-large-cta-l-line-height);
+      letter-spacing: var(--typography-large-cta-l-letter-spacing);
+    }
+
+    .type-large-cta-m {
+      font-family: var(--typography-large-cta-m-font-family);
+      font-weight: var(--typography-large-cta-m-font-weight);
+      font-size: var(--typography-large-cta-m-font-size);
+      line-height: var(--typography-large-cta-m-line-height);
+      letter-spacing: var(--typography-large-cta-m-letter-spacing);
+    }
+
+    .type-large-cta-s {
+      font-family: var(--typography-large-cta-s-font-family);
+      font-weight: var(--typography-large-cta-s-font-weight);
+      font-size: var(--typography-large-cta-s-font-size);
+      line-height: var(--typography-large-cta-s-line-height);
+      letter-spacing: var(--typography-large-cta-s-letter-spacing);
+    }
+
+    .type-large-overline {
+      font-family: var(--typography-large-overline-font-family);
+      font-weight: var(--typography-large-overline-font-weight);
+      font-size: var(--typography-large-overline-font-size);
+      line-height: var(--typography-large-overline-line-height);
+      letter-spacing: var(--typography-large-overline-letter-spacing);
+    }
+
+    .type-large-helper {
+      font-family: var(--typography-large-helper-font-family);
+      font-weight: var(--typography-large-helper-font-weight);
+      font-size: var(--typography-large-helper-font-size);
+      line-height: var(--typography-large-helper-line-height);
+      letter-spacing: var(--typography-large-helper-letter-spacing);
+    }
+
+    .type-display-display {
+      font-family: var(--typography-display-display-font-family);
+      font-weight: var(--typography-display-display-font-weight);
+      font-size: var(--typography-display-display-font-size);
+      line-height: var(--typography-display-display-line-height);
+      letter-spacing: var(--typography-display-display-letter-spacing);
+    }
+
+    .type-display-h1 {
+      font-family: var(--typography-display-h1-font-family);
+      font-weight: var(--typography-display-h1-font-weight);
+      font-size: var(--typography-display-h1-font-size);
+      line-height: var(--typography-display-h1-line-height);
+      letter-spacing: var(--typography-display-h1-letter-spacing);
+    }
+
+    .type-display-h2 {
+      font-family: var(--typography-display-h2-font-family);
+      font-weight: var(--typography-display-h2-font-weight);
+      font-size: var(--typography-display-h2-font-size);
+      line-height: var(--typography-display-h2-line-height);
+      letter-spacing: var(--typography-display-h2-letter-spacing);
+    }
+
+    .type-display-h3 {
+      font-family: var(--typography-display-h3-font-family);
+      font-weight: var(--typography-display-h3-font-weight);
+      font-size: var(--typography-display-h3-font-size);
+      line-height: var(--typography-display-h3-line-height);
+      letter-spacing: var(--typography-display-h3-letter-spacing);
+    }
+
+    .type-display-h4 {
+      font-family: var(--typography-display-h4-font-family);
+      font-weight: var(--typography-display-h4-font-weight);
+      font-size: var(--typography-display-h4-font-size);
+      line-height: var(--typography-display-h4-line-height);
+      letter-spacing: var(--typography-display-h4-letter-spacing);
+    }
+
+    .type-display-subheading {
+      font-family: var(--typography-display-subheading-font-family);
+      font-weight: var(--typography-display-subheading-font-weight);
+      font-size: var(--typography-display-subheading-font-size);
+      line-height: var(--typography-display-subheading-line-height);
+      letter-spacing: var(--typography-display-subheading-letter-spacing);
+    }
+
+    .type-display-body-l {
+      font-family: var(--typography-display-body-l-font-family);
+      font-weight: var(--typography-display-body-l-font-weight);
+      font-size: var(--typography-display-body-l-font-size);
+      line-height: var(--typography-display-body-l-line-height);
+      letter-spacing: var(--typography-display-body-l-letter-spacing);
+    }
+
+    .type-display-body-m {
+      font-family: var(--typography-display-body-m-font-family);
+      font-weight: var(--typography-display-body-m-font-weight);
+      font-size: var(--typography-display-body-m-font-size);
+      line-height: var(--typography-display-body-m-line-height);
+      letter-spacing: var(--typography-display-body-m-letter-spacing);
+    }
+
+    .type-display-body-s {
+      font-family: var(--typography-display-body-s-font-family);
+      font-weight: var(--typography-display-body-s-font-weight);
+      font-size: var(--typography-display-body-s-font-size);
+      line-height: var(--typography-display-body-s-line-height);
+      letter-spacing: var(--typography-display-body-s-letter-spacing);
+    }
+
+    .type-display-caption {
+      font-family: var(--typography-display-caption-font-family);
+      font-weight: var(--typography-display-caption-font-weight);
+      font-size: var(--typography-display-caption-font-size);
+      line-height: var(--typography-display-caption-line-height);
+      letter-spacing: var(--typography-display-caption-letter-spacing);
+    }
+
+    .type-display-label {
+      font-family: var(--typography-display-label-font-family);
+      font-weight: var(--typography-display-label-font-weight);
+      font-size: var(--typography-display-label-font-size);
+      line-height: var(--typography-display-label-line-height);
+      letter-spacing: var(--typography-display-label-letter-spacing);
+    }
+
+    .type-display-cta-l {
+      font-family: var(--typography-display-cta-l-font-family);
+      font-weight: var(--typography-display-cta-l-font-weight);
+      font-size: var(--typography-display-cta-l-font-size);
+      line-height: var(--typography-display-cta-l-line-height);
+      letter-spacing: var(--typography-display-cta-l-letter-spacing);
+    }
+
+    .type-display-cta-m {
+      font-family: var(--typography-display-cta-m-font-family);
+      font-weight: var(--typography-display-cta-m-font-weight);
+      font-size: var(--typography-display-cta-m-font-size);
+      line-height: var(--typography-display-cta-m-line-height);
+      letter-spacing: var(--typography-display-cta-m-letter-spacing);
+    }
+
+    .type-display-cta-s {
+      font-family: var(--typography-display-cta-s-font-family);
+      font-weight: var(--typography-display-cta-s-font-weight);
+      font-size: var(--typography-display-cta-s-font-size);
+      line-height: var(--typography-display-cta-s-line-height);
+      letter-spacing: var(--typography-display-cta-s-letter-spacing);
+    }
+
+    .type-display-overline {
+      font-family: var(--typography-display-overline-font-family);
+      font-weight: var(--typography-display-overline-font-weight);
+      font-size: var(--typography-display-overline-font-size);
+      line-height: var(--typography-display-overline-line-height);
+      letter-spacing: var(--typography-display-overline-letter-spacing);
+    }
+
+    .type-display-helper {
+      font-family: var(--typography-display-helper-font-family);
+      font-weight: var(--typography-display-helper-font-weight);
+      font-size: var(--typography-display-helper-font-size);
+      line-height: var(--typography-display-helper-line-height);
+      letter-spacing: var(--typography-display-helper-letter-spacing);
+    }
+
+    /* Spacing */
+    .space-list { display: flex; flex-direction: column; gap: 1rem; }
+    .space-item__track {
+      height: 32px;
+      background: var(--sg-code-bg);
+      border: 1px solid var(--sg-border);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+      margin-bottom: 0.5rem;
+    }
+    .space-item__bar { height: 16px; min-width: 2px; background: var(--color-blue-500); border-radius: 2px; }
+    .space-item__meta { display: flex; gap: 0.75rem; align-items: baseline; }
+    .space-item__value { font-size: 0.75rem; color: var(--sg-muted); font-family: ui-monospace, monospace; }
+
+    /* Radius */
+    .radius-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1.5rem; }
+    .radius-item { text-align: center; }
+    .radius-item__box {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 0.75rem;
+      background: var(--color-blue-100);
+      border: 2px solid var(--color-blue-500);
+    }
+
+    /* Shadow */
+    .shadow-list { display: flex; flex-direction: column; gap: 2rem; }
+    .shadow-group__name { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; color: var(--sg-muted); margin-bottom: 0.75rem; }
+    .shadow-group__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .shadow-demo { padding: 1.5rem; border-radius: var(--radius-lg); text-align: center; }
+    .shadow-demo--on-light { background: #fff; border: 1px solid var(--color-gray-200); }
+    .shadow-demo--on-dark { background: var(--color-gray-900); border: 1px solid var(--color-gray-700); }
+    .shadow-demo__box { width: 120px; height: 72px; margin: 0 auto 1rem; border-radius: var(--radius-md); }
+    .shadow-demo--on-light .shadow-demo__box { background: #fff; }
+    .shadow-demo--on-dark .shadow-demo__box { background: var(--color-gray-800); }
+
+    @media (max-width: 768px) {
+      .sg-header { padding: 1rem; flex-wrap: wrap; }
+      .sg-main { padding: 1rem; }
+      .type-row { grid-template-columns: 1fr; }
+      .shadow-group__pair { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-hidden="true">
+  <div class="sg">
+    <header class="sg-header">
+      <div>
+        <p class="sg-header__title">KMONG Templates — Design Tokens</p>
+        <p class="sg-header__sub">Typography: scale group × role · <code>../_tokens/tokens.css</code></p>
+      </div>
+      <label for="theme-toggle" class="theme-btn">
+        <span class="theme-btn__light">☀ 라이트 배경</span>
+        <span class="theme-btn__dark">🌙 다크 배경</span>
+      </label>
+    </header>
+    <main class="sg-main">
+      <section class="sg-section" id="colors">
+        <h2 class="sg-section__title">1. Colors</h2>
+        <p class="sg-section__desc">팔레트별 색상 스와치 · 변수명 · hex</p>
+        <div class="palettes">
+      <div class="palette">
+        <h3 class="palette__name">gray</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-50</code>
+              <span class="swatch__hex">#FAFAFA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-100</code>
+              <span class="swatch__hex">#F4F4F5</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-200</code>
+              <span class="swatch__hex">#E4E4E7</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-300</code>
+              <span class="swatch__hex">#D1D1D6</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-400</code>
+              <span class="swatch__hex">#A1A1AA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-500</code>
+              <span class="swatch__hex">#71717A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-600</code>
+              <span class="swatch__hex">#52525B</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-700</code>
+              <span class="swatch__hex">#3F3F46</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-800</code>
+              <span class="swatch__hex">#27272A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-gray-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-gray-900</code>
+              <span class="swatch__hex">#18181B</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">rose</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-50</code>
+              <span class="swatch__hex">#FFF1F2</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-100</code>
+              <span class="swatch__hex">#FFE4E6</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-200</code>
+              <span class="swatch__hex">#FECDD3</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-300</code>
+              <span class="swatch__hex">#FDA4AF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-400</code>
+              <span class="swatch__hex">#FB7185</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-500</code>
+              <span class="swatch__hex">#F43F5E</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-600</code>
+              <span class="swatch__hex">#E11D48</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-700</code>
+              <span class="swatch__hex">#BE123C</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-800</code>
+              <span class="swatch__hex">#9F1239</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-rose-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-rose-900</code>
+              <span class="swatch__hex">#881337</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">red</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-50</code>
+              <span class="swatch__hex">#FEF2F2</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-100</code>
+              <span class="swatch__hex">#FEE2E2</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-200</code>
+              <span class="swatch__hex">#FECACA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-300</code>
+              <span class="swatch__hex">#FCA5A5</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-400</code>
+              <span class="swatch__hex">#F87171</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-500</code>
+              <span class="swatch__hex">#EF4444</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-600</code>
+              <span class="swatch__hex">#DC2626</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-700</code>
+              <span class="swatch__hex">#B91C1C</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-800</code>
+              <span class="swatch__hex">#991B1B</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-red-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-red-900</code>
+              <span class="swatch__hex">#7F1D1D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">orange</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-50</code>
+              <span class="swatch__hex">#FFF7ED</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-100</code>
+              <span class="swatch__hex">#FFEDD5</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-200</code>
+              <span class="swatch__hex">#FED7AA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-300</code>
+              <span class="swatch__hex">#FDBA74</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-400</code>
+              <span class="swatch__hex">#FB923C</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-500</code>
+              <span class="swatch__hex">#F97316</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-600</code>
+              <span class="swatch__hex">#EA580C</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-700</code>
+              <span class="swatch__hex">#C2410C</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-800</code>
+              <span class="swatch__hex">#9A3412</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-orange-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-orange-900</code>
+              <span class="swatch__hex">#7C2D12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">amber</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-50</code>
+              <span class="swatch__hex">#FFFBEB</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-100</code>
+              <span class="swatch__hex">#FEF3C7</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-200</code>
+              <span class="swatch__hex">#FDE68A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-300</code>
+              <span class="swatch__hex">#FCD34D</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-400</code>
+              <span class="swatch__hex">#FBBF24</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-500</code>
+              <span class="swatch__hex">#F59E0B</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-600</code>
+              <span class="swatch__hex">#D97706</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-700</code>
+              <span class="swatch__hex">#B45309</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-800</code>
+              <span class="swatch__hex">#92400E</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-amber-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-amber-900</code>
+              <span class="swatch__hex">#78350F</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">yellow</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-50</code>
+              <span class="swatch__hex">#FEFCE8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-100</code>
+              <span class="swatch__hex">#FEF9C3</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-200</code>
+              <span class="swatch__hex">#FEF08A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-300</code>
+              <span class="swatch__hex">#FDE047</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-400</code>
+              <span class="swatch__hex">#FACC15</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-500</code>
+              <span class="swatch__hex">#EAB308</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-600</code>
+              <span class="swatch__hex">#CA8A04</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-700</code>
+              <span class="swatch__hex">#A16207</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-800</code>
+              <span class="swatch__hex">#854D0E</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-yellow-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-yellow-900</code>
+              <span class="swatch__hex">#713F12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">green</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-50</code>
+              <span class="swatch__hex">#F0FDF4</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-100</code>
+              <span class="swatch__hex">#DCFCE7</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-200</code>
+              <span class="swatch__hex">#BBF7D0</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-300</code>
+              <span class="swatch__hex">#86EFAC</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-400</code>
+              <span class="swatch__hex">#4ADE80</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-500</code>
+              <span class="swatch__hex">#22C55E</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-600</code>
+              <span class="swatch__hex">#16A34A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-700</code>
+              <span class="swatch__hex">#15803D</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-800</code>
+              <span class="swatch__hex">#166534</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-green-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-green-900</code>
+              <span class="swatch__hex">#14532D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">teal</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-50</code>
+              <span class="swatch__hex">#F0FDFA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-100</code>
+              <span class="swatch__hex">#CCFBF1</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-200</code>
+              <span class="swatch__hex">#99F6E4</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-300</code>
+              <span class="swatch__hex">#5EEAD4</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-400</code>
+              <span class="swatch__hex">#2DD4BF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-500</code>
+              <span class="swatch__hex">#14B8A6</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-600</code>
+              <span class="swatch__hex">#0D9488</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-700</code>
+              <span class="swatch__hex">#0F766E</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-800</code>
+              <span class="swatch__hex">#115E59</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-teal-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-teal-900</code>
+              <span class="swatch__hex">#134E4A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">cyan</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-50</code>
+              <span class="swatch__hex">#ECFEFF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-100</code>
+              <span class="swatch__hex">#CFFAFE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-200</code>
+              <span class="swatch__hex">#A5F3FC</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-300</code>
+              <span class="swatch__hex">#67E8F9</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-400</code>
+              <span class="swatch__hex">#22D3EE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-500</code>
+              <span class="swatch__hex">#06B6D4</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-600</code>
+              <span class="swatch__hex">#0891B2</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-700</code>
+              <span class="swatch__hex">#0E7490</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-800</code>
+              <span class="swatch__hex">#155E75</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-cyan-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-cyan-900</code>
+              <span class="swatch__hex">#164E63</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">sky</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-50</code>
+              <span class="swatch__hex">#F0F9FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-100</code>
+              <span class="swatch__hex">#E0F2FE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-200</code>
+              <span class="swatch__hex">#BAE6FD</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-300</code>
+              <span class="swatch__hex">#7DD3FC</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-400</code>
+              <span class="swatch__hex">#38BDF8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-500</code>
+              <span class="swatch__hex">#0EA5E9</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-600</code>
+              <span class="swatch__hex">#0284C7</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-700</code>
+              <span class="swatch__hex">#0369A1</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-800</code>
+              <span class="swatch__hex">#075985</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-sky-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-sky-900</code>
+              <span class="swatch__hex">#0C4A6E</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">blue</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-50</code>
+              <span class="swatch__hex">#EFF6FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-100</code>
+              <span class="swatch__hex">#DBEAFE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-200</code>
+              <span class="swatch__hex">#BFDBFE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-300</code>
+              <span class="swatch__hex">#93C5FD</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-400</code>
+              <span class="swatch__hex">#60A5FA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-500</code>
+              <span class="swatch__hex">#3B82F6</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-600</code>
+              <span class="swatch__hex">#2563EB</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-700</code>
+              <span class="swatch__hex">#1D4ED8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-800</code>
+              <span class="swatch__hex">#1E40AF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-blue-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-blue-900</code>
+              <span class="swatch__hex">#1E3A8A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">indigo</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-50</code>
+              <span class="swatch__hex">#EEF2FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-100</code>
+              <span class="swatch__hex">#E0E7FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-200</code>
+              <span class="swatch__hex">#C7D2FE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-300</code>
+              <span class="swatch__hex">#A5B4FC</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-400</code>
+              <span class="swatch__hex">#818CF8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-500</code>
+              <span class="swatch__hex">#6366F1</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-600</code>
+              <span class="swatch__hex">#4F46E5</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-700</code>
+              <span class="swatch__hex">#4338CA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-800</code>
+              <span class="swatch__hex">#3730A3</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-indigo-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-indigo-900</code>
+              <span class="swatch__hex">#312E81</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">purple</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-50</code>
+              <span class="swatch__hex">#FAF5FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-100</code>
+              <span class="swatch__hex">#F3E8FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-200</code>
+              <span class="swatch__hex">#E9D5FF</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-300</code>
+              <span class="swatch__hex">#D8B4FE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-400</code>
+              <span class="swatch__hex">#C084FC</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-500</code>
+              <span class="swatch__hex">#A855F7</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-600</code>
+              <span class="swatch__hex">#9333EA</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-700</code>
+              <span class="swatch__hex">#7E22CE</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-800</code>
+              <span class="swatch__hex">#6B21A8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-purple-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-purple-900</code>
+              <span class="swatch__hex">#581C87</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">pink</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-50</code>
+              <span class="swatch__hex">#FDF2F8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-100</code>
+              <span class="swatch__hex">#FCE7F3</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-200</code>
+              <span class="swatch__hex">#FBCFE8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-300</code>
+              <span class="swatch__hex">#F9A8D4</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-400</code>
+              <span class="swatch__hex">#F472B6</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-500</code>
+              <span class="swatch__hex">#EC4899</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-600</code>
+              <span class="swatch__hex">#DB2777</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-700</code>
+              <span class="swatch__hex">#BE185D</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-800</code>
+              <span class="swatch__hex">#9D174D</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-pink-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-pink-900</code>
+              <span class="swatch__hex">#831843</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="palette">
+        <h3 class="palette__name">slate</h3>
+        <div class="palette__swatches">
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-50)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-50</code>
+              <span class="swatch__hex">#F8FAFC</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-100)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-100</code>
+              <span class="swatch__hex">#F1F5F9</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-200)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-200</code>
+              <span class="swatch__hex">#E2E8F0</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-300)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-300</code>
+              <span class="swatch__hex">#CBD5E1</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-400)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-400</code>
+              <span class="swatch__hex">#94A3B8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-500)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-500</code>
+              <span class="swatch__hex">#64748B</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-600)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-600</code>
+              <span class="swatch__hex">#475569</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-700)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-700</code>
+              <span class="swatch__hex">#334155</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-800)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-800</code>
+              <span class="swatch__hex">#1E293B</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background-color: var(--color-slate-900)"></div>
+            <div class="swatch__meta">
+              <code>--color-slate-900</code>
+              <span class="swatch__hex">#0F172A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+      </section>
+
+      <section class="sg-section" id="typography">
+        <h2 class="sg-section__title">2. Typography</h2>
+        <p class="sg-section__desc">
+          JSON 키 <code>{scale}/{role}</code> → CSS <code>--typography-{scale}-{role}-*</code>.
+          scale(small · medium · large · display)는 상위 그룹, h1 · body-m 등은 역할명입니다.
+          같은 role이라도 scale이 다르면 별도 토큰입니다.
+        </p>
+        <nav class="type-nav" aria-label="타이포 스케일 그룹">
+<a href="#typography-small" class="type-nav__link">Small</a>
+<a href="#typography-medium" class="type-nav__link">Medium</a>
+<a href="#typography-large" class="type-nav__link">Large</a>
+<a href="#typography-display" class="type-nav__link">Display</a>
+        </nav>
+        <div class="type-scale" id="typography-small">
+          <h3 class="type-scale__title">Small</h3>
+          <p class="type-scale__desc">모바일 · 작은 화면용 타이포 스케일</p>
+          <div class="type-list">
+          <div class="type-row">
+            <p class="type-row__sample type-small-display">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Display</span>
+              <span class="type-row__desc">히어로 임팩트</span>
+              <code>--typography-small-display-font-size</code>
+              <code>--typography-small-display-font-weight</code>
+              <code>--typography-small-display-line-height</code>
+              <code>--typography-small-display-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-h1">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / H1</span>
+              <span class="type-row__desc">페이지 대표 제목</span>
+              <code>--typography-small-h1-font-size</code>
+              <code>--typography-small-h1-font-weight</code>
+              <code>--typography-small-h1-line-height</code>
+              <code>--typography-small-h1-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-h2">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / H2</span>
+              <span class="type-row__desc">섹션 제목</span>
+              <code>--typography-small-h2-font-size</code>
+              <code>--typography-small-h2-font-weight</code>
+              <code>--typography-small-h2-line-height</code>
+              <code>--typography-small-h2-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-h3">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / H3</span>
+              <span class="type-row__desc">서브 섹션</span>
+              <code>--typography-small-h3-font-size</code>
+              <code>--typography-small-h3-font-weight</code>
+              <code>--typography-small-h3-line-height</code>
+              <code>--typography-small-h3-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-h4">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / H4</span>
+              <span class="type-row__desc">카드 제목</span>
+              <code>--typography-small-h4-font-size</code>
+              <code>--typography-small-h4-font-weight</code>
+              <code>--typography-small-h4-line-height</code>
+              <code>--typography-small-h4-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-subheading">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Subheading</span>
+              <span class="type-row__desc">소제목</span>
+              <code>--typography-small-subheading-font-size</code>
+              <code>--typography-small-subheading-font-weight</code>
+              <code>--typography-small-subheading-line-height</code>
+              <code>--typography-small-subheading-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-body-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Body L</span>
+              <span class="type-row__desc">강조 본문</span>
+              <code>--typography-small-body-l-font-size</code>
+              <code>--typography-small-body-l-font-weight</code>
+              <code>--typography-small-body-l-line-height</code>
+              <code>--typography-small-body-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-body-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Body M</span>
+              <span class="type-row__desc">기본 본문</span>
+              <code>--typography-small-body-m-font-size</code>
+              <code>--typography-small-body-m-font-weight</code>
+              <code>--typography-small-body-m-line-height</code>
+              <code>--typography-small-body-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-body-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Body S</span>
+              <span class="type-row__desc">보조 본문</span>
+              <code>--typography-small-body-s-font-size</code>
+              <code>--typography-small-body-s-font-weight</code>
+              <code>--typography-small-body-s-line-height</code>
+              <code>--typography-small-body-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-caption">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Caption</span>
+              <span class="type-row__desc">부가정보</span>
+              <code>--typography-small-caption-font-size</code>
+              <code>--typography-small-caption-font-weight</code>
+              <code>--typography-small-caption-line-height</code>
+              <code>--typography-small-caption-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-label">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Label</span>
+              <span class="type-row__desc">뱃지·탭·태그</span>
+              <code>--typography-small-label-font-size</code>
+              <code>--typography-small-label-font-weight</code>
+              <code>--typography-small-label-line-height</code>
+              <code>--typography-small-label-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-cta-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / CTA L</span>
+              <span class="type-row__desc">큰 버튼</span>
+              <code>--typography-small-cta-l-font-size</code>
+              <code>--typography-small-cta-l-font-weight</code>
+              <code>--typography-small-cta-l-line-height</code>
+              <code>--typography-small-cta-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-cta-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / CTA M</span>
+              <span class="type-row__desc">기본 버튼</span>
+              <code>--typography-small-cta-m-font-size</code>
+              <code>--typography-small-cta-m-font-weight</code>
+              <code>--typography-small-cta-m-line-height</code>
+              <code>--typography-small-cta-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-cta-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / CTA S</span>
+              <span class="type-row__desc">작은 버튼</span>
+              <code>--typography-small-cta-s-font-size</code>
+              <code>--typography-small-cta-s-font-weight</code>
+              <code>--typography-small-cta-s-line-height</code>
+              <code>--typography-small-cta-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-overline">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Overline</span>
+              <span class="type-row__desc">카테고리명</span>
+              <code>--typography-small-overline-font-size</code>
+              <code>--typography-small-overline-font-weight</code>
+              <code>--typography-small-overline-line-height</code>
+              <code>--typography-small-overline-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-small-helper">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Small / Helper</span>
+              <span class="type-row__desc">폼 안내·에러</span>
+              <code>--typography-small-helper-font-size</code>
+              <code>--typography-small-helper-font-weight</code>
+              <code>--typography-small-helper-line-height</code>
+              <code>--typography-small-helper-letter-spacing</code>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="type-scale" id="typography-medium">
+          <h3 class="type-scale__title">Medium</h3>
+          <p class="type-scale__desc">기본 웹 · 태블릿 · 일반 화면용 타이포 스케일</p>
+          <div class="type-list">
+          <div class="type-row">
+            <p class="type-row__sample type-medium-display">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Display</span>
+              <span class="type-row__desc">히어로 임팩트</span>
+              <code>--typography-medium-display-font-size</code>
+              <code>--typography-medium-display-font-weight</code>
+              <code>--typography-medium-display-line-height</code>
+              <code>--typography-medium-display-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-h1">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / H1</span>
+              <span class="type-row__desc">페이지 대표 제목</span>
+              <code>--typography-medium-h1-font-size</code>
+              <code>--typography-medium-h1-font-weight</code>
+              <code>--typography-medium-h1-line-height</code>
+              <code>--typography-medium-h1-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-h2">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / H2</span>
+              <span class="type-row__desc">섹션 제목</span>
+              <code>--typography-medium-h2-font-size</code>
+              <code>--typography-medium-h2-font-weight</code>
+              <code>--typography-medium-h2-line-height</code>
+              <code>--typography-medium-h2-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-h3">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / H3</span>
+              <span class="type-row__desc">서브 섹션</span>
+              <code>--typography-medium-h3-font-size</code>
+              <code>--typography-medium-h3-font-weight</code>
+              <code>--typography-medium-h3-line-height</code>
+              <code>--typography-medium-h3-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-h4">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / H4</span>
+              <span class="type-row__desc">카드 제목</span>
+              <code>--typography-medium-h4-font-size</code>
+              <code>--typography-medium-h4-font-weight</code>
+              <code>--typography-medium-h4-line-height</code>
+              <code>--typography-medium-h4-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-subheading">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Subheading</span>
+              <span class="type-row__desc">소제목</span>
+              <code>--typography-medium-subheading-font-size</code>
+              <code>--typography-medium-subheading-font-weight</code>
+              <code>--typography-medium-subheading-line-height</code>
+              <code>--typography-medium-subheading-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-body-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Body L</span>
+              <span class="type-row__desc">강조 본문</span>
+              <code>--typography-medium-body-l-font-size</code>
+              <code>--typography-medium-body-l-font-weight</code>
+              <code>--typography-medium-body-l-line-height</code>
+              <code>--typography-medium-body-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-body-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Body M</span>
+              <span class="type-row__desc">기본 본문</span>
+              <code>--typography-medium-body-m-font-size</code>
+              <code>--typography-medium-body-m-font-weight</code>
+              <code>--typography-medium-body-m-line-height</code>
+              <code>--typography-medium-body-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-body-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Body S</span>
+              <span class="type-row__desc">보조 본문</span>
+              <code>--typography-medium-body-s-font-size</code>
+              <code>--typography-medium-body-s-font-weight</code>
+              <code>--typography-medium-body-s-line-height</code>
+              <code>--typography-medium-body-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-caption">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Caption</span>
+              <span class="type-row__desc">부가정보</span>
+              <code>--typography-medium-caption-font-size</code>
+              <code>--typography-medium-caption-font-weight</code>
+              <code>--typography-medium-caption-line-height</code>
+              <code>--typography-medium-caption-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-label">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Label</span>
+              <span class="type-row__desc">뱃지·탭·태그</span>
+              <code>--typography-medium-label-font-size</code>
+              <code>--typography-medium-label-font-weight</code>
+              <code>--typography-medium-label-line-height</code>
+              <code>--typography-medium-label-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-cta-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / CTA L</span>
+              <span class="type-row__desc">큰 버튼</span>
+              <code>--typography-medium-cta-l-font-size</code>
+              <code>--typography-medium-cta-l-font-weight</code>
+              <code>--typography-medium-cta-l-line-height</code>
+              <code>--typography-medium-cta-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-cta-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / CTA M</span>
+              <span class="type-row__desc">기본 버튼</span>
+              <code>--typography-medium-cta-m-font-size</code>
+              <code>--typography-medium-cta-m-font-weight</code>
+              <code>--typography-medium-cta-m-line-height</code>
+              <code>--typography-medium-cta-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-cta-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / CTA S</span>
+              <span class="type-row__desc">작은 버튼</span>
+              <code>--typography-medium-cta-s-font-size</code>
+              <code>--typography-medium-cta-s-font-weight</code>
+              <code>--typography-medium-cta-s-line-height</code>
+              <code>--typography-medium-cta-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-overline">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Overline</span>
+              <span class="type-row__desc">카테고리명</span>
+              <code>--typography-medium-overline-font-size</code>
+              <code>--typography-medium-overline-font-weight</code>
+              <code>--typography-medium-overline-line-height</code>
+              <code>--typography-medium-overline-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-medium-helper">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Medium / Helper</span>
+              <span class="type-row__desc">폼 안내·에러</span>
+              <code>--typography-medium-helper-font-size</code>
+              <code>--typography-medium-helper-font-weight</code>
+              <code>--typography-medium-helper-line-height</code>
+              <code>--typography-medium-helper-letter-spacing</code>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="type-scale" id="typography-large">
+          <h3 class="type-scale__title">Large</h3>
+          <p class="type-scale__desc">넓은 데스크톱 화면용 타이포 스케일</p>
+          <div class="type-list">
+          <div class="type-row">
+            <p class="type-row__sample type-large-display">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Display</span>
+              <span class="type-row__desc">히어로 임팩트</span>
+              <code>--typography-large-display-font-size</code>
+              <code>--typography-large-display-font-weight</code>
+              <code>--typography-large-display-line-height</code>
+              <code>--typography-large-display-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-h1">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / H1</span>
+              <span class="type-row__desc">페이지 대표 제목</span>
+              <code>--typography-large-h1-font-size</code>
+              <code>--typography-large-h1-font-weight</code>
+              <code>--typography-large-h1-line-height</code>
+              <code>--typography-large-h1-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-h2">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / H2</span>
+              <span class="type-row__desc">섹션 제목</span>
+              <code>--typography-large-h2-font-size</code>
+              <code>--typography-large-h2-font-weight</code>
+              <code>--typography-large-h2-line-height</code>
+              <code>--typography-large-h2-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-h3">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / H3</span>
+              <span class="type-row__desc">서브 섹션</span>
+              <code>--typography-large-h3-font-size</code>
+              <code>--typography-large-h3-font-weight</code>
+              <code>--typography-large-h3-line-height</code>
+              <code>--typography-large-h3-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-h4">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / H4</span>
+              <span class="type-row__desc">카드 제목</span>
+              <code>--typography-large-h4-font-size</code>
+              <code>--typography-large-h4-font-weight</code>
+              <code>--typography-large-h4-line-height</code>
+              <code>--typography-large-h4-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-subheading">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Subheading</span>
+              <span class="type-row__desc">소제목</span>
+              <code>--typography-large-subheading-font-size</code>
+              <code>--typography-large-subheading-font-weight</code>
+              <code>--typography-large-subheading-line-height</code>
+              <code>--typography-large-subheading-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-body-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Body L</span>
+              <span class="type-row__desc">강조 본문</span>
+              <code>--typography-large-body-l-font-size</code>
+              <code>--typography-large-body-l-font-weight</code>
+              <code>--typography-large-body-l-line-height</code>
+              <code>--typography-large-body-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-body-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Body M</span>
+              <span class="type-row__desc">기본 본문</span>
+              <code>--typography-large-body-m-font-size</code>
+              <code>--typography-large-body-m-font-weight</code>
+              <code>--typography-large-body-m-line-height</code>
+              <code>--typography-large-body-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-body-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Body S</span>
+              <span class="type-row__desc">보조 본문</span>
+              <code>--typography-large-body-s-font-size</code>
+              <code>--typography-large-body-s-font-weight</code>
+              <code>--typography-large-body-s-line-height</code>
+              <code>--typography-large-body-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-caption">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Caption</span>
+              <span class="type-row__desc">부가정보</span>
+              <code>--typography-large-caption-font-size</code>
+              <code>--typography-large-caption-font-weight</code>
+              <code>--typography-large-caption-line-height</code>
+              <code>--typography-large-caption-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-label">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Label</span>
+              <span class="type-row__desc">뱃지·탭·태그</span>
+              <code>--typography-large-label-font-size</code>
+              <code>--typography-large-label-font-weight</code>
+              <code>--typography-large-label-line-height</code>
+              <code>--typography-large-label-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-cta-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / CTA L</span>
+              <span class="type-row__desc">큰 버튼</span>
+              <code>--typography-large-cta-l-font-size</code>
+              <code>--typography-large-cta-l-font-weight</code>
+              <code>--typography-large-cta-l-line-height</code>
+              <code>--typography-large-cta-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-cta-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / CTA M</span>
+              <span class="type-row__desc">기본 버튼</span>
+              <code>--typography-large-cta-m-font-size</code>
+              <code>--typography-large-cta-m-font-weight</code>
+              <code>--typography-large-cta-m-line-height</code>
+              <code>--typography-large-cta-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-cta-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / CTA S</span>
+              <span class="type-row__desc">작은 버튼</span>
+              <code>--typography-large-cta-s-font-size</code>
+              <code>--typography-large-cta-s-font-weight</code>
+              <code>--typography-large-cta-s-line-height</code>
+              <code>--typography-large-cta-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-overline">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Overline</span>
+              <span class="type-row__desc">카테고리명</span>
+              <code>--typography-large-overline-font-size</code>
+              <code>--typography-large-overline-font-weight</code>
+              <code>--typography-large-overline-line-height</code>
+              <code>--typography-large-overline-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-large-helper">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Large / Helper</span>
+              <span class="type-row__desc">폼 안내·에러</span>
+              <code>--typography-large-helper-font-size</code>
+              <code>--typography-large-helper-font-weight</code>
+              <code>--typography-large-helper-line-height</code>
+              <code>--typography-large-helper-letter-spacing</code>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="type-scale" id="typography-display">
+          <h3 class="type-scale__title">Display</h3>
+          <p class="type-scale__desc">히어로 · 랜딩 KV · 초대형 브랜드 임팩트 스케일</p>
+          <div class="type-list">
+          <div class="type-row">
+            <p class="type-row__sample type-display-display">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Display</span>
+              <span class="type-row__desc">히어로 임팩트</span>
+              <code>--typography-display-display-font-size</code>
+              <code>--typography-display-display-font-weight</code>
+              <code>--typography-display-display-line-height</code>
+              <code>--typography-display-display-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-h1">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / H1</span>
+              <span class="type-row__desc">페이지 대표 제목</span>
+              <code>--typography-display-h1-font-size</code>
+              <code>--typography-display-h1-font-weight</code>
+              <code>--typography-display-h1-line-height</code>
+              <code>--typography-display-h1-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-h2">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / H2</span>
+              <span class="type-row__desc">섹션 제목</span>
+              <code>--typography-display-h2-font-size</code>
+              <code>--typography-display-h2-font-weight</code>
+              <code>--typography-display-h2-line-height</code>
+              <code>--typography-display-h2-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-h3">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / H3</span>
+              <span class="type-row__desc">서브 섹션</span>
+              <code>--typography-display-h3-font-size</code>
+              <code>--typography-display-h3-font-weight</code>
+              <code>--typography-display-h3-line-height</code>
+              <code>--typography-display-h3-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-h4">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / H4</span>
+              <span class="type-row__desc">카드 제목</span>
+              <code>--typography-display-h4-font-size</code>
+              <code>--typography-display-h4-font-weight</code>
+              <code>--typography-display-h4-line-height</code>
+              <code>--typography-display-h4-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-subheading">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Subheading</span>
+              <span class="type-row__desc">소제목</span>
+              <code>--typography-display-subheading-font-size</code>
+              <code>--typography-display-subheading-font-weight</code>
+              <code>--typography-display-subheading-line-height</code>
+              <code>--typography-display-subheading-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-body-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Body L</span>
+              <span class="type-row__desc">강조 본문</span>
+              <code>--typography-display-body-l-font-size</code>
+              <code>--typography-display-body-l-font-weight</code>
+              <code>--typography-display-body-l-line-height</code>
+              <code>--typography-display-body-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-body-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Body M</span>
+              <span class="type-row__desc">기본 본문</span>
+              <code>--typography-display-body-m-font-size</code>
+              <code>--typography-display-body-m-font-weight</code>
+              <code>--typography-display-body-m-line-height</code>
+              <code>--typography-display-body-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-body-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Body S</span>
+              <span class="type-row__desc">보조 본문</span>
+              <code>--typography-display-body-s-font-size</code>
+              <code>--typography-display-body-s-font-weight</code>
+              <code>--typography-display-body-s-line-height</code>
+              <code>--typography-display-body-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-caption">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Caption</span>
+              <span class="type-row__desc">부가정보</span>
+              <code>--typography-display-caption-font-size</code>
+              <code>--typography-display-caption-font-weight</code>
+              <code>--typography-display-caption-line-height</code>
+              <code>--typography-display-caption-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-label">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Label</span>
+              <span class="type-row__desc">뱃지·탭·태그</span>
+              <code>--typography-display-label-font-size</code>
+              <code>--typography-display-label-font-weight</code>
+              <code>--typography-display-label-line-height</code>
+              <code>--typography-display-label-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-cta-l">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / CTA L</span>
+              <span class="type-row__desc">큰 버튼</span>
+              <code>--typography-display-cta-l-font-size</code>
+              <code>--typography-display-cta-l-font-weight</code>
+              <code>--typography-display-cta-l-line-height</code>
+              <code>--typography-display-cta-l-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-cta-m">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / CTA M</span>
+              <span class="type-row__desc">기본 버튼</span>
+              <code>--typography-display-cta-m-font-size</code>
+              <code>--typography-display-cta-m-font-weight</code>
+              <code>--typography-display-cta-m-line-height</code>
+              <code>--typography-display-cta-m-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-cta-s">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / CTA S</span>
+              <span class="type-row__desc">작은 버튼</span>
+              <code>--typography-display-cta-s-font-size</code>
+              <code>--typography-display-cta-s-font-weight</code>
+              <code>--typography-display-cta-s-line-height</code>
+              <code>--typography-display-cta-s-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-overline">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Overline</span>
+              <span class="type-row__desc">카테고리명</span>
+              <code>--typography-display-overline-font-size</code>
+              <code>--typography-display-overline-font-weight</code>
+              <code>--typography-display-overline-line-height</code>
+              <code>--typography-display-overline-letter-spacing</code>
+            </div>
+          </div>
+          <div class="type-row">
+            <p class="type-row__sample type-display-helper">브랜드 타이포그래피 Brand Typography 0123456789</p>
+            <div class="type-row__meta">
+              <span class="type-row__hierarchy">Typography / Display / Helper</span>
+              <span class="type-row__desc">폼 안내·에러</span>
+              <code>--typography-display-helper-font-size</code>
+              <code>--typography-display-helper-font-weight</code>
+              <code>--typography-display-helper-line-height</code>
+              <code>--typography-display-helper-letter-spacing</code>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-section" id="spacing">
+        <h2 class="sg-section__title">3. Spacing</h2>
+        <p class="sg-section__desc">박스 너비 = 토큰 값</p>
+        <div class="space-list">
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-xs)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-xs</code>
+          <span class="space-item__value">4px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-sm)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-sm</code>
+          <span class="space-item__value">8px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-md)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-md</code>
+          <span class="space-item__value">16px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-lg)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-lg</code>
+          <span class="space-item__value">24px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-xl)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-xl</code>
+          <span class="space-item__value">32px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-2xl)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-2xl</code>
+          <span class="space-item__value">48px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-3xl)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-3xl</code>
+          <span class="space-item__value">64px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-4xl)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-4xl</code>
+          <span class="space-item__value">96px</span>
+        </div>
+      </div>
+      <div class="space-item">
+        <div class="space-item__track">
+          <div class="space-item__bar" style="width: var(--spacing-5xl)"></div>
+        </div>
+        <div class="space-item__meta">
+          <code>--spacing-5xl</code>
+          <span class="space-item__value">128px</span>
+        </div>
+      </div>
+        </div>
+      </section>
+
+      <section class="sg-section" id="radius">
+        <h2 class="sg-section__title">4. Radius</h2>
+        <p class="sg-section__desc">80×80 박스에 border-radius 적용</p>
+        <div class="radius-grid">
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-none)"></div>
+        <code>--radius-none</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-xs)"></div>
+        <code>--radius-xs</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-sm)"></div>
+        <code>--radius-sm</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-md)"></div>
+        <code>--radius-md</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-lg)"></div>
+        <code>--radius-lg</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-xl)"></div>
+        <code>--radius-xl</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-2xl)"></div>
+        <code>--radius-2xl</code>
+      </div>
+      <div class="radius-item">
+        <div class="radius-item__box" style="border-radius: var(--radius-full)"></div>
+        <code>--radius-full</code>
+      </div>
+        </div>
+      </section>
+
+      <section class="sg-section" id="shadow">
+        <h2 class="sg-section__title">5. Shadow</h2>
+        <p class="sg-section__desc">light / dark 변형</p>
+        <div class="shadow-list">
+      <div class="shadow-group">
+        <h4 class="shadow-group__name">xs</h4>
+        <div class="shadow-group__pair">
+          <div class="shadow-demo shadow-demo--on-light">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-xs-light)"></div>
+            <code>--shadow-xs-light</code>
+          </div>
+          <div class="shadow-demo shadow-demo--on-dark">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-xs-dark)"></div>
+            <code>--shadow-xs-dark</code>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-group">
+        <h4 class="shadow-group__name">sm</h4>
+        <div class="shadow-group__pair">
+          <div class="shadow-demo shadow-demo--on-light">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-sm-light)"></div>
+            <code>--shadow-sm-light</code>
+          </div>
+          <div class="shadow-demo shadow-demo--on-dark">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-sm-dark)"></div>
+            <code>--shadow-sm-dark</code>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-group">
+        <h4 class="shadow-group__name">md</h4>
+        <div class="shadow-group__pair">
+          <div class="shadow-demo shadow-demo--on-light">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-md-light)"></div>
+            <code>--shadow-md-light</code>
+          </div>
+          <div class="shadow-demo shadow-demo--on-dark">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-md-dark)"></div>
+            <code>--shadow-md-dark</code>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-group">
+        <h4 class="shadow-group__name">lg</h4>
+        <div class="shadow-group__pair">
+          <div class="shadow-demo shadow-demo--on-light">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-lg-light)"></div>
+            <code>--shadow-lg-light</code>
+          </div>
+          <div class="shadow-demo shadow-demo--on-dark">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-lg-dark)"></div>
+            <code>--shadow-lg-dark</code>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-group">
+        <h4 class="shadow-group__name">xl</h4>
+        <div class="shadow-group__pair">
+          <div class="shadow-demo shadow-demo--on-light">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-xl-light)"></div>
+            <code>--shadow-xl-light</code>
+          </div>
+          <div class="shadow-demo shadow-demo--on-dark">
+            <div class="shadow-demo__box" style="box-shadow: var(--shadow-xl-dark)"></div>
+            <code>--shadow-xl-dark</code>
+          </div>
+        </div>
+      </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클레어 클리닉 — 메인</title>
+  <link rel="stylesheet" href="../../_tokens/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-logo">클레어 클리닉</a>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a href="doctors.html" class="site-nav__link" data-nav="doctors">의료진소개</a></li>
+          <li class="site-nav__item"><a href="services.html" class="site-nav__link" data-nav="services">진료과목</a></li>
+          <li class="site-nav__item"><a href="notice.html" class="site-nav__link" data-nav="notice">공지사항</a></li>
+          <li class="site-nav__item"><a href="reservation.html" class="site-nav__link site-nav__link--cta" data-nav="reservation">온라인예약</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero -->
+    <section class="hero" aria-label="메인 비주얼">
+      <div class="hero__bg ph ph--dark" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">클레어 클리닉</h1>
+        <p class="hero__subtitle">환자 중심의 정확한 진료와 따뜻한 상담으로 건강한 일상을 돕습니다</p>
+        <div class="btn-group">
+          <a href="reservation.html" class="btn btn--primary">온라인 예약</a>
+          <a href="services.html" class="btn btn--secondary">진료과목 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 진료과목 미리보기 -->
+    <section class="section section--alt" id="services-preview">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">진료과목</h2>
+          <p class="section__desc">클레어 클리닉의 주요 진료 분야를 소개합니다</p>
+        </div>
+        <div class="card-grid card-grid--4">
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">내과·검진</h3>
+              <p class="card__text">만성질환 관리와 맞춤형 건강검진 프로그램을 제공합니다.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">피부·미용</h3>
+              <p class="card__text">피부 고민 상담부터 시술 후 관리까지 원스톱 케어입니다.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">정형·재활</h3>
+              <p class="card__text">통증의 원인을 파악하고 단계별 재활 계획을 수립합니다.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">소아·예방접종</h3>
+              <p class="card__text">아이의 성장 단계에 맞춘 예방접종과 상담을 진행합니다.</p>
+            </div>
+          </article>
+        </div>
+        <p class="text-center">
+          <a href="services.html" class="section__more">진료과목 전체보기</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. 의료진 소개 미리보기 -->
+    <section class="section" id="doctors-preview">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">의료진 소개</h2>
+          <p class="section__desc">풍부한 임상 경험을 갖춘 전문의가 직접 진료합니다</p>
+        </div>
+        <div class="card-grid card-grid--3">
+          <article class="card doctor-card">
+            <span class="card__ph ph" aria-hidden="true"></span>
+            <div class="card__body">
+              <p class="doctor-card__name">김지현</p>
+              <p class="doctor-card__role">내과 전문의 · 원장</p>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <span class="card__ph ph" aria-hidden="true"></span>
+            <div class="card__body">
+              <p class="doctor-card__name">박서준</p>
+              <p class="doctor-card__role">피부과 전문의</p>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <span class="card__ph ph" aria-hidden="true"></span>
+            <div class="card__body">
+              <p class="doctor-card__name">이수연</p>
+              <p class="doctor-card__role">정형외과 전문의</p>
+            </div>
+          </article>
+        </div>
+        <p class="text-center">
+          <a href="doctors.html" class="section__more">의료진 전체보기</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. 공지사항 미리보기 -->
+    <section class="section section--alt" id="notice-preview">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">공지사항</h2>
+          <p class="section__desc">병원 소식과 진료 안내를 확인하세요</p>
+        </div>
+        <ul class="notice-list">
+          <li class="notice-list__item">
+            <time class="notice-list__date" datetime="2026-06-01">2026.06.01</time>
+            <span class="notice-list__title">6월 건강검진 패키지 예약 안내</span>
+            <span class="notice-list__badge">공지</span>
+          </li>
+          <li class="notice-list__item">
+            <time class="notice-list__date" datetime="2026-05-28">2026.05.28</time>
+            <span class="notice-list__title">여름철 피부 관리 클리닉 운영 시간 변경</span>
+          </li>
+          <li class="notice-list__item">
+            <time class="notice-list__date" datetime="2026-05-20">2026.05.20</time>
+            <span class="notice-list__title">소아 예방접종 접종 일정 안내</span>
+          </li>
+          <li class="notice-list__item">
+            <time class="notice-list__date" datetime="2026-05-12">2026.05.12</time>
+            <span class="notice-list__title">신규 의료진 합류 및 진료과 확대 안내</span>
+          </li>
+          <li class="notice-list__item">
+            <time class="notice-list__date" datetime="2026-05-02">2026.05.02</time>
+            <span class="notice-list__title">5월 휴진일 및 대체 진료 안내</span>
+          </li>
+        </ul>
+        <p class="text-center">
+          <a href="notice.html" class="section__more">공지사항 더보기</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 예약 CTA -->
+    <section class="cta-band" aria-label="예약 안내">
+      <div class="container">
+        <h2 class="cta-band__title">지금 바로 온라인 예약하세요</h2>
+        <a href="reservation.html" class="btn btn--primary">예약하기</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__name">클레어 클리닉</p>
+      <div class="site-footer__info">
+        <p>서울특별시 강남구 테헤란로 000 클레어빌딩 3~5층</p>
+        <p>대표전화 02-000-0000 · 팩스 02-000-0001</p>
+        <p>진료시간 평일 09:00–18:00 / 토요일 09:00–13:00 (일·공휴일 휴진)</p>
+      </div>
+      <p class="site-footer__copy">© 2026 Claire Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

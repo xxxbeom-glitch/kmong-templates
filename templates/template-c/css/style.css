@@ -1,0 +1,13 @@
+@import url('../../../_tokens/tokens.css');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile: 768px and below */
+@media (max-width: 768px) {
+}

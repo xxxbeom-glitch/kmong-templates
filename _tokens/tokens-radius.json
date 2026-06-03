@@ -1,0 +1,36 @@
+{
+  "radius": {
+    "none": {
+      "value": 0,
+      "type": "float"
+    },
+    "xs": {
+      "value": 2,
+      "type": "float"
+    },
+    "sm": {
+      "value": 4,
+      "type": "float"
+    },
+    "md": {
+      "value": 8,
+      "type": "float"
+    },
+    "lg": {
+      "value": 12,
+      "type": "float"
+    },
+    "xl": {
+      "value": 16,
+      "type": "float"
+    },
+    "2xl": {
+      "value": 24,
+      "type": "float"
+    },
+    "full": {
+      "value": 9999,
+      "type": "float"
+    }
+  }
+}

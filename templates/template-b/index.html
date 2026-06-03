@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모닝테이블 — 메인</title>
+  <link rel="stylesheet" href="../../_tokens/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-logo">모닝테이블</a>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a href="menu.html" class="site-nav__link" data-nav="menu">메뉴소개</a></li>
+          <li class="site-nav__item"><a href="about.html" class="site-nav__link" data-nav="about">매장소개</a></li>
+          <li class="site-nav__item"><a href="reservation.html" class="site-nav__link site-nav__link--cta" data-nav="reservation">예약문의</a></li>
+          <li class="site-nav__item"><a href="sns.html" class="site-nav__link" data-nav="sns">SNS이벤트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero slider -->
+    <section class="hero-slider" aria-label="메인 배너">
+      <div class="hero-slider__track">
+        <article class="hero-slider__slide is-active">
+          <span class="hero-slider__bg ph ph--dark" aria-hidden="true"></span>
+          <div class="hero-slider__content">
+            <h1 class="hero-slider__title">모닝테이블</h1>
+            <p class="hero-slider__text">신선한 재료로 만드는 브런치 &amp; 홈메이드 디저트</p>
+            <a href="menu.html" class="btn btn--primary">메뉴 보기</a>
+          </div>
+        </article>
+        <article class="hero-slider__slide">
+          <span class="hero-slider__bg ph" aria-hidden="true"></span>
+          <div class="hero-slider__content">
+            <h2 class="hero-slider__title">시즌 스페셜 메뉴</h2>
+            <p class="hero-slider__text">봄 한정 플레이트와 스페셜티 커피를 만나보세요</p>
+            <a href="sns.html" class="btn btn--primary">이벤트 보기</a>
+          </div>
+        </article>
+        <article class="hero-slider__slide">
+          <span class="hero-slider__bg ph ph--dark" aria-hidden="true"></span>
+          <div class="hero-slider__content">
+            <h2 class="hero-slider__title">단체 예약 환영</h2>
+            <p class="hero-slider__text">모임·기념일·브런치 패키지 상담을 받고 있습니다</p>
+            <a href="reservation.html" class="btn btn--primary">예약하기</a>
+          </div>
+        </article>
+      </div>
+      <button type="button" class="hero-slider__nav hero-slider__nav--prev" aria-label="이전 슬라이드">‹</button>
+      <button type="button" class="hero-slider__nav hero-slider__nav--next" aria-label="다음 슬라이드">›</button>
+      <ul class="hero-slider__dots" aria-label="슬라이드 인디케이터">
+        <li><button type="button" class="hero-slider__dot is-active" aria-label="1번 슬라이드"></button></li>
+        <li><button type="button" class="hero-slider__dot" aria-label="2번 슬라이드"></button></li>
+        <li><button type="button" class="hero-slider__dot" aria-label="3번 슬라이드"></button></li>
+      </ul>
+    </section>
+
+    <!-- 2. 메뉴 미리보기 -->
+    <section class="section section--surface" id="menu-preview">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">시그니처 메뉴</h2>
+          <p class="section__desc">모닝테이블에서 가장 사랑받는 메뉴를 소개합니다</p>
+        </div>
+        <div class="card-grid card-grid--4">
+          <article class="menu-card">
+            <span class="menu-card__ph ph" aria-hidden="true"></span>
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">에그 베네딕트</h3>
+              <p class="menu-card__price">18,000원</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <span class="menu-card__ph ph" aria-hidden="true"></span>
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">트러플 크림 파스타</h3>
+              <p class="menu-card__price">16,500원</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <span class="menu-card__ph ph" aria-hidden="true"></span>
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">베리 요거트 볼</h3>
+              <p class="menu-card__price">12,000원</p>
+            </div>
+          </article>
+          <article class="menu-card">
+            <span class="menu-card__ph ph" aria-hidden="true"></span>
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">플랫 화이트</h3>
+              <p class="menu-card__price">5,500원</p>
+            </div>
+          </article>
+        </div>
+        <p class="text-center section__actions">
+          <a href="menu.html" class="btn btn--secondary">메뉴 더보기</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. 매장 소개 미리보기 -->
+    <section class="section" id="about-preview">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2 class="split__title">매장 스토리</h2>
+            <p class="split__text">모닝테이블은 2018년 작은 골목에서 시작된 브런치 카페입니다. 매일 아침 구워지는 빵과 로컬 농가에서 받는 채소로 플레이트를 완성합니다. 느긋한 아침, 따뜻한 대화가 머무는 공간을 지향합니다.</p>
+            <p class="split__text">와이어프레임 더미 텍스트 · 실제 카피는 납품 시 교체됩니다.</p>
+            <a href="about.html" class="btn btn--secondary split__actions">매장 소개 보기</a>
+          </div>
+          <span class="split__ph ph" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SNS 미리보기 -->
+    <section class="section section--surface" id="sns-preview">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">SNS &amp; 이벤트</h2>
+          <p class="section__desc">인스타그램에서 만나는 모닝테이블의 일상</p>
+        </div>
+        <div class="insta-grid">
+          <span class="insta-grid__item ph" aria-hidden="true"></span>
+          <span class="insta-grid__item ph" aria-hidden="true"></span>
+          <span class="insta-grid__item ph" aria-hidden="true"></span>
+          <span class="insta-grid__item ph" aria-hidden="true"></span>
+          <span class="insta-grid__item ph" aria-hidden="true"></span>
+          <span class="insta-grid__item ph" aria-hidden="true"></span>
+        </div>
+        <p class="text-center section__actions">
+          <a href="sns.html" class="btn btn--secondary">SNS · 이벤트 더보기</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. 예약 CTA -->
+    <section class="cta-band" aria-label="예약 안내">
+      <div class="container">
+        <h2 class="cta-band__title">지금 예약하고 여유로운 브런치를 즐기세요</h2>
+        <p class="cta-band__text">평일 런치 · 주말 브런치 · 단체 예약 모두 온라인으로 가능합니다</p>
+        <a href="reservation.html" class="btn btn--primary">예약하기</a>
+      </div>
+    </section>
+
+    <!-- 6. 오시는길 -->
+    <section class="section section--surface" id="location">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">오시는 길</h2>
+        </div>
+        <div class="location">
+          <span class="location__map ph ph--dark" aria-hidden="true"></span>
+          <dl class="location__info">
+            <dt>주소</dt>
+            <dd>서울특별시 마포구 연남로 000 모닝테이블 1층</dd>
+            <dt>전화</dt>
+            <dd>02-000-0000</dd>
+            <dt>영업시간</dt>
+            <dd>화–일 09:00–21:00 (라스트오더 20:30)<br>월요일 정기휴무</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__name">모닝테이블 Morning Table</p>
+      <div class="site-footer__info">
+        <p>서울특별시 마포구 연남로 000 모닝테이블 1층</p>
+        <p>전화 02-000-0000</p>
+        <p>영업시간 화–일 09:00–21:00 · 월요일 휴무</p>
+      </div>
+      <p class="site-footer__copy">© 2026 Morning Table. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

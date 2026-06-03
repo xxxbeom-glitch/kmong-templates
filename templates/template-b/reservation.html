@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예약 · 문의 — 모닝테이블</title>
+  <link rel="stylesheet" href="../../_tokens/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="reservation">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-logo">모닝테이블</a>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a href="menu.html" class="site-nav__link" data-nav="menu">메뉴소개</a></li>
+          <li class="site-nav__item"><a href="about.html" class="site-nav__link" data-nav="about">매장소개</a></li>
+          <li class="site-nav__item"><a href="reservation.html" class="site-nav__link site-nav__link--cta" data-nav="reservation">예약문의</a></li>
+          <li class="site-nav__item"><a href="sns.html" class="site-nav__link" data-nav="sns">SNS이벤트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">예약 · 문의</h1>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <form class="form" action="#" method="post">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="name">이름</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="홍길동">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">연락처</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="010-0000-0000">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="date">방문 날짜</label>
+              <input class="form__input" type="date" id="date" name="date">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="guests">인원</label>
+              <select class="form__select" id="guests" name="guests">
+                <option value="">선택</option>
+                <option>1명</option>
+                <option>2명</option>
+                <option>3–4명</option>
+                <option>5명 이상 (단체)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="message">요청사항</label>
+            <textarea class="form__textarea" id="message" name="message" placeholder="창가 자리, 생일 이벤트, 알레르기 정보 등"></textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__label">
+              <input type="checkbox" name="agree"> 개인정보 수집·이용에 동의합니다 (와이어프레임)
+            </label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">예약 신청</button>
+        </form>
+
+        <div class="contact-note">
+          <p><strong>카카오채널</strong> @morningtable (더미)</p>
+          <p><strong>전화 문의</strong> 02-000-0000 · 운영시간 09:00–21:00</p>
+          <p>당일 예약은 전화·채널로 문의해 주세요. (와이어프레임 안내 문구)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__name">모닝테이블 Morning Table</p>
+      <div class="site-footer__info">
+        <p>서울특별시 마포구 연남로 000 모닝테이블 1층</p>
+        <p>전화 02-000-0000</p>
+        <p>영업시간 화–일 09:00–21:00 · 월요일 휴무</p>
+      </div>
+      <p class="site-footer__copy">© 2026 Morning Table. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
