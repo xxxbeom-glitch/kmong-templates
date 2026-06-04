@@ -36,3 +36,46 @@
 - **색·font-weight**: Figma hex·숫자 **고정** (vw 스케일 없음)
 - **예외**: Hero KV overlay 텍스트 위치 **% inset** · border **1px** · 768px 이하 **그리드/네비 구조**만 `@media`
 - **좌우 gutter**: `--layout-pad-x: clamp(13px, 1.3542vw, 26px)` (1868 콘텐츠 폭과 동일 축)
+
+━━━━━━━━━━━━━━━━━━━━━━
+섹션 네이밍 규칙
+━━━━━━━━━━━━━━━━━━━━━━
+
+모든 템플릿의 섹션 id와 class는 아래 규칙을 따를 것.
+
+<header id="header" class="header">
+<section id="hero" class="section section--hero">
+<section id="intro" class="section section--intro">
+<section id="features" class="section section--features">
+<section id="proof" class="section section--proof">
+<section id="cta-band" class="section section--cta-band">
+<section id="faq" class="section section--faq">
+<section id="contact" class="section section--contact">
+<footer id="footer" class="footer">
+<section id="hero-sub" class="section section--hero-sub">
+
+추가 섹션이 필요할 경우 동일한 규칙으로 작성:
+id="섹션명" class="section section--섹션명"
+
+내부 공통 요소:
+- 콘텐츠 wrap: class="container"
+- narrow 블록: class="narrow-wrap"
+- 카드: class="card"
+- 그리드: class="grid"
+
+━━━━━━━━━━━━━━━━━━━━━━
+텍스트 영역 규칙
+━━━━━━━━━━━━━━━━━━━━━━
+
+피그마에서 텍스트 박스에 고정 가로/세로 값이 있을 경우
+아래 규칙으로 변환할 것.
+
+가로(width):
+- 고정 px 금지
+- figma_px ÷ frame_width × 100 = vw로 변환
+- clamp(min, Nvw, figma_px) 적용
+
+세로(height):
+- 고정 height 금지
+- min-height로 변환
+- 줄수가 늘어나도 깨지지 않게 auto 또는 min-height 사용
