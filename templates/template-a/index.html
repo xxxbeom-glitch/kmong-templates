@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>클레어 클리닉 — 메인</title>
+  <title>Novara</title>
   <link rel="stylesheet" href="../../_tokens/tokens.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="home">
+<body>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="index.html" class="site-logo">클레어 클리닉</a>
+      <a href="#hero" class="site-logo" aria-label="홈">
+        <span class="site-logo__ph ph" aria-hidden="true"></span>
+      </a>
       <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -18,160 +20,296 @@
       </button>
       <nav class="site-nav" aria-label="주요 메뉴">
         <ul class="site-nav__list">
-          <li class="site-nav__item"><a href="doctors.html" class="site-nav__link" data-nav="doctors">의료진소개</a></li>
-          <li class="site-nav__item"><a href="services.html" class="site-nav__link" data-nav="services">진료과목</a></li>
-          <li class="site-nav__item"><a href="notice.html" class="site-nav__link" data-nav="notice">공지사항</a></li>
-          <li class="site-nav__item"><a href="reservation.html" class="site-nav__link site-nav__link--cta" data-nav="reservation">온라인예약</a></li>
+          <li><a href="#about" class="site-nav__link is-active">첫번째 메뉴</a></li>
+          <li><a href="#process" class="site-nav__link">두번째 메뉴</a></li>
+          <li><a href="#pricing" class="site-nav__link">세번째 메뉴</a></li>
+          <li><a href="#faq" class="site-nav__link">네번째 메뉴</a></li>
+          <li><a href="#contact" class="site-nav__link site-nav__link--cta">지금 바로 문의하기</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- 1. Hero -->
-    <section class="hero" aria-label="메인 비주얼">
-      <div class="hero__bg ph ph--dark" aria-hidden="true"></div>
-      <div class="hero__content">
-        <h1 class="hero__title">클레어 클리닉</h1>
-        <p class="hero__subtitle">환자 중심의 정확한 진료와 따뜻한 상담으로 건강한 일상을 돕습니다</p>
-        <div class="btn-group">
-          <a href="reservation.html" class="btn btn--primary">온라인 예약</a>
-          <a href="services.html" class="btn btn--secondary">진료과목 보기</a>
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-label="메인 비주얼">
+      <div class="hero__slider">
+        <div class="hero__track">
+          <article class="hero__slide is-active"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <article class="hero__slide"><span class="hero__slide-bg ph ph--hero" aria-hidden="true"></span></article>
+          <div class="hero__content">
+            <h1 class="hero__title">금융의 복잡함을<br>단순하게 만듭니다</h1>
+            <p class="hero__desc">기업의 결제, 정산, 자금 관리를 하나의 플랫폼으로<br>더 빠르고 더 안전하게 처리하세요</p>
+            <a href="#contact" class="btn btn--primary">도입 문의하기</a>
+          </div>
+          <nav class="hero__pager" aria-label="슬라이드 이동">
+            <button type="button" class="hero__pager-btn hero__pager-btn--prev" aria-label="이전 슬라이드">
+              <img src="src/left.png" alt="" width="46" height="24" decoding="async">
+            </button>
+            <p class="hero__counter" aria-live="polite">
+              <span class="hero__counter-current">03</span>
+              <span class="hero__counter-sep">/</span>
+              <span class="hero__counter-total">08</span>
+            </p>
+            <button type="button" class="hero__pager-btn hero__pager-btn--next" aria-label="다음 슬라이드">
+              <img src="src/right.png" alt="" width="46" height="24" decoding="async">
+            </button>
+          </nav>
         </div>
       </div>
     </section>
 
-    <!-- 2. 진료과목 미리보기 -->
-    <section class="section section--alt" id="services-preview">
+    <!-- About -->
+    <section class="section section--about" id="about" aria-labelledby="about-heading">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">진료과목</h2>
-          <p class="section__desc">클레어 클리닉의 주요 진료 분야를 소개합니다</p>
+        <div class="about__block">
+          <div class="about__stage">
+            <span class="about__visual ph ph--about" aria-hidden="true"></span>
+            <div class="section-title about__text">
+              <p class="section-label">about</p>
+              <h2 class="section-heading section-heading--about" id="about-heading">THE FUTURE OF FINANCE,<br>STARTS HERE</h2>
+              <p class="section-desc">복잡한 금융 인프라를 누구나 쉽게 쓸 수 있도록,<br>기술로 금융의 장벽을 낮춥니다</p>
+            </div>
+          </div>
         </div>
-        <div class="card-grid card-grid--4">
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">내과·검진</h3>
-              <p class="card__text">만성질환 관리와 맞춤형 건강검진 프로그램을 제공합니다.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">피부·미용</h3>
-              <p class="card__text">피부 고민 상담부터 시술 후 관리까지 원스톱 케어입니다.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">정형·재활</h3>
-              <p class="card__text">통증의 원인을 파악하고 단계별 재활 계획을 수립합니다.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">소아·예방접종</h3>
-              <p class="card__text">아이의 성장 단계에 맞춘 예방접종과 상담을 진행합니다.</p>
-            </div>
-          </article>
-        </div>
-        <p class="text-center">
-          <a href="services.html" class="section__more">진료과목 전체보기</a>
-        </p>
       </div>
     </section>
 
-    <!-- 3. 의료진 소개 미리보기 -->
-    <section class="section" id="doctors-preview">
+    <!-- Process -->
+    <section class="section section--process" id="process" aria-labelledby="process-heading">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">의료진 소개</h2>
-          <p class="section__desc">풍부한 임상 경험을 갖춘 전문의가 직접 진료합니다</p>
+        <div class="section-title section-title--center">
+          <p class="section-label">Process</p>
+          <h2 class="section-heading" id="process-heading">비즈니스 성장을 위한 4단계 금융 솔루션</h2>
+          <p class="section-desc">도입 상담부터 운영 관리까지, 기업에 최적화된 핀테크 플랫폼을 경험하세요</p>
         </div>
-        <div class="card-grid card-grid--3">
-          <article class="card doctor-card">
-            <span class="card__ph ph" aria-hidden="true"></span>
-            <div class="card__body">
-              <p class="doctor-card__name">김지현</p>
-              <p class="doctor-card__role">내과 전문의 · 원장</p>
+        <div class="process-grid" data-process-grid>
+          <article class="process-card is-active">
+            <span class="process-card__ph ph" aria-hidden="true"></span>
+            <div class="process-card__foot">
+              <p class="process-card__label">ANALYSIS</p>
+              <p class="process-card__text">도입 상담부터 운영 관리까지,<br>기업에 최적화된 핀테크 플랫폼을 경험하세요</p>
             </div>
           </article>
-          <article class="card doctor-card">
-            <span class="card__ph ph" aria-hidden="true"></span>
-            <div class="card__body">
-              <p class="doctor-card__name">박서준</p>
-              <p class="doctor-card__role">피부과 전문의</p>
+          <article class="process-card">
+            <span class="process-card__ph ph" aria-hidden="true"></span>
+            <div class="process-card__foot">
+              <p class="process-card__label">INTEGRATION</p>
             </div>
           </article>
-          <article class="card doctor-card">
-            <span class="card__ph ph" aria-hidden="true"></span>
-            <div class="card__body">
-              <p class="doctor-card__name">이수연</p>
-              <p class="doctor-card__role">정형외과 전문의</p>
+          <article class="process-card">
+            <span class="process-card__ph ph" aria-hidden="true"></span>
+            <div class="process-card__foot">
+              <p class="process-card__label">AUTOMATION</p>
+            </div>
+          </article>
+          <article class="process-card">
+            <span class="process-card__ph ph" aria-hidden="true"></span>
+            <div class="process-card__foot">
+              <p class="process-card__label">MANAGEMENT</p>
             </div>
           </article>
         </div>
-        <p class="text-center">
-          <a href="doctors.html" class="section__more">의료진 전체보기</a>
-        </p>
       </div>
     </section>
 
-    <!-- 4. 공지사항 미리보기 -->
-    <section class="section section--alt" id="notice-preview">
+    <!-- Records -->
+    <section class="section section--records" id="records" aria-labelledby="records-heading">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">공지사항</h2>
-          <p class="section__desc">병원 소식과 진료 안내를 확인하세요</p>
+        <div class="section-title section-title--center">
+          <p class="section-label">records</p>
+          <h2 class="section-heading" id="records-heading">숫자로 증명하는 NOVARA의 신뢰</h2>
+          <p class="section-desc">도입 기업들의 실제 성과가 NOVARA를 증명합니다</p>
         </div>
-        <ul class="notice-list">
-          <li class="notice-list__item">
-            <time class="notice-list__date" datetime="2026-06-01">2026.06.01</time>
-            <span class="notice-list__title">6월 건강검진 패키지 예약 안내</span>
-            <span class="notice-list__badge">공지</span>
-          </li>
-          <li class="notice-list__item">
-            <time class="notice-list__date" datetime="2026-05-28">2026.05.28</time>
-            <span class="notice-list__title">여름철 피부 관리 클리닉 운영 시간 변경</span>
-          </li>
-          <li class="notice-list__item">
-            <time class="notice-list__date" datetime="2026-05-20">2026.05.20</time>
-            <span class="notice-list__title">소아 예방접종 접종 일정 안내</span>
-          </li>
-          <li class="notice-list__item">
-            <time class="notice-list__date" datetime="2026-05-12">2026.05.12</time>
-            <span class="notice-list__title">신규 의료진 합류 및 진료과 확대 안내</span>
-          </li>
-          <li class="notice-list__item">
-            <time class="notice-list__date" datetime="2026-05-02">2026.05.02</time>
-            <span class="notice-list__title">5월 휴진일 및 대체 진료 안내</span>
-          </li>
-        </ul>
-        <p class="text-center">
-          <a href="notice.html" class="section__more">공지사항 더보기</a>
-        </p>
+        <div class="records-grid">
+          <article class="records-card">
+            <p class="records-card__value"><span>1,500</span><span class="records-card__suffix">+</span></p>
+            <p class="records-card__label">누적 도입 기업</p>
+          </article>
+          <article class="records-card">
+            <p class="records-card__value"><span>96.9</span><span class="records-card__suffix">%</span></p>
+            <p class="records-card__label">시스템 가동률</p>
+          </article>
+          <article class="records-card">
+            <p class="records-card__value"><span>3500억</span><span class="records-card__suffix">+</span></p>
+            <p class="records-card__label">누적 처리 금액</p>
+          </article>
+          <article class="records-card">
+            <p class="records-card__value"><span>4.9점</span></p>
+            <p class="records-card__label">고객사 만족도</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- 예약 CTA -->
-    <section class="cta-band" aria-label="예약 안내">
+    <!-- Pricing -->
+    <section class="section section--pricing" id="pricing" aria-labelledby="pricing-heading">
       <div class="container">
-        <h2 class="cta-band__title">지금 바로 온라인 예약하세요</h2>
-        <a href="reservation.html" class="btn btn--primary">예약하기</a>
+        <div class="section-title section-title--center">
+          <p class="section-label">PRICING</p>
+          <h2 class="section-heading" id="pricing-heading">비즈니스 규모에 맞는 합리적인 요금제</h2>
+          <p class="section-desc">모든 플랜은 14일 무료 체험이 가능합니다</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card-col">
+            <article class="pricing-card">
+              <div class="pricing-card__head">
+                <p class="pricing-card__plan">STARTER</p>
+                <p class="pricing-card__sub">스타트업을 위한 시작 플랜</p>
+                <p class="pricing-card__price-row">
+                  <span class="pricing-card__price">99,000원</span>
+                  <span class="pricing-card__unit">/월</span>
+                </p>
+              </div>
+              <ul class="pricing-card__features">
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">월 결제 건수 1,000건</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">API 연동 1개</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">기본 대시보드</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">이메일 고객지원</li>
+              </ul>
+              <a href="#contact" class="btn btn--outline">14일 무료 체험</a>
+            </article>
+          </div>
+          <div class="pricing-card-col pricing-card-col--featured">
+            <p class="pricing-card__badge">가장 많은 기업이 선택한 플랜입니다</p>
+            <article class="pricing-card pricing-card--featured">
+              <div class="pricing-card__head">
+                <p class="pricing-card__plan">STARTER</p>
+                <p class="pricing-card__sub">스타트업을 위한 시작 플랜</p>
+                <p class="pricing-card__price-row">
+                  <span class="pricing-card__price">299,000원</span>
+                  <span class="pricing-card__unit">/월</span>
+                </p>
+              </div>
+              <ul class="pricing-card__features">
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">월 결제 건수 10,000건</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">API 연동 5개</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">고급 대시보드 + 리포트</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">자동 정산 기능</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">전담 매니저 배정</li>
+              </ul>
+              <a href="#contact" class="btn btn--primary">14일 무료 체험</a>
+            </article>
+          </div>
+          <div class="pricing-card-col">
+            <article class="pricing-card">
+              <div class="pricing-card__head">
+                <p class="pricing-card__plan">ENTERPRISE</p>
+                <p class="pricing-card__sub">중견기업을 위한 맞춤 플랜</p>
+                <p class="pricing-card__price-row">
+                  <span class="pricing-card__price pricing-card__price--inquiry">가격 문의</span>
+                </p>
+              </div>
+              <ul class="pricing-card__features">
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">결제 건수 무제한</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">API 연동 무제한</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">전용 서버 구축</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">24시간 기술 지원</li>
+                <li><img class="pricing-card__feature-icon" src="src/mark.png" alt="" width="36" height="36" decoding="async">보안 감사 리포트</li>
+              </ul>
+              <a href="#contact" class="btn btn--outline">도입 문의하기</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-title section-title--center">
+          <p class="section-label">faq</p>
+          <h2 class="section-heading" id="faq-heading">자주 묻는 질문</h2>
+        </div>
+        <div class="faq-list" data-faq>
+          <article class="faq-item is-open">
+            <button type="button" class="faq-item__trigger" aria-expanded="true">
+              <span>Q. 도입까지 얼마나 걸리나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <img class="faq-item__icon-img faq-item__icon-img--down" src="src/down.png" alt="" width="49" height="49" decoding="async">
+                <img class="faq-item__icon-img faq-item__icon-img--up" src="src/up.png" alt="" width="50" height="50" decoding="async">
+              </span>
+            </button>
+            <div class="faq-item__panel">
+              <p>기본 API 연동 기준 평균 2주 이내 완료됩니다. 기존 시스템 환경에 따라 일정이 달라질 수 있으며 전담 기술팀이 처음부터 끝까지 지원합니다</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Q. 중소기업도 도입 가능한가요?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <img class="faq-item__icon-img faq-item__icon-img--down" src="src/down.png" alt="" width="49" height="49" decoding="async">
+                <img class="faq-item__icon-img faq-item__icon-img--up" src="src/up.png" alt="" width="50" height="50" decoding="async">
+              </span>
+            </button>
+            <div class="faq-item__panel"></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Q. 데이터 보안은 어떻게 관리되나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <img class="faq-item__icon-img faq-item__icon-img--down" src="src/down.png" alt="" width="49" height="49" decoding="async">
+                <img class="faq-item__icon-img faq-item__icon-img--up" src="src/up.png" alt="" width="50" height="50" decoding="async">
+              </span>
+            </button>
+            <div class="faq-item__panel"></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Q. 도입 후 운영 지원은 어떻게 되나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <img class="faq-item__icon-img faq-item__icon-img--down" src="src/down.png" alt="" width="49" height="49" decoding="async">
+                <img class="faq-item__icon-img faq-item__icon-img--up" src="src/up.png" alt="" width="50" height="50" decoding="async">
+              </span>
+            </button>
+            <div class="faq-item__panel"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-title section-title--center">
+          <p class="section-label">CONTACT</p>
+          <h2 class="section-heading" id="contact-heading">상담문의</h2>
+        </div>
+        <form class="contact-form" action="#" method="post">
+          <div class="contact-form__fields">
+            <div class="form-field">
+              <label class="form-field__label" for="contact-name">이름</label>
+              <input class="form-field__input" type="text" id="contact-name" name="name" placeholder="본인의 이름을 입력해주세요">
+            </div>
+            <div class="form-field">
+              <label class="form-field__label" for="contact-phone">연락처</label>
+              <input class="form-field__input" type="text" id="contact-phone" name="phone" placeholder="연락처를 입력해주세요">
+            </div>
+            <div class="form-field">
+              <label class="form-field__label" for="contact-email">이메일</label>
+              <input class="form-field__input" type="email" id="contact-email" name="email" placeholder="이메일을 입력해주세요">
+            </div>
+            <div class="form-field form-field--select">
+              <label class="form-field__label" for="contact-category">카테고리</label>
+              <select class="form-field__input form-field__input--select" id="contact-category" name="category">
+                <option value="">카테고리를 선택해주세요</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field form-field--message">
+            <label class="form-field__label" for="contact-message">상담내용</label>
+            <textarea class="form-field__textarea" id="contact-message" name="message" placeholder="내용을 입력해주세요"></textarea>
+          </div>
+        </form>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__name">클레어 클리닉</p>
-      <div class="site-footer__info">
-        <p>서울특별시 강남구 테헤란로 000 클레어빌딩 3~5층</p>
-        <p>대표전화 02-000-0000 · 팩스 02-000-0001</p>
-        <p>진료시간 평일 09:00–18:00 / 토요일 09:00–13:00 (일·공휴일 휴진)</p>
-      </div>
-      <p class="site-footer__copy">© 2026 Claire Clinic. All rights reserved.</p>
-    </div>
-  </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>

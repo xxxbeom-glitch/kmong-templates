@@ -65,40 +65,40 @@
       </ul>
     </section>
 
-    <!-- 2. 메뉴 미리보기 -->
+    <!-- 2. 메뉴 오버레이 카드 -->
     <section class="section section--surface" id="menu-preview">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">시그니처 메뉴</h2>
-          <p class="section__desc">모닝테이블에서 가장 사랑받는 메뉴를 소개합니다</p>
+        <div class="section-title section-title--center">
+          <p class="section-label">MENU</p>
+          <h2 class="section-heading">시그니처 메뉴</h2>
         </div>
-        <div class="card-grid card-grid--4">
-          <article class="menu-card">
-            <span class="menu-card__ph ph" aria-hidden="true"></span>
-            <div class="menu-card__body">
-              <h3 class="menu-card__name">에그 베네딕트</h3>
-              <p class="menu-card__price">18,000원</p>
+        <div class="overlay-grid">
+          <article class="overlay-card is-active">
+            <span class="overlay-card__bg ph" aria-hidden="true"></span>
+            <div class="overlay-card__content">
+              <p class="overlay-card__title-en">EGG BENEDICT</p>
+              <p class="overlay-card__title-ko">에그 베네딕트 · 18,000원</p>
             </div>
           </article>
-          <article class="menu-card">
-            <span class="menu-card__ph ph" aria-hidden="true"></span>
-            <div class="menu-card__body">
-              <h3 class="menu-card__name">트러플 크림 파스타</h3>
-              <p class="menu-card__price">16,500원</p>
+          <article class="overlay-card">
+            <span class="overlay-card__bg ph" aria-hidden="true"></span>
+            <div class="overlay-card__content">
+              <p class="overlay-card__title-en">TRUFFLE PASTA</p>
+              <p class="overlay-card__title-ko">트러플 크림 파스타 · 16,500원</p>
             </div>
           </article>
-          <article class="menu-card">
-            <span class="menu-card__ph ph" aria-hidden="true"></span>
-            <div class="menu-card__body">
-              <h3 class="menu-card__name">베리 요거트 볼</h3>
-              <p class="menu-card__price">12,000원</p>
+          <article class="overlay-card">
+            <span class="overlay-card__bg ph" aria-hidden="true"></span>
+            <div class="overlay-card__content">
+              <p class="overlay-card__title-en">BERRY BOWL</p>
+              <p class="overlay-card__title-ko">베리 요거트 볼 · 12,000원</p>
             </div>
           </article>
-          <article class="menu-card">
-            <span class="menu-card__ph ph" aria-hidden="true"></span>
-            <div class="menu-card__body">
-              <h3 class="menu-card__name">플랫 화이트</h3>
-              <p class="menu-card__price">5,500원</p>
+          <article class="overlay-card">
+            <span class="overlay-card__bg ph" aria-hidden="true"></span>
+            <div class="overlay-card__content">
+              <p class="overlay-card__title-en">FLAT WHITE</p>
+              <p class="overlay-card__title-ko">플랫 화이트 · 5,500원</p>
             </div>
           </article>
         </div>
@@ -108,27 +108,81 @@
       </div>
     </section>
 
-    <!-- 3. 매장 소개 미리보기 -->
+    <!-- 3. 매장 분할 탭 -->
     <section class="section" id="about-preview">
       <div class="container">
-        <div class="split">
-          <div>
-            <h2 class="split__title">매장 스토리</h2>
-            <p class="split__text">모닝테이블은 2018년 작은 골목에서 시작된 브런치 카페입니다. 매일 아침 구워지는 빵과 로컬 농가에서 받는 채소로 플레이트를 완성합니다. 느긋한 아침, 따뜻한 대화가 머무는 공간을 지향합니다.</p>
-            <p class="split__text">와이어프레임 더미 텍스트 · 실제 카피는 납품 시 교체됩니다.</p>
-            <a href="about.html" class="btn btn--secondary split__actions">매장 소개 보기</a>
+        <div class="split-tab" data-split-tab>
+          <aside class="split-tab__aside">
+            <div class="section-title">
+              <p class="section-label">ABOUT</p>
+              <h2 class="section-heading">매장 스토리</h2>
+            </div>
+            <ul class="split-tab__nav" role="tablist">
+              <li><button type="button" class="split-tab__btn is-active" data-split-target="0" role="tab" aria-selected="true">브랜드 스토리</button></li>
+              <li><button type="button" class="split-tab__btn" data-split-target="1" role="tab" aria-selected="false">공간 &amp; 인테리어</button></li>
+              <li><button type="button" class="split-tab__btn" data-split-target="2" role="tab" aria-selected="false">재료 &amp; 원칙</button></li>
+            </ul>
+          </aside>
+          <div class="split-tab__main">
+            <div class="split-tab__panel is-active" data-split-panel="0" role="tabpanel">
+              <span class="split-tab__ph ph" aria-hidden="true"></span>
+              <h3 class="split-tab__panel-title">2018년, 연남 골목에서</h3>
+              <p class="split-tab__panel-text">모닝테이블은 작은 브런치 카페로 시작해 지역 주민과 여행객이 함께 찾는 아침 공간이 되었습니다.</p>
+            </div>
+            <div class="split-tab__panel" data-split-panel="1" role="tabpanel">
+              <span class="split-tab__ph ph" aria-hidden="true"></span>
+              <h3 class="split-tab__panel-title">따뜻한 나무와 자연광</h3>
+              <p class="split-tab__panel-text">와이어프레임 더미 · 1층 홀과 루프탑 좌석으로 구성된 매장 인테리어 설명 영역입니다.</p>
+            </div>
+            <div class="split-tab__panel" data-split-panel="2" role="tabpanel">
+              <span class="split-tab__ph ph" aria-hidden="true"></span>
+              <h3 class="split-tab__panel-title">로컬 재료, 매일 구운 빵</h3>
+              <p class="split-tab__panel-text">제철 채소와 직접 로스팅한 커피로 플레이트를 완성합니다. 실제 카피는 납품 시 교체됩니다.</p>
+            </div>
           </div>
-          <span class="split__ph ph" aria-hidden="true"></span>
+        </div>
+        <p class="text-center section__actions">
+          <a href="about.html" class="btn btn--secondary">매장 소개 보기</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. 다크 풀위드 -->
+    <section class="section section--dark-band" id="cafe-highlights" aria-label="매장 특징">
+      <div class="dark-band">
+        <div class="dark-band__col">
+          <span class="dark-band__icon ph ph--dark" aria-hidden="true"></span>
+          <p class="dark-band__label-en">FRESH</p>
+          <h3 class="dark-band__label-ko">신선한 재료</h3>
+          <p class="dark-band__text">로컬 농가와 협력해 제철 재료로 매일 메뉴를 준비합니다.</p>
+        </div>
+        <div class="dark-band__col">
+          <span class="dark-band__icon ph ph--dark" aria-hidden="true"></span>
+          <p class="dark-band__label-en">BRUNCH</p>
+          <h3 class="dark-band__label-ko">브런치 전문</h3>
+          <p class="dark-band__text">아침부터 오후까지 즐기는 브런치 플레이트와 홈메이드 디저트.</p>
+        </div>
+        <div class="dark-band__col">
+          <span class="dark-band__icon ph ph--dark" aria-hidden="true"></span>
+          <p class="dark-band__label-en">COFFEE</p>
+          <h3 class="dark-band__label-ko">스페셜티 커피</h3>
+          <p class="dark-band__text">직접 로스팅한 원두로 추출하는 시그니처 음료를 제공합니다.</p>
+        </div>
+        <div class="dark-band__col">
+          <span class="dark-band__icon ph ph--dark" aria-hidden="true"></span>
+          <p class="dark-band__label-en">EVENT</p>
+          <h3 class="dark-band__label-ko">시즌 이벤트</h3>
+          <p class="dark-band__text">계절별 한정 메뉴와 SNS 이벤트로 방문 혜택을 안내합니다.</p>
         </div>
       </div>
     </section>
 
-    <!-- 4. SNS 미리보기 -->
+    <!-- 5. SNS 미리보기 -->
     <section class="section section--surface" id="sns-preview">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">SNS &amp; 이벤트</h2>
-          <p class="section__desc">인스타그램에서 만나는 모닝테이블의 일상</p>
+        <div class="section-title section-title--center">
+          <p class="section-label">SNS</p>
+          <h2 class="section-heading">SNS &amp; 이벤트</h2>
         </div>
         <div class="insta-grid">
           <span class="insta-grid__item ph" aria-hidden="true"></span>
@@ -156,8 +210,9 @@
     <!-- 6. 오시는길 -->
     <section class="section section--surface" id="location">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">오시는 길</h2>
+        <div class="section-title section-title--center">
+          <p class="section-label">LOCATION</p>
+          <h2 class="section-heading">오시는 길</h2>
         </div>
         <div class="location">
           <span class="location__map ph ph--dark" aria-hidden="true"></span>
