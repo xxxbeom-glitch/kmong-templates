@@ -1,3 +1,22 @@
+/* 새로고침 시 이전 스크롤 위치 복원 방지 → 항상 상단 */
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function scrollPageToTop() {
+  window.scrollTo(0, 0);
+  requestAnimationFrame(function () {
+    window.scrollTo(0, 0);
+  });
+}
+
+window.addEventListener("pageshow", function (event) {
+  var nav = performance.getEntriesByType("navigation")[0];
+  if (event.persisted || (nav && nav.type === "reload")) {
+    scrollPageToTop();
+  }
+});
+
 $(function () {
   var $toggle = $(".menu-toggle");
   var $nav = $(".header__nav");

@@ -579,11 +579,15 @@ ul {
   margin-bottom: 0;
 }
 
-/* Figma Frame 7: 1840 content, 4×365 slots, gap 24 — full-width equal columns */
+/* Figma: 4×365px + gap (24→45%축소=13). 1fr 사용 시 gap만 줄여도 칸이 늘어나 간격이 안 좁아짐 */
 .proof__grid {
-  width: 100%;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.25vw, 24px);
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(4, clamp(183px, 19.0104vw, 365px));
+  column-gap: clamp(7px, 0.6875vw, 13px);
+  row-gap: clamp(7px, 0.6875vw, 13px);
 }
 
 .proof__card {
@@ -592,6 +596,7 @@ ul {
   align-items: center;
   justify-content: center;
   gap: clamp(4px, 0.313vw, 6px);
+  width: 100%;
   min-height: clamp(80px, 8.3333vw, 160px);
   text-align: center;
 }
@@ -1263,7 +1268,9 @@ ul {
   }
 
   .proof__grid {
+    width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(7px, 0.6875vw, 13px);
   }
 
   .process__row {
