@@ -1,34 +1,63 @@
-@import url("../../../_tokens/tokens.css");
-
+/* template-a · Figma 26:2361 @1920
+   Scale: clamp(min, px÷19.2 vw, max) — layout + typography together
+   min: headings 50% · body/caption/UI 62.5% · colors fixed · Hero overlay % exception */
 :root {
-  --color-primary: var(--color-indigo-600);
-  --color-primary-hover: var(--color-indigo-700);
-  --color-primary-soft: var(--color-indigo-100);
-  --color-primary-muted: var(--color-indigo-200);
-  --surface-page: var(--color-gray-50);
-  --surface-section: var(--color-gray-100);
-  --surface-card: var(--color-gray-200);
-  --surface-placeholder: var(--color-gray-300);
-  --surface-placeholder-dark: var(--color-gray-400);
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-600);
-  --text-muted: var(--color-gray-500);
-  --text-on-primary: var(--color-gray-50);
+  --font-family: SUIT, sans-serif;
+
+  /* ── Color primitives (Figma fills / strokes) ── */
+  --figma-black: #000000;
+  --figma-white: #ffffff;
+  --figma-blue-500: #3842ff;
+  --figma-blue-600: #4062ba;
+  --figma-blue-100: #d1e0f6;
+  --figma-gray-50: #fafafa;
+  --figma-gray-100: #f3f3f3;
+  --figma-gray-200: #e8e8e8;
+  --figma-gray-300: #d9d9d9;
+  --figma-gray-600: #303030;
+  --figma-gray-border: #e3e5eb;
+  --figma-stroke: #efefef;
+
+  /* ── Semantic colors ── */
+  --color-primary: var(--figma-blue-500);
+  --color-primary-hover: var(--figma-blue-600);
+  --color-accent: var(--figma-blue-600);
+  --color-primary-soft: var(--figma-blue-100);
+  --color-primary-muted: var(--figma-gray-border);
+  --surface-page: var(--figma-gray-50);
+  --surface-section: var(--figma-gray-100);
+  --surface-card: var(--figma-gray-200);
+  --surface-placeholder: var(--figma-gray-300);
+  --surface-placeholder-dark: var(--figma-gray-300);
+  --border-default: var(--figma-stroke);
+  --text-primary: var(--figma-black);
+  --text-secondary: var(--figma-gray-600);
+  --text-on-primary: var(--figma-white);
+  --text-accent: var(--figma-blue-600);
+  --text-placeholder: var(--figma-black);
+  /* Local spacing (Figma gaps) */
+  --spacing-xs: clamp(2px, 0.2083vw, 4px);
+  --spacing-sm: clamp(5px, 0.5208vw, 10px);
+  --spacing-md: clamp(8px, 0.8333vw, 16px);
+  --spacing-lg: clamp(10px, 1.0417vw, 20px);
+  --spacing-xl: clamp(13px, 1.3542vw, 26px);
+  --spacing-2xl: clamp(16px, 1.6667vw, 32px);
   /* Layout base: Figma 1920 frame, 1868 content (26px side gutter) */
   --design-w: 1920;
   --content-w: 1868;
   --layout-max: 1920px;
-  --layout-pad-x: 26px;
+  --layout-pad-x: clamp(13px, 1.3542vw, 26px);
   --layout-content-narrow: clamp(776px, 80.8333vw, 1552px);
   --layout-grid-gap: clamp(13px, 1.3542vw, 26px);
   --radius-surface: clamp(13px, 1.3542vw, 26px);
   --radius-btn: clamp(6px, 0.625vw, 12px);
   --radius-nav-cta: clamp(4px, 0.4167vw, 8px);
   --radius-field: clamp(8px, 0.8333vw, 16px);
-  /* Section spacing @1920 (+50px between sections: +25px top & bottom each) */
-  --section-pad-y: clamp(65px, 5.4688vw, 105px);
-  --section-about-pad-bottom: clamp(95px, 8.5938vw, 165px);
-  --section-contact-pad-bottom: clamp(78px, 6.8229vw, 131px);
+  /* Section spacing @1920 — Figma frame padding 80; About frame 26 */
+  --section-pad-y: clamp(40px, 4.1667vw, 80px);
+  --section-about-pad-top: clamp(13px, 1.3542vw, 26px);
+  --section-about-pad-bottom: clamp(13px, 1.3542vw, 26px);
+  --section-contact-pad-bottom: clamp(40px, 4.1667vw, 80px);
   --sub-hero-padding-y: clamp(40px, 4.1667vw, 80px);
   --section-title-to-content: clamp(21px, 2.1875vw, 42px);
   --section-title-to-content-compact: clamp(8px, 0.8333vw, 16px);
@@ -51,11 +80,11 @@
   --hero-pager-icon-h: clamp(12px, 1.25vw, 24px);
   --hero-pager-digit-w: clamp(12px, 1.25vw, 24px);
   --hero-pager-sep-w: clamp(5px, 0.5208vw, 10px);
-  --hero-counter-digit-size: clamp(8px, 0.8333vw, 16px);
-  --hero-counter-digit-lh: clamp(8.8px, 0.9167vw, 17.6px);
-  --hero-counter-sep-size: clamp(6px, 0.625vw, 12px);
-  --hero-counter-sep-lh: clamp(6.6px, 0.6875vw, 13.2px);
-  --about-section-pad-top: clamp(38px, 2.6563vw, 51px);
+  --hero-counter-digit-size: var(--type-caption-size);
+  --hero-counter-digit-lh: var(--type-caption-line-height);
+  --hero-counter-sep-size: var(--type-caption-sep-size);
+  --hero-counter-sep-lh: var(--type-caption-sep-line-height);
+  --about-section-pad-top: var(--section-about-pad-top);
   --process-card-min-h: clamp(315px, 32.7604vw, 629px);
   --records-card-min-h: clamp(110px, 11.4583vw, 220px);
   --pricing-card-h: clamp(330px, 34.375vw, 660px);
@@ -92,82 +121,146 @@
   --faq-trigger-min-h: clamp(25px, 2.6042vw, 50px);
   --faq-gap-question-answer: clamp(13px, 1.3542vw, 26px);
   --faq-item-gap: clamp(5px, 0.5208vw, 10px);
-  --type-faq-question-size: clamp(18px, 1.875vw, 36px);
-  --type-faq-question-line-height: clamp(25px, 2.625vw, 50.4px);
-  --type-faq-answer-size: clamp(12px, 1.25vw, 24px);
-  --type-faq-answer-line-height: clamp(17.76px, 1.85vw, 35.52px);
   --nav-cta-padding-x: clamp(16px, 1.6667vw, 32px);
 
-  /* Typography: _tokens/tokens.css — large @ desktop, small @768 */
-  --type-hero-family: var(--typography-large-display-font-family);
-  --type-hero-size: var(--typography-large-display-font-size);
-  --type-hero-weight: var(--typography-large-display-font-weight);
-  --type-hero-line-height: var(--typography-large-display-line-height);
-  --type-hero-letter-spacing: var(--typography-large-display-letter-spacing);
-  --type-about-title-family: var(--typography-large-h1-font-family);
-  --type-about-title-size: var(--typography-large-h1-font-size);
-  --type-about-title-weight: var(--typography-large-h1-font-weight);
-  --type-about-title-line-height: var(--typography-large-h1-line-height);
-  --type-about-title-letter-spacing: var(--typography-large-h1-letter-spacing);
-  --type-section-title-family: var(--typography-large-h2-font-family);
-  --type-section-title-size: var(--typography-large-h2-font-size);
-  --type-section-title-weight: var(--typography-large-h2-font-weight);
-  --type-section-title-line-height: var(--typography-large-h2-line-height);
-  --type-section-title-letter-spacing: var(--typography-large-h2-letter-spacing);
-  --type-section-label-family: var(--typography-large-overline-font-family);
-  --type-section-label-size: var(--typography-large-overline-font-size);
-  --type-section-label-weight: var(--typography-large-overline-font-weight);
-  --type-section-label-line-height: var(--typography-large-overline-line-height);
-  --type-section-label-letter-spacing: var(--typography-large-overline-letter-spacing);
-  --type-lead-family: var(--typography-large-h3-font-family);
-  --type-lead-size: var(--typography-large-h3-font-size);
-  --type-lead-weight: var(--typography-large-h3-font-weight);
-  --type-lead-line-height: var(--typography-large-h3-line-height);
-  --type-lead-letter-spacing: var(--typography-large-h3-letter-spacing);
-  --type-body-lg-family: var(--typography-large-body-l-font-family);
-  --type-body-lg-size: var(--typography-large-body-l-font-size);
-  --type-body-lg-weight: var(--typography-large-body-l-font-weight);
-  --type-body-lg-semibold-weight: var(--typography-large-h4-font-weight);
-  --type-body-lg-line-height: var(--typography-large-body-l-line-height);
-  --type-body-lg-letter-spacing: var(--typography-large-body-l-letter-spacing);
-  --type-ui-md-family: var(--typography-large-h4-font-family);
-  --type-ui-md-size: var(--typography-large-h4-font-size);
-  --type-ui-md-weight: var(--typography-large-subheading-font-weight);
-  --type-ui-md-bold-weight: var(--typography-large-h4-font-weight);
-  --type-ui-md-line-height: var(--typography-large-h4-line-height);
-  --type-ui-md-letter-spacing: var(--typography-large-h4-letter-spacing);
-  --type-stat-value-family: var(--typography-large-h1-font-family);
-  --type-stat-value-size: var(--typography-large-h1-font-size);
-  --type-stat-value-weight: var(--typography-large-h1-font-weight);
-  --type-stat-value-line-height: var(--typography-large-h1-line-height);
-  --type-stat-value-letter-spacing: var(--typography-large-h1-letter-spacing);
-  --type-title-sm-family: var(--typography-large-h4-font-family);
-  --type-title-sm-size: var(--typography-large-h4-font-size);
-  --type-title-sm-weight: var(--typography-large-h4-font-weight);
-  --type-title-sm-heavy-weight: var(--typography-large-h4-font-weight);
-  --type-title-sm-line-height: var(--typography-large-h4-line-height);
-  --type-title-sm-letter-spacing: var(--typography-large-h4-letter-spacing);
-  --type-price-family: var(--typography-large-h2-font-family);
-  --type-price-size: var(--typography-large-h2-font-size);
-  --type-price-weight: var(--typography-large-h2-font-weight);
-  --type-price-line-height: var(--typography-large-h2-line-height);
-  --type-price-letter-spacing: var(--typography-large-h2-letter-spacing);
-  --type-faq-family: var(--typography-large-h2-font-family);
-  --type-faq-size: var(--type-faq-question-size);
-  --type-faq-weight: 700;
-  --type-faq-line-height: var(--type-faq-question-line-height);
-  --type-faq-letter-spacing: 0;
-  --type-counter-family: var(--typography-large-caption-font-family);
-  --type-counter-size: var(--typography-large-caption-font-size);
-  --type-counter-weight: var(--typography-large-label-font-weight);
-  --type-counter-line-height: var(--typography-large-caption-line-height);
-  --type-counter-letter-spacing: var(--typography-large-caption-letter-spacing);
-  --type-counter-sep-size: var(--typography-large-caption-font-size);
-  --type-btn-family: var(--typography-large-cta-l-font-family);
-  --type-btn-size: var(--typography-large-cta-l-font-size);
-  --type-btn-weight: var(--typography-large-cta-l-font-weight);
-  --type-btn-line-height: var(--typography-large-cta-l-line-height);
-  --type-btn-letter-spacing: var(--typography-large-cta-l-letter-spacing);
+  /* Typography @1920 — heading min 50%, body/UI min 62.5% of Figma px */
+  --type-display-hero-size: clamp(28px, 2.9167vw, 56px);
+  --type-display-hero-weight: 700;
+  --type-display-hero-line-height: clamp(38px, 3.9583vw, 76px);
+  --type-display-about-size: clamp(34.5px, 3.5938vw, 69px);
+  --type-display-about-weight: 900;
+  --type-display-about-line-height: clamp(43px, 4.4792vw, 86px);
+  --type-heading-section-size: clamp(29px, 3.0208vw, 58px);
+  --type-heading-section-weight: 700;
+  --type-heading-section-line-height: clamp(40.5px, 4.2188vw, 81px);
+  --type-heading-card-size: clamp(15px, 1.5625vw, 30px);
+  --type-heading-card-weight: 800;
+  --type-heading-card-line-height: clamp(21px, 2.1875vw, 42px);
+  --type-heading-price-size: clamp(23px, 2.3958vw, 46px);
+  --type-heading-price-weight: 800;
+  --type-heading-price-line-height: clamp(34px, 3.5417vw, 68px);
+  --type-heading-stat-size: clamp(26px, 2.7083vw, 52px);
+  --type-heading-stat-weight: 800;
+  --type-heading-stat-line-height: clamp(36.5px, 3.8021vw, 73px);
+  --type-heading-faq-size: clamp(18px, 1.875vw, 36px);
+  --type-heading-faq-weight: 700;
+  --type-heading-faq-line-height: clamp(25px, 2.625vw, 50.4px);
+  --type-overline-size: clamp(11px, 0.9375vw, 18px);
+  --type-overline-weight: 600;
+  --type-overline-line-height: clamp(17px, 1.4583vw, 28px);
+  --type-lead-size: clamp(15px, 1.5625vw, 30px);
+  --type-lead-weight: 600;
+  --type-lead-line-height: clamp(22px, 2.2917vw, 44px);
+  --type-body-xl-size: clamp(15px, 1.25vw, 24px);
+  --type-body-xl-weight: 500;
+  --type-body-xl-line-height: clamp(23px, 1.875vw, 36px);
+  --type-body-lg-size: clamp(15px, 1.25vw, 24px);
+  --type-body-lg-weight: 500;
+  --type-body-lg-semibold-weight: 600;
+  --type-body-desc-line-height: clamp(24px, 1.9792vw, 38px);
+  --type-body-lg-semibold-line-height: clamp(23px, 1.875vw, 36px);
+  --type-body-md-size: clamp(13px, 1.0417vw, 20px);
+  --type-body-md-weight: 500;
+  --type-body-md-bold-weight: 700;
+  --type-body-md-line-height: clamp(19px, 1.5625vw, 30px);
+  --type-body-md-bold-line-height: clamp(18px, 1.4583vw, 28px);
+  --type-caption-size: clamp(10px, 0.8333vw, 16px);
+  --type-caption-weight: 700;
+  --type-caption-line-height: clamp(11px, 0.9375vw, 18px);
+  --type-caption-sep-size: clamp(8px, 0.625vw, 12px);
+  --type-caption-sep-line-height: clamp(8px, 0.6875vw, 13.2px);
+  --type-stat-plus-size: clamp(13px, 1.0417vw, 20px);
+  --type-stat-plus-weight: 700;
+  --type-stat-plus-line-height: clamp(18px, 1.4583vw, 28px);
+  --type-stat-pct-size: clamp(15px, 1.5625vw, 30px);
+  --type-stat-pct-weight: 700;
+  --type-stat-pct-line-height: clamp(21px, 2.1875vw, 42px);
+  --type-label-form-weight: 700;
+  --type-label-form-line-height: clamp(23px, 1.875vw, 36px);
+  --type-letter-spacing: 0;
+
+  /* ── Component typography aliases ── */
+  --type-hero-family: var(--font-family);
+  --type-hero-size: var(--type-display-hero-size);
+  --type-hero-weight: var(--type-display-hero-weight);
+  --type-hero-line-height: var(--type-display-hero-line-height);
+  --type-hero-letter-spacing: var(--type-letter-spacing);
+  --type-about-title-family: var(--font-family);
+  --type-about-title-size: var(--type-display-about-size);
+  --type-about-title-weight: var(--type-display-about-weight);
+  --type-about-title-line-height: var(--type-display-about-line-height);
+  --type-about-title-letter-spacing: var(--type-letter-spacing);
+  --type-section-title-family: var(--font-family);
+  --type-section-title-size: var(--type-heading-section-size);
+  --type-section-title-weight: var(--type-heading-section-weight);
+  --type-section-title-line-height: var(--type-heading-section-line-height);
+  --type-section-title-letter-spacing: var(--type-letter-spacing);
+  --type-section-label-family: var(--font-family);
+  --type-section-label-size: var(--type-overline-size);
+  --type-section-label-weight: var(--type-overline-weight);
+  --type-section-label-line-height: var(--type-overline-line-height);
+  --type-section-label-letter-spacing: var(--type-letter-spacing);
+  --type-section-desc-family: var(--font-family);
+  --type-section-desc-size: var(--type-body-lg-size);
+  --type-section-desc-weight: var(--type-body-lg-weight);
+  --type-section-desc-line-height: var(--type-body-desc-line-height);
+  --type-section-desc-letter-spacing: var(--type-letter-spacing);
+  --type-lead-family: var(--font-family);
+  --type-lead-letter-spacing: var(--type-letter-spacing);
+  --type-body-family: var(--font-family);
+  --type-body-size: var(--type-body-md-size);
+  --type-body-weight: var(--type-body-md-weight);
+  --type-body-line-height: var(--type-body-md-line-height);
+  --type-body-letter-spacing: var(--type-letter-spacing);
+  --type-body-lg-family: var(--font-family);
+  --type-body-lg-line-height: var(--type-body-lg-semibold-line-height);
+  --type-body-lg-letter-spacing: var(--type-letter-spacing);
+  --type-ui-md-family: var(--font-family);
+  --type-ui-md-size: var(--type-body-md-size);
+  --type-ui-md-weight: var(--type-body-md-weight);
+  --type-ui-md-bold-weight: var(--type-body-md-bold-weight);
+  --type-ui-md-line-height: var(--type-body-md-line-height);
+  --type-ui-md-letter-spacing: var(--type-letter-spacing);
+  --type-stat-value-family: var(--font-family);
+  --type-stat-value-size: var(--type-heading-stat-size);
+  --type-stat-value-weight: var(--type-heading-stat-weight);
+  --type-stat-value-line-height: var(--type-heading-stat-line-height);
+  --type-stat-value-letter-spacing: var(--type-letter-spacing);
+  --type-title-sm-family: var(--font-family);
+  --type-title-sm-size: var(--type-heading-card-size);
+  --type-title-sm-weight: var(--type-heading-card-weight);
+  --type-title-sm-heavy-weight: var(--type-heading-card-weight);
+  --type-title-sm-line-height: var(--type-heading-card-line-height);
+  --type-title-sm-letter-spacing: var(--type-letter-spacing);
+  --type-price-family: var(--font-family);
+  --type-price-size: var(--type-heading-price-size);
+  --type-price-weight: var(--type-heading-price-weight);
+  --type-price-line-height: var(--type-heading-price-line-height);
+  --type-price-letter-spacing: var(--type-letter-spacing);
+  --type-faq-family: var(--font-family);
+  --type-faq-size: var(--type-heading-faq-size);
+  --type-faq-weight: var(--type-heading-faq-weight);
+  --type-faq-line-height: var(--type-heading-faq-line-height);
+  --type-faq-letter-spacing: var(--type-letter-spacing);
+  --type-faq-question-size: var(--type-heading-faq-size);
+  --type-faq-question-line-height: var(--type-heading-faq-line-height);
+  --type-faq-answer-size: var(--type-body-xl-size);
+  --type-faq-answer-line-height: var(--type-body-lg-semibold-line-height);
+  --type-counter-family: var(--font-family);
+  --type-counter-size: var(--type-caption-size);
+  --type-counter-weight: var(--type-caption-weight);
+  --type-counter-line-height: var(--type-caption-line-height);
+  --type-counter-letter-spacing: var(--type-letter-spacing);
+  --type-counter-sep-size: var(--type-caption-sep-size);
+  --type-btn-family: var(--font-family);
+  --type-btn-size: var(--type-body-xl-size);
+  --type-btn-weight: var(--type-body-xl-weight);
+  --type-btn-line-height: var(--type-body-xl-line-height);
+  --type-btn-letter-spacing: var(--type-letter-spacing);
+  --type-form-label-weight: var(--type-label-form-weight);
+  --type-form-label-line-height: var(--type-label-form-line-height);
+  --type-form-placeholder-weight: var(--type-body-lg-weight);
+  --type-form-placeholder-line-height: var(--type-body-desc-line-height);
 }
 
 *,
@@ -183,11 +276,11 @@ html {
 }
 
 body {
-  font-family: var(--typography-large-body-m-font-family);
-  font-size: var(--typography-large-body-m-font-size);
-  font-weight: var(--typography-large-body-m-font-weight);
-  line-height: var(--typography-large-body-m-line-height);
-  letter-spacing: var(--typography-large-body-m-letter-spacing);
+  font-family: var(--type-body-family);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
   color: var(--text-primary);
   background: var(--surface-page);
 }
@@ -284,7 +377,7 @@ img {
   line-height: var(--type-section-label-line-height);
   letter-spacing: var(--type-section-label-letter-spacing);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--text-primary);
   margin-bottom: var(--section-label-gap);
 }
 
@@ -331,11 +424,11 @@ img {
 }
 
 .section-desc {
-  font-family: var(--type-body-lg-family);
-  font-size: var(--type-body-lg-size);
-  font-weight: var(--type-body-lg-weight);
-  line-height: var(--type-body-lg-line-height);
-  letter-spacing: var(--type-body-lg-letter-spacing);
+  font-family: var(--type-section-desc-family);
+  font-size: var(--type-section-desc-size);
+  font-weight: var(--type-section-desc-weight);
+  line-height: var(--type-section-desc-line-height);
+  letter-spacing: var(--type-section-desc-letter-spacing);
   color: var(--text-secondary);
 }
 
@@ -507,7 +600,7 @@ img {
 .hero__content {
   position: absolute;
   z-index: 2;
-  /* Figma: title y391, KV top y170 → 26.3% from KV top; text x360, KV x26 → 17.9% inset */
+  /* Policy exception: KV scales by aspect-ratio; copy position uses Figma % inset (not clamp px) */
   top: 26.34%;
   left: 17.88%;
   right: var(--spacing-2xl);
@@ -528,9 +621,9 @@ img {
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
   font-weight: var(--type-body-lg-weight);
-  line-height: var(--type-body-lg-line-height);
+  line-height: var(--type-body-xl-line-height);
   letter-spacing: var(--type-body-lg-letter-spacing);
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .hero__content .btn {
@@ -576,7 +669,7 @@ img {
   height: var(--hero-pager-h);
   margin: 0;
   flex-shrink: 0;
-  font-family: var(--typography-large-body-s-font-family);
+  font-family: var(--type-counter-family);
   letter-spacing: 0;
 }
 
@@ -599,9 +692,9 @@ img {
   width: var(--hero-pager-sep-w);
   height: var(--hero-pager-h);
   font-size: var(--hero-counter-sep-size);
-  font-weight: 700;
-  line-height: var(--hero-counter-sep-lh);
-  color: var(--text-muted);
+  font-weight: var(--type-caption-weight);
+  line-height: var(--type-caption-sep-line-height);
+  color: var(--text-primary);
 }
 
 .hero__counter-current {
@@ -609,7 +702,7 @@ img {
 }
 
 .hero__counter-total {
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 /* About — one KV-height stage (1868/889); image fill + text overlay centered */
@@ -717,9 +810,9 @@ img {
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
   font-weight: var(--type-body-lg-semibold-weight);
-  line-height: var(--type-body-lg-line-height);
+  line-height: var(--type-body-lg-semibold-line-height);
   letter-spacing: var(--type-body-lg-letter-spacing);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   display: none;
 }
 
@@ -756,11 +849,12 @@ img {
 }
 
 .records-card__suffix {
-  font-family: var(--type-title-sm-family);
-  font-size: var(--type-title-sm-size);
-  font-weight: var(--type-title-sm-weight);
-  line-height: var(--type-title-sm-line-height);
-  letter-spacing: var(--type-title-sm-letter-spacing);
+  font-family: var(--type-stat-value-family);
+  font-size: var(--type-stat-plus-size);
+  font-weight: var(--type-stat-plus-weight);
+  line-height: var(--type-stat-plus-line-height);
+  letter-spacing: var(--type-stat-value-letter-spacing);
+  color: var(--text-primary);
 }
 
 .records-card__label {
@@ -768,9 +862,9 @@ img {
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
   font-weight: var(--type-body-lg-semibold-weight);
-  line-height: var(--type-body-lg-line-height);
+  line-height: var(--type-body-lg-semibold-line-height);
   letter-spacing: var(--type-body-lg-letter-spacing);
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 /* Pricing — Figma: 1552 grid, cards 500×660, badge 70 above featured only */
@@ -838,7 +932,7 @@ img {
   line-height: var(--type-ui-md-line-height);
   letter-spacing: var(--type-ui-md-letter-spacing);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--text-accent);
 }
 
 .pricing-card__sub {
@@ -846,9 +940,9 @@ img {
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
   font-weight: var(--type-body-lg-semibold-weight);
-  line-height: var(--type-body-lg-line-height);
+  line-height: var(--type-body-lg-semibold-line-height);
   letter-spacing: var(--type-body-lg-letter-spacing);
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 .pricing-card__price-row {
@@ -870,10 +964,10 @@ img {
 }
 
 .pricing-card__price--inquiry {
-  font-family: var(--type-title-sm-family);
-  font-size: var(--type-title-sm-size);
-  font-weight: var(--type-title-sm-heavy-weight);
-  line-height: var(--type-title-sm-line-height);
+  font-family: var(--type-price-family);
+  font-size: var(--type-price-size);
+  font-weight: var(--type-price-weight);
+  line-height: var(--type-price-line-height);
 }
 
 .pricing-card__unit {
@@ -882,7 +976,7 @@ img {
   font-weight: var(--type-ui-md-weight);
   line-height: var(--type-ui-md-line-height);
   letter-spacing: var(--type-ui-md-letter-spacing);
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .pricing-card__features {
@@ -905,9 +999,9 @@ img {
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
   font-weight: var(--type-body-lg-semibold-weight);
-  line-height: var(--type-body-lg-line-height);
+  line-height: var(--type-body-lg-semibold-line-height);
   letter-spacing: var(--type-body-lg-letter-spacing);
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .pricing-card__features li:last-child {
@@ -1026,9 +1120,9 @@ img {
 
 .faq-item.is-open .faq-item__panel p {
   margin: 0;
-  font-family: var(--typography-large-body-l-font-family);
+  font-family: var(--type-body-lg-family);
   font-size: var(--type-faq-answer-size);
-  font-weight: 600;
+  font-weight: var(--type-body-lg-semibold-weight);
   line-height: var(--type-faq-answer-line-height);
   letter-spacing: 0;
   color: var(--text-on-primary);
@@ -1057,8 +1151,8 @@ img {
   margin-bottom: var(--spacing-sm);
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
-  font-weight: var(--type-ui-md-bold-weight);
-  line-height: var(--type-body-lg-line-height);
+  font-weight: var(--type-form-label-weight);
+  line-height: var(--type-form-label-line-height);
   letter-spacing: var(--type-body-lg-letter-spacing);
   color: var(--text-primary);
 }
@@ -1069,7 +1163,7 @@ img {
   box-sizing: border-box;
   padding: var(--input-padding-y) var(--input-padding-x);
   background: var(--surface-page);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-field);
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
@@ -1095,7 +1189,7 @@ img {
   width: 100%;
   padding: var(--input-padding-y) var(--input-padding-x);
   background: var(--surface-page);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-field);
   font-family: var(--type-body-lg-family);
   font-size: var(--type-body-lg-size);
@@ -1107,8 +1201,9 @@ img {
 
 .form-field__input::placeholder,
 .form-field__textarea::placeholder {
-  font-weight: var(--type-body-lg-weight);
-  color: var(--text-muted);
+  font-weight: var(--type-form-placeholder-weight);
+  line-height: var(--type-form-placeholder-line-height);
+  color: var(--text-placeholder);
 }
 
 .form-field__textarea {
@@ -1130,89 +1225,11 @@ img {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --type-hero-family: var(--typography-small-display-font-family);
-    --type-hero-size: var(--typography-small-display-font-size);
-    --type-hero-weight: var(--typography-small-display-font-weight);
-    --type-hero-line-height: var(--typography-small-display-line-height);
-    --type-hero-letter-spacing: var(--typography-small-display-letter-spacing);
-    --type-about-title-family: var(--typography-small-h1-font-family);
-    --type-about-title-size: var(--typography-small-h1-font-size);
-    --type-about-title-weight: var(--typography-small-h1-font-weight);
-    --type-about-title-line-height: var(--typography-small-h1-line-height);
-    --type-about-title-letter-spacing: var(--typography-small-h1-letter-spacing);
-    --type-section-title-family: var(--typography-small-h2-font-family);
-    --type-section-title-size: var(--typography-small-h2-font-size);
-    --type-section-title-weight: var(--typography-small-h2-font-weight);
-    --type-section-title-line-height: var(--typography-small-h2-line-height);
-    --type-section-title-letter-spacing: var(--typography-small-h2-letter-spacing);
-    --type-section-label-family: var(--typography-small-overline-font-family);
-    --type-section-label-size: var(--typography-small-overline-font-size);
-    --type-section-label-weight: var(--typography-small-overline-font-weight);
-    --type-section-label-line-height: var(--typography-small-overline-line-height);
-    --type-section-label-letter-spacing: var(--typography-small-overline-letter-spacing);
-    --type-lead-family: var(--typography-small-h3-font-family);
-    --type-lead-size: var(--typography-small-h3-font-size);
-    --type-lead-weight: var(--typography-small-h3-font-weight);
-    --type-lead-line-height: var(--typography-small-h3-line-height);
-    --type-lead-letter-spacing: var(--typography-small-h3-letter-spacing);
-    --type-body-lg-family: var(--typography-small-body-l-font-family);
-    --type-body-lg-size: var(--typography-small-body-l-font-size);
-    --type-body-lg-weight: var(--typography-small-body-l-font-weight);
-    --type-body-lg-semibold-weight: var(--typography-small-h4-font-weight);
-    --type-body-lg-line-height: var(--typography-small-body-l-line-height);
-    --type-body-lg-letter-spacing: var(--typography-small-body-l-letter-spacing);
-    --type-ui-md-family: var(--typography-small-h4-font-family);
-    --type-ui-md-size: var(--typography-small-h4-font-size);
-    --type-ui-md-weight: var(--typography-small-subheading-font-weight);
-    --type-ui-md-bold-weight: var(--typography-small-h4-font-weight);
-    --type-ui-md-line-height: var(--typography-small-h4-line-height);
-    --type-ui-md-letter-spacing: var(--typography-small-h4-letter-spacing);
-    --type-stat-value-family: var(--typography-small-h1-font-family);
-    --type-stat-value-size: var(--typography-small-h1-font-size);
-    --type-stat-value-weight: var(--typography-small-h1-font-weight);
-    --type-stat-value-line-height: var(--typography-small-h1-line-height);
-    --type-stat-value-letter-spacing: var(--typography-small-h1-letter-spacing);
-    --type-title-sm-family: var(--typography-small-h4-font-family);
-    --type-title-sm-size: var(--typography-small-h4-font-size);
-    --type-title-sm-weight: var(--typography-small-h4-font-weight);
-    --type-title-sm-heavy-weight: var(--typography-small-h4-font-weight);
-    --type-title-sm-line-height: var(--typography-small-h4-line-height);
-    --type-title-sm-letter-spacing: var(--typography-small-h4-letter-spacing);
-    --type-price-family: var(--typography-small-h2-font-family);
-    --type-price-size: var(--typography-small-h2-font-size);
-    --type-price-weight: var(--typography-small-h2-font-weight);
-    --type-price-line-height: var(--typography-small-h2-line-height);
-    --type-price-letter-spacing: var(--typography-small-h2-letter-spacing);
-    --type-faq-size: var(--type-faq-question-size);
-    --type-faq-weight: 700;
-    --type-faq-line-height: var(--type-faq-question-line-height);
-    --type-counter-family: var(--typography-small-caption-font-family);
-    --type-counter-size: var(--typography-small-caption-font-size);
-    --type-counter-weight: var(--typography-small-label-font-weight);
-    --type-counter-line-height: var(--typography-small-caption-line-height);
-    --type-counter-letter-spacing: var(--typography-small-caption-letter-spacing);
-    --type-counter-sep-size: var(--typography-small-caption-font-size);
-    --type-btn-family: var(--typography-small-cta-l-font-family);
-    --type-btn-size: var(--typography-small-cta-l-font-size);
-    --type-btn-weight: var(--typography-small-cta-l-font-weight);
-    --type-btn-line-height: var(--typography-small-cta-l-line-height);
-    --type-btn-letter-spacing: var(--typography-small-cta-l-letter-spacing);
-  }
-
-  body {
-    font-family: var(--typography-small-body-m-font-family);
-    font-size: var(--typography-small-body-m-font-size);
-    font-weight: var(--typography-small-body-m-font-weight);
-    line-height: var(--typography-small-body-m-line-height);
-    letter-spacing: var(--typography-small-body-m-letter-spacing);
-  }
-
   .container,
   .hero__slider {
     max-width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: max(16px, var(--layout-pad-x));
+    padding-right: max(16px, var(--layout-pad-x));
   }
 
   .menu-toggle {

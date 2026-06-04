@@ -25,5 +25,14 @@
 - **이미지·KV**: 피그마 W×H 비율 → `aspect-ratio` + `width: 100%`. `min-height: 100vh`로 히어로/섹션 높이 잡지 말 것
 - **섹션 간격**: 피그마에서 섹션 프레임이 맞닿으면(gap 0) 바깥 margin으로 벌리지 말고 **프레임 내부 padding**만 반영. 상·하 padding 이중 적용 금지
 - **좁은 콘텐츠**(Pricing·FAQ·Contact 등): 피그마 1552px 중앙 블록이면 `max-width: 1552px` + `margin: 0 auto` (≈ `80.8333vw` @1920)
-- **타이포**: `_tokens/tokens.css` — 데스크톱 `typography-large-*`, 768px 이하 `typography-small-*` (레이아웃만 1920 clamp, 글자 크기는 토큰 단계 전환). 사용자가 요청할 때만 피그마 px로 타이포 clamp 추가
+- **타이포**: `_tokens/tokens.css` — 데스크톱 `typography-large-*`, 768px 이하 `typography-small-*` (template-b/c 등 기본). **template-a 예외** → 아래 참고
 - 피그마 MCP/수치와 구현이 다르면 **피그마 수치**를 우선해 layout 토큰을 맞출 것
+
+## template-a · Figma fluid scale (1920 — `_tokens` 타이포 미사용)
+
+- **토큰 위치**: `templates/template-a/css/style.css` `:root` — Figma node `26:2361` color·typography·layout
+- **스케일 공식**: 레이아웃·font-size·line-height 공통 → `clamp(min, figma_px÷19.2 vw, figma_px @1920)`
+- **clamp min**: display/heading **50%**, body·UI·caption **62.5%** (모바일 가독성)
+- **색·font-weight**: Figma hex·숫자 **고정** (vw 스케일 없음)
+- **예외**: Hero KV overlay 텍스트 위치 **% inset** · border **1px** · 768px 이하 **그리드/네비 구조**만 `@media`
+- **좌우 gutter**: `--layout-pad-x: clamp(13px, 1.3542vw, 26px)` (1868 콘텐츠 폭과 동일 축)
