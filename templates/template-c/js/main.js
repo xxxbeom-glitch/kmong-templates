@@ -18,44 +18,94 @@ window.addEventListener("pageshow", function (event) {
 });
 
 $(function () {
-  /* AOS — fade-up, 600ms, once */
-  var aosDisabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* Scroll-triggered animation — AOS fade-up / fade-in, once */
+  function initScrollTriggeredAnimation() {
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function aosStaggerItems($container) {
-    if ($container.hasClass("process__grid")) {
-      return $container.find(".process__item");
+    if (prefersReducedMotion || typeof AOS === "undefined") {
+      return;
     }
-    return $container.children();
-  }
 
-  $(".section-title").attr("data-aos", "fade-up");
+    function applyAos($el, animation, delay) {
+      if (!$el.length || $el.attr("data-aos")) {
+        return;
+      }
+      $el.attr("data-aos", animation || "fade-up");
+      if (delay) {
+        $el.attr("data-aos-delay", delay);
+      }
+    }
 
-  $(".hero__title").attr("data-aos", "fade-up");
-  $(".hero__desc").attr("data-aos", "fade-up").attr("data-aos-delay", "100");
-  $(".hero__cta").attr("data-aos", "fade-up").attr("data-aos-delay", "200");
-  $(".hero__pager").attr("data-aos", "fade-up").attr("data-aos-delay", "300");
+    function aosStaggerItems($container) {
+      if ($container.hasClass("process__grid")) {
+        return $container.find(".process__item");
+      }
+      return $container.children();
+    }
 
-  $("[data-aos-stagger]").each(function () {
-    aosStaggerItems($(this)).each(function (index) {
-      $(this).attr("data-aos", "fade-up").attr("data-aos-delay", String(index * 100));
+    $(".section-title").each(function () {
+      applyAos($(this), "fade-up");
     });
-  });
 
-  $(".pricing__cta").attr("data-aos", "fade-up").attr("data-aos-delay", "300");
-  $(".section--contact__cta").attr("data-aos", "fade-up").attr("data-aos-delay", "150");
+    $(".section--hero").each(function () {
+      var $hero = $(this);
+      applyAos($hero.find(".hero__title"), "fade-up");
+      applyAos($hero.find(".hero__desc"), "fade-up", "100");
+      applyAos($hero.find(".hero__cta"), "fade-up", "200");
+      applyAos($hero.find(".hero__pager"), "fade-up", "300");
+    });
 
-  $(".footer__brand").attr("data-aos", "fade-up");
-  $(".footer__social").attr("data-aos", "fade-up").attr("data-aos-delay", "100");
+    $(".ceo-hero__img").attr({
+      "data-aos": "fade-in",
+      "data-aos-duration": "700",
+      "data-aos-easing": "ease-out-cubic",
+    });
 
-  if (typeof AOS !== "undefined") {
+    $("[data-aos-stagger]").each(function () {
+      aosStaggerItems($(this)).each(function (index) {
+        var $item = $(this);
+        if ($item.attr("data-aos")) {
+          return;
+        }
+        $item.attr("data-aos", "fade-up");
+        $item.attr("data-aos-delay", String(index * 100));
+      });
+    });
+
+    applyAos($(".pricing__cta"), "fade-up", "300");
+    applyAos($(".section--contact__cta"), "fade-up", "150");
+    applyAos($(".footer__brand"), "fade-up");
+    applyAos($(".footer__social"), "fade-up", "100");
+
     AOS.init({
       duration: 600,
       once: true,
       easing: "ease-out-cubic",
-      offset: 80,
-      disable: aosDisabled,
+      offset: 100,
+      anchorPlacement: "top-bottom",
+    });
+
+    $(window).on("load", function () {
+      AOS.refreshHard();
+    });
+
+    /* CEO 본문: 섹션 진입 시 제목·리드·본문·서명 순차 재생 */
+    if ($("#ceo-message").length) {
+      requestAnimationFrame(function () {
+        AOS.refreshHard();
+      });
+    }
+
+    var resizeTimer;
+    $(window).on("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        AOS.refresh();
+      }, 250);
     });
   }
+
+  initScrollTriggeredAnimation();
 
   var $toggle = $(".menu-toggle");
   var $nav = $(".header__nav");
@@ -66,7 +116,7 @@ $(function () {
     $("body").toggleClass("nav-open", isOpen);
   });
 
-  $(".header__nav-link, .header__nav-cta").on("click", function () {
+  $(".header__nav-link, .header__submenu-link, .header__nav-cta").on("click", function () {
     if (window.innerWidth <= 768) {
       $nav.removeClass("is-open");
       $toggle.attr("aria-expanded", "false");

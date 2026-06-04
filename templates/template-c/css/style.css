@@ -284,7 +284,12 @@ ul {
   gap: clamp(18px, 1.875vw, 36px);
 }
 
+.header__nav-item {
+  position: relative;
+}
+
 .header__nav-link {
+  display: inline-block;
   font-size: clamp(12px, 1.0417vw, 20px);
   font-weight: 500;
   line-height: 1.5;
@@ -293,6 +298,159 @@ ul {
 
 .header__nav-link.is-active {
   font-weight: 700;
+}
+
+/* GNB hover 하위메뉴 — Figma 102:61 */
+.header__submenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 110;
+  width: max-content;
+  padding-top: clamp(8px, 0.625vw, 12px);
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.header__nav-item--has-sub:hover .header__submenu,
+.header__nav-item--has-sub:focus-within .header__submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.header__submenu-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 1.25vw, 24px);
+  padding: clamp(18px, 1.875vw, 36px) clamp(20px, 2.0833vw, 40px);
+  background: var(--color-white);
+  border-radius: var(--radius-btn);
+  box-shadow: 0 clamp(2px, 0.2083vw, 4px) clamp(16px, 1.6667vw, 32px) rgba(0, 0, 0, 0.1);
+}
+
+.header__submenu-link {
+  font-size: clamp(12px, 1.0417vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-logo);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.header__submenu-link:hover,
+.header__submenu-link:focus-visible {
+  color: var(--color-primary);
+  outline: none;
+}
+
+.header__submenu-link.is-active {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* 서브 페이지 (GNB 연결용 스텁) */
+.section--sub-page {
+  padding-top: clamp(48px, 5vw, 96px);
+  padding-bottom: clamp(48px, 5vw, 96px);
+}
+
+.section--sub-page--anchor {
+  padding-top: clamp(32px, 3.3333vw, 64px);
+  padding-bottom: clamp(32px, 3.3333vw, 64px);
+}
+
+.section--sub-page--anchor .section-heading {
+  font-size: clamp(20px, 2.0833vw, 40px);
+}
+
+.section--sub-page .section-desc a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* CEO 메시지 — Figma 101:2 @1920 하드코딩 (Frame 102:25 gap 120 / 102:21 gap 25 / 102:18 gap 62 / 102:24 gap 38) */
+.section--ceo-hero {
+  padding: 0;
+}
+
+.ceo-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ceo-hero__img {
+  display: block;
+  width: 100%;
+  height: 483px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.section--ceo-message {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.ceo-message {
+  width: 100%;
+  max-width: 1840px;
+  margin: 0;
+  text-align: left;
+}
+
+.ceo-message__title {
+  margin: 0 0 25px;
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0;
+  color: var(--color-heading);
+}
+
+.ceo-message__lead {
+  margin: 0 0 62px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: 0;
+  color: var(--color-heading);
+}
+
+.ceo-message__body {
+  margin: 0 0 38px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.66px;
+  color: var(--color-body);
+}
+
+.ceo-message__body p {
+  margin: 0;
+}
+
+.ceo-message__sign {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: -0.72px;
+  color: var(--color-body);
+}
+
+/* AOS: CEO 텍스트 그룹 — transform 대상만 애니메이션 */
+.section--ceo-message .ceo-message__title,
+.section--ceo-message .ceo-message__lead,
+.section--ceo-message .ceo-message__body,
+.section--ceo-message .ceo-message__sign {
+  will-change: transform, opacity;
 }
 
 .header__nav-cta {
@@ -1305,6 +1463,32 @@ ul {
     gap: 12px;
   }
 
+  .header__submenu {
+    position: static;
+    width: 100%;
+    padding-top: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .header__submenu-panel {
+    align-items: stretch;
+    margin-top: 8px;
+    margin-left: 12px;
+    padding: 12px 16px;
+    gap: 10px;
+    border-radius: clamp(6px, 0.625vw, 12px);
+    box-shadow: none;
+    background: #f6f7f9;
+  }
+
+  .header__submenu-link {
+    white-space: normal;
+  }
+
   .header__nav-cta {
     justify-content: center;
     width: 100%;
@@ -1371,9 +1555,49 @@ ul {
   .card__desc br {
     display: none;
   }
+
+  .ceo-hero__img {
+    height: 193px;
+  }
+
+  .section--ceo-message {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .ceo-message__title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .ceo-message__lead {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .ceo-message__body {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.48px;
+  }
+
+  .ceo-message__sign {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.54px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   .features__card .card__media {
     transition: none;
   }

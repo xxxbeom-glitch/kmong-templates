@@ -11,7 +11,7 @@
 <body>
   <header id="header" class="header">
     <div class="container header__inner">
-      <a href="#hero" class="header__logo">노바 스튜디오</a>
+      <a href="index.html" class="header__logo">노바 스튜디오</a>
       <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -19,11 +19,29 @@
       </button>
       <nav class="header__nav" aria-label="주요 메뉴">
         <ul class="header__nav-list">
-          <li><a href="#intro" class="header__nav-link">소개</a></li>
-          <li><a href="#features" class="header__nav-link">서비스</a></li>
-          <li><a href="#process" class="header__nav-link">프로세스</a></li>
-          <li><a href="#gallery" class="header__nav-link">작업물</a></li>
-          <li><a href="#contactbar" class="header__nav-cta"><span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">프로젝트 시작하기</span><span class="btn__text">프로젝트 시작하기</span></span></span></a></li>
+          <li class="header__nav-item header__nav-item--has-sub">
+            <a href="about.html" class="header__nav-link" aria-haspopup="true">회사소개</a>
+            <div class="header__submenu" role="menu" aria-label="회사소개 하위 메뉴">
+              <div class="header__submenu-panel">
+                <a href="ceo-message.html" class="header__submenu-link" role="menuitem">인사말</a>
+                <a href="about.html#history" class="header__submenu-link" role="menuitem">연혁</a>
+                <a href="about.html#business" class="header__submenu-link" role="menuitem">사업소개</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item header__nav-item--has-sub">
+            <a href="service.html" class="header__nav-link" aria-haspopup="true">서비스</a>
+            <div class="header__submenu" role="menu" aria-label="서비스 하위 메뉴">
+              <div class="header__submenu-panel">
+                <a href="service.html#brand-identity" class="header__submenu-link" role="menuitem">브랜드 아이덴티티</a>
+                <a href="service.html#space-design" class="header__submenu-link" role="menuitem">공간 디자인</a>
+                <a href="service.html#signage-graphic" class="header__submenu-link" role="menuitem">사이니지 &amp; 그래픽</a>
+                <a href="service.html#consulting" class="header__submenu-link" role="menuitem">컨설팅</a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item"><a href="work.html" class="header__nav-link">작업물</a></li>
+          <li class="header__nav-item"><a href="contact.html" class="header__nav-link">문의하기</a></li>
         </ul>
       </nav>
     </div>
