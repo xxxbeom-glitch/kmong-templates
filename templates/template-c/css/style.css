@@ -153,7 +153,35 @@ ul {
   font-weight: 500;
   line-height: 1.2;
   cursor: pointer;
+  overflow: hidden;
   transition: background-color 0.2s ease;
+}
+
+/* CTA 텍스트 슬라이드 — 라벨은 버튼 중앙 고정, 트랙만 이동 */
+.btn__label {
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 1lh;
+}
+
+.btn__track {
+  display: block;
+  transition: transform 0.3s ease;
+  transform: translateY(-1lh);
+}
+
+.btn__text {
+  display: block;
+  height: 1lh;
+  line-height: 1lh;
+  white-space: nowrap;
+}
+
+.btn:hover .btn__track,
+.header__nav-cta:hover .btn__track,
+.contactbar__submit:hover .btn__track {
+  transform: translateY(0);
 }
 
 .btn--primary {
@@ -280,6 +308,7 @@ ul {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
+  overflow: hidden;
 }
 
 /* Hero */
@@ -512,9 +541,20 @@ ul {
   gap: clamp(13px, 1.3542vw, 26px);
 }
 
+.features__media {
+  overflow: hidden;
+  width: 100%;
+}
+
 .features__card .card__media {
   aspect-ratio: 442 / 640;
   border-radius: 0;
+  transition: transform 0.45s ease;
+  transform-origin: center center;
+}
+
+.features__card:hover .card__media {
+  transform: scale(1.2);
 }
 
 .features__card .card__body {
@@ -822,26 +862,38 @@ ul {
   margin-bottom: clamp(23px, 2.3958vw, 46px);
 }
 
-/* Figma: 352px 좌측 고정 여백(인터랙션 영역) + 카드만 가로 스크롤 */
+/* Figma 352px 좌측 여백 = 트랙 padding-left; 드래그 시 카드가 그 영역까지 이동 */
 .gallery__layout {
-  display: grid;
-  grid-template-columns: clamp(176px, 18.3333vw, 352px) minmax(0, 1fr);
   width: 100%;
   max-width: var(--layout-max);
   margin: 0 auto;
 }
 
-.gallery__lead {
-  flex-shrink: 0;
-}
-
 .gallery__scroll {
-  min-width: 0;
+  width: 100%;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  cursor: grab;
+  touch-action: pan-x;
+  user-select: none;
+}
+
+.gallery__scroll:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.gallery__scroll.is-dragging {
+  cursor: grabbing;
+}
+
+.gallery__scroll.is-dragging .gallery__card {
+  pointer-events: none;
 }
 
 .gallery__scroll::-webkit-scrollbar {
@@ -852,6 +904,7 @@ ul {
   display: flex;
   gap: var(--layout-grid-gap);
   width: max-content;
+  padding-left: clamp(176px, 18.3333vw, 352px);
   padding-right: clamp(176px, 18.3333vw, 352px);
 }
 
@@ -860,7 +913,6 @@ ul {
   flex-direction: column;
   flex: 0 0 clamp(280px, 31.0417vw, 596px);
   gap: clamp(13px, 1.3542vw, 26px);
-  scroll-snap-align: start;
 }
 
 .gallery__card .card__media {
@@ -955,6 +1007,16 @@ ul {
   gap: clamp(12px, 1.25vw, 24px);
 }
 
+/* 아코디언 내용: slideToggle(400ms)만 사용 — AOS transition 충돌 방지 */
+.section--faq .faq-item__panel,
+.section--faq .faq-item__panel p {
+  transition: none !important;
+}
+
+.section--faq .faq-item.aos-animate {
+  transition: none !important;
+}
+
 .faq-item {
   background: var(--color-white);
   border-radius: var(--radius-btn);
@@ -1002,10 +1064,6 @@ ul {
 
 .faq-item__panel {
   display: none;
-}
-
-.faq-item.is-open .faq-item__panel {
-  display: block;
   padding: 0;
 }
 
@@ -1208,6 +1266,7 @@ ul {
   letter-spacing: 0;
   color: var(--color-white);
   cursor: pointer;
+  overflow: hidden;
 }
 
 .contactbar__submit:hover {
@@ -1311,5 +1370,29 @@ ul {
   .hero__desc br,
   .card__desc br {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .features__card .card__media {
+    transition: none;
+  }
+
+  .features__card:hover .card__media {
+    transform: none;
+  }
+
+  .btn__track {
+    transition: none;
+  }
+
+  .btn:hover .btn__track,
+  .header__nav-cta:hover .btn__track,
+  .contactbar__submit:hover .btn__track {
+    transform: translateY(-1lh);
+  }
+
+  .gallery__scroll {
+    cursor: auto;
   }
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>노바 스튜디오</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
           <li><a href="#features" class="header__nav-link">서비스</a></li>
           <li><a href="#process" class="header__nav-link">프로세스</a></li>
           <li><a href="#gallery" class="header__nav-link">작업물</a></li>
-          <li><a href="#contactbar" class="header__nav-cta">프로젝트 시작하기</a></li>
+          <li><a href="#contactbar" class="header__nav-cta"><span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">프로젝트 시작하기</span><span class="btn__text">프로젝트 시작하기</span></span></span></a></li>
         </ul>
       </nav>
     </div>
@@ -64,7 +65,7 @@
             <h1 class="hero__title">당신의 공간에 브랜드의 언어를 더합니다</h1>
             <p class="hero__desc">노바 스튜디오는 인테리어부터 브랜드 아이덴티티까지,<br>고객의 공간이 하나의 완성된 브랜드로 기억될 수 있도록 설계합니다.</p>
           </div>
-          <a href="#contactbar" class="btn btn--primary hero__cta">문의하기</a>
+          <a href="#contactbar" class="btn btn--primary hero__cta"><span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">문의하기</span><span class="btn__text">문의하기</span></span></span></a>
         </div>
         <nav class="hero__pager" aria-label="슬라이드 이동">
           <button type="button" class="hero__pager-btn hero__pager-btn--prev" aria-label="이전 슬라이드">
@@ -85,18 +86,18 @@
     <section id="intro" class="section section--intro" aria-labelledby="intro-heading">
       <div class="container">
         <div class="intro__grid">
-          <div class="intro__col">
+          <div class="intro__col" data-aos="fade-up">
             <div class="intro__copy">
               <p class="section-label">about</p>
               <h2 class="section-heading" id="intro-heading">우리는 공간을 디자인합니다</h2>
               <p class="section-desc">노바 스튜디오는 2018년 서울에서 시작했습니다. 카페, 쇼룸, 오피스 등 다양한 공간에서 브랜드의 정체성을 시각적으로 구현해왔습니다. 우리는 단순한 인테리어가 아닌, 방문객이 브랜드를 느끼는 경험 전체를 설계합니다.</p>
             </div>
             <a href="#features" class="btn btn--outline intro__cta">
-              <span>자세히 보기</span>
+              <span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">자세히 보기</span><span class="btn__text">자세히 보기</span></span></span>
               <img src="assets/icons/icon-about-cta-arrow.png" alt="" width="28" height="28" decoding="async">
             </a>
           </div>
-          <div class="intro__media">
+          <div class="intro__media" data-aos="fade-up" data-aos-delay="100">
             <img src="assets/images/about-right-image.jpg" alt="" width="920" height="800" decoding="async">
           </div>
         </div>
@@ -109,30 +110,38 @@
           <p class="section-label">SERVICE</p>
           <h2 class="section-heading" id="features-heading">노바 스튜디오가 하는 일</h2>
         </div>
-        <div class="grid features__grid">
+        <div class="grid features__grid" data-aos-stagger>
           <article class="card features__card">
+            <div class="features__media">
             <img class="card__media" src="assets/images/service-card-01.jpg" alt="" width="442" height="640" decoding="async">
+            </div>
             <div class="card__body">
               <h3 class="card__title">브랜드 아이덴티티</h3>
               <p class="card__desc">로고, 컬러, 타이포그래피 등 브랜드의<br>시각적 언어를 설계합니다.</p>
             </div>
           </article>
           <article class="card features__card">
+            <div class="features__media">
             <img class="card__media" src="assets/images/service-card-02.jpg" alt="" width="442" height="640" decoding="async">
+            </div>
             <div class="card__body">
               <h3 class="card__title">공간 디자인</h3>
               <p class="card__desc">브랜드 컨셉을 공간에 녹여낸 인테리어<br>디자인을 제안합니다.</p>
             </div>
           </article>
           <article class="card features__card">
+            <div class="features__media">
             <img class="card__media" src="assets/images/service-card-03.jpg" alt="" width="442" height="640" decoding="async">
+            </div>
             <div class="card__body">
               <h3 class="card__title">사이니지 &amp; 그래픽</h3>
               <p class="card__desc">공간 내 모든 그래픽 요소를 브랜드 톤에<br>맞게 제작합니다.</p>
             </div>
           </article>
           <article class="card features__card">
+            <div class="features__media">
             <img class="card__media" src="assets/images/service-card-04.jpg" alt="" width="442" height="640" decoding="async">
+            </div>
             <div class="card__body">
               <h3 class="card__title">컨설팅</h3>
               <p class="card__desc">브랜드 방향성 설정부터 런칭까지<br>전 과정을 함께합니다.</p>
@@ -151,22 +160,22 @@
           <p class="section-label">RECORDS</p>
           <h2 class="section-heading" id="proof-heading">숫자로 증명합니다</h2>
         </div>
-        <div class="grid proof__grid">
+        <div class="grid proof__grid" data-proof-count data-aos-stagger>
           <article class="card proof__card">
             <p class="proof__label">완료 프로젝트</p>
-            <p class="proof__value"><span>1,000</span><span class="proof__suffix proof__suffix--plus">+</span></p>
+            <p class="proof__value"><span class="proof__count" data-count-value="1000" data-count-decimals="0">0</span><span class="proof__suffix proof__suffix--plus">+</span></p>
           </article>
           <article class="card proof__card">
             <p class="proof__label">운영연수</p>
-            <p class="proof__value"><span>6년</span></p>
+            <p class="proof__value"><span class="proof__count" data-count-value="6" data-count-decimals="0" data-count-suffix="년">0</span></p>
           </article>
           <article class="card proof__card">
             <p class="proof__label">고객 만족도</p>
-            <p class="proof__value"><span>4.9점</span></p>
+            <p class="proof__value"><span class="proof__count" data-count-value="4.9" data-count-decimals="1" data-count-suffix="점">0</span></p>
           </article>
           <article class="card proof__card">
             <p class="proof__label">재의뢰율</p>
-            <p class="proof__value"><span>83.3</span><span class="proof__suffix proof__suffix--pct">%</span></p>
+            <p class="proof__value"><span class="proof__count" data-count-value="83.3" data-count-decimals="1">0</span><span class="proof__suffix proof__suffix--pct">%</span></p>
           </article>
         </div>
       </div>
@@ -179,7 +188,7 @@
           <h2 class="section-heading" id="process-heading">이렇게 진행됩니다</h2>
           <p class="section-desc">첫 상담부터 최종 납품까지 함께합니다.</p>
         </div>
-        <div class="process__grid">
+        <div class="process__grid" data-aos-stagger>
           <div class="process__row">
             <article class="process__item">
               <div class="process__icon-wrap">
@@ -244,7 +253,7 @@
             <h2 class="section-heading" id="pricing-heading">합리적인 가격으로 시작하세요</h2>
             <p class="section-desc">모든 플랜은 초기 상담 무료입니다.</p>
           </div>
-          <div class="pricing__list">
+          <div class="pricing__list" data-aos-stagger>
             <article class="card pricing__card">
               <div class="pricing__main">
                 <div class="pricing__head">
@@ -300,7 +309,7 @@
               <p class="pricing__price">별도 문의</p>
             </article>
           </div>
-          <a href="#contactbar" class="btn btn--primary btn--block pricing__cta">지금 바로 문의하기</a>
+          <a href="#contactbar" class="btn btn--primary btn--block pricing__cta"><span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">지금 바로 문의하기</span><span class="btn__text">지금 바로 문의하기</span></span></span></a>
         </div>
       </div>
     </section>
@@ -313,9 +322,8 @@
         </div>
       </div>
       <div class="gallery__layout">
-        <div class="gallery__lead" aria-hidden="true"></div>
-        <div class="gallery__scroll">
-          <div class="gallery__track">
+        <div class="gallery__scroll" data-gallery-carousel tabindex="0" aria-label="최근 작업물 드래그 캐러셀">
+          <div class="gallery__track" data-aos-stagger>
           <article class="card gallery__card">
             <img class="card__media" src="assets/images/work-card-01.jpg" alt="" width="596" height="640" decoding="async">
             <div class="card__body">
@@ -358,7 +366,7 @@
           <h2 class="section-heading" id="contact-heading">당신의 공간에 브랜드를 입힐 시간입니다</h2>
           <p class="section-desc">지금 바로 무료 상담을 신청하고, 노바 스튜디오와 함께 시작해보세요.</p>
         </div>
-        <a href="#contactbar" class="btn btn--primary section--contact__cta">문의하기</a>
+        <a href="#contactbar" class="btn btn--primary section--contact__cta"><span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">문의하기</span><span class="btn__text">문의하기</span></span></span></a>
       </div>
     </section>
 
@@ -369,7 +377,7 @@
             <p class="section-label">FAQ</p>
             <h2 class="section-heading" id="faq-heading">자주 묻는 질문</h2>
           </div>
-          <div class="faq-list" data-faq>
+          <div class="faq-list" data-faq data-aos-stagger>
             <article class="faq-item">
               <button type="button" class="faq-item__trigger" aria-expanded="false">
                 <span>상담은 어떻게 신청하나요?</span>
@@ -468,12 +476,13 @@
           <input class="contactbar__input" type="text" name="phone" placeholder="연락처를 입력해주세요" aria-label="연락처">
           <input class="contactbar__input contactbar__input--wide" type="text" name="message" placeholder="간단한 문의 내용을 입력해주세요" aria-label="문의 내용">
         </div>
-        <button type="submit" class="contactbar__submit">문의하기</button>
+        <button type="submit" class="contactbar__submit"><span class="btn__label"><span class="btn__track"><span class="btn__text" aria-hidden="true">문의하기</span><span class="btn__text">문의하기</span></span></span></button>
       </form>
     </div>
   </section>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
