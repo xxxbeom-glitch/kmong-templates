@@ -204,7 +204,9 @@ time.scroll-reveal {
 
 /* Hero — Figma section-hero 149:2964 */
 .section--hero {
-  padding: clamp(20px, 2.0833vw, 40px) var(--layout-pad-x);
+  padding-top: 10px;
+  padding-inline: var(--layout-pad-x);
+  padding-bottom: clamp(20px, 2.0833vw, 40px);
 }
 
 .hero__kv {
@@ -1348,6 +1350,12 @@ time.scroll-reveal {
 
   .section--hero {
     padding-block: clamp(32px, 8vw, 48px);
+  }
+
+  /* Figma 모바일 없음 — PC 1840:800 그대로면 KV 과소 → 세로 비율 + min-height */
+  .hero__kv {
+    aspect-ratio: 4 / 5;
+    min-height: clamp(400px, 115vw, 520px);
   }
 
   .hero__desc-br {
