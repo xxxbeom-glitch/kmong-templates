@@ -163,20 +163,42 @@
           </div>
           <ul class="stats__list">
             <li class="stats-item">
-              <span class="stats-item__value scroll-reveal">98%</span>
-              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="98"
+                data-count-suffix="%"
+              >0%</span>
+              <span class="stats-item__label scroll-reveal">고객 만족도</span>
             </li>
             <li class="stats-item">
-              <span class="stats-item__value scroll-reveal">3배</span>
-              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="420"
+                data-count-suffix="+"
+              >0+</span>
+              <span class="stats-item__label scroll-reveal">프로젝트 수행</span>
             </li>
             <li class="stats-item">
-              <span class="stats-item__value scroll-reveal">24시간</span>
-              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="36000"
+                data-count-suffix="+"
+                data-count-grouping
+              >0+</span>
+              <span class="stats-item__label scroll-reveal">누적 사용자 도달</span>
             </li>
             <li class="stats-item">
-              <span class="stats-item__value scroll-reveal">1분</span>
-              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="1800"
+                data-count-suffix="+"
+                data-count-grouping
+              >0+</span>
+              <span class="stats-item__label scroll-reveal">전환 이벤트 발생</span>
             </li>
           </ul>
         </div>
@@ -200,20 +222,21 @@
             <p class="news__desc scroll-reveal">비즈니스, 운영, 디지털 경험과 관련된 실질적인 이야기와 최신 소식을 전합니다.</p>
           </div>
           <div class="news__nav" aria-label="뉴스 슬라이드">
-            <button type="button" class="news__nav-btn scroll-reveal" aria-label="이전">
+            <button type="button" class="news__nav-btn news__nav-btn--prev" data-news-prev aria-label="이전">
               <img src="assets/icons/icon-arrow-left.svg" alt="" width="24" height="24" decoding="async">
             </button>
-            <span class="news__pager scroll-reveal">
-              <span class="news__pager-current">02</span>
+            <span class="news__pager" aria-live="polite">
+              <span class="news__pager-current" data-news-pager-current>01</span>
               <span class="news__pager-divider" aria-hidden="true"></span>
-              <span class="news__pager-total">04</span>
+              <span class="news__pager-total" data-news-pager-total>03</span>
             </span>
-            <button type="button" class="news__nav-btn scroll-reveal" aria-label="다음">
+            <button type="button" class="news__nav-btn news__nav-btn--next" data-news-next aria-label="다음">
               <img src="assets/icons/icon-arrow-right.svg" alt="" width="24" height="24" decoding="async">
             </button>
           </div>
         </div>
-        <div class="news__list">
+        <div class="news__viewport">
+          <div class="news__list" data-news-track>
           <article class="news-card">
             <a href="#" class="news-card__link">
               <div class="news-card__media scroll-reveal">
@@ -265,6 +288,7 @@
               </div>
             </a>
           </article>
+          </div>
         </div>
       </div>
     </section>
@@ -304,6 +328,10 @@
                   decoding="async"
                 >
               </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Urban Step</span>
+                <span class="works-gallery__category">Commerce Design</span>
+              </span>
             </button>
           </article>
           <article class="works-gallery__item scroll-reveal" role="listitem">
@@ -317,6 +345,10 @@
                   decoding="async"
                 >
               </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Maison Clear</span>
+                <span class="works-gallery__category">Product Landing</span>
+              </span>
             </button>
           </article>
           <article class="works-gallery__item scroll-reveal" role="listitem">
@@ -329,6 +361,10 @@
                   height="1097"
                   decoding="async"
                 >
+              </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Time Archive</span>
+                <span class="works-gallery__category">Editorial Showcase</span>
               </span>
             </button>
           </article>
