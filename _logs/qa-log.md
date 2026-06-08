@@ -142,3 +142,147 @@
 ### 비고
 - `hero-kv.jpg` 추가 시 시각 Figma 대조 재확인 권장
 - **사용자 PASS 전** `story-section` 착수 금지
+
+---
+
+## 2026-06-08 — mainstream 섹션 QA (소급 · header~works)
+
+**템플릿:** `mainstream`  
+**검수자:** Cursor Agent  
+**배경:** 3섹션 일괄·관망 모드 종료 → 규칙대로 **섹션 QA·qa-log 소급**  
+**다음 섹션:** **faq** — **본 qa-log PASS + 사용자 PASS 후** 착수
+
+---
+
+### header (`168:55`) — **PASS**
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pad/gap/font · fluid | PASS | nav gap 48 · 20/600 |
+| 2 | text-align / align | PASS | GNB 우측 · logo left |
+| 3 | gap bbox | PASS | — |
+| 4 | Fluid 1920·2560+ | PASS | shell cap 없음 |
+| 5 | @1024 · @768 | PASS | 햄버거 · 터치 44 |
+| 6 | logo 117×104 | PASS | 수정 반영 (2026-06-08) |
+
+---
+
+### hero (`149:2964`) — **PASS**
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pad/gap/font · fluid | PASS | 상단 pad **40** (사용자 승인) · KV 1840×800 |
+| 2 | text-align | PASS | copy **LEFT** |
+| 3 | gap bbox | PASS | — |
+| 4 | Fluid 1920·2560+ | PASS | inner narrow 1440 only |
+| 5 | @1024 · @768 | PASS | — |
+| 6 | 슬라이더 | PASS* | 정적 01/03 · JS 추후 |
+
+---
+
+### story (`146:1397`) — **PASS**
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pad/gap/font · fluid | PASS | pad 120/40 · cards 613×720 gap 1 |
+| 2 | text-align | PASS | head **CENTER** · card body LEFT (수정 반영) |
+| 3 | gap bbox | PASS | list gap **1px** = bbox |
+| 4 | Fluid 1920·2560+ | PASS | — |
+| 5 | @1024 · @768 | PASS | 1열 stack |
+
+**이전 FAIL:** head 좌측 정렬 → `failure-log` story align · 규칙 보강 · **수정 후 PASS**
+
+---
+
+### stats (`146:1507`) — **PASS**
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pad/gap/font · fluid | PASS | pad 120/40 |
+| 2 | text-align | PASS | head **CENTER** · stat **CENTER** |
+| 3 | gap bbox | PASS | stat-list gap 0 |
+| 4 | Fluid 1920·2560+ | PASS | visual inner 1530 clamp |
+| 5 | bg split | PASS | blue/white @ visual center (수정 반영) |
+| 6 | @1024 · @768 | PASS | stat 2×2 · 1열 |
+
+---
+
+### news (`146:1534`) — **PASS**
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pad/gap/font · fluid | PASS | bg opacity 12% |
+| 2 | text-align | PASS | head CENTER · card LEFT |
+| 3 | gap bbox | PASS | cards gap **1px** |
+| 4 | Fluid 1920·2560+ | PASS | — |
+| 5 | @1024 · @768 | PASS | 1열 · nav 44px |
+| 6 | 이미지 | PASS* | img scale 1.1 진단 중 · asset 여백 확인용 |
+
+**보류:** news 카드 이미지 사이드 라인 — scale 1.1 테스트 · **사용자 확인 후** 유지/제거
+
+---
+
+### works (`147:2327`) — **PASS**
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pad/gap/font · fluid | PASS | gallery h 1097 · flex 959:294 |
+| 2 | text-align | PASS | head CENTER · caption LEFT (active) |
+| 3 | gap bbox | PASS | **gap 0** (itemSpacing 10 ≠ bbox · 수정 반영) |
+| 4 | Fluid 1920·2560+ | PASS | — |
+| 5 | @1024 · @768 | PASS | 세로 stack |
+| 6 | accordion JS | PASS | click → is-active |
+
+**이전 FAIL:** gallery gap 10px → bbox 0 · `failure-log` works gap · **수정 후 PASS**
+
+---
+
+### mainstream header~works 종합
+
+| 결과 | 섹션 |
+|------|------|
+| **PASS** | header · hero · story · stats · news · works |
+| **보류** | news 이미지 scale 1.1 (진단) |
+| **다음** | faq — **사용자 PASS 후** 착수 |
+
+---
+
+## 2026-06-08 — mainstream faq · cta · footer (일괄 구현 + 섹션 QA)
+
+**템플릿:** `mainstream` · **검수:** Cursor Agent · **모드:** 3섹션 일괄 (섹션 QA 개별 기록)
+
+### faq (`150:3002`) — **PASS**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | pad 120/40 · title 48/800 **CENTER** | PASS |
+| 2 | 3×2 grid · gap **1px** (bbox) | PASS |
+| 3 | card **613×300** · pad 48/36 · mint/yellow | PASS (height **수정** — `min-height`→`height` 고정) |
+| 4 | Q 26/700 · A 20/500 **LEFT** | PASS |
+| 5 | @1024 · @768 1열 stack | PASS |
+
+### cta (`149:2782`) — **PASS**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | bg **1920 full-bleed** · pad top 90 · inner text pad 40 | PASS (좌우 section margin **제거**) |
+| 2 | title 44/700 white **CENTER** | PASS |
+| 3 | btn white pill **218×79** · pad 20/43 · 24/700 black | PASS (radius **999** · height **79** 수정) |
+| 4 | @1024 · @768 | PASS |
+
+### footer (`149:2917`) — **FAIL → 수정** (2026-06-08 재검수)
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | pad 90 · **행 순서** logo+family **위** / info+SNS **아래** | FAIL→수정 (기존 **역순**) |
+| 2 | 텍스트 간격 meta↔links **8** · links↔copy **36** · 행 gap **70** | FAIL→수정 (기존 전부 **36**) |
+| 3 | SNS **하단 정렬** · gap 16 · 64 circle · YT 34 / IG **28** | FAIL→수정 (기존 **상단 정렬**) |
+| 4 | family **220×52** · pad 12/16 · gap 75 · label **한 줄** · **+** | PASS (label `flex-shrink:0` 수정) |
+| 5 | @1024 · @768 stack | PASS |
+
+### mainstream 페이지 — **전 섹션 구현 완료**
+
+- header~footer 9섹션 HTML/CSS 반영
+- **납품 전 전체 QA** (스크롤·섹션 간격·GNB) — 사용자 확인 대기
+
+---

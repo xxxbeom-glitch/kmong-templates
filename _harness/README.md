@@ -12,6 +12,15 @@
 
 페이지 전체 완료 후: 전체 납품 QA → `_delivery/imweb/{slug}/` · commit(사용자 요청 시)
 
+## 반응형 (필수)
+
+> 상세: `.cursor/rules/35-responsive.mdc`
+
+- **기준:** Figma desktop 1920px
+- **breakpoint:** 1024px(태블릿) · 768px(모바일) — 섹션 구현 시 함께 반영
+- **768px 이하:** 가로 배치 → 세로 스택 · hover-only UI 대체·비활성화
+- **QA 뷰포트:** 1920 · 1440 · 1024 · 768 · 390px — overflow·줄바꿈·aspect-ratio·터치 영역(≥44px)
+
 ## Context Engineering
 
 AI 작업 품질은 **「무엇을 읽는가」**와 **「무엇을 무시하는가」**에 따라 달라진다.

@@ -3,7 +3,29 @@
 > Cursor 규칙: `.cursor/rules/50-qa-checklist.mdc`  
 > **전 항목 PASS = QA PASS** · 하나라도 FAIL이면 완료·commit 금지
 
-결과 기록: `_logs/qa-log.md`
+결과 기록: `_logs/qa-log.md` (**섹션 1개 = qa-log 1건**)
+
+---
+
+## 섹션 QA 루프 (매 섹션 필수)
+
+> 규칙: `.cursor/rules/20-harness-workflow.mdc` 「섹션 QA 절차」
+
+1. 해당 섹션만 **§2~§4** 체크 (구조 QA는 최초 1회 또는 변경 시)
+2. Fluid scale QA — **1920 · 2560+** 필수
+3. FAIL → 수정 → **재검수** (PASS 전 다음 섹션 금지)
+4. **`_logs/qa-log.md` 기록** → 사용자 PASS → 다음 섹션
+
+**금지:** qa-log 미기록 · 일괄·풀 구현 후 **섹션 QA 생략** · 통합 QA만으로 섹션 QA 대체
+
+### 일괄·풀 구현 시 (구현만 묶음, QA는 섹션별)
+
+| 단계 | 내용 |
+|------|------|
+| 1 | N섹션 구현 (한 번에) |
+| 2 | **섹션 QA × N** — faq, cta, … 각각 §2~§4 · **qa-log N건** |
+| 3 | **페이지 통합 QA** 1회 — 섹션 경계·스크롤·GNB |
+| 4 | 사용자 PASS |
 
 ---
 
@@ -25,19 +47,41 @@
 
 ## 2. Figma 대조 QA
 
-- [ ] padding / gap / font-size / line-height / color 일치
-- [ ] 콘텐츠 폭·좌우 gutter 일치
+- [ ] **Section shell** — guttered / full-bleed / breakout · @1920 bg가 끝까지인지 (`50-qa-checklist.mdc` #7·#8)
+- [ ] padding / gap / font-size / line-height / color — MCP → **clamp/vw**
+- [ ] **gap bbox 검증** — `itemSpacing` + **인접 자식 bbox 간격** (불일치 시 bbox 우선)
+- [ ] **text-align · head alignment** = Figma `textAlignHorizontal` / Auto Layout (섹션 head vs card 등 **블록별**)
+- [ ] 콘텐츠 폭·gutter — **해당 템플릿 MCP** (고정 1840 가정 없음)
 - [ ] 이미지 aspect-ratio = Figma W/H
-- [ ] Auto Layout gap → CSS 1:1 매핑
+- [ ] Auto Layout gap → CSS (**itemSpacing + bbox 실측**)
 - [ ] 추측 수치 없음 (승인된 하드코딩 제외)
+
+### 2-1. Fluid scale QA (필수)
+
+> 규칙: `30-figma-to-code.mdc` 「Fluid scale」 · 체크: `50-qa-checklist.mdc`
+
+| 뷰포트 | 확인 |
+|--------|------|
+| **1920** | MCP gutter·shell·font 비율 1:1 |
+| **2560+** | shell cap 없이 gutter vw만, 콘텐츠 가로 채움 |
+| 1440 · 1024 · 768 · 390 | 비례 축소·breakpoint 구조 |
+
+- [ ] font-size computed — 1920 ↔ 2560 **비례** (px 고정 FAIL)
+- [ ] shell `max-width: {content_px}` cap **없음** (inner narrow 제외)
+- [ ] gutter pad + shell max-width **이중 없음**
 
 ---
 
-## 3. PC / Mobile 반응형 QA
+## 3. PC / Tablet / Mobile 반응형 QA
 
-- [ ] `@media (max-width:768px)` 블록 존재·반영
-- [ ] PC·모바일 전체 스크롤 깨짐 없음
-- [ ] overflow·가로 스크롤 없음
+> 상세: `.cursor/rules/35-responsive.mdc`
+
+- [ ] `@media (max-width:1024px)` · `@media (max-width:768px)` 블록 존재·반영
+- [ ] **QA 뷰포트 5종** 확인: **1920 · 1440 · 1024 · 768 · 390px**
+- [ ] 레이아웃 깨짐·가로 overflow 없음
+- [ ] 텍스트 줄바꿈·이미지 aspect-ratio 유지
+- [ ] 768px 이하 버튼·링크 터치 영역 **≥44×44px**
+- [ ] hover-only UI → 터치 환경 대체·비활성화
 - [ ] clamp min으로 모바일 가독성 확보
 - [ ] 인라인 `style=""` 없음
 

@@ -54,11 +54,12 @@ alwaysApply: true
 1. **범위 확인** (코딩 전 필수)
    - `작업 범위: [파일] / [섹션] / [변경 요약]` 한 줄 제시
 2. **Figma 분석 보고** (MCP 사용 시, 코딩 전 필수)
-   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · 모호한 점
+   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · 모호한 점
    - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
-3. **구현**: HTML → CSS(PC) → CSS(`@media 768`) → JS(필요 시)
-4. **QA**: `_docs/qa-checklist.md` + `50-qa-checklist.mdc` 기준 검증
+3. **구현**: HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → JS(필요 시) — `35-responsive.mdc`
+4. **QA** (필수 — 생략 금지): `_docs/qa-checklist.md` + `50-qa-checklist.mdc` · **결과 `_logs/qa-log.md` 기록**
 5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
+6. **사용자 PASS** 확인 → **다음 섹션 착수**
 
 ## 섹션 단위 루프 (기본)
 
@@ -74,10 +75,53 @@ Figma MCP 분석(해당 섹션)
 → 다음 섹션
 ```
 
-- 요청에 명시된 **섹션 1개**만 구현한다.
-- **이전 섹션 QA PASS** 또는 **사용자 PASS** 전에는 다음 섹션 구현을 시작하지 않는다.
-- 사용자가 **「여러 섹션 일괄 구현」**을 명시한 경우에만 예외 허용한다.
+- **기본:** 요청에 명시된 **섹션 1개**만 구현.
+- **일괄·풀 구현** 시에도 **섹션별 QA + qa-log** 필수 — 구현만 묶음, QA는 섹션마다.
+- **이전 섹션 `qa-log` PASS** 및 **사용자 PASS** 전에는 다음 섹션 구현을 **금지** (일괄 모드는 구현 후 섹션 QA 연속).
+- 사용자가 **「여러 섹션 일괄 구현」** · **「전체 풀」**을 명시한 경우 — **구현**만 한 번에 허용.
+- **일괄·풀 모드에서도 섹션별 QA는 필수** (섹션마다 `50-qa-checklist` + **qa-log 1건**). 생략·통합 QA로 대체 **금지**.
+- 일괄 구현 **완료 후:** 섹션 QA를 **연속 수행** → 전부 PASS 후 **페이지 통합 QA** 1회 (`50-qa-checklist` 페이지·납품) → 사용자 PASS.
 - 페이지 전체 완료 후에는 **납품 전 전체 QA**를 별도로 수행한다 (`50-qa-checklist.mdc` · `60-imweb-delivery.mdc`).
+
+## 섹션 QA 절차 (매 섹션 필수)
+
+```
+구현 완료
+→ 50-qa-checklist + _docs/qa-checklist 해당 섹션 범위 검수
+→ qa-log.md 기록 (PASS / FAIL · 비고 · 다음 주의)
+→ FAIL이면 수정 → 재검수 (PASS 전 다음 섹션 금지)
+→ 사용자 PASS
+→ 다음 섹션
+```
+
+**qa-log 1섹션 1항목.** 미기록 = QA 미완료.
+
+## 사용자 커뮤니케이션 (디자이너 · 필수)
+
+사용자는 **비개발 UI 디자이너**. 보고·설명·질문은 **개발 문서가 아니라 디자이너에게 말하듯** 짧고 쉽게.
+
+### 말투·분량
+- **짧게** — 상태·질문·다음 액션 위주. 긴 표·장문 브리핑 **지양**
+- **Figma 말** 우선 — padding, gap, 정렬, 프레임, Auto Layout, 색·폰트
+- **개발 용어** (`flex`, `clamp`, `bbox`, `shell`, `qa-log` 등) 쓸 때 → **한 줄 쉬운 뜻** 병기 또는 Figma 대응어 사용
+- **PASS/FAIL** → **「맞음 / 틀림 / 확인 필요」** 같이 함께 써도 됨
+- 원인·재발방지 **장문**은 사용자 **요청 시**만. 기본은 **뭐가 달랐는지 · 뭐 고쳤는지** 2~3줄
+
+### Figma 분석 보고 (코딩 전)
+- **한 줄:** 이번에 할 섹션·파일
+- **눈으로 보이는 것:** 레이아웃, 여백, 글자 크기·정렬, 이미지 비율
+- **Shell 1줄 (필수):** `guttered | full-bleed | breakout` + bg·content bbox width (CTA·stats 등 **섹션마다**)
+- **모호한 것만** 질문 (번호·선택지)
+- 승인 전 코딩 금지
+
+### 작업 후
+- **바뀐 것** 3~5 bullet · **보면 되는 파일/URL** 1줄 · **확인 부탁** 1줄
+
+### 금지
+- 규칙·로그·코드 구조를 사용자에게 **그대로 길게** 훑어주기
+- 개발 용어만으로 완료 보고
+
+적용: 사용자-facing 메시지 전반. `_logs`·rules 본문은 기술 표기 유지 OK.
 
 ## 범위 통제
 

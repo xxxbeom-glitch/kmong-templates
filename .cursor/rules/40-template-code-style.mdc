@@ -18,12 +18,14 @@ globs:
 
 - id = kebab-case · class = `section section--{name}` (BEM modifier)
 - 공통: `.container`, `.narrow-wrap`, `.grid`, `.card`, `.section-title`
+- **`.container` (shell):** 섹션 gutter pad 안 `width: 100%` — shell `max-width` cap 금지 (`30-figma-to-code.mdc` Fluid scale)
 - BEM: `{block}__{element}`, `{block}--{modifier}`, 상태 `.is-active` `.is-open`
+- **full-bleed band:** `.is-bleed-x` + band 내부만 gutter (`30-figma-to-code.mdc` 「Section shell · full-bleed」)
 
 ## CSS
 
 - 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃 변수)
-- PC + `@media (max-width:768px)` **항상 함께** 수정
+- PC + `@media (max-width:1024px)` + `@media (max-width:768px)` **항상 함께** 수정 (`35-responsive.mdc`)
 - 인라인 `style=""` 금지 · `!important` 남용 금지
 
 ## HTML

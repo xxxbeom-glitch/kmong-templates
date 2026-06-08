@@ -168,3 +168,197 @@
 
 - `assets/images/hero-kv.jpg` Figma export 후 교체 필요
 - 다음 섹션: `story-section` (사용자 PASS 후)
+
+---
+
+## 2026-06-08 — [template] mainstream header · hero · story (1차 3섹션)
+
+**템플릿:** `mainstream` · **섹션:** `header` (`168:55`) · `hero` (`149:2964`) · `story` (`146:1397`)
+
+### 수정 파일
+
+| 파일 | 내용 |
+|------|------|
+| `templates/mainstream/index.html` | header GNB, hero, story 마크업 |
+| `templates/mainstream/css/style.css` | 3섹션 PC + @1024 + @768 |
+| `templates/mainstream/js/main.js` | GNB 햄버거 토글 |
+
+### MCP 기준 수치
+
+- header: 1920×104 · inner 1840 · nav gap 48 · 20/600 · `#222`
+- hero: pad 90/40 · KV 1840×800 · overlay 30% · 콘텐츠 max 1440 · pager 60/109
+- story: pad 120/40 · head gap 18 · cards 613×720 gap 1 · card pad 36/26
+
+### 미해결
+
+- `assets/images/hero-kv.jpg`, `story-card-01~03.jpg` export 필요 (현재 fallback 배경)
+- hero 슬라이더 JS 미구현 (정적 01/03)
+- 사용자 관망 중 — formal QA·qa-log 보류
+
+---
+
+## 2026-06-08 — [template] mainstream layout shell 수정
+
+**템플릿:** `mainstream` · header / hero / story
+
+### 변경
+
+| 파일 | 내용 |
+|------|------|
+| `css/style.css` | Figma 섹션 pad 40 + inner `max-width: 1840` 패턴으로 재적용 |
+| `css/style.css` | `.container` pad 제거 · `.main` max-width 제거 |
+| `index.html` | hero 중복 `</div>` 제거 · header/story container 래퍼 정리 |
+
+### 기준
+
+- 섹션 `padding-inline: var(--layout-pad-x)` = gutter 40 (fluid)
+- 자식 `max-width: var(--layout-content)` = 1840 (fluid)
+- @1920: `40 + 1840 + 40 = 1920` · **2560+:** gutter vw만, shell `width:100%` (1840 cap 금지)
+
+---
+
+## 2026-06-08 — [template] mainstream faq · cta · footer (일괄)
+
+**템플릿:** `mainstream` · faq `150:3002` · cta `149:2782` · footer `149:2917`
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | FAQ 6카드 · CTA · footer |
+| `css/style.css` | PC + @1024 + @768 |
+
+### MCP 기준
+
+- faq: 3×2 · gap 1 · mint/yellow · Q/A LEFT
+- cta: bg image · title center · btn white
+- footer: 2행 · meta/links · social · family site
+
+---
+
+## 2026-06-08 — [template] mainstream footer 재검수
+
+**템플릿:** `mainstream` · footer `149:2917`
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | 행 순서 · text-group · family dropdown 구조 |
+| `css/style.css` | 간격 8/36/70 · SNS 하단 정렬 · family 220×52 |
+| `js/main.js` | 패밀리 사이트 slideToggle |
+
+### MCP bbox 기준
+
+- Frame 32(logo+family) **위** · Frame 31(info+SNS) **아래** · 행 gap **70**
+- meta↔links **8** · links↔copy **36**
+- SNS cross **MAX**(하단 정렬) · family pad 12/16 gap 75
+
+---
+
+### 갱신
+- `20-harness-workflow.mdc` — 섹션 QA 절차 · qa-log 필수 · 예외 종료 시 소급 QA
+- `30-figma-to-code.mdc` — 「Gap · spacing」bbox 교차 검증
+- `50-qa-checklist.mdc` · `_docs/qa-checklist.md` — gap bbox · 섹션 QA 루프
+- `_logs/qa-log.md` — mainstream header~works 소급 PASS
+- `_logs/decision-log.md` — QA 루프 복귀 확정
+- `_logs/failure-log.md` — works gap
+
+---
+
+**템플릿:** `mainstream` · **섹션:** `works` (`147:2327`)
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | head · accordion gallery 4 panels |
+| `css/style.css` | flex 959/294 · caption active only · @1024 세로 stack |
+| `js/main.js` | gallery panel click → `is-active` toggle |
+
+### MCP 기준
+
+- pad 120/40 · head↔gallery gap 64 · head gap 18 · **align CENTER**
+- gallery h 1097 · gap 10 · expanded 959 · collapsed 294
+- panel pad 54/42 · caption 32/700 + 22/500 gap 16 · **LEFT** (active only)
+- images `works-gallery-01~04.png`
+
+---
+
+**템플릿:** `mainstream` · **섹션:** `news` (`146:1534`)
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | news head · nav 02/04 · card 3 |
+| `css/style.css` | PC + @1024(1열) + @768 · bg `news-bg.png` opacity 12% |
+| `js/main.js` | `scrollRestoration=manual` · refresh 시 scroll top |
+
+### MCP 기준
+
+- pad 120/40 · bg image 12% · intro↔list gap 64 · head↔nav gap 38
+- title 48/800 · desc 22/500 · **align CENTER**
+- nav gap 10 · arrow 36 · pager 02/04 gap 14
+- cards 3열 gap 1 · image 613×538 · card gap 28 · body pad 26 · title 26/600 LEFT · date 20/500
+
+---
+
+**템플릿:** `mainstream` · **섹션:** `stats` (`146:1507`)
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | stats head · 4 stat items · visual 마크업 |
+| `css/style.css` | PC + @1024(2×2) + @768(1열) |
+
+### MCP 기준
+
+- pad 120/40 · bg `#0f408f`
+- head gap 18 · title 48/800 · desc 22/500 · **align CENTER**
+- stat-list 1530 (1840 내 중앙) · 4열 gap 0 · item pad 26/46 · value 56/800 · label 26/500 · **align CENTER**
+- head↔list gap 64 · list↔visual gap 62
+- visual 1530×594 · `stats-visual.png`
+- **bg split:** `#0f408f` ~ visual 세로 중앙 · 하단 `#fff` · visual overlap
+
+---
+
+**템플릿:** `mainstream` · header / hero / story
+
+| 파일 | 내용 |
+|------|------|
+| `css/style.css` | hero 상단 pad 90→40 (`clamp(20px, 2.0833vw, 40px)`) |
+| `css/style.css` | header logo Figma 117×104 명시 (square PNG max-height 축소 해소) |
+| `css/style.css` | story head `text-align: center` · `align-items: center` |
+
+**사유:** 사용자 — hero 상단 여백 축소, 로고 축소 보임, story 타이틀 Figma 중앙 정렬
+
+---
+
+### 갱신
+- `30-figma-to-code.mdc` — shell vs inner narrow, ultrawide QA
+- `40-template-code-style.mdc` — `.container` shell
+- `50-qa-checklist.mdc` · `_docs/figma-to-code-guide.md` · `_docs/qa-checklist.md`
+- `_logs/failure-log.md` — layout shell cap 재발 방지
+
+---
+
+## 2026-06-08 — [rules] 반응형 breakpoint·QA 뷰포트 기준 추가
+
+### 신규·갱신
+
+| 파일 | 내용 |
+|------|------|
+| `.cursor/rules/35-responsive.mdc` | 1024/768 breakpoint · 스택·hover/터치 · QA 뷰포트 5종 |
+| `.cursor/rules/00-core.mdc` | breakpoint 참조 |
+| `.cursor/rules/20-harness-workflow.mdc` | 구현 순서 @1024/@768 |
+| `.cursor/rules/30-figma-to-code.mdc` | 완료 기준 |
+| `.cursor/rules/40-template-code-style.mdc` | CSS breakpoint |
+| `.cursor/rules/45-interaction-patterns.mdc` | hover/터치 |
+| `.cursor/rules/50-qa-checklist.mdc` | QA 뷰포트 |
+| `_docs/figma-to-code-guide.md` | 태블릿·모바일·QA |
+| `_docs/qa-checklist.md` | §3 반응형 QA |
+| `_harness/README.md` | 반응형 요약 |
+| `_logs/decision-log.md` | mainstream·반응형 결정 |
+
+---
+
+## 2026-06-08 — [template] mainstream 스캐폴드·Figma 확인
+
+### 확정
+
+- Figma: `mainstream` (`146:943`) · `templates/mainstream/`
+- 스크린샷: `_harness/snapshots/mainstream/mainstream.png`
+- hero 슬라이더: 1차 정적 디자인 · JS 인터랙션 추후
+- header: Figma Auto Layout 전환 (구현 시 MCP 재분석)

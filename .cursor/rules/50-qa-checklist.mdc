@@ -12,7 +12,7 @@ globs:
 ## 섹션 단위 QA
 
 - 해당 섹션만 Figma 대조
-- PC / 768 반응형 확인
+- PC / 1024 / 768 반응형 확인 (`35-responsive.mdc` · QA 뷰포트 1920·1440·1024·768·390)
 - 해당 섹션 인터랙션 확인 (해당 시)
 - **PASS 후에만** 다음 섹션 착수 (`20-harness-workflow.mdc`)
 
@@ -26,13 +26,37 @@ globs:
 - Imweb 삽입 기준 확인 (`60-imweb-delivery.mdc`)
 
 ## Figma 대조
-- [ ] padding / gap / font-size / line-height / color 일치
-- [ ] 콘텐츠 폭·gutter 일치 · 이미지 aspect-ratio 일치
+- [ ] **Section shell** = MCP 분류 (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · guttered / full-bleed / breakout
+- [ ] padding / gap / font-size / line-height / color — **MCP 수치 → clamp/vw** (px 고정 없음)
+- [ ] **gap bbox 검증** — `itemSpacing`만 쓰지 않음 · **인접 자식 bbox 간격** 또는 **자식 폭 합 + gap = 부모 폭** 확인 (`30-figma-to-code.mdc`)
+- [ ] **text-align · head flex alignment** = Figma `textAlignHorizontal` / Auto Layout align (head vs card body **블록별**)
+- [ ] 콘텐츠 폭·gutter — **해당 템플릿 MCP** 기준 (임의 1840 등 가정 없음)
+- [ ] 이미지 aspect-ratio 일치
+
+## Fluid scale QA (필수)
+
+> 구현 규칙: `30-figma-to-code.mdc` 「Fluid scale」
+
+**뷰포트:** **1920** (Figma 1:1 비율) · **2560+** (ultrawide shell) · 1440 · 1024 · 768 · 390
+
+| # | 확인 | PASS | FAIL |
+|---|------|------|------|
+| 1 | **1920** gutter·shell 폭 = MCP 비율 (예: 40 + 콘텐츠 + 40) | 일치 | 고정 px 어긋남 |
+| 2 | **2560+** shell이 gutter **vw만** 남기고 **가로 채움** | 채움 | 1840 등 **cap 박스** + 양쪽 큰 여백 |
+| 3 | **font-size** DevTools computed — 1920 vs 2560 **비례 변화** | vw/clamp | px 고정 |
+| 4 | padding / gap — 1920 vs 1440 **비례 변화** | vw/clamp | px 고정 |
+| 5 | shell `max-width: {figma_content_px}` **cap 없음** (narrow inner 제외) | 없음 | cap 있음 |
+| 6 | gutter + shell **pad 이중** 없음 | 없음 | 이중 축소 |
+| 7 | **full-bleed / breakout** — @1920 bg·band가 **뷰포트 좌우 끝**까지 (section gutter로 bg 축소 **금지**) | 끝까지 | 양쪽 흰 여백 |
+| 8 | **guttered** — content만 gutter, bg가 guttered인데 full-bleed CSS **금지** | 일치 | bleed 오적용 |
+
+- [ ] 위 **8**항 PASS · `_logs/failure-log.md` 유사 FAIL 없음
 
 ## HTML/CSS
 - [ ] `section` id + `section--*` 규칙
 - [ ] clamp 수치 또는 승인된 하드코딩
-- [ ] `@media 768px` 반영 · 인라인 스타일 없음
+- [ ] `@media 1024px` · `@media 768px` 반영 · 인라인 스타일 없음
+- [ ] QA 뷰포트 1920·1440·1024·768·390 — overflow·줄바꿈·aspect-ratio·터치 영역(≥44px)
 
 ## 기능 (해당 시)
 - [ ] GNB 햄버거 · FAQ · 캐러셀 · AOS · CTA hover
@@ -43,7 +67,7 @@ globs:
 - [ ] 코드 위젯 삽입 시 깨짐·overflow 없음
 
 → **전 항목 PASS** = QA PASS. 하나라도 FAIL이면 완료 처리 금지.
-→ 결과를 `_logs/qa-log.md`에 기록.
+→ 결과를 `_logs/qa-log.md`에 **섹션별 1건** 기록 (미기록 = QA 미완료).
 
 적용 기준:
 - 섹션·페이지 구현 직후, 납품 전, 사용자가 QA 요청 시.

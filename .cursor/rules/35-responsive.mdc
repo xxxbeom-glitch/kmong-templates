@@ -1,0 +1,67 @@
+---
+description: 반응형 breakpoint·레이아웃·터치·QA 뷰포트 기준
+alwaysApply: false
+globs:
+  - templates/**/*
+  - _docs/figma-to-code-guide.md
+  - _docs/qa-checklist.md
+  - _harness/**/*
+---
+
+# Responsive
+
+## 기준
+
+- **구현 기준:** Figma **데스크톱 1920px** 프레임 (MCP 수치 우선)
+- **필수 breakpoint**
+  - **태블릿:** `@media (max-width: 1024px)`
+  - **모바일:** `@media (max-width: 768px)`
+- 별도 Figma 모바일 프레임이 없어도 위 breakpoint 대응은 **필수**
+
+## 레이아웃
+
+- **1024px 이하:** 다열 grid·가로 flex → **1~2열 축소·간격 조정** (섹션별 Figma·구조에 맞게)
+- **768px 이하:** 가로 배치 섹션 → **세로 스택(1열)** 전환을 기본
+- GNB: 768px 이하 **햄버거 메뉴** (`45-interaction-patterns.mdc`)
+- PC에서 `clamp()`·fluid scale은 유지, breakpoint에서 **구조 변경**을 우선 검토
+
+## 터치·hover
+
+- **hover 전용 UI**(드롭다운, hover reveal, CTA track 등)는 터치 환경에서 **비활성화**하거나 **대체 UI** 제공
+  - 예: hover 드롭다운 → 모바일 인라인·아코디언 노출
+  - 예: hover-only 정보 → 항상 보이거나 탭/버튼으로 전환
+- `@media (hover: hover) and (pointer: fine)` 로 hover 스타일 분리 권장
+- 버튼·링크 **터치 영역** 최소 **44×44px** (768px 이하 QA 항목)
+
+## 구현 순서
+
+```
+HTML → CSS(PC @1920) → CSS(@1024) → CSS(@768) → JS(필요 시) → QA
+```
+
+- PC·태블릿·모바일 CSS는 **같은 섹션 작업**에 함께 반영 (`20-harness-workflow.mdc`)
+
+## QA 뷰포트 (필수)
+
+아래 **5개 폭**에서 레이아웃·가독성 확인:
+
+| 폭 | 용도 |
+|----|------|
+| 1920px | Figma 기준 desktop |
+| 1440px | 일반 laptop |
+| 1024px | tablet |
+| 768px | mobile breakpoint |
+| 390px | small mobile |
+
+**확인 항목:** 레이아웃 깨짐 · 가로 overflow · 텍스트 줄바꿈 · 이미지 aspect-ratio · 버튼 터치 영역
+
+적용 기준:
+- 템플릿 CSS 작성·수정, 섹션 QA, 페이지·납품 QA 시.
+
+금지:
+- PC만 구현 후 breakpoint 미반영 완료 처리
+- hover-only 인터랙션을 모바일에 그대로 두기
+- Figma 모바일 프레임 없음을 이유로 768px 대응 생략
+
+완료 기준:
+- `@1024`·`@768` 반영, QA 5개 뷰포트 PASS, 터치 환경에서 hover 의존 UI 없음.

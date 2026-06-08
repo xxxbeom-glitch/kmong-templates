@@ -15,17 +15,149 @@ globs:
 3. 이후 레이아웃·수치 분석 (`20-harness-workflow.mdc` 참고)
 4. 사용자 승인 전 — 폴더 생성·코딩 **금지**
 
-- 기준 프레임 **1920px**. 뷰포트 기준 스케일 (모니터 해상도 무관).
-- 변환: `vw = figma_px ÷ 19.2` → `clamp(min, Nvw, figma_px)`
-- clamp min: display/heading **50%**, body/UI **62.5%** of max
+- 기준 프레임 **1920px**. **1920 = 설계 기준** — 템플릿마다 gutter·내부 폭은 Figma MCP 수치 그대로 (고정 1840 등 가정 **금지**).
+- **모든 Figma px**(padding, gap, font-size, shell gutter, inner width 등) → **뷰포트 fluid 치환** (`30-figma-to-code.mdc` 「Fluid scale」).
 - vw 미적용: color, font-weight, 1px border, letter-spacing(Figma px 그대로)
-- 콘텐츠 폭·gutter는 **Figma 수치 우선** (디자인마다 다름)
 - 섹션 맞닿음(gap 0) → 바깥 margin 금지, **프레임 padding만**
 - padding 이중 적용 금지
-- 이미지: Figma W×H → `aspect-ratio` + `width:100%` + `object-fit:cover`
+- 이미지: Figma W×H → `aspect-ratio` + **`object-fit: cover`** (아래 「Image · card fill」)
 - 텍스트 박스: 고정 `width`/`height` px 금지 → clamp·min-height·auto
+- **텍스트 정렬:** Figma `textAlignHorizontal` → CSS `text-align` **1:1** (아래 「Typography · alignment」)
+- **Auto Layout 정렬:** `counterAxisAlignItems` / `primaryAxisAlignItems` → flex `align-items` / `justify-content` (MCP 값 그대로)
 - 히어로·섹션에 `min-height:100vh` 금지
 - 사용자 **하드코딩 요청** 시에만 `@1920` px 고정 허용
+
+## Fluid scale (필수 — 구현·QA 공통 원칙)
+
+**목표:** Figma @1920에 잡힌 **비율·관계**가 사용자 **모니터 뷰포트**에 맞게 같이 줄고/늘어난다. (폰트 포함)
+
+### 변환식
+
+```
+vw = figma_px ÷ 19.2
+CSS = clamp(min_px, {vw}vw, figma_px)   /* 타이포·gap·패딩 등 */
+```
+
+| 용도 | clamp min (max 대비) |
+|------|----------------------|
+| Display / Heading | 50% |
+| Body / UI / Caption | 62.5% |
+
+- **font-size, line-height( px ), padding, gap, gutter** → 위 clamp/vw 적용
+- **shell gutter** (섹션 좌우 pad): `max(min_px, {gutter÷19.2}vw)` — shell용 **figma px max cap 금지** (ultrawide 여백 과다 방지)
+- **shell 콘텐츠**(pad 안 블록): Figma width가 프레임 거의 풀폭이면 **`width: 100%`** — Figma px를 shell `max-width` cap으로 **금지**
+- **Figma 내부 narrow** (예: copy 1440): **해당 블록만** `max-width` + clamp/vw
+
+### 템플릿마다 다름 (Figma MCP 기준)
+
+| 항목 | 규칙 |
+|------|------|
+| gutter | MCP padding L/R |
+| shell 콘텐츠 폭 | MCP 프레임 width (풀폭·좁음 모두 가능) |
+| inner 블록 | MCP nested frame width |
+
+→ **숫자(1840 등)를 규칙에 박지 않음.** MCP → vw/clamp.
+
+## Typography · alignment (필수)
+
+Figma TEXT·head 블록 구현 시 **수치만 읽고 정렬을 생략하지 않는다.**
+
+| Figma | CSS |
+|-------|-----|
+| `textAlignHorizontal: LEFT` | `text-align: left` |
+| `textAlignHorizontal: CENTER` | `text-align: center` (+ flex head면 `align-items: center`) |
+| `textAlignHorizontal: RIGHT` | `text-align: right` |
+| Auto Layout `counterAxisAlignItems: CENTER` | `align-items: center` |
+| Auto Layout `primaryAxisAlignItems: CENTER` | `justify-content: center` |
+
+**주의:** TEXT 박스가 **풀폭(1840 등)** 이면 bounding box만 보면 좌측처럼 보일 수 있음 → **`textAlignHorizontal` MCP 값 필수 확인**. 같은 섹션 안에서 head(중앙) vs card body(좌측) **블록별로 다를 수 있음**.
+
+**MCP 분석 보고에 포함:** head/title·body copy 각각 `text-align` · head wrapper `align-items`
+
+## Gap · spacing (필수)
+
+Auto Layout **`itemSpacing`만 CSS gap으로 옮기지 않는다.** 구현·QA 전 **bbox 교차 검증** 필수.
+
+```
+인접 gap = child[n+1].x − (child[n].x + child[n].width)
+또는  Σ child.width + (n−1)×gap = parent.width  (±1px 반올림)
+```
+
+| bbox 결과 | CSS |
+|-----------|-----|
+| gap **0** (밀착) | `gap: 0` |
+| gap **1** | `gap: 1px` (story·news 카드 등) |
+| gap **N** | `clamp` / vw 변환 |
+
+**주의:** `itemSpacing: 10`이어도 자식 고정 폭이 부모를 채우면 **실 gap 0**일 수 있음 (works gallery).
+
+**MCP 분석 보고에 포함:** 나열 gap · **bbox 실측 gap** · 불일치 시 bbox 우선
+
+## Section shell · full-bleed (필수 — CTA·stats 등)
+
+섹션마다 **좌우 여백 방식이 다를 수 있음.** MCP 분석·구현·QA **전에 타입 분류** — CTA만의 예외 **금지**.
+
+### MCP에서 분류 (bbox)
+
+| 비교 | 의미 |
+|------|------|
+| 섹션 프레임 width **W** (보통 1920) | 기준 |
+| **배경·이미지·색 band** 자식 width | bg 폭 |
+| **본문·카드·타이틀** 블록 width | content 폭 |
+| 섹션 `paddingLeft/Right` | gutter |
+
+```
+gutter ≈ (W − content_width) ÷ 2   (±2px)
+bg_full = bg_width ≈ W
+content_inset = content_width ≈ W − 2×gutter
+```
+
+### Shell 타입 → CSS
+
+| 타입 | Figma 패턴 | CSS |
+|------|------------|-----|
+| **guttered** (기본) | bg·content 모두 gutter 안 (~1840) | `.section { padding-inline: var(--layout-pad-x); }` · 자식 `width:100%` |
+| **full-bleed** | bg **W 풀폭**, 글자만 gutter (CTA) | 섹션 `padding-inline:0` · **band**에 bg + `.is-bleed-x` · band **안**에만 `padding-inline: gutter` |
+| **breakout** | 섹션 gutter O, **색 band만** W 풀폭 (stats) | 섹션 gutter 유지 · band만 `.is-bleed-x` + band 내부 gutter |
+
+**공통 bleed 유틸** (템플릿 `style.css` — band·panel에 재사용):
+
+```css
+.is-bleed-x {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+```
+
+**금지:** full-bleed·breakout 섹션에 **습관적으로** `section { padding-inline: var(--layout-pad-x) }` (CTA·stats 실패 원인)
+
+**MCP 분석 보고에 포함 (필수 1줄):** `Shell: guttered | full-bleed | breakout` · bg frame명·width · content width · 근거 bbox
+
+## Image · card fill (필수 — Story·News 등 카드)
+
+Figma **Fill(채우기)** 과 동일. 원본 해상도·비율과 **달라도** 카드 **틀(Figma W×H)** 기준.
+
+| 항목 | 규칙 |
+|------|------|
+| 틀 | Figma 프레임 `aspect-ratio` + `overflow: hidden` |
+| 이미지 | `width:100%` · `height:100%` · **`object-fit: cover`** · `object-position: center` (기본) |
+| 동작 | **카드 크기에 맞게 축소** 후 틀 꽉 채움 · 넘치면 **가운데 기준** 잘림 · **stretch 금지** |
+| HTML `width`/`height` | **틀 비율**(613×720 등) — 원본 px **금지** (브라우저가 원본 크기로 그리는 버그 방지) |
+
+**금지:** `width/height: auto` + `min-width/min-height: 100%` only (대형 원본 → 확대·일부만 보임) · `object-fit: contain` (여백) — **승인 시만**
+
+**보여줄 위치 변경:** `object-position` (예: `center top`) — Figma·사용자 지정 시
+
+### 금지
+
+- shell·gutter에 Figma 설계 px **max cap** (`clamp(..., 1840px)` 등) → ultrawide 좌우 여백 과다
+- gutter pad + shell `max-width` **이중 축소**
+- font-size / padding / gap **@1920 px 고정** (하드코딩 승인 제외)
+
+### QA
+
+→ **`50-qa-checklist.mdc` 「Fluid scale QA」** · 뷰포트 **1920 · 2560+** 필수
 
 적용 기준:
 - Figma MCP·Dev Mode 수치로 CSS/HTML 레이아웃·타이포 작성 시.
@@ -34,6 +166,8 @@ globs:
 - Figma 없이 간격·폰트 추측
 - 섹션 간 margin으로 Figma padding 대체
 - 전역 `_tokens`·공통 스케일 파일 생성
+- **shell**에 Figma shell 폭 px **max cap** (내부 narrow 블록·승인 하드코딩 제외)
+- font-size / padding / gap **@1920 px 고정** (하드코딩 승인 제외)
 
 완료 기준:
-- 주요 padding/gap/font-size가 Figma와 일치하고, PC·768px 모두 반영됨.
+- MCP padding/gap/font-size가 vw/clamp로 반영, **1920·2560+ Fluid scale QA PASS**, PC·1024·768 반영 (`35-responsive.mdc`).

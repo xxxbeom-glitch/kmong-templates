@@ -1,0 +1,1202 @@
+/* mainstream · Figma @1920 — gutter 40/1920, content 1840/1920 → vw 비율 유지 (상한 cap 없음) */
+:root {
+  --font-family: SUIT, sans-serif;
+  --layout-pad-x: max(20px, 2.0833vw);
+  --layout-content-narrow: clamp(320px, 75vw, 1440px);
+  --color-text: #222222;
+  --color-white: #ffffff;
+  --color-stats-bg: #0f408f;
+  --color-faq-mint: #e2ede9;
+  --color-faq-yellow: #faf2d7;
+  --faq-card-h: clamp(150px, 15.625vw, 300px);
+  --color-footer-social: #f8f8f8;
+  --stats-visual-half-h: clamp(62px, 15.46875vw, 297px);
+  --header-h: clamp(64px, 5.4167vw, 104px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero__kv-img,
+.stats__visual img,
+.news-card__media img,
+.works-gallery__media img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+}
+
+/* Header — Figma section-header 168:55 */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-inline: var(--layout-pad-x);
+  background: var(--color-white);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 1.6667vw, 32px);
+  width: 100%;
+  min-height: var(--header-h);
+  padding-inline: clamp(8px, 0.8333vw, 16px);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header__logo-img {
+  width: clamp(72px, 6.0938vw, 117px);
+  height: clamp(64px, 5.4167vw, 104px);
+  max-width: none;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin-inline: auto;
+  background: var(--color-text);
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(20px, 2.5vw, 48px);
+}
+
+.header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: clamp(14px, 1.0417vw, 20px);
+  font-weight: 600;
+  line-height: 1.46;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header__nav-link:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Hero — Figma section-hero 149:2964 */
+.section--hero {
+  padding: clamp(20px, 2.0833vw, 40px) var(--layout-pad-x);
+}
+
+.hero__kv {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1840 / 800;
+  overflow: hidden;
+  background: #0c1a2e;
+}
+
+.hero__kv-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__kv-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: clamp(24px, 3.75vw, 72px);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 2.3958vw, 46px);
+  width: 100%;
+  max-width: var(--layout-content-narrow);
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.1458vw, 22px);
+}
+
+.hero__headline {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 0.7292vw, 14px);
+}
+
+.hero__label {
+  font-size: clamp(11px, 0.9375vw, 18px);
+  font-weight: 700;
+  line-height: 1.52;
+  color: var(--color-white);
+}
+
+.hero__title {
+  font-size: clamp(28px, 2.9167vw, 56px);
+  font-weight: 700;
+  line-height: 1.49;
+  color: var(--color-white);
+}
+
+.hero__desc {
+  font-size: clamp(14px, 1.25vw, 24px);
+  font-weight: 500;
+  line-height: 1.49;
+  color: var(--color-white);
+}
+
+.hero__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.5208vw, 10px);
+}
+
+.hero__pager-label {
+  font-size: clamp(12px, 0.8333vw, 16px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.hero__pager-track {
+  position: relative;
+  display: block;
+  width: clamp(80px, 5.6771vw, 109px);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero__pager-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(44px, 3.125vw, 60px);
+  height: 100%;
+  background: var(--color-white);
+}
+
+/* Story — Figma section-story 146:1397 */
+.section--story {
+  padding: clamp(60px, 6.25vw, 120px) var(--layout-pad-x);
+  background: var(--color-white);
+}
+
+.section--story__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 3.3333vw, 64px);
+  width: 100%;
+}
+
+.story__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 0.9375vw, 18px);
+  text-align: center;
+}
+
+.story__title {
+  font-size: clamp(24px, 2.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.46;
+  color: var(--color-text);
+}
+
+.story__desc {
+  font-size: clamp(14px, 1.1458vw, 22px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.story__list {
+  display: flex;
+  gap: 1px;
+}
+
+.story-card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 613 / 720;
+  overflow: hidden;
+  background: #1a2a3a;
+}
+
+.story-card__media {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: 613 / 720;
+  overflow: hidden;
+}
+
+/* Story 이미지: 카드 크기에 맞게 축소 후 틀 꽉 채움(세로·가로 중 맞는 쪽 기준, 넘치면 잘림) */
+.story-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.story-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.55) 100%);
+  pointer-events: none;
+}
+
+.story-card__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: clamp(6px, 0.5208vw, 10px);
+  min-height: 100%;
+  padding: clamp(24px, 1.875vw, 36px) clamp(16px, 1.3542vw, 26px);
+}
+
+.story-card__title {
+  font-size: clamp(18px, 1.3542vw, 26px);
+  font-weight: 800;
+  line-height: 1.34;
+  color: var(--color-white);
+}
+
+.story-card__desc {
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 700;
+  line-height: 1.56;
+  color: var(--color-white);
+}
+
+/* Stats — Figma section-stats 146:1507 · bg split @ visual center */
+.section--stats {
+  padding-inline: var(--layout-pad-x);
+  padding-bottom: clamp(60px, 6.25vw, 120px);
+  background-color: var(--color-white);
+}
+
+.stats__blue {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-inline: var(--layout-pad-x);
+  padding-top: clamp(60px, 6.25vw, 120px);
+  padding-bottom: calc(clamp(31px, 3.2292vw, 62px) + var(--stats-visual-half-h));
+  background-color: var(--color-stats-bg);
+  color: var(--color-white);
+}
+
+.stats__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, 3.3333vw, 64px);
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+.stats__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 0.9375vw, 18px);
+  width: 100%;
+  text-align: center;
+}
+
+.stats__title {
+  font-size: clamp(24px, 2.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.46;
+  color: var(--color-white);
+}
+
+.stats__desc {
+  font-size: clamp(14px, 1.1458vw, 22px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-white);
+}
+
+.stats__list {
+  display: flex;
+  width: 100%;
+  max-width: clamp(320px, 79.6875vw, 1530px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats-item {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(7px, 0.6771vw, 13px);
+  min-width: 0;
+  padding: clamp(13px, 1.3542vw, 26px) clamp(23px, 2.3958vw, 46px);
+  text-align: center;
+}
+
+.stats-item__value {
+  font-size: clamp(28px, 2.9167vw, 56px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.stats-item__label {
+  font-size: clamp(18px, 1.3542vw, 26px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-white);
+}
+
+.stats__visual {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: clamp(320px, 79.6875vw, 1530px);
+  margin-inline: auto;
+  margin-top: calc(-1 * var(--stats-visual-half-h));
+  aspect-ratio: 1530 / 594;
+  overflow: hidden;
+}
+
+.stats__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* News — Figma section-news 146:1534 */
+.section--news {
+  position: relative;
+  padding: clamp(60px, 6.25vw, 120px) var(--layout-pad-x);
+  background-color: var(--color-white);
+}
+
+.section--news::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/images/news-bg.png") center / cover no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.news__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, 3.3333vw, 64px);
+  width: 100%;
+}
+
+.news__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(19px, 1.9792vw, 38px);
+  width: 100%;
+}
+
+.news__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 0.9375vw, 18px);
+  width: 100%;
+  text-align: center;
+}
+
+.news__title {
+  font-size: clamp(24px, 2.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.46;
+  color: var(--color-text);
+}
+
+.news__desc {
+  font-size: clamp(14px, 1.1458vw, 22px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.news__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.5208vw, 10px);
+}
+
+.news__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(32px, 1.875vw, 36px);
+  height: clamp(32px, 1.875vw, 36px);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.news__nav-btn img {
+  display: block;
+  width: clamp(20px, 1.25vw, 24px);
+  height: clamp(20px, 1.25vw, 24px);
+  max-width: none;
+}
+
+.news__pager {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 0.7292vw, 14px);
+}
+
+.news__pager-current,
+.news__pager-total {
+  font-size: clamp(14px, 1.1458vw, 22px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.news__pager-divider {
+  width: 1px;
+  height: clamp(8px, 0.5208vw, 10px);
+  background: var(--color-text);
+}
+
+.news__list {
+  display: flex;
+  gap: 1px;
+  width: 100%;
+}
+
+.news-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.news-card__link {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.4583vw, 28px);
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-card__media {
+  aspect-ratio: 613 / 538;
+  overflow: hidden;
+  background: #1a2a3a;
+}
+
+.news-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+.news-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 1.875vw, 36px);
+  padding-inline: clamp(13px, 1.3542vw, 26px);
+  text-align: left;
+}
+
+.news-card__title {
+  font-size: clamp(18px, 1.3542vw, 26px);
+  font-weight: 600;
+  line-height: 1.34;
+  color: #000000;
+}
+
+.news-card__date {
+  font-size: clamp(14px, 1.0417vw, 20px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .news-card__link:hover .news-card__title {
+    opacity: 0.7;
+  }
+}
+
+/* Works — Figma section-works 147:2327 */
+.section--works {
+  padding: clamp(60px, 6.25vw, 120px) var(--layout-pad-x);
+  background-color: var(--color-white);
+}
+
+.works__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, 3.3333vw, 64px);
+  width: 100%;
+}
+
+.works__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 0.9375vw, 18px);
+  width: 100%;
+  text-align: center;
+}
+
+.works__title {
+  font-size: clamp(24px, 2.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.46;
+  color: var(--color-text);
+}
+
+.works__desc {
+  font-size: clamp(14px, 1.1458vw, 22px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.works-gallery {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  height: clamp(549px, 57.1354vw, 1097px);
+}
+
+.works-gallery__item {
+  flex: 294 1 0;
+  min-width: 0;
+  height: 100%;
+  transition: flex 0.45s ease;
+}
+
+.works-gallery__item.is-active {
+  flex: 959 1 0;
+}
+
+.works-gallery__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: clamp(27px, 2.8125vw, 54px) clamp(21px, 2.1875vw, 42px);
+  border: none;
+  overflow: hidden;
+  background: #1a2a3a;
+  cursor: pointer;
+  text-align: left;
+}
+
+.works-gallery__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.works-gallery__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.works-gallery__caption {
+  position: relative;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  gap: clamp(8px, 0.8333vw, 16px);
+  color: var(--color-white);
+}
+
+.works-gallery__item.is-active .works-gallery__caption {
+  display: flex;
+}
+
+.works-gallery__name {
+  font-size: clamp(20px, 1.6667vw, 32px);
+  font-weight: 700;
+  line-height: 1.46;
+  color: var(--color-white);
+}
+
+.works-gallery__category {
+  font-size: clamp(14px, 1.1458vw, 22px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-white);
+}
+
+/* FAQ — Figma section-faq 150:3002 */
+.section--faq {
+  padding: clamp(60px, 6.25vw, 120px) var(--layout-pad-x);
+  background: var(--color-white);
+}
+
+.faq__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, 3.3333vw, 64px);
+  width: 100%;
+}
+
+.faq__title {
+  width: 100%;
+  font-size: clamp(24px, 2.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.46;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.faq__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+}
+
+.faq__row {
+  display: flex;
+  gap: 1px;
+  width: 100%;
+  height: var(--faq-card-h);
+}
+
+.faq-card {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: clamp(8px, 0.8333vw, 16px);
+  min-width: 0;
+  height: var(--faq-card-h);
+  padding: clamp(24px, 2.5vw, 48px) clamp(18px, 1.875vw, 36px);
+  text-align: left;
+  overflow: hidden;
+}
+
+.faq-card--mint {
+  background: var(--color-faq-mint);
+}
+
+.faq-card--yellow {
+  background: var(--color-faq-yellow);
+}
+
+.faq-card__q {
+  font-size: clamp(18px, 1.3542vw, 26px);
+  font-weight: 700;
+  line-height: 1.64;
+  color: #000000;
+}
+
+.faq-card__a {
+  font-size: clamp(14px, 1.0417vw, 20px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.is-bleed-x {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* CTA — Figma section-cta 149:2782 · Shell: full-bleed */
+.section--cta {
+  padding-top: clamp(45px, 4.6875vw, 90px);
+  padding-bottom: 0;
+  padding-inline: 0;
+  background: var(--color-white);
+}
+
+.cta__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 1.6146vw, 31px);
+  min-height: clamp(215px, 22.3958vw, 430px);
+  padding: clamp(28px, 2.9167vw, 56px) clamp(20px, 2.0833vw, 40px);
+  background: url("../assets/images/cta-bg.png") center / cover no-repeat;
+}
+
+.cta__title {
+  max-width: 100%;
+  font-size: clamp(24px, 2.2917vw, 44px);
+  font-weight: 700;
+  line-height: 1.46;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(44px, 4.1146vw, 79px);
+  padding: clamp(10px, 1.0417vw, 20px) clamp(22px, 2.2396vw, 43px);
+  border-radius: 999px;
+  font-size: clamp(16px, 1.25vw, 24px);
+  font-weight: 700;
+  line-height: 1.64;
+  color: #000000;
+  background: var(--color-white);
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta__btn:hover {
+    opacity: 0.85;
+  }
+}
+
+/* Footer — Figma footer-section 149:2917 */
+.footer {
+  padding: clamp(45px, 4.6875vw, 90px) var(--layout-pad-x);
+  background: var(--color-white);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(35px, 3.6458vw, 70px);
+  width: 100%;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px);
+  width: 100%;
+}
+
+.footer__content-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(24px, 11.5625vw, 222px);
+}
+
+.footer__info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: clamp(18px, 1.875vw, 36px);
+  min-width: 0;
+}
+
+.footer__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.4167vw, 8px);
+}
+
+.footer__meta,
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(6px, 0.5208vw, 10px);
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.footer__links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer__sep {
+  display: inline-block;
+  width: 1px;
+  height: clamp(6px, 0.4167vw, 8px);
+  background: var(--color-text);
+}
+
+.footer__copy {
+  font-size: clamp(13px, 0.8333vw, 16px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+}
+
+.footer__social {
+  display: flex;
+  flex-shrink: 0;
+  gap: clamp(8px, 0.8333vw, 16px);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(44px, 3.3333vw, 64px);
+  height: clamp(44px, 3.3333vw, 64px);
+  border-radius: 50%;
+  background: var(--color-footer-social);
+}
+
+.footer__social-link img {
+  display: block;
+  width: clamp(22px, 1.7708vw, 34px);
+  height: auto;
+  max-width: none;
+}
+
+.footer__social-link--instagram img {
+  width: clamp(18px, 1.4583vw, 28px);
+}
+
+.footer__logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer__logo img {
+  display: block;
+  width: clamp(100px, 7.7604vw, 149px);
+  height: auto;
+  max-width: none;
+}
+
+.footer__family-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.footer__family {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(24px, 3.9063vw, 75px);
+  width: clamp(172px, 11.4583vw, 220px);
+  height: clamp(44px, 2.7083vw, 52px);
+  padding: clamp(8px, 0.625vw, 12px) clamp(12px, 0.8333vw, 16px);
+  border: 1px solid var(--color-text);
+  background: var(--color-white);
+  font-family: inherit;
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.footer__family-label {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.footer__family-icon {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: clamp(14px, 0.9375vw, 18px);
+  line-height: 1.56;
+}
+
+.footer__family-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 10;
+  min-width: 100%;
+  border: 1px solid var(--color-text);
+  background: var(--color-white);
+  list-style: none;
+}
+
+.footer__family-list a {
+  display: block;
+  min-height: 44px;
+  padding: clamp(8px, 0.625vw, 12px) clamp(12px, 0.8333vw, 16px);
+  font-size: clamp(14px, 0.9375vw, 18px);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footer__family-list li + li {
+  border-top: 1px solid rgba(34, 34, 34, 0.12);
+}
+
+.footer__family.is-open .footer__family-icon {
+  transform: rotate(45deg);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .header__nav-list {
+    gap: clamp(12px, 2vw, 24px);
+  }
+
+  .header__nav-link {
+    font-size: clamp(13px, 1.5625vw, 16px);
+  }
+
+  .hero__inner {
+    padding: clamp(20px, 3.125vw, 40px);
+  }
+
+  .story__list {
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .story-card {
+    flex: none;
+    width: 100%;
+  }
+
+  .stats__list {
+    flex-wrap: wrap;
+  }
+
+  .stats-item {
+    flex: 1 1 calc(50% - 1px);
+    min-width: calc(50% - 1px);
+  }
+
+  .news__list {
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 32px);
+  }
+
+  .news-card {
+    flex: none;
+    width: 100%;
+  }
+
+  .works-gallery {
+    flex-direction: column;
+    height: auto;
+    gap: clamp(5px, 0.5208vw, 10px);
+  }
+
+  .works-gallery__item,
+  .works-gallery__item.is-active {
+    flex: none;
+    width: 100%;
+    height: clamp(280px, 35vw, 480px);
+  }
+
+  .faq__row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .faq-card {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: var(--faq-card-h);
+    overflow: visible;
+  }
+
+  .footer__content-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(24px, 3vw, 32px);
+  }
+
+  .footer__social {
+    align-self: flex-start;
+  }
+
+  .footer__brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    z-index: 99;
+    padding: 16px var(--layout-pad-x) 24px;
+    background: var(--color-white);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  }
+
+  .header__nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .header__nav-link {
+    min-height: 44px;
+    padding-block: 10px;
+    white-space: normal;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .section--hero {
+    padding-block: clamp(32px, 8vw, 48px);
+  }
+
+  .hero__desc-br {
+    display: none;
+  }
+
+  .stats__list {
+    flex-direction: column;
+  }
+
+  .stats-item {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .news__nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .works-gallery__item,
+  .works-gallery__item.is-active {
+    height: clamp(220px, 55vw, 360px);
+  }
+
+  .works-gallery__panel {
+    min-height: 44px;
+  }
+
+  .footer__brand {
+    align-items: stretch;
+  }
+
+  .footer__family-wrap,
+  .footer__family {
+    width: 100%;
+  }
+}
