@@ -1,0 +1,28 @@
+---
+description: Imweb 전용 독립형 템플릿 프로젝트 핵심 원칙
+alwaysApply: true
+---
+
+# Core
+
+- 이 프로젝트는 **크몽 판매용 아임웹(Imweb) 전용** HTML/CSS/jQuery 템플릿 제작 프로젝트다.
+- 각 템플릿은 `templates/{slug}/` 아래 **독립 완성형**으로 개발한다.
+- 스택: 순수 HTML + CSS + jQuery 3.x(CDN). 프레임워크·빌드 도구 없음.
+- Figma **1920px** 기준. 반응형 breakpoint **768px** 이하 = 모바일.
+- Figma MCP 수치를 **우선**한다. 추측으로 간격·폰트·구조를 바꾸지 않는다.
+- **QA PASS 전**에는 섹션·페이지·작업을 완료 처리하지 않는다.
+- 자세한 가이드는 `_docs/*.md`, 작업 로그는 `_logs/*.md`를 참고한다.
+
+적용 기준:
+- 모든 작업의 출발점. 범위·플랫폼·완료 판단이 헷갈릴 때.
+
+금지:
+- Cafe24 관련 파일·폴더·납품 구조 생성
+- `_modules`, `_tokens`, 공통 런타임 모듈 생성
+- 템플릿 간 CSS/JS import·공유 의존
+- 사용자 승인·QA PASS 없이 "완료" 선언
+- git commit (사용자 명시 시만, QA PASS 후 — `55-git-workflow.mdc` 참고)
+- Do not push to remote unless the user explicitly requests it.
+
+완료 기준:
+- 작업이 Imweb-only·독립 템플릿 원칙에 맞고, 후속 QA 단계로 넘길 수 있는 상태.

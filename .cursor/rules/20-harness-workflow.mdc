@@ -1,0 +1,37 @@
+---
+description: Figma MCP → 구현 → QA → 로그 작업 흐름
+alwaysApply: true
+---
+
+# Harness Workflow
+
+## 작업 순서
+
+```
+범위 확인 → Figma MCP 분석 보고 → 승인 대기 → 구현 → QA → 로그 기록
+```
+
+1. **범위 확인** (코딩 전 필수)
+   - `작업 범위: [파일] / [섹션] / [변경 요약]` 한 줄 제시
+2. **Figma 분석 보고** (MCP 사용 시, 코딩 전 필수)
+   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · 모호한 점
+   - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
+3. **구현**: HTML → CSS(PC) → CSS(`@media 768`) → JS(필요 시)
+4. **QA**: `_docs/qa-checklist.md` + `50-qa-checklist.mdc` 기준 검증
+5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
+
+## 범위 통제
+
+- 요청 1개 = 변경 파일 최소화. 연관돼 보여도 요청 밖은 건드리지 않는다.
+- 충돌·브라우저 에러로 범위 확장이 필요하면 **먼저 보고 후 대기**.
+
+적용 기준:
+- 모든 구현·수정·Figma 연동 작업 시작 시.
+
+금지:
+- Figma 보고·승인 없이 바로 코딩
+- QA 생략 후 완료 처리
+- 요청 밖 섹션 추가·삭제·클래스명·카피·수치 임의 변경
+
+완료 기준:
+- 범위 확인·(해당 시) Figma 승인·구현·QA PASS·로그 기록까지 끝난 상태.

@@ -1,0 +1,32 @@
+---
+description: Figma 1920 → CSS 수치 변환 규칙
+alwaysApply: false
+globs:
+  - templates/**/*
+  - _docs/figma-to-code-guide.md
+---
+
+# Figma to Code
+
+- 기준 프레임 **1920px**. 뷰포트 기준 스케일 (모니터 해상도 무관).
+- 변환: `vw = figma_px ÷ 19.2` → `clamp(min, Nvw, figma_px)`
+- clamp min: display/heading **50%**, body/UI **62.5%** of max
+- vw 미적용: color, font-weight, 1px border, letter-spacing(Figma px 그대로)
+- 콘텐츠 폭·gutter는 **Figma 수치 우선** (디자인마다 다름)
+- 섹션 맞닿음(gap 0) → 바깥 margin 금지, **프레임 padding만**
+- padding 이중 적용 금지
+- 이미지: Figma W×H → `aspect-ratio` + `width:100%` + `object-fit:cover`
+- 텍스트 박스: 고정 `width`/`height` px 금지 → clamp·min-height·auto
+- 히어로·섹션에 `min-height:100vh` 금지
+- 사용자 **하드코딩 요청** 시에만 `@1920` px 고정 허용
+
+적용 기준:
+- Figma MCP·Dev Mode 수치로 CSS/HTML 레이아웃·타이포 작성 시.
+
+금지:
+- Figma 없이 간격·폰트 추측
+- 섹션 간 margin으로 Figma padding 대체
+- 전역 `_tokens`·공통 스케일 파일 생성
+
+완료 기준:
+- 주요 padding/gap/font-size가 Figma와 일치하고, PC·768px 모두 반영됨.

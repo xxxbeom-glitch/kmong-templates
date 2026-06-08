@@ -1,0 +1,45 @@
+---
+description: 템플릿 HTML/CSS 네이밍·마크업 규칙
+alwaysApply: false
+globs:
+  - templates/**/*.html
+  - templates/**/*.css
+---
+
+# Template Code Style
+
+## 섹션·레이아웃
+
+```html
+<header id="header" class="header">
+<section id="hero" class="section section--hero">
+<footer id="footer" class="footer">
+```
+
+- id = kebab-case · class = `section section--{name}` (BEM modifier)
+- 공통: `.container`, `.narrow-wrap`, `.grid`, `.card`, `.section-title`
+- BEM: `{block}__{element}`, `{block}--{modifier}`, 상태 `.is-active` `.is-open`
+
+## CSS
+
+- 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃 변수)
+- PC + `@media (max-width:768px)` **항상 함께** 수정
+- 인라인 `style=""` 금지 · `!important` 남용 금지
+
+## HTML
+
+- 시맨틱 태그 (`section`, `nav`, heading 계층)
+- GNB current: **HTML에** `is-active` / `aria-current="page"` — JS 동적 처리 금지
+- 이미지: `assets/` + `alt` + `width`/`height` + `decoding="async"`
+- JS 훅: `data-*` 속성 사용
+
+적용 기준:
+- 템플릿 HTML/CSS 작성·수정 시.
+
+금지:
+- 기존 `section--*` 클래스명 임의 변경
+- 요청 없는 카피·브랜드명 삽입
+- 와이어 placeholder(`.ph`)와 실제 납품 템플릿 규칙 혼용
+
+완료 기준:
+- 네이밍 규칙 준수, PC·모바일 CSS 동시 반영, 인라인 스타일 없음.

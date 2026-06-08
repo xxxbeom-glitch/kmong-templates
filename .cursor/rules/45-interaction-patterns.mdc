@@ -1,0 +1,28 @@
+---
+description: jQuery 인터랙션·애니메이션 패턴
+alwaysApply: false
+globs:
+  - templates/**/js/**
+  - templates/**/*.html
+---
+
+# Interaction Patterns
+
+- JS는 **jQuery 3.x** only. 바닐라 DOM 조작 추가 금지.
+- 진입점: `js/main.js` — `$(function(){ ... })` 패턴
+- GNB 모바일: `.menu-toggle` + `.header__nav.is-open`
+- FAQ: `slideToggle` 단일 duration, 단일 열림, `is-open`은 애니메이션 콜백과 동기
+- AOS: `data-aos-anchor`로 트리거 고정, `prefers-reduced-motion` 존중
+- CTA hover: CSS only (`.btn__label` / `.btn__track` 패턴)
+- CSS `transition`과 jQuery `slideToggle` 타이밍 충돌 금지
+
+적용 기준:
+- 햄버거·아코디언·슬라이더·스크롤 애니메이션·hover 인터랙션 추가·수정 시.
+
+금지:
+- GNB active를 JS로 토글
+- AOS·FAQ 패널에 불필요한 `transition` 중복
+- 요청 없는 인터랙션·라이브러리 추가
+
+완료 기준:
+- 해당 인터랙션이 PC·모바일에서 동작하고, 콘솔 에러·깜빡임 없음.
