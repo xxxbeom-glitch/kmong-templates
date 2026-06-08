@@ -16,7 +16,7 @@
 | 5 | **`.cursorrules`, `AGENTS.md` → `_docs/legacy/`** | 루트 단일 규칙·레거시 문서는 참고용으로만 보관 |
 | 6 | **`.cursor/rules/*.mdc`로 Cursor 규칙 재편** | 하네스·Figma·QA·Git 워크플로를 규칙 파일로 분리 |
 | 7 | **`_harness`, `_logs`, `_docs`, `_delivery/imweb` 구조 생성** | 작업·기록·가이드·납품 경로 분리 |
-| 8 | **`templates/template-c` 유지** | 독립 완성형 기준에 가장 부합하는 기존 템플릿 |
+| 8 | ~~`templates/template-c` 유지~~ → **legacy 이동** (아래 결정) | 당시 임시 결정, 이후 `templates/` 비움 원칙으로 변경 |
 | 9 | **push는 사용자 명시 요청 시만** | 원격 반영은 디자이너가 직접 통제 |
 
 ### 영향
@@ -38,4 +38,20 @@
 
 ### 영향
 - `10-project-structure.mdc`, `30-figma-to-code.mdc`, `_docs` 가이드에 반영
-- 기존 `template-c`는 당장 rename 하지 않음 (별도 승인 시 진행)
+- ~~기존 `template-c` 당장 rename 보류~~ → **legacy 이동으로 대체** (아래 결정)
+
+---
+
+## 2026-06-04 — `templates/` 비움 · template-c legacy 이동
+
+### 결정
+- **`templates/`는 활성 작업 공간** — 리셋 후 기존 템플릿 폴더를 두지 않는다.
+- `templates/template-c/` → `_docs/legacy/templates/template-c/` 이동 (삭제 아님)
+- 신규 템플릿만 Figma 프레임명 승인 후 `templates/{slug}/`에 생성
+
+### 이유
+- Figma 프레임명 기반 slug 체계와 혼선 방지
+- `template-c`는 참고용 legacy, 현재 작업 기준이 아님
+
+### 영향
+- `templates/.gitkeep`만 유지 · `start.bat`는 첫 신규 템플릿 생성 후 수정

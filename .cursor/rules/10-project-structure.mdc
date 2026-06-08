@@ -12,8 +12,16 @@ kmong-templates/
 ├── _logs/                  # decision / change / failure / qa 로그
 ├── _docs/                  # 상세 가이드·QA 체크리스트
 ├── _delivery/imweb/        # Imweb 납품 스냅샷만
-└── templates/{slug}/       # 독립 완성형 템플릿
+└── templates/{slug}/       # 신규 독립 완성형 템플릿 (승인 후 생성)
 ```
+
+## Active workspace (`templates/`)
+
+- `templates/` is the active workspace for new standalone templates.
+- Do not keep old template folders in `templates/` after project reset.
+- Legacy templates must be stored under `_docs/legacy/templates/`.
+- New template folders must be created only after detecting the top-level Figma frame name and receiving user approval.
+- When no active template exists, `templates/` stays empty (`.gitkeep` only).
 
 - 템플릿 필수 구성: `index.html`, `css/style.css`, `js/main.js`, `assets/`(images·icons).
 - 서브페이지는 같은 템플릿 폴더 안에 `about.html` 등으로 추가.

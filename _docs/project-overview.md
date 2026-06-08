@@ -19,12 +19,14 @@
 
 | 폴더 | 역할 |
 |------|------|
-| `templates/{slug}/` | 개발 중인 독립 템플릿 |
+| `templates/{slug}/` | **신규** 독립 템플릿 작업 공간 (Figma 프레임명 승인 후 생성) |
+| `templates/` (루트) | 활성 템플릿 없을 때 비움 (`.gitkeep`만) |
 | `_delivery/imweb/{slug}/` | 아임웹 납품 스냅샷 |
 | `.cursor/rules/` | Cursor 에이전트 규칙 |
 | `_harness/` | 작업·리뷰·스냅샷·리포트 |
 | `_logs/` | 결정·변경·실패·QA 기록 |
 | `_docs/` | 사람이 읽는 가이드 (본 문서들) |
+| `_docs/legacy/templates/` | 이전 템플릿 참고 자료 (`template-a`·`b`·`c`) |
 | `_docs/legacy/` | 리셋 이전 자료 (참고만, 수정 금지) |
 
 ## 워크플로우 (요약)
@@ -64,6 +66,6 @@ Figma 디자인 → MCP 수치 전달 → 구조 분석·승인 → 섹션 구�
 
 ## 현재 템플릿
 
-| slug | 상태 | 비고 |
-|------|------|------|
-| `template-c` | 개발 중 | 노바 스튜디오 랜딩 (이름 변경 예정) |
+**없음** — `templates/`는 비어 있다. 신규 템플릿은 Figma 최상위 프레임명 승인 후 `templates/{slug}/`에 생성한다.
+
+> 참고: `template-c`(노바 스튜디오) 등 이전 작업물은 `_docs/legacy/templates/`에만 보관. 현재 작업 기준이 아니다.

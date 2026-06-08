@@ -15,7 +15,7 @@
 | 3 | `_tokens` 제거 | PASS | 폴더 없음 |
 | 4 | `_delivery/cafe24` 제거 | PASS | 폴더 없음 |
 | 5 | `_delivery/imweb` 유지 | PASS | `.gitkeep` 존재 |
-| 6 | `templates/template-c` 유지 | PASS | HTML·CSS·JS·assets 무수정 |
+| 6 | `templates/template-c` 유지 | PASS | *(이후 legacy 이동 — 아래 QA 참고)* |
 | 7 | legacy 이동 확인 | PASS | `_docs/legacy/` 하위에 AGENTS·cursorrules·template-a/b·_common·_imgs·체크리스트 |
 | 8 | push 금지 규칙 | PASS | `00-core.mdc`, `55-git-workflow.mdc`에 명시 |
 | 9 | `start.bat` / `package.json` 미수정 | PASS | 리셋 범위 준수 |
@@ -64,8 +64,30 @@
 | 2 | `30-figma-to-code.mdc` MCP 프레임명·섹션 보고 | PASS |
 | 3 | `_docs` 2개 문서 반영·rules와 일치 | PASS |
 | 4 | `decision-log`·`change-log` 기록 | PASS |
-| 5 | `template-c`·`start.bat` 미수정 | PASS |
+| 5 | `template-c`·`start.bat` 미수정 | PASS | *(이후 template-c legacy 이동)* |
 | 6 | 예시(`ontheblue`, `claire-clinic`) 정확 | PASS |
+
+### FAIL 항목
+없음
+
+---
+
+## 2026-06-04 — template-c legacy 이동 QA
+
+**대상:** `templates/template-c` → `_docs/legacy/templates/template-c`  
+**검수자:** Cursor Agent  
+**결과:** **PASS**
+
+### 검수 항목
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | `templates/template-c/` 없음 | PASS |
+| 2 | `_docs/legacy/templates/template-c/` 존재 | PASS |
+| 3 | `templates/` 비어 있음 (`.gitkeep`만) | PASS |
+| 4 | rules/docs/logs 현재 기준 반영 | PASS |
+| 5 | `template-c` 내부 파일 내용 미수정 | PASS |
+| 6 | `start.bat` 미수정 | PASS |
 
 ### FAIL 항목
 없음

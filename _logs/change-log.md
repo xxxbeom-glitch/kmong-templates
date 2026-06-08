@@ -83,3 +83,29 @@
 ### 미수정
 
 - `templates/template-c/` · `start.bat` · `package.json`
+
+---
+
+## 2026-06-04 — [setup] 기존 template-c를 legacy로 이동
+
+### 이동
+
+| From | To |
+|------|-----|
+| `templates/template-c/` | `_docs/legacy/templates/template-c/` |
+
+### 기타
+
+- `templates/.gitkeep` 생성 — 활성 템플릿 없음 표시
+- `templates/` 하위 템플릿 폴더 없음 (정상 상태)
+
+### 갱신
+
+- `_docs/project-overview.md` — 현재 템플릿 없음·legacy 참고 명시
+- `_docs/figma-to-code-guide.md` — 빈 `templates/` 안내
+- `_logs/decision-log.md` — template-c legacy 결정
+- `.cursor/rules/10-project-structure.mdc` — active workspace 원칙
+
+### 미수정
+
+- `start.bat` · `package.json` · `templates/template-c` 내부 파일 내용

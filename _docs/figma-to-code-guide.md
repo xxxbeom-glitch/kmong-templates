@@ -30,6 +30,9 @@
 
 - [ ] 최상위 프레임명 보고 → slug 정규화 **제안** → 사용자 승인
 - [ ] 승인 전 `templates/{slug}/` 생성 금지
+- [ ] `templates/`에 기존 폴더가 있으면 신규 생성 전 사용자와 충돌 확인
+
+> 리셋 후 `templates/`는 비어 있는 것이 정상이다. legacy 템플릿은 `_docs/legacy/templates/` 참고만.
 
 제안 예:
 ```
