@@ -5,6 +5,8 @@ alwaysApply: true
 
 # Harness Workflow
 
+> **작업 공간:** 구현은 **`templates/{slug}/` 직접** — workbench·임시 복사본→반영 단계 **없음** (`10-project-structure.mdc`).
+
 ## 작업 시작 전 — 컨텍스트 확인
 
 새 작업 또는 새 섹션 착수 전 `_docs/context-guide.md`의 우선순위에 따라 **현재 작업에 필요한 컨텍스트만** 확인한다.
@@ -54,9 +56,10 @@ alwaysApply: true
 1. **범위 확인** (코딩 전 필수)
    - `작업 범위: [파일] / [섹션] / [변경 요약]` 한 줄 제시
 2. **Figma 분석 보고** (MCP 사용 시, 코딩 전 필수)
-   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · 모호한 점
+   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · 모호한 점
+   - **(인터랙션 검토 시)** preset 후보 ID · `46-interaction-presets.mdc` — **사용자 선택·승인 전 구현 금지**
    - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
-3. **구현**: HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → JS(필요 시) — `35-responsive.mdc`
+3. **구현**: **`templates/{slug}/`에 직접** — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → **승인된 preset만** JS (`45`·`46`)
 4. **QA** (필수 — 생략 금지): `_docs/qa-checklist.md` + `50-qa-checklist.mdc` · **결과 `_logs/qa-log.md` 기록**
 5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
 6. **사용자 PASS** 확인 → **다음 섹션 착수**
@@ -111,6 +114,7 @@ Figma MCP 분석(해당 섹션)
 - **한 줄:** 이번에 할 섹션·파일
 - **눈으로 보이는 것:** 레이아웃, 여백, 글자 크기·정렬, 이미지 비율
 - **Shell 1줄 (필수):** `guttered | full-bleed | breakout` + bg·content bbox width (CTA·stats 등 **섹션마다**)
+- **(인터랙션 검토 시) Preset:** 후보 ID · 승인 여부 — `46-interaction-presets.mdc` (카탈로그에 있어도 **자동 적용 금지**)
 - **모호한 것만** 질문 (번호·선택지)
 - 승인 전 코딩 금지
 
@@ -134,6 +138,7 @@ Figma MCP 분석(해당 섹션)
 금지:
 - Figma 보고·승인 없이 바로 코딩
 - QA 생략 후 완료 처리
+- **`_harness/workbench/`·별도 공간에서 구현 후 templates 반영**
 - 요청 밖 섹션 추가·삭제·클래스명·카피·수치 임의 변경
 - 이전 섹션 QA PASS 없이 다음 섹션 구현
 - 사용자 요청 없이 여러 섹션 일괄 구현

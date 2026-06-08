@@ -53,7 +53,11 @@
    - image ratio
    - Auto Layout 구조
 
-7. **사용자 선호**
+7. **Interaction preset** (인터랙션 작업·승인 시)
+   - `.cursor/rules/46-interaction-presets.mdc` · `_docs/interaction-presets-guide.md`
+   - **사용자가 선택·승인한 preset ID만** — 카탈로그 10종 전체 ≠ 자동 적용
+
+8. **사용자 선호**
    - **비개발 UI 디자이너** — 설명은 **짧고·Figma 말·쉬운 한국어** (`20-harness-workflow.mdc` 「사용자 커뮤니케이션」)
    - 단순 구조 우선
    - 과한 공통화 금지
@@ -69,7 +73,7 @@
 - 현재 섹션과 무관한 **과거 QA** 항목
 - **추측성** 해석
 - 사용자가 승인하지 않은 **기능 추가**
-- Figma에 없는 **CTA, 슬라이더, 인터랙션**
+- Figma·**46 preset 승인** 없는 **CTA, 슬라이더, 커스텀 motion** (카탈로그 ID 승인 시 적용 가능 — `decision-log`)
 
 ## 충돌 시 우선순위
 

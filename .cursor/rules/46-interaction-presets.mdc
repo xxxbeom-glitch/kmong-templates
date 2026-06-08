@@ -1,0 +1,247 @@
+---
+description: PC 인터랙션 프리셋 카탈로그·선택·승인 (구현은 45-interaction-patterns)
+alwaysApply: false
+globs:
+  - templates/**/*
+  - .cursor/rules/45-interaction-patterns.mdc
+  - _docs/interaction-presets-guide.md
+  - _logs/decision-log.md
+---
+
+# Interaction Presets (PC)
+
+> **구현 방식:** `.cursor/rules/45-interaction-patterns.mdc` (jQuery·hover/터치·타이밍)  
+> **사람용 요약:** `_docs/interaction-presets-guide.md`
+
+## 목적 · 범위
+
+- 템플릿 제작 시 **반복 인터랙션**을 preset ID로 표준화한다.
+- **카탈로그 10종 전부 등록** — 템플릿·섹션에 **연결(적용)은 사용자가 선택·승인**할 때만 한다.
+- **현재 범위: PC (@1920 desktop)** — 모바일·터치 대체는 `35-responsive.mdc` + `45-interaction-patterns.mdc`.
+- **실제 JS/CSS 구현 코드는 이 파일에 두지 않는다.** (템플릿 `main.js` / 섹션 CSS에만)
+
+## 전역 규칙
+
+- 사용자가 **명시·승인하지 않은 preset**은 임의로 추가하지 않는다.
+- **한 섹션**에 preset **과다 적용 금지** — 아래 「섹션당 상한」 참고.
+- 인터랙션은 **콘텐츠 전달을 방해**하면 안 된다 (가독성·스크롤·포커스 우선).
+- **중복 애니메이션** 금지 — 동일 요소에 scroll-reveal + hover-scale 등 겹치지 않음.
+- preset **ID(slug)는 프로젝트 전역 동일** — 아래 표기만 사용, **한글명은 명령·대화용**(decision-log·QA는 ID 기록).
+- 사용자 **한글명** 또는 **ID** 지정 모두 승인으로 인정 — AI는 해당 preset 1개로 매핑.
+- Figma에 motion이 없어도, **사용자가 preset ID를 섹션에 지정·승인**하면 적용 가능 (`decision-log` · `_docs/context-guide.md`).
+
+## 섹션당 상한 (권장)
+
+| 유형 | preset | 섹션당 권장 |
+|------|--------|-------------|
+| 진입·스크롤 | `scroll-reveal`, `typing-text` | **1개** |
+| 슬라이드·드래그 | `hero-progress-slider`, `drag-scroll` | **1개** |
+| hover 계열 | `hover-tone`, `image-scale-hover`, `grayscale-hover-color`, `button-text-slide-hover`, `expand-card-hover` | **합계 2개 이하** |
+| 숫자 | `stats-counter` | **1개** (stats 섹션 등) |
+
+초과 시 **사용자 승인** 없이 적용 금지.
+
+## 적용 절차 (섹션 구현 시)
+
+```
+Figma MCP 분석
+→ (인터랙션 검토 시) preset 후보 ID 제안 · 섹션당 상한 확인
+→ 사용자 preset ID 선택·승인  ← 카탈로그에 있어도 자동 적용 금지
+→ HTML/CSS(PC) → @1024 → @768
+→ 승인된 preset만 JS/CSS (45 규칙)
+→ 섹션 QA — preset ID·과다 적용·중복 확인
+→ qa-log · decision-log(템플릿별 매핑 확정 시)
+```
+
+**기록 형식 (decision-log / change-log):**
+
+```
+[template {slug}] {section-id}: preset — scroll-reveal, hover-tone
+```
+
+## 한글명 (명령용)
+
+> 채팅 예: 「story에 **스크롤 등장** 적용해줘」 · 「hero **히어로 슬라이더** 연결해줘」
+
+| 한글명 | ID |
+|--------|-----|
+| 스크롤 등장 | `scroll-reveal` |
+| 호버 톤 | `hover-tone` |
+| 이미지 확대 호버 | `image-scale-hover` |
+| 흑백→컬러 호버 | `grayscale-hover-color` |
+| 가로 드래그 | `drag-scroll` |
+| 버튼 글자 슬라이드 | `button-text-slide-hover` |
+| 타이핑 연출 | `typing-text` |
+| 카드 넓히기 호버 | `expand-card-hover` |
+| 숫자 카운트업 | `stats-counter` |
+| 히어로 슬라이더 | `hero-progress-slider` |
+
+## Interaction Catalog
+
+### `scroll-reveal` · 스크롤 등장
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **스크롤 등장** |
+| **목적** | 섹션·블록이 뷰포트에 들어올 때 **은은하게 등장**해 시선 유도 |
+| **사용 위치** | story · stats · news · works · faq 등 **섹션 head·카드 그룹** (PC) |
+| **동작 설명** | 스크롤로 트리거 영역 진입 시 opacity 0→1 · translateY(소폭) · **1회** 재생 |
+| **권장 옵션** | duration 0.5~0.8s · easing ease-out · threshold 10~15% · `prefers-reduced-motion: reduce` 시 **즉시 표시** |
+| **사용 금지** | hero 첫 화면(이미 보임) · header · **같은 섹션에 typing-text와 동시** · 전 페이지 모든 블록 일괄(과부하) |
+
+---
+
+### `hover-tone` · 호버 톤
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **호버 톤** |
+| **목적** | hover 시 **밝기·투명도만** 살짝 바꿔 클릭 가능함을 알림 |
+| **사용 위치** | CTA 버튼 · text link · card 링크 (PC, fine pointer) |
+| **동작 설명** | `:hover` opacity 약 0.85 또는 배경 명도 ±5% · **transform 없음** |
+| **권장 옵션** | transition 0.2~0.25s · `@media (hover: hover) and (pointer: fine)` only |
+| **사용 금지** | `image-scale-hover`와 **동일 요소** · 모바일 터치에 hover-only · primary CTA 2개 이상 동시 강조 |
+
+---
+
+### `image-scale-hover` · 이미지 확대 호버
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **이미지 확대 호버** |
+| **목적** | 카드·썸네일 hover 시 이미지 **미세 확대** (Fill 프레임 유지) |
+| **사용 위치** | story · news · works **이미지 영역** (overflow hidden 프레임 안) |
+| **동작 설명** | hover 시 img `scale(1.03~1.08)` · transform-origin center · 프레임 밖은 clip |
+| **권장 옵션** | scale **1.05** 기본 · duration 0.35~0.5s · fine pointer only |
+| **사용 금지** | **진단용 scale(1.1) 등 임의 수치**를 preset 없이 유지 · grayscale-hover와 **동일 img** · layout shift 유발 |
+
+---
+
+### `grayscale-hover-color` · 흑백→컬러 호버
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **흑백→컬러 호버** |
+| **목적** | 기본 **흑백(또는 저채도)** → hover 시 **원색**으로 전환 |
+| **사용 위치** | works 갤러리 썸네일 · 로고·파트너 줄 (PC) |
+| **동작 설명** | default `grayscale(100%)` or opacity 0.6 → hover `grayscale(0%)` · img 또는 wrapper filter |
+| **권장 옵션** | transition 0.3~0.4s · filter only (width/height 변경 금지) |
+| **사용 금지** | **image-scale-hover와 동일 요소** · 텍스트 본문 · 접근성 대비 저하 색 |
+
+---
+
+### `drag-scroll` · 가로 드래그
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **가로 드래그** |
+| **목적** | 가로로 긴 카드·썸네일 줄을 **마우스 드래그**로 스크롤 |
+| **사용 위치** | news 카드 줄 · works · 가로 overflow 리스트 (PC) |
+| **동작 설명** | mousedown→mousemove로 scrollLeft 이동 · grab/grabbing cursor · click과 drag 구분 |
+| **권장 옵션** | sensitivity 1~1.5 · 관성 optional(짧게) · scrollbar 숨김 시 키보드 포커스 경로 유지 |
+| **사용 금지** | **hero-progress-slider와 동일 영역** · 세로 스크롤 페이지와 **가로 drag 충돌** · 모바일(별도 정책 전) |
+
+---
+
+### `button-text-slide-hover` · 버튼 글자 슬라이드
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **버튼 글자 슬라이드** |
+| **목적** | 버튼 hover 시 **글자가 슬라이드**하며 hover 카피 또는 동일 텍스트 재진입 |
+| **사용 위치** | CTA pill · footer · hero 보조 버튼 (PC) |
+| **동작 설명** | 2줄 텍스트 stack · hover 시 translateY(-100%) loop 또는 1회 · pill overflow hidden |
+| **권장 옵션** | duration 0.3~0.4s · easing ease · **hover-tone과 병용 가능**(같은 btn) |
+| **사용 금지** | **아이콘-only 버튼** · 다줄 문장 버튼 · `expand-card-hover`와 혼동되는 카드 전체 |
+
+---
+
+### `typing-text` · 타이핑 연출
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **타이핑 연출** |
+| **목적** | hero·강조 카피 **타이핑 연출** (선택적 1회) |
+| **사용 위치** | hero label · 짧은 subtitle (PC, **1블록**) |
+| **동작 설명** | 문자 순차 표시 또는 cursor blink · 페이지 로드 **1회** · skip/reduced-motion 시 **전문 즉시 표시** |
+| **권장 옵션** | speed 40~80ms/char · max 길이 ~40자 · `prefers-reduced-motion` 필수 대응 |
+| **사용 금지** | **scroll-reveal과 동일 head** · body·FAQ·footer · SEO 핵심 문장 전체(긴 문단) |
+
+---
+
+### `expand-card-hover` · 카드 넓히기 호버
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **카드 넓히기 호버** |
+| **목적** | hover 시 카드·패널 **너비·flex 비율 확대** (works 아코디언 **유사**) |
+| **사용 위치** | works 갤러리 · 가로 카드 그룹 (PC) |
+| **동작 설명** | hover(active) 패널 flex 비율 증가 · inactive 축소 · **click 고정** vs **hover preview** — 템플릿별 decision-log에 명시 |
+| **권장 옵션** | transition 0.4~0.5s · flex 비율 Figma bbox 기준 · **1개만 expanded** |
+| **사용 금지** | **click 아코디언과 hover expand 동시** · FAQ 정적 카드 · 모바일 stack에서 flex expand |
+
+> **mainstream works:** 현재 **click** `is-active` — `expand-card-hover` 적용 시 **hover vs click** 정책 사용자 승인 필수.
+
+---
+
+### `stats-counter` · 숫자 카운트업
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **숫자 카운트업** |
+| **목적** | stats 숫자 **0→목표값 카운트업** (스크롤 진입 1회) |
+| **사용 위치** | stats 섹션 **수치** (`98%`, `3배` 등) |
+| **동작 설명** | Intersection 진입 시 requestAnimationFrame 또는 jQuery animate · **1회** · `%`·접미사 유지 |
+| **권장 옵션** | duration 1.2~2s · easing ease-out · reduced-motion 시 **최종값 즉시** |
+| **사용 금지** | **scroll-reveal과 동일 숫자 노드에 transform 중복** · non-numeric 카피 · header/footer |
+
+---
+
+### `hero-progress-slider` · 히어로 슬라이더
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **히어로 슬라이더** |
+| **목적** | hero **KV 슬라이드 + pager/progress** (Figma 01/03 · progress bar) |
+| **사용 위치** | hero 섹션 **전용** |
+| **동작 설명** | 자동·수동 전환 · pager 숫자 · track fill width 연동 · **loop optional** |
+| **권장 옵션** | interval 5~7s · transition 0.5s fade or slide · pause on hover · **정적 1장만**이면 preset **미적용** |
+| **사용 금지** | news·works에 **동일 preset 복제** · autoplay 무한 + **typing-text 동시** · Figma 슬라이드 없는데 추가 |
+
+> **mainstream hero:** 현재 **정적** — 이 preset **미연결**. 연결 시 사용자 승인 + decision-log.
+
+---
+
+## Preset ID 목록 (고정)
+
+| 한글명 | ID |
+|--------|-----|
+| 스크롤 등장 | `scroll-reveal` |
+| 호버 톤 | `hover-tone` |
+| 이미지 확대 호버 | `image-scale-hover` |
+| 흑백→컬러 호버 | `grayscale-hover-color` |
+| 가로 드래그 | `drag-scroll` |
+| 버튼 글자 슬라이드 | `button-text-slide-hover` |
+| 타이핑 연출 | `typing-text` |
+| 카드 넓히기 호버 | `expand-card-hover` |
+| 숫자 카운트업 | `stats-counter` |
+| 히어로 슬라이더 | `hero-progress-slider` |
+
+## QA (`50-qa-checklist.mdc` 연동)
+
+- [ ] 적용 preset ID = **사용자 승인 목록**과 일치
+- [ ] 섹션당 **상한** 준수
+- [ ] **중복** animation·transition 없음
+- [ ] `prefers-reduced-motion` · 768 hover 정책 (`45` · `35`)
+- [ ] 카탈로그 **미등록** 커스텀 motion 없음
+
+적용 기준:
+- 인터랙션 **선택·승인·적용·QA** 시. 카탈로그만 볼 때는 참고.
+
+금지:
+- 카탈로그에 없는 preset 이름 invent
+- 승인 없이 10종 중 **임의 다수** 섹션 일괄 적용
+- `_modules` · 템플릿 간 공유 JS 런타임 생성
+
+완료 기준:
+- 승인된 preset만 구현 · QA PASS · 템플릿별 매핑은 `decision-log` (연결 확정 시).

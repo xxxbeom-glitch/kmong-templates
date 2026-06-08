@@ -60,6 +60,7 @@ globs:
 
 ## 기능 (해당 시)
 - [ ] GNB 햄버거 · FAQ · 캐러셀 · AOS · CTA hover
+- [ ] **Interaction preset** — 적용 ID = 사용자 승인 목록 · 섹션당 상한 · 중복 animation 없음 (`46-interaction-presets.mdc`)
 - [ ] 링크·GNB `is-active` 페이지별 정확
 
 ## Imweb

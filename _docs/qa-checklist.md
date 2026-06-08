@@ -89,9 +89,12 @@
 
 ## 4. 인터랙션 QA (해당 시)
 
+> preset 카탈로그: `_docs/interaction-presets-guide.md` · `46-interaction-presets.mdc`
+
 - [ ] GNB 햄버거 열림/닫힘
 - [ ] GNB `is-active` 해당 페이지 HTML에만 적용
 - [ ] FAQ 아코디언 · 캐러셀 · AOS · CTA hover
+- [ ] **Preset ID** = 사용자 승인 목록 · 섹션당 상한 · **중복 animation 없음**
 - [ ] `prefers-reduced-motion` 동작
 - [ ] 콘솔 에러 없음
 

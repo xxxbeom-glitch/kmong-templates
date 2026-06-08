@@ -8,6 +8,9 @@ globs:
 
 # Interaction Patterns
 
+> **어떤 motion을 쓸지:** `.cursor/rules/46-interaction-presets.mdc` (preset ID · 사용자 승인)  
+> **이 파일 = 구현 방식만** (jQuery·hover/터치·타이밍)
+
 - JS는 **jQuery 3.x** only. 바닐라 DOM 조작 추가 금지.
 - 진입점: `js/main.js` — `$(function(){ ... })` 패턴
 - GNB 모바일: `.menu-toggle` + `.header__nav.is-open`
@@ -16,14 +19,15 @@ globs:
 - CTA hover: CSS only (`.btn__label` / `.btn__track` 패턴) — **fine pointer만** (`35-responsive.mdc`)
 - hover-only UI는 768px 이하·터치 환경에서 **대체 UI** 또는 비활성화
 - CSS `transition`과 jQuery `slideToggle` 타이밍 충돌 금지
+- **46에 없는 preset 이름·승인 없는 motion 구현 금지**
 
 적용 기준:
-- 햄버거·아코디언·슬라이더·스크롤 애니메이션·hover 인터랙션 추가·수정 시.
+- **승인된 preset** 구현·수정 시 · 햄버거·아코디언·슬라이더 등.
 
 금지:
 - GNB active를 JS로 토글
 - AOS·FAQ 패널에 불필요한 `transition` 중복
-- 요청 없는 인터랙션·라이브러리 추가
+- **46 카탈로그·사용자 승인 없는** 인터랙션·라이브러리 추가
 
 완료 기준:
-- 해당 인터랙션이 PC·모바일에서 동작하고, 콘솔 에러·깜빡임 없음.
+- 해당 preset이 PC·모바일(35 정책)에서 동작 · 콘솔 에러·깜빡임 없음 · qa-log에 preset ID 기록.

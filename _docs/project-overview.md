@@ -9,7 +9,7 @@
 
 ## 핵심 원칙
 
-- [ ] 각 템플릿은 `templates/{slug}/` 아래 **독립 완성형**
+- [ ] 각 템플릿은 `templates/{slug}/` 아래 **독립 완성형** — **유일한 개발 공간** (workbench·별도 반영 단계 없음)
 - [ ] 템플릿마다 자체 `index.html`, `css/style.css`, `js/main.js`, `assets/` 보유
 - [ ] 색·폰트·레이아웃 변수는 해당 템플릿 `css/style.css` `:root`에만 정의
 - [ ] 공통 모듈·전역 토큰·템플릿 간 CSS/JS import **사용 안 함**
@@ -19,11 +19,11 @@
 
 | 폴더 | 역할 |
 |------|------|
-| `templates/{slug}/` | **신규** 독립 템플릿 작업 공간 (Figma 프레임명 승인 후 생성) |
+| `templates/{slug}/` | **개발·구현** — HTML/CSS/JS 직접 작성 (유일한 작업 공간) |
 | `templates/` (루트) | 활성 템플릿 없을 때 비움 (`.gitkeep`만) |
-| `_delivery/imweb/{slug}/` | 아임웹 납품 스냅샷 |
+| `_delivery/imweb/{slug}/` | QA PASS 후 **납품 복사본** (개발 중간 단계 아님) |
 | `.cursor/rules/` | Cursor 에이전트 규칙 |
-| `_harness/` | 작업·리뷰·스냅샷·리포트 |
+| `_harness/snapshots/` | QA·비교용 PNG (선택) — **코드 작업 공간 아님** |
 | `_logs/` | 결정·변경·실패·QA 기록 |
 | `_docs/` | 사람이 읽는 가이드 (본 문서들) |
 | `_docs/legacy/templates/` | 이전 템플릿 참고 자료 (`template-a`·`b`·`c`) |
@@ -33,12 +33,12 @@
 
 ```
 Figma MCP 분석
-→ 섹션 1개 구현
+→ templates/{slug}/ 에 섹션 1개 직접 구현
 → 섹션 QA
 → 사용자 PASS
 → (반복)
 → 전체 납품 QA
-→ 로그 / commit
+→ _delivery/imweb/ 복사 · 로그 / commit
 ```
 
 자세한 흐름: `.cursor/rules/20-harness-workflow.mdc`

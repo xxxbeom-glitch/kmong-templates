@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-08 — [rules] workbench 미사용 · templates 직접 구현 확정
+
+**범위:** 규칙·가이드만
+
+| 파일 | 내용 |
+|------|------|
+| `10-project-structure.mdc` | 유일 개발 공간 `templates/` · workbench 금지 |
+| `20-harness-workflow.mdc` | 구현 경로·금지 항목 |
+| `60-imweb-delivery.mdc` | delivery = 납품 복사만 |
+| `_harness/README.md` · `project-overview.md` | 폴더 역할 정리 |
+
+**폐기:** `_harness/workbench/` · `review/` · `reports/` 워크플로.
+
+---
+
 ## 2026-06-04 — [setup] 아임웹 전용 하네스 구조 리셋
 
 ### 이동 (`_docs/legacy/`)
@@ -30,7 +45,8 @@
 - `50-qa-checklist.mdc`, `55-git-workflow.mdc`, `60-imweb-delivery.mdc`
 
 **`_harness/`**
-- `README.md`, `workbench/`, `review/`, `snapshots/`, `reports/`
+- `README.md`, `snapshots/` (PNG 비교용)
+- ~~`workbench/`, `review/`, `reports/`~~ — 초기 설계만, **2026-06-08 미사용 확정**
 
 **`_logs/`**
 - `decision-log.md`, `change-log.md`, `failure-log.md`, `qa-log.md`
@@ -234,7 +250,21 @@
 
 ---
 
-## 2026-06-08 — [template] mainstream footer 재검수
+## 2026-06-08 — [rules] PC interaction preset 카탈로그 (10종)
+
+**범위:** 규칙·가이드만 · 템플릿 JS/CSS **미구현**
+
+| 파일 | 내용 |
+|------|------|
+| `.cursor/rules/46-interaction-presets.mdc` | 10 preset 카탈로그 · 승인 절차 · 섹션당 상한 |
+| `_docs/interaction-presets-guide.md` | 디자이너용 요약 |
+| `20` · `45` · `50` · `context-guide` · `qa-checklist` | 참조 연결 |
+
+**연결:** 사용자가 섹션별 preset ID 선택·승인 후 구현.
+
+**한글명 (명령용):** `_docs/interaction-presets-guide.md` 표 참고 — 「stats에 숫자 카운트업 적용해줘」 형식.
+
+---
 
 **템플릿:** `mainstream` · footer `149:2917`
 

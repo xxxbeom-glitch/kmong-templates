@@ -169,3 +169,47 @@
 - `20-harness-workflow.mdc` Figma 보고 Shell 1줄
 
 ---
+
+## 2026-06-08 — 별도 개발 공간(workbench) 미사용 확정
+
+### 결정
+- 템플릿 구현은 **`templates/{slug}/`에만 직접** — workbench·임시 복사→반영 단계 **진행하지 않음**
+- `_harness/` = **절차 이름 + snapshots(PNG)** — 코드 작업실 아님
+- `_delivery/imweb/` = QA PASS **후 납품 복사**만 — 중간 스테이징 아님
+- `_harness/workbench/`, `review/`, `reports/` — **생성·사용 금지** (초기 설계 잔재)
+
+### 영향
+- `10-project-structure.mdc` · `20-harness-workflow.mdc` · `60-imweb-delivery.mdc`
+- `_harness/README.md` · `_docs/project-overview.md`
+
+---
+
+## 2026-06-08 — PC Interaction Preset 카탈로그 (10종)
+
+### 결정
+- **preset ID 10종** 카탈로그 등록 — `46-interaction-presets.mdc` · `_docs/interaction-presets-guide.md`
+- **템플릿·섹션 연결은 사용자가 후속 선택·승인** — 카탈로그만 있고 **자동 적용 없음**
+- **범위: PC (@1920)** · 구현 방식은 기존 `45-interaction-patterns.mdc`
+- Figma에 없는 motion도 **preset ID 승인 시** 적용 가능 (`context-guide` 정리)
+
+### preset ID · 한글명 (고정)
+
+| 한글명 | ID |
+|--------|-----|
+| 스크롤 등장 | `scroll-reveal` |
+| 호버 톤 | `hover-tone` |
+| 이미지 확대 호버 | `image-scale-hover` |
+| 흑백→컬러 호버 | `grayscale-hover-color` |
+| 가로 드래그 | `drag-scroll` |
+| 버튼 글자 슬라이드 | `button-text-slide-hover` |
+| 타이핑 연출 | `typing-text` |
+| 카드 넓히기 호버 | `expand-card-hover` |
+| 숫자 카운트업 | `stats-counter` |
+| 히어로 슬라이더 | `hero-progress-slider` |
+
+명령·대화는 **한글명** 가능 · 로그는 **ID** 기록.
+
+### 영향
+- `20-harness-workflow.mdc` · `45` · `50` · `_docs/qa-checklist.md` · `_docs/context-guide.md`
+
+---
