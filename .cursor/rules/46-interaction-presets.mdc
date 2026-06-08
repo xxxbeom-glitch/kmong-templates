@@ -11,7 +11,7 @@ globs:
 # Interaction Presets (PC)
 
 > **구현 방식:** `.cursor/rules/45-interaction-patterns.mdc` (jQuery·hover/터치·타이밍)  
-> **사람용 요약:** `_docs/interaction-presets-guide.md`
+> **사람용 요약:** `_docs/interaction-presets-guide.md` (카탈로그·한글명만 — **템플릿별 연결 현황은 `_logs/decision-log.md`**)  
 
 ## 목적 · 범위
 

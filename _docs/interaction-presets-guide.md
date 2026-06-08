@@ -56,17 +56,11 @@
 
 상세(목적·위치·금지)는 **`46-interaction-presets.mdc`** 카탈로그 본문.
 
-## mainstream 참고 (아직 연결 안 함)
+## 템플릿별 연결은 이 파일에 쓰지 않음
 
-| 섹션 | 후보 (한글명) | 현재 |
-|------|---------------|------|
-| hero | 히어로 슬라이더, 타이핑 연출 | **정적** pager만 |
-| story / news | 스크롤 등장, 이미지 확대 호버 | 미연결 |
-| stats | 숫자 카운트업, 스크롤 등장 | 미연결 |
-| works | 카드 넓히기 호버, 흑백→컬러 호버 | **click** 아코디언만 |
-| CTA | 호버 톤, 버튼 글자 슬라이드 | hover-tone만 유사 |
-
-연결할 때 **한글명 또는 ID**를 지정해 주면 그때 구현합니다.
+- 이 문서 = **공통 카탈로그·한글명·명령 예시**만. **템플릿마다 수정하지 않음.**
+- 「mainstream story에 scroll-reveal 연결됨」 같은 **연결 현황** → `_logs/decision-log.md` · `_logs/qa-log.md`
+- 기록 형식: `[template {slug}] {section-id}: preset — scroll-reveal`
 
 ## 전역 규칙
 

@@ -285,4 +285,35 @@
 - header~footer 9섹션 HTML/CSS 반영
 - **납품 전 전체 QA** (스크롤·섹션 간격·GNB) — 사용자 확인 대기
 
+### mainstream — preset `scroll-reveal` (2026-06-08)
+
+**범위:** story~cta 스크롤 진입 블록 · hero·header·footer **제외**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | preset ID = 사용자 승인 `scroll-reveal` | PASS |
+| 2 | 1회 재생 · threshold ~12% · opacity + translateY(소폭) | PASS |
+| 3 | hero·header·footer 미적용 | PASS → **hero 개별 적용** (사용자 요청) |
+| 4 | stats 숫자 노드(`__value`)에 transform 미중복 | PASS (`.stats-item`만) |
+| 5 | `prefers-reduced-motion` 즉시 표시 | PASS |
+| 6 | JS 없을 때 콘텐츠 표시 (`.js` gate) | PASS |
+| 7 | @768 동작 | PASS (코드상) |
+
+**비고:** 브라우저 스크롤로 fade-up 확인 요청.
+
+### mainstream — scroll-reveal 개별 요소 (2026-06-08)
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 그룹(wrapper) 제거 · 타이틀·본문·카드 파츠 개별 적용 | PASS |
+| 2 | 섹션 진입 시 DOM 순 stagger 60ms | PASS |
+| 3 | header·footer 미적용 유지 | PASS |
+
+### mainstream — scroll-reveal hero (2026-06-08)
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 아이브로 · 타이틀 · 서브 · pager · progress 개별 | PASS |
+| 2 | 로드 시 hero 순차 등장 (stagger 60ms) | PASS |
+
 ---

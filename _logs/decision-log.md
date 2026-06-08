@@ -83,7 +83,7 @@
 | Figma | `mainstream` (`146:943`) · slug `mainstream` |
 | GNB 카피 | Figma MCP 기준 (스크린샷과 동일 확인) |
 | header | Auto Layout 전환됨 — 구현 시 MCP 재확인 |
-| hero 슬라이더 | 1차 **디자인만**(정적) · 인터랙션 **추후** |
+| hero 슬라이더 | ~~1차 **디자인만**(정적) · 인터랙션 **추후**~~ → **`hero-progress-slider` 연결** (2026-06-08) |
 | 반응형 | `35-responsive.mdc` 적용 |
 
 ### 영향
@@ -211,5 +211,14 @@
 
 ### 영향
 - `20-harness-workflow.mdc` · `45` · `50` · `_docs/qa-checklist.md` · `_docs/context-guide.md`
+
+### mainstream 연결 (2026-06-08)
+```
+[template mainstream] hero · story · stats · news · works · faq · cta: preset — scroll-reveal
+[template mainstream] hero: preset — hero-progress-slider
+```
+- hero: 아이브로·메인카피·서브·pager **개별** (사용자 승인 · 로드 시 순차 등장)
+- hero 슬라이더: 3장 · autoplay 6s · pager/progress (2026-06-08 연결)
+- header · footer 제외
 
 ---

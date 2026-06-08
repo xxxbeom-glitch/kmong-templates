@@ -12,6 +12,9 @@
   --color-footer-social: #f8f8f8;
   --stats-visual-half-h: clamp(62px, 15.46875vw, 297px);
   --header-h: clamp(64px, 5.4167vw, 104px);
+  --works-overlay: rgba(0, 0, 0, 0.26);
+  --story-overlay: rgba(0, 0, 0, 0.46);
+  --media-overlay-30: rgba(0, 0, 0, 0.3);
 }
 
 *,
@@ -23,7 +26,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -39,6 +42,7 @@ img {
 }
 
 .hero__kv-img,
+.hero__slide-img,
 .stats__visual img,
 .news-card__media img,
 .works-gallery__media img {
@@ -67,6 +71,51 @@ ul {
 
 .section {
   width: 100%;
+}
+
+/* Preset: scroll-reveal — 46-interaction-presets */
+.js .scroll-reveal:not(.is-revealed) {
+  opacity: 0;
+  transform: translate3d(0, clamp(8px, 0.625vw, 12px), 0);
+}
+
+.scroll-reveal {
+  transition:
+    opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+  backface-visibility: hidden;
+}
+
+span.scroll-reveal,
+a.scroll-reveal,
+button.scroll-reveal,
+time.scroll-reveal {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.story-card.scroll-reveal,
+.news-card.scroll-reveal,
+.stats__visual.scroll-reveal,
+.works-gallery__item.scroll-reveal {
+  display: block;
+}
+
+.hero__pager-track.scroll-reveal {
+  display: block;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Header — Figma section-header 168:55 */
@@ -161,7 +210,26 @@ ul {
   background: #0c1a2e;
 }
 
-.hero__kv-img {
+.hero__slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero__slide-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -170,13 +238,15 @@ ul {
 .hero__kv-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  background: var(--media-overlay-30);
   pointer-events: none;
 }
 
 .hero__inner {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   padding: clamp(24px, 3.75vw, 72px);
@@ -242,16 +312,31 @@ ul {
   display: block;
   width: clamp(80px, 5.6771vw, 109px);
   height: 2px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
 }
 
 .hero__pager-fill {
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(44px, 3.125vw, 60px);
+  width: 0;
   height: 100%;
   background: var(--color-white);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide {
+    transition: none;
+  }
+
+  .hero__pager-fill {
+    transition: none;
+  }
 }
 
 /* Story — Figma section-story 146:1397 */
@@ -325,7 +410,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.55) 100%);
+  background: var(--story-overlay);
   pointer-events: none;
 }
 
@@ -538,8 +623,9 @@ ul {
   max-width: none;
 }
 
-.news__pager {
-  display: flex;
+.news__pager,
+.news__pager.scroll-reveal {
+  display: inline-flex;
   align-items: center;
   gap: clamp(10px, 0.7292vw, 14px);
 }
@@ -552,10 +638,15 @@ ul {
   color: var(--color-text);
 }
 
+/* Figma news-nav · Line 5 — 1×10 vertical between 02 / 04 */
 .news__pager-divider {
+  flex-shrink: 0;
+  align-self: center;
+  display: block;
   width: 1px;
+  min-width: 1px;
   height: clamp(8px, 0.5208vw, 10px);
-  background: var(--color-text);
+  background-color: var(--color-text);
 }
 
 .news__list {
@@ -696,7 +787,24 @@ ul {
   z-index: 0;
 }
 
+.works-gallery__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--works-overlay);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.works-gallery__item.is-active .works-gallery__media::after {
+  opacity: 1;
+}
+
 .works-gallery__media img {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -815,6 +923,7 @@ ul {
 }
 
 .cta__panel {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -823,6 +932,21 @@ ul {
   min-height: clamp(215px, 22.3958vw, 430px);
   padding: clamp(28px, 2.9167vw, 56px) clamp(20px, 2.0833vw, 40px);
   background: url("../assets/images/cta-bg.png") center / cover no-repeat;
+}
+
+.cta__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--media-overlay-30);
+  pointer-events: none;
+}
+
+.cta__title,
+.cta__btn {
+  position: relative;
+  z-index: 1;
 }
 
 .cta__title {

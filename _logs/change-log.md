@@ -1,5 +1,67 @@
 # Change Log
 
+## 2026-06-08 — [template] mainstream hero progress bar = 5초 타이머
+
+- progress bar: 슬라이드마다 **0→100% 5초** 채움 → 완료 시 다음 슬라이드 · loop
+- hover: 타이머·채움 **일시정지** · 이탈 시 남은 시간부터 재개
+- bar 클릭: 즉시 다음 슬라이드 + 타이머 리셋
+- (이전) 슬라이드 번호별 fill 고정값(60→109px) 방식 제거
+
+---
+
+## 2026-06-08 — [template] mainstream hero `hero-progress-slider` 연결
+
+**템플릿:** `mainstream` · **섹션:** hero (`149:2964`)
+
+| 항목 | 내용 |
+|------|------|
+| preset | `hero-progress-slider` |
+| 슬라이드 | 3장 · fade 0.5s · loop |
+| autoplay | **progress bar 5초 타이머** (0→100% 채움 후 다음 슬라이드) · hover 일시정지 |
+| pager | `01 / 03` + progress bar (track 109px · fill = 타이머) |
+| 수동 | progress bar 클릭 → 다음 슬라이드 |
+| 이미지 | `hero-bg-01~03.jpg` (02·03은 01 복사 placeholder — Figma export 후 교체) |
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | `.hero__slides` ×3 · pager 구조 |
+| `css/style.css` | slide fade · overlay z-index · track button |
+| `js/main.js` | `initHeroProgressSlider()` |
+
+---
+
+## 2026-06-08 — [template] mainstream scroll-reveal 속도 B 적용
+
+- CSS duration `0.52s` → **`0.72s`**
+- JS 순차 간격 hero **`150ms`** · 섹션 **`180ms`** (기존 75 / 85)
+
+---
+
+## 2026-06-08 — [template] mainstream 이미지 오버레이 Figma 대조·수정
+
+**템플릿:** `mainstream` · **범위:** hero · story · works · cta · stats · news · faq · footer
+
+| 섹션 | Figma | 조치 |
+|------|-------|------|
+| hero | 검정 30% | 기존 맞음 (변수화) |
+| story | 카드 전체 검정 **46%** (fill 2겹) | gradient → **flat 46%** 수정 |
+| works | 열림만 검정 **26%** | 이전 수정 반영 |
+| cta | 검정 **30%** | **누락 → ::after 추가** |
+| stats · news · faq · footer | 오버레이 없음 | 변경 없음 |
+
+| 파일 | 내용 |
+|------|------|
+| `css/style.css` | `--story-overlay` · `--media-overlay-30` · story/cta overlay |
+
+---
+
+## 2026-06-08 — [template] mainstream scroll-reveal 순차 재생
+
+- CSS delay 일괄 적용 → **JS로 개체 하나씩 85ms 간격** `is-revealed` (hero 75ms)
+- easing `cubic-bezier(0.22, 1, 0.36, 1)` · 0.52s
+
+---
+
 ## 2026-06-08 — [rules] workbench 미사용 · templates 직접 구현 확정
 
 **범위:** 규칙·가이드만
@@ -257,7 +319,7 @@
 | 파일 | 내용 |
 |------|------|
 | `.cursor/rules/46-interaction-presets.mdc` | 10 preset 카탈로그 · 승인 절차 · 섹션당 상한 |
-| `_docs/interaction-presets-guide.md` | 디자이너용 요약 |
+| `_docs/interaction-presets-guide.md` | 디자이너용 카탈로그 (템플릿별 연결 현황 **미포함**) |
 | `20` · `45` · `50` · `context-guide` · `qa-checklist` | 참조 연결 |
 
 **연결:** 사용자가 섹션별 preset ID 선택·승인 후 구현.

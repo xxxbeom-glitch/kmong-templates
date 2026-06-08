@@ -55,4 +55,5 @@ AI 작업 품질은 **「무엇을 읽는가」**와 **「무엇을 무시하는
 
 - 카탈로그: `_docs/interaction-presets-guide.md` · `.cursor/rules/46-interaction-presets.mdc`
 - **10종 등록 · 섹션 연결은 사용자 선택·승인 후** — `templates/{slug}/`에 직접 구현
+- **연결 기록:** `_logs/decision-log.md` · `qa-log.md` (가이드 md 수정 ❌)
 - 명령은 **한글명**으로 가능 (예: 「story에 스크롤 등장 적용해줘」)

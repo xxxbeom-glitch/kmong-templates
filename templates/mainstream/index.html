@@ -40,47 +40,75 @@
 
   <main id="main" class="main">
     <section id="hero" class="section section--hero" aria-label="메인 비주얼">
-      <div class="hero__kv">
-          <img
-            class="hero__kv-img"
-            src="assets/images/hero-bg-01.jpg"
-            alt=""
-            width="1840"
-            height="800"
-            decoding="async"
-          >
-          <div class="hero__kv-overlay" aria-hidden="true"></div>
-          <div class="hero__inner">
-            <div class="hero__content">
-              <div class="hero__copy">
-                <div class="hero__headline">
-                  <p class="hero__label">LUMO BUSINESS SOLUTION</p>
-                  <h1 class="hero__title">좋은 선택은<br>명확한 구조에서 시작됩니다</h1>
-                </div>
-                <p class="hero__desc">루모는 복잡한 비즈니스 과정을 더 단순하게 정리하고,<br class="hero__desc-br">필요한 정보와 실행 흐름을 명확하게 설계합니다.</p>
+      <div class="hero__kv" data-hero-progress-slider>
+        <div class="hero__slides" aria-live="polite">
+          <article class="hero__slide is-active">
+            <img
+              class="hero__slide-img"
+              src="assets/images/hero-bg-01.jpg"
+              alt=""
+              width="1840"
+              height="800"
+              decoding="async"
+            >
+          </article>
+          <article class="hero__slide">
+            <img
+              class="hero__slide-img"
+              src="assets/images/hero-bg-02.jpg"
+              alt=""
+              width="1840"
+              height="800"
+              decoding="async"
+            >
+          </article>
+          <article class="hero__slide">
+            <img
+              class="hero__slide-img"
+              src="assets/images/hero-bg-03.jpg"
+              alt=""
+              width="1840"
+              height="800"
+              decoding="async"
+            >
+          </article>
+        </div>
+        <div class="hero__kv-overlay" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <div class="hero__copy">
+              <div class="hero__headline">
+                <p class="hero__label scroll-reveal">LUMO BUSINESS SOLUTION</p>
+                <h1 class="hero__title scroll-reveal">좋은 선택은<br>명확한 구조에서 시작됩니다</h1>
               </div>
-              <div class="hero__nav">
-                <span class="hero__pager-label">01 / 03</span>
-                <span class="hero__pager-track" aria-hidden="true">
-                  <span class="hero__pager-fill"></span>
-                </span>
-              </div>
+              <p class="hero__desc scroll-reveal">루모는 복잡한 비즈니스 과정을 더 단순하게 정리하고,<br class="hero__desc-br">필요한 정보와 실행 흐름을 명확하게 설계합니다.</p>
+            </div>
+            <div class="hero__nav">
+              <span class="hero__pager-label">
+                <span class="hero__pager-current">01</span>
+                <span class="hero__pager-sep" aria-hidden="true"> / </span>
+                <span class="hero__pager-total">03</span>
+              </span>
+              <button type="button" class="hero__pager-track" aria-label="다음 슬라이드">
+                <span class="hero__pager-fill"></span>
+              </button>
             </div>
           </div>
         </div>
+      </div>
     </section>
 
     <section id="story" class="section section--story" aria-labelledby="story-title">
       <div class="section--story__inner">
         <div class="story__head">
-          <h2 id="story-title" class="story__title">우리의 기준을 소개합니다</h2>
-          <p class="story__desc">루모는 비즈니스의 본질을 더 분명하게 만들기 위해 전략, 구조, 실행의 흐름을 함께 설계합니다.</p>
+          <h2 id="story-title" class="story__title scroll-reveal">우리의 기준을 소개합니다</h2>
+          <p class="story__desc scroll-reveal">루모는 비즈니스의 본질을 더 분명하게 만들기 위해 전략, 구조, 실행의 흐름을 함께 설계합니다.</p>
         </div>
         <div class="story__list">
-          <article class="story-card">
+          <article class="story-card scroll-reveal">
             <div class="story-card__media">
               <img
-                src="assets/images/story-card-01-B.jpg"
+                src="assets/images/story-card-01.png"
                 alt=""
                 width="613"
                 height="720"
@@ -92,10 +120,10 @@
               <p class="story-card__desc">복잡한 상황 속에서도 우선순위를 명확하게 정리합니다.</p>
             </div>
           </article>
-          <article class="story-card">
+          <article class="story-card scroll-reveal">
             <div class="story-card__media">
               <img
-                src="assets/images/story-card-02-B.jpg"
+                src="assets/images/story-card-02.png"
                 alt=""
                 width="613"
                 height="720"
@@ -107,10 +135,10 @@
               <p class="story-card__desc">흐름이 끊기지 않도록 정보와 기능을 체계적으로 배치합니다.</p>
             </div>
           </article>
-          <article class="story-card">
+          <article class="story-card scroll-reveal">
             <div class="story-card__media">
               <img
-                src="assets/images/story-card-03-B.jpg"
+                src="assets/images/story-card-03.png"
                 alt=""
                 width="613"
                 height="720"
@@ -130,30 +158,30 @@
       <div class="stats__blue">
         <div class="stats__top">
           <div class="stats__head">
-            <h2 id="stats-title" class="stats__title">숫자로 확인하는 신뢰</h2>
-            <p class="stats__desc">우리가 중요하게 생각하는 기준은 결국 사용자가 체감하는 결과로 이어져야 합니다.</p>
+            <h2 id="stats-title" class="stats__title scroll-reveal">숫자로 확인하는 신뢰</h2>
+            <p class="stats__desc scroll-reveal">우리가 중요하게 생각하는 기준은 결국 사용자가 체감하는 결과로 이어져야 합니다.</p>
           </div>
           <ul class="stats__list">
             <li class="stats-item">
-              <span class="stats-item__value">98%</span>
-              <span class="stats-item__label">사용자 만족도</span>
+              <span class="stats-item__value scroll-reveal">98%</span>
+              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
             </li>
             <li class="stats-item">
-              <span class="stats-item__value">3배</span>
-              <span class="stats-item__label">사용자 만족도</span>
+              <span class="stats-item__value scroll-reveal">3배</span>
+              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
             </li>
             <li class="stats-item">
-              <span class="stats-item__value">24시간</span>
-              <span class="stats-item__label">사용자 만족도</span>
+              <span class="stats-item__value scroll-reveal">24시간</span>
+              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
             </li>
             <li class="stats-item">
-              <span class="stats-item__value">1분</span>
-              <span class="stats-item__label">사용자 만족도</span>
+              <span class="stats-item__value scroll-reveal">1분</span>
+              <span class="stats-item__label scroll-reveal">사용자 만족도</span>
             </li>
           </ul>
         </div>
       </div>
-      <div class="stats__visual">
+      <div class="stats__visual scroll-reveal">
         <img
           src="assets/images/stats-visual.png"
           alt=""
@@ -168,19 +196,19 @@
       <div class="news__inner">
         <div class="news__intro">
           <div class="news__head">
-            <h2 id="news-title" class="news__title">인사이트와 소식을 전합니다</h2>
-            <p class="news__desc">비즈니스, 운영, 디지털 경험과 관련된 실질적인 이야기와 최신 소식을 전합니다.</p>
+            <h2 id="news-title" class="news__title scroll-reveal">인사이트와 소식을 전합니다</h2>
+            <p class="news__desc scroll-reveal">비즈니스, 운영, 디지털 경험과 관련된 실질적인 이야기와 최신 소식을 전합니다.</p>
           </div>
           <div class="news__nav" aria-label="뉴스 슬라이드">
-            <button type="button" class="news__nav-btn" aria-label="이전">
+            <button type="button" class="news__nav-btn scroll-reveal" aria-label="이전">
               <img src="assets/icons/icon-arrow-left.svg" alt="" width="24" height="24" decoding="async">
             </button>
-            <span class="news__pager">
+            <span class="news__pager scroll-reveal">
               <span class="news__pager-current">02</span>
               <span class="news__pager-divider" aria-hidden="true"></span>
               <span class="news__pager-total">04</span>
             </span>
-            <button type="button" class="news__nav-btn" aria-label="다음">
+            <button type="button" class="news__nav-btn scroll-reveal" aria-label="다음">
               <img src="assets/icons/icon-arrow-right.svg" alt="" width="24" height="24" decoding="async">
             </button>
           </div>
@@ -188,7 +216,7 @@
         <div class="news__list">
           <article class="news-card">
             <a href="#" class="news-card__link">
-              <div class="news-card__media">
+              <div class="news-card__media scroll-reveal">
                 <img
                   src="assets/images/news-card-01.png"
                   alt=""
@@ -198,14 +226,14 @@
                 >
               </div>
               <div class="news-card__body">
-                <h3 class="news-card__title">실행을 바꾸는 구조 설계</h3>
-                <time class="news-card__date" datetime="2026-05-23">2026. 05. 23</time>
+                <h3 class="news-card__title scroll-reveal">실행을 바꾸는 구조 설계</h3>
+                <time class="news-card__date scroll-reveal" datetime="2026-05-23">2026. 05. 23</time>
               </div>
             </a>
           </article>
           <article class="news-card">
             <a href="#" class="news-card__link">
-              <div class="news-card__media">
+              <div class="news-card__media scroll-reveal">
                 <img
                   src="assets/images/news-card-02.png"
                   alt=""
@@ -215,14 +243,14 @@
                 >
               </div>
               <div class="news-card__body">
-                <h3 class="news-card__title">브랜드 경험을 더 단순하게 만드는 방법</h3>
-                <time class="news-card__date" datetime="2026-04-23">2026. 04. 23</time>
+                <h3 class="news-card__title scroll-reveal">브랜드 경험을 더 단순하게 만드는 방법</h3>
+                <time class="news-card__date scroll-reveal" datetime="2026-04-23">2026. 04. 23</time>
               </div>
             </a>
           </article>
           <article class="news-card">
             <a href="#" class="news-card__link">
-              <div class="news-card__media">
+              <div class="news-card__media scroll-reveal">
                 <img
                   src="assets/images/news-card-03.png"
                   alt=""
@@ -232,8 +260,8 @@
                 >
               </div>
               <div class="news-card__body">
-                <h3 class="news-card__title">디지털 전환 이후 더 중요한 기준</h3>
-                <time class="news-card__date" datetime="2026-04-22">2026. 04. 22</time>
+                <h3 class="news-card__title scroll-reveal">디지털 전환 이후 더 중요한 기준</h3>
+                <time class="news-card__date scroll-reveal" datetime="2026-04-22">2026. 04. 22</time>
               </div>
             </a>
           </article>
@@ -244,11 +272,11 @@
     <section id="works" class="section section--works" aria-labelledby="works-title">
       <div class="works__inner">
         <div class="works__head">
-          <h2 id="works-title" class="works__title">결과로 보여주는 작업들</h2>
-          <p class="works__desc">루모는 다양한 산업의 프로젝트 안에서 명확한 구조와 설계를 통해 더 나은 경험을 만들어왔습니다.</p>
+          <h2 id="works-title" class="works__title scroll-reveal">결과로 보여주는 작업들</h2>
+          <p class="works__desc scroll-reveal">루모는 다양한 산업의 프로젝트 안에서 명확한 구조와 설계를 통해 더 나은 경험을 만들어왔습니다.</p>
         </div>
         <div class="works-gallery" role="list">
-          <article class="works-gallery__item is-active" role="listitem">
+          <article class="works-gallery__item is-active scroll-reveal" role="listitem">
             <button type="button" class="works-gallery__panel" aria-expanded="true">
               <span class="works-gallery__media">
                 <img
@@ -265,7 +293,7 @@
               </span>
             </button>
           </article>
-          <article class="works-gallery__item" role="listitem">
+          <article class="works-gallery__item scroll-reveal" role="listitem">
             <button type="button" class="works-gallery__panel" aria-expanded="false">
               <span class="works-gallery__media">
                 <img
@@ -278,7 +306,7 @@
               </span>
             </button>
           </article>
-          <article class="works-gallery__item" role="listitem">
+          <article class="works-gallery__item scroll-reveal" role="listitem">
             <button type="button" class="works-gallery__panel" aria-expanded="false">
               <span class="works-gallery__media">
                 <img
@@ -291,7 +319,7 @@
               </span>
             </button>
           </article>
-          <article class="works-gallery__item" role="listitem">
+          <article class="works-gallery__item scroll-reveal" role="listitem">
             <button type="button" class="works-gallery__panel" aria-expanded="false">
               <span class="works-gallery__media">
                 <img
@@ -310,34 +338,34 @@
 
     <section id="faq" class="section section--faq" aria-labelledby="faq-title">
       <div class="faq__inner">
-        <h2 id="faq-title" class="faq__title">자주 묻는 질문</h2>
+        <h2 id="faq-title" class="faq__title scroll-reveal">자주 묻는 질문</h2>
         <div class="faq__grid">
           <div class="faq__row">
             <article class="faq-card faq-card--mint">
-              <h3 class="faq-card__q">서비스는 어떤 기준으로 선택하면 좋을까요?</h3>
-              <p class="faq-card__a">현재 필요한 정보와 우선순위를 먼저 정리해보는 것이 좋습니다. 루모는 복잡한 선택지 속에서도 핵심 기준을 쉽게 비교할 수 있도록 돕습니다.</p>
+              <h3 class="faq-card__q scroll-reveal">서비스는 어떤 기준으로 선택하면 좋을까요?</h3>
+              <p class="faq-card__a scroll-reveal">현재 필요한 정보와 우선순위를 먼저 정리해보는 것이 좋습니다. 루모는 복잡한 선택지 속에서도 핵심 기준을 쉽게 비교할 수 있도록 돕습니다.</p>
             </article>
             <article class="faq-card faq-card--yellow">
-              <h3 class="faq-card__q">처음 문의할 때 자세히 적어야 하나요?</h3>
-              <p class="faq-card__a">간단한 내용만 남겨주셔도 괜찮습니다. 기본적인 문의만으로도 흐름을 안내받을 수 있고, 필요한 경우 추가 내용을 차분히 확인해드립니다.</p>
+              <h3 class="faq-card__q scroll-reveal">처음 문의할 때 자세히 적어야 하나요?</h3>
+              <p class="faq-card__a scroll-reveal">간단한 내용만 남겨주셔도 괜찮습니다. 기본적인 문의만으로도 흐름을 안내받을 수 있고, 필요한 경우 추가 내용을 차분히 확인해드립니다.</p>
             </article>
             <article class="faq-card faq-card--mint">
-              <h3 class="faq-card__q">중간에 방향을 바꾸거나 다시 문의할 수 있나요?</h3>
-              <p class="faq-card__a">네. 진행 중에도 상황에 따라 방향을 다시 조정할 수 있습니다. 처음 정한 내용보다 현재 필요한 것이 더 중요하다고 생각합니다.</p>
+              <h3 class="faq-card__q scroll-reveal">중간에 방향을 바꾸거나 다시 문의할 수 있나요?</h3>
+              <p class="faq-card__a scroll-reveal">네. 진행 중에도 상황에 따라 방향을 다시 조정할 수 있습니다. 처음 정한 내용보다 현재 필요한 것이 더 중요하다고 생각합니다.</p>
             </article>
           </div>
           <div class="faq__row">
             <article class="faq-card faq-card--yellow">
-              <h3 class="faq-card__q">정보를 빠르게 확인할 수 있나요?</h3>
-              <p class="faq-card__a">중요한 내용부터 먼저 볼 수 있도록 구조화되어 있어<br>빠르게 확인할 수 있습니다. 불필요한 설명은 줄이고, 필요한 기준은 더 분명하게 전달합니다.</p>
+              <h3 class="faq-card__q scroll-reveal">정보를 빠르게 확인할 수 있나요?</h3>
+              <p class="faq-card__a scroll-reveal">중요한 내용부터 먼저 볼 수 있도록 구조화되어 있어<br>빠르게 확인할 수 있습니다. 불필요한 설명은 줄이고, 필요한 기준은 더 분명하게 전달합니다.</p>
             </article>
             <article class="faq-card faq-card--mint">
-              <h3 class="faq-card__q">비교가 어려운 사람도 이용할 수 있나요?</h3>
-              <p class="faq-card__a">물론입니다. 여러 선택지를 한꺼번에 이해하기 어렵더라도 핵심 차이와 기준을 쉽게 파악할 수 있도록 안내합니다.</p>
+              <h3 class="faq-card__q scroll-reveal">비교가 어려운 사람도 이용할 수 있나요?</h3>
+              <p class="faq-card__a scroll-reveal">물론입니다. 여러 선택지를 한꺼번에 이해하기 어렵더라도 핵심 차이와 기준을 쉽게 파악할 수 있도록 안내합니다.</p>
             </article>
             <article class="faq-card faq-card--yellow">
-              <h3 class="faq-card__q">문의 후 답변은 얼마나 걸리나요?</h3>
-              <p class="faq-card__a">문의 내용과 상황에 따라 차이가 있을 수 있지만, 가능한 빠르게 확인 후 안내드립니다. 필요한 경우 다음 단계도 함께 정리해드려 흐름이 끊기지 않도록 돕습니다.</p>
+              <h3 class="faq-card__q scroll-reveal">문의 후 답변은 얼마나 걸리나요?</h3>
+              <p class="faq-card__a scroll-reveal">문의 내용과 상황에 따라 차이가 있을 수 있지만, 가능한 빠르게 확인 후 안내드립니다. 필요한 경우 다음 단계도 함께 정리해드려 흐름이 끊기지 않도록 돕습니다.</p>
             </article>
           </div>
         </div>
@@ -346,8 +374,8 @@
 
     <section id="cta" class="section section--cta" aria-labelledby="cta-title">
         <div class="cta__panel is-bleed-x">
-        <h2 id="cta-title" class="cta__title">복잡한 비즈니스 경험을<br>더 명확하게 정리하고 싶다면</h2>
-        <a href="#" class="cta__btn">상담 문의하기</a>
+        <h2 id="cta-title" class="cta__title scroll-reveal">복잡한 비즈니스 경험을<br>더 명확하게 정리하고 싶다면</h2>
+        <a href="#" class="cta__btn scroll-reveal">상담 문의하기</a>
       </div>
     </section>
   </main>
