@@ -21,6 +21,8 @@ globs:
 - 섹션 맞닿음(gap 0) → 바깥 margin 금지, **프레임 padding만**
 - padding 이중 적용 금지
 - 이미지: Figma W×H → `aspect-ratio` + **`object-fit: cover`** (아래 「Image · card fill」)
+- **hero·카드 `<img>`:** Figma → `assets/images/` export **금지** · `_dev-images/` + `data-placeholder` + `dev-images.js` (`47-placeholder-images.mdc`)
+- **섹션 장식 bg:** `assets/images/` **직접** (news-bg, cta-bg 등)
 - 텍스트 박스: 고정 `width`/`height` px 금지 → clamp·min-height·auto
 - **텍스트 정렬:** Figma `textAlignHorizontal` → CSS `text-align` **1:1** (아래 「Typography · alignment」)
 - **Auto Layout 정렬:** `counterAxisAlignItems` / `primaryAxisAlignItems` → flex `align-items` / `justify-content` (MCP 값 그대로)
@@ -148,6 +150,19 @@ Figma **Fill(채우기)** 과 동일. 원본 해상도·비율과 **달라도** 
 **금지:** `width/height: auto` + `min-width/min-height: 100%` only (대형 원본 → 확대·일부만 보임) · `object-fit: contain` (여백) — **승인 시만**
 
 **보여줄 위치 변경:** `object-position` (예: `center top`) — Figma·사용자 지정 시
+
+## Dev images · `_dev-images` (개발 중)
+
+| 구분 | 소스 |
+|------|------|
+| **hero · 카드 `<img>`** | `_dev-images/landscape` · `portrait` + `data-placeholder` + `dev-images.js` slots |
+| **섹션 장식 배경** (news `::before` 텍스처, CTA band bg 등) | **`assets/images/`만** — `_dev-images`·JS **금지** |
+
+- hero·카드: Figma export·assets 저장 **금지** (개발 중) · MCP → orient + slots 등록
+- 섹션 장식 bg: **`assets/images/`에 직접 저장** → `:root --img-*` (news-bg, cta-bg 등)
+- 갱신: `node _dev-images/sync-manifest.js` (hero·카드 풀만)
+
+→ **`47-placeholder-images.mdc`**
 
 ### 금지
 

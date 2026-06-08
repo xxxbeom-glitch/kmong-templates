@@ -1,0 +1,8 @@
+*
+!.gitignore
+!sync-manifest.js
+!manifest.js
+!landscape/
+!portrait/
+!landscape/.gitkeep
+!portrait/.gitkeep

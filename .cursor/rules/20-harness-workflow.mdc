@@ -59,7 +59,7 @@ alwaysApply: true
    - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · 모호한 점
    - **(인터랙션 검토 시)** preset 후보 ID · `46-interaction-presets.mdc` — **사용자 선택·승인 전 구현 금지**
    - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
-3. **구현**: **`templates/{slug}/`에 직접** — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → **승인된 preset만** JS (`45`·`46`)
+3. **구현**: **`templates/{slug}/`에 직접** — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → **승인된 preset만** JS (`45`·`46`) · **사진 슬롯** → `data-placeholder` + `dev-images.js` (`47-placeholder-images.mdc`)
 4. **QA** (필수 — 생략 금지): `_docs/qa-checklist.md` + `50-qa-checklist.mdc` · **결과 `_logs/qa-log.md` 기록**
 5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
 6. **사용자 PASS** 확인 → **다음 섹션 착수**

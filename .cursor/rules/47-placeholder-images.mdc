@@ -1,0 +1,133 @@
+---
+description: 개발용 _dev-images 풀 · Figma MCP 구현 시 필수 연동
+alwaysApply: false
+globs:
+  - templates/**/*
+  - _dev-images/**
+---
+
+# Dev Images · `_dev-images` (확정 워크플로)
+
+> **사용자 의도:** hero·카드 `<img>` → `_dev-images/` raw drop · **섹션 장식 배경**(news `::before` 텍스처 등) → **항상 `assets/images/`** · 납품 직전 hero·카드 최종본 assets 저장.
+
+## 사용자 (디자이너)
+
+```
+1. _dev-images/landscape/ · portrait/ 에 사진 저장 (이름·정리 불필요)
+2. node _dev-images/sync-manifest.js
+3. 브라우저에서 템플릿 확인
+```
+
+- **hero·카드 `<img>`:** Figma export·`assets/` 저장 **하지 않음** → `_dev-images/` 사용
+- **섹션 장식 bg:** `assets/images/`에 **직접 저장** (news-bg, cta-bg 등)
+- 가로 사진 → `landscape/` · 세로 사진 → `portrait/`
+
+## Cursor · Figma MCP (섹션 구현 시 필수)
+
+### `_dev-images` 풀 — **hero · 카드 `<img>` 만**
+
+1. `<img … data-placeholder="{키}" src="assets/images/{키}.jpg">`  
+   - `src` = 납품 fallback
+2. `js/dev-images.js` → `slots[]`에 **hero·카드 `<img>`만** 등록  
+   - `orient` = Figma W×H → landscape | portrait
+3. `initPlaceholders()` → `main.js` 최상단
+
+### **섹션 장식 배경** — **`assets/images/` 만** (항상)
+
+Figma에서 **카드/hero가 아닌**, 섹션 뒤 깔리는 **텍스처·패턴·장식 bg** (예: news `::before` `news-bg.png`, CTA `cta-bg.png`).
+
+- `:root --img-*` · `background: url("../assets/images/…")` **직접 연결**
+- **`dev-images.js` slots에 넣지 않음** · `initPlaceholders()` **덮어쓰기 금지**
+- 사용자가 **`assets/images/`에 넣은 파일만** 반영 (Figma export·수동 저장)
+
+**MCP 보고:** hero·카드 `<img>` 슬롯(orient) · **섹션 장식 bg(assets 파일명)** — **구분 1줄**
+
+**금지 (개발 중):**
+- hero·카드 `<img>`를 `_dev-images` 없이 assets export만 요구
+- CSS 배경을 `_dev-images`·manifest에 연결
+- URL hotlink
+
+## 자동 매핑 (브라우저)
+
+| 단계 | 동작 |
+|------|------|
+| `sync-manifest.js` | 폴더 안 **파일명 목록** → `manifest.js` |
+| `initPlaceholders()` | `slots[].orient`별 풀에서 **순서대로** 슬롯에 배정 (`shuffle: false` 기본) |
+| 파일 수 < 슬롯 | 풀 **순환** 재사용 |
+| manifest 비어 있음 | HTML `assets/images/` fallback |
+
+- **Figma에 뭐가 들어있든** ↔ **파일명** 연결 없음 · **비율(가로/세로)만** 일치하면 풀에서 배정
+- `shuffle: true` → 새로고침마다 같은 orient 풀 내 **랜덤** (선택)
+
+## 폴더 (프로젝트 루트)
+
+```
+_dev-images/
+├── landscape/          ← 가로형 raw drop
+├── portrait/           ← 세로형 raw drop
+├── sync-manifest.js
+└── manifest.js         ← sync 생성 (git: 구조·스크립트만, 이미지 본문 gitignore)
+```
+
+## 템플릿 파일
+
+| 파일 | 역할 |
+|------|------|
+| `_dev-images/` | **공통** 풀 — 템플릿마다 공유 |
+| `js/dev-images.js` | 템플릿별 `slots[]` · `enabled` · `shuffle` |
+| `js/placeholders.js` | 매핑 로직 (템플릿 간 복사) |
+
+```javascript
+var DEV_IMAGES = {
+  enabled: true,
+  root: "../../_dev-images",
+  shuffle: false,
+  slots: [
+    { key: "hero-bg-01", orient: "landscape" },
+    { key: "story-card-01", orient: "portrait" },
+  ],
+};
+```
+
+## 대상 / 비대상
+
+| `_dev-images` (hero · 카드 `<img>`) | `assets/images/` 만 |
+|-------------------------------------|---------------------|
+| hero · story/news/works 카드 · stats `<img>` | **섹션 장식 배경** — news `news-bg.png`, CTA `cta-bg.png` 등 (`::before` / `--img-*`) |
+| | 로고 · 아이콘 · SVG |
+
+## 스크립트 순서 (index.html)
+
+```html
+<script src="../../_dev-images/manifest.js"></script>
+<script src="js/dev-images.js"></script>
+<script src="js/placeholders.js"></script>
+<script src="js/main.js"></script>
+```
+
+`initPlaceholders()` → `main.js` **최우선** (슬라이더 clone 전)
+
+## 납품 전 (`60-imweb-delivery.mdc`)
+
+1. 최종 사진 → `templates/{slug}/assets/images/`
+2. **`DEV_IMAGES.enabled = false`**
+3. 오프라인 QA
+
+## 신규 템플릿
+
+1. `dev-images.js` + `placeholders.js` + manifest 스크립트 연결
+2. Figma MCP로 섹션 구현 시 슬롯·orient 등록 (위 절차)
+3. `_dev-images` 풀은 **루트 1세트** 공통 사용
+
+## 금지
+
+- hero·카드 `<img>`를 개발 중 **`assets/images/` 일괄 export**하는 워크플로
+- 섹션 장식 bg를 `_dev-images`·manifest에 연결
+- Picsum · 외부 URL hotlink
+- `_dev-images` 납품 포함
+
+적용 기준:
+- 템플릿 사진 · Figma MCP 이미지 구현 · 납품 전 전환.
+
+완료 기준:
+- sync 후 dev 화면에 풀 이미지 표시 · MCP 신규 슬롯마다 `slots[]` 등록 · `enabled: false` 시 assets만.

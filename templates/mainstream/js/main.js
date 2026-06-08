@@ -9,6 +9,7 @@ window.addEventListener("pageshow", function () {
 $(function () {
   $("html").addClass("js");
 
+  initPlaceholders();
   initScrollReveal();
   initHeroProgressSlider();
   initWorksGallery();

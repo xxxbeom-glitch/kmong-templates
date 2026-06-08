@@ -11,6 +11,7 @@ kmong-templates/
 ├── _harness/               # QA 스냅샷( PNG )·보조 기록 — 코드 작업 공간 아님
 ├── _logs/                  # decision / change / failure / qa 로그
 ├── _docs/                  # 상세 가이드·QA 체크리스트
+├── _dev-images/            # 개발용 사진 드롭 (landscape · portrait) — 납품 제외
 ├── _delivery/imweb/        # Imweb 납품 스냅샷만
 └── templates/{slug}/       # 신규 독립 완성형 템플릿 (승인 후 생성)
 ```

@@ -18,6 +18,8 @@
   --works-overlay: rgba(0, 0, 0, 0.26);
   --story-overlay: rgba(0, 0, 0, 0.46);
   --media-overlay-30: rgba(0, 0, 0, 0.3);
+  --img-news-bg: url("../assets/images/news-bg.png");
+  --img-cta-bg: url("../assets/images/cta-bg.png");
 }
 
 *,
@@ -574,7 +576,7 @@ time.scroll-reveal {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../assets/images/news-bg.png") center / cover no-repeat;
+  background: var(--img-news-bg) center / cover no-repeat;
   opacity: 0.12;
   pointer-events: none;
 }
@@ -997,7 +999,7 @@ time.scroll-reveal {
   gap: clamp(16px, 1.6146vw, 31px);
   min-height: clamp(215px, 22.3958vw, 430px);
   padding: clamp(28px, 2.9167vw, 56px) clamp(20px, 2.0833vw, 40px);
-  background: url("../assets/images/cta-bg.png") center / cover no-repeat;
+  background: var(--img-cta-bg) center / cover no-repeat;
 }
 
 .cta__panel::after {

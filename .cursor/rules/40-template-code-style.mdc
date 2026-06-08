@@ -33,6 +33,7 @@ globs:
 - 시맨틱 태그 (`section`, `nav`, heading 계층)
 - GNB current: **HTML에** `is-active` / `aria-current="page"` — JS 동적 처리 금지
 - 이미지: `assets/` + `alt` + `width`/`height` + `decoding="async"`
+- 개발용 사진: `_dev-images/` raw drop + Figma MCP 시 `47-placeholder-images.mdc`
 - JS 훅: `data-*` 속성 사용
 
 적용 기준:
