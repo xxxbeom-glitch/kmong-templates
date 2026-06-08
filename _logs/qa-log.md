@@ -24,5 +24,26 @@
 없음
 
 ### 비고
-- `_docs/*.md` 본문은 placeholder 상태 — 다음 챕터에서 작성 예정
 - `start.bat`는 아직 `template-a` 경로 — 별도 작업에서 수정 예정
+
+---
+
+## 2026-06-04 — docs 본문 정리 QA
+
+**대상:** `_docs/*.md` 4개 본문 작성  
+**검수자:** Cursor Agent  
+**결과:** **PASS**
+
+### 검수 항목
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 4개 문서 placeholder 제거·본문 작성 | PASS |
+| 2 | Cafe24·`_modules`·`_tokens` 언급 없음 | PASS |
+| 3 | 독립 완성형 템플릿 기준 일관 | PASS |
+| 4 | `.cursor/rules`와 충돌 없음 (docs=사람용, rules=Cursor용) | PASS |
+| 5 | `template-c` / `package.json` / `start.bat` 미수정 | PASS |
+| 6 | 문서 간 breakpoint(768)·clamp·납품 경로 일치 | PASS |
+
+### FAIL 항목
+없음

@@ -48,3 +48,20 @@
 | `package.json`, `package-lock.json` | 미수정 |
 | `start.bat`, `stop.bat` | 미수정 |
 | `.gitignore` | 미수정 |
+
+---
+
+## 2026-06-04 — [docs] 프로젝트 기준 문서 정리
+
+### 작성·갱신
+
+| 파일 | 내용 |
+|------|------|
+| `_docs/project-overview.md` | 목적, 독립 템플릿 원칙, 폴더 역할, 신규 템플릿 추가 기준 |
+| `_docs/figma-to-code-guide.md` | Figma 1920, MCP 전·후 체크, clamp, 768px 대응 |
+| `_docs/imweb-delivery-guide.md` | `_delivery/imweb/{slug}/`, 경로·jQuery·납품 전 QA |
+| `_docs/qa-checklist.md` | 구조·Figma·반응형·인터랙션·Imweb·commit 전 QA |
+
+### 미수정
+
+- `templates/template-c/` · `package.json` · `start.bat` · `.cursor/rules/*.mdc`
