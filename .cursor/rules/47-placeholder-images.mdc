@@ -80,7 +80,7 @@ _dev-images/
 ```javascript
 var DEV_IMAGES = {
   enabled: true,
-  root: "../../_dev-images",
+  root: "_dev-images",
   shuffle: false,
   slots: [
     { key: "hero-bg-01", orient: "landscape" },
@@ -99,11 +99,13 @@ var DEV_IMAGES = {
 ## 스크립트 순서 (index.html)
 
 ```html
-<script src="../../_dev-images/manifest.js"></script>
+<script src="_dev-images/manifest.js"></script>
 <script src="js/dev-images.js"></script>
 <script src="js/placeholders.js"></script>
 <script src="js/main.js"></script>
 ```
+
+`start.bat` — `templates/mainstream/_dev-images` junction → 루트 `_dev-images` · live-server `8080/index.html`
 
 `initPlaceholders()` → `main.js` **최우선** (슬라이더 clone 전)
 

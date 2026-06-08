@@ -3,13 +3,14 @@
  *
  * ★ _dev-images/landscape · portrait — raw 파일명
  * ★ sync: node _dev-images/sync-manifest.js
+ * ★ 로컬 미리보기: start.bat (8080) · junction templates/mainstream/_dev-images
  * ★ 섹션 장식 배경(news-bg, cta-bg 등 ::before) → assets/images/ 만
  *
  * ★ 납품 전: enabled → false · 최종본 assets/images/
  */
 var DEV_IMAGES = {
   enabled: true,
-  root: "../../_dev-images",
+  root: "_dev-images",
   shuffle: false,
 
   /* hero · 카드 · stats visual 등 <img> 슬롯만 */
