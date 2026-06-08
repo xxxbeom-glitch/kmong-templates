@@ -109,3 +109,31 @@
 ### 미수정
 
 - `start.bat` · `package.json` · `templates/template-c` 내부 파일 내용
+
+---
+
+## 2026-06-04 — [template] ontheblue 템플릿 기본 구조 생성
+
+### 신규 (`templates/ontheblue/`)
+
+| 경로 | 비고 |
+|------|------|
+| `index.html` | 최소 골격, GNB/header 없음, title LUMO |
+| `css/style.css` | `:root` 레이아웃 1840px / gutter 40px, `.container` |
+| `js/main.js` | jQuery 진입점만 |
+| `assets/images/`, `assets/icons/` | `.gitkeep` |
+
+### 확정 기준 (드라이런 승인)
+
+- Figma frame: `template_ontheblue` → slug `ontheblue`
+- 콘텐츠 1840px · gutter 40px · 모바일 768px 일반 규칙
+- 브랜드 카피 LUMO · header는 1차 미포함
+
+### 미구현
+
+- Figma 섹션 HTML/CSS/JS (hero~footer)
+- `header` / GNB
+
+### 미수정
+
+- `start.bat` · `package.json` · `_docs/legacy/templates/template-c/`

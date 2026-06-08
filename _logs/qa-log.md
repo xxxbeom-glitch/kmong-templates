@@ -91,3 +91,26 @@
 
 ### FAIL 항목
 없음
+
+---
+
+## 2026-06-04 — ontheblue 스캐폴드 QA
+
+**대상:** `templates/ontheblue/` 기본 구조 생성  
+**검수자:** Cursor Agent  
+**결과:** **PASS**
+
+### 검수 항목
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | `templates/ontheblue/` 필수 파일·폴더 존재 | PASS |
+| 2 | Figma 섹션 미구현 (골격만) | PASS |
+| 3 | `header`/GNB 없음 | PASS |
+| 4 | `:root` 1840px / gutter 40px | PASS |
+| 5 | 공통 모듈·`_tokens`·Cafe24 없음 | PASS |
+| 6 | `start.bat`·`package.json` 미수정 | PASS |
+| 7 | legacy `template-c` 미변경 | PASS |
+
+### FAIL 항목
+없음
