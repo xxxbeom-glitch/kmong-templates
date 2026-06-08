@@ -12,6 +12,8 @@
 
 ## MCP 전달 전 — 디자이너 체크리스트
 
+- [ ] **최상위 프레임명** 확정 (이 이름이 템플릿 slug의 기준)
+- [ ] 프레임명 규칙: `template_{브랜드명}` 권장 (예: `template_claire_clinic`)
 - [ ] 작업 프레임 너비 1920px 고정
 - [ ] 섹션별로 **프레임 분리** (한 덩어리 X)
 - [ ] Auto Layout 적용 · gap·padding 명시
@@ -24,7 +26,21 @@
 
 ## MCP 수신 후 — 구현 전 분석 (코딩 전 필수)
 
-- [ ] 최상위 레이어 이름 · 하위 레이어 개수
+### 템플릿명 확인 (신규 시)
+
+- [ ] 최상위 프레임명 보고 → slug 정규화 **제안** → 사용자 승인
+- [ ] 승인 전 `templates/{slug}/` 생성 금지
+
+제안 예:
+```
+Figma frame: template_ontheblue
+Proposed slug: ontheblue
+Proposed folder: templates/ontheblue/
+```
+
+### 섹션·수치 분석
+
+- [ ] 최상위 레이어 이름 · 하위 레이어(섹션) 개수
 - [ ] Auto Layout 여부 · 방향(가로/세로) · gap
 - [ ] 섹션 width / height · padding (T/R/B/L)
 - [ ] 주요 font-size · line-height · color

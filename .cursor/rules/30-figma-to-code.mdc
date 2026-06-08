@@ -8,6 +8,13 @@ globs:
 
 # Figma to Code
 
+## MCP 시작 시 보고 (코딩·폴더 생성 전)
+
+1. **최상위 프레임명** (원본) + 정규화 **Proposed slug** + `templates/{slug}/` (신규 템플릿 시)
+2. **섹션 구조:** 하위 레이어 이름·개수
+3. 이후 레이아웃·수치 분석 (`20-harness-workflow.mdc` 참고)
+4. 사용자 승인 전 — 폴더 생성·코딩 **금지**
+
 - 기준 프레임 **1920px**. 뷰포트 기준 스케일 (모니터 해상도 무관).
 - 변환: `vw = figma_px ÷ 19.2` → `clamp(min, Nvw, figma_px)`
 - clamp min: display/heading **50%**, body/UI **62.5%** of max

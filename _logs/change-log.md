@@ -65,3 +65,21 @@
 ### 미수정
 
 - `templates/template-c/` · `package.json` · `start.bat` · `.cursor/rules/*.mdc`
+
+---
+
+## 2026-06-04 — [rules] Figma 프레임명 기반 템플릿 생성 규칙 추가
+
+### 갱신
+
+| 파일 | 내용 |
+|------|------|
+| `.cursor/rules/10-project-structure.mdc` | Figma frame → slug 정규화·승인 필수 |
+| `.cursor/rules/30-figma-to-code.mdc` | MCP 시작 시 프레임명·섹션 구조 보고 |
+| `_docs/project-overview.md` | 신규 템플릿 slug 결정 절차·예시 |
+| `_docs/figma-to-code-guide.md` | 프레임명 확인·제안 절차 |
+| `_logs/decision-log.md` | Figma 프레임명 = slug 기준 결정 |
+
+### 미수정
+
+- `templates/template-c/` · `start.bat` · `package.json`

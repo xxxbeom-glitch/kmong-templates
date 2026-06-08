@@ -47,3 +47,25 @@
 
 ### FAIL 항목
 없음
+
+---
+
+## 2026-06-04 — Figma 프레임명 slug 규칙 QA
+
+**대상:** rules·docs·logs Figma 프레임명 기반 템플릿 생성 규칙 반영  
+**검수자:** Cursor Agent  
+**결과:** **PASS**
+
+### 검수 항목
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | `10-project-structure.mdc` slug 정규화·승인 규칙 | PASS |
+| 2 | `30-figma-to-code.mdc` MCP 프레임명·섹션 보고 | PASS |
+| 3 | `_docs` 2개 문서 반영·rules와 일치 | PASS |
+| 4 | `decision-log`·`change-log` 기록 | PASS |
+| 5 | `template-c`·`start.bat` 미수정 | PASS |
+| 6 | 예시(`ontheblue`, `claire-clinic`) 정확 | PASS |
+
+### FAIL 항목
+없음

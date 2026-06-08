@@ -22,3 +22,20 @@
 ### 영향
 - `template-a`, `template-b`, `_common`, `_imgs` → `_docs/legacy/`로 이동
 - 신규 작업은 `templates/{slug}/` + `.cursor/rules` + `_harness` 흐름을 따른다.
+
+---
+
+## 2026-06-04 — Figma 프레임명 기반 템플릿 slug
+
+### 결정
+- 신규 템플릿의 **이름 기준 = Figma MCP 최상위 프레임명**
+- Cursor가 프레임명을 감지 → kebab-case slug로 정규화 **제안** → **사용자 승인 후** `templates/{slug}/` 생성
+- 정규화: 소문자 · `template_` 접두어 제거 · 공백·`_` → `-` · `[a-z0-9-]`만
+
+### 이유
+- Figma·폴더·납품 경로(`_delivery/imweb/{slug}/`) 이름을 일치시켜 혼선 방지
+- 임의 slug·무문의 폴더 생성 방지
+
+### 영향
+- `10-project-structure.mdc`, `30-figma-to-code.mdc`, `_docs` 가이드에 반영
+- 기존 `template-c`는 당장 rename 하지 않음 (별도 승인 시 진행)

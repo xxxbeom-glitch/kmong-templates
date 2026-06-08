@@ -20,6 +20,22 @@ kmong-templates/
 - 스타일·색·폰트·레이아웃 변수는 **해당 템플릿** `css/style.css` `:root`에만 둔다.
 - 레거시 참고: `_docs/legacy/` (수정·복원 금지, 참고만).
 
+## 신규 템플릿 — Figma 프레임명 → slug
+
+- **기준:** Figma MCP 최상위 프레임명
+- **정규화:** 소문자 · `template_` 접두어 제거(가능 시) · 공백·`_` → `-` · kebab-case · `[a-z0-9-]`만
+- **경로:** `templates/{template-slug}/`
+- **승인 필수:** slug·폴더를 **제안만** 하고, 사용자 승인 전 폴더 생성 금지
+
+제안 형식:
+```
+Figma frame: {원본명}
+Proposed slug: {slug}
+Proposed folder: templates/{slug}/
+```
+
+예: `template_claire_clinic` → `claire-clinic` → `templates/claire-clinic/`
+
 적용 기준:
 - 새 템플릿 추가, 파일 생성 위치 결정, 납품물 정리 시.
 
@@ -27,6 +43,7 @@ kmong-templates/
 - `_delivery/cafe24`, `_modules`, `_tokens`, `_common` 재생성
 - 루트·`_harness`에 템플릿 런타임 코드 배치
 - 템플릿 밖에서 다른 템플릿 CSS/JS 참조 (`../../` 공유)
+- 승인 없이 `templates/{slug}/` 폴더 생성
 
 완료 기준:
 - 변경 파일이 올바른 템플릿·폴더 안에만 존재하고, 독립 실행 가능한 구조.

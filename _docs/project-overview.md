@@ -37,7 +37,22 @@ Figma 디자인 → MCP 수치 전달 → 구조 분석·승인 → 섹션 구�
 
 ## 신규 템플릿 추가 기준
 
-1. `templates/{slug}/` 폴더 생성 (slug = 크몽 상품명·브랜드명 kebab-case)
+### 1. slug 결정 (Figma 프레임명 기준)
+
+- [ ] Figma MCP에서 **최상위 프레임명** 확인
+- [ ] 아래 규칙으로 slug 정규화 후 **제안 → 사용자 승인**
+  - 소문자 · `template_` 접두어 제거(가능 시)
+  - 공백·`_` → `-` · kebab-case · `[a-z0-9-]`만
+- [ ] 승인 후 `templates/{slug}/` 생성
+
+| Figma frame | Proposed slug | 폴더 |
+|-------------|---------------|------|
+| `template_ontheblue` | `ontheblue` | `templates/ontheblue/` |
+| `template_claire_clinic` | `claire-clinic` | `templates/claire-clinic/` |
+
+### 2. 필수 파일
+
+1. `templates/{slug}/` 폴더 생성 (승인 후)
 2. 필수 파일 배치:
    - [ ] `index.html`
    - [ ] `css/style.css` (`:root` 변수 포함)
@@ -45,7 +60,7 @@ Figma 디자인 → MCP 수치 전달 → 구조 분석·승인 → 섹션 구�
    - [ ] `assets/images/`, `assets/icons/`
 3. 서브페이지는 같은 폴더에 `about.html` 등 추가
 4. 다른 템플릿 파일 참조·import 없이 단독 동작 확인
-5. 완료 후 `_delivery/imweb/{slug}/`에 QA 통과본 복사
+5. 완료 후 `_delivery/imweb/{slug}/`에 QA 통과본 복사 (`{slug}` = 승인된 slug)
 
 ## 현재 템플릿
 
