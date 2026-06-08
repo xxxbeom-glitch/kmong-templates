@@ -32,7 +32,13 @@
 ## 워크플로우 (요약)
 
 ```
-Figma 디자인 → MCP 수치 전달 → 구조 분석·승인 → 섹션 구현 → QA → 로그 → commit
+Figma MCP 분석
+→ 섹션 1개 구현
+→ 섹션 QA
+→ 사용자 PASS
+→ (반복)
+→ 전체 납품 QA
+→ 로그 / commit
 ```
 
 자세한 흐름: `.cursor/rules/20-harness-workflow.mdc`

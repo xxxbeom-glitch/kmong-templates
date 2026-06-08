@@ -114,3 +114,31 @@
 
 ### FAIL 항목
 없음
+
+---
+
+## 2026-06-04 — ontheblue hero 섹션 QA
+
+**대상:** `templates/ontheblue/` · `hero` (`149:2964`)  
+**검수자:** Cursor Agent  
+**결과:** **PASS** (이미지 파일 export는 후속)
+
+### 섹션 단위 QA
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | Figma padding/gap/font/color 대조 | PASS |
+| 2 | 콘텐츠 1840 / gutter 40 / KV ratio 1840:800 | PASS |
+| 3 | `section--hero` · BEM · 좌측 정렬 | PASS |
+| 4 | clamp · 텍스트 height 고정 없음 | PASS |
+| 5 | `@media 768px` 반영 | PASS |
+| 6 | CTA·header·슬라이더 동작 없음 (확정) | PASS |
+| 7 | 인라인 스타일 없음 | PASS |
+| 8 | `hero-kv.jpg` 미존재 — fallback 배경·교체 가능 구조 | PASS* |
+
+### FAIL 항목
+없음
+
+### 비고
+- `hero-kv.jpg` 추가 시 시각 Figma 대조 재확인 권장
+- **사용자 PASS 전** `story-section` 착수 금지

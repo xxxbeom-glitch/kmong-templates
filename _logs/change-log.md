@@ -137,3 +137,34 @@
 ### 미수정
 
 - `start.bat` · `package.json` · `_docs/legacy/templates/template-c/`
+
+---
+
+## 2026-06-04 — [template] ontheblue hero 섹션 구현
+
+**템플릿:** `ontheblue` · **섹션:** `hero` (`hero-section` · Figma `149:2964`)
+
+### 수정 파일
+
+| 파일 | 내용 |
+|------|------|
+| `templates/ontheblue/index.html` | `section--hero` 마크업 (LUMO 카피, 정적 페이저 01/03) |
+| `templates/ontheblue/css/style.css` | hero 레이아웃·타이포·KV·768px |
+
+### MCP 기준 수치 요약
+
+- 섹션: 1920×980 · padding `90/40/90/40` · gap 10
+- KV: 1840×800 · inner padding L/R `72` · overlay `#000` 30%
+- 콘텐츠 max `1440` · gap `46` / `22` / `14`
+- 타이포: label 18/700 · title 56/700 · body 24/500 · pager 16/500 · `#fff`
+
+### 구현 요약
+
+- `id="hero"` + `class="section section--hero"`
+- KV: `aspect-ratio 1840/800` · `assets/images/hero-kv.jpg` 구조 (파일 미추가 시 `#0c1a2e` fallback)
+- CTA 없음 · 슬라이더 정적 표시 · header 없음 · JS 변경 없음
+
+### 미해결 / 다음 주의
+
+- `assets/images/hero-kv.jpg` Figma export 후 교체 필요
+- 다음 섹션: `story-section` (사용자 PASS 후)

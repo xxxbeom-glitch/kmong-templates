@@ -9,6 +9,22 @@ globs:
 
 # QA Checklist
 
+## 섹션 단위 QA
+
+- 해당 섹션만 Figma 대조
+- PC / 768 반응형 확인
+- 해당 섹션 인터랙션 확인 (해당 시)
+- **PASS 후에만** 다음 섹션 착수 (`20-harness-workflow.mdc`)
+
+아래 Figma·HTML/CSS·기능 항목은 **섹션 구현 중 해당 섹션 범위**로 적용한다.
+
+## 페이지·납품 QA
+
+- 전 섹션 완료 후 전체 스크롤 흐름 확인
+- 섹션 간 간격 확인
+- GNB / 앵커 / 링크 확인
+- Imweb 삽입 기준 확인 (`60-imweb-delivery.mdc`)
+
 ## Figma 대조
 - [ ] padding / gap / font-size / line-height / color 일치
 - [ ] 콘텐츠 폭·gutter 일치 · 이미지 aspect-ratio 일치

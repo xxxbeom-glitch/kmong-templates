@@ -7,6 +7,13 @@
 
 ---
 
+## 0. 작업 전 — 로그 확인
+
+- [ ] 작업 시작 전 해당 템플릿 및 직전 섹션 관련 `_logs` 최근 항목 확인
+- [ ] 이전 QA FAIL / 보류 / 사용자 승인 사항 반영
+
+---
+
 ## 1. 구조 QA
 
 - [ ] 파일이 `templates/{slug}/` 안에만 존재
@@ -55,12 +62,20 @@
 
 ---
 
-## 6. Git commit 전 QA
+## 6. 작업 후 — 로그 기록
+
+- [ ] `_logs/change-log.md` 기록 완료
+- [ ] `_logs/qa-log.md` 기록 완료
+- [ ] FAIL 또는 재발 가능 이슈가 있으면 `_logs/failure-log.md` 기록 완료
+
+---
+
+## 7. Git commit 전 QA
 
 - [ ] 위 1~5 해당 항목 PASS
+- [ ] §6 로그 기록 완료
 - [ ] `git status` — 요청 범위 밖 변경 파일 없음
-- [ ] `templates/template-c` 등 미요청 파일 미수정
-- [ ] `_logs/change-log.md` 기록 완료
+- [ ] 미요청 템플릿·파일 미수정
 - [ ] commit message: `[scope] 한글 작업 내용` 형식
 
 ---
