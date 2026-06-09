@@ -71,6 +71,10 @@
       color: var(--bar-active);
     }
 
+    .preview-bar__tab--link {
+      text-decoration: none;
+    }
+
     .preview-bar__viewport {
       display: flex;
       gap: 4px;
@@ -112,6 +116,7 @@
     <span class="preview-bar__label">검수</span>
     <div class="preview-bar__tabs" id="preview-tabs" role="tablist" aria-label="검수 범위"></div>
     <div class="preview-bar__viewport" role="group" aria-label="화면 너비">
+      <a class="preview-bar__tab preview-bar__tab--link" href="index.html" target="_blank" rel="noopener">index</a>
       <button type="button" class="preview-bar__tab" data-width="390">390</button>
       <button type="button" class="preview-bar__tab" data-width="full">전체</button>
     </div>

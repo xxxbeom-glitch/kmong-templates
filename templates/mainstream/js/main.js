@@ -49,7 +49,6 @@ $(function () {
   var isSectionPreview = isGnbPreview || isHeroStoryPreview || isStatsNewsPreview;
 
   if (!isGnbPreview) {
-    initPlaceholders();
     initScrollReveal();
 
     if (!isHeroStoryPreview && !isStatsNewsPreview) {

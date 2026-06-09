@@ -1,5 +1,34 @@
 # Change Log
 
+## 2026-06-09 — [template] mainstream dev-images → assets 납품 이미지 전환
+
+**템플릿:** `mainstream`
+
+| 항목 | 조치 |
+|------|------|
+| 이미지 | `_dev-images` 현재 매핑 14슬롯 → `assets/images/{key}.jpg` 복사 |
+| HTML | `data-placeholder` 제거 · src `.jpg` 통일 |
+| dev 연동 | `index.html` manifest/dev-images/placeholders 스크립트 제거 · `enabled: false` |
+| 스크립트 | `js/sync-dev-to-assets.js` (재실행용) |
+
+**유지 assets:** header/footer 로고 · news-bg · cta-bg · icons (Figma export)
+
+---
+
+## 2026-06-09 — [template] mainstream index 최종본·GNB 닫기 아이콘
+
+**템플릿:** `mainstream`
+
+| 항목 | 조치 |
+|------|------|
+| GNB 닫기 | 오버레이 위 z-index · 헤더 배경 transparent · 토글 동일 위치 |
+| index | `start.bat` → `index.html` · 모바일 `overflow-x: clip` (100vw bleed) |
+| preview | 섹션 검수용 유지 · 상단 `index` 링크 |
+
+| 파일 | `css/style.css` · `start.bat` · `preview.html` |
+
+---
+
 ## 2026-06-09 — [template] mainstream 모바일 works · faq · cta · footer
 
 **템플릿:** `mainstream` · Figma `198:231` · `198:245` · `198:300` · `198:306` · `@768`

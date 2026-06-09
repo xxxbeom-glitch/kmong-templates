@@ -9,7 +9,7 @@
  * ★ 납품 전: enabled → false · 최종본 assets/images/
  */
 var DEV_IMAGES = {
-  enabled: true,
+  enabled: false,
   root: "_dev-images",
   shuffle: false,
 

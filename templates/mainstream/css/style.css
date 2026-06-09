@@ -1327,6 +1327,11 @@ body.nav-open .menu-toggle__icon--close {
     --header-h: 80px;
   }
 
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   .header {
     padding-inline: 16px;
   }
@@ -1349,17 +1354,34 @@ body.nav-open .menu-toggle__icon--close {
   .menu-toggle {
     display: flex;
     position: relative;
-    z-index: 1;
+    z-index: 1102;
   }
 
   body.nav-open .header {
-    z-index: 102;
+    z-index: 1100;
+    background: transparent;
+  }
+
+  body.nav-open .header__inner {
+    pointer-events: none;
+  }
+
+  body.nav-open .header__logo,
+  body.nav-open .menu-toggle {
+    pointer-events: auto;
+  }
+
+  body.nav-open .menu-toggle {
+    position: fixed;
+    top: 18px;
+    right: 16px;
+    z-index: 1102;
   }
 
   .header__nav {
     position: fixed;
     inset: 0;
-    z-index: 101;
+    z-index: 1101;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1489,11 +1511,12 @@ body.nav-open .menu-toggle__icon--close {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 2px;
-    margin-inline: -16px;
-    padding-inline: 16px;
+    margin-right: -16px;
+    padding-right: 16px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
+    scroll-padding-inline-start: 0;
     scrollbar-width: none;
   }
 
