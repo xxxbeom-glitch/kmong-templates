@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-09 — [project] 납품 경로 플랫폼 중립화 · mainstream 패키징
+
+**범위:** rules · docs · `_delivery/` · `_harness/package-delivery.js`
+
+| 항목 | 조치 |
+|------|------|
+| 명칭 | `imweb`/`cafe24` 플랫폼 폴더·규칙명 제거 → `_delivery/{slug}/` |
+| 규칙 | `60-imweb-delivery.mdc` → `60-delivery.mdc` |
+| 가이드 | `imweb-delivery-guide.md` → `delivery-guide.md` |
+| 패키징 | `node _harness/package-delivery.js mainstream` |
+| 산출 | `_delivery/mainstream/` — preview·dev 파일 제외 |
+
+**개발본:** `templates/mainstream/` 유지 (preview·dev 검수 가능)
+
+---
+
 ## 2026-06-09 — [template] mainstream dev-images → assets 납품 이미지 전환
 
 **템플릿:** `mainstream`

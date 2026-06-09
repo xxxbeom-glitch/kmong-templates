@@ -12,7 +12,7 @@ kmong-templates/
 ├── _logs/                  # decision / change / failure / qa 로그
 ├── _docs/                  # 상세 가이드·QA 체크리스트
 ├── _dev-images/            # 개발용 사진 드롭 (landscape · portrait) — 납품 제외
-├── _delivery/imweb/        # Imweb 납품 스냅샷만
+├── _delivery/              # QA PASS 후 납품 스냅샷 ({slug}/)
 └── templates/{slug}/       # 신규 독립 완성형 템플릿 (승인 후 생성)
 ```
 
@@ -52,7 +52,7 @@ Proposed folder: templates/{slug}/
 | 경로 | 역할 | 비고 |
 |------|------|------|
 | `_harness/snapshots/{slug}/` | QA·비교용 **PNG** 저장 | 선택. 런타임 코드 금지 |
-| `_delivery/imweb/{slug}/` | QA PASS 후 **납품 복사본** | 개발 중간 단계 아님 · `60-imweb-delivery` |
+| `_delivery/{slug}/` | QA PASS 후 **납품 복사본** | 개발 중간 단계 아님 · `60-delivery` |
 
 **미사용·생성 금지:** `_harness/workbench/`, `review/`, `reports/` — 초기 설계 잔재, **진행하지 않음**.
 
@@ -60,7 +60,7 @@ Proposed folder: templates/{slug}/
 - 새 템플릿 추가, 파일 생성 위치 결정, 납품물 정리 시.
 
 금지:
-- `_delivery/cafe24`, `_modules`, `_tokens`, `_common` 재생성
+- `_delivery/{platform}` 등 플랫폼별 하위 폴더, `_modules`, `_tokens`, `_common` 재생성
 - 루트·`_harness`에 템플릿 런타임 코드 배치
 - **`_harness/workbench/` 등 별도 개발 공간 생성·workbench→templates 반영 워크플로**
 - 템플릿 밖에서 다른 템플릿 CSS/JS 참조 (`../../` 공유)

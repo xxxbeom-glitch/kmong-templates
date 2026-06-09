@@ -2,9 +2,9 @@
 
 ## 목적
 
-크몽 판매용 **아임웹(Imweb) 전용** HTML/CSS/jQuery 완성형 웹 템플릿을 제작한다.
+크몽 판매용 **HTML/CSS/jQuery 독립 완성형** 웹 템플릿을 제작한다.
 
-- Figma 1920px 디자인 → Cursor 구현 → QA → `_delivery/imweb/` 납품
+- Figma 1920px 디자인 → Cursor 구현 → QA → `_delivery/{slug}/` 납품
 - 스택: 순수 HTML + CSS + jQuery 3.x(CDN). 빌드 도구·프레임워크 없음
 
 ## 핵심 원칙
@@ -21,7 +21,7 @@
 |------|------|
 | `templates/{slug}/` | **개발·구현** — HTML/CSS/JS 직접 작성 (유일한 작업 공간) |
 | `templates/` (루트) | 활성 템플릿 없을 때 비움 (`.gitkeep`만) |
-| `_delivery/imweb/{slug}/` | QA PASS 후 **납품 복사본** (개발 중간 단계 아님) |
+| `_delivery/{slug}/` | QA PASS 후 **납품 복사본** (`node _harness/package-delivery.js {slug}`) |
 | `.cursor/rules/` | Cursor 에이전트 규칙 |
 | `_harness/snapshots/` | QA·비교용 PNG (선택) — **코드 작업 공간 아님** |
 | `_logs/` | 결정·변경·실패·QA 기록 |
@@ -38,7 +38,7 @@ Figma MCP 분석
 → 사용자 PASS
 → (반복)
 → 전체 납품 QA
-→ _delivery/imweb/ 복사 · 로그 / commit
+→ _delivery/{slug}/ 패키징 · 로그 / commit
 ```
 
 자세한 흐름: `.cursor/rules/20-harness-workflow.mdc`
@@ -68,7 +68,7 @@ Figma MCP 분석
    - [ ] `assets/images/`, `assets/icons/`
 3. 서브페이지는 같은 폴더에 `about.html` 등 추가
 4. 다른 템플릿 파일 참조·import 없이 단독 동작 확인
-5. 완료 후 `_delivery/imweb/{slug}/`에 QA 통과본 복사 (`{slug}` = 승인된 slug)
+5. 완료 후 `_delivery/{slug}/`에 QA 통과본 패키징 (`60-delivery.mdc`)
 
 ## 현재 템플릿
 

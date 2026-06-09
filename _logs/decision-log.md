@@ -1,5 +1,21 @@
 # Decision Log
 
+## 2026-06-09 — 납품 경로 플랫폼 중립화
+
+### 배경
+호스팅·납품 대상이 아임웹에서 일반 웹 호스팅으로 변경. 규칙·하네스에서 `imweb`/`cafe24` 등 플랫폼 지정 명칭 제거.
+
+### 결정
+
+| # | 결정 |
+|---|------|
+| 1 | 납품 경로 `_delivery/{slug}/` (플랫폼 하위 폴더 없음) |
+| 2 | 규칙 `60-delivery.mdc` · `_docs/delivery-guide.md` |
+| 3 | 패키징 `node _harness/package-delivery.js {slug}` — dev·preview 제외 |
+| 4 | 개발본 `templates/{slug}/` 유지 — preview·dev 검수 계속 |
+
+---
+
 ## 2026-06-04 — Imweb 전용 하네스 구조 리셋
 
 ### 배경

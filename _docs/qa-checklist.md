@@ -100,12 +100,12 @@
 
 ---
 
-## 5. Imweb 납품 QA
+## 5. 납품 QA
 
 - [ ] jQuery 중복 선언 없음
 - [ ] 이미지 상대 경로 정상
-- [ ] 코드 위젯 삽입 시 레이아웃 깨짐 없음
-- [ ] `_delivery/imweb/{slug}/` 복사본 동일 동작 (납품 시)
+- [ ] HTML/CSS 삽입·호스팅 시 레이아웃 깨짐 없음
+- [ ] `_delivery/{slug}/` 패키지 오프라인 동작 (`node _harness/package-delivery.js {slug}`)
 
 ---
 

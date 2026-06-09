@@ -23,7 +23,7 @@ globs:
 - 전 섹션 완료 후 전체 스크롤 흐름 확인
 - 섹션 간 간격 확인
 - GNB / 앵커 / 링크 확인
-- Imweb 삽입 기준 확인 (`60-imweb-delivery.mdc`)
+- 납품·삽입 기준 확인 (`60-delivery.mdc`)
 
 ## Figma 대조
 - [ ] **Section shell** = MCP 분류 (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · guttered / full-bleed / breakout
@@ -63,9 +63,10 @@ globs:
 - [ ] **Interaction preset** — 적용 ID = 사용자 승인 목록 · 섹션당 상한 · 중복 animation 없음 (`46-interaction-presets.mdc`)
 - [ ] 링크·GNB `is-active` 페이지별 정확
 
-## Imweb
+## 납품·삽입
 - [ ] jQuery 중복 선언 없음 · `$` 사용 가능
-- [ ] 코드 위젯 삽입 시 깨짐·overflow 없음
+- [ ] HTML/CSS 삽입 시 깨짐·overflow 없음
+- [ ] `_delivery/{slug}/` 패키지 오프라인 동작 (`node _harness/package-delivery.js {slug}`)
 
 → **전 항목 PASS** = QA PASS. 하나라도 FAIL이면 완료 처리 금지.
 → 결과를 `_logs/qa-log.md`에 **섹션별 1건** 기록 (미기록 = QA 미완료).

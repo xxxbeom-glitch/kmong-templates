@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMO</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header" class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img
+          class="header__logo-img header__logo-img--pc"
+          src="assets/images/header-logo.png"
+          alt="LUMO"
+          width="117"
+          height="104"
+          decoding="async"
+        >
+        <img
+          class="header__logo-img header__logo-img--mo"
+          src="assets/images/header-logo-mo.png"
+          alt="LUMO"
+          width="127"
+          height="80"
+          decoding="async"
+        >
+      </a>
+      <nav id="header-nav" class="header__nav" aria-label="주요 메뉴">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#" class="header__nav-link">브랜드 소개</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">서비스</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">이용 과정</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">고객 후기</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">자주 묻는 질문</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">문의하기</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="header-nav">
+        <img
+          class="menu-toggle__icon menu-toggle__icon--menu"
+          src="assets/images/header-logo-menu.png"
+          alt=""
+          width="36"
+          height="36"
+          decoding="async"
+        >
+        <img
+          class="menu-toggle__icon menu-toggle__icon--close"
+          src="assets/images/header-logo-close.png"
+          alt=""
+          width="36"
+          height="36"
+          decoding="async"
+        >
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="main">
+    <section id="hero" class="section section--hero" aria-label="메인 비주얼">
+      <div class="hero__kv" data-hero-progress-slider>
+        <div class="hero__slides" aria-live="polite">
+          <article class="hero__slide is-active">
+            <img
+              class="hero__slide-img"
+              src="assets/images/hero-bg-01.jpg"
+              alt=""
+              width="1840"
+              height="800"
+              decoding="async"
+            >
+          </article>
+          <article class="hero__slide">
+            <img
+              class="hero__slide-img"
+              src="assets/images/hero-bg-02.jpg"
+              alt=""
+              width="1840"
+              height="800"
+              decoding="async"
+            >
+          </article>
+          <article class="hero__slide">
+            <img
+              class="hero__slide-img"
+              src="assets/images/hero-bg-03.jpg"
+              alt=""
+              width="1840"
+              height="800"
+              decoding="async"
+            >
+          </article>
+        </div>
+        <div class="hero__kv-overlay" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <div class="hero__copy">
+              <div class="hero__headline">
+                <p class="hero__label scroll-reveal">LUMO BUSINESS SOLUTION</p>
+                <h1 class="hero__title scroll-reveal">좋은 선택은<br>명확한 구조에서 시작됩니다</h1>
+              </div>
+              <p class="hero__desc scroll-reveal">루모는 복잡한 비즈니스 과정을 더 단순하게 정리하고,<br class="hero__desc-br">필요한 정보와 실행 흐름을 명확하게 설계합니다.</p>
+            </div>
+            <div class="hero__nav">
+              <span class="hero__pager-label">
+                <span class="hero__pager-current">01</span>
+                <span class="hero__pager-sep" aria-hidden="true"> / </span>
+                <span class="hero__pager-total">03</span>
+              </span>
+              <button type="button" class="hero__pager-track" aria-label="다음 슬라이드">
+                <span class="hero__pager-fill"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section section--story" aria-labelledby="story-title">
+      <div class="section--story__inner">
+        <div class="story__head">
+          <h2 id="story-title" class="story__title scroll-reveal">우리의 기준을 소개합니다</h2>
+          <p class="story__desc scroll-reveal">루모는 비즈니스의 본질을 더 분명하게 만들기 위해 전략, 구조, 실행의 흐름을 함께 설계합니다.</p>
+        </div>
+        <div class="story__list">
+          <article class="story-card scroll-reveal">
+            <div class="story-card__media">
+              <img
+                src="assets/images/story-card-01.jpg"
+                alt=""
+                width="613"
+                height="720"
+                decoding="async"
+              >
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">전략적 사고</h3>
+              <p class="story-card__desc">복잡한 상황 속에서도 우선순위를 명확하게 정리합니다.</p>
+            </div>
+          </article>
+          <article class="story-card scroll-reveal">
+            <div class="story-card__media">
+              <img
+                src="assets/images/story-card-02.jpg"
+                alt=""
+                width="613"
+                height="720"
+                decoding="async"
+              >
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">구조적 설계</h3>
+              <p class="story-card__desc">흐름이 끊기지 않도록 정보와 기능을 체계적으로 배치합니다.</p>
+            </div>
+          </article>
+          <article class="story-card scroll-reveal">
+            <div class="story-card__media">
+              <img
+                src="assets/images/story-card-03.jpg"
+                alt=""
+                width="613"
+                height="720"
+                decoding="async"
+              >
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">실행 중심</h3>
+              <p class="story-card__desc">아이디어에 머물지 않고 실제 결과로 이어질 수 있게 만듭니다.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="section section--stats" aria-labelledby="stats-title">
+      <div class="stats__blue">
+        <div class="stats__top">
+          <div class="stats__head">
+            <h2 id="stats-title" class="stats__title scroll-reveal">숫자로 확인하는 신뢰</h2>
+            <p class="stats__desc scroll-reveal">우리가 중요하게 생각하는 기준은 결국 사용자가 체감하는 결과로 이어져야 합니다.</p>
+          </div>
+          <ul class="stats__list">
+            <li class="stats-item">
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="98"
+                data-count-suffix="%"
+              >0%</span>
+              <span class="stats-item__label scroll-reveal">고객 만족도</span>
+            </li>
+            <li class="stats-item">
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="420"
+                data-count-suffix="+"
+              >0+</span>
+              <span class="stats-item__label scroll-reveal">프로젝트 수행</span>
+            </li>
+            <li class="stats-item">
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="36000"
+                data-count-suffix="+"
+                data-count-grouping
+              >0+</span>
+              <span class="stats-item__label scroll-reveal">누적 사용자 도달</span>
+            </li>
+            <li class="stats-item">
+              <span
+                class="stats-item__value scroll-reveal"
+                data-stats-counter
+                data-count-value="1800"
+                data-count-suffix="+"
+                data-count-grouping
+              >0+</span>
+              <span class="stats-item__label scroll-reveal">전환 이벤트 발생</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="stats__visual scroll-reveal">
+        <img
+          src="assets/images/stats-visual.jpg"
+          alt=""
+          width="1530"
+          height="594"
+          decoding="async"
+        >
+      </div>
+    </section>
+
+    <section id="news" class="section section--news" aria-labelledby="news-title">
+      <div class="news__inner">
+        <div class="news__intro">
+          <div class="news__head">
+            <h2 id="news-title" class="news__title scroll-reveal">인사이트와 소식을 전합니다</h2>
+            <p class="news__desc scroll-reveal">비즈니스, 운영, 디지털 경험과 관련된 실질적인 이야기와 최신 소식을 전합니다.</p>
+          </div>
+          <div class="news__nav" aria-label="뉴스 슬라이드">
+            <button type="button" class="news__nav-btn news__nav-btn--prev" data-news-prev aria-label="이전">
+              <img src="assets/icons/icon-arrow-left.svg" alt="" width="24" height="24" decoding="async">
+            </button>
+            <span class="news__pager" aria-live="polite">
+              <span class="news__pager-current" data-news-pager-current>01</span>
+              <span class="news__pager-divider" aria-hidden="true"></span>
+              <span class="news__pager-total" data-news-pager-total>03</span>
+            </span>
+            <button type="button" class="news__nav-btn news__nav-btn--next" data-news-next aria-label="다음">
+              <img src="assets/icons/icon-arrow-right.svg" alt="" width="24" height="24" decoding="async">
+            </button>
+          </div>
+        </div>
+        <div class="news__viewport">
+          <div class="news__list" data-news-track>
+          <article class="news-card">
+            <a href="#" class="news-card__link">
+              <div class="news-card__media scroll-reveal">
+                <img
+                  src="assets/images/news-card-01.jpg"
+                  alt=""
+                  width="613"
+                  height="538"
+                  decoding="async"
+                >
+              </div>
+              <div class="news-card__body">
+                <h3 class="news-card__title scroll-reveal">실행을 바꾸는 구조 설계</h3>
+                <time class="news-card__date scroll-reveal" datetime="2026-05-23">2026. 05. 23</time>
+              </div>
+            </a>
+          </article>
+          <article class="news-card">
+            <a href="#" class="news-card__link">
+              <div class="news-card__media scroll-reveal">
+                <img
+                  src="assets/images/news-card-02.jpg"
+                  alt=""
+                  width="613"
+                  height="538"
+                  decoding="async"
+                >
+              </div>
+              <div class="news-card__body">
+                <h3 class="news-card__title scroll-reveal">브랜드 경험을 더 단순하게 만드는 방법</h3>
+                <time class="news-card__date scroll-reveal" datetime="2026-04-23">2026. 04. 23</time>
+              </div>
+            </a>
+          </article>
+          <article class="news-card">
+            <a href="#" class="news-card__link">
+              <div class="news-card__media scroll-reveal">
+                <img
+                  src="assets/images/news-card-03.jpg"
+                  alt=""
+                  width="613"
+                  height="538"
+                  decoding="async"
+                >
+              </div>
+              <div class="news-card__body">
+                <h3 class="news-card__title scroll-reveal">디지털 전환 이후 더 중요한 기준</h3>
+                <time class="news-card__date scroll-reveal" datetime="2026-04-22">2026. 04. 22</time>
+              </div>
+            </a>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section section--works" aria-labelledby="works-title">
+      <div class="works__inner">
+        <div class="works__head">
+          <h2 id="works-title" class="works__title scroll-reveal">결과로 보여주는 작업들</h2>
+          <p class="works__desc scroll-reveal">루모는 다양한 산업의 프로젝트 안에서 명확한 구조와 설계를 통해 더 나은 경험을 만들어왔습니다.</p>
+        </div>
+        <div class="works-gallery" role="list">
+          <article class="works-gallery__item is-active scroll-reveal" role="listitem">
+            <button type="button" class="works-gallery__panel" aria-expanded="true">
+              <span class="works-gallery__media">
+                <img
+                  src="assets/images/works-gallery-01.jpg"
+                  alt=""
+                  width="959"
+                  height="1097"
+                  decoding="async"
+                >
+              </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Project LUMO One</span>
+                <span class="works-gallery__category">Brand Strategy</span>
+              </span>
+            </button>
+          </article>
+          <article class="works-gallery__item scroll-reveal" role="listitem">
+            <button type="button" class="works-gallery__panel" aria-expanded="false">
+              <span class="works-gallery__media">
+                <img
+                  src="assets/images/works-gallery-02.jpg"
+                  alt=""
+                  width="294"
+                  height="1097"
+                  decoding="async"
+                >
+              </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Urban Step</span>
+                <span class="works-gallery__category">Commerce Design</span>
+              </span>
+            </button>
+          </article>
+          <article class="works-gallery__item scroll-reveal" role="listitem">
+            <button type="button" class="works-gallery__panel" aria-expanded="false">
+              <span class="works-gallery__media">
+                <img
+                  src="assets/images/works-gallery-03.jpg"
+                  alt=""
+                  width="294"
+                  height="1097"
+                  decoding="async"
+                >
+              </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Maison Clear</span>
+                <span class="works-gallery__category">Product Landing</span>
+              </span>
+            </button>
+          </article>
+          <article class="works-gallery__item scroll-reveal" role="listitem">
+            <button type="button" class="works-gallery__panel" aria-expanded="false">
+              <span class="works-gallery__media">
+                <img
+                  src="assets/images/works-gallery-04.jpg"
+                  alt=""
+                  width="294"
+                  height="1097"
+                  decoding="async"
+                >
+              </span>
+              <span class="works-gallery__caption">
+                <span class="works-gallery__name">Time Archive</span>
+                <span class="works-gallery__category">Editorial Showcase</span>
+              </span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section--faq" aria-labelledby="faq-title">
+      <div class="faq__inner">
+        <h2 id="faq-title" class="faq__title scroll-reveal">자주 묻는 질문</h2>
+        <div class="faq__grid">
+          <div class="faq__row">
+            <article class="faq-card faq-card--mint">
+              <h3 class="faq-card__q scroll-reveal">서비스는 어떤 기준으로 선택하면 좋을까요?</h3>
+              <p class="faq-card__a scroll-reveal">현재 필요한 정보와 우선순위를 먼저 정리해보는 것이 좋습니다. 루모는 복잡한 선택지 속에서도 핵심 기준을 쉽게 비교할 수 있도록 돕습니다.</p>
+            </article>
+            <article class="faq-card faq-card--yellow">
+              <h3 class="faq-card__q scroll-reveal">처음 문의할 때 자세히 적어야 하나요?</h3>
+              <p class="faq-card__a scroll-reveal">간단한 내용만 남겨주셔도 괜찮습니다. 기본적인 문의만으로도 흐름을 안내받을 수 있고, 필요한 경우 추가 내용을 차분히 확인해드립니다.</p>
+            </article>
+            <article class="faq-card faq-card--mint">
+              <h3 class="faq-card__q scroll-reveal">중간에 방향을 바꾸거나 다시 문의할 수 있나요?</h3>
+              <p class="faq-card__a scroll-reveal">네. 진행 중에도 상황에 따라 방향을 다시 조정할 수 있습니다. 처음 정한 내용보다 현재 필요한 것이 더 중요하다고 생각합니다.</p>
+            </article>
+          </div>
+          <div class="faq__row">
+            <article class="faq-card faq-card--yellow">
+              <h3 class="faq-card__q scroll-reveal">정보를 빠르게 확인할 수 있나요?</h3>
+              <p class="faq-card__a scroll-reveal">중요한 내용부터 먼저 볼 수 있도록 구조화되어 있어<br>빠르게 확인할 수 있습니다. 불필요한 설명은 줄이고, 필요한 기준은 더 분명하게 전달합니다.</p>
+            </article>
+            <article class="faq-card faq-card--mint">
+              <h3 class="faq-card__q scroll-reveal">비교가 어려운 사람도 이용할 수 있나요?</h3>
+              <p class="faq-card__a scroll-reveal">물론입니다. 여러 선택지를 한꺼번에 이해하기 어렵더라도 핵심 차이와 기준을 쉽게 파악할 수 있도록 안내합니다.</p>
+            </article>
+            <article class="faq-card faq-card--yellow">
+              <h3 class="faq-card__q scroll-reveal">문의 후 답변은 얼마나 걸리나요?</h3>
+              <p class="faq-card__a scroll-reveal">문의 내용과 상황에 따라 차이가 있을 수 있지만, 가능한 빠르게 확인 후 안내드립니다. 필요한 경우 다음 단계도 함께 정리해드려 흐름이 끊기지 않도록 돕습니다.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="section section--cta" aria-labelledby="cta-title">
+        <div class="cta__panel is-bleed-x">
+        <h2 id="cta-title" class="cta__title scroll-reveal">복잡한 비즈니스 경험을<br>더 명확하게 정리하고 싶다면</h2>
+        <a href="#" class="cta__btn scroll-reveal">상담 문의하기</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="assets/images/footer-logo.png" alt="LUMO" width="149" height="80" decoding="async">
+        </a>
+        <div class="footer__family-wrap">
+          <button
+            type="button"
+            class="footer__family"
+            aria-expanded="false"
+            aria-controls="footer-family-list"
+          >
+            <span class="footer__family-label">패밀리 사이트</span>
+            <span class="footer__family-icon" aria-hidden="true">+</span>
+          </button>
+          <ul id="footer-family-list" class="footer__family-list" hidden></ul>
+        </div>
+      </div>
+      <div class="footer__content-row">
+        <div class="footer__info">
+          <div class="footer__text-group">
+            <p class="footer__meta">
+              <span>주식회사 루모컴퍼니</span>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <span>대표 : 박성범</span>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <span>사업자등록번호: 123-45-67890</span>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <span>주소: 서울특별시 성동구 아차산로 00, 5F</span>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <span>이메일: contact@lumo.co.kr</span>
+            </p>
+            <nav class="footer__links" aria-label="푸터 메뉴">
+              <a href="#">문의하기</a>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <a href="#">위치 안내</a>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <a href="#">이용약관</a>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <a href="#">개인정보처리방침</a>
+              <span class="footer__sep" aria-hidden="true"></span>
+              <span>운영시간: 평일 10:00 - 18:00</span>
+            </nav>
+          </div>
+          <p class="footer__copy">© 2026 LUMO. All rights reserved.</p>
+        </div>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="YouTube">
+            <img src="assets/images/footer-logo-youtube.svg" alt="" width="34" height="34" decoding="async">
+          </a>
+          <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram">
+            <img src="assets/images/footer-logo-instagram.svg" alt="" width="28" height="28" decoding="async">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

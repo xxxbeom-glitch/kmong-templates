@@ -109,7 +109,7 @@ var DEV_IMAGES = {
 
 `initPlaceholders()` → `main.js` **최우선** (슬라이더 clone 전)
 
-## 납품 전 (`60-imweb-delivery.mdc`)
+## 납품 전 (`60-delivery.mdc`)
 
 1. 최종 사진 → `templates/{slug}/assets/images/`
 2. **`DEV_IMAGES.enabled = false`**

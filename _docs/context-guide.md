@@ -25,8 +25,8 @@
 
 3. **프로젝트 개요**
    - `_docs/project-overview.md`
-   - Imweb-only
    - `templates/{slug}/` 독립 구조
+   - `_delivery/{slug}/` 납품
    - 공유 `_modules` / `_tokens` 금지
 
 4. **로그**

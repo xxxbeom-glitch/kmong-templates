@@ -7,7 +7,7 @@
 | 구분 | 경로 | 용도 |
 |------|------|------|
 | **개발·구현** | `templates/{slug}/` | HTML/CSS/JS **유일한 작업 공간** — 여기에 직접 작성 |
-| **납품 복사** | `_delivery/imweb/{slug}/` | QA PASS **후** 복사 (`60-imweb-delivery`) |
+| **납품 복사** | `_delivery/{slug}/` | QA PASS **후** 패키징 (`60-delivery` · `node _harness/package-delivery.js {slug}`) |
 | **비교 캡처** | `_harness/snapshots/{slug}/` | PNG만 (선택) |
 
 **진행하지 않음:** `_harness/workbench/`, `review/`, `reports/` — 별도 공간에서 짜고 본문에 씌우는 단계 **사용 안 함**.
@@ -20,7 +20,7 @@
 4. 섹션 QA 후 `_logs/qa-log.md` 기록
 5. 사용자 PASS 후 다음 섹션 요청
 
-페이지 전체 완료 후: 전체 납품 QA → `_delivery/imweb/{slug}/` 복사 · commit(사용자 요청 시)
+페이지 전체 완료 후: 전체 납품 QA → `node _harness/package-delivery.js {slug}` · commit(사용자 요청 시)
 
 ## 반응형 (필수)
 
