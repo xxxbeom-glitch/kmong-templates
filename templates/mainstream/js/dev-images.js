@@ -3,7 +3,7 @@
  *
  * ★ _dev-images/landscape · portrait — raw 파일명
  * ★ sync: node _dev-images/sync-manifest.js
- * ★ 로컬 미리보기: start.bat (8080) · junction templates/mainstream/_dev-images
+ * ★ 로컬 미리보기: templates/{slug}/ 에서 live-server · junction templates/mainstream/_dev-images
  * ★ 섹션 장식 배경(news-bg, cta-bg 등 ::before) → assets/images/ 만
  *
  * ★ 납품 전: enabled → false · 최종본 assets/images/

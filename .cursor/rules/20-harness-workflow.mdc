@@ -86,6 +86,26 @@ Figma MCP 분석(해당 섹션)
 - 일괄 구현 **완료 후:** 섹션 QA를 **연속 수행** → 전부 PASS 후 **페이지 통합 QA** 1회 (`50-qa-checklist` 페이지·납품) → 사용자 PASS.
 - 페이지 전체 완료 후에는 **납품 전 전체 QA**를 별도로 수행한다 (`50-qa-checklist.mdc` · `60-delivery.mdc`).
 
+## 템플릿 허브 · 패키징 (`60-delivery.mdc`)
+
+| 파일 | 역할 | 누가 수정 |
+|------|------|-----------|
+| `templates/index.html` | 텍스트 링크 목록 (dev 허브) | **신규 템플릿 승인 시 `<li>` 추가** |
+| `_delivery/index.html` | 납품·호스팅 허브 | **직접 수정 금지** — 패키징 시 자동 복사 |
+
+```
+신규 템플릿 승인
+→ templates/{slug}/ 생성
+→ templates/index.html 에 <li><a href="{slug}/index.html">{slug}</a></li> 추가
+
+QA PASS 후
+→ node _harness/package-delivery.js {slug}
+→ _delivery/{slug}/ 생성 + _delivery/index.html 자동 동기화
+```
+
+- 패키징 명령 **1회마다** `syncDeliveryIndex()`가 `templates/index.html` → `_delivery/index.html` 복사.
+- `_delivery/index.html`만 따로 고치지 않는다 (다음 패키징에 덮어씀).
+
 ## 섹션 QA 절차 (매 섹션 필수)
 
 ```

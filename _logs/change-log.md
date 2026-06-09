@@ -1,6 +1,19 @@
 # Change Log
 
-## 2026-06-09 — [project] 납품 경로 플랫폼 중립화 · mainstream 패키징
+## 2026-06-09 — [project] start.bat · stop.bat 제거
+
+- 루트 `start.bat` · `stop.bat` 삭제
+- `47-placeholder-images.mdc` · dev-images.js 주석 갱신
+
+---
+
+| 파일 | 내용 |
+|------|------|
+| `templates/index.html` | 텍스트 링크 목록 (mainstream) |
+| `_harness/package-delivery.js` | 패키징 시 `_delivery/index.html` 동기화 |
+| rules · delivery-guide | 허브·신규 템플릿 `<li>` 추가 절차 |
+
+---
 
 **범위:** rules · docs · `_delivery/` · `_harness/package-delivery.js`
 

@@ -105,7 +105,7 @@ var DEV_IMAGES = {
 <script src="js/main.js"></script>
 ```
 
-`start.bat` — `templates/mainstream/_dev-images` junction → 루트 `_dev-images` · live-server `8080/index.html`
+로컬 미리보기: `templates/{slug}/`에서 `npx live-server --port=8080` · junction `templates/mainstream/_dev-images` → 루트 `_dev-images` (필요 시)
 
 `initPlaceholders()` → `main.js` **최우선** (슬라이더 clone 전)
 

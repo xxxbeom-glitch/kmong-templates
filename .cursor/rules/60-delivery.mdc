@@ -11,7 +11,8 @@ globs:
 
 - 납품 경로: `_delivery/{template-slug}/` — QA PASS 후 **복사본**만 (개발·실험 공간 아님)
 - 납품물 = 해당 템플릿의 HTML/CSS/JS/assets **복사본** (독립 실행 가능)
-- 패키징: `node _harness/package-delivery.js {slug}` — dev 전용 파일·preview 코드 제거
+- 패키징: `node _harness/package-delivery.js {slug}` — dev 전용 파일·preview 코드 제거 · **`templates/index.html` → `_delivery/index.html` 동기화**
+- 템플릿 허브: `templates/index.html` — 텍스트 링크 목록 · **신규 템플릿 승인 시 `<li>` 한 줄 추가** · 패키징마다 `_delivery/index.html` 자동 갱신
 - 호스팅 삽입 시 jQuery가 이미 로드되면 **중복 `<script>` 제거**
 - `$` 그대로 사용 (별도 noConflict 패턴 불필요)
 - 이미지 1MB 이하 권장 · 불필요 CSS/JS 제거

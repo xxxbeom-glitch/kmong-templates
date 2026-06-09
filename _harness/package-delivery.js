@@ -108,5 +108,20 @@ fs.writeFileSync(path.join(destDir, "js", "main.js"), stripPreviewJs(jsSrc), "ut
 
 copyDir(path.join(srcDir, "assets"), path.join(destDir, "assets"));
 
+syncDeliveryIndex(root);
+
 console.log("[delivery] done → _delivery/" + slug + "/");
 console.log("[delivery] excluded: preview.html, _dev-images, dev-images.js, placeholders.js, sync-dev-to-assets.js");
+
+function syncDeliveryIndex(projectRoot) {
+  var hubSrc = path.join(projectRoot, "templates", "index.html");
+  var hubDest = path.join(projectRoot, "_delivery", "index.html");
+
+  if (!fs.existsSync(hubSrc)) {
+    console.warn("[delivery] templates/index.html not found — skip hub sync");
+    return;
+  }
+
+  copyFile(hubSrc, hubDest);
+  console.log("[delivery] hub synced → _delivery/index.html");
+}

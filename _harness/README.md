@@ -7,7 +7,9 @@
 | 구분 | 경로 | 용도 |
 |------|------|------|
 | **개발·구현** | `templates/{slug}/` | HTML/CSS/JS **유일한 작업 공간** — 여기에 직접 작성 |
-| **납품 복사** | `_delivery/{slug}/` | QA PASS **후** 패키징 (`60-delivery` · `node _harness/package-delivery.js {slug}`) |
+| **템플릿 허브 (dev)** | `templates/index.html` | 텍스트 링크 · 신규 slug마다 `<li>` 추가 |
+| **템플릿 허브 (납품)** | `_delivery/index.html` | 패키징 시 `templates/index.html` **자동 복사** — 직접 수정 ❌ |
+| **납품 복사** | `_delivery/{slug}/` | QA PASS **후** 패키징 (`node _harness/package-delivery.js {slug}`) |
 | **비교 캡처** | `_harness/snapshots/{slug}/` | PNG만 (선택) |
 
 **진행하지 않음:** `_harness/workbench/`, `review/`, `reports/` — 별도 공간에서 짜고 본문에 씌우는 단계 **사용 안 함**.

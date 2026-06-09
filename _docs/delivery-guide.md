@@ -13,6 +13,8 @@ _delivery/{template-slug}/
 └── assets/
     ├── images/
     └── icons/
+
+_delivery/index.html      ← templates/index.html 복사본 (템플릿 목록 허브)
 ```
 
 - `{template-slug}` = `templates/` 폴더명과 동일하게 유지
@@ -32,6 +34,20 @@ node _harness/package-delivery.js mainstream
 | `css/style.css` (preview CSS 제거) | `_dev-images/` |
 | `js/main.js` (preview 분기 제거) | `dev-images.js`, `placeholders.js`, `sync-dev-to-assets.js` |
 | `assets/images/`, `assets/icons/` | |
+
+**허브:** `templates/index.html`에 템플릿 링크 추가 → 패키징 시 `_delivery/index.html` 자동 동기화
+
+---
+
+## 템플릿 허브 (`templates/index.html`)
+
+신규 템플릿 승인 후 목록에 한 줄 추가:
+
+```html
+<li><a href="{slug}/index.html">{slug}</a></li>
+```
+
+`node _harness/package-delivery.js {slug}` 실행할 때마다 `_delivery/index.html`도 같이 갱신됨.
 
 ---
 
