@@ -5,3 +5,4 @@ Thumbs.db
 *.log
 .env
 .env.*
+_delivery/*/admin/config.php

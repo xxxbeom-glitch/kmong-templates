@@ -40,12 +40,57 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .hub-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+    }
+
+    .hub-links__sep {
+      color: #ccc;
+      font-weight: 400;
+    }
+
+    .hub-note {
+      margin: 0 0 20px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      background: #fef3f2;
+      color: #b42318;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
   <h1>Templates</h1>
+  <p id="hub-note" class="hub-note" hidden>
+    file:// 로 열면 admin(PHP)이 동작하지 않습니다.
+    Laragon: <a href="http://localhost/kmong/index.html">http://localhost/kmong/index.html</a>
+  </p>
   <ul>
-    <li><a href="mainstream/index.html">mainstream</a></li>
+    <li class="hub-links">
+      <a data-hub-path="mainstream/index.html" href="mainstream/index.html">mainstream</a>
+      <span class="hub-links__sep" aria-hidden="true">·</span>
+      <a data-hub-path="mainstream/admin/login.php" href="mainstream/admin/login.php">admin</a>
+    </li>
   </ul>
+  <script>
+    (function () {
+      if (location.protocol !== "file:") {
+        return;
+      }
+
+      var note = document.getElementById("hub-note");
+      if (note) {
+        note.hidden = false;
+      }
+
+      document.querySelectorAll("[data-hub-path]").forEach(function (link) {
+        link.href = "http://localhost/kmong/" + link.getAttribute("data-hub-path");
+      });
+    })();
+  </script>
 </body>
 </html>

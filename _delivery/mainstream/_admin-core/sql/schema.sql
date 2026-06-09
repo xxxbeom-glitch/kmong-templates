@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS cms_content (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  template_slug VARCHAR(64) NOT NULL,
+  section VARCHAR(32) NOT NULL,
+  field_key VARCHAR(64) NOT NULL,
+  field_value TEXT NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_cms_field (template_slug, section, field_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS cms_story_cards (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  template_slug VARCHAR(64) NOT NULL,
+  sort_order TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  title VARCHAR(255) NOT NULL DEFAULT '',
+  description TEXT NOT NULL,
+  image_path VARCHAR(512) NOT NULL DEFAULT '',
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY idx_story_template (template_slug, is_active, sort_order)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

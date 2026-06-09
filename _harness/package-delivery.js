@@ -36,7 +36,7 @@ function copyDir(src, dest) {
     var srcPath = path.join(src, entry.name);
     var destPath = path.join(dest, entry.name);
 
-    if (entry.name === ".gitkeep") {
+    if (entry.name === ".gitkeep" || entry.name === "config.local.php" || entry.name === "config.php") {
       return;
     }
 
@@ -93,10 +93,23 @@ function removeDir(dir) {
 }
 
 console.log("[delivery] packaging " + slug);
+
+var preservedConfig = null;
+var preservedConfigPath = path.join(destDir, "admin", "config.php");
+
+if (fs.existsSync(preservedConfigPath)) {
+  preservedConfig = fs.readFileSync(preservedConfigPath, "utf8");
+  console.log("[delivery] preserved admin/config.php");
+}
+
 removeDir(destDir);
 ensureDir(destDir);
 
 copyFile(path.join(srcDir, "index.html"), path.join(destDir, "index.html"));
+
+if (fs.existsSync(path.join(srcDir, "start.html"))) {
+  copyFile(path.join(srcDir, "start.html"), path.join(destDir, "start.html"));
+}
 
 var cssSrc = fs.readFileSync(path.join(srcDir, "css", "style.css"), "utf8");
 fs.mkdirSync(path.join(destDir, "css"), { recursive: true });
@@ -107,10 +120,44 @@ fs.mkdirSync(path.join(destDir, "js"), { recursive: true });
 fs.writeFileSync(path.join(destDir, "js", "main.js"), stripPreviewJs(jsSrc), "utf8");
 
 copyDir(path.join(srcDir, "assets"), path.join(destDir, "assets"));
+ensureDir(path.join(destDir, "assets", "images", "uploads"));
+
+if (fs.existsSync(path.join(srcDir, "admin"))) {
+  copyDir(path.join(srcDir, "admin"), path.join(destDir, "admin"));
+
+  var deliveryConfig = path.join(destDir, "admin", "config.php");
+  var deliverySample = path.join(destDir, "admin", "config.sample.php");
+  var deliveryLocal = path.join(destDir, "admin", "config.local.php");
+
+  if (fs.existsSync(deliveryLocal)) {
+    fs.unlinkSync(deliveryLocal);
+  }
+
+  if (preservedConfig) {
+    fs.writeFileSync(deliveryConfig, preservedConfig, "utf8");
+  } else if (!fs.existsSync(deliveryConfig) && fs.existsSync(deliverySample)) {
+    copyFile(deliverySample, deliveryConfig);
+    console.log("[delivery] created admin/config.php from config.sample.php");
+  }
+}
+
+if (fs.existsSync(path.join(srcDir, "api"))) {
+  copyDir(path.join(srcDir, "api"), path.join(destDir, "api"));
+}
+
+copyFile(path.join(srcDir, "js", "cms-content.js"), path.join(destDir, "js", "cms-content.js"));
+
+var sharedAdminCore = path.join(root, "templates", "_admin-core");
+var bundledAdminCore = path.join(destDir, "_admin-core");
+
+if (fs.existsSync(sharedAdminCore)) {
+  copyDir(sharedAdminCore, bundledAdminCore);
+}
 
 syncDeliveryIndex(root);
 
 console.log("[delivery] done → _delivery/" + slug + "/");
+console.log("[delivery] included: admin/, api/, _admin-core/, cms-content.js");
 console.log("[delivery] excluded: preview.html, _dev-images, dev-images.js, placeholders.js, sync-dev-to-assets.js");
 
 function syncDeliveryIndex(projectRoot) {
