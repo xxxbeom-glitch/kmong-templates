@@ -12,20 +12,41 @@
     <div class="header__inner">
       <a href="index.html" class="header__logo">
         <img
-          class="header__logo-img"
+          class="header__logo-img header__logo-img--pc"
           src="assets/images/header-logo.png"
           alt="LUMO"
           width="117"
           height="104"
           decoding="async"
         >
+        <img
+          class="header__logo-img header__logo-img--mo"
+          src="assets/images/header-logo-mo.png"
+          alt="LUMO"
+          width="127"
+          height="80"
+          decoding="async"
+        >
       </a>
-      <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
-        <span class="menu-toggle__bar"></span>
-        <span class="menu-toggle__bar"></span>
-        <span class="menu-toggle__bar"></span>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="header-nav">
+        <img
+          class="menu-toggle__icon menu-toggle__icon--menu"
+          src="assets/images/header-logo-menu.png"
+          alt=""
+          width="36"
+          height="36"
+          decoding="async"
+        >
+        <img
+          class="menu-toggle__icon menu-toggle__icon--close"
+          src="assets/images/header-logo-close.png"
+          alt=""
+          width="36"
+          height="36"
+          decoding="async"
+        >
       </button>
-      <nav class="header__nav" aria-label="주요 메뉴">
+      <nav id="header-nav" class="header__nav" aria-label="주요 메뉴">
         <ul class="header__nav-list">
           <li class="header__nav-item"><a href="#" class="header__nav-link">브랜드 소개</a></li>
           <li class="header__nav-item"><a href="#" class="header__nav-link">서비스</a></li>

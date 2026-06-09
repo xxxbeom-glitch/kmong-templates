@@ -13,6 +13,7 @@
   --color-faq-yellow: #faf2d7;
   --faq-card-h: clamp(150px, 15.625vw, 300px);
   --color-footer-social: #f8f8f8;
+  --color-menu-overlay: #0f0f0f;
   --stats-visual-half-h: clamp(62px, 15.46875vw, 297px);
   --header-h: clamp(64px, 5.4167vw, 104px);
   --works-overlay: rgba(0, 0, 0, 0.26);
@@ -156,11 +157,15 @@ time.scroll-reveal {
   object-position: left center;
 }
 
+.header__logo-img--mo {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 5px;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -169,12 +174,23 @@ time.scroll-reveal {
   cursor: pointer;
 }
 
-.menu-toggle__bar {
+.menu-toggle__icon {
   display: block;
-  width: 22px;
-  height: 2px;
-  margin-inline: auto;
-  background: var(--color-text);
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.menu-toggle__icon--close {
+  display: none;
+}
+
+body.nav-open .menu-toggle__icon--menu {
+  display: none;
+}
+
+body.nav-open .menu-toggle__icon--close {
+  display: block;
 }
 
 .header__nav-list {
@@ -1305,43 +1321,79 @@ time.scroll-reveal {
   }
 }
 
-/* Mobile */
+/* Mobile — Figma mainstream_390 header · mainstream_390_menu (201:480) */
 @media (max-width: 768px) {
+  :root {
+    --header-h: 80px;
+  }
+
+  .header {
+    padding-inline: 16px;
+  }
+
+  .header__inner {
+    min-height: 80px;
+    padding-inline: 0;
+  }
+
+  .header__logo-img--pc {
+    display: none;
+  }
+
+  .header__logo-img--mo {
+    display: block;
+    width: 127px;
+    height: 80px;
+  }
+
   .menu-toggle {
     display: flex;
+    position: relative;
+    z-index: 1;
+  }
+
+  body.nav-open .header {
+    z-index: 102;
   }
 
   .header__nav {
     position: fixed;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    z-index: 99;
-    padding: 16px var(--layout-pad-x) 24px;
-    background: var(--color-white);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-120%);
+    inset: 0;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 26px 16px;
+    background: var(--color-menu-overlay);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s;
   }
 
   .header__nav.is-open {
-    transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .header__nav-list {
     flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+    max-width: 358px;
   }
 
   .header__nav-link {
-    min-height: 44px;
-    padding-block: 10px;
-    white-space: normal;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.46;
+    color: var(--color-white);
+    white-space: nowrap;
   }
 
   body.nav-open {
@@ -1349,49 +1401,560 @@ time.scroll-reveal {
   }
 
   .section--hero {
-    padding-block: clamp(32px, 8vw, 48px);
+    padding-top: 0;
+    padding-inline: 16px;
+    padding-bottom: 0;
   }
 
-  /* Figma 모바일 없음 — PC 1840:800 그대로면 KV 과소 → 세로 비율 + min-height */
+  /* Figma mainstream_390 section-hero 198:141 · KV 358×560 */
   .hero__kv {
-    aspect-ratio: 4 / 5;
-    min-height: clamp(400px, 115vw, 520px);
+    height: 560px;
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+
+  .hero__inner {
+    align-items: center;
+    justify-content: center;
+    padding: 36px 16px;
+  }
+
+  .hero__content {
+    align-items: center;
+    gap: 26px;
+    max-width: 326px;
+    text-align: center;
+  }
+
+  .hero__copy {
+    align-items: center;
+    gap: 26px;
+  }
+
+  .hero__headline {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero__label {
+    font-size: 15px;
+    line-height: 1.52;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    line-height: 1.49;
+    text-align: center;
+  }
+
+  .hero__desc {
+    font-size: 16px;
+    line-height: 1.49;
+    text-align: center;
+  }
+
+  .hero__nav {
+    display: none;
   }
 
   .hero__desc-br {
     display: none;
   }
 
+  /* Figma mainstream_390 section-story 198:154 */
+  .section--story {
+    padding: 60px 16px;
+  }
+
+  .section--story__inner {
+    gap: 42px;
+  }
+
+  .story__head {
+    gap: 12px;
+  }
+
+  .story__title {
+    font-size: 30px;
+    line-height: 1.46;
+  }
+
+  .story__desc {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  .story__list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2px;
+    margin-inline: -16px;
+    padding-inline: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .story__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-card {
+    flex: 0 0 340px;
+    width: 340px;
+    height: 480px;
+    aspect-ratio: auto;
+    scroll-snap-align: start;
+  }
+
+  .story-card__media {
+    aspect-ratio: auto;
+  }
+
+  .story-card__body {
+    gap: 10px;
+    padding: 36px 26px;
+  }
+
+  .story-card__title {
+    font-size: 26px;
+    line-height: 1.34;
+  }
+
+  .story-card__desc {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  /* Figma mainstream_390 section-stats 200:354 */
+  .section--stats {
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
+
+  .stats__blue {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    padding: 60px 16px 48px;
+    box-sizing: border-box;
+  }
+
+  .stats__top {
+    gap: 48px;
+    max-width: 358px;
+    margin-inline: auto;
+  }
+
+  .stats__head {
+    gap: 12px;
+  }
+
+  .stats__title {
+    font-size: 30px;
+    line-height: 1.46;
+  }
+
+  .stats__desc {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
   .stats__list {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    max-width: 358px;
   }
 
   .stats-item {
-    flex: none;
-    width: 100%;
-    min-width: 0;
+    flex: 0 0 50%;
+    width: 50%;
+    min-height: 132px;
+    padding: 26px 16px;
+    gap: 10px;
   }
 
-  .news__nav-btn {
-    width: 44px;
-    height: 44px;
+  .stats-item__value {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .stats-item__label {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  .stats__visual {
+    width: 100vw;
+    max-width: none;
+    margin-top: 0;
+    margin-inline: calc(50% - 50vw);
+    height: 594px;
+    aspect-ratio: auto;
+  }
+
+  /* Figma mainstream_390 section-news 198:194 */
+  .section--news {
+    padding: 60px 16px;
+  }
+
+  .news__inner {
+    gap: 42px;
+  }
+
+  .news__intro {
+    gap: 12px;
+  }
+
+  .news__head {
+    gap: 12px;
+  }
+
+  .news__title {
+    font-size: 30px;
+    line-height: 1.46;
+  }
+
+  .news__desc {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  .news__nav {
+    display: none;
+  }
+
+  .news__viewport {
+    overflow: visible;
+    touch-action: auto;
+  }
+
+  .news__list {
+    flex-direction: column;
+    gap: 26px;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .news-card {
+    flex: none;
+    width: 100%;
+  }
+
+  .news-card__link {
+    gap: 16px;
+  }
+
+  .news-card__media {
+    aspect-ratio: 358 / 462;
+  }
+
+  .news-card__body {
+    gap: 16px;
+    padding-inline: 16px;
+  }
+
+  .news-card__title {
+    font-size: 20px;
+    line-height: 1.34;
+  }
+
+  .news-card__date {
+    font-size: 16px;
+    line-height: 1.56;
+  }
+
+  /* Figma mainstream_390 section-works 198:231 */
+  .section--works {
+    padding: 60px 16px;
+  }
+
+  .works__inner {
+    gap: 42px;
+  }
+
+  .works__head {
+    gap: 18px;
+  }
+
+  .works__title {
+    font-size: 30px;
+    line-height: 1.46;
+  }
+
+  .works__desc {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  .works-gallery {
+    flex-direction: column;
+    height: auto;
+    gap: 2px;
   }
 
   .works-gallery__item,
   .works-gallery__item.is-active {
-    height: clamp(220px, 55vw, 360px);
+    flex: none;
+    width: 100%;
+    height: 450px;
   }
 
   .works-gallery__panel {
-    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    height: 100%;
+    min-height: 0;
+    padding: 32px 26px;
+    cursor: default;
+  }
+
+  .works-gallery__media::after {
+    opacity: 1;
+  }
+
+  .works-gallery__caption {
+    display: flex;
+    gap: 16px;
+  }
+
+  .works-gallery__name {
+    font-size: 26px;
+    line-height: 1.46;
+  }
+
+  .works-gallery__category {
+    font-size: 15px;
+    line-height: 1.56;
+  }
+
+  /* Figma mainstream_390 section-faq 198:245 · 1920 6문항 세로 */
+  .section--faq {
+    padding: 60px 16px;
+  }
+
+  .faq__inner {
+    gap: 42px;
+  }
+
+  .faq__title {
+    font-size: 30px;
+    line-height: 1.46;
+  }
+
+  .faq__grid {
+    gap: 1px;
+  }
+
+  .faq__row {
+    flex-direction: column;
+    height: auto;
+    gap: 1px;
+  }
+
+  .faq-card {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 330px;
+    padding: 32px 26px;
+    gap: 16px;
+    overflow: visible;
+  }
+
+  .faq-card__q {
+    font-size: 19px;
+    line-height: 1.64;
+  }
+
+  .faq-card__a {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  /* Figma mainstream_390 section-cta 198:300 · full-bleed */
+  .section--cta {
+    padding: 0;
+  }
+
+  .cta__panel {
+    min-height: 390px;
+    padding: 32px 26px;
+    gap: 31px;
+  }
+
+  .cta__title {
+    font-size: 27px;
+    line-height: 1.46;
+  }
+
+  .cta__btn {
+    min-height: 67px;
+    padding: 17px 33px;
+    font-size: 20px;
+    line-height: 1.64;
+  }
+
+  /* Figma mainstream_390 section-footer 198:306 */
+  .footer {
+    padding: 32px 16px;
+  }
+
+  .footer__inner {
+    gap: 46px;
   }
 
   .footer__brand {
-    align-items: stretch;
+    display: contents;
   }
 
-  .footer__family-wrap,
-  .footer__family {
+  .footer__logo {
+    order: 1;
+  }
+
+  .footer__logo img {
+    width: 100%;
+    height: 57px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .footer__content-row {
+    flex-direction: column;
+    align-items: stretch;
+    order: 2;
+    gap: 34px;
+  }
+
+  .footer__info {
+    gap: 36px;
+  }
+
+  .footer__text-group {
+    gap: 12px;
+  }
+
+  .footer__meta,
+  .footer__links,
+  .footer__copy {
+    font-size: 15px;
+    line-height: 1.56;
+  }
+
+  .footer__meta,
+  .footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer__sep {
+    display: none;
+  }
+
+  .footer__social {
+    align-self: flex-start;
+  }
+
+  .footer__social-link {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer__social-link img {
+    width: 25px;
+  }
+
+  .footer__social-link--instagram img {
+    width: 21px;
+  }
+
+  .footer__family-wrap {
+    order: 3;
     width: 100%;
   }
+
+  .footer__family {
+    width: 100%;
+    height: 49px;
+    gap: 75px;
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .footer__family-icon {
+    font-size: 16px;
+  }
+}
+
+/* Dev · GNB 검수 전용 (?preview=gnb) — 납품 HTML/CSS에 영향 없음 */
+html.preview-gnb #main,
+html.preview-gnb #footer {
+  display: none;
+}
+
+html.preview-gnb body {
+  min-height: 100dvh;
+  background: var(--color-white);
+}
+
+html.preview-gnb body::after {
+  content: "GNB 검수 모드";
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 50;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 0.35);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Dev · hero+story 검수 (?preview=hero-story) */
+html.preview-hero-story #main > :not(#hero):not(#story) {
+  display: none;
+}
+
+html.preview-hero-story #footer {
+  display: none;
+}
+
+html.preview-hero-story body::after {
+  content: "Hero · Story 검수 모드";
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 50;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 0.35);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Dev · stats+news 검수 (?preview=stats-news) */
+html.preview-stats-news #main > :not(#stats):not(#news) {
+  display: none;
+}
+
+html.preview-stats-news #footer {
+  display: none;
+}
+
+html.preview-stats-news body::after {
+  content: "Stats · News 검수 모드";
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 50;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 0.35);
+  transform: translateX(-50%);
+  pointer-events: none;
 }

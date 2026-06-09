@@ -1,5 +1,75 @@
 # Change Log
 
+## 2026-06-09 — [template] mainstream 모바일 works · faq · cta · footer
+
+**템플릿:** `mainstream` · Figma `198:231` · `198:245` · `198:300` · `198:306` · `@768`
+
+| 섹션 | Figma | 조치 |
+|------|-------|------|
+| stats blue | 390 풀폭 | `100vw` bleed 보정 |
+| works | 4칸 세로 450px · caption 항상 노출 | @768 · accordion off |
+| faq | 6문항 세로 · 330px · 19/18 | @768 (1920 카피) |
+| cta | 390 풀폭 · 27/20 · btn 67px | @768 |
+| footer | 로고→정보→SNS→패밀리 순 | @768 reorder |
+
+| 파일 | `css/style.css` · `js/main.js` · `preview.html` default 전체 |
+
+---
+
+## 2026-06-09 — [template] mainstream 모바일 stats · news (Figma mainstream_390)
+
+**템플릿:** `mainstream` · Figma `200:354` · `198:194` · `@768`
+
+| 섹션 | Figma | 조치 |
+|------|-------|------|
+| stats | 2×2 · 30/18 · value 32 · visual 594px | @768 CSS · overlap 제거 |
+| news | pad 60/16 · card 세로 3장 gap 26 · 20/16 | @768 CSS · nav 숨김 · 슬라이더 off |
+
+| 파일 | 내용 |
+|------|------|
+| `css/style.css` | stats · news @768 |
+| `js/main.js` | 모바일 news 슬라이더 skip · `preview=stats-news` |
+| `preview.html` | Stats+News 탭 · default |
+
+**카피·사진:** 1920 · `_dev-images` 유지
+
+---
+
+## 2026-06-09 — [template] mainstream 모바일 hero · story (Figma mainstream_390)
+
+**템플릿:** `mainstream` · Figma `198:141` · `198:154` · `@768`
+
+| 섹션 | Figma | 조치 |
+|------|-------|------|
+| hero | KV 560px · copy CENTER · 15/32/16 · pager 없음 | @768 CSS · pager 숨김 |
+| story | pad 60/16 · head 30/18 · card 340×480 가로 스크롤 gap 2 | @768 CSS |
+
+| 파일 | 내용 |
+|------|------|
+| `css/style.css` | hero · story @768 |
+| `js/main.js` | `?preview=hero-story` 검수 모드 |
+| `preview.html` | **고정 검수 URL** — 탭·390/전체 전환 (북마크용) |
+| `start.bat` | 기본 오픈 `preview.html` |
+
+**검수:** `http://127.0.0.1:8080/preview.html` (주소 고정 · 상단 탭으로 범위 변경)
+
+---
+
+## 2026-06-09 — [template] mainstream 모바일 GNB (Figma mainstream_390_menu)
+
+**템플릿:** `mainstream` · **섹션:** header / GNB · Figma `198:128` · `201:480`
+
+| 파일 | 내용 |
+|------|------|
+| `index.html` | mo 로고·menu/close PNG · nav close 버튼 |
+| `css/style.css` | @768 전체화면 오버레이 · 26/600 · gap 26 · header 80px |
+| `js/main.js` | open/close 통합 · close 버튼 |
+| `assets/images/` | header-logo-mo/menu/close.png |
+
+**기준:** 카피 1920 유지 · PC GNB 변경 없음
+
+---
+
 ## 2026-06-08 — [template] mainstream hero progress bar = 5초 타이머
 
 - progress bar: 슬라이드마다 **0→100% 5초** 채움 → 완료 시 다음 슬라이드 · loop

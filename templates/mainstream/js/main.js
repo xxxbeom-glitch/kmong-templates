@@ -1,3 +1,15 @@
+(function () {
+  var preview = new URLSearchParams(window.location.search).get("preview");
+
+  if (preview === "gnb") {
+    document.documentElement.classList.add("preview-gnb");
+  } else if (preview === "hero-story") {
+    document.documentElement.classList.add("preview-hero-story");
+  } else if (preview === "stats-news") {
+    document.documentElement.classList.add("preview-stats-news");
+  }
+})();
+
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
@@ -6,36 +18,68 @@ window.addEventListener("pageshow", function () {
   window.scrollTo(0, 0);
 });
 
-$(function () {
-  $("html").addClass("js");
-
-  initPlaceholders();
-  initScrollReveal();
-  initHeroProgressSlider();
-  initWorksGallery();
-  initStatsCounter();
-  initNewsSlider();
-
+function initMobileNav() {
   var $nav = $(".header__nav");
   var $toggle = $(".menu-toggle");
 
-  $toggle.on("click", function () {
-    var isOpen = $nav.toggleClass("is-open").hasClass("is-open");
+  function setMobileNavOpen(isOpen) {
+    $nav.toggleClass("is-open", isOpen);
     $toggle.attr("aria-expanded", isOpen);
     $toggle.attr("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
     $("body").toggleClass("nav-open", isOpen);
+  }
+
+  $toggle.on("click", function () {
+    setMobileNavOpen(!$nav.hasClass("is-open"));
   });
 
   $(".header__nav-link").on("click", function () {
     if (window.matchMedia("(max-width: 768px)").matches) {
-      $nav.removeClass("is-open");
-      $toggle.attr("aria-expanded", "false");
-      $toggle.attr("aria-label", "메뉴 열기");
-      $("body").removeClass("nav-open");
+      setMobileNavOpen(false);
     }
   });
+}
+
+$(function () {
+  $("html").addClass("js");
+
+  var isGnbPreview = $("html").hasClass("preview-gnb");
+  var isHeroStoryPreview = $("html").hasClass("preview-hero-story");
+  var isStatsNewsPreview = $("html").hasClass("preview-stats-news");
+  var isSectionPreview = isGnbPreview || isHeroStoryPreview || isStatsNewsPreview;
+
+  if (!isGnbPreview) {
+    initPlaceholders();
+    initScrollReveal();
+
+    if (!isHeroStoryPreview && !isStatsNewsPreview) {
+      initHeroProgressSlider();
+    }
+
+    if (!isHeroStoryPreview && !isStatsNewsPreview) {
+      initWorksGallery();
+    }
+
+    if (!isHeroStoryPreview) {
+      initStatsCounter();
+    }
+
+    if (!isHeroStoryPreview && !isStatsNewsPreview) {
+      initNewsSlider();
+    }
+  }
+
+  initMobileNav();
+
+  if (isSectionPreview) {
+    return;
+  }
 
   $(".works-gallery__panel").on("click", function () {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      return;
+    }
+
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       return;
     }
@@ -453,6 +497,10 @@ function initHeroProgressSlider() {
 }
 
 function initNewsSlider() {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    return;
+  }
+
   var $section = $("#news");
 
   if (!$section.length) {

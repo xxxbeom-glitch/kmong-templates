@@ -6,4 +6,4 @@ if not exist "templates\mainstream\_dev-images" (
 )
 
 cd templates\mainstream
-npx live-server --open=index.html --port=8080
+npx live-server --host=0.0.0.0 --open=preview.html --port=8080
