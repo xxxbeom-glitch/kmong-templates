@@ -30,8 +30,11 @@
 
 - **기준:** Figma desktop 1920px
 - **breakpoint:** 1024px(태블릿) · 768px(모바일) — 섹션 구현 시 함께 반영
-- **768px 이하:** 가로 배치 → 세로 스택 · hover-only UI 대체·비활성화
+- **768px 이하:** 가로 배치 → 세로 스택 · hover-only UI 대체·비활성화 · hover는 `(hover: hover) and (pointer: fine)` **내부만**
+- **모바일 높이:** `100vh` 단독 금지 · hero `100svh` · 메뉴/모달/오버레이 `100dvh` · 하단 고정 UI `safe-area-inset-bottom`
+- **form:** 모바일 input/select/textarea **≥16px**
 - **QA 뷰포트:** 1920 · 1440 · 1024 · 768 · 390px — overflow·줄바꿈·aspect-ratio·터치 영역(≥44px)
+- **실브라우저 QA (납품·페이지):** iPhone Safari · iPhone Chrome · Android Chrome · KakaoTalk 인앱 — `_docs/qa-checklist.md` §3-1
 
 ## Context Engineering
 

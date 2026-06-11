@@ -14,6 +14,7 @@ globs:
 - 해당 섹션만 Figma 대조
 - PC / 1024 / 768 반응형 확인 (`35-responsive.mdc` · QA 뷰포트 1920·1440·1024·768·390)
 - 해당 섹션 인터랙션 확인 (해당 시)
+- hero·GNB·form·하단 고정 UI 해당 섹션 — **모바일 높이·safe-area·input 16px** (`35-responsive.mdc`)
 - **PASS 후에만** 다음 섹션 착수 (`20-harness-workflow.mdc`)
 
 아래 Figma·HTML/CSS·기능 항목은 **섹션 구현 중 해당 섹션 범위**로 적용한다.
@@ -23,6 +24,7 @@ globs:
 - 전 섹션 완료 후 전체 스크롤 흐름 확인
 - 섹션 간 간격 확인
 - GNB / 앵커 / 링크 확인
+- **실브라우저 QA 4종** (`35-responsive.mdc` · 아래 「모바일 실브라우저 QA」)
 - 납품·삽입 기준 확인 (`60-delivery.mdc`)
 
 ## Figma 대조
@@ -57,9 +59,34 @@ globs:
 - [ ] clamp 수치 또는 승인된 하드코딩
 - [ ] `@media 1024px` · `@media 768px` 반영 · 인라인 스타일 없음
 - [ ] QA 뷰포트 1920·1440·1024·768·390 — overflow·줄바꿈·aspect-ratio·터치 영역(≥44px)
+- [ ] **768px 이하** full-screen 높이 — `100vh` 단독 없음 · hero `100svh` · 메뉴/모달/오버레이 `100dvh` (`35-responsive.mdc`)
+- [ ] 하단 고정 CTA·floating·quick menu — `env(safe-area-inset-bottom)` 반영
+- [ ] form `input`/`select`/`textarea` — 모바일 **font-size ≥ 16px**
+- [ ] hover 스타일 — **`@media (hover: hover) and (pointer: fine)` 내부만**
+- [ ] 모바일 텍스트 블록 — 고정 height 지양 · `line-height`·`word-break: keep-all` 적절
+
+## 모바일 실브라우저 QA (페이지·납품 QA 필수)
+
+> DevTools 리사이즈만으로 모바일 PASS **금지** · 규칙: `35-responsive.mdc`
+
+| 환경 | PASS 조건 |
+|------|-----------|
+| **iPhone Safari** | 아래 공통 6항 |
+| **iPhone Chrome** | 아래 공통 6항 |
+| **Android Chrome** | 아래 공통 6항 |
+| **KakaoTalk 인앱브라우저** | 아래 공통 6항 + 인앱 하단 UI 가림 없음 |
+
+**공통 6항:**
+
+- [ ] **hero / first-view 높이** — 주소창·하단 바 변동 시 잘림·과도한 빈 여백 없음
+- [ ] **하단 고정 CTA** — 홈 인디케이터·인앱 바에 가려지지 않음
+- [ ] **모바일 메뉴 / 모달** — `100dvh` 기준 높이 · 내부 스크롤 정상
+- [ ] **input 터치** — 포커스 시 **화면 자동 확대 없음** (16px 이상)
+- [ ] **hover 잔상 없음** — 터치 후 hover 스타일이 남지 않음
+- [ ] **한글 줄바꿈·텍스트 잘림** — iOS/Android 렌더링 차이로 잘리지 않음
 
 ## 기능 (해당 시)
-- [ ] GNB 햄버거 · FAQ · 캐러셀 · AOS · CTA hover
+- [ ] GNB 햄버거 · FAQ · 캐러셀 · AOS · CTA hover (fine pointer만)
 - [ ] **Interaction preset** — 적용 ID = 사용자 승인 목록 · 섹션당 상한 · 중복 animation 없음 (`46-interaction-presets.mdc`)
 - [ ] 링크·GNB `is-active` 페이지별 정확
 
@@ -70,6 +97,7 @@ globs:
 
 → **전 항목 PASS** = QA PASS. 하나라도 FAIL이면 완료 처리 금지.
 → 결과를 `_logs/qa-log.md`에 **섹션별 1건** 기록 (미기록 = QA 미완료).
+→ 페이지·납품 QA 시 **실브라우저 4종** 결과를 qa-log 비고에 기록.
 
 적용 기준:
 - 섹션·페이지 구현 직후, 납품 전, 사용자가 QA 요청 시.
@@ -77,6 +105,7 @@ globs:
 금지:
 - 체크리스트 생략 후 "완료" 보고
 - FAIL 항목을 승인 없이 무시
+- 실브라우저 QA 없이 모바일·납품 PASS 선언
 
 완료 기준:
-- 위 항목 전부 PASS + `qa-log.md` 기록 완료.
+- 위 항목 전부 PASS + `qa-log.md` 기록 완료 + (납품 시) 실브라우저 4종 PASS.

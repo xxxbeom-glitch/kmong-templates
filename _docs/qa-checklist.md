@@ -24,7 +24,7 @@
 |------|------|
 | 1 | N섹션 구현 (한 번에) |
 | 2 | **섹션 QA × N** — faq, cta, … 각각 §2~§4 · **qa-log N건** |
-| 3 | **페이지 통합 QA** 1회 — 섹션 경계·스크롤·GNB |
+| 3 | **페이지 통합 QA** 1회 — 섹션 경계·스크롤·GNB · **§3-1 실브라우저 4종** |
 | 4 | 사용자 PASS |
 
 ---
@@ -82,8 +82,35 @@
 - [ ] 텍스트 줄바꿈·이미지 aspect-ratio 유지
 - [ ] 768px 이하 버튼·링크 터치 영역 **≥44×44px**
 - [ ] hover-only UI → 터치 환경 대체·비활성화
+- [ ] hover 스타일 → **`@media (hover: hover) and (pointer: fine)` 내부만** (미디어쿼리 밖 `:hover` 금지)
+- [ ] **768px 이하 full-screen 높이** — `height`/`min-height`/`max-height: 100vh` **단독 금지**
+- [ ] hero · first-view → **`min-height: 100svh`** (fallback 허용, vh 단독 금지)
+- [ ] 모바일 메뉴 · 모달 · 전체화면 오버레이 → **`height` 또는 `min-height: 100dvh`**
+- [ ] 하단 고정 CTA · floating · quick menu → **`env(safe-area-inset-bottom)`** (`viewport-fit=cover` 해당 시)
+- [ ] `input` / `select` / `textarea` — 모바일 **font-size ≥ 16px** (자동 확대 방지)
+- [ ] 모바일 텍스트 블록 — **고정 height 지양** · `min-height`/`auto` · 충분한 `line-height` · `word-break: keep-all` 검토
 - [ ] clamp min으로 모바일 가독성 확보
 - [ ] 인라인 `style=""` 없음
+
+### 3-1. 모바일 실브라우저 QA (페이지·납품 QA 필수)
+
+> DevTools 뷰포트만으로 모바일 PASS **금지** · `35-responsive.mdc` · `50-qa-checklist.mdc`
+
+| 환경 | 확인 |
+|------|------|
+| **iPhone Safari** | 공통 6항 |
+| **iPhone Chrome** | 공통 6항 |
+| **Android Chrome** | 공통 6항 |
+| **KakaoTalk 인앱브라우저** | 공통 6항 + 인앱 하단 UI |
+
+**공통 6항:**
+
+- [ ] hero / first-view 높이 (주소창·하단 바 변동 시 잘림·빈 여백 없음)
+- [ ] 하단 고정 CTA가 홈 인디케이터·인앱 바에 **가려지지 않음**
+- [ ] 모바일 메뉴 / 모달 높이·**내부 스크롤** 정상
+- [ ] input 터치 시 **화면 자동 확대 없음**
+- [ ] 터치 후 **hover 효과 잔상 없음**
+- [ ] **한글 줄바꿈·텍스트 잘림** 없음 (iOS/Android 렌더링 차이 확인)
 
 ---
 
@@ -119,7 +146,7 @@
 
 ## 7. Git commit 전 QA
 
-- [ ] 위 1~5 해당 항목 PASS
+- [ ] 위 1~5 해당 항목 PASS (납품·페이지 QA 시 **§3-1 실브라우저 4종** 포함)
 - [ ] §6 로그 기록 완료
 - [ ] `git status` — 요청 범위 밖 변경 파일 없음
 - [ ] 미요청 템플릿·파일 미수정
