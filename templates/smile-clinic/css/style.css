@@ -622,7 +622,7 @@ p.scroll-reveal {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("../assets/images/section_strangth.png") center / cover no-repeat;
+  background: url("../assets/images/section_strength_bg.png") center / cover no-repeat;
   transform: scale(1);
   transform-origin: center center;
   transition: transform 0.45s ease;
