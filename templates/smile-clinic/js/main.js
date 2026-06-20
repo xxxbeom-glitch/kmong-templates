@@ -167,7 +167,7 @@
   function initSignatureSlider() {
     var $root = $("[data-signature-slider]");
 
-    if (!$root.length) {
+    if (!$root.length || $("body.page-mobile").length) {
       return;
     }
 

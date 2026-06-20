@@ -1,0 +1,632 @@
+/* Smile Clinic — mobile @390 baseline (CONFIRMED 2026-06-09 · user PASS)
+   Source: Figma 37:2249 · decision-log § smile-clinic 모바일 기준값
+   Preview: index-mobile.html → merge to style.css @768 per section after PASS */
+
+.page-mobile {
+  --side-padding: 20px;
+  --header-height: 64px;
+  --container-max: 100%;
+  --section-padding-y: 64px;
+  --section-head-gap: 32px;
+  --signature-card-w: 272px;
+  --signature-card-gap: 12px;
+  --strength-slide-w: calc((100vw - var(--side-padding)) * 0.8);
+  --strength-slide-gap: 12px;
+  --surface-card-pad-y: 24px;
+  --surface-card-pad-x: 20px;
+
+  /* PC @1920 → mobile (37:2249) */
+  --mo-scale-display: 0.75;
+  --mo-scale-heading: 0.825;
+  --mo-font-min-body: 16px;
+  --mo-fs-display: 35px; /* 46 × 0.75 */
+  --mo-fs-heading: 25px; /* 30 × 0.825 */
+  --mo-fs-body: 16px; /* 20 → floor */
+  --mo-fs-body-lg: 16px; /* 22 → floor */
+  --mo-fs-ui: 16px; /* 18 → floor */
+  --mo-fs-label: 15px; /* PC 17 - 2px · eyebrow */
+  --mo-fs-caption: 13px; /* PC 14 - 1px · step badge */
+  --mo-lh-display: 1.42;
+  --mo-lh-body: 1.58;
+  --mo-lh-heading: 1.35;
+  --mo-lh-body-lg: 1.45;
+}
+
+/* Touch — hide system tap highlight / default press flash */
+.page-mobile,
+.page-mobile * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-mobile a:focus:not(:focus-visible),
+.page-mobile button:focus:not(:focus-visible),
+.page-mobile [role="button"]:focus:not(:focus-visible),
+.page-mobile [tabindex]:not([tabindex="-1"]):focus:not(:focus-visible) {
+  outline: none;
+}
+
+.page-mobile .section-shell {
+  max-width: 100%;
+}
+
+.page-mobile .section-shell--gutter {
+  max-width: 100%;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+.page-mobile .section-label {
+  font-size: var(--mo-fs-label);
+}
+
+/* Header — bg only fix: @768 wrap/pad override (content size unchanged) */
+.page-mobile .header {
+  height: var(--header-height);
+}
+
+.page-mobile .header__inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  flex-wrap: nowrap;
+}
+
+.page-mobile .header__logo img {
+  width: 154px;
+}
+
+.page-mobile .header__nav-group {
+  display: none;
+}
+
+.page-mobile .header__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  color: var(--color-white);
+}
+
+.page-mobile .header__menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.page-mobile .header__menu-icon--close {
+  display: none;
+}
+
+.page-mobile .header__menu-btn.is-active .header__menu-icon--open {
+  display: none;
+}
+
+.page-mobile .header__menu-btn.is-active .header__menu-icon--close {
+  display: block;
+}
+
+.page-mobile .header__menu-btn.is-active {
+  color: var(--color-white);
+}
+
+/* Mobile nav — full-page overlay */
+.page-mobile .mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: calc(var(--header-height) + 24px) var(--side-padding) 32px;
+  background: var(--color-header-bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.page-mobile .mobile-nav.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.page-mobile .mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.page-mobile .mobile-nav__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.page-mobile .mobile-nav__link {
+  display: block;
+  padding: 18px 0;
+  font-size: var(--mo-fs-nav);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.page-mobile .mobile-nav__link--trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.page-mobile .mobile-nav__chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s ease;
+}
+
+.page-mobile .mobile-nav__item--has-sub.is-sub-open .mobile-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.page-mobile .mobile-nav__item--has-sub .mobile-nav__sub-list {
+  display: none;
+}
+
+.page-mobile .mobile-nav__item--has-sub.is-sub-open .mobile-nav__sub-list {
+  display: flex;
+}
+
+.page-mobile .mobile-nav__sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 18px 12px;
+}
+
+.page-mobile .mobile-nav__sub-link {
+  font-size: var(--mo-font-min-body);
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.page-mobile .mobile-nav__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: var(--color-white);
+  font-size: var(--mo-fs-ui);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-header-bg);
+}
+
+.page-mobile.is-nav-open {
+  overflow: hidden;
+}
+
+.page-mobile.is-nav-open .header {
+  background: var(--color-header-bg);
+}
+
+.page-mobile .header.is-solid {
+  background: var(--color-header-bg);
+}
+
+/* Hero — mobile variation (contained height · bottom scrim · full-width CTA) */
+.page-mobile .hero.hero--mobile {
+  min-height: 560px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(38, 34, 32, 0.06) 0%,
+      rgba(38, 34, 32, 0.12) 38%,
+      rgba(38, 34, 32, 0.52) 72%,
+      rgba(38, 34, 32, 0.74) 100%
+    ),
+    url("../assets/images/section_hero_bg.png") 62% 28% / cover no-repeat;
+}
+
+.page-mobile .hero--mobile .hero__inner {
+  align-items: flex-end;
+  min-height: 560px;
+  padding-top: calc(var(--header-height) + 32px);
+  padding-bottom: 48px;
+}
+
+.page-mobile .hero--mobile .hero__content {
+  width: 100%;
+  max-width: none;
+}
+
+.page-mobile .hero--mobile .hero__title {
+  font-size: var(--mo-fs-display);
+  font-weight: 400;
+  line-height: var(--mo-lh-display);
+}
+
+.page-mobile .hero--mobile .hero__desc {
+  margin-top: 16px;
+  max-width: none;
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+  color: var(--color-white);
+}
+
+.page-mobile .hero--mobile .hero__btn {
+  display: inline-flex;
+  justify-content: flex-start;
+  gap: 6px;
+  width: auto;
+  min-height: 0;
+  margin-top: 32px;
+  padding: 16px 28px;
+  border: 1px solid var(--color-white);
+  background: transparent;
+  backdrop-filter: none;
+  font-size: var(--mo-fs-ui);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.page-mobile .hero--mobile .hero__btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Signature — mobile variation (stacked head · 1-card peek slider · full-width more) */
+.page-mobile .signature.signature--mobile {
+  padding: var(--section-padding-y) 0;
+}
+
+.page-mobile .signature--mobile .signature__head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.page-mobile .signature--mobile .signature__nav {
+  align-self: flex-start;
+}
+
+.page-mobile .signature--mobile .section-title {
+  font-size: var(--mo-fs-display);
+  line-height: var(--mo-lh-display);
+}
+
+.page-mobile .signature--mobile .section-desc {
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .signature--mobile .signature__slider-outer {
+  padding-bottom: 28px;
+}
+
+.page-mobile .signature--mobile .signature__viewport {
+  overflow: hidden;
+  padding-left: var(--side-padding);
+  padding-right: 0;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.page-mobile .signature--mobile .signature__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.page-mobile .signature--mobile .signature__track {
+  backface-visibility: hidden;
+}
+
+.page-mobile .signature--mobile .signature-card {
+  height: 380px;
+}
+
+.page-mobile .signature--mobile .signature-card__title {
+  font-size: var(--mo-fs-heading);
+  line-height: var(--mo-lh-heading);
+}
+
+.page-mobile .signature--mobile .signature-card__desc {
+  font-size: var(--mo-fs-body-lg);
+  line-height: var(--mo-lh-body-lg);
+}
+
+.page-mobile .signature--mobile .signature__inner--foot {
+  margin-top: 8px;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+.page-mobile .signature--mobile .signature__more {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 18px 24px;
+  font-size: var(--mo-fs-ui);
+  font-weight: 600;
+}
+
+/* Strength — mobile swipe slider (80% slide · next peek · no arrows) */
+.page-mobile .strength.strength--mobile {
+  padding: var(--section-padding-y) 0;
+}
+
+.page-mobile .strength--mobile .section-title {
+  font-size: var(--mo-fs-display);
+  line-height: var(--mo-lh-display);
+}
+
+.page-mobile .strength--mobile .section-desc {
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .strength--mobile .strength-feature__slider-outer {
+  padding-bottom: 0;
+}
+
+.page-mobile .strength--mobile .strength-feature__viewport {
+  overflow: hidden;
+  width: 100%;
+  padding-left: var(--side-padding);
+  padding-right: 0;
+  box-sizing: border-box;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.page-mobile .strength--mobile .strength-feature__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.page-mobile .strength--mobile .strength-feature__track {
+  display: flex;
+  gap: var(--strength-slide-gap);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.page-mobile .strength--mobile .strength-feature__panel {
+  flex: 0 0 var(--strength-slide-w);
+  width: var(--strength-slide-w);
+  min-height: 400px;
+  border-radius: var(--radius-card);
+}
+
+.page-mobile .strength--mobile .strength-feature__row {
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 32px 20px;
+}
+
+.page-mobile .strength--mobile .strength-feature__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.page-mobile .strength--mobile .strength-feature__title {
+  font-size: var(--mo-fs-heading);
+  line-height: var(--mo-lh-heading);
+  text-align: center;
+}
+
+.page-mobile .strength--mobile .strength-feature__desc {
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+  text-align: center;
+}
+
+/* Process — mobile variation (stacked intro · step cards) */
+.page-mobile .process.process--mobile {
+  padding: var(--section-padding-y) 0;
+}
+
+.page-mobile .process--mobile .process__layout {
+  flex-direction: column;
+  gap: 32px;
+}
+
+.page-mobile .process--mobile .process__intro {
+  flex: none;
+  width: 100%;
+}
+
+.page-mobile .process--mobile .section-title {
+  font-size: var(--mo-fs-display);
+  line-height: var(--mo-lh-display);
+}
+
+.page-mobile .process--mobile .section-desc {
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .process--mobile .process__steps {
+  gap: 16px;
+}
+
+.page-mobile .process--mobile .process-step {
+  border-radius: var(--radius-card);
+}
+
+.page-mobile .process--mobile .process-step__label span {
+  height: 28px;
+  padding: 0 10px;
+  font-size: var(--mo-fs-caption);
+}
+
+.page-mobile .process--mobile .process-step__title {
+  margin-top: 8px;
+  font-size: var(--mo-fs-heading);
+  line-height: var(--mo-lh-heading);
+}
+
+.page-mobile .process--mobile .process-step__desc {
+  margin-top: 8px;
+  font-size: var(--mo-fs-body-lg);
+  line-height: var(--mo-lh-body-lg);
+}
+
+/* Reservation — mobile variation (full-bleed panel · gutter content) */
+.page-mobile .reservation.reservation--mobile {
+  padding: 0;
+  background: transparent;
+}
+
+.page-mobile .reservation--mobile .reservation__panel {
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+  padding: 48px 0;
+  border-radius: 0;
+}
+
+.page-mobile .reservation--mobile .reservation__inner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.page-mobile .reservation--mobile .reservation__content {
+  gap: 28px;
+}
+
+.page-mobile .reservation--mobile .reservation__copy {
+  gap: 8px;
+}
+
+.page-mobile .reservation--mobile .section-title {
+  font-size: var(--mo-fs-display);
+  line-height: var(--mo-lh-display);
+}
+
+.page-mobile .reservation--mobile .section-desc {
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .reservation--mobile .reservation__actions {
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+
+.page-mobile .reservation--mobile .reservation__btn {
+  flex: none;
+  width: 100%;
+  min-height: 52px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-size: var(--mo-fs-ui);
+  font-weight: 700;
+}
+
+.page-mobile .reservation--mobile .reservation__btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer — mobile variation (stacked cols · mo typography) */
+.page-mobile .footer.footer--mobile {
+  padding: var(--section-padding-y) 0;
+}
+
+.page-mobile .footer--mobile .footer__info {
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 40px;
+}
+
+.page-mobile .footer--mobile .footer__info-left {
+  flex-direction: column;
+  gap: 32px;
+  max-width: none;
+}
+
+.page-mobile .footer--mobile .footer__col--location,
+.page-mobile .footer--mobile .footer__col--phone,
+.page-mobile .footer--mobile .footer__col--hours {
+  width: 100%;
+  margin-left: 0;
+}
+
+.page-mobile .footer--mobile .footer__heading {
+  font-size: var(--mo-fs-body);
+  font-weight: 700;
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .footer--mobile .footer__text {
+  margin-top: 10px;
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .footer--mobile .footer__map-btn {
+  margin-top: 12px;
+  font-size: var(--mo-fs-caption);
+}
+
+.page-mobile .footer--mobile .footer__phone {
+  margin-top: 8px;
+  font-size: var(--mo-fs-display);
+  line-height: var(--mo-lh-display);
+}
+
+.page-mobile .footer--mobile .footer__hours {
+  margin-top: 10px;
+}
+
+.page-mobile .footer--mobile .footer__hours-row,
+.page-mobile .footer--mobile .footer__hours-note {
+  font-size: var(--mo-fs-body);
+  line-height: var(--mo-lh-body);
+}
+
+.page-mobile .footer--mobile .footer__hours-note {
+  margin-top: 12px;
+}
+
+.page-mobile .footer--mobile .footer__bottom {
+  padding-top: 40px;
+}
+
+.page-mobile .footer--mobile .footer__logo img {
+  width: 154px;
+}
+
+.page-mobile .footer--mobile .footer__links {
+  gap: 12px 20px;
+  margin-top: 32px;
+  font-size: var(--mo-fs-body);
+}
+
+.page-mobile .footer--mobile .footer__legal {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.page-mobile .footer--mobile .footer__legal-text,
+.page-mobile .footer--mobile .footer__copyright {
+  font-size: var(--mo-fs-caption);
+  line-height: 1.5;
+}

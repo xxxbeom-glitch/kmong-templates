@@ -137,6 +137,8 @@ CSS  = clamp(min_px, {vw}vw, figma_px)
 
 1920 · 1440 · 1024 · 768 · 390px — 레이아웃 깨짐 · overflow · 줄바꿈 · aspect-ratio · 터치 영역
 
+**Wrap 내 정렬:** shell·gutter PASS만으로 끝내지 않음 — `_docs/qa-checklist.md` **§2-2** · `figure` UA margin reset · @1920 형제 edge 캡처
+
 ---
 
 ## 구현 순서

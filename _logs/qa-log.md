@@ -1,5 +1,22 @@
 # QA Log
 
+## 2026-06-09 — smile-clinic 모바일 header · hero · signature
+
+**템플릿:** `smile-clinic` · **파일:** `index-mobile.html` · `css/mobile.css`  
+**검수:** 사용자 PASS (타이포 가이드 `37:2249` 적용본)  
+**결과:** **PASS**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | header drawer · 햄버거 | PASS |
+| 2 | hero 560px · 타이포 `--mo-fs-*` | PASS |
+| 3 | signature head · slider · more | PASS |
+| 4 | 타이포 기준값 decision-log 확정 | PASS |
+
+**다음:** strength 이후 섹션 동일 `--mo-*` 기준으로 `index-mobile.html` 추가 → PASS 후 `@768` 이식
+
+---
+
 ## 2026-06-08 — smile-clinic preset `scroll-reveal`
 
 **템플릿:** `smile-clinic` · **섹션:** hero · signature · strength · process · reservation  

@@ -59,6 +59,17 @@
 - [ ] Auto Layout gap → CSS (**itemSpacing + bbox 실측**)
 - [ ] 추측 수치 없음 (승인된 하드코딩 제외)
 
+### 2-2. Wrap 내 DOM · box-model QA (필수)
+
+> 규칙: `50-qa-checklist.mdc` 「Wrap 내 DOM · box-model QA」 · `40-template-code-style.mdc` 「Wrap 안 시맨틱 요소」
+
+- [ ] MCP **Wrap children** — content frame 안 이미지·본문·열 **x·w** 나란히 기록·대조
+- [ ] HTML wrap 안 **태그별** box-model (`figure` · `blockquote` · grid · `p`)
+- [ ] `figure` / `blockquote` — **`margin-inline: 0`** · **`width: 100%`**
+- [ ] @1920 **형제 edge 정렬** — 이미지 vs 텍스트 좌·우 끝 **캡처 또는 DevTools** 확인
+- [ ] 사진+리드+2단 등 **콘텐츠 묶음** 단위 PASS (typography만 PASS **금지**)
+- [ ] qa-log 비고에 wrap 자식 edge 확인 1줄
+
 ### 2-1. Fluid scale QA (필수)
 
 > 규칙: `30-figma-to-code.mdc` 「Fluid scale」 · 체크: `50-qa-checklist.mdc`

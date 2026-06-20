@@ -27,6 +27,23 @@ globs:
 - BEM: `{block}__{element}`, `{block}--{modifier}`, 상태 `.is-active` `.is-open`
 - **full-bleed band:** `.is-bleed-x` + band 내부만 gutter · 자식 `width:100%` (`30-figma-to-code.mdc` 「Section shell · full-bleed」)
 
+### Wrap 안 시맨틱 요소 (content block)
+
+- **`.section-shell` (또는 content wrap) 안**에 `figure` · `blockquote` · `ul`/`ol` · `dl` 사용 시 — **UA margin reset 필수**
+- **패턴 (템플릿 `style.css`):**
+
+```css
+/* content wrap 안 figure — 좌우 UA margin(≈40px) 제거 */
+.section-shell figure,
+.sub-section figure {
+  margin-inline: 0;
+  width: 100%;
+}
+```
+
+- `figure`만 `margin-bottom` 등 **블록 간격**은 Figma bbox gap 토큰으로 **별도 지정** (예: `.sub-about__figure { margin: 0 0 78px; }`)
+- wrap 안 형제(이미지·텍스트·grid)는 **부모 max-width만 맞추고 PASS 처리 금지** — `50-qa-checklist.mdc` 「Wrap 내 DOM · box-model QA」
+
 ## CSS
 
 - 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃·**head gap** 변수)

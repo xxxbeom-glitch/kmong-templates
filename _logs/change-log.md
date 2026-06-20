@@ -1,6 +1,99 @@
 # Change Log
 
-## 2026-06-09 — cross-template: MCP JSON Section BG 분석 규칙
+## 2026-06-09 — [template] smile-clinic 모바일 footer · reservation 풀 bleed
+
+**footer:** `index-mobile.html` · stacked cols · `--mo-*` · logo 154px  
+**reservation:** card → full-bleed panel
+
+---
+
+**파일:** `index-mobile.html` · `css/mobile.css` · panel min-h 420 · full-width CTA ×2 · `--mo-*` 타이포
+
+---
+
+**파일:** `index-mobile.html` · `css/mobile.css` · intro stack · step cards · `--mo-fs-caption` 13px
+
+---
+
+**파일:** `index-mobile.html` · `css/mobile.css` · `--mo-*` 기준 · panel 400px · card radius · nav hidden
+
+---
+
+**타이포:** Figma `37:2249` → `mobile.css` `--mo-fs-*` · **레이아웃:** header/hero/signature 1차 PASS  
+**기록:** `decision-log.md` · `qa-log.md` · 이후 섹션·`@768` 동일 변수 사용
+
+---
+
+## 2026-06-09 — [template] smile-clinic mobile.css 타이포 가이드 적용 (header · hero · signature)
+
+**Figma `37:2249`:** display ×0.75 · heading ×0.825 · body min 16px → `--mo-fs-*` 변수 · header nav/hero/signature/card/more 일괄 반영
+
+---
+
+**방식:** `index-mobile.html` + `css/mobile.css` + `js/mobile.js` — PC `style.css` `@768` 미수정
+
+**Figma:** PC `13:436` 스케일(타이포 가이드 `37:2249`: title ×0.75→32px · body 16px) · 캔버스 `37:2251`(390px)은 레퍼런스 프레임(내용 비어 있음) — PC 카피·에셋 기준 1차 구현
+
+| 항목 | 1차 값 |
+|------|--------|
+| 헤더 | h 64 · logo 154px · 햄버거 · drawer nav |
+| 히어로 | min-h 640 · pad-bottom 64 · title 32 · desc 16 · btn 16/16×28 |
+
+**확인:** `index-mobile.html` @390px · 말씀 주시는 대로 수정 예정
+
+---
+
+## 2026-06-09 — [template] smile-clinic about-place Figma 재동기화
+
+**Figma:** `84:202` · 갤러리 이미지 r=0(기존 `--radius-card` 제거) · 캡션 lh 29.2px · card figure `margin:0`
+
+**검증 PASS:** hero→본문 86px · head→갤러리 120px · grid gap 36/10 · img→캡션 16 · col 473.33 · 본문→footer 120px
+
+---
+
+## 2026-06-09 — [template] smile-clinic about-team Figma 재동기화
+
+**Figma:** `81:106` · card gap 50 · body 778px · pad-top 101 · headline Gowun · lh/간격 bbox · creds `#1f1b18` gap 3
+
+---
+
+## 2026-06-09 — cross-template: Wrap 내 DOM · box-model QA 규칙
+
+**배경:** smile-clinic intro — shell 1440 PASS인데 `<figure>` UA margin으로 이미지만 좁음 · 여러 차례 QA 누락
+
+| 파일 | 조치 |
+|------|------|
+| `50-qa-checklist.mdc` · `_docs/qa-checklist.md` §2-2 | Wrap children · figure reset · edge 정렬 · 콘텐츠 묶음 QA 5항 |
+| `30-figma-to-code.mdc` | MCP 보고 `Wrap children` x/w 필수 |
+| `20-harness-workflow.mdc` | 섹션 QA에 box-model 단계 · Figma 보고 Wrap children |
+| `40-template-code-style.mdc` | `.section-shell` / `.sub-section figure` reset 패턴 |
+| `_logs/failure-log.md` | figure UA margin 재발 방지 |
+| `templates/smile-clinic/css/style.css` | `.sub-section figure { margin-inline:0; width:100% }` |
+
+---
+
+## 2026-06-09 — [template] smile-clinic 서브 QA · Figma 수치 보정
+
+**수정:** 탭 pill gap 46 · pad 102 · 비활성 탭 색 `#1f1b18` · intro 사진→리드 78px · 2단 gap 49px · place 헤드→갤러리 120px · team `<br>` 줄바꿈
+
+---
+
+## 2026-06-09 — [template] smile-clinic 서브 3페이지 구현 · 에셋 매칭
+
+**템플릿:** `smile-clinic` · Figma `1:223` · `81:106` · `84:202`
+
+| 페이지 | 파일 | 에셋 매칭 |
+|--------|------|-----------|
+| 병원소개 | `about-intro.html` | hero `sub_header_bg.png` · 본문 `sub_philosophy_card.jpg` |
+| 의료진 | `about-team.html` | hero `sub_header_bg.png` · 안정윤 `sub_doctor_2.png` · 홍서윤 `sub_doctor_1.png` |
+| 둘러보기 | `about-place.html` | hero `sub_header_bg.png` · `83-5` 라운지 · `83-4` 진료실A · `83-3` 진료실B · `83-2` 상담실 · `83-1` 시술실 · `83` 회복실 |
+
+| CSS | `.sub-hero` · `.sub-about` · `.sub-team` · `.sub-place` · `@768` stack |
+
+**비고:** Figma 카피(의료진 본문 이름 불일치)는 MCP 문자열 그대로 · `image 52.jpg`·`assets/source/`는 미사용
+
+---
+
 
 **배경:** smile-clinic SIGNATURE·STRENGTH BG 누락 — MCP dump에 `#fffefd` 있었으나 fill 없음을 인접 섹션과 동일로 오해
 

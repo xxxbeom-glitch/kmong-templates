@@ -1,5 +1,29 @@
 # Failure Log
 
+## 2026-06-09 — wrap shell PASS · figure UA margin 미검 (smile-clinic intro)
+
+### 증상
+- 병원소개: **2단 텍스트는 wrap(1440)에 맞는데 사진만 좁게** 보임 (좌우 ~40px inset)
+- Figma MCP·CSS shell 수치는 PASS였으나 **사용자 캡처·재지적**까지 미수정
+
+### 원인
+1. QA가 **`.section-shell` max-width·section pad**만 확인 — **자식 요소별 box-model** 미검
+2. HTML `<figure>` **UA `margin-inline: 40px`** 기본값 미reset — 형제 `<div>`/`<p>`와 폭 불일치
+3. Figma JSON은 자식 x/w=1440으로 동일 — **HTML 태그 선택 → CSS reset** 매핑 체크 없음
+4. typography·gap 수정만 **부분 PASS** — 사진+리드+2단 **콘텐츠 묶음** edge 정렬 미실시
+
+### 재발 방지
+- `50-qa-checklist.mdc` · `_docs/qa-checklist.md` — **「Wrap 내 DOM · box-model QA」** 5항
+- `30-figma-to-code.mdc` — MCP 보고 **Wrap children x/w** 필수
+- `20-harness-workflow.mdc` — 섹션 QA 절차에 box-model 단계
+- `40-template-code-style.mdc` — `.section-shell` / `.sub-section figure` margin reset 패턴
+- @1920 **캡처 또는 DevTools**로 형제 edge 정렬 — shell PASS만으로 완료 **금지**
+
+### 해결
+- `templates/smile-clinic/css/style.css` — `.sub-about__figure` · `.sub-section figure` reset (2026-06-09)
+
+---
+
 ## 2026-06-08 — mainstream layout shell cap (재발 방지)
 
 ### 증상

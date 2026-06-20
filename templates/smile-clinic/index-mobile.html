@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스마일 클리닉 (모바일)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="page-main page-mobile">
+  <header class="header" id="header">
+    <div class="header__inner section-shell section-shell--gutter">
+      <a href="index-mobile.html" class="header__logo">
+        <img
+          src="assets/images/header_logo.png"
+          alt="스마일 클리닉 SMILE CLINIC"
+          width="154"
+          height="40"
+          decoding="async"
+        >
+      </a>
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="메뉴 열기"
+      >
+        <svg class="header__menu-icon header__menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="header__menu-icon header__menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="주요 메뉴">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button
+            type="button"
+            class="mobile-nav__link mobile-nav__link--trigger"
+            aria-expanded="false"
+            aria-controls="mobile-nav-sub-intro"
+          >
+            <span>스마일 클리닉 소개</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-intro">
+            <li><a href="about-intro.html" class="mobile-nav__sub-link">병원소개</a></li>
+            <li><a href="about-team.html" class="mobile-nav__sub-link">의료진 소개</a></li>
+            <li><a href="about-place.html" class="mobile-nav__sub-link">병원 둘러보기</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button
+            type="button"
+            class="mobile-nav__link mobile-nav__link--trigger"
+            aria-expanded="false"
+            aria-controls="mobile-nav-sub-treatment"
+          >
+            <span>진료과목</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-treatment">
+            <li><a href="#" class="mobile-nav__sub-link">여드름 / 흉터 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">색소 / 기미 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">리프팅 / 탄력 관리</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button
+            type="button"
+            class="mobile-nav__link mobile-nav__link--trigger"
+            aria-expanded="false"
+            aria-controls="mobile-nav-sub-equipment"
+          >
+            <span>장비·프로그램</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-equipment">
+            <li><a href="#" class="mobile-nav__sub-link">프리미엄 레이저 장비</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">피부 재생 프로그램</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">맞춤형 관리 프로그램</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button
+            type="button"
+            class="mobile-nav__link mobile-nav__link--trigger"
+            aria-expanded="false"
+            aria-controls="mobile-nav-sub-event"
+          >
+            <span>이벤트</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-event">
+            <li><a href="#" class="mobile-nav__sub-link">신규 상담 이벤트</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">시즌 프로모션</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">패키지 할인 안내</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">예약·오시는 길</a></li>
+      </ul>
+      <a href="#" class="mobile-nav__cta">카카오톡 상담</a>
+    </nav>
+  </header>
+
+  <main class="page-main__content">
+    <section class="hero hero--mobile" id="hero" aria-labelledby="hero-title">
+      <div class="hero__inner section-shell section-shell--gutter">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title scroll-reveal">피부 고민의 시작부터<br>회복의 과정까지 함께합니다</h1>
+          <p class="hero__desc scroll-reveal">개인별 피부 상태에 맞춰 섬세한 진료 방향을 제안합니다.</p>
+          <a href="#" class="hero__btn scroll-reveal">
+            <span>상담 예약하기</span>
+            <img src="assets/icons/section_hero_right_icon.svg" alt="" width="20" height="20" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="signature signature--mobile" id="signature" aria-labelledby="signature-title">
+      <div class="signature__inner section-shell section-shell--gutter">
+        <div class="signature__head section-head--spaced">
+          <div class="signature__intro section-head">
+            <p class="section-label scroll-reveal">SIGNATURE</p>
+            <h2 id="signature-title" class="section-title scroll-reveal">피부 고민에 맞춘<br>스마일 클리닉 대표 진료</h2>
+            <p class="section-desc scroll-reveal">여드름, 색소, 리프팅, 피부결 고민을 피부 상태에 따라 상담합니다.</p>
+          </div>
+          <div class="signature__nav scroll-reveal" aria-label="대표 진료 슬라이드">
+            <button type="button" class="signature__nav-btn circle-nav-btn" data-signature-prev aria-label="이전" disabled>
+              <img src="assets/icons/section_treatment_left_icon.svg" alt="" width="24" height="24" decoding="async">
+            </button>
+            <button type="button" class="signature__nav-btn circle-nav-btn" data-signature-next aria-label="다음">
+              <img src="assets/icons/section_treatment_right_icon.svg" alt="" width="24" height="24" decoding="async">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="signature__slider-outer is-bleed-x">
+        <div class="signature__viewport" data-signature-slider>
+          <div class="signature__track" data-signature-track>
+            <article class="signature-card surface-card signature-card--1 is-active scroll-reveal">
+              <div class="signature-card__body">
+                <h3 class="signature-card__title">여드름 / 흉터 치료</h3>
+                <p class="signature-card__desc">반복 여드름, 여드름 자국, 흉터 개선</p>
+              </div>
+            </article>
+            <article class="signature-card surface-card signature-card--2 scroll-reveal">
+              <div class="signature-card__body">
+                <h3 class="signature-card__title">색소 / 기미 치료</h3>
+                <p class="signature-card__desc">기미, 잡티, 색소침착. 피부톤 개선</p>
+              </div>
+            </article>
+            <article class="signature-card surface-card signature-card--3 scroll-reveal">
+              <div class="signature-card__body">
+                <h3 class="signature-card__title">리프팅 / 탄력 관리</h3>
+                <p class="signature-card__desc">탄력 저하, 얼굴 라인, 처짐 개선, 피부 탄력</p>
+              </div>
+            </article>
+            <article class="signature-card surface-card signature-card--4 scroll-reveal">
+              <div class="signature-card__body">
+                <h3 class="signature-card__title">스킨부스터 / 피부 재생</h3>
+                <p class="signature-card__desc">피부결, 수분감, 잔주름, 피부 컨디션</p>
+              </div>
+            </article>
+            <article class="signature-card surface-card signature-card--3 scroll-reveal">
+              <div class="signature-card__body">
+                <h3 class="signature-card__title">모공 / 피부결 케어</h3>
+                <p class="signature-card__desc">넓은 모공, 거친 피부결, 유분·각질 밸런스</p>
+              </div>
+            </article>
+            <article class="signature-card surface-card signature-card--4 scroll-reveal">
+              <div class="signature-card__body">
+                <h3 class="signature-card__title">레이저 / 재생 관리</h3>
+                <p class="signature-card__desc">피부결 개선, 색소·홍조 완화, 톤·결 정돈</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="signature__inner signature__inner--foot section-shell section-shell--gutter">
+        <a href="#" class="signature__more scroll-reveal">
+          <span>진료과목 전체보기</span>
+          <img src="assets/icons/section_hero_right_icon.svg" alt="" width="20" height="20" decoding="async" class="signature__more-icon">
+        </a>
+      </div>
+    </section>
+
+    <section class="strength strength--mobile" id="strength" aria-labelledby="strength-title">
+      <div class="strength__inner section-shell section-shell--gutter">
+        <div class="strength__head section-head section-head--spaced">
+          <p class="section-label scroll-reveal">OUR STRENGTH</p>
+          <h2 id="strength-title" class="section-title scroll-reveal">과정이 편안한<br>피부 클리닉</h2>
+          <p class="section-desc scroll-reveal">충분한 상담을 바탕으로 필요한 진료를 차분하게 안내합니다.</p>
+        </div>
+
+        <div class="strength-feature__slider-outer is-bleed-x">
+          <div class="strength-feature__viewport" data-strength-slider>
+            <div class="strength-feature__track" data-strength-track>
+              <article class="strength-feature__panel scroll-reveal" aria-label="의료진과 환자 상담 장면 1">
+                <div class="strength-feature__row">
+                  <div class="strength-feature__copy">
+                    <h3 class="strength-feature__title">충분히 듣고, 피부 상태에 맞게 상담합니다.</h3>
+                    <p class="strength-feature__desc">
+                      피부 고민과 생활 습관, 이전 시술 경험을 함께 확인합니다.<br>
+                      같은 고민이라도 피부 상태에 따라 필요한 접근은 달라질 수 있기 때문입니다.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="strength-feature__panel" aria-hidden="true" aria-label="의료진과 환자 상담 장면 2">
+                <div class="strength-feature__row">
+                  <div class="strength-feature__copy">
+                    <h3 class="strength-feature__title">충분히 듣고, 피부 상태에 맞게 상담합니다.</h3>
+                    <p class="strength-feature__desc">
+                      피부 고민과 생활 습관, 이전 시술 경험을 함께 확인합니다.<br>
+                      같은 고민이라도 피부 상태에 따라 필요한 접근은 달라질 수 있기 때문입니다.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="strength-feature__panel" aria-hidden="true" aria-label="의료진과 환자 상담 장면 3">
+                <div class="strength-feature__row">
+                  <div class="strength-feature__copy">
+                    <h3 class="strength-feature__title">충분히 듣고, 피부 상태에 맞게 상담합니다.</h3>
+                    <p class="strength-feature__desc">
+                      피부 고민과 생활 습관, 이전 시술 경험을 함께 확인합니다.<br>
+                      같은 고민이라도 피부 상태에 따라 필요한 접근은 달라질 수 있기 때문입니다.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process process--mobile" id="process" aria-labelledby="process-title">
+      <div class="process__inner section-shell section-shell--gutter">
+        <div class="process__layout">
+          <div class="process__intro section-head">
+            <p class="section-label scroll-reveal">PROCESS</p>
+            <h2 id="process-title" class="section-title scroll-reveal">상담부터 관리까지<br>단계별 진료 과정</h2>
+            <p class="section-desc scroll-reveal">피부 고민 확인부터 시술, 사후관리까지 차분한 순서로 진행됩니다.</p>
+          </div>
+
+          <ol class="process__steps">
+            <li class="process-step surface-card scroll-reveal">
+              <p class="process-step__label"><span>STEP 01</span></p>
+              <h3 class="process-step__title">피부 고민 상담</h3>
+              <p class="process-step__desc">현재 고민, 생활 습관, 이전 시술 경험을 함께 확인합니다. 처음 방문하셔도 부담 없이 피부 상태를 이야기하실 수 있습니다.</p>
+            </li>
+            <li class="process-step surface-card scroll-reveal">
+              <p class="process-step__label"><span>STEP 02</span></p>
+              <h3 class="process-step__title">피부 상태 확인</h3>
+              <p class="process-step__desc">피부 타입, 민감도, 트러블 상태, 색소나 탄력 고민을 확인합니다. 겉으로 보이는 증상만이 아니라 원인과 상태를 함께 살펴봅니다.</p>
+            </li>
+            <li class="process-step surface-card scroll-reveal">
+              <p class="process-step__label"><span>STEP 03</span></p>
+              <h3 class="process-step__title">맞춤 진료 제안</h3>
+              <p class="process-step__desc">유행하는 시술을 일괄적으로 권하기보다 현재 피부에 필요한 관리 방향을 우선으로 제안합니다.</p>
+            </li>
+            <li class="process-step surface-card scroll-reveal">
+              <p class="process-step__label"><span>STEP 04</span></p>
+              <h3 class="process-step__title">시술 및 사후관리 안내</h3>
+              <p class="process-step__desc">시술 후 주의사항과 관리 방법을 쉽게 안내해 회복 과정까지 편안하게 이어질 수 있도록 돕습니다.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservation reservation--mobile" id="reservation" aria-labelledby="reservation-title">
+      <div class="reservation__panel scroll-reveal">
+        <div class="reservation__inner section-shell section-shell--gutter">
+          <div class="reservation__content">
+            <div class="reservation__copy">
+              <p class="section-label section-label--light">RESERVATION</p>
+              <div class="reservation__title-block">
+                <h2 id="reservation-title" class="section-title section-title--light">피부 고민,<br>지금 상담하세요</h2>
+                <p class="section-desc section-desc--light">진료시간과 예약 방법을 확인한 뒤 편한 방식으로 문의해주세요.</p>
+              </div>
+            </div>
+            <div class="reservation__actions">
+              <a href="#" class="reservation__btn">
+                <span>카카오톡 상담하기</span>
+                <img src="assets/icons/section_hero_right_icon.svg" alt="" width="18" height="18" decoding="async">
+              </a>
+              <a href="#" class="reservation__btn">
+                <span>네이버 예약하기</span>
+                <img src="assets/icons/section_hero_right_icon.svg" alt="" width="18" height="18" decoding="async">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--mobile">
+    <div class="footer__inner section-shell section-shell--gutter">
+      <div class="footer__info">
+        <div class="footer__info-left">
+          <div class="footer__col footer__col--location">
+            <h3 class="footer__heading">오시는 길</h3>
+            <p class="footer__text">서울시 강남구 테헤란로 65-1, 재원빌딩 2층</p>
+            <a href="#" class="footer__map-btn">
+              <span>네이버 지도에서 보기</span>
+              <img src="assets/icons/icon_footer_link.svg" alt="" width="16" height="16" decoding="async">
+            </a>
+          </div>
+          <div class="footer__col footer__col--phone">
+            <h3 class="footer__heading">대표전화</h3>
+            <p class="footer__phone">02-123-4567</p>
+          </div>
+        </div>
+        <div class="footer__col footer__col--hours">
+          <h3 class="footer__heading">진료시간</h3>
+          <dl class="footer__hours">
+            <div class="footer__hours-row">
+              <dt>평일</dt>
+              <dd>오전 9시 - 오후 8시</dd>
+            </div>
+            <div class="footer__hours-row">
+              <dt>토요일</dt>
+              <dd>오전 9시 - 오후 3시</dd>
+            </div>
+            <div class="footer__hours-row">
+              <dt>점심시간</dt>
+              <dd>오전 2시 - 오후 3시</dd>
+            </div>
+          </dl>
+          <p class="footer__hours-note">일요일 및 공휴일 휴진</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__brand-row">
+          <a href="index-mobile.html" class="footer__logo">
+            <img
+              src="assets/images/section_footer_logo.png"
+              alt="스마일 클리닉 SMILE CLINIC"
+              width="154"
+              height="40"
+              decoding="async"
+            >
+          </a>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="X">
+              <img src="assets/icons/icon_x.svg" alt="" width="24" height="24" decoding="async">
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <img src="assets/icons/icon_youtube.svg" alt="" width="24" height="24" decoding="async">
+            </a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram">
+              <img src="assets/icons/icon_instagram.svg" alt="" width="20" height="20" decoding="async">
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__links" aria-label="정책 및 안내">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이메일무단수집거부</a>
+          <a href="#">비급여 및 제증명안내</a>
+          <a href="#">상담안내</a>
+        </nav>
+
+        <div class="footer__legal">
+          <p class="footer__legal-text">
+            서울 서초구 강남구 테헤란로 65-1, 재원빌딩 2층 · 사업자등록번호 123-45-67890 · 상호명 스마일 클리닉 · 대표자 안정윤 · Tel 02-123-4567
+          </p>
+          <p class="footer__copyright">© Smile Clinic. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/mobile.js"></script>
+</body>
+</html>

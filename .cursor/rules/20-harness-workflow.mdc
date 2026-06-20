@@ -112,6 +112,7 @@ QA PASS 후
 ```
 구현 완료
 → 50-qa-checklist + _docs/qa-checklist 해당 섹션 범위 검수
+→ **Wrap 내 DOM · box-model QA** (동일 shell 안 figure·grid·p 좌우 edge — DevTools 또는 캡처)
 → qa-log.md 기록 (PASS / FAIL · 비고 · 다음 주의)
 → FAIL이면 수정 → 재검수 (PASS 전 다음 섹션 금지)
 → 사용자 PASS
@@ -137,6 +138,8 @@ QA PASS 후
 - **Shell 1줄 (필수):** `guttered | full-bleed | breakout` + bg·content bbox width (CTA·stats 등 **섹션마다**)
 - **Section BG 1줄 (필수):** `#hex` + node-id + fills 또는 부모 상속 근거 · **인접 섹션과 다르면 표로 대조**
 - **Overlays 1줄 (필수):** 카드·패널·band — Section BG와 **분리** 기록
+- **(페이지/2섹션+) 인접 Section BG 표**
+- **Wrap children 1줄+:** content frame 안 **이미지·본문·열** node x/w — shell만 맞고 자식 x/w 다른 경우 표시
 - **(인터랙션 검토 시) Preset:** 후보 ID · 승인 여부 — `46-interaction-presets.mdc` (카탈로그에 있어도 **자동 적용 금지**)
 - **모호한 것만** 질문 (번호·선택지)
 - 승인 전 코딩 금지

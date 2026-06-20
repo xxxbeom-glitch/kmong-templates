@@ -8,9 +8,46 @@
 | 2 | 범위: PC 메인 + 소개 3페이지(병원소개·의료진·둘러보기) + GNB 2depth |
 | 3 | 진료과목·장비·이벤트·예약 페이지 **미포함** |
 | 4 | Signature 슬라이더: 카드 6장(4장 반복) · **loop** · PC 3장 노출 |
-| 5 | 모바일 디자인 **추후** — 768px 대응은 디자인 확정 후 |
+| 5 | 모바일 디자인 **추후** — 768px 대응은 디자인 확정 후 → **2026-06-09 타이포·1~3섹션 기준값 확정** (`decision-log` 해당 항목) |
+| 8 | **모바일 검증:** PC `@media` 전 · `index-mobile.html` + `css/mobile.css` 섹션별 구현 → PASS 후 `style.css` 반응형 이식 (2026-06-09) |
 | 6 | **인터랙션:** PC 메인 — `scroll-reveal` (2026-06-08 사용자 승인) |
 | 7 | **인터랙션:** SIGNATURE · STRENGTH — `image-scale-hover` (2026-06-08 사용자 승인) |
+
+---
+
+## 2026-06-09 — [template] smile-clinic 모바일 타이포·레이아웃 기준값 확정
+
+**Figma:** `37:2249` · **사용자 PASS** · 구현: `templates/smile-clinic/css/mobile.css`
+
+### 타이포 배율 (PC @1920 → mobile @390)
+
+| 역할 | PC | 배율 | mobile px | CSS 변수 |
+|------|-----|------|-----------|----------|
+| 큰 제목 (hero·section title) | 46 | × **0.75** | **35** | `--mo-fs-display` |
+| 중간 제목 (card title 등) | 30 | × **0.825** | **25** | `--mo-fs-heading` |
+| 본문 (desc·card desc) | 20 / 22 | min **16** | **16** | `--mo-fs-body` · `--mo-fs-body-lg` |
+| UI·버튼·nav | 18 | min **16** | **16** | `--mo-fs-ui` · `--mo-fs-nav` |
+| section label | 17 | 유지 | **17** | `--mo-fs-label` |
+
+**line-height:** display **1.42** · body **1.58** · heading **1.35** · body-lg **1.45**
+
+### 레이아웃 (1차 PASS — header · hero · signature)
+
+| 항목 | 값 |
+|------|-----|
+| `--side-padding` | 20px |
+| `--header-height` | 64px |
+| hero `min-height` | 560px |
+| `--section-padding-y` | 64px |
+| `--signature-card-w` | 272px |
+| signature card h | 380px |
+
+### 운영
+
+| # | 결정 |
+|---|------|
+| 1 | 이후 모바일 섹션·`@768` 이식 시 **위 변수·배율 그대로** — 임의 px 금지 |
+| 2 | 프리뷰: `index-mobile.html` · 최종 이식: 섹션 PASS 후 `style.css` `@768` |
 
 ---
 

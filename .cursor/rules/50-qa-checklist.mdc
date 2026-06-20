@@ -40,6 +40,20 @@ globs:
 - [ ] 콘텐츠 폭·gutter — **해당 템플릿 MCP** 기준 (임의 1840 등 가정 없음)
 - [ ] 이미지 aspect-ratio 일치
 
+## Wrap 내 DOM · box-model QA (필수)
+
+> **shell·wrap PASS만으로 섹션 PASS 금지.** Figma JSON에서 **같은 content frame** 안 자식들의 x·w가 같으면, 구현도 **좌·우 edge가 형제마다 일치**해야 한다.
+
+| # | 확인 | PASS | FAIL |
+|---|------|------|------|
+| 1 | MCP **Wrap children** — 이미지·본문·grid 열 **x·w 동일** (또는 합+gap=wrap) | 일치 | 자식 x/w 불일치 미기록 |
+| 2 | HTML **태그 목록** — wrap 안 `figure` · `blockquote` · `ul` · `p` · grid 자식 나열 | 목록 있음 | shell만 확인 |
+| 3 | **`figure` / `blockquote`** — `margin-inline: 0` · `width: 100%` (UA 기본 margin 제거) | reset 있음 | 좌우 40px 등 UA margin 잔존 |
+| 4 | **형제 edge 정렬** — @1920 DevTools 또는 **캡처**로 이미지 vs 텍스트 **좌·우 끝 일치** | 일치 | 한쪽만 좁/넓 |
+| 5 | **콘텐츠 묶음** — 사진+리드+2단 등 **한 블록**으로 box-model 재검 (부분 PASS 금지) | 블록 단위 PASS | typography만 PASS |
+
+- [ ] 위 **5**항 PASS · qa-log 비고에 **wrap 자식 edge** 확인 기록 (캡처 또는 DevTools 1줄)
+
 ## Fluid scale QA (필수)
 
 > 구현 규칙: `30-figma-to-code.mdc` 「Fluid scale」

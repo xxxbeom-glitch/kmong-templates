@@ -6,3 +6,6 @@ Thumbs.db
 .env
 .env.*
 _delivery/*/admin/config.php
+
+# Agent one-off Figma audit scripts (not part of delivery)
+_harness/_tmp_*

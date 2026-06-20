@@ -81,7 +81,21 @@ Shell: guttered | full-bleed | breakout · bg frame · content width · bbox
 Section BG: #hex · node-id · (fills SOLID | fill 없음 → 부모 node-id)
 Overlays: none | gradient(stops · opacity · y%) | flat rgba · 대상 node-id
 (페이지/2섹션+) 인접 Section BG 표
+Wrap children: (동일 content frame 내) 자식 node-id · x · w — **이미지·본문·grid 열이 같은 x/w인지** 표 1줄 이상
 ```
+
+### Wrap 내 자식 정렬 (content block — 필수)
+
+> **부모 wrap(`.section-shell` / content frame) x·w가 맞아도**, HTML 태그별 UA margin 때문에 **형제끼리 좌우 폭이 달라질 수 있음**. MCP에서 **같은 content frame 안** 이미지·텍스트·grid 자식의 **x · width**를 나란히 적는다.
+
+| MCP 확인 | 보고 |
+|----------|------|
+| content frame node-id · w (예: 1440) | `Wrap: {id} w={px}` |
+| 그 안 이미지 RECTANGLE/FRAME | `img: {id} x= · w=` |
+| 그 안 TEXT / grid 열 | `copy col: {id} x= · w=` |
+| **모든 본문 자식 x·w 동일** | 불일치 시 Figma 오류 vs 구현 주의 표시 |
+
+**구현·QA:** shell PASS ≠ 자식 PASS. `50-qa-checklist.mdc` 「Wrap 내 DOM · box-model QA」 필수.
 
 ### CSS 반영
 
