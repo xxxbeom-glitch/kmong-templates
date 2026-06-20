@@ -9,6 +9,141 @@
     window.scrollTo(0, 0);
   });
 
+  function initScrollReveal() {
+    var heroIntervalMs = 150;
+    var queueIntervalMs = 85;
+    var revealQueue = [];
+    var revealTimer = null;
+    var $all = $(".scroll-reveal");
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      $all.addClass("is-revealed");
+      return;
+    }
+
+    function documentOrder(a, b) {
+      if (a === b) {
+        return 0;
+      }
+
+      return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+    }
+
+    function sortRevealQueue() {
+      revealQueue.sort(documentOrder);
+    }
+
+    function processRevealQueue() {
+      if (!revealQueue.length) {
+        revealTimer = null;
+        return;
+      }
+
+      sortRevealQueue();
+      var el = revealQueue.shift();
+      $(el).addClass("is-revealed");
+      revealTimer = window.setTimeout(processRevealQueue, queueIntervalMs);
+    }
+
+    function enqueueReveal(el) {
+      var $el = $(el);
+
+      if (!$el.hasClass("scroll-reveal") || $el.hasClass("is-revealed")) {
+        return;
+      }
+
+      if (revealQueue.indexOf(el) !== -1) {
+        return;
+      }
+
+      revealQueue.push(el);
+
+      if (!revealTimer) {
+        processRevealQueue();
+      }
+    }
+
+    function revealSequential($targets, intervalMs, startIndex) {
+      var base = startIndex || 0;
+
+      $targets.each(function (index) {
+        var el = this;
+
+        window.setTimeout(function () {
+          $(el).addClass("is-revealed");
+        }, (index + base) * intervalMs);
+      });
+    }
+
+    var $heroTargets = $("#hero .scroll-reveal");
+
+    if ($heroTargets.length) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          revealSequential($heroTargets, heroIntervalMs, 1);
+        });
+      });
+    }
+
+    var $scrollTargets = $all.not($heroTargets).not(".signature-card");
+
+    if (!$scrollTargets.length && !$(".signature-card.scroll-reveal").length) {
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      revealSequential($all.not($heroTargets), queueIntervalMs, 1);
+      return;
+    }
+
+    var observerOptions = {
+      threshold: 0.08,
+      rootMargin: "80px 0px -5% 0px",
+    };
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          enqueueReveal(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      observerOptions
+    );
+
+    $scrollTargets.each(function () {
+      observer.observe(this);
+    });
+
+    var $signatureBand = $(".signature__slider-outer");
+    var $signatureCards = $(".signature-card.scroll-reveal");
+
+    if ($signatureBand.length && $signatureCards.length) {
+      var signatureBandStarted = false;
+
+      var bandObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting || signatureBandStarted) {
+              return;
+            }
+
+            signatureBandStarted = true;
+            revealSequential($signatureCards, queueIntervalMs, 1);
+            bandObserver.unobserve(entry.target);
+          });
+        },
+        observerOptions
+      );
+
+      bandObserver.observe($signatureBand[0]);
+    }
+  }
+
   function initHeaderScroll() {
     var $header = $("#header");
 
@@ -144,6 +279,9 @@
   }
 
   $(function () {
+    $("html").addClass("js");
+    void document.documentElement.offsetHeight;
+    initScrollReveal();
     initHeaderScroll();
     initHeaderSubnav();
     initSignatureSlider();

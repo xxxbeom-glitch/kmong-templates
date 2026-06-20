@@ -43,13 +43,16 @@ Proposed folder: templates/ontheblue/
 
 ### 섹션·수치 분석
 
+- [ ] **`add_figma_file` JSON 파싱** — `view_node` 썸네일만으로 Section BG·overlay 확정 **금지** (`30-figma-to-code.mdc` 「MCP JSON 분석」)
 - [ ] 최상위 레이어 이름 · 하위 레이어(섹션) 개수
 - [ ] Auto Layout 여부 · 방향(가로/세로) · gap
 - [ ] 섹션 width / height · padding (T/R/B/L)
 - [ ] 주요 font-size · line-height · color
 - [ ] **Section shell** — guttered / full-bleed / breakout (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · MCP bbox 근거 1줄
-- [ ] **Section BG** — `Section BG: #hex | transparent (근거)` 1줄 (프레임 fill 없어도 형제·band 확인)
-- [ ] **Overlays** — `Overlays: none | gradient(...) | flat rgba` 1줄 · fills[] **IMAGE 외 전수**
+- [ ] **Section BG** — `Section BG: #hex · node-id · (fills SOLID | fill 없음 → 부모 node-id)` 1줄 · **`backgroundColor`만으로 확정 금지**
+- [ ] **인접 Section BG 표** — 페이지 신규·배경 수정·2섹션+ 일괄 시 직전·직후 섹션 hex 대조 (`30` 「인접 섹션 BG 대조」)
+- [ ] **Overlays** — `Overlays: none | gradient(...) | flat rgba` 1줄 · 대상 node-id · fills[] **IMAGE 외 전수** · **Section BG와 분리**
+- [ ] **CSS BG 토큰** — 섹션마다 hex 다르면 `--color-bg-{section}` 등 **분리** (공통 `--color-bg` 단일값 통합 금지)
 - [ ] **title/head/body copy `textAlignHorizontal` · head wrapper Auto Layout align**
 - [ ] 모호한 수치는 **질문 후 승인** — 추측 금지
 

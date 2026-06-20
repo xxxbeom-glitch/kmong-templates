@@ -48,7 +48,8 @@
 ## 2. Figma 대조 QA
 
 - [ ] **Section shell** — guttered / full-bleed / breakout · @1920 bg가 끝까지인지 (`50-qa-checklist.mdc` #7·#8)
-- [ ] **Section BG** · **Overlays (gradient/opacity)** — MCP 보고 1줄씩과 일치
+- [ ] **Section BG** · **Overlays (gradient/opacity)** — MCP 보고 1줄씩과 일치 · Section BG에 **node-id·상속 근거** 포함
+- [ ] **인접 섹션 BG 경계** — 직전·직후 섹션 MCP hex와 DevTools `background-color` 대조 (유사색 `#fffefe`/`#fffefd`/`#f9f9f9` **혼동 금지**)
 - [ ] **Shell · inner** — section gutter + `.section-shell` (pad 이중 없음) · **section-head** 토큰
 - [ ] padding / gap / font-size / line-height / color — MCP → **clamp/vw**
 - [ ] **gap bbox 검증** — `itemSpacing` + **인접 자식 bbox 간격** (불일치 시 bbox 우선)

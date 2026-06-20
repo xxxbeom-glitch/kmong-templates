@@ -1,5 +1,71 @@
 # Change Log
 
+## 2026-06-09 — cross-template: MCP JSON Section BG 분석 규칙
+
+**배경:** smile-clinic SIGNATURE·STRENGTH BG 누락 — MCP dump에 `#fffefd` 있었으나 fill 없음을 인접 섹션과 동일로 오해
+
+| 파일 | 조치 |
+|------|------|
+| `30-figma-to-code.mdc` | 「MCP JSON 분석」 — JSON 우선 · fills vs backgroundColor · Section BG 6단계 · 인접 표 · overlay 분리 |
+| `20-harness-workflow.mdc` | Figma 보고에 JSON 파싱·Section BG node-id·인접 표 필수 |
+| `40-template-code-style.mdc` | `--color-bg-{section}` 분리 · 단일 `--color-bg` 통합 금지 |
+| `50-qa-checklist.mdc` · `_docs/qa-checklist.md` | 인접 Section BG 경계 QA |
+| `_docs/figma-to-code-guide.md` | MCP 수신 후 체크리스트 확장 |
+| `_logs/failure-log.md` | 재발 방지 항목 추가 |
+
+---
+
+
+**템플릿:** `smile-clinic` · **Figma:** `1TG429c3chdZ8SpFrmHwUN` · `13:464` · `13:507`
+
+| 항목 | Figma MCP | 기존 | 조치 |
+|------|-----------|------|------|
+| SIGNATURE (`section-treatment`) | 프레임 fill 없음 → 메인 `#f9f9f9` 상속 | `#fffefe` (strength와 동일) | `--color-bg-signature: #f9f9f9` · `.signature` |
+| OUR STRENGTH (`section-strength`) | SOLID `#fffefd` | `#fffefe` | `--color-bg-strength: #fffefd` · `.strength` |
+| RESERVATION (`13:560`) | SOLID `#fffefd` (strength와 동일) | `#fffefe` | `.reservation` → `--color-bg-strength` |
+| Strength 패널 overlay | IMAGE + `#3f3a35` **opacity 40%** · r=277 | `rgba(63,58,53,0.4)` | 변경 없음 (일치) |
+| Signature 카드 overlay | IMAGE + GRAD black 24.4%→90% | gradient + opacity 20% | 변경 없음 (일치) |
+| Signature 헤드 타이포 | `#1f1b18` (밝은 BG 위) | 동일 | 변경 없음 |
+
+**비고:** 카드 슬라이더 영역 썸네일은 카드·그radient로 어둡게 보이나, 섹션·슬라이더 프레임(`13:481`·`13:482`)에는 별도 black fill 없음.
+
+---
+
+## 2026-06-08 — [template] smile-clinic image-scale-hover · reservation 패딩
+
+| 항목 | 조치 |
+|------|------|
+| SIGNATURE | `image-scale-hover` — 카드 `::before` bg scale 1.05 |
+| STRENGTH | `image-scale-hover` — panel `::before` bg scale 1.05 |
+| Reservation | Figma `13:561` — pad **100/80** · copy↔actions **gap 46** · **fix:** `.scroll-reveal`가 `display:block`로 flex 덮어씀 → panel `display:flex` 유지 |
+
+---
+
+**규칙:** 섹션 head = label/title/desc 개별 · **카드·패널 = 컨테이너 1개** (내부 텍스트 중복 금지)
+
+| 섹션 | scroll-reveal 대상 |
+|------|-------------------|
+| Hero | title · desc · btn (개별) |
+| Signature | head 텍스트 · nav · 카드×6(밴드 진입 시 순차) · more |
+| Strength | head 텍스트 · **panel** |
+| Process | intro 텍스트 · **step 카드×4** |
+| Reservation | **panel** (CTA 박스 전체) |
+
+---
+
+## 2026-06-08 — [template] smile-clinic scroll-reveal 적용
+
+**템플릿:** `smile-clinic` · preset: **`scroll-reveal`**
+
+| 항목 | 조치 |
+|------|------|
+| HTML | `#hero` · `#signature` · `#strength` · `#process` · `#reservation` + `.scroll-reveal` |
+| CSS | mainstream 동일 preset 블록 · `prefers-reduced-motion` 즉시 표시 |
+| JS | `initScrollReveal` — hero 로드 순차 · 섹션 IntersectionObserver · 150/180ms stagger |
+| 제외 | header/footer · signature **카드**(track `transform` 충돌) |
+
+---
+
 ## 2026-06-08 — [rules] cross-template 7패턴 규칙 패치
 
 **범위:** smile-clinic 작업에서 도출된 **템플릿 공통** 재발 방지

@@ -30,6 +30,7 @@ globs:
 ## CSS
 
 - 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃·**head gap** 변수)
+- **Section BG:** MCP에서 섹션마다 hex가 다르면 `--color-bg-{section}` 등 **분리** — `--color-bg` 단일값으로 여러 `<section>` BG 통합 **금지** (`30-figma-to-code.mdc` 「MCP JSON 분석」)
 - PC + `@media (max-width:1024px)` + `@media (max-width:768px)` **항상 함께** 수정 (`35-responsive.mdc`)
 - 인라인 `style=""` 금지 · `!important` 남용 금지
 - **`html`, `body`:** `overflow-x: clip` (full-bleed·슬라이더 템플릿 **권장**)

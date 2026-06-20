@@ -15,6 +15,82 @@ globs:
 3. 이후 레이아웃·수치 분석 (`20-harness-workflow.mdc` 참고)
 4. 사용자 승인 전 — 폴더 생성·코딩 **금지**
 
+## MCP JSON 분석 (필수 — 코딩 전)
+
+> **썸네일만으로 수치·색·fill 확정 금지.** `add_figma_file` JSON(또는 동등 dump)을 **노드별 파싱**한 뒤 아래 절차를 따른다.
+
+### 데이터 소스 우선순위
+
+| 순위 | 소스 | 용도 |
+|------|------|------|
+| 1 | **`add_figma_file` JSON** | `fills[]` · padding · gap · bbox · TEXT color · gradient stops |
+| 2 | **`_harness/_figma-dump.txt`** 등 구조화 dump | 빠른 섹션 스캔 · JSON 교차 확인 |
+| 3 | **`view_node` 썸네일** | 레이아웃·구성 **참고만** — Section BG · overlay · hex **확정 근거로 사용 금지** |
+
+JSON과 썸네일이 충돌하면 **JSON 우선**. TEXT color와 Section BG가 모순이면 **fill 상속·형제 섹션 대조**로 Section BG를 확정하고, head 타이포는 TEXT `fills[]` MCP 값을 따른다.
+
+### `fills[]` vs `backgroundColor` (Section BG)
+
+| 필드 | Section BG 근거로 사용 |
+|------|------------------------|
+| **`fills[]`** visible · `SOLID` / `IMAGE` / `GRADIENT_*` | **예** — 1순위 |
+| **`fills[]` 없음** | **부모 체인 상속** (아래 절차) |
+| **`backgroundColor`만 있고 `fills[]` 없음** | **아니오** — Figma 에디터 기본값 노이즈 (`#000000` 등). Section BG로 **금지** |
+
+### Section BG 결정 절차 (해당 섹션마다)
+
+```
+1. 섹션 프레임 node-id · fills[] 전수 확인
+2. fills[]에 visible SOLID → hex 기록 (fill opacity 있으면 rgba까지)
+3. fills[] 비어 있음 → 부모 프레임을 올라가며 visible SOLID fill 탐색
+   → 기록: Section BG: #hex (13:464 fill 없음 → 13:435 fills SOLID)
+4. IMAGE/GRADIENT만 있는 band·카드·패널 → Section BG가 아님 (Overlays·장식 bg)
+5. 페이지 내 직전·직후 형제 섹션 프레임도 동일 절차 → hex 나열
+6. 인접 섹션 hex가 다르면 CSS도 분리 (--color-bg 하나로 통합 금지)
+```
+
+**금지:**
+- fill 없음 → **「인접 섹션과 동일」** 추론
+- 카드·슬라이더·패널의 IMAGE/gradient가 어두워 보인다고 **섹션 전체 BG를 검정**으로 처리
+- `#fffefd` / `#f9f9f9` / `#fffefe` 등 **유사 hex를 하나로 반올림**해 공통 토큰만 사용
+
+### 인접 섹션 BG 대조 (필수)
+
+페이지 신규·배경 수정·2개 이상 섹션 일괄 구현 시, MCP 보고에 **표 1개** 포함:
+
+| Section (Figma name) | node-id | Section BG | 근거 |
+|----------------------|---------|------------|------|
+| (예) section-treatment | 13:464 | `#f9f9f9` | fill 없음 → 부모 `13:435` SOLID |
+| (예) section-strength | 13:507 | `#fffefd` | 프레임 `fills[]` SOLID |
+
+QA에서 **인접 두 섹션 경계**를 DevTools로 확인 — MCP 표와 불일치 시 FAIL.
+
+### 카드·패널 overlay vs Section BG (분리)
+
+| 레벨 | MCP 확인 | 보고 키 |
+|------|----------|---------|
+| **섹션 `<section>` BG** | 섹션 프레임 + 부모 상속 | `Section BG:` |
+| **카드·패널·히어로 band** | 해당 자식 프레임 `fills[]` | `Overlays:` |
+
+한 섹션 보고에 `Section BG`와 `Overlays` **둘 다** 적는다. 카드 gradient만 맞고 Section BG를 생략 **금지**.
+
+### MCP 분석 보고 — 섹션당 필수 줄
+
+```
+Shell: guttered | full-bleed | breakout · bg frame · content width · bbox
+Section BG: #hex · node-id · (fills SOLID | fill 없음 → 부모 node-id)
+Overlays: none | gradient(stops · opacity · y%) | flat rgba · 대상 node-id
+(페이지/2섹션+) 인접 Section BG 표
+```
+
+### CSS 반영
+
+- MCP에서 섹션마다 BG hex가 다르면 **`--color-bg-{section}`** 또는 섹션별 `background` — **공통 `--color-bg` 단일값으로 묶지 않음**
+- breakout·full-bleed: 섹션 `background`와 bleed band bg **동일 hex** 유지
+
+적용 기준: Figma MCP로 색·배경·overlay를 읽는 **모든** 작업.
+금지: 위 「금지」 항목 전부 · JSON 미파싱 상태에서 Section BG 구현.
+
 - 기준 프레임 **1920px**. **1920 = 설계 기준** — 템플릿마다 gutter·내부 폭은 Figma MCP 수치 그대로 (고정 1840 등 가정 **금지**).
 - **모든 Figma px**(padding, gap, font-size, shell gutter, inner width 등) → **뷰포트 fluid 치환** (`30-figma-to-code.mdc` 「Fluid scale」).
 - vw 미적용: color, font-weight, 1px border, letter-spacing(Figma px 그대로)
@@ -134,7 +210,9 @@ content_inset = content_width ≈ W − 2×gutter
 
 **금지:** full-bleed·breakout 섹션에 **습관적으로** `section { padding-inline: var(--layout-pad-x) }` (CTA·stats 실패 원인)
 
-**MCP 분석 보고에 포함 (필수 1줄):** `Shell: guttered | full-bleed | breakout` · bg frame명·width · content width · **Section BG: #hex | transparent (근거)`** · 근거 bbox
+**MCP 분석 보고에 포함 (필수 1줄):** `Shell: guttered | full-bleed | breakout` · bg frame명·width · content width · **`Section BG: #hex · node-id · (fills | 부모 상속)`** · 근거 bbox
+
+> Section BG 절차·인접 섹션 대조표 → **`30-figma-to-code.mdc` 「MCP JSON 분석」**
 
 ### Breakout · full-bleed — 가로 overflow 방지
 
@@ -219,6 +297,7 @@ Figma **Fill(채우기)** 과 동일. 원본 해상도·비율과 **달라도** 
 - gutter pad + shell `max-width` **이중 축소**
 - **inner**에 gutter `padding-inline` + `max-width` **동시** (`border-box` 시작선 밀림)
 - PNG export만 보고 **gradient/flat overlay** 생략
+- **Section BG:** fill 없음을 인접 섹션과 동일색으로 추론 · `backgroundColor`만으로 BG 확정 · `--color-bg` 단일 토큰으로 섹션 BG 통합
 - font-size / padding / gap **@1920 px 고정** (하드코딩 승인 제외)
 
 ### QA

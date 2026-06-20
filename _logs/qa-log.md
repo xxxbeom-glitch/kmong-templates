@@ -1,5 +1,24 @@
 # QA Log
 
+## 2026-06-08 — smile-clinic preset `scroll-reveal`
+
+**템플릿:** `smile-clinic` · **섹션:** hero · signature · strength · process · reservation  
+**검수자:** Cursor Agent  
+**결과:** **PASS** (코드·규칙 대조)
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | preset ID = 사용자 승인 `scroll-reveal` | PASS |
+| 2 | 섹션당 scroll 계열 1개 (typing/slider 중복 없음) | PASS |
+| 3 | signature 카드 track transform과 scroll-reveal 미중복 | PASS |
+| 4 | `prefers-reduced-motion` → 즉시 `is-revealed` | PASS |
+| 5 | header/footer 미적용 | PASS |
+| 6 | `html.js` + no-JS fallback(콘텐츠 가시) | PASS |
+
+**비고:** 실브라우저 스크롤 확인은 페이지 QA 시 재검.
+
+---
+
 ## 2026-06-04 — 구조 리셋 QA
 
 **대상:** Imweb 전용 하네스 구조 리셋 (setup)  

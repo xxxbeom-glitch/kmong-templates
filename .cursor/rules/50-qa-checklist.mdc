@@ -29,8 +29,9 @@ globs:
 
 ## Figma 대조
 - [ ] **Section shell** = MCP 분류 (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · guttered / full-bleed / breakout
-- [ ] **Section BG** = MCP `Section BG:` 1줄과 일치 (프레임 fill 없으면 **근거** — 형제·인접 섹션·band)
-- [ ] **Overlays** = MCP `Overlays:` 1줄과 일치 — gradient/flat opacity · PNG export만으로 판단 **금지**
+- [ ] **Section BG** = MCP `Section BG:` 1줄과 일치 — **node-id · fills | 부모 상속** 근거 · `backgroundColor`-only **금지**
+- [ ] **인접 Section BG** — MCP 인접 표와 DevTools 경계 색 일치 (공통 `--color-bg` 단일 토큰으로 여러 섹션 묶었으면 FAIL)
+- [ ] **Overlays** = MCP `Overlays:` 1줄과 일치 — gradient/flat opacity · PNG export만으로 판단 **금지** · Section BG와 **혼동 금지**
 - [ ] **Shell · gutter · inner** — gutter는 section, inner는 `.section-shell` (`max-width` only, pad 이중 없음)
 - [ ] **Section head** — `.section-head` + `--section-*-gap` 토큰 · 섹션별 ad-hoc margin **금지**
 - [ ] padding / gap / font-size / line-height / color — **MCP 수치 → clamp/vw** (px 고정 없음)

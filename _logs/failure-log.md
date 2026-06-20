@@ -111,3 +111,8 @@ No failure recorded.
 - `45-interaction-patterns.mdc` — scroll restoration
 - `50-qa-checklist.mdc` · `_docs/qa-checklist.md` — Section BG · Overlays · horizontal scroll · logo · F5
 - `20-harness-workflow.mdc` — MCP 보고 필수 1줄 확장
+
+### 재발 방지 (규칙 패치 2026-06-09 — MCP JSON Section BG)
+- **증상:** fill 없음 → 인접 섹션과 동일 BG 추론 · `#fffefd`/`#f9f9f9`/`#fffefe` 단일 `--color-bg` 통합 · `view_node` 썸네일만으로 Section BG 확정 · `backgroundColor` 노이즈를 BG로 사용
+- **대표:** smile-clinic SIGNATURE `#f9f9f9` vs STRENGTH `#fffefd` 누락
+- **패치:** `30` 「MCP JSON 분석」 — JSON 우선 · fills vs backgroundColor · 부모 상속 · 인접 Section BG 표 · overlay/섹션 BG 분리 · `20`/`40`/`50`/`figma-to-code-guide`/`qa-checklist` 동기화
