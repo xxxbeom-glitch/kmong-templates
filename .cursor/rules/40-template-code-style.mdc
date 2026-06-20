@@ -27,6 +27,15 @@ globs:
 - BEM: `{block}__{element}`, `{block}--{modifier}`, 상태 `.is-active` `.is-open`
 - **full-bleed band:** `.is-bleed-x` + band 내부만 gutter · 자식 `width:100%` (`30-figma-to-code.mdc` 「Section shell · full-bleed」)
 
+### @768 모바일 shell (필수)
+
+> 패턴·금지: `35-responsive.mdc` · `30-figma-to-code.mdc` 「Shell — @768」
+
+- `@768` **gutter는 `.section-shell` / `.section-shell--gutter`에만** — section `padding-inline`과 **이중 금지**
+- PC `grid-template-columns: 2+` → `@768` **`1fr` / column stack 명시**
+- header inner · hero inner · 본문 shell — **동일 `--side-padding`** (`decision-log` 확정값)
+- full-bleed: `section > panel(bleed) > inner.section-shell(gutter) > content`
+
 ### Wrap 안 시맨틱 요소 (content block)
 
 - **`.section-shell` (또는 content wrap) 안**에 `figure` · `blockquote` · `ul`/`ol` · `dl` 사용 시 — **UA margin reset 필수**
@@ -49,6 +58,7 @@ globs:
 - 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃·**head gap** 변수)
 - **Section BG:** MCP에서 섹션마다 hex가 다르면 `--color-bg-{section}` 등 **분리** — `--color-bg` 단일값으로 여러 `<section>` BG 통합 **금지** (`30-figma-to-code.mdc` 「MCP JSON 분석」)
 - PC + `@media (max-width:1024px)` + `@media (max-width:768px)` **항상 함께** 수정 (`35-responsive.mdc`)
+- **`@768` `:root`** — `--side-padding` 등 gutter **PC override** · `--mo-fs-*` 등 타이포는 decision-log 확정 후만
 - 인라인 `style=""` 금지 · `!important` 남용 금지
 - **`html`, `body`:** `overflow-x: clip` (full-bleed·슬라이더 템플릿 **권장**)
 

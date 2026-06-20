@@ -251,6 +251,48 @@ content_inset = content_width ≈ W − 2×gutter
 - `.section-head` · `.section-head--spaced` (head → 본문 간격)
 - breakout band **padding-top**과 `--section-head-gap` **이중 금지**
 
+### Shell · gutter · inner — @768 (필수)
+
+> 상세 패턴: `35-responsive.mdc` 「모바일 @768 — gutter · 칼럼 · shell」
+
+| Shell 타입 | @768 구조 |
+|------------|-----------|
+| **guttered (기본)** | `{section} { padding-inline: 0; padding-block: … }` · **gutter는 `.section-shell` / `.section-shell--gutter`만** |
+| **full-bleed** | `section > {panel/band}` — panel **pad 0 · bg 풀폭** · `{panel}__inner.section-shell` — **content만** `padding-inline: gutter` |
+| **breakout** | 섹션 gutter 0 또는 shell gutter · band만 `.is-bleed-x` + band **내부** gutter |
+
+```css
+/* guttered @768 — 예시 (px는 decision-log) */
+@media (max-width: 768px) {
+  :root { --side-padding: /* MCP or 1차 PASS */; }
+
+  .signature,
+  .strength { padding-inline: 0; }
+
+  .section-shell,
+  .section-shell--gutter {
+    max-width: 100%;
+    padding-inline: var(--side-padding);
+  }
+}
+```
+
+```html
+<!-- full-bleed @768 — 예시 (reservation·CTA형) -->
+<section class="reservation">
+  <div class="reservation__panel"><!-- bleed, pad 0 -->
+    <div class="reservation__inner section-shell section-shell--gutter">
+      …content…
+    </div>
+  </div>
+</section>
+```
+
+**MCP 분석 보고 (모바일 프레임 있을 때 필수 1줄):**  
+`Mobile @768: gutter {px} · columns {1} · header {h}px · QA 390`
+
+**금지 @768:** section `padding-inline: gutter` + inner `.section-shell--gutter` **동시** · PC 다열 grid **override 누락**
+
 ## Fill · overlay · gradient (필수 — 카드·패널·히어로)
 
 Figma **fills[]**는 `IMAGE`만 export한다고 가정 **금지**. MCP에서 **전수 확인**.
@@ -274,8 +316,9 @@ Figma **fills[]**는 `IMAGE`만 export한다고 가정 **금지**. MCP에서 **�
 | **`<img>` 로고** | **한 축만 고정** (보통 `width` + `height: auto`) |
 | **금지** | `object-fit: contain` + **고정 `height`** 조합 (여백 캔버스 → 실제 그래픽 축소) |
 | HTML `width`/`height` | **표시 비율**(Figma bbox) — 원본 파일 px **금지** |
+| **crop 전 interim** | artwork 시작선 = gutter 시작선 — `margin-left: calc(-{bboxLeft} / {srcWidth} * 100%)` on `<img>` (bboxLeft·srcWidth = export 실측) |
 
-**QA:** computed img 높이 ≈ Figma 로고 bbox height (±2px).
+**QA:** computed img 높이 ≈ Figma 로고 bbox height (±2px) · **390px** header artwork 좌측 = 본문 텍스트 좌측 (`50-qa-checklist.mdc`).
 
 ## Image · card fill (필수 — Story·News 등 카드)
 

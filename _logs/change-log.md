@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-06-09 — [rules] 모바일 @768 gutter · 칼럼 · shell 패턴
+
+**파일:** `35-responsive.mdc` · `30-figma-to-code.mdc` · `40-template-code-style.mdc` · `50-qa-checklist.mdc` · `20-harness-workflow.mdc` · `_docs/figma-to-code-guide.md` · `_docs/qa-checklist.md`  
+**내용:** @768 gutter 토큰 override · 1열 기본 · shell 이중 pad 금지 · full-bleed 구조 · 로고 bbox interim · 슬라이더 peek · mobile preview→이식 워크플로 · 390px 시작선 QA  
+**근거:** smile-clinic 모바일 이식·gutter 통일·header 로고 정렬 재발 방지
+
+---
+
 ## 2026-06-09 — [template] smile-clinic header 로고 좌측 정렬
 
 **범위:** `css/style.css` · `css/mobile.css` — `.header__logo img`  

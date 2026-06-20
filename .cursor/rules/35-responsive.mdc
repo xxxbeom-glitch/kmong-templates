@@ -21,9 +21,54 @@ globs:
 ## 레이아웃
 
 - **1024px 이하:** 다열 grid·가로 flex → **1~2열 축소·간격 조정** (섹션별 Figma·구조에 맞게)
-- **768px 이하:** 가로 배치 섹션 → **세로 스택(1열)** 전환을 기본
+- **768px 이하:** 가로 배치 섹션 → **세로 스택(1열)** 전환을 **기본** (`30-figma-to-code.mdc` 「Shell · gutter · inner — @768」)
 - GNB: 768px 이하 **햄버거 메뉴** (`45-interaction-patterns.mdc`)
 - PC에서 `clamp()`·fluid scale은 유지, breakpoint에서 **구조 변경**을 우선 검토
+
+## 모바일 @768 — gutter · 칼럼 · shell (필수)
+
+> **숫자(px)는 템플릿마다 다름** — Figma 모바일 프레임 MCP 또는 1차 PASS 후 **`decision-log` 확정** · 규칙은 **패턴만** (`30-figma-to-code.mdc`).
+
+### Gutter 토큰
+
+- `@media (max-width: 768px)` 블록 **`:root`에서** `--side-padding`(또는 템플릿 gutter 토큰)을 **PC 값과 분리 override**
+- PC `--side-padding`(예: 240px)이 모바일에 **그대로 남으면 FAIL**
+- 확정 px는 **프로젝트 공통값으로 박지 않음** — MCP · decision-log만
+
+### 기본 칼럼
+
+| PC | @768 기본 |
+|----|-----------|
+| `grid-template-columns: 2+` | **`1fr` 또는 `1열 stack`** — **명시적 override 필수** |
+| 가로 `flex` + `space-between` | **`flex-direction: column`** 또는 wrap (섹션별) |
+| 2단 본문·카드 그리드 | **1열** — `@768` 누락 **금지** |
+
+### Gutter 적용 위치 (이중 pad 금지)
+
+**한 군데만** 좌우 gutter:
+
+| 권장 @768 | CSS |
+|-----------|-----|
+| **섹션 pad 제거 + shell gutter** | `{section} { padding-inline: 0; }` · `.section-shell`, `.section-shell--gutter { padding-inline: var(--side-padding); }` |
+| **full-bleed band** | 섹션·panel **pad 0** · **inner/content만** gutter (`30` 「full-bleed @768」) |
+
+**금지:** `section { padding-inline: gutter }` **+** `.section-shell { padding-inline: gutter }` **동시** (본문·로고 시작선 어긋남)
+
+### 헤더·본문 시작선
+
+- header inner · hero · 본문 shell — **같은 `--side-padding` 시작선**
+- 로고 PNG **content bbox** crop 전 — interim `margin-left: calc(-{bboxLeft}/{srcWidth} * 100%)` (`30` 「Logo · icon」)
+- QA **390px** — header artwork · 본문 텍스트 **좌측 edge 일치** (`50-qa-checklist.mdc`)
+
+### 가로 슬라이더 peek (해당 시)
+
+- slide 폭: `calc((100vw - var(--side-padding)) * {peek비율})` — peek비율은 MCP · decision-log
+- **`width: 100vw` 단독 금지** (가로 스크롤 재발 — `failure-log` bleed 항목)
+
+### 모바일 타이포 스케일 (Figma 모바일 프레임 없을 때)
+
+- 1차 PASS 후 `decision-log`에 `--mo-fs-*` · scale 계수 · body **floor 16px** 기록
+- 규칙에 **고정 배율(0.75 등) 박지 않음** — 템플릿별
 
 ## iOS Safari · 모바일 뷰포트 높이
 
@@ -143,6 +188,8 @@ DevTools 뷰포트만으로 PASS 처리 **금지**. 아래 **4종** 실기기·�
 - **768px 이하** `100vh` 단독으로 full-screen 높이 잡기
 - hover를 fine-pointer 미디어쿼리 밖에 작성
 - Figma 모바일 프레임 없음을 이유로 768px 대응 생략
+- **@768** section gutter + `.section-shell` gutter **이중 적용**
+- PC `grid-template-columns: 2+`에 **@768 1열 override 없음**
 - 실브라우저 QA 없이 모바일 PASS 선언
 
 완료 기준:

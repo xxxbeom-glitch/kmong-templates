@@ -83,6 +83,17 @@
 - [ ] font-size computed — 1920 ↔ 2560 **비례** (px 고정 FAIL)
 - [ ] shell `max-width: {content_px}` cap **없음** (inner narrow 제외)
 - [ ] gutter pad + shell max-width **이중 없음**
+- [ ] **@768 gutter pad 이중 없음** — section + `.section-shell` 동시 pad **금지** (`35-responsive.mdc`)
+
+### 2-3. 모바일 @768 gutter · 시작선 QA (필수)
+
+> 규칙: `50-qa-checklist.mdc` 「모바일 @768 gutter · 시작선 QA」 · **390px**
+
+- [ ] `--side-padding` @768 **PC override**
+- [ ] header 로고 artwork · 본문 텍스트 **좌측 시작선 일치**
+- [ ] PC 2+열 grid → @768 **1열** override
+- [ ] full-bleed panel · inner gutter 구조
+- [ ] 슬라이더 peek — `100vw - side-padding` 공식 · 가로 scroll 없음
 
 ---
 

@@ -74,9 +74,26 @@ globs:
 
 - [ ] 위 **9**항 PASS · `_logs/failure-log.md` 유사 FAIL 없음
 
+## 모바일 @768 gutter · 시작선 QA (필수)
+
+> 규칙: `35-responsive.mdc` 「모바일 @768」 · `30-figma-to-code.mdc` 「Shell — @768」  
+> **뷰포트 390px** (또는 decision-log QA 폭)에서 확인.
+
+| # | 확인 | PASS | FAIL |
+|---|------|------|------|
+| 1 | `@768` `:root` — `--side-padding`(gutter) **PC 값 override** | override 있음 | PC 240px 등 잔존 |
+| 2 | **gutter 이중 pad 없음** — section `padding-inline` + `.section-shell` pad **동시 없음** | 한 군데만 | 2× gutter (본문 좁음) |
+| 3 | **시작선 정렬** — header 로고 artwork · hero/본문 텍스트 **좌측 edge 일치** | 일치 | 로고만 안쪽·바깥 |
+| 4 | **grid/flex 1열** — PC 2+열 섹션에 `@768` `1fr` / column stack | override 있음 | PC 2단 그대로 |
+| 5 | **full-bleed @768** — bg/panel 풀폭 · content inner만 gutter | 구조 일치 | panel 안에 gutter 이중 |
+| 6 | **슬라이더 peek** — `calc((100vw - var(--side-padding)) * …)` · `100vw` 단독 width 없음 | 공식 준수 | 가로 scroll |
+| 7 | **로고 bbox** — crop 또는 interim `margin-left` · contain+고정 height 없음 | 준수 | 여백 캔버스 축소 |
+
+- [ ] 위 **7**항 PASS · qa-log 비고에 **390px 시작선** 확인 1줄
+
 ## HTML/CSS
 - [ ] `section` id + `section--*` 규칙
-- [ ] **로고 `<img>`** — bbox crop · `width`+`height:auto` · contain+고정 height **금지** · computed ≈ Figma (±2px)
+- [ ] **로고 `<img>`** — bbox crop · `width`+`height:auto` · contain+고정 height **금지** · computed ≈ Figma (±2px) · **390px artwork 시작선 = 본문**
 - [ ] **`html`/`body` `overflow-x: clip`** (full-bleed·슬라이더 템플릿)
 - [ ] clamp 수치 또는 승인된 하드코딩
 - [ ] `@media 1024px` · `@media 768px` 반영 · 인라인 스타일 없음

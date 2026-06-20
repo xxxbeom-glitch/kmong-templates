@@ -123,13 +123,21 @@ CSS  = clamp(min_px, {vw}vw, figma_px)
 
 ## 모바일 (≤768px)
 
+> 상세: `35-responsive.mdc` 「모바일 @768 — gutter · 칼럼 · shell」 · `30-figma-to-code.mdc` 「Shell — @768」
+
 - [ ] PC·1024 CSS와 **같은 섹션 작업**에 `@media (max-width:768px)` 포함
-- [ ] 가로 배치 → **세로 스택(1열)** 전환
+- [ ] `@768` `:root` — `--side-padding`(gutter) **PC 값 override** · 확정 px → **decision-log**
+- [ ] **gutter 한 군데만** — section `padding-inline: 0` + `.section-shell` pad **또는** 역할 분리 · **이중 pad 금지**
+- [ ] 가로 배치 → **세로 스택(1열)** · PC `grid-template-columns: 2+` → `@768` **`1fr` 명시**
+- [ ] **full-bleed @768** — `section > panel(bleed) > inner.section-shell(gutter)`
+- [ ] header · hero · 본문 — **동일 gutter 시작선** · 로고 bbox crop 또는 interim margin
+- [ ] 가로 슬라이더 — `calc((100vw - var(--side-padding)) * peek)` · `100vw` 단독 width **금지**
 - [ ] GNB → 햄버거 메뉴
 - [ ] hover-only UI → 비활성화 또는 터치 대체 UI
 - [ ] 장식용 `<br>` → `display:none` 검토
-- [ ] clamp min 값으로 가독성 확보
+- [ ] clamp min 값으로 가독성 확보 · body **floor 16px**
 - [ ] 버튼·링크 터치 영역 **≥44×44px**
+- [ ] **390px** — 시작선·1열·overflow 확인 (`50-qa-checklist.mdc` 「모바일 @768 gutter · 시작선 QA」)
 
 ---
 

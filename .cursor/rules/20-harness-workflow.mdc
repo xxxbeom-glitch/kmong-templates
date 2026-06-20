@@ -87,6 +87,27 @@ Figma MCP 분석(해당 섹션)
 - 일괄 구현 **완료 후:** 섹션 QA를 **연속 수행** → 전부 PASS 후 **페이지 통합 QA** 1회 (`50-qa-checklist` 페이지·납품) → 사용자 PASS.
 - 페이지 전체 완료 후에는 **납품 전 전체 QA**를 별도로 수행한다 (`50-qa-checklist.mdc` · `60-delivery.mdc`).
 
+## 모바일 프리뷰 → @768 이식 (Figma 모바일 프레임 있을 때)
+
+> **숫자·구조 확정값** → `decision-log` · 규칙은 **순서·패턴만**.
+
+```
+Figma 모바일 MCP (또는 Desktop + @768 설계)
+→ {slug}-mobile.html + css/mobile.css — 섹션별 구현·QA·사용자 PASS
+→ style.css @media (max-width:768px) + main.js 이식
+→ index.html 등 최종 HTML 반영
+→ 섹션/페이지 QA · qa-log
+```
+
+| 항목 | 규칙 |
+|------|------|
+| **프리뷰 파일** | `index-mobile.html` · `about-*-mobile.html` — **검수용** · 납품 제외 (`60-delivery`) |
+| **최종본** | `index.html` · `css/style.css` · `js/main.js` — **납품 대상** |
+| **gutter·칼럼** | 1차 PASS 값을 `decision-log` 기록 → `@768` 이식 시 **동일 토큰** (`35-responsive.mdc`) |
+| **이식 전** | mobile 프리뷰 **사용자 PASS** 또는 qa-log PASS — 임의 이식 **금지** |
+
+- Figma **모바일 프레임 없음** — Desktop + `@768` breakpoint만으로 대응 (프리뷰 파일 **필수 아님**).
+
 ## 템플릿 허브 · 패키징 (`60-delivery.mdc`)
 
 | 파일 | 역할 | 누가 수정 |
@@ -140,6 +161,7 @@ QA PASS 후
 - **Overlays 1줄 (필수):** 카드·패널·band — Section BG와 **분리** 기록
 - **(페이지/2섹션+) 인접 Section BG 표**
 - **Wrap children 1줄+:** content frame 안 **이미지·본문·열** node x/w — shell만 맞고 자식 x/w 다른 경우 표시
+- **Mobile @768 1줄 (모바일 프레임 있을 때):** gutter {px} · columns {1} · header {h}px · QA 390
 - **(인터랙션 검토 시) Preset:** 후보 ID · 승인 여부 — `46-interaction-presets.mdc` (카탈로그에 있어도 **자동 적용 금지**)
 - **모호한 것만** 질문 (번호·선택지)
 - 승인 전 코딩 금지

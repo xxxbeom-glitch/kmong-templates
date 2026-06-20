@@ -136,6 +136,10 @@ No failure recorded.
 - `50-qa-checklist.mdc` · `_docs/qa-checklist.md` — Section BG · Overlays · horizontal scroll · logo · F5
 - `20-harness-workflow.mdc` — MCP 보고 필수 1줄 확장
 
+### 재발 방지 (규칙 패치 2026-06-09 — 모바일 @768 gutter · shell)
+- **증상:** @768 본문 gutter 미적용·이중 pad · header/본문 시작선 불일치 · PC 2단 grid 잔존 · full-bleed panel 안 gutter · 로고 PNG bbox inset
+- **패치:** `35-responsive.mdc` 「모바일 @768」 · `30` 「Shell — @768」 · `40` · `50` 「모바일 @768 gutter · 시작선 QA」 · `20` mobile preview→이식 · `_docs/*` 동기화
+
 ### 재발 방지 (규칙 패치 2026-06-09 — MCP JSON Section BG)
 - **증상:** fill 없음 → 인접 섹션과 동일 BG 추론 · `#fffefd`/`#f9f9f9`/`#fffefe` 단일 `--color-bg` 통합 · `view_node` 썸네일만으로 Section BG 확정 · `backgroundColor` 노이즈를 BG로 사용
 - **대표:** smile-clinic SIGNATURE `#f9f9f9` vs STRENGTH `#fffefd` 누락
