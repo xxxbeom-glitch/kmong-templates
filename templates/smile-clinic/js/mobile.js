@@ -24,9 +24,88 @@
     var snapDurationMax = 520;
     var momentumMs = 140;
     var magneticPull = 0.14;
+    var pointerActive = false;
+    var startY = 0;
+    var dragAxis = null;
+    var dragThreshold = 8;
+    var rootEl = $root[0];
 
     if (!count) {
       return null;
+    }
+
+    function resetPointer() {
+      pointerActive = false;
+      dragAxis = null;
+    }
+
+    function beginPointer(clientX, clientY) {
+      pointerActive = true;
+      dragAxis = null;
+      dragging = false;
+      startX = clientX;
+      startY = clientY;
+      lastX = clientX;
+      lastTime = Date.now();
+      deltaX = 0;
+      velocityX = 0;
+    }
+
+    function movePointer(clientX, clientY, event) {
+      if (!pointerActive) {
+        return;
+      }
+
+      if (dragAxis === null) {
+        var dx = clientX - startX;
+        var dy = clientY - startY;
+
+        if (Math.abs(dx) < dragThreshold && Math.abs(dy) < dragThreshold) {
+          return;
+        }
+
+        dragAxis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
+
+        if (dragAxis === "y") {
+          resetPointer();
+          return;
+        }
+
+        dragging = true;
+        $root.addClass("is-dragging");
+        render(true);
+      }
+
+      if (!dragging || dragAxis !== "x") {
+        return;
+      }
+
+      if (event && event.cancelable) {
+        event.preventDefault();
+      }
+
+      var now = Date.now();
+      var elapsed = now - lastTime;
+
+      if (elapsed > 0) {
+        velocityX = (clientX - lastX) / elapsed;
+      }
+
+      lastX = clientX;
+      lastTime = now;
+      deltaX = clientX - startX;
+
+      var translateX = applyMagneticPull(getTranslateForIndex(index, deltaX));
+
+      $track.css("transform", "translate3d(" + translateX + "px, 0, 0)");
+    }
+
+    function endPointer() {
+      if (dragging) {
+        onDragEnd();
+      }
+
+      resetPointer();
     }
 
     function getStep() {
@@ -107,38 +186,6 @@
       render(false, fromTranslate != null ? getSnapDuration(fromTranslate) : snapDurationMax);
     }
 
-    function onDragStart(clientX) {
-      dragging = true;
-      startX = clientX;
-      lastX = clientX;
-      lastTime = Date.now();
-      deltaX = 0;
-      velocityX = 0;
-      $root.addClass("is-dragging");
-      render(true);
-    }
-
-    function onDragMove(clientX) {
-      if (!dragging) {
-        return;
-      }
-
-      var now = Date.now();
-      var elapsed = now - lastTime;
-
-      if (elapsed > 0) {
-        velocityX = (clientX - lastX) / elapsed;
-      }
-
-      lastX = clientX;
-      lastTime = now;
-      deltaX = clientX - startX;
-
-      var translateX = applyMagneticPull(getTranslateForIndex(index, deltaX));
-
-      $track.css("transform", "translate3d(" + translateX + "px, 0, 0)");
-    }
-
     function resolveSnapIndex(currentTranslate) {
       var step = getStep();
       var projected = currentTranslate + velocityX * momentumMs;
@@ -166,25 +213,30 @@
       goTo(nextIndex, currentTranslate);
     }
 
-    $root.on("touchstart", function (event) {
-      if (!event.originalEvent.touches.length) {
+    function onTouchStart(event) {
+      if (!event.touches.length) {
         return;
       }
 
-      onDragStart(event.originalEvent.touches[0].clientX);
-    });
+      var touch = event.touches[0];
 
-    $root.on("touchmove", function (event) {
-      if (!dragging || !event.originalEvent.touches.length) {
+      beginPointer(touch.clientX, touch.clientY);
+    }
+
+    function onTouchMove(event) {
+      if (!event.touches.length) {
         return;
       }
 
-      onDragMove(event.originalEvent.touches[0].clientX);
-    });
+      var touch = event.touches[0];
 
-    $root.on("touchend touchcancel", function () {
-      onDragEnd();
-    });
+      movePointer(touch.clientX, touch.clientY, event);
+    }
+
+    rootEl.addEventListener("touchstart", onTouchStart, { passive: true });
+    rootEl.addEventListener("touchmove", onTouchMove, { passive: false });
+    rootEl.addEventListener("touchend", endPointer, { passive: true });
+    rootEl.addEventListener("touchcancel", endPointer, { passive: true });
 
     $root.on("mousedown", function (event) {
       if (event.button !== 0) {
@@ -192,14 +244,21 @@
       }
 
       event.preventDefault();
-      onDragStart(event.clientX);
+      beginPointer(event.clientX, event.clientY);
+      dragging = true;
+      $root.addClass("is-dragging");
+      render(true);
 
       function onMouseMove(moveEvent) {
-        onDragMove(moveEvent.clientX);
+        if (!dragging) {
+          return;
+        }
+
+        movePointer(moveEvent.clientX, moveEvent.clientY, moveEvent);
       }
 
       function onMouseUp() {
-        onDragEnd();
+        endPointer();
         $(window).off("mousemove." + eventNs + " mouseup." + eventNs);
       }
 
@@ -338,9 +397,61 @@
     });
   }
 
+  function initTeamPicker() {
+    if (!$("body.page-mobile").length) {
+      return;
+    }
+
+    var $section = $(".sub-team--mobile");
+
+    if (!$section.length) {
+      return;
+    }
+
+    var $tabs = $section.find(".sub-team__picker-btn");
+    var $cards = $section.find("[data-team-card]");
+
+    $tabs.on("click", function () {
+      var index = $(this).data("team-index");
+
+      $tabs.removeClass("is-active").attr("aria-selected", "false");
+      $(this).addClass("is-active").attr("aria-selected", "true");
+
+      $cards.removeClass("is-active").prop("hidden", true);
+      $cards.eq(index).addClass("is-active").prop("hidden", false);
+    });
+  }
+
+  function initPlaceSlider() {
+    if (!$("body.page-mobile").length) {
+      return;
+    }
+
+    var $root = $("[data-place-slider]");
+
+    if (!$root.length) {
+      return;
+    }
+
+    createMagneticSlider({
+      $root: $root,
+      $track: $root.find("[data-place-track]"),
+      $slides: $root.find("[data-place-track]").children(".sub-place-card"),
+      gapFallback: 12,
+      eventNs: "placeSlider",
+      onIndexChange: function (i, $slides) {
+        $slides.each(function (slideIndex) {
+          $(this).attr("aria-hidden", slideIndex === i ? "false" : "true");
+        });
+      },
+    });
+  }
+
   $(function () {
     initMobileNav();
     initStrengthSlider();
     initSignatureSlider();
+    initTeamPicker();
+    initPlaceSlider();
   });
 })(jQuery);

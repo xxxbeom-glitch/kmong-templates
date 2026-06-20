@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>병원 소개 (모바일) | 스마일 클리닉</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="page-sub page-sub--intro page-mobile">
+  <header class="header" id="header">
+    <div class="header__inner section-shell section-shell--gutter">
+      <a href="index-mobile.html" class="header__logo">
+        <img
+          src="assets/images/header_logo.png"
+          alt="스마일 클리닉 SMILE CLINIC"
+          width="154"
+          height="40"
+          decoding="async"
+        >
+      </a>
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="메뉴 열기"
+      >
+        <svg class="header__menu-icon header__menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="header__menu-icon header__menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="주요 메뉴">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button
+            type="button"
+            class="mobile-nav__link mobile-nav__link--trigger"
+            aria-expanded="false"
+            aria-controls="mobile-nav-sub-intro"
+          >
+            <span>스마일 클리닉 소개</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-intro">
+            <li><a href="about-intro-mobile.html" class="mobile-nav__sub-link">병원소개</a></li>
+            <li><a href="about-team-mobile.html" class="mobile-nav__sub-link">의료진 소개</a></li>
+            <li><a href="about-place-mobile.html" class="mobile-nav__sub-link">병원 둘러보기</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-treatment">
+            <span>진료과목</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-treatment">
+            <li><a href="#" class="mobile-nav__sub-link">여드름 / 흉터 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">색소 / 기미 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">리프팅 / 탄력 관리</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-equipment">
+            <span>장비·프로그램</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-equipment">
+            <li><a href="#" class="mobile-nav__sub-link">프리미엄 레이저 장비</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">피부 재생 프로그램</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">맞춤형 관리 프로그램</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-event">
+            <span>이벤트</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-event">
+            <li><a href="#" class="mobile-nav__sub-link">신규 상담 이벤트</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">시즌 프로모션</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">패키지 할인 안내</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">예약·오시는 길</a></li>
+      </ul>
+      <a href="#" class="mobile-nav__cta">카카오톡 상담</a>
+    </nav>
+  </header>
+
+  <main class="page-sub__main">
+    <section class="sub-hero sub-hero--mobile" aria-labelledby="sub-hero-title">
+      <div class="sub-hero__inner section-shell section-shell--gutter">
+        <p class="sub-hero__eyebrow">스마일 클리닉 소개</p>
+        <h1 id="sub-hero-title" class="sub-hero__title">병원 소개</h1>
+        <nav class="sub-hero__tabs" aria-label="소개 하위 메뉴">
+          <a href="about-intro-mobile.html" class="sub-hero__tab is-active" aria-current="page">병원소개</a>
+          <a href="about-team-mobile.html" class="sub-hero__tab">의료진 소개</a>
+          <a href="about-place-mobile.html" class="sub-hero__tab">병원 둘러보기</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sub-section sub-about" aria-labelledby="about-head-title">
+      <div class="sub-about__content section-shell section-shell--gutter">
+        <div class="sub-section__head">
+          <p class="sub-section__label">philosophy</p>
+          <h2 id="about-head-title" class="sub-section__title">건강한 피부는 세심한 진료에서 시작됩니다.</h2>
+        </div>
+
+        <figure class="sub-about__figure">
+          <img
+            src="assets/images/sub_philosophy_card.jpg"
+            alt="스마일 클리닉 의료진과 스태프 단체 사진"
+            width="1440"
+            height="661"
+            decoding="async"
+          >
+        </figure>
+
+        <p class="sub-section__lead">피부를 위한 바른 진료, 스마일클리닉에서 시작됩니다.</p>
+
+        <div class="sub-about__columns">
+          <p>스마일클리닉은 <strong>일시적인 변화보다 피부 본연의 건강한 균형을 중요하게 생각합니다.</strong> 겉으로 보이는 피부 고민만 빠르게 개선하는 것보다, 현재 피부가 어떤 상태인지 정확히 살피고 그에 맞는 진료 방향을 정하는 과정을 우선합니다.
+
+피부 고민은 같은 증상처럼 보여도 원인과 상태가 모두 다를 수 있습니다. 피부 타입, 생활 습관, 이전 시술 경험, 계절에 따른 변화, 피부 장벽의 상태까지 함께 확인해야 내 피부에 맞는 치료 계획을 세울 수 있습니다.
+
+스마일클리닉은 충분한 상담을 통해 피부 상태를 차분히 확인하고, 무리한 시술보다 필요한 치료와 관리를 우선으로 제안합니다. 상담부터 시술, 이후 관리까지 편안하고 체계적인 진료를 받을 수 있도록 하겠습니다.</p>
+          <p>스마일클리닉은 환자 한 분 한 분의 피부 고민을 가볍게 판단하지 않습니다. 작은 변화라도 피부가 보내는 신호라고 생각하며, 현재의 문제뿐 아니라 앞으로의 피부 컨디션까지 고려해 진료 방향을 안내합니다.
+
+피부 치료는 단순히 시술을 진행하는 것으로 끝나지 않습니다. 시술 전 충분한 설명, 피부 상태에 맞는 계획, 시술 이후 회복 과정과 관리 방법까지 이어져야 보다 안정적인 변화를 기대할 수 있습니다.
+
+<strong>스마일클리닉은 과한 권유보다 필요한 설명을, 빠른 결정보다 충분한 이해를 중요하게 생각합니다.</strong> 편안하게 상담하고 안심하고 진료받을 수 있는 피부과가 될 수 있도록 세심한 기준으로 진료하겠습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner section-shell">
+      <div class="footer__info">
+        <div class="footer__info-left">
+          <div class="footer__col footer__col--location">
+            <h3 class="footer__heading">오시는 길</h3>
+            <p class="footer__text">서울시 강남구 테헤란로 65-1, 재원빌딩 2층</p>
+            <a href="#" class="footer__map-btn">
+              <span>네이버 지도에서 보기</span>
+              <img src="assets/icons/icon_footer_link.svg" alt="" width="16" height="16" decoding="async">
+            </a>
+          </div>
+          <div class="footer__col footer__col--phone">
+            <h3 class="footer__heading">대표전화</h3>
+            <p class="footer__phone">02-123-4567</p>
+          </div>
+        </div>
+        <div class="footer__col footer__col--hours">
+          <h3 class="footer__heading">진료시간</h3>
+          <dl class="footer__hours">
+            <div class="footer__hours-row">
+              <dt>평일</dt>
+              <dd>오전 9시 - 오후 8시</dd>
+            </div>
+            <div class="footer__hours-row">
+              <dt>토요일</dt>
+              <dd>오전 9시 - 오후 3시</dd>
+            </div>
+            <div class="footer__hours-row">
+              <dt>점심시간</dt>
+              <dd>오전 2시 - 오후 3시</dd>
+            </div>
+          </dl>
+          <p class="footer__hours-note">일요일 및 공휴일 휴진</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__brand-row">
+          <a href="index-mobile.html" class="footer__logo">
+            <img
+              src="assets/images/section_footer_logo.png"
+              alt="스마일 클리닉 SMILE CLINIC"
+              width="219"
+              height="57"
+              decoding="async"
+            >
+          </a>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="X">
+              <img src="assets/icons/icon_x.svg" alt="" width="24" height="24" decoding="async">
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <img src="assets/icons/icon_youtube.svg" alt="" width="24" height="24" decoding="async">
+            </a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram">
+              <img src="assets/icons/icon_instagram.svg" alt="" width="20" height="20" decoding="async">
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__links" aria-label="정책 및 안내">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이메일무단수집거부</a>
+          <a href="#">비급여 및 제증명안내</a>
+          <a href="#">상담안내</a>
+        </nav>
+
+        <div class="footer__legal">
+          <p class="footer__legal-text">
+            서울 서초구 강남구 테헤란로 65-1, 재원빌딩 2층 · 사업자등록번호 123-45-67890 · 상호명 스마일 클리닉 · 대표자 안정윤 · Tel 02-123-4567
+          </p>
+          <p class="footer__copyright">© Smile Clinic. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/mobile.js"></script>
+</body>
+</html>
