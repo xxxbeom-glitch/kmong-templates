@@ -39,12 +39,87 @@
         </nav>
         <a href="#" class="header__cta">카카오톡 상담</a>
       </div>
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="메뉴 열기"
+      >
+        <svg class="header__menu-icon header__menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="header__menu-icon header__menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="주요 메뉴">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-intro">
+            <span>스마일 클리닉 소개</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-intro">
+            <li><a href="about-intro.html" class="mobile-nav__sub-link">병원소개</a></li>
+            <li><a href="about-team.html" class="mobile-nav__sub-link">의료진 소개</a></li>
+            <li><a href="about-place.html" class="mobile-nav__sub-link">병원 둘러보기</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-treatment">
+            <span>진료과목</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-treatment">
+            <li><a href="#" class="mobile-nav__sub-link">여드름 / 흉터 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">색소 / 기미 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">리프팅 / 탄력 관리</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-equipment">
+            <span>장비·프로그램</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-equipment">
+            <li><a href="#" class="mobile-nav__sub-link">프리미엄 레이저 장비</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">피부 재생 프로그램</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">맞춤형 관리 프로그램</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-event">
+            <span>이벤트</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-event">
+            <li><a href="#" class="mobile-nav__sub-link">신규 상담 이벤트</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">시즌 프로모션</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">패키지 할인 안내</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">예약·오시는 길</a></li>
+      </ul>
+      <a href="#" class="mobile-nav__cta">카카오톡 상담</a>
+    </nav>
   </header>
 
   <main class="page-sub__main">
     <section class="sub-hero" aria-labelledby="sub-hero-title">
-      <div class="sub-hero__inner section-shell">
+      <div class="sub-hero__inner section-shell section-shell--gutter">
         <p class="sub-hero__eyebrow">스마일 클리닉 소개</p>
         <h1 id="sub-hero-title" class="sub-hero__title">의료진 소개</h1>
         <nav class="sub-hero__tabs" aria-label="소개 하위 메뉴">
@@ -56,13 +131,13 @@
     </section>
 
     <section class="sub-section sub-team" aria-labelledby="team-head-title">
-      <div class="sub-team__content section-shell">
+      <div class="sub-team__content section-shell section-shell--gutter">
         <div class="sub-section__head">
           <p class="sub-section__label">team</p>
           <h2 id="team-head-title" class="sub-section__title">건강한 피부는 정확한 진료 기준에서 시작됩니다.</h2>
         </div>
 
-        <div class="sub-team__cards">
+        <div class="sub-team__layout--desktop sub-team__cards">
           <article class="sub-team-card">
             <div class="sub-team-card__media">
               <img
@@ -111,12 +186,67 @@
             </div>
           </article>
         </div>
+
+        <div class="sub-team__mobile-only">
+          <div class="sub-team__picker" role="tablist" aria-label="의료진 선택">
+            <button type="button" class="sub-team__picker-btn is-active" role="tab" id="team-tab-0" aria-selected="true" aria-controls="team-card-0" data-team-index="0">
+              <img src="assets/images/sub_doctor_ahn.png" alt="안정윤 대표원장" width="64" height="64" decoding="async">
+            </button>
+            <button type="button" class="sub-team__picker-btn" role="tab" id="team-tab-1" aria-selected="false" aria-controls="team-card-1" data-team-index="1">
+              <img src="assets/images/sub_doctor_hong.png" alt="홍서윤 원장" width="64" height="64" decoding="async">
+            </button>
+          </div>
+
+          <div class="sub-team__cards" data-team-cards>
+            <article class="sub-team-card is-active" id="team-card-0" role="tabpanel" aria-labelledby="team-tab-0" data-team-card>
+              <div class="sub-team-card__media">
+                <img src="assets/images/sub_doctor_ahn.png" alt="" width="586" height="679" decoding="async">
+                <div class="sub-team-card__media-overlay" aria-hidden="true"></div>
+                <p class="sub-team-card__headline">피부 고민의 원인을 세심하게 살피고<br>개인에게 필요한 진료 방향을 제안합니다.</p>
+              </div>
+              <div class="sub-team-card__body">
+                <div class="sub-team-card__identity">
+                  <p class="sub-team-card__role">피부과 전문의</p>
+                  <h3 class="sub-team-card__name">안정윤 대표원장</h3>
+                </div>
+                <p class="sub-team-card__desc">반복되는 피부 고민은 겉으로 보이는 증상만으로 판단하기 어렵습니다.<br>홍서윤 대표원장은 상담을 통해 피부 타입, 생활 습관, 이전 시술 경험을 함께 확인하며<br>무리하지 않는 치료 계획을 안내합니다.</p>
+                <ul class="sub-team-card__creds">
+                  <li>전) 서울대병원 피부과 진료과장</li>
+                  <li>대한피부과학회 정회원</li>
+                  <li>대한피부레이저학회 정회원</li>
+                  <li>여드름·흉터·색소 치료 중점 진료</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="sub-team-card" id="team-card-1" role="tabpanel" aria-labelledby="team-tab-1" data-team-card hidden>
+              <div class="sub-team-card__media">
+                <img src="assets/images/sub_doctor_hong.png" alt="" width="586" height="679" decoding="async">
+                <div class="sub-team-card__media-overlay" aria-hidden="true"></div>
+                <p class="sub-team-card__headline">자연스러운 변화와 회복 과정을 고려해<br>피부에 맞는 시술 계획을 함께 세웁니다.</p>
+              </div>
+              <div class="sub-team-card__body">
+                <div class="sub-team-card__identity">
+                  <p class="sub-team-card__role">피부과 전문의</p>
+                  <h3 class="sub-team-card__name">홍서윤 원장</h3>
+                </div>
+                <p class="sub-team-card__desc">김도현 원장은 피부 탄력, 얼굴 라인, 피부결 고민을 중심으로<br>개인의 피부 두께와 회복 속도를 고려한 진료 방향을 제안합니다.<br>상담부터 시술 후 관리까지 편안하게 이어지는 과정을 중요하게 생각합니다.</p>
+                <ul class="sub-team-card__creds">
+                  <li>전) 서울대병원 피부과 진료과장</li>
+                  <li>대한피부과학회 정회원</li>
+                  <li>대한피부레이저학회 정회원</li>
+                  <li>리프팅·탄력·쁘띠 시술 중점 진료</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer__inner section-shell">
+    <div class="footer__inner section-shell section-shell--gutter">
       <div class="footer__info">
         <div class="footer__info-left">
           <div class="footer__col footer__col--location">

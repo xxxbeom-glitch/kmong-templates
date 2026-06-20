@@ -35,7 +35,7 @@
 
 | 항목 | 값 |
 |------|-----|
-| `--side-padding` | 20px |
+| `--side-padding` | 20px · **모바일 `@768` `.section-shell` 좌우 gutter 기본값** |
 | `--header-height` | 64px |
 | hero `min-height` | 560px |
 | `--section-padding-y` | 64px |
@@ -47,7 +47,7 @@
 | # | 결정 |
 |---|------|
 | 1 | 이후 모바일 섹션·`@768` 이식 시 **위 변수·배율 그대로** — 임의 px 금지 |
-| 2 | 프리뷰: `index-mobile.html` · 최종 이식: 섹션 PASS 후 `style.css` `@768` |
+| 2 | 프리뷰: `index-mobile.html` · 최종 이식: **`style.css` `@768`** (2026-06-09 완료) |
 
 ---
 

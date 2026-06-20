@@ -1,5 +1,22 @@
 # QA Log
 
+## 2026-06-09 — smile-clinic 모바일 @768 최종 이식
+
+**템플릿:** `smile-clinic` · **범위:** 메인 + 서브 3페이지 · `style.css` @768 · `main.js`  
+**기준:** `index-mobile.html` / `about-*-mobile.html` 사용자 PASS 확정본  
+**결과:** **PASS** (코드·구조 대조 — 실브라우저 768px 확인 권장)
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | mobile.css → style.css @768 병합 | PASS |
+| 2 | mobile.js → main.js 통합 | PASS |
+| 3 | 모바일 nav · 슬라이더 · team picker HTML | PASS |
+| 4 | PC 마크업 유지 (듀얼 블록 show/hide) | PASS |
+
+**다음:** 실기기·DevTools 768px QA · 납품 전 전체 QA
+
+---
+
 ## 2026-06-09 — smile-clinic 모바일 header · hero · signature
 
 **템플릿:** `smile-clinic` · **파일:** `index-mobile.html` · `css/mobile.css`  

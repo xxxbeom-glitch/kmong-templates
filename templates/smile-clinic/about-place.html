@@ -39,12 +39,87 @@
         </nav>
         <a href="#" class="header__cta">카카오톡 상담</a>
       </div>
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="메뉴 열기"
+      >
+        <svg class="header__menu-icon header__menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="header__menu-icon header__menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="주요 메뉴">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-intro">
+            <span>스마일 클리닉 소개</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-intro">
+            <li><a href="about-intro.html" class="mobile-nav__sub-link">병원소개</a></li>
+            <li><a href="about-team.html" class="mobile-nav__sub-link">의료진 소개</a></li>
+            <li><a href="about-place.html" class="mobile-nav__sub-link">병원 둘러보기</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-treatment">
+            <span>진료과목</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-treatment">
+            <li><a href="#" class="mobile-nav__sub-link">여드름 / 흉터 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">색소 / 기미 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">리프팅 / 탄력 관리</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-equipment">
+            <span>장비·프로그램</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-equipment">
+            <li><a href="#" class="mobile-nav__sub-link">프리미엄 레이저 장비</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">피부 재생 프로그램</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">맞춤형 관리 프로그램</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-event">
+            <span>이벤트</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-event">
+            <li><a href="#" class="mobile-nav__sub-link">신규 상담 이벤트</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">시즌 프로모션</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">패키지 할인 안내</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">예약·오시는 길</a></li>
+      </ul>
+      <a href="#" class="mobile-nav__cta">카카오톡 상담</a>
+    </nav>
   </header>
 
   <main class="page-sub__main">
     <section class="sub-hero" aria-labelledby="sub-hero-title">
-      <div class="sub-hero__inner section-shell">
+      <div class="sub-hero__inner section-shell section-shell--gutter">
         <p class="sub-hero__eyebrow">스마일 클리닉 소개</p>
         <h1 id="sub-hero-title" class="sub-hero__title">병원 둘러보기</h1>
         <nav class="sub-hero__tabs" aria-label="소개 하위 메뉴">
@@ -56,7 +131,7 @@
     </section>
 
     <section class="sub-section sub-place" aria-labelledby="place-head-title">
-      <div class="sub-place__content section-shell">
+      <div class="sub-place__content section-shell section-shell--gutter">
         <div class="sub-section__head">
           <p class="sub-section__label">place</p>
           <h2 id="place-head-title" class="sub-section__title">편안한 진료는 안심할 수 있는 공간에서 시작됩니다.</h2>
@@ -101,11 +176,54 @@
           </figure>
         </div>
       </div>
+
+      <div class="sub-place__slider-outer is-bleed-x">
+        <div class="sub-place__viewport" data-place-slider>
+          <div class="sub-place__track" data-place-track>
+            <figure class="sub-place-card">
+              <div class="sub-place-card__media">
+                <img src="assets/images/sub_place_lounge.jpg" alt="스마일 클리닉 라운지" width="473" height="420" decoding="async">
+              </div>
+              <figcaption class="sub-place-card__caption">라운지</figcaption>
+            </figure>
+            <figure class="sub-place-card" aria-hidden="true">
+              <div class="sub-place-card__media">
+                <img src="assets/images/sub_place_room_a.jpg" alt="스마일 클리닉 진료실 A" width="473" height="420" decoding="async">
+              </div>
+              <figcaption class="sub-place-card__caption">진료실 A</figcaption>
+            </figure>
+            <figure class="sub-place-card" aria-hidden="true">
+              <div class="sub-place-card__media">
+                <img src="assets/images/sub_place_room_b.jpg" alt="스마일 클리닉 진료실 B" width="473" height="420" decoding="async">
+              </div>
+              <figcaption class="sub-place-card__caption">진료실 B</figcaption>
+            </figure>
+            <figure class="sub-place-card" aria-hidden="true">
+              <div class="sub-place-card__media">
+                <img src="assets/images/sub_place_consult.jpg" alt="스마일 클리닉 상담실" width="473" height="420" decoding="async">
+              </div>
+              <figcaption class="sub-place-card__caption">상담실</figcaption>
+            </figure>
+            <figure class="sub-place-card" aria-hidden="true">
+              <div class="sub-place-card__media">
+                <img src="assets/images/sub_place_treatment.jpg" alt="스마일 클리닉 시술실" width="473" height="420" decoding="async">
+              </div>
+              <figcaption class="sub-place-card__caption">시술실</figcaption>
+            </figure>
+            <figure class="sub-place-card" aria-hidden="true">
+              <div class="sub-place-card__media">
+                <img src="assets/images/sub_place_recovery.jpg" alt="스마일 클리닉 회복실" width="473" height="420" decoding="async">
+              </div>
+              <figcaption class="sub-place-card__caption">회복실</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer__inner section-shell">
+    <div class="footer__inner section-shell section-shell--gutter">
       <div class="footer__info">
         <div class="footer__info-left">
           <div class="footer__col footer__col--location">

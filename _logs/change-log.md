@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-09 — [template] smile-clinic header 로고 좌측 정렬
+
+**범위:** `css/style.css` · `css/mobile.css` — `.header__logo img`  
+**수정:** PNG bbox 좌측 투명 여백(128/1448) 보정 `margin-left` — 본문 `--side-padding` 시작선과 artwork 정렬
+
+---
+
+## 2026-06-09 — [template] smile-clinic 모바일 @768 최종 이식
+
+**범위:** `css/style.css` @768 · `js/main.js` · `index.html` · `about-*.html`  
+**CSS:** `mobile.css` 기준값 → `@media (max-width: 768px)` 병합 · `--mo-*` 변수  
+**HTML:** 모바일 nav · strength/place 슬라이더 · team picker(듀얼 마크업)  
+**JS:** `mobile.js` → `main.js` (`isMobileViewport` · magnetic slider · nav · team · place)  
+**프리뷰:** `*-mobile.html` + `mobile.css` 유지 (검수용)
+
+---
+
 ## 2026-06-09 — [template] smile-clinic 모바일 footer · reservation 풀 bleed
 
 **footer:** `index-mobile.html` · stacked cols · `--mo-*` · logo 154px  

@@ -39,7 +39,82 @@
         </nav>
         <a href="#" class="header__cta">카카오톡 상담</a>
       </div>
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="메뉴 열기"
+      >
+        <svg class="header__menu-icon header__menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="header__menu-icon header__menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="주요 메뉴">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-intro">
+            <span>스마일 클리닉 소개</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-intro">
+            <li><a href="about-intro.html" class="mobile-nav__sub-link">병원소개</a></li>
+            <li><a href="about-team.html" class="mobile-nav__sub-link">의료진 소개</a></li>
+            <li><a href="about-place.html" class="mobile-nav__sub-link">병원 둘러보기</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-treatment">
+            <span>진료과목</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-treatment">
+            <li><a href="#" class="mobile-nav__sub-link">여드름 / 흉터 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">색소 / 기미 치료</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">리프팅 / 탄력 관리</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-equipment">
+            <span>장비·프로그램</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-equipment">
+            <li><a href="#" class="mobile-nav__sub-link">프리미엄 레이저 장비</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">피부 재생 프로그램</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">맞춤형 관리 프로그램</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__link mobile-nav__link--trigger" aria-expanded="false" aria-controls="mobile-nav-sub-event">
+            <span>이벤트</span>
+            <svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-nav-sub-event">
+            <li><a href="#" class="mobile-nav__sub-link">신규 상담 이벤트</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">시즌 프로모션</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">패키지 할인 안내</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">예약·오시는 길</a></li>
+      </ul>
+      <a href="#" class="mobile-nav__cta">카카오톡 상담</a>
+    </nav>
   </header>
 
   <main class="page-main__content">
@@ -57,7 +132,7 @@
     </section>
 
     <section class="signature" id="signature" aria-labelledby="signature-title">
-      <div class="signature__inner section-shell">
+      <div class="signature__inner section-shell section-shell--gutter">
         <div class="signature__head section-head--spaced">
           <div class="signature__intro section-head">
             <p class="section-label scroll-reveal">SIGNATURE</p>
@@ -118,7 +193,7 @@
         </div>
       </div>
 
-      <div class="signature__inner signature__inner--foot section-shell">
+      <div class="signature__inner signature__inner--foot section-shell section-shell--gutter">
         <a href="#" class="signature__more scroll-reveal">
           <span>진료과목 전체보기</span>
           <img src="assets/icons/section_hero_right_icon.svg" alt="" width="20" height="20" decoding="async" class="signature__more-icon">
@@ -127,14 +202,14 @@
     </section>
 
     <section class="strength" id="strength" aria-labelledby="strength-title">
-      <div class="strength__inner section-shell">
+      <div class="strength__inner section-shell section-shell--gutter">
         <div class="strength__head section-head section-head--spaced">
           <p class="section-label scroll-reveal">OUR STRENGTH</p>
           <h2 id="strength-title" class="section-title scroll-reveal">과정이 편안한 피부 클리닉</h2>
           <p class="section-desc scroll-reveal">충분한 상담을 바탕으로 필요한 진료를 차분하게 안내합니다.</p>
         </div>
 
-        <div class="strength-feature">
+        <div class="strength-feature strength-feature--desktop">
           <div class="strength-feature__panel scroll-reveal" role="img" aria-label="의료진과 환자 상담 장면">
             <div class="strength-feature__row">
               <button type="button" class="strength-feature__nav strength-feature__nav--prev circle-nav-btn" aria-label="이전" disabled>
@@ -153,11 +228,51 @@
             </div>
           </div>
         </div>
+
+        <div class="strength-feature__slider-outer is-bleed-x">
+          <div class="strength-feature__viewport" data-strength-slider>
+            <div class="strength-feature__track" data-strength-track>
+              <article class="strength-feature__panel scroll-reveal" aria-label="의료진과 환자 상담 장면 1">
+                <div class="strength-feature__row">
+                  <div class="strength-feature__copy">
+                    <h3 class="strength-feature__title">충분히 듣고, 피부 상태에 맞게 상담합니다.</h3>
+                    <p class="strength-feature__desc">
+                      피부 고민과 생활 습관, 이전 시술 경험을 함께 확인합니다.<br>
+                      같은 고민이라도 피부 상태에 따라 필요한 접근은 달라질 수 있기 때문입니다.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="strength-feature__panel" aria-hidden="true" aria-label="의료진과 환자 상담 장면 2">
+                <div class="strength-feature__row">
+                  <div class="strength-feature__copy">
+                    <h3 class="strength-feature__title">충분히 듣고, 피부 상태에 맞게 상담합니다.</h3>
+                    <p class="strength-feature__desc">
+                      피부 고민과 생활 습관, 이전 시술 경험을 함께 확인합니다.<br>
+                      같은 고민이라도 피부 상태에 따라 필요한 접근은 달라질 수 있기 때문입니다.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="strength-feature__panel" aria-hidden="true" aria-label="의료진과 환자 상담 장면 3">
+                <div class="strength-feature__row">
+                  <div class="strength-feature__copy">
+                    <h3 class="strength-feature__title">충분히 듣고, 피부 상태에 맞게 상담합니다.</h3>
+                    <p class="strength-feature__desc">
+                      피부 고민과 생활 습관, 이전 시술 경험을 함께 확인합니다.<br>
+                      같은 고민이라도 피부 상태에 따라 필요한 접근은 달라질 수 있기 때문입니다.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="process" id="process" aria-labelledby="process-title">
-      <div class="process__inner section-shell">
+      <div class="process__inner section-shell section-shell--gutter">
         <div class="process__layout">
           <div class="process__intro section-head">
             <p class="section-label scroll-reveal">PROCESS</p>
@@ -192,8 +307,8 @@
     </section>
 
     <section class="reservation" id="reservation" aria-labelledby="reservation-title">
-      <div class="reservation__inner section-shell">
-        <div class="reservation__panel scroll-reveal">
+      <div class="reservation__panel scroll-reveal">
+        <div class="reservation__inner section-shell section-shell--gutter">
           <div class="reservation__content">
             <div class="reservation__copy">
               <p class="section-label section-label--light">RESERVATION</p>
@@ -219,7 +334,7 @@
   </main>
 
   <footer class="footer">
-    <div class="footer__inner section-shell">
+    <div class="footer__inner section-shell section-shell--gutter">
       <div class="footer__info">
         <div class="footer__info-left">
           <div class="footer__col footer__col--location">
