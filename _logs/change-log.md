@@ -1,5 +1,92 @@
 # Change Log
 
+## 2026-06-08 — [rules] cross-template 7패턴 규칙 패치
+
+**범위:** smile-clinic 작업에서 도출된 **템플릿 공통** 재발 방지
+
+| 패턴 | 반영 파일 |
+|------|-----------|
+| Figma overlay/gradient fills | `30-figma-to-code.mdc` · MCP `Overlays:` · QA |
+| Logo PNG bbox | `30-figma-to-code.mdc` · `40-template-code-style.mdc` · QA |
+| Shell · gutter · inner | `30-figma-to-code.mdc` · `40-template-code-style.mdc` |
+| Full-bleed horizontal scroll | `30-figma-to-code.mdc` · `40` · `50-qa-checklist.mdc` (#9) |
+| F5 scroll top | `40-template-code-style.mdc` · `45-interaction-patterns.mdc` · QA |
+| Section head tokens | `30` · `40` · QA |
+| Section BG MCP 1줄 | `30` · `20-harness-workflow.mdc` · `_docs/figma-to-code-guide.md` |
+
+**로그:** `_logs/failure-log.md` cross-template 항목 추가
+
+---
+
+## 2026-06-08 — [template] smile-clinic Signature 배경·카드 gradient
+
+**템플릿:** `smile-clinic`
+
+| 항목 | Figma MCP | 조치 |
+|------|-----------|------|
+| Signature 섹션 BG | `section-strength`와 동일 `#fffefe` · `section-treatment` 프레임 자체 fill 없음 | `.signature { background: var(--color-bg) }` · `--color-bg: #fffefe` |
+| Signature 카드 overlay | `GRADIENT_LINEAR` 0→100% black · **opacity 20%** · y 24.4%→90% | `.signature-card::after` |
+
+---
+
+## 2026-06-08 — [template] smile-clinic 공통 레이아웃·간격 통합
+
+**템플릿:** `smile-clinic`
+
+| 항목 | 조치 |
+|------|------|
+| `:root` | `--section-head-gap` · `--section-label-gap` · `--section-title-gap` · `--gap-md` · `--radius-card` · `--surface-card-pad-*` · `--nav-circle-size` |
+| 공통 클래스 | `.section-shell` · `.section-shell--gutter` · `.section-head` · `.section-head--spaced` · `.section-head--center` · `.circle-nav-btn` · `.surface-card` · `.is-bleed-x` |
+| 간격 통일 | SIGNATURE·STRENGTH head→본문 **64px** (slider `padding-top` 제거) · label→title **16px** |
+| HTML | `index.html` 공통 클래스 적용 |
+
+---
+
+## 2026-06-08 — [template] smile-clinic PC 메인 Figma 정합 수정
+
+**템플릿:** `smile-clinic`
+
+| 항목 | 수정 |
+|------|------|
+| Hero | 하단 정렬 · 그라데이션 26% 수준 · CTA 투명+흰 테두리 |
+| Signature | 1920 슬라이더 풀블리드 · 카드 desc `#e9e9e9` · 전체보기 아이콘 색 |
+| Strength | 타원 내부 좌우 nav + 중앙 카피 |
+| Process | STEP 배지(10% brown bg) · SUIT step title |
+| Footer | 좌(오시는길+대표전화) / 우(진료시간) · 구분선 · phone SUIT |
+| Header | logo + nav/CTA 그룹 gap 31 |
+
+---
+
+## 2026-06-08 — [template] smile-clinic PC 메인 구현
+
+**템플릿:** `smile-clinic`
+
+| 항목 | 조치 |
+|------|------|
+| `index.html` | Hero · Signature · Strength · Process · Reservation · Footer |
+| `css/style.css` | Figma 수치 기반 PC 스타일 · 768px 기본 대응 |
+| `js/main.js` | Signature 슬라이더 4장 · loop 없음 |
+| assets | 제공 이미지·아이콘 매칭 반영 |
+
+**미구현:** 소개 3페이지 · 모바일 디자인 확정본 · GNB 1depth 하위 페이지
+
+---
+
+## 2026-06-08 — [template] smile-clinic 폴더·스캐폴드 생성
+
+**템플릿:** `smile-clinic`
+
+| 항목 | 조치 |
+|------|------|
+| 페이지 | `index.html` · `about-intro.html` · `about-team.html` · `about-place.html` |
+| 스타일·스크립트 | `css/style.css`(:root 토큰) · `js/main.js` |
+| 납품 에셋 | `assets/images/` · `assets/icons/` |
+| 소스 수령 | `_source/images/` · `_source/icons/` (사용자 에셋 투입용) |
+
+**미구현:** 헤더·푸터·섹션 HTML/CSS/JS · 모바일
+
+---
+
 ## 2026-06-09 — [project] start.bat · stop.bat 제거
 
 - 루트 `start.bat` · `stop.bat` 삭제

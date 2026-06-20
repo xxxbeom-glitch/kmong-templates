@@ -48,6 +48,8 @@ Proposed folder: templates/ontheblue/
 - [ ] 섹션 width / height · padding (T/R/B/L)
 - [ ] 주요 font-size · line-height · color
 - [ ] **Section shell** — guttered / full-bleed / breakout (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · MCP bbox 근거 1줄
+- [ ] **Section BG** — `Section BG: #hex | transparent (근거)` 1줄 (프레임 fill 없어도 형제·band 확인)
+- [ ] **Overlays** — `Overlays: none | gradient(...) | flat rgba` 1줄 · fills[] **IMAGE 외 전수**
 - [ ] **title/head/body copy `textAlignHorizontal` · head wrapper Auto Layout align**
 - [ ] 모호한 수치는 **질문 후 승인** — 추측 금지
 
@@ -65,6 +67,9 @@ Proposed folder: templates/ontheblue/
 | TEXT `textAlignHorizontal` | `text-align: left \| center \| right` (MCP 1:1) |
 | Auto Layout align | flex `align-items` / `justify-content` (MCP 1:1) |
 | Section shell (bbox) | guttered / full-bleed / breakout → `30-figma-to-code.mdc` 「Section shell · full-bleed」 |
+| Gutter + inner | section `padding-inline` · inner `.section-shell` (`max-width` only) — **pad 이중 금지** |
+| GRADIENT / fill opacity | CSS overlay (`::after` 등) — PNG flatten만 **금지** |
+| Logo PNG | content bbox crop · img `width` + `height:auto` |
 | 텍스트 고정 height | **금지** → `min-height` 또는 auto |
 | 히어로·KV | `min-height:100vh` **금지** |
 

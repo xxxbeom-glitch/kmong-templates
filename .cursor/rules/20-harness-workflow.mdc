@@ -56,7 +56,7 @@ alwaysApply: true
 1. **범위 확인** (코딩 전 필수)
    - `작업 범위: [파일] / [섹션] / [변경 요약]` 한 줄 제시
 2. **Figma 분석 보고** (MCP 사용 시, 코딩 전 필수)
-   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · 모호한 점
+   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · **Section BG 1줄** · **Overlays 1줄** · 모호한 점
    - **(인터랙션 검토 시)** preset 후보 ID · `46-interaction-presets.mdc` — **사용자 선택·승인 전 구현 금지**
    - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
 3. **구현**: **`templates/{slug}/`에 직접** — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → **승인된 preset만** JS (`45`·`46`) · **사진 슬롯** → `data-placeholder` + `dev-images.js` (`47-placeholder-images.mdc`)

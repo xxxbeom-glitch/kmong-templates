@@ -48,6 +48,8 @@
 ## 2. Figma 대조 QA
 
 - [ ] **Section shell** — guttered / full-bleed / breakout · @1920 bg가 끝까지인지 (`50-qa-checklist.mdc` #7·#8)
+- [ ] **Section BG** · **Overlays (gradient/opacity)** — MCP 보고 1줄씩과 일치
+- [ ] **Shell · inner** — section gutter + `.section-shell` (pad 이중 없음) · **section-head** 토큰
 - [ ] padding / gap / font-size / line-height / color — MCP → **clamp/vw**
 - [ ] **gap bbox 검증** — `itemSpacing` + **인접 자식 bbox 간격** (불일치 시 bbox 우선)
 - [ ] **text-align · head alignment** = Figma `textAlignHorizontal` / Auto Layout (섹션 head vs card 등 **블록별**)
@@ -78,7 +80,8 @@
 
 - [ ] `@media (max-width:1024px)` · `@media (max-width:768px)` 블록 존재·반영
 - [ ] **QA 뷰포트 5종** 확인: **1920 · 1440 · 1024 · 768 · 390px**
-- [ ] 레이아웃 깨짐·가로 overflow 없음
+- [ ] 레이아웃 깨짐·**가로 overflow 없음** (`.is-bleed-x` 좌우 margin · bleed 자식 `100%` · `overflow-x: clip`)
+- [ ] **로고 `<img>`** computed ≈ Figma bbox (±2px)
 - [ ] 텍스트 줄바꿈·이미지 aspect-ratio 유지
 - [ ] 768px 이하 버튼·링크 터치 영역 **≥44×44px**
 - [ ] hover-only UI → 터치 환경 대체·비활성화
@@ -118,6 +121,7 @@
 
 > preset 카탈로그: `_docs/interaction-presets-guide.md` · `46-interaction-presets.mdc`
 
+- [ ] **F5 새로고침** — 페이지 top (`main.js` scrollRestoration + pageshow)
 - [ ] GNB 햄버거 열림/닫힘
 - [ ] GNB `is-active` 해당 페이지 HTML에만 적용
 - [ ] FAQ 아코디언 · 캐러셀 · AOS · CTA hover

@@ -29,6 +29,10 @@ globs:
 
 ## Figma 대조
 - [ ] **Section shell** = MCP 분류 (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · guttered / full-bleed / breakout
+- [ ] **Section BG** = MCP `Section BG:` 1줄과 일치 (프레임 fill 없으면 **근거** — 형제·인접 섹션·band)
+- [ ] **Overlays** = MCP `Overlays:` 1줄과 일치 — gradient/flat opacity · PNG export만으로 판단 **금지**
+- [ ] **Shell · gutter · inner** — gutter는 section, inner는 `.section-shell` (`max-width` only, pad 이중 없음)
+- [ ] **Section head** — `.section-head` + `--section-*-gap` 토큰 · 섹션별 ad-hoc margin **금지**
 - [ ] padding / gap / font-size / line-height / color — **MCP 수치 → clamp/vw** (px 고정 없음)
 - [ ] **gap bbox 검증** — `itemSpacing`만 쓰지 않음 · **인접 자식 bbox 간격** 또는 **자식 폭 합 + gap = 부모 폭** 확인 (`30-figma-to-code.mdc`)
 - [ ] **text-align · head flex alignment** = Figma `textAlignHorizontal` / Auto Layout align (head vs card body **블록별**)
@@ -51,11 +55,14 @@ globs:
 | 6 | gutter + shell **pad 이중** 없음 | 없음 | 이중 축소 |
 | 7 | **full-bleed / breakout** — @1920 bg·band가 **뷰포트 좌우 끝**까지 (section gutter로 bg 축소 **금지**) | 끝까지 | 양쪽 흰 여백 |
 | 8 | **guttered** — content만 gutter, bg가 guttered인데 full-bleed CSS **금지** | 일치 | bleed 오적용 |
+| 9 | **가로 스크롤 없음** — 1920·1440·1024·768 · `overflow-x` · `.is-bleed-x` 좌우 margin · bleed 자식 `100%` not `100vw` | 없음 | 가로 scrollbar |
 
-- [ ] 위 **8**항 PASS · `_logs/failure-log.md` 유사 FAIL 없음
+- [ ] 위 **9**항 PASS · `_logs/failure-log.md` 유사 FAIL 없음
 
 ## HTML/CSS
 - [ ] `section` id + `section--*` 규칙
+- [ ] **로고 `<img>`** — bbox crop · `width`+`height:auto` · contain+고정 height **금지** · computed ≈ Figma (±2px)
+- [ ] **`html`/`body` `overflow-x: clip`** (full-bleed·슬라이더 템플릿)
 - [ ] clamp 수치 또는 승인된 하드코딩
 - [ ] `@media 1024px` · `@media 768px` 반영 · 인라인 스타일 없음
 - [ ] QA 뷰포트 1920·1440·1024·768·390 — overflow·줄바꿈·aspect-ratio·터치 영역(≥44px)
@@ -86,6 +93,7 @@ globs:
 - [ ] **한글 줄바꿈·텍스트 잘림** — iOS/Android 렌더링 차이로 잘리지 않음
 
 ## 기능 (해당 시)
+- [ ] **F5 새로고침** — scroll top (`scrollRestoration` + `pageshow`) · 중간 위치 복원 **금지**
 - [ ] GNB 햄버거 · FAQ · 캐러셀 · AOS · CTA hover (fine pointer만)
 - [ ] **Interaction preset** — 적용 ID = 사용자 승인 목록 · 섹션당 상한 · 중복 animation 없음 (`46-interaction-presets.mdc`)
 - [ ] 링크·GNB `is-active` 페이지별 정확

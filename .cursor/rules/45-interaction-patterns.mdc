@@ -13,6 +13,7 @@ globs:
 
 - JS는 **jQuery 3.x** only. 바닐라 DOM 조작 추가 금지.
 - 진입점: `js/main.js` — `$(function(){ ... })` 패턴
+- **새로고침 scroll top:** `history.scrollRestoration = "manual"` + `pageshow` → `scrollTo(0,0)` (`40-template-code-style.mdc` JS 기본)
 - GNB 모바일: `.menu-toggle` + `.header__nav.is-open`
 - FAQ: `slideToggle` 단일 duration, 단일 열림, `is-open`은 애니메이션 콜백과 동기
 - AOS: `data-aos-anchor`로 트리거 고정, `prefers-reduced-motion` 존중

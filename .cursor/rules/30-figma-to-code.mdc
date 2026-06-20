@@ -19,7 +19,7 @@ globs:
 - **모든 Figma px**(padding, gap, font-size, shell gutter, inner width 등) → **뷰포트 fluid 치환** (`30-figma-to-code.mdc` 「Fluid scale」).
 - vw 미적용: color, font-weight, 1px border, letter-spacing(Figma px 그대로)
 - 섹션 맞닿음(gap 0) → 바깥 margin 금지, **프레임 padding만**
-- padding 이중 적용 금지
+- padding 이중 적용 금지 — **섹션 gutter + inner `max-width` + inner 좌우 padding** 같은 요소에 **동시 금지** (`border-box` 이중 inset · 「Shell · gutter · inner」)
 - 이미지: Figma W×H → `aspect-ratio` + **`object-fit: cover`** (아래 「Image · card fill」)
 - **hero·카드 `<img>`:** Figma → `assets/images/` export **금지** · `_dev-images/` + `data-placeholder` + `dev-images.js` (`47-placeholder-images.mdc`)
 - **섹션 장식 bg:** `assets/images/` **직접** (news-bg, cta-bg 등)
@@ -134,7 +134,56 @@ content_inset = content_width ≈ W − 2×gutter
 
 **금지:** full-bleed·breakout 섹션에 **습관적으로** `section { padding-inline: var(--layout-pad-x) }` (CTA·stats 실패 원인)
 
-**MCP 분석 보고에 포함 (필수 1줄):** `Shell: guttered | full-bleed | breakout` · bg frame명·width · content width · 근거 bbox
+**MCP 분석 보고에 포함 (필수 1줄):** `Shell: guttered | full-bleed | breakout` · bg frame명·width · content width · **Section BG: #hex | transparent (근거)`** · 근거 bbox
+
+### Breakout · full-bleed — 가로 overflow 방지
+
+- `.is-bleed-x` **좌·우 margin 둘 다** 필수 (한쪽만 **금지**)
+- bleed **안** 자식은 `width: 100%` — **`100vw` 중복 금지**
+- breakout이면 **섹션 `background`** 와 bleed band bg **동일색** 유지 (끊김 방지)
+- 템플릿 `html`/`body`에 `overflow-x: clip` (또는 동등) — **페이지 QA 필수** (`50-qa-checklist.mdc`)
+
+## Shell · gutter · inner (필수 — guttered 섹션)
+
+**역할 분리** — 한 요소에 gutter padding + content max-width **동시 금지** (`box-sizing: border-box` 이중 inset).
+
+| 역할 | CSS | HTML (권장) |
+|------|-----|-------------|
+| **섹션 gutter** | `{section} { padding-inline: gutter; }` | `<section>` |
+| **콘텐츠 inner** | `max-width: content_px; margin-inline: auto; width: 100%` | `.section-shell` |
+| **헤더·히어로 gutter** | `.section-shell--gutter` = max-width + 좌우 pad | header/hero inner |
+
+**섹션 head (label + title + desc)** — 템플릿 `:root` 토큰 + 공통 클래스 (`40-template-code-style.mdc`):
+
+- `--section-label-gap` · `--section-title-gap` · `--section-head-gap`
+- `.section-head` · `.section-head--spaced` (head → 본문 간격)
+- breakout band **padding-top**과 `--section-head-gap` **이중 금지**
+
+## Fill · overlay · gradient (필수 — 카드·패널·히어로)
+
+Figma **fills[]**는 `IMAGE`만 export한다고 가정 **금지**. MCP에서 **전수 확인**.
+
+| Figma fill | 구현 |
+|------------|------|
+| `IMAGE` only | `background-image` / `<img>` + **`object-fit: cover`** (또는 card fill 규칙) |
+| `GRADIENT_LINEAR` / `GRADIENT_RADIAL` | CSS `linear-gradient` / `radial-gradient` — **`::after`·`::before`·background-layer** |
+| fill **`opacity` < 1** | gradient/solid에 **동일 opacity** (레이어 opacity ≠ stop alpha만으로 대체 **금지**) |
+| IMAGE + GRADIENT **겹침** | 이미지 + **별도 overlay** (PNG flatten에만 의존 **금지**) |
+
+**MCP 분석 보고에 포함 (필수 1줄):** `Overlays: none | gradient(stops · opacity · y%) | flat rgba`
+
+**QA:** export PNG만으로 overlay 유무 판단 **금지** — DevTools에서 gradient/overlay 존재 확인.
+
+## Logo · icon · export PNG (필수)
+
+| 항목 | 규칙 |
+|------|------|
+| **납품 전** | 로고·아이콘 PNG — **content bbox crop** (투명 여백만 있는 대형 캔버스 **금지**) |
+| **`<img>` 로고** | **한 축만 고정** (보통 `width` + `height: auto`) |
+| **금지** | `object-fit: contain` + **고정 `height`** 조합 (여백 캔버스 → 실제 그래픽 축소) |
+| HTML `width`/`height` | **표시 비율**(Figma bbox) — 원본 파일 px **금지** |
+
+**QA:** computed img 높이 ≈ Figma 로고 bbox height (±2px).
 
 ## Image · card fill (필수 — Story·News 등 카드)
 
@@ -168,6 +217,8 @@ Figma **Fill(채우기)** 과 동일. 원본 해상도·비율과 **달라도** 
 
 - shell·gutter에 Figma 설계 px **max cap** (`clamp(..., 1840px)` 등) → ultrawide 좌우 여백 과다
 - gutter pad + shell `max-width` **이중 축소**
+- **inner**에 gutter `padding-inline` + `max-width` **동시** (`border-box` 시작선 밀림)
+- PNG export만 보고 **gradient/flat overlay** 생략
 - font-size / padding / gap **@1920 px 고정** (하드코딩 승인 제외)
 
 ### QA

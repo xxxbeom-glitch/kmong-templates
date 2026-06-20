@@ -90,3 +90,24 @@
 ## 2026-06-04 — 구조 리셋
 
 No failure recorded.
+
+---
+
+## 2026-06-08 — cross-template: overlay · gutter · bleed · logo · scroll (재발 방지)
+
+> smile-clinic 등에서 반복된 **템플릿 공통** 실패 유형 — 디자인별이 아니 규칙화.
+
+### 증상 (대표)
+1. 카드 **gradient overlay**·섹션 **배경색** Figma와 불일치 (PNG export만 구현)
+2. **로고** DevTools 높이 ≪ Figma (여백 큰 PNG + `contain`+고정 height)
+3. 섹션 **title 시작 x** 다른 섹션과 불일치 (inner에 gutter pad + max-width 이중)
+4. **가로 스크롤** (`.is-bleed-x` 한쪽 margin · bleed 자식 `100vw` 중복)
+5. **F5** 후 스크롤 중간 위치 복원
+6. 섹션 head **label→title→본문** 간격 섹션마다 상이 (ad-hoc margin)
+
+### 재발 방지 (규칙 패치 2026-06-08)
+- `30-figma-to-code.mdc` — Fill·overlay·gradient · Shell·gutter·inner · Logo·icon · bleed overflow · MCP `Section BG`/`Overlays`
+- `40-template-code-style.mdc` — `.section-shell` · `.section-head` · logo img · `main.js` scroll top · `overflow-x: clip`
+- `45-interaction-patterns.mdc` — scroll restoration
+- `50-qa-checklist.mdc` · `_docs/qa-checklist.md` — Section BG · Overlays · horizontal scroll · logo · F5
+- `20-harness-workflow.mdc` — MCP 보고 필수 1줄 확장

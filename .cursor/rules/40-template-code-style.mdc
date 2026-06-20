@@ -18,23 +18,46 @@ globs:
 
 - id = kebab-case · class = `section section--{name}` (BEM modifier)
 - 공통: `.container`, `.narrow-wrap`, `.grid`, `.card`, `.section-title`
-- **`.container` (shell):** 섹션 gutter pad 안 `width: 100%` — shell `max-width` cap 금지 (`30-figma-to-code.mdc` Fluid scale)
+- **`.section-shell`:** `{ max-width: content_px; margin-inline: auto; width: 100%; }` — **gutter padding 없음**
+- **`.section-shell--gutter`:** header·hero 등 — `max-width: content + 2×gutter` + `padding-inline: gutter`
+- **`.section-head`:** label + title + desc — 간격은 `:root` 토큰만 (`--section-label-gap`, `--section-title-gap`, `--section-head-gap`)
+- **`.section-head--spaced`:** head → 본문 `--section-head-gap` (섹션마다 margin 개별 지정 **금지**)
+- **`.section-head--center`:** reservation형 중앙 head (modifier)
+- **`.container` (legacy alias):** pad 안 `width: 100%` — shell `max-width` cap 금지 (`30-figma-to-code.mdc` Fluid scale)
 - BEM: `{block}__{element}`, `{block}--{modifier}`, 상태 `.is-active` `.is-open`
-- **full-bleed band:** `.is-bleed-x` + band 내부만 gutter (`30-figma-to-code.mdc` 「Section shell · full-bleed」)
+- **full-bleed band:** `.is-bleed-x` + band 내부만 gutter · 자식 `width:100%` (`30-figma-to-code.mdc` 「Section shell · full-bleed」)
 
 ## CSS
 
-- 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃 변수)
+- 한 템플릿 = `css/style.css` 단일 파일 (`:root`에 색·폰트·레이아웃·**head gap** 변수)
 - PC + `@media (max-width:1024px)` + `@media (max-width:768px)` **항상 함께** 수정 (`35-responsive.mdc`)
 - 인라인 `style=""` 금지 · `!important` 남용 금지
+- **`html`, `body`:** `overflow-x: clip` (full-bleed·슬라이더 템플릿 **권장**)
 
 ## HTML
 
 - 시맨틱 태그 (`section`, `nav`, heading 계층)
 - GNB current: **HTML에** `is-active` / `aria-current="page"` — JS 동적 처리 금지
 - 이미지: `assets/` + `alt` + `width`/`height` + `decoding="async"`
+- **로고 `<img>`:** Figma bbox 비율 · `width` 고정 + `height: auto` · `contain`+고정 height **금지** (`30-figma-to-code.mdc` 「Logo · icon」)
 - 개발용 사진: `_dev-images/` raw drop + Figma MCP 시 `47-placeholder-images.mdc`
 - JS 훅: `data-*` 속성 사용
+
+## JS (`main.js` 기본)
+
+- 진입: `$(function(){ ... })`
+- **새로고침 시 scroll top (필수):**
+
+```js
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("pageshow", function () {
+  window.scrollTo(0, 0);
+});
+```
+
+- GNB active·scroll 위치 복원을 JS로 덮어쓰기 **금지** (위 snippet과 충돌 주의)
 
 적용 기준:
 - 템플릿 HTML/CSS 작성·수정 시.
