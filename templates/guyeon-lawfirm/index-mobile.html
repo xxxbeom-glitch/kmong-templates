@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법무법인 구연 (모바일)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="page-main page-mobile">
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index-mobile.html" class="header__logo">
+        <img
+          src="assets/images/header_logo.jpg"
+          alt="법무법인 구연 LAW FIRM GUYEON"
+          width="155"
+          height="48"
+          decoding="async"
+        >
+      </a>
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="메뉴 열기"
+      >
+        <svg class="header__menu-icon header__menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="header__menu-icon header__menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="주요 메뉴">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__trigger" aria-expanded="false" aria-controls="mobile-sub-intro">
+            구연 소개
+            <span class="mobile-nav__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-sub-intro">
+            <li><a href="#" class="mobile-nav__sub-link">법률사무소 구연</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">대표변호사 소개</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">구성원 소개</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">구연의 원칙</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__trigger" aria-expanded="false" aria-controls="mobile-sub-practice">
+            업무분야
+            <span class="mobile-nav__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-sub-practice">
+            <li><a href="#" class="mobile-nav__sub-link">형사</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">이혼·가사</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">민사</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">부동산</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">기업법무</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__trigger" aria-expanded="false" aria-controls="mobile-sub-case">
+            성공사례
+            <span class="mobile-nav__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-sub-case">
+            <li><a href="#" class="mobile-nav__sub-link">주요 성공사례</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">형사 사례</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">이혼·가사 사례</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">민사·부동산 사례</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__trigger" aria-expanded="false" aria-controls="mobile-sub-consult">
+            상담안내
+            <span class="mobile-nav__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-sub-consult">
+            <li><a href="#" class="mobile-nav__sub-link">상담 절차</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">자주 묻는 질문</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">오시는 길</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--has-sub">
+          <button type="button" class="mobile-nav__trigger" aria-expanded="false" aria-controls="mobile-sub-media">
+            언론보도
+            <span class="mobile-nav__chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="mobile-nav__sub-list" id="mobile-sub-media">
+            <li><a href="#" class="mobile-nav__sub-link">언론보도</a></li>
+            <li><a href="#" class="mobile-nav__sub-link">칼럼</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main__content">
+    <section class="hero hero--mobile" id="hero" aria-labelledby="hero-title">
+      <div class="hero__inner section-shell section-shell--gutter">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">형사사건, 초기 대응이<br>결과를 만듭니다</h1>
+          <p class="hero__desc">수사 단계부터 재판까지<br>법무법인 구연이 함께합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="practice practice--mobile" id="practice" aria-labelledby="practice-title">
+      <div class="practice__inner section-shell section-shell--gutter">
+        <div class="practice__head">
+          <p class="section-eyebrow">주요 분야</p>
+          <div class="section-heading">
+            <h2 id="practice-title" class="section-title">사건에 맞는 전담 분야를<br>확인하세요</h2>
+            <p class="section-desc">사건 유형별 전담 대응으로 의뢰인에게 필요한 해결 전략을 제시합니다.</p>
+          </div>
+        </div>
+        <ul class="practice__list">
+          <li class="practice-card"><span class="practice-card__icon" aria-hidden="true">+</span><span class="practice-card__label">형사사건</span></li>
+          <li class="practice-card"><span class="practice-card__icon" aria-hidden="true">+</span><span class="practice-card__label">성범죄</span></li>
+          <li class="practice-card"><span class="practice-card__icon" aria-hidden="true">+</span><span class="practice-card__label">마약범죄</span></li>
+          <li class="practice-card"><span class="practice-card__icon" aria-hidden="true">+</span><span class="practice-card__label">재산범죄</span></li>
+          <li class="practice-card"><span class="practice-card__icon" aria-hidden="true">+</span><span class="practice-card__label">교통범죄</span></li>
+          <li class="practice-card"><span class="practice-card__icon" aria-hidden="true">+</span><span class="practice-card__label">강력범죄</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="case case--mobile" id="case" aria-labelledby="case-title">
+      <div class="case__inner section-shell section-shell--gutter">
+        <div class="case__intro">
+          <div class="case__head">
+            <p class="section-eyebrow section-eyebrow--light">성공사례</p>
+            <div class="section-heading">
+              <h2 id="case-title" class="section-title section-title--light">결과로 증명하는 형사 대응</h2>
+              <p class="section-desc section-desc--light">다양한 형사사건의 실제 해결 사례를 분야별로<br>확인해 보세요.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case__body">
+          <div class="case__slider" data-case-slider>
+            <div class="case__viewport">
+              <div class="case__track" data-case-track>
+                <article class="case-card">
+                  <p class="case-card__tag">기소유예</p>
+                  <div class="case-card__body">
+                    <h3 class="case-card__title">스토킹처벌법 위반 혐의, 반복 연락 사건</h3>
+                    <p class="case-card__desc">의뢰인은 전 연인에게 수차례 연락했다는 이유로 고소되었고, 접근금지와 형사처벌 가능성이 동시에 문제 된 사안이었습니다. 연락 경위, 실제 위협성, 재범 가능성을 구분해 소명하고 피해자와의 접촉 차단 계획을 제출했습니다.</p>
+                  </div>
+                </article>
+                <article class="case-card">
+                  <p class="case-card__tag">불송치</p>
+                  <div class="case-card__body">
+                    <h3 class="case-card__title">사기 혐의 고소, 투자금 반환 분쟁 사건</h3>
+                    <p class="case-card__desc">사업 투자금이 반환되지 않아 사기 혐의로 고소된 사건입니다. 핵심은 처음부터 편취 의사가 있었는지 여부였습니다. 계약서, 입금 내역, 사업 진행 자료를 정리해 민사상 분쟁에 가깝다는 점을 강조했습니다.</p>
+                  </div>
+                </article>
+                <article class="case-card">
+                  <p class="case-card__tag">집행유예</p>
+                  <div class="case-card__body">
+                    <h3 class="case-card__title">미성년자 대상 촬영물 협박 사건</h3>
+                    <p class="case-card__desc">디지털 성범죄와 협박 혐의가 함께 문제 된 중대한 사건으로, 실형 가능성이 높게 검토되던 사안이었습니다. 피해 회복, 합의, 반성자료, 재범방지 계획을 단계별로 준비해 양형에 반영되도록 대응했습니다.</p>
+                  </div>
+                </article>
+                <article class="case-card">
+                  <p class="case-card__tag">벌금형</p>
+                  <div class="case-card__body">
+                    <h3 class="case-card__title">3차 음주운전 혐의, 면허정지 기간 중 운전 사건</h3>
+                    <p class="case-card__desc">반복 음주운전 이력으로 가중처벌 대상이었으나, 사건 경위와 반성 태도, 재범 방지 계획을 정리해 실형 대신 벌금형과 사회봉사 명령을 이끌어냈습니다.</p>
+                  </div>
+                </article>
+                <article class="case-card">
+                  <p class="case-card__tag">무혐의</p>
+                  <div class="case-card__body">
+                    <h3 class="case-card__title">회사 자금 유용 의혹, 회계 처리 착오 주장 사건</h3>
+                    <p class="case-card__desc">횡령 혐의로 고소되었으나, 자금 사용 내역과 승인 절차, 회계 처리 과정을 입증해 고의성이 없음을 소명하고 무혐의 처분을 받았습니다.</p>
+                  </div>
+                </article>
+                <article class="case-card">
+                  <p class="case-card__tag">집행유예</p>
+                  <div class="case-card__body">
+                    <h3 class="case-card__title">폭행·상해치사 혐의, 정당방위 및 과실상계 주장 사건</h3>
+                    <p class="case-card__desc">상대방과의 충돌 과정에서 발생한 상해 사건으로, 선공 여부와 위험 회피 노력, 과실상계를 중심으로 증거를 정리해 집행유예를 이끌어냈습니다.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="case__more">
+            <span>더 보기</span>
+            <img src="assets/icons/icon_arrow_up_left.png" alt="" width="34" height="34" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="team team--mobile" id="team" aria-labelledby="team-title">
+      <div class="team__head section-shell section-shell--gutter">
+        <p class="section-eyebrow">대표 변호사 소개</p>
+        <div class="section-heading">
+          <h2 id="team-title" class="section-title">결과를 만드는 전문가들</h2>
+          <p class="section-desc">사건의 시작부터 끝까지 함께하는 법무법인 구연의 변호사들을 소개합니다.</p>
+        </div>
+      </div>
+      <div class="team__slider-wrap section-shell section-shell--gutter">
+        <div class="team__slider" data-team-slider>
+          <div class="team__viewport">
+            <ul class="team__track" data-team-track>
+              <li class="team-card">
+                <img class="team-card__photo" src="assets/images/team_card_01.jpg" alt="김주은 대표변호사" width="440" height="598" decoding="async">
+                <div class="team-card__info">
+                  <h3 class="team-card__name">김주은 대표변호사</h3>
+                  <ul class="team-card__bio">
+                    <li>서울대학교 법학전문대학원 졸업</li>
+                    <li>대한변호사협회 등록 변호사</li>
+                    <li>형사사건 전문 수행</li>
+                    <li>경찰 조사·검찰 수사 대응 전문</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="team-card">
+                <img class="team-card__photo" src="assets/images/team_card_02.jpg" alt="박재현 파트너변호사" width="440" height="598" decoding="async">
+                <div class="team-card__info">
+                  <h3 class="team-card__name">박재현 파트너변호사</h3>
+                  <ul class="team-card__bio">
+                    <li>고려대학교 법학과 졸업</li>
+                    <li>성범죄 사건 전문 수행</li>
+                    <li>디지털 성범죄 대응 전문</li>
+                    <li>피해자·피의자 사건 다수 수행</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="team-card">
+                <img class="team-card__photo" src="assets/images/team_card_03.jpg" alt="이도윤 변호사" width="440" height="598" decoding="async">
+                <div class="team-card__info">
+                  <h3 class="team-card__name">이도윤 변호사</h3>
+                  <ul class="team-card__bio">
+                    <li>한양대학교 법학전문대학원 졸업</li>
+                    <li>폭행·상해·강력범죄 사건 전문</li>
+                    <li>구속영장 대응 경험 다수</li>
+                    <li>수사 단계 전략 수립 전문</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="team-card">
+                <img class="team-card__photo" src="assets/images/team_card_04.jpg" alt="박현우 변호사" width="440" height="598" decoding="async">
+                <div class="team-card__info">
+                  <h3 class="team-card__name">박현우 변호사</h3>
+                  <ul class="team-card__bio">
+                    <li>성균관대학교 법학전문대학원 졸업</li>
+                    <li>음주운전 사건 전문</li>
+                    <li>교통사고 형사합의 자문</li>
+                    <li>보험분쟁 및 손해배상 수행</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="team-card">
+                <img class="team-card__photo" src="assets/images/team_card_04.jpg" alt="서준혁 파트너변호사" width="440" height="598" decoding="async">
+                <div class="team-card__info">
+                  <h3 class="team-card__name">서준혁 파트너변호사</h3>
+                  <ul class="team-card__bio">
+                    <li>연세대학교 법학전문대학원 졸업</li>
+                    <li>사기·횡령·배임 사건 전문</li>
+                    <li>기업 형사 자문 수행</li>
+                    <li>금융범죄 사건 다수 수행</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="media media--mobile" id="media" aria-labelledby="media-title">
+      <div class="media__inner section-shell section-shell--gutter">
+        <div class="media__head">
+          <p class="section-eyebrow">언론보도</p>
+          <div class="section-heading">
+            <h2 id="media-title" class="section-title">언론이 주목한<br>법무법인 구연</h2>
+            <p class="section-desc">법률 이슈에 대한 구연의 해석과 주요 언론을 통해 소개된<br>전문적인 의견을 확인해 보세요.</p>
+          </div>
+        </div>
+        <div class="media__body">
+          <ul class="media__list">
+            <li class="media-item">
+              <div class="media-item__meta">
+                <span class="media-item__source">로앤비즈</span>
+                <span class="media-item__title">법무법인 구연, 디지털 성범죄 사건 대응 전략 공개</span>
+              </div>
+              <time class="media-item__date" datetime="2026-05-15">26.05.15</time>
+            </li>
+            <li class="media-item">
+              <div class="media-item__meta">
+                <span class="media-item__source">리걸타임즈</span>
+                <span class="media-item__title">구연 형사전담팀, 사기·횡령 사건에서 증거자료 확보 중요성 강조</span>
+              </div>
+              <time class="media-item__date" datetime="2026-05-04">26.05.04</time>
+            </li>
+            <li class="media-item">
+              <div class="media-item__meta">
+                <span class="media-item__source">법조신문</span>
+                <span class="media-item__title">기업 내부 횡령·배임 사건 증가, 초기 대응 전략의 중요성 강조</span>
+              </div>
+              <time class="media-item__date" datetime="2026-05-02">26.05.02</time>
+            </li>
+            <li class="media-item">
+              <div class="media-item__meta">
+                <span class="media-item__source">법률저널</span>
+                <span class="media-item__title">음주운전 재범 사건, 양형자료 준비가 판결에 미치는 영향 다뤄</span>
+              </div>
+              <time class="media-item__date" datetime="2026-04-30">26.04.30</time>
+            </li>
+          </ul>
+          <a href="#" class="media__more">
+            <span>더 보기</span>
+            <img src="assets/icons/icon_arrow_up_left.svg" alt="" width="34" height="34" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta cta--mobile" id="cta" aria-labelledby="cta-title">
+      <div class="cta__inner section-shell section-shell--gutter">
+        <div class="cta__intro">
+          <p class="section-eyebrow">상담문의</p>
+          <div class="section-heading">
+            <h2 id="cta-title" class="section-title">지금, 대응을 시작하세요</h2>
+            <p class="section-desc">사건의 흐름을 파악하고,<br>의뢰인에게 필요한 첫 대응 방향을 안내해 드립니다.</p>
+          </div>
+        </div>
+        <form class="cta-form" data-cta-form novalidate>
+          <div class="cta-form__fields">
+            <label class="cta-form__field">
+              <span class="visually-hidden">성함</span>
+              <input type="text" name="name" placeholder="성함" autocomplete="name" data-cta-name>
+            </label>
+            <label class="cta-form__field">
+              <span class="visually-hidden">연락처</span>
+              <input type="tel" name="phone" placeholder="연락처" autocomplete="tel" data-cta-phone>
+            </label>
+            <label class="cta-form__field cta-form__field--message">
+              <span class="visually-hidden">문의 내용</span>
+              <textarea name="message" placeholder="문의 내용" rows="5" data-cta-message></textarea>
+            </label>
+          </div>
+          <div class="cta-form__actions">
+            <label class="cta-form__check">
+              <input type="checkbox" name="privacy" data-cta-privacy>
+              <span class="cta-form__check-box" aria-hidden="true"></span>
+              <span>개인정보 수집 및 이용동의</span>
+            </label>
+            <button type="submit" class="cta-form__submit" data-cta-submit disabled>빠른 상담 신청하기</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--mobile" id="footer">
+    <div class="footer__inner section-shell section-shell--gutter">
+      <div class="footer__top">
+        <a href="index-mobile.html" class="footer__logo">
+          <img src="assets/images/footer-logo.png" alt="법무법인 구연 LAW FIRM GUYEON" width="184" height="57" decoding="async">
+        </a>
+        <ul class="footer__social" aria-label="소셜 미디어">
+          <li><a href="#" class="footer__social-link" aria-label="X"><img src="assets/icons/icon_social_x.svg" alt="" width="24" height="24" decoding="async"></a></li>
+          <li><a href="#" class="footer__social-link" aria-label="YouTube"><img src="assets/icons/icon_social_youtube.svg" alt="" width="24" height="24" decoding="async"></a></li>
+          <li><a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"><img src="assets/icons/icon_social_instagram.svg" alt="" width="20" height="20" decoding="async"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom">
+        <ul class="footer__legal">
+          <li><a href="#">이메일 무단 수집 거부</a></li>
+          <li><a href="#">개인정보 처리방침</a></li>
+          <li><a href="#">면책공고</a></li>
+          <li><a href="#">이용약관</a></li>
+        </ul>
+        <ul class="footer__info">
+          <li>서울특별시 서초구 서초대로 123, 장원빌딩 8층</li>
+          <li>사업자등록번호 123-45-67890</li>
+          <li>대표변호사 김주은</li>
+          <li>TEL 02-1234-5678</li>
+          <li>FAX 02-1234-5679</li>
+          <li>gooyeon_law@gmail.co.kr</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/mobile.js"></script>
+</body>
+</html>

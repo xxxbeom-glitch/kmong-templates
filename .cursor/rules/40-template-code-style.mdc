@@ -71,10 +71,10 @@ globs:
 - 개발용 사진: `_dev-images/` raw drop + Figma MCP 시 `47-placeholder-images.mdc`
 - JS 훅: `data-*` 속성 사용
 
-## JS (`main.js` 기본)
+## JS (`main.js` · `mobile.js` 기본)
 
 - 진입: `$(function(){ ... })`
-- **새로고침 시 scroll top (필수):**
+- **새로고침 시 scroll top (필수)** — `main.js` **및** 모바일 프리뷰용 `mobile.js`(`index-mobile.html`) **공통**:
 
 ```js
 if ("scrollRestoration" in history) {
@@ -84,6 +84,8 @@ window.addEventListener("pageshow", function () {
   window.scrollTo(0, 0);
 });
 ```
+
+- `index-mobile.html`은 `main.js`를 로드하지 않는 경우가 많으므로, 위 snippet을 **`mobile.js` 최상단**에도 반드시 둔다.
 
 - GNB active·scroll 위치 복원을 JS로 덮어쓰기 **금지** (위 snippet과 충돌 주의)
 

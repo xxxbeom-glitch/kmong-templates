@@ -102,6 +102,7 @@ Figma 모바일 MCP (또는 Desktop + @768 설계)
 | 항목 | 규칙 |
 |------|------|
 | **프리뷰 파일** | `index-mobile.html` · `about-*-mobile.html` — **검수용** · 납품 제외 (`60-delivery`) |
+| **프리뷰 JS** | `js/mobile.js` — F5 시 scroll top (`40-template-code-style.mdc` snippet **필수**) |
 | **최종본** | `index.html` · `css/style.css` · `js/main.js` — **납품 대상** |
 | **gutter·칼럼** | 1차 PASS 값을 `decision-log` 기록 → `@768` 이식 시 **동일 토큰** (`35-responsive.mdc`) |
 | **이식 전** | mobile 프리뷰 **사용자 PASS** 또는 qa-log PASS — 임의 이식 **금지** |

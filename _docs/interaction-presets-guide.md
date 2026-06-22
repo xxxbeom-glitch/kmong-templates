@@ -30,6 +30,22 @@
 
 **금지:** 승인 없이 AI가 마음대로 인터랙션 추가.
 
+## 슬라이더 방향 버튼 (공통 · preset 외)
+
+`prev` / `next` 화살표가 있는 슬라이더(성공사례·카드 슬라이드 등):
+
+| 위치 | `prev` | `next` |
+|------|--------|--------|
+| 첫 슬라이드 | **disabled** | 활성 |
+| 중간 | 활성 | 활성 |
+| 마지막 | 활성 | **disabled** |
+
+- JS: 인덱스 변경마다 `prop("disabled", …)` 동기화
+- HTML: 첫 화면에서 `prev`에 `disabled` 초기값
+- CSS: `:disabled` 시각 비활성(opacity 등) 필수
+
+구현 상세: `.cursor/rules/45-interaction-patterns.mdc`
+
 ## 섹션당 권장 개수
 
 | 종류 | 한글명 예시 | 섹션당 |

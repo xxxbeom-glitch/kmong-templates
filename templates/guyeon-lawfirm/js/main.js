@@ -1,0 +1,345 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("pageshow", function () {
+  window.scrollTo(0, 0);
+});
+
+function isMobileViewport() {
+  return window.matchMedia("(max-width: 768px)").matches;
+}
+
+function initHeaderScroll() {
+  var $header = $("#header");
+
+  if (!$header.length) {
+    return;
+  }
+
+  function sync() {
+    $header.toggleClass("is-scrolled", window.scrollY > 0);
+  }
+
+  sync();
+  $(window).on("scroll", sync);
+}
+
+function initGnb() {
+  var $header = $("#header");
+
+  if (!$header.length) {
+    return;
+  }
+
+  var closeTimer = null;
+
+  function openGnb() {
+    if (isMobileViewport()) {
+      return;
+    }
+
+    window.clearTimeout(closeTimer);
+    $header.addClass("is-gnb-open");
+  }
+
+  function closeGnb() {
+    $header.removeClass("is-gnb-open");
+  }
+
+  function scheduleClose() {
+    window.clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(closeGnb, 120);
+  }
+
+  $header.on("mouseenter", openGnb);
+  $header.on("mouseleave", scheduleClose);
+
+  $header.on("focusin", openGnb);
+
+  $header.on("focusout", function (event) {
+    if (!$header[0].contains(event.relatedTarget)) {
+      closeGnb();
+    }
+  });
+
+  $(window).on("resize", function () {
+    if (isMobileViewport()) {
+      closeGnb();
+    }
+  });
+}
+
+function initMobileNav() {
+  var $btn = $(".header__menu-btn");
+  var $nav = $("#mobile-nav");
+
+  if (!$btn.length || !$nav.length) {
+    return;
+  }
+
+  function setOpen(isOpen) {
+    $nav.toggleClass("is-open", isOpen);
+    $btn.attr("aria-expanded", isOpen);
+    $btn.attr("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
+    $("body").toggleClass("is-nav-open", isOpen);
+
+    if (!isOpen) {
+      $(".mobile-nav__item--has-sub").removeClass("is-open");
+      $(".mobile-nav__trigger").attr("aria-expanded", "false");
+    }
+  }
+
+  $btn.on("click", function () {
+    setOpen(!$nav.hasClass("is-open"));
+  });
+
+  $(".mobile-nav__trigger").on("click", function () {
+    var $item = $(this).closest(".mobile-nav__item--has-sub");
+    var isOpen = $item.hasClass("is-open");
+
+    $(".mobile-nav__item--has-sub").removeClass("is-open");
+    $(".mobile-nav__trigger").attr("aria-expanded", "false");
+
+    if (!isOpen) {
+      $item.addClass("is-open");
+      $(this).attr("aria-expanded", "true");
+    }
+  });
+
+  $(".mobile-nav__sub-link").on("click", function () {
+    if (isMobileViewport()) {
+      setOpen(false);
+    }
+  });
+}
+
+function initCaseSlider() {
+  var $track = $("[data-case-track]");
+  var $pages = $track.children(".case__page");
+  var $prev = $("[data-case-prev]");
+  var $next = $("[data-case-next]");
+
+  if (!$track.length || $pages.length < 2) {
+    return;
+  }
+
+  var index = 0;
+  var pageCount = $pages.length;
+  var isLocked = false;
+  var durationMs = 450;
+
+  function syncNavState() {
+    $prev.prop("disabled", index <= 0);
+    $next.prop("disabled", index >= pageCount - 1);
+  }
+
+  function render(instant) {
+    var pageWidth = $track.parent().innerWidth();
+
+    $track.css(
+      "transition",
+      instant ? "none" : "transform " + durationMs + "ms ease"
+    );
+    $track.css("transform", "translate3d(" + -index * pageWidth + "px, 0, 0)");
+    syncNavState();
+  }
+
+  function go(step) {
+    if (isLocked) {
+      return;
+    }
+
+    var next = index + step;
+
+    if (next < 0 || next >= pageCount) {
+      return;
+    }
+
+    isLocked = true;
+    index = next;
+    render(false);
+
+    window.setTimeout(function () {
+      isLocked = false;
+    }, durationMs);
+  }
+
+  $prev.on("click", function (event) {
+    event.preventDefault();
+    go(-1);
+  });
+
+  $next.on("click", function (event) {
+    event.preventDefault();
+    go(1);
+  });
+
+  $(window).on("resize", function () {
+    render(true);
+  });
+
+  render(true);
+}
+
+function initTeamSlider() {
+  var $root = $("[data-team-slider]");
+  var $track = $("[data-team-track]");
+  var $slides = $track.children(".team-card");
+
+  if (!$root.length || !$track.length || $slides.length < 2) {
+    return;
+  }
+
+  var index = 0;
+  var dragging = false;
+  var startX = 0;
+  var deltaX = 0;
+  var durationMs = 450;
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var rootEl = $root[0];
+
+  function getGap() {
+    var styles = window.getComputedStyle($track[0]);
+    return parseFloat(styles.columnGap || styles.gap || "2") || 2;
+  }
+
+  function getStep() {
+    var $slide = $slides.eq(0);
+    return $slide.outerWidth() + getGap();
+  }
+
+  function getMaxIndex() {
+    var viewportWidth = $root.find(".team__viewport").innerWidth();
+    var totalWidth = getStep() * $slides.length - getGap();
+    var maxScroll = Math.max(0, totalWidth - viewportWidth);
+    return Math.ceil(maxScroll / getStep());
+  }
+
+  function clampIndex(value) {
+    return Math.max(0, Math.min(value, getMaxIndex()));
+  }
+
+  function render(instant, dragDelta) {
+    dragDelta = dragDelta || 0;
+    var translateX = -index * getStep() + dragDelta;
+
+    $track.css(
+      "transition",
+      instant || dragging || prefersReducedMotion
+        ? "none"
+        : "transform " + durationMs + "ms cubic-bezier(0.22, 1, 0.36, 1)"
+    );
+    $track.css("transform", "translate3d(" + translateX + "px, 0, 0)");
+  }
+
+  function snapFromDrag() {
+    var step = getStep();
+    var moved = -deltaX / step;
+    var next = index;
+
+    if (Math.abs(deltaX) > step * 0.18) {
+      next = deltaX < 0 ? index + 1 : index - 1;
+    }
+
+    index = clampIndex(next);
+    dragging = false;
+    $root.removeClass("is-dragging");
+    render(false);
+  }
+
+  function onPointerDown(event) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    dragging = true;
+    startX = event.clientX;
+    deltaX = 0;
+    $root.addClass("is-dragging");
+    render(true);
+
+    if (rootEl.setPointerCapture) {
+      rootEl.setPointerCapture(event.pointerId);
+    }
+  }
+
+  function onPointerMove(event) {
+    if (!dragging) {
+      return;
+    }
+
+    deltaX = event.clientX - startX;
+    render(true, deltaX);
+
+    if (event.cancelable) {
+      event.preventDefault();
+    }
+  }
+
+  function onPointerUp() {
+    if (!dragging) {
+      return;
+    }
+
+    snapFromDrag();
+  }
+
+  $root.on("pointerdown", onPointerDown);
+  $root.on("pointermove", onPointerMove);
+  $root.on("pointerup pointercancel", onPointerUp);
+  $root.on("dragstart", function (event) {
+    event.preventDefault();
+  });
+
+  $(window).on("resize", function () {
+    index = clampIndex(index);
+    render(true);
+  });
+
+  render(true);
+}
+
+function initCtaForm() {
+  var $form = $("[data-cta-form]");
+  var $name = $("[data-cta-name]");
+  var $phone = $("[data-cta-phone]");
+  var $message = $("[data-cta-message]");
+  var $submit = $("[data-cta-submit]");
+
+  if (!$form.length || !$submit.length) {
+    return;
+  }
+
+  function isFilled($field) {
+    return $.trim($field.val()).length > 0;
+  }
+
+  function syncSubmitState() {
+    var ready =
+      isFilled($name) && isFilled($phone) && isFilled($message);
+    $submit.prop("disabled", !ready);
+  }
+
+  $form.on("input change", "input, textarea", syncSubmitState);
+
+  $form.on("submit", function (event) {
+    event.preventDefault();
+    syncSubmitState();
+
+    if ($submit.prop("disabled")) {
+      return;
+    }
+  });
+
+  syncSubmitState();
+}
+
+$(function () {
+  initHeaderScroll();
+  initGnb();
+  initMobileNav();
+  initCaseSlider();
+  initTeamSlider();
+  initCtaForm();
+});

@@ -1,13 +1,13 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("pageshow", function () {
+  window.scrollTo(0, 0);
+});
+
 (function ($) {
   "use strict";
-
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-
-  window.addEventListener("pageshow", function () {
-    window.scrollTo(0, 0);
-  });
 
   function createMagneticSlider(config) {
     var $root = config.$root;
@@ -303,31 +303,30 @@
       $btn.attr("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
 
       if (!isOpen) {
-        $nav.find(".mobile-nav__item--has-sub").removeClass("is-sub-open");
-        $nav.find(".mobile-nav__link--trigger").attr("aria-expanded", "false");
+        $nav.find(".mobile-nav__item--has-sub").removeClass("is-open");
+        $nav.find(".mobile-nav__trigger").attr("aria-expanded", "false");
       }
     }
 
-    $nav.find(".mobile-nav__item--has-sub").each(function () {
-      var $item = $(this);
-      var $trigger = $item.find(".mobile-nav__link--trigger");
-
-      $trigger.on("click", function () {
-        var isOpen = $item.hasClass("is-sub-open");
-
-        $nav.find(".mobile-nav__item--has-sub.is-sub-open").not($item).removeClass("is-sub-open");
-        $nav
-          .find(".mobile-nav__link--trigger")
-          .not($trigger)
-          .attr("aria-expanded", "false");
-
-        $item.toggleClass("is-sub-open", !isOpen);
-        $trigger.attr("aria-expanded", !isOpen ? "true" : "false");
-      });
-    });
-
     $btn.on("click", function () {
       setOpen(!$nav.hasClass("is-open"));
+    });
+
+    $nav.find(".mobile-nav__trigger").on("click", function () {
+      var $item = $(this).closest(".mobile-nav__item--has-sub");
+      var isOpen = $item.hasClass("is-open");
+
+      $nav.find(".mobile-nav__item--has-sub").removeClass("is-open");
+      $nav.find(".mobile-nav__trigger").attr("aria-expanded", "false");
+
+      if (!isOpen) {
+        $item.addClass("is-open");
+        $(this).attr("aria-expanded", "true");
+      }
+    });
+
+    $nav.find(".mobile-nav__sub-link").on("click", function () {
+      setOpen(false);
     });
 
     $(document).on("keydown", function (event) {
@@ -337,129 +336,101 @@
     });
   }
 
-  function initStrengthSlider() {
+  function initCaseCardSlider() {
     if (!$("body.page-mobile").length) {
       return;
     }
 
-    var $root = $("[data-strength-slider]");
+    var $root = $("[data-case-slider]");
 
     if (!$root.length) {
       return;
     }
+
+    var $track = $root.find("[data-case-track]");
+    var $slides = $track.children(".case-card");
 
     createMagneticSlider({
-      $root: $root,
-      $track: $root.find("[data-strength-track]"),
-      $slides: $root.find("[data-strength-track]").children(".strength-feature__panel"),
-      gapFallback: 12,
-      eventNs: "strengthSlider",
-      onIndexChange: function (i, $slides) {
-        $slides.each(function (slideIndex) {
-          $(this).attr("aria-hidden", slideIndex === i ? "false" : "true");
-        });
-      },
-    });
-  }
-
-  function initSignatureSlider() {
-    if (!$("body.page-mobile").length) {
-      return;
-    }
-
-    var $root = $("[data-signature-slider]");
-
-    if (!$root.length) {
-      return;
-    }
-
-    var $track = $root.find("[data-signature-track]");
-    var $slides = $track.children(".signature-card");
-    var $prev = $("[data-signature-prev]");
-    var $next = $("[data-signature-next]");
-    var count = $slides.length;
-
-    var slider = createMagneticSlider({
-      $root: $root,
+      $root: $root.find(".case__viewport"),
       $track: $track,
       $slides: $slides,
-      gapFallback: 12,
-      eventNs: "signatureSlider",
-      onIndexChange: function (i) {
-        $slides.removeClass("is-active").eq(i).addClass("is-active");
-        $prev.prop("disabled", i <= 0);
-        $next.prop("disabled", i >= count - 1);
+      gapFallback: 2,
+      eventNs: "caseCardSlider",
+      onIndexChange: function (i, slides) {
+        slides.each(function (slideIndex) {
+          $(this).attr("aria-hidden", slideIndex === i ? "false" : "true");
+        });
       },
     });
-
-    if (!slider) {
-      return;
-    }
-
-    $prev.on("click", function () {
-      slider.step(-1);
-    });
-
-    $next.on("click", function () {
-      slider.step(1);
-    });
   }
 
-  function initTeamPicker() {
+  function initTeamCardSlider() {
     if (!$("body.page-mobile").length) {
       return;
     }
 
-    var $section = $(".sub-team--mobile");
-
-    if (!$section.length) {
-      return;
-    }
-
-    var $tabs = $section.find(".sub-team__picker-btn");
-    var $cards = $section.find("[data-team-card]");
-
-    $tabs.on("click", function () {
-      var index = $(this).data("team-index");
-
-      $tabs.removeClass("is-active").attr("aria-selected", "false");
-      $(this).addClass("is-active").attr("aria-selected", "true");
-
-      $cards.removeClass("is-active").prop("hidden", true);
-      $cards.eq(index).addClass("is-active").prop("hidden", false);
-    });
-  }
-
-  function initPlaceSlider() {
-    if (!$("body.page-mobile").length) {
-      return;
-    }
-
-    var $root = $("[data-place-slider]");
+    var $root = $("[data-team-slider]");
 
     if (!$root.length) {
       return;
     }
 
+    var $track = $root.find("[data-team-track]");
+    var $slides = $track.children(".team-card");
+
     createMagneticSlider({
-      $root: $root,
-      $track: $root.find("[data-place-track]"),
-      $slides: $root.find("[data-place-track]").children(".sub-place-card"),
-      gapFallback: 12,
-      eventNs: "placeSlider",
-      onIndexChange: function (i, $slides) {
-        $slides.each(function (slideIndex) {
+      $root: $root.find(".team__viewport"),
+      $track: $track,
+      $slides: $slides,
+      gapFallback: 2,
+      eventNs: "teamCardSlider",
+      onIndexChange: function (i, slides) {
+        slides.each(function (slideIndex) {
           $(this).attr("aria-hidden", slideIndex === i ? "false" : "true");
         });
       },
     });
+  }
+
+  function initCtaForm() {
+    var $form = $("[data-cta-form]");
+    var $name = $("[data-cta-name]");
+    var $phone = $("[data-cta-phone]");
+    var $message = $("[data-cta-message]");
+    var $submit = $("[data-cta-submit]");
+
+    if (!$form.length || !$submit.length) {
+      return;
+    }
+
+    function isFilled($field) {
+      return $.trim($field.val()).length > 0;
+    }
+
+    function syncSubmitState() {
+      var ready =
+        isFilled($name) && isFilled($phone) && isFilled($message);
+      $submit.prop("disabled", !ready);
+    }
+
+    $form.on("input change", "input, textarea", syncSubmitState);
+
+    $form.on("submit", function (event) {
+      event.preventDefault();
+      syncSubmitState();
+
+      if ($submit.prop("disabled")) {
+        return;
+      }
+    });
+
+    syncSubmitState();
   }
 
   $(function () {
     initMobileNav();
-    initStrengthSlider();
-    initSignatureSlider();
-    initTeamPicker();
-    initPlaceSlider();
+    initCaseCardSlider();
+    initTeamCardSlider();
+    initCtaForm();
   });
 })(jQuery);

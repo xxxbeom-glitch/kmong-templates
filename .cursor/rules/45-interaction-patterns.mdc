@@ -20,6 +20,7 @@ globs:
 - CTA hover: CSS only (`.btn__label` / `.btn__track` 패턴) — **fine pointer만** (`35-responsive.mdc`)
 - hover-only UI는 768px 이하·터치 환경에서 **대체 UI** 또는 비활성화
 - CSS `transition`과 jQuery `slideToggle` 타이밍 충돌 금지
+- **슬라이더 방향 버튼** (`prev` / `next`): **첫 슬라이드**에서 `prev` **`disabled`**, **마지막**에서 `next` **`disabled`** — JS에서 인덱스마다 `prop("disabled")` 동기화 · HTML 초기값(첫 화면 `prev` disabled) · CSS `:disabled` 시각 비활성(opacity 등) 필수
 - **46에 없는 preset 이름·승인 없는 motion 구현 금지**
 
 적용 기준:
