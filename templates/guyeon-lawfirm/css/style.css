@@ -1180,8 +1180,8 @@ p.scroll-reveal {
 .sub-team__avatar {
   position: relative;
   flex-shrink: 0;
-  width: 84px;
-  height: 84px;
+  width: 140px;
+  height: 140px;
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -1675,6 +1675,11 @@ p.scroll-reveal {
 
   .sub-team__avatars::-webkit-scrollbar {
     display: none;
+  }
+
+  .sub-team__avatar {
+    width: 84px;
+    height: 84px;
   }
 
   .sub-team__panel {
