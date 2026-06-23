@@ -1116,13 +1116,19 @@ p.scroll-reveal {
 }
 
 .sub-intro__body {
+  display: flex;
+  flex-direction: column;
+  gap: 37.4px;
   margin: 0;
   font-size: 22px;
   font-weight: 600;
   line-height: 37.4px;
   text-align: center;
   color: var(--color-text);
-  white-space: pre-line;
+}
+
+.sub-intro__body p {
+  margin: 0;
 }
 
 .sub-team {
@@ -1174,8 +1180,8 @@ p.scroll-reveal {
 .sub-team__avatar {
   position: relative;
   flex-shrink: 0;
-  width: 140px;
-  height: 140px;
+  width: 84px;
+  height: 84px;
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -1596,9 +1602,28 @@ p.scroll-reveal {
   }
 
   .sub-hero__tabs {
-    gap: 24px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     margin-top: 16px;
-    padding: 20px 24px;
+    padding: 16px 22px;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sub-hero__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sub-hero__tab {
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .sub-intro {
@@ -1607,16 +1632,23 @@ p.scroll-reveal {
 
   .sub-intro__inner {
     gap: 48px;
+    overflow-x: clip;
   }
 
   .sub-intro__title {
     font-size: 35px;
   }
 
+  .sub-intro__figure {
+    width: 130%;
+    margin-inline: -15%;
+  }
+
   .sub-intro__body {
+    gap: 24px;
     font-size: 16px;
     line-height: 1.58;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .sub-team {
