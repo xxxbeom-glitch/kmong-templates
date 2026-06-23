@@ -491,6 +491,55 @@ function initCtaForm() {
   syncSubmitState();
 }
 
+function initSubTeamPicker() {
+  var $root = $("[data-sub-team]");
+
+  if (!$root.length) {
+    return;
+  }
+
+  var $tabs = $root.find("[data-team-tab]");
+  var $panels = $root.find("[data-team-panel]");
+
+  function activate(index) {
+    $tabs.removeClass("is-active").attr({
+      "aria-selected": "false",
+      tabindex: "-1",
+    });
+    $panels.removeClass("is-active").prop("hidden", true);
+
+    var $tab = $tabs.filter('[data-team-tab="' + index + '"]');
+    var $panel = $panels.filter('[data-team-panel="' + index + '"]');
+
+    $tab.addClass("is-active").attr({
+      "aria-selected": "true",
+      tabindex: "0",
+    });
+    $panel.addClass("is-active").prop("hidden", false);
+  }
+
+  $tabs.on("click", function () {
+    activate($(this).data("team-tab"));
+  });
+
+  $tabs.on("keydown", function (event) {
+    var current = $tabs.index(this);
+    var next = current;
+
+    if (event.key === "ArrowRight") {
+      next = (current + 1) % $tabs.length;
+    } else if (event.key === "ArrowLeft") {
+      next = (current - 1 + $tabs.length) % $tabs.length;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    activate(next);
+    $tabs.eq(next).focus();
+  });
+}
+
 $(function () {
   $("html").addClass("js");
   void document.documentElement.offsetHeight;
@@ -500,5 +549,6 @@ $(function () {
   initMobileNav();
   initCaseSlider();
   initTeamSlider();
+  initSubTeamPicker();
   initCtaForm();
 });
