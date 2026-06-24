@@ -1,5 +1,27 @@
 # Decision Log
 
+## 2026-06-08 — [template] tesla-redesign 신규 템플릿
+
+| # | 결정 |
+|---|------|
+| 1 | slug **`tesla-redesign`** · 경로 `templates/tesla-redesign/` |
+| 2 | Figma `portfolio_tesla_main` (`XSWmFlkkzLChor3uaf7veF` · node `1:25`) |
+| 3 | 범위: **PC 메인 1페이지** (nav · hero · models · fsd · charging · technology · experience · footer) |
+| 4 | 모바일 — **추후 진행** (768px 대응 보류) |
+| 5 | 에셋: 사용자 `_source/` 투입 후 `assets/`로 정리·매핑 |
+| 6 | **section-hero 비주얼 = 영상** (`assets/videos/hero-bg.mp4`) · 정적 배경 이미지 없음 |
+| 7 | **인터랙션 (2026-06-08 사용자 승인):** `scroll-reveal` · `hero-progress-slider` · `button-text-slide-hover` |
+| 8 | **hero → models 자석 스크롤** (PC · 휠 1회 스냅 · 2026-06-08 사용자 요청) |
+| 9 | **models 섹션 고정형 카드 스크롤** (PC · sticky + 우측 카드 연동 · 2026-06-08 사용자 요청) |
+
+```
+[template tesla-redesign] hero: preset — hero-progress-slider (3장 · 6s · loop · progress · arrows)
+[template tesla-redesign] sections: preset — scroll-reveal (models·fsd·charging·technology·experience)
+[template tesla-redesign] CTA: preset — button-text-slide-hover
+```
+
+---
+
 ## 2026-06-08 — [template] smile-clinic 신규 템플릿
 
 | # | 결정 |

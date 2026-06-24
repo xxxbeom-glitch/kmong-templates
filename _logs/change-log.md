@@ -1,5 +1,281 @@
 # Change Log
 
+## 2026-06-08 — [template] tesla-redesign technology active 카드 확장 60%
+
+**범위:** `css/style.css` — `section-technology`  
+**내용:** active 카드 flex 비율 1.3 → **1.6** (+60%)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 헤더 상하 패딩 Figma 반영
+
+**범위:** `css/style.css` — `.models__header`  
+**Figma MCP:** `8:49` models-header · `paddingTop/Bottom: 26` · title↔desc gap 24  
+**내용:** `--models-header-pad-y` 추가 · 섹션 pad-y 62는 pin-sticky 유지
+
+---
+
+## 2026-06-08 — [template] tesla-redesign technology 카드 expand 인터랙션
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-technology`  
+**내용:** 기본 1번 카드 active(+30% flex) · hover 시 해당 카드 확장·나머지 축소 · active만 desc 노출 · 이미지 scale active 연동
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models pin 휠 스무스 보간
+
+**범위:** `js/main.js` · `css/style.css` — `section-models`  
+**내용:** `scrollBy` 직접 호출 제거 → 가상 offset + rAF lerp · wheel delta 정규화 · transform 서브픽셀 연동
+
+---
+
+## 2026-06-08 — [template] tesla-redesign hero magnetic scroll 복구
+
+**범위:** `js/main.js` — `initHeroMagneticScroll` · `initModelsPinScroll`  
+**내용:** models pin `onWheel`이 hero 구간까지 가로채던 버그 수정 · hero magnetic `stopImmediatePropagation` 복구
+
+---
+
+## 2026-06-08 — [template] tesla-redesign technology wrap 중앙 정렬
+
+**범위:** `css/style.css` — `section-technology` · `section-shell--gutter`  
+**내용:** gutter shell `margin-inline: auto` · header/cards `max-width: container-max` 중앙 정렬 (experience 패턴)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 헤더 겹침·pin 휠 전역 연동
+
+**범위:** `css/style.css` · `js/main.js` — `section-models`  
+**내용:** sticky `top: header-height` · pin 높이 `100dvh - header` · pin 구간 휠 어디서든 `scrollBy`로 카드 진행 · `overscroll-behavior: contain` 제거
+
+---
+
+## 2026-06-08 — [template] tesla-redesign technology 카드 wrap 내부 정적 배치
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-technology`  
+**Figma MCP:** `23:732` — `technology-cards` 1440×352 · 카드 464×352 ×3 · gap 24  
+**내용:** `is-bleed-x`·가로 스크롤·드래그 제거 → `section-shell--gutter` 안 3열 flex · 카드 비율 464/352
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 섹션 고정형 카드 스크롤
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-models`  
+**내용:** 진입 시 섹션 sticky 고정 · 좌측 카피 고정 · 우측 카드 track `translateY` 연동 · 스크롤 완료 후 FSD 진행 · PC only · `@768`/`reduced-motion` fallback
+
+---
+
+## 2026-06-08 — [template] tesla-redesign Figma 전면 정합 (카피·타이포·레이아웃)
+
+**범위:** `index.html` · `css/style.css`  
+**Figma MCP:** `portfolio_tesla_main` `1:25`
+
+**models (`10:432`):** 2×2 grid → 좌 타이틀+desc / 우 세로 카드 4장 · `Find your Tesla` · FSD desc · 카드 830×418 · Model Y/Cybertruck/Model Y/Model X  
+**타이포:** 섹션 title 48/700 · band desc 16/500 · technology card 29 UPPER · experience title 48  
+**패딩:** technology·experience pad-y 62  
+**hero controls:** wrap 정렬 (`section-shell-gutter-max`)
+
+---
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-fsd`  
+**내용:** `section-fsd.jpg` → `assets/videos/fsd.mp4` · muted loop autoplay
+
+---
+
+## 2026-06-08 — [template] tesla-redesign header 메뉴 아이콘 wrap 정렬
+
+**범위:** `css/style.css` — `.header__inner`  
+**내용:** `padding-inline` · `max-width`를 `section-shell--gutter`와 동일(`--side-padding` · `--section-shell-gutter-max`) — 메뉴 아이콘 wrap 우측 끝 정렬
+
+---
+
+## 2026-06-08 — [template] tesla-redesign hero 3슬라이드 영상 고정
+
+**범위:** `index.html`  
+**내용:** hero **3장 고정** — Model Y `hero-bg.mp4` · Model 3 `hero-bg2.mp4` · Cybertruck `hero-bg3.mp4` (4번째 슬라이드·추가 컨텐츠 없음)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign 대소문자 Figma 정합
+
+**범위:** `css/style.css`  
+**내용:** Figma `textCase: UPPER` 섹션 타이틀·footer col title에 `text-transform: uppercase` (HTML 카피는 Figma 원문 유지)
+
+| 요소 | Figma 원문 | 표시 |
+|------|-----------|------|
+| models / fsd / charging / technology / experience title | sentence·title case | ALL CAPS |
+| footer col title | Vehicles 등 | ALL CAPS |
+| hero·카드명·버튼·본문 | Figma 그대로 | 변경 없음 |
+
+---
+
+## 2026-06-08 — [template] tesla-redesign hero 화살표 클릭 수정
+
+**범위:** `css/style.css` — `.hero__controls`  
+**내용:** `z-index` 2→4 (`.hero__inner`가 동일 z-index·전체 높이로 화살표 클릭 차단)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign footer 로고 PNG 수정
+
+**범위:** `index.html` — footer  
+**내용:** `img-tesla-logo-footer.jpg` → `img-tesla-logo.png` (header와 동일 PNG)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign FSD·charging 배경 가시성 조정
+
+**범위:** `css/style.css` — `--fsd-overlay`  
+**내용:** overlay `0.6` → `0.38` (section-fsd · section-charging 배경 이미지 더 보이게)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign hero 자석 스크롤
+
+**범위:** `index.html` · `js/main.js` — hero → models  
+**내용:** PC · hero 최상단 휠 down 1회 → models 스냅 · models 진입선 휠 up → hero top 복귀 · splash 중·스냅 중 lock · reduced-motion 대응
+
+---
+
+## 2026-06-08 — [template] tesla-redesign hero Model 3 비디오 연결
+
+**범위:** `index.html` — hero slide 2  
+**내용:** Model 3 슬라이드 `hero-bg2.mp4` 영상으로 교체 (기존 `card-model-3.jpg` 정지 이미지)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign header·footer 로고 원복
+
+**범위:** `index.html` · `css/style.css`  
+**내용:** header `img-tesla-logo.png` · footer `img-tesla-logo-footer.jpg` (221×44) · splash만 SVG 유지 · invert filter 제거
+
+---
+
+## 2026-06-08 — [template] tesla-redesign technology drag-scroll 수정
+
+**범위:** `index.html` · `css/style.css` — `section-technology`  
+**내용:** 스크롤 컨테이너를 `technology__track` → `technology__viewport`로 이동 (`width:max-content` 트랙은 overflow 불가)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 높이 Figma 반영
+
+**범위:** `css/style.css` · `index.html` — `section-models` (`10:432`)  
+**Figma:** card `707×482` (기존 652) · section pad-y `62` (기존 90) · grid gap 24/26 유지
+
+---
+
+## 2026-06-08 — [template] tesla-redesign 인터랙션 3종 연결
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**preset:** `scroll-reveal` · `hero-progress-slider` · `button-text-slide-hover`  
+**내용:**
+- hero 3슬라이드(Model Y 영상 · Model 3 · Cybertruck) · 6s autoplay · progress bar · prev/next · hover pause · splash 후 부트
+- 섹션별 scroll-reveal 1타깃(models header · fsd · charging · technology · experience)
+- CTA `btn-slide-hover` 마크업(hero · models · fsd · charging · experience)
+
+---
+
+## 2026-06-08 — [template] tesla-redesign Figma 타이포·간격 정합 수정
+
+**범위:** `css/style.css` — 전 섹션  
+**내용:** Figma MCP 수치 재대조 · line-height/padding/gap 토큰 보정 · hero `space-between`+gap40 · FSD/charging flex 중앙 정렬  
+**Figma:** `1:244` · `10:432` · `10:363` · `10:375` · `23:732` · `10:423` · `26:3`
+
+---
+
+## 2026-06-08 — [template] tesla-redesign footer PC 구현
+
+**범위:** `index.html` · `css/style.css` — `footer` (`26:3`)  
+**내용:** 로고·설명 · 4열 nav · divider · copyright / legal · `img-tesla-logo-footer.jpg`  
+**Figma:** BG `#0d0d0d` · main pad 64/240 · nav col gap 26 · bottom pad 24/240
+
+---
+
+## 2026-06-08 — [template] tesla-redesign section-experience PC 구현
+
+**범위:** `index.html` · `css/style.css` — `section-experience` (`10:423`)  
+**내용:** `experience-content.jpg` 카드 1440×460 r16 · `#000` 60% overlay · 중앙 카피 · Order Now / Demo Drive  
+**Figma:** pad 80/240 · text–CTA gap 74 · title 68/700 UPPER · desc 22/500
+
+---
+
+## 2026-06-08 — [template] tesla-redesign section-technology PC 구현
+
+**범위:** `index.html` · `css/style.css` — `section-technology` (`23:732`)  
+**내용:** Technology That Moves · 가로 카드 3종 · 좌 gutter 정렬·우측 peek(2172 트랙) · 텍스트 `#f0f0f0`  
+**Figma:** pad 80/240 · head–cards gap 62 · card r16
+
+---
+
+## 2026-06-08 — [template] tesla-redesign section-charging PC 구현
+
+**범위:** `index.html` · `css/style.css` — `section-charging` (`10:375`)  
+**내용:** `section-charging.jpg` · FSD와 동일 feature-band 패턴 · desc Figma `\n` 2곳 → `<br>` · Find Charging / Learn More  
+**Figma:** 750px · overlay 60% · title 52/700 · desc 22/500
+
+---
+
+## 2026-06-08 — [template] tesla-redesign section-fsd PC 구현
+
+**범위:** `index.html` · `css/style.css` — `section-fsd` (`10:363`)  
+**내용:** `section-fsd.jpg` full-bleed 750px · `#1b1d1d` 60% overlay · 카피 중앙 · FSD desc Figma `\n` → `<br>`  
+**Figma:** pad 80/240 · title 52/700 · desc 22/500 · btn 56h r6 gap 16
+
+---
+
+## 2026-06-08 — [template] tesla-redesign section-models PC 구현
+
+**범위:** `index.html` · `css/style.css` — `section-models` (`10:432`)  
+**내용:** FIND YOUR TESLA 헤더 · 2×2 카드 · 버튼 Figma 정합 · card desc Figma `U+2028` → `<br>` · radius 클리핑 보정  
+**Figma:** BG `#1b1d1d` · pad 90/240 · grid gap 24/26 · card 707×652 r16
+
+---
+
+## 2026-06-08 — [template] tesla-redesign section-nav · section-hero PC 구현
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — header(`23:866`) · hero(`1:244`)  
+**내용:** nav 93px · hero **뷰포트 가로·세로 꽉 참** (`100dvh - header`, video `object-fit: cover`) · Model Y 카피 · CTA · 화살표  
+**Figma:** gutter nav 64px · hero content 1440 · 카피 `#f0f0f0` · overlay `#000` 30% · 화살표 세로 중앙
+
+---
+
+## 2026-06-08 — [template] tesla-redesign 폴더·스캐폴드 생성
+
+**범위:** `templates/tesla-redesign/` — `index.html` · `css/style.css` · `js/main.js` · `assets/` · `_source/`  
+**내용:** PC 메인 구현 전 폴더 생성 · 모바일 보류 · 에셋 사용자 투입 대기
+
+---
+
+## 2026-06-08 — [template] tesla-redesign 에셋 정리·매핑
+
+**범위:** `templates/tesla-redesign/assets/` · `_source/`  
+**내용:** 사용자 투입 원본 → Figma 슬롯명으로 `assets/images`·`icons`·`videos` 정리 · 원본 PNG 3종 `_source/images/` 보관
+
+| 납품 경로 | 용도 |
+|-----------|------|
+| `assets/videos/hero-bg.mp4` | section-hero — Model Y |
+| `assets/videos/hero-bg2.mp4` | section-hero — Model 3 |
+| `assets/videos/hero-bg3.mp4` | section-hero — Cybertruck |
+| `assets/images/card-model-y.jpg` | models — Model Y |
+| `assets/images/card-model-3.jpg` | models — Model 3 |
+| `assets/images/card-cybertruck.jpg` | models — Cybertruck |
+| `assets/images/card-model-s.jpg` | models — Model S |
+| `assets/images/section-fsd.jpg` | section-fsd 배경 |
+| `assets/images/section-charging.jpg` | section-charging 배경 |
+| `assets/images/card-autonomy.jpg` | technology — Autonomy |
+| `assets/images/card-robotics.jpg` | technology — Robotics |
+| `assets/images/card-vehicle-software.jpg` | technology — Vehicle Software |
+| `assets/images/experience-content.jpg` | section-experience |
+| `assets/images/img-tesla-logo.png` | nav 로고 |
+| `assets/images/img-tesla-logo-footer.jpg` | footer 로고 |
+| `assets/icons/icon-hamburger-menu.png` | nav 햄버거 |
+| `assets/icons/icon-scroll-prev.png` · `icon-scroll-next.png` | models 캐러셀 화살표 |
+
+**`_source/images/`:** `source-supercharger-night.png` · `source-cybertruck-wasteland.png` · `source-model3-coastal-clean.png`
+
+---
+
 ## 2026-06-09 — [rules] 모바일 @768 gutter · 칼럼 · shell 패턴
 
 **파일:** `35-responsive.mdc` · `30-figma-to-code.mdc` · `40-template-code-style.mdc` · `50-qa-checklist.mdc` · `20-harness-workflow.mdc` · `_docs/figma-to-code-guide.md` · `_docs/qa-checklist.md`  

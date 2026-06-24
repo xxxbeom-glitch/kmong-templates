@@ -1,5 +1,151 @@
 # QA Log
 
+## 2026-06-08 — tesla-redesign 인터랙션 3종 (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** scroll-reveal · hero-progress-slider · button-text-slide-hover · PC only  
+**기준:** `46-interaction-presets.mdc` · mainstream/smile-clinic 참조 패턴  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | hero 3슬라이드 fade · 6s progress · loop · arrow · hover pause | PASS (코드) |
+| 2 | splash 종료 후 slider 부트 · video play/pause | PASS (코드) |
+| 3 | scroll-reveal 5타깃 · IO queue · reduced-motion | PASS (코드) |
+| 4 | btn-slide-hover CTA · fine pointer only | PASS (코드) |
+| 5 | preset 상한·중복 없음 (hover-tone 병용) | PASS (코드) |
+| 6 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → PC 메인 전체 QA
+
+---
+
+## 2026-06-08 — tesla-redesign footer (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** footer · PC only  
+**기준:** Figma `26:3` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | BG `#0d0d0d` · main pad 64/240 | PASS |
+| 2 | 로고 221×44 · desc 13/400 `#6b6b6b` | PASS |
+| 3 | nav 4열 · title 11/600 · link 14/400 `#aaa` | PASS |
+| 4 | divider `#2a2a2a` · copyright/legal 12/400 | PASS |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → PC 메인 전체 QA
+
+---
+
+## 2026-06-08 — tesla-redesign section-experience (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** section-experience · PC only  
+**기준:** Figma `10:423` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | BG `#1b1d1d` · pad 80/240 | PASS |
+| 2 | 카드 1440×460 r16 · `experience-content.jpg` cover | PASS |
+| 3 | overlay 60% · 중앙 카피 `#f0f0f0` | PASS |
+| 4 | title 68/700 UPPER · desc 22/500 · CTA hero btn 패턴 | PASS |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → footer
+
+---
+
+## 2026-06-08 — tesla-redesign section-technology (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** section-technology · PC only  
+**기준:** Figma `23:732` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | BG `#1b1d1d` · pad 80/240 | PASS |
+| 2 | 타이틀 52/700 · 카드 708×352 r16 | PASS |
+| 3 | 3카드 가로 스크롤 · gap 24 | PASS |
+| 4 | 카피·줄내림 Figma 일치(수동 `\n` 없음) | PASS |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → section-experience
+
+---
+
+## 2026-06-08 — tesla-redesign section-charging (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** section-charging · PC only  
+**기준:** Figma `10:375` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 750px full-bleed · `section-charging.jpg` | PASS |
+| 2 | overlay 60% · 중앙 카피 `#f0f0f0` | PASS |
+| 3 | desc 3줄 Figma `\n` → `<br>` | PASS |
+| 4 | Find Charging / Learn More CTA | PASS |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → section-technology
+
+---
+
+## 2026-06-08 — tesla-redesign section-fsd (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** section-fsd · PC only  
+**기준:** Figma `10:363` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 750px full-bleed · `section-fsd.jpg` cover | PASS |
+| 2 | overlay `#1b1d1d` 60% | PASS |
+| 3 | 타이틀·본문 `#f0f0f0` · 중앙 정렬 | PASS |
+| 4 | CTA Explorer FSD / View Safity · hero btn 패턴 | PASS |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → section-charging
+
+---
+
+## 2026-06-08 — tesla-redesign section-models (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** section-models · PC only  
+**기준:** Figma `10:432` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 섹션 BG `#1b1d1d` · pad 90/240 | PASS (MCP) |
+| 2 | 타이틀 52/700 · 링크 18/500 `#f0f0f0` | PASS |
+| 3 | 2×2 grid gap 24/26 · card 707×652 r16 | PASS |
+| 4 | 카드 이미지 4종 · 하단 gradient · CTA | PASS |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → section-fsd
+
+---
+
+## 2026-06-08 — tesla-redesign section-nav · section-hero (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** header · hero · PC only  
+**기준:** Figma `portfolio_tesla_main` `23:866` · `1:244` · MCP JSON  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | nav 93px · #1b1d1d · 로고 221 중앙 · 햄버거 48 우측 | PASS (MCP 대조) |
+| 2 | hero 800px · video `assets/videos/hero-bg.mp4` cover | PASS |
+| 3 | title/subtitle 카피·타이포 clamp | PASS |
+| 4 | CTA Order Now / Demo Drive · radius 6 · secondary 20% white | PASS |
+| 5 | scroll prev/next 아이콘 52px 좌우 | PASS |
+| 6 | 모바일 @768 | 보류 (decision-log) |
+
+**다음:** 사용자 PASS → section-models
+
+---
+
 ## 2026-06-09 — smile-clinic 모바일 @768 최종 이식
 
 **템플릿:** `smile-clinic` · **범위:** 메인 + 서브 3페이지 · `style.css` @768 · `main.js`  

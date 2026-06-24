@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesla</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-main">
+  <div id="splash" class="splash" role="presentation" aria-hidden="true">
+    <div class="splash__inner">
+      <div class="splash__logo">
+        <img
+          class="splash__logo-base"
+          src="assets/Tesla,_Inc.-Logo.wine.svg"
+          alt=""
+          width="209"
+          height="312"
+          decoding="async"
+        >
+        <div class="splash__logo-fill" aria-hidden="true">
+          <img
+            class="splash__logo-fill-img"
+            src="assets/Tesla,_Inc.-Logo.wine.svg"
+            alt=""
+            width="209"
+            height="312"
+            decoding="async"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="header" class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img
+          class="header__logo-img"
+          src="assets/images/img-tesla-logo.png"
+          alt="Tesla"
+          width="221"
+          height="44"
+          decoding="async"
+        >
+      </a>
+      <button type="button" class="header__menu-btn" aria-label="Open menu" aria-expanded="false">
+        <img
+          class="header__menu-icon"
+          src="assets/icons/icon-hamburger-menu.png"
+          alt=""
+          width="48"
+          height="48"
+          decoding="async"
+        >
+      </button>
+    </div>
+  </header>
+
+  <section id="hero" class="section section--hero" data-hero-progress-slider data-hero-magnetic-scroll aria-labelledby="hero-title">
+    <div class="hero__slides" aria-live="polite">
+      <article
+        class="hero__slide is-active"
+        data-hero-title="Model Y"
+        data-hero-subtitle="The All electronic SUV - Bullit for Everywhere"
+      >
+        <div class="hero__media" aria-hidden="true">
+          <video
+            class="hero__video"
+            src="assets/videos/hero-bg.mp4"
+            muted
+            loop
+            playsinline
+          ></video>
+          <div class="hero__overlay"></div>
+        </div>
+      </article>
+
+      <article
+        class="hero__slide"
+        data-hero-title="Model 3"
+        data-hero-subtitle="The electric sedan for city commutes, open roads and everyday efficiency."
+      >
+        <div class="hero__media" aria-hidden="true">
+          <video
+            class="hero__video"
+            src="assets/videos/hero-bg2.mp4"
+            muted
+            loop
+            playsinline
+          ></video>
+          <div class="hero__overlay"></div>
+        </div>
+      </article>
+
+      <article
+        class="hero__slide"
+        data-hero-title="Cybertruck"
+        data-hero-subtitle="A bold electric truck built for utility, durability and all-road capability."
+      >
+        <div class="hero__media" aria-hidden="true">
+          <video
+            class="hero__video"
+            src="assets/videos/hero-bg3.mp4"
+            muted
+            loop
+            playsinline
+          ></video>
+          <div class="hero__overlay"></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="hero__progress" aria-hidden="true">
+      <span class="hero__progress-fill"></span>
+    </div>
+
+    <div class="hero__controls">
+      <button type="button" class="hero__arrow hero__arrow--prev" aria-label="Previous slide">
+        <img
+          src="assets/icons/icon-scroll-prev.png"
+          alt=""
+          width="52"
+          height="52"
+          decoding="async"
+        >
+      </button>
+      <button type="button" class="hero__arrow hero__arrow--next" aria-label="Next slide">
+        <img
+          src="assets/icons/icon-scroll-next.png"
+          alt=""
+          width="52"
+          height="52"
+          decoding="async"
+        >
+      </button>
+    </div>
+
+    <div class="hero__inner section-shell--gutter">
+      <div class="hero__text">
+        <h1 class="hero__title" id="hero-title">Model Y</h1>
+        <p class="hero__subtitle">The All electronic SUV - Bullit for Everywhere</p>
+      </div>
+
+      <div class="hero__cta">
+        <a href="#" class="hero__btn hero__btn--primary btn-slide-hover">
+          <span class="btn__label">
+            <span class="btn__track">
+              <span class="btn__text" aria-hidden="true">Order Now</span>
+              <span class="btn__text">Order Now</span>
+            </span>
+          </span>
+        </a>
+        <a href="#" class="hero__btn hero__btn--secondary btn-slide-hover">
+          <span class="btn__label">
+            <span class="btn__track">
+              <span class="btn__text" aria-hidden="true">Demo Drive</span>
+              <span class="btn__text">Demo Drive</span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-main__inner" id="main">
+    <section id="models" class="section section--models" data-models-pin-scroll aria-labelledby="models-title">
+      <div class="models__pin">
+        <div class="models__pin-sticky">
+          <div class="models__shell section-shell--gutter">
+            <div class="models__layout">
+              <header class="models__header scroll-reveal">
+            <h2 class="models__title" id="models-title">Find your Tesla</h2>
+            <p class="models__desc">Full Self-Driving capability is designed to assist with steering,<br>navigation and driver supervision across more complex driving environments.</p>
+          </header>
+
+          <div class="models__cards" data-models-cards-viewport>
+            <div class="models__cards-track" data-models-cards-track>
+            <article class="models-card">
+              <div class="models-card__media">
+                <img
+                  class="models-card__img"
+                  src="assets/images/card-model-y.jpg"
+                  alt=""
+                  width="830"
+                  height="418"
+                  decoding="async"
+                >
+              </div>
+              <div class="models-card__body">
+                <div class="models-card__details">
+                  <h3 class="models-card__name">Model Y</h3>
+                  <p class="models-card__desc">The versatile electric SUV for daily drives,<br>weekend plans and everything in between.</p>
+                </div>
+                <div class="models-card__actions">
+                  <a href="#" class="models-card__btn btn-slide-hover">
+                    <span class="btn__label">
+                      <span class="btn__track">
+                        <span class="btn__text" aria-hidden="true">View Model</span>
+                        <span class="btn__text">View Model</span>
+                      </span>
+                    </span>
+                  </a>
+                  <a href="#" class="models-card__link">Demo Drive</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="models-card">
+              <div class="models-card__media">
+                <img
+                  class="models-card__img"
+                  src="assets/images/card-cybertruck.jpg"
+                  alt=""
+                  width="830"
+                  height="418"
+                  decoding="async"
+                >
+              </div>
+              <div class="models-card__body">
+                <div class="models-card__details">
+                  <h3 class="models-card__name">Cybertruck</h3>
+                  <p class="models-card__desc">A bold electric truck built for utility,<br>durability and all-road capability.</p>
+                </div>
+                <div class="models-card__actions">
+                  <a href="#" class="models-card__btn btn-slide-hover">
+                    <span class="btn__label">
+                      <span class="btn__track">
+                        <span class="btn__text" aria-hidden="true">View Model</span>
+                        <span class="btn__text">View Model</span>
+                      </span>
+                    </span>
+                  </a>
+                  <a href="#" class="models-card__link">Demo Drive</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="models-card">
+              <div class="models-card__media">
+                <img
+                  class="models-card__img"
+                  src="assets/images/card-model-y.jpg"
+                  alt=""
+                  width="830"
+                  height="418"
+                  decoding="async"
+                >
+              </div>
+              <div class="models-card__body">
+                <div class="models-card__details">
+                  <h3 class="models-card__name">Model Y</h3>
+                  <p class="models-card__desc">The versatile electric SUV for daily drives,<br>weekend plans and everything in between.</p>
+                </div>
+                <div class="models-card__actions">
+                  <a href="#" class="models-card__btn btn-slide-hover">
+                    <span class="btn__label">
+                      <span class="btn__track">
+                        <span class="btn__text" aria-hidden="true">View Model</span>
+                        <span class="btn__text">View Model</span>
+                      </span>
+                    </span>
+                  </a>
+                  <a href="#" class="models-card__link">Demo Drive</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="models-card">
+              <div class="models-card__media">
+                <img
+                  class="models-card__img"
+                  src="assets/images/card-model-s.jpg"
+                  alt=""
+                  width="830"
+                  height="418"
+                  decoding="async"
+                >
+              </div>
+              <div class="models-card__body">
+                <div class="models-card__details">
+                  <h3 class="models-card__name">Model X</h3>
+                  <p class="models-card__desc">A spacious electric SUV designed for range,<br>comfort and confident family travel.</p>
+                </div>
+                <div class="models-card__actions">
+                  <a href="#" class="models-card__btn btn-slide-hover">
+                    <span class="btn__label">
+                      <span class="btn__track">
+                        <span class="btn__text" aria-hidden="true">View Model</span>
+                        <span class="btn__text">View Model</span>
+                      </span>
+                    </span>
+                  </a>
+                  <a href="#" class="models-card__link">Demo Drive</a>
+                </div>
+              </div>
+            </article>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fsd" class="section section--fsd" aria-labelledby="fsd-title">
+      <div class="fsd__media" aria-hidden="true">
+        <video
+          class="fsd__video"
+          src="assets/videos/fsd.mp4"
+          muted
+          loop
+          playsinline
+          autoplay
+        ></video>
+        <div class="fsd__overlay"></div>
+      </div>
+
+      <div class="fsd__inner section-shell--gutter">
+        <div class="fsd__content scroll-reveal">
+          <div class="fsd__text">
+            <h2 class="fsd__title" id="fsd-title">Drive with more confidence</h2>
+            <p class="fsd__desc">Full Self-Driving capability is designed to assist with steering,<br>navigation and driver supervision across more complex driving environments.</p>
+          </div>
+          <div class="fsd__cta">
+            <a href="#" class="fsd__btn fsd__btn--primary btn-slide-hover">
+              <span class="btn__label">
+                <span class="btn__track">
+                  <span class="btn__text" aria-hidden="true">Explorer FSD</span>
+                  <span class="btn__text">Explorer FSD</span>
+                </span>
+              </span>
+            </a>
+            <a href="#" class="fsd__btn fsd__btn--secondary btn-slide-hover">
+              <span class="btn__label">
+                <span class="btn__track">
+                  <span class="btn__text" aria-hidden="true">View Safity</span>
+                  <span class="btn__text">View Safity</span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="charging" class="section section--charging" aria-labelledby="charging-title">
+      <div class="charging__media" aria-hidden="true">
+        <img
+          class="charging__img"
+          src="assets/images/section-charging.jpg"
+          alt=""
+          width="1920"
+          height="750"
+          decoding="async"
+        >
+        <div class="charging__overlay"></div>
+      </div>
+
+      <div class="charging__inner section-shell--gutter">
+        <div class="charging__content scroll-reveal">
+          <div class="charging__text">
+            <h2 class="charging__title" id="charging-title">Charge anywhere the road goes</h2>
+            <p class="charging__desc">Fast charging on every route, with charging stops planned<br>automatically by in-car navigation and access to one of the world's<br>largest networks.</p>
+          </div>
+          <div class="charging__cta">
+            <a href="#" class="charging__btn charging__btn--primary btn-slide-hover">
+              <span class="btn__label">
+                <span class="btn__track">
+                  <span class="btn__text" aria-hidden="true">Find Charging</span>
+                  <span class="btn__text">Find Charging</span>
+                </span>
+              </span>
+            </a>
+            <a href="#" class="charging__btn charging__btn--secondary btn-slide-hover">
+              <span class="btn__label">
+                <span class="btn__track">
+                  <span class="btn__text" aria-hidden="true">Learn More</span>
+                  <span class="btn__text">Learn More</span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section section--technology" aria-labelledby="technology-title">
+      <div class="technology__inner section-shell--gutter scroll-reveal">
+        <header class="technology__header">
+          <h2 class="technology__title" id="technology-title">Technology That Moves</h2>
+        </header>
+
+        <div class="technology__cards" data-technology-cards>
+          <article class="technology-card is-active" tabindex="0">
+            <div class="technology-card__media">
+              <img
+                class="technology-card__img"
+                src="assets/images/card-autonomy.jpg"
+                alt=""
+                width="464"
+                height="352"
+                decoding="async"
+              >
+            </div>
+            <div class="technology-card__body">
+              <h3 class="technology-card__name">Autonomy</h3>
+              <p class="technology-card__desc">Vision-based full self-driving capability for real-world navigation.</p>
+            </div>
+          </article>
+
+          <article class="technology-card" tabindex="0">
+            <div class="technology-card__media">
+              <img
+                class="technology-card__img"
+                src="assets/images/card-robotics.jpg"
+                alt=""
+                width="464"
+                height="352"
+                decoding="async"
+              >
+            </div>
+            <div class="technology-card__body">
+              <h3 class="technology-card__name">Robotics</h3>
+              <p class="technology-card__desc">General-purpose robots designed for repetitive, unsafe or labor-intensive tasks.</p>
+            </div>
+          </article>
+
+          <article class="technology-card" tabindex="0">
+            <div class="technology-card__media">
+              <img
+                class="technology-card__img"
+                src="assets/images/card-vehicle-software.jpg"
+                alt=""
+                width="464"
+                height="352"
+                decoding="async"
+              >
+            </div>
+            <div class="technology-card__body">
+              <h3 class="technology-card__name">Vehicle Software</h3>
+              <p class="technology-card__desc">Continuous improvement delivered through over-the-air updates.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section--experience" aria-labelledby="experience-title">
+      <div class="experience__inner section-shell--gutter">
+        <div class="experience__card">
+          <div class="experience__media" aria-hidden="true">
+            <img
+              class="experience__img"
+              src="assets/images/experience-content.jpg"
+              alt=""
+              width="1440"
+              height="460"
+              decoding="async"
+            >
+            <div class="experience__overlay"></div>
+          </div>
+
+          <div class="experience__content scroll-reveal">
+            <div class="experience__text">
+              <h2 class="experience__title" id="experience-title">Experience Tesla</h2>
+              <p class="experience__desc">Find the Tesla that fits your life—then take the next step.</p>
+            </div>
+            <div class="experience__cta">
+              <a href="#" class="experience__btn experience__btn--primary btn-slide-hover">
+                <span class="btn__label">
+                  <span class="btn__track">
+                    <span class="btn__text" aria-hidden="true">Order Now</span>
+                    <span class="btn__text">Order Now</span>
+                  </span>
+                </span>
+              </a>
+              <a href="#" class="experience__btn experience__btn--secondary btn-slide-hover">
+                <span class="btn__label">
+                  <span class="btn__track">
+                    <span class="btn__text" aria-hidden="true">Demo Drive</span>
+                    <span class="btn__text">Demo Drive</span>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="footer__main section-shell--gutter">
+      <div class="footer__main-inner">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img
+              class="footer__logo-img"
+              src="assets/images/img-tesla-logo.png"
+              alt="Tesla"
+              width="221"
+              height="44"
+              decoding="async"
+            >
+          </a>
+          <p class="footer__desc">Electric vehicles, energy and autonomy—accelerating a cleaner, safer future.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <h3 class="footer__col-title">Vehicles</h3>
+            <ul class="footer__links">
+              <li><a href="#">Model Y</a></li>
+              <li><a href="#">Model 3</a></li>
+              <li><a href="#">Cybertruck</a></li>
+              <li><a href="#">Model S &amp; X</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__col-title">Energy</h3>
+            <ul class="footer__links">
+              <li><a href="#">Solar Panels</a></li>
+              <li><a href="#">Powerwall</a></li>
+              <li><a href="#">Charging</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__col-title">Discover</h3>
+            <ul class="footer__links">
+              <li><a href="#">AI &amp; Robotics</a></li>
+              <li><a href="#">Demo Drive</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__col-title">Connect</h3>
+            <ul class="footer__links">
+              <li><a href="#">X</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__bottom section-shell--gutter">
+      <div class="footer__bottom-inner">
+        <p class="footer__copyright">&copy; 2026 Tesla concept — unofficial portfolio redesign. Not affiliated with Tesla, Inc.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Legal</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
