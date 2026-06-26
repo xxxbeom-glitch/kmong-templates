@@ -1,5 +1,210 @@
 # Change Log
 
+## 2026-06-08 — [template] tesla-redesign models carousel 1920 cap (ultrawide)
+
+**범위:** `css/style.css` — models 카드 viewport  
+**내용:** `@769px+` viewport `max 1920px` 중앙 정렬 — 2560 등 ultrawide에서 peek 과다 노출 방지
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models peek padding 제거 · 830px 고정
+
+**범위:** `css/style.css` · `js/main.js` — models 카드 슬라이더  
+**내용:** vw 카드·peek padding 제거 → **830px 고정** · viewport 100vw clip · JS `offsetLeft` 중앙 정렬
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 PC 830px 고정 · peek clip
+
+**범위:** `css/style.css` — models 카드 슬라이더  
+**내용:** PC `@769px+` 카드 **830px 고정** (vw 축소 제거) · viewport `overflow-x: hidden` · 중앙 1장+좌우 잘림
+
+---
+
+## 2026-06-08 — [template] tesla-redesign footer 우측 inset · nav 균등분배
+
+**범위:** `css/style.css` — footer  
+**내용:** `footer__main-inner` max-width 제거 → 좌우 `--section-inset-x` 맞춤 · brand/nav space-between · nav col `flex: 1`
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 peek inset 100vw
+
+**범위:** `css/style.css` — models 카드 슬라이더  
+**내용:** peek inset `100%` → `100vw` · gap 24 · `min-width` 고정 · 중앙 1장+좌우 peek
+
+---
+
+## 2026-06-08 — [template] tesla-redesign FSD·charging 원복 · experience·footer inset 통일
+
+**범위:** `css/style.css` · `index.html`  
+**내용:** 3·4번 `--section-inset-x` 원복 · 5번·footer `section-shell--gutter` 제거 → 동일 `--section-inset-x` (clamp 240) 적용
+
+---
+
+## 2026-06-08 — [template] tesla-redesign FSD·charging 좌측 inset Experience 정렬
+
+**범위:** `css/style.css` — section-fsd-row · section-charging-slider  
+**내용:** 좌측 `--content-inset-left` (Experience `section-shell--gutter`와 동일) · FSD 우측 패널 `--side-padding` · charging 우 pad 0
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 타이틀 너비 카드 공통
+
+**범위:** `css/style.css` — `.models__header`  
+**내용:** 「당신을 위한 테슬라」 `max-width` → `--models-card-width` (830px fluid) · 카드와 동일 너비
+
+---
+
+## 2026-06-08 — [template] tesla-redesign experience 높이 aspect-ratio 수정
+
+**범위:** `css/style.css` — `section-experience`  
+**내용:** 고정 height clamp(800 cap) 제거 → `aspect-ratio: 1920/800` · Figma imageTransform 기준 `object-position: 50% 57%` · @768 min-height
+
+---
+
+## 2026-06-08 — [template] tesla-redesign experience Figma 재동기 (79:2266)
+
+**범위:** `css/style.css` — `section-experience`  
+**Figma MCP:** `79:2266`  
+**내용:** 오버레이 30% · content gap 64 · CTA outline (`--fsd-panel-btn-*`) · hover fill #F0F0F0
+
+---
+
+## 2026-06-08 — [template] tesla-redesign charging-slider pin 재수정 (JS 높이·transform px)
+
+**범위:** `css/style.css` · `js/main.js` — charging pin  
+**내용:** pin 높이 JS `vh*3` 고정 · track `translateY` px 연동 · 슬라이드 `100dvh` · `@769px` PC 전용 · calc 변수 의존 제거
+
+---
+
+## 2026-06-08 — [template] tesla-redesign scroll-reveal 전 섹션 확장
+
+**범위:** `index.html` · `js/main.js` — preset `scroll-reveal`  
+**내용:** hero · models 카드 · fsd · charging(slide 전환) · experience · footer 타깃 추가 · hero 즉시 등장 · charging pin 슬라이드별 reveal
+
+---
+
+## 2026-06-08 — [template] tesla-redesign charging-slider JS pin 고정 복구
+
+**범위:** `css/style.css` · `js/main.js` — charging pin  
+**내용:** `sticky`+`overflow-x:clip` 이슈 → JS `fixed/absolute` pin · pin 높이 `100dvh * 3` · reduced-motion에서도 PC pin 유지
+
+---
+
+## 2026-06-08 — [template] tesla-redesign charging-slider 슬라이드업 스크롤 연동
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — charging pin slider  
+**내용:** fade 전환 제거 → track `translateY` 스크롤 연동 · 슬라이드 세로 스택 · 아래→위 슬라이드업
+
+---
+
+## 2026-06-08 — [template] tesla-redesign charging-slider pin scroll · 5:5 · 100dvh
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-charging-slider` (`77:2133`)  
+**Figma MCP:** slide 1–3 · 960+960 · text pad 80/120/80/240 · gap 236/16 · btn outline #212121 r2  
+**내용:** pin wrapper 300dvh · sticky 100dvh · 스크롤 구간별 3슬라이드 · 50/50 고정 · auto-timer 제거 · `@768`/reduced-motion 세로 스택
+
+---
+
+## 2026-06-08 — [template] tesla-redesign fsd-row 버튼 텍스트·hover
+
+**범위:** `css/style.css` — `.fsd-panel__btn`  
+**내용:** 기본 텍스트 `--color-hero-text` · hover fill `--color-hero-text` + 텍스트 `--color-text`
+
+---
+
+## 2026-06-08 — [template] tesla-redesign fsd-row Figma 재동기
+
+**범위:** `index.html` · `css/style.css` — `section-fsd-row` (`75:2030`)  
+**Figma MCP:** 패널 960×430 · aspect-ratio · pad 80/120/80/240 · title gap 62 · overlay 30% · btn outline #f0f0f0 r2 18/500 pad 17/31  
+**내용:** `max-height 430` 고정 제거 → 패널 너비 비례 높이 · hero-btn 스타일 제거 → Figma 아웃라인 CTA · title lh 55 · btn-slide-hover 마크업 제거
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 좌측 peek 복구
+
+**범위:** `js/main.js` — models card slider  
+**내용:** 무한 스크롤 전환 시 제거됐던 leading clone 복구 · 첫 실카드(index 1) 중앙 시작 · `getBoundingClientRect` 스크롤 위치 계산
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 타이틀·서브 중앙 정렬
+
+**범위:** `css/style.css` — `.models-card__details` · name · desc  
+**Figma MCP (`75:1970`):** model-y-title · model-y-description `textAlignHorizontal: CENTER`  
+**내용:** 누락된 `text-align: center` · details `align-items: center` 반영
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 슬라이더 무한 스크롤 · 500ms 전환
+
+**범위:** `js/main.js` · `css/style.css` — models card slider  
+**내용:** 카드 1장 전환 500ms(rAF) · 끝에서 처음으로 점프 제거 · 카드 세트 append로 앞으로만 무한 스크롤 · scroll-snap 애니 중 해제
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 CTA Figma 재동기
+
+**범위:** `css/style.css` — models-card CTA  
+**Figma MCP (`75:1959`):** cta-group 311×56 중앙 · gap 16 · btn 165/130×56 · pad 17/31 · r2 · section gap 46 · text 636 · image 726×236  
+**내용:** flex 균등배치 제거 → Figma 고정 간격·중앙 정렬 · 버튼 고정 width·stroke 반영
+
+---
+
+## 2026-06-08 — [template] tesla-redesign splash 제거 · models 타이틀 중앙 · 카드 자동 슬라이드
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** splash HTML/CSS/JS 제거 · `당신을 위한 테슬라` text-align center · `initModelsCardSlider` 6s auto · hover pause
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 섹션 수정 (자석 해제·카드 중앙·배경)
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-models` · hero magnetic  
+**내용:** hero magnetic scroll 제거 · models 카드 Model Y(index 2) 중앙 정렬 + scroll-snap · `--color-page-bg: #f5f5f5` · body/models 배경 Figma 동기
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models~footer Figma 전면 재동기
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — hero/header 제외 main 전체  
+**Figma MCP:** `75:1910` models · `75:2030` fsd-row · `77:2133` charging-slider · `79:2266` experience · `26:3` footer  
+**내용:** models 가로 카드(830×551) · fsd 2열 · charging 3-slide · experience 풀블리드 · footer 한글 · `#technology` 제거 · pin-scroll/technology JS 제거 · `initChargingSlider` 추가
+
+---
+
+## 2026-06-08 — [template] tesla-redesign header Figma 재동기 (23:866)
+
+**범위:** `index.html` · `css/style.css` — `section-nav` only  
+**Figma MCP:** h 73 · bg `#1b1d1d` solid · pad 12/64 · logo 128×25 · menu 32×32 · nav-left 중앙 로고  
+**내용:** scrim 제거 · gutter 240→header 64 · absolute 로고 → brand flex 중앙
+
+---
+
+## 2026-06-08 — [template] tesla-redesign FSD 섹션 배경 이미지 복원
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — `section-fsd`  
+**내용:** `fsd.mp4` → `assets/images/section-fsd.jpg` · `initFsdVideo` 제거
+
+---
+
+## 2026-06-08 — [template] tesla-redesign models 카드 높이·버튼 weight Figma 재동기
+
+**범위:** `index.html` · `css/style.css` — `section-models` · CTA  
+**Figma MCP (fresh):** card **830×525** (기존 418) · btn weight **500** (hero만 700)  
+**내용:** aspect-ratio 830/525 · `--btn-font-weight` / `--hero-btn-font-weight` 분리
+
+---
+
+## 2026-06-08 — [template] tesla-redesign 섹션 2번째 CTA Figma 정합
+
+**범위:** `css/style.css` — secondary CTA  
+**Figma MCP:** btn-demo-drive · btn-view-safety · btn-learn-more — bg 20% · text 80%  
+**내용:** `--btn-secondary-*` 토큰 · hero/fsd/charging/experience secondary 텍스트 opacity 반영 · models Demo Drive는 Figma 텍스트 링크 유지
+
+---
+
 ## 2026-06-08 — [template] tesla-redesign technology active 카드 확장 60%
 
 **범위:** `css/style.css` — `section-technology`  

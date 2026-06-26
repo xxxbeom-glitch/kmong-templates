@@ -1,5 +1,43 @@
 # QA Log
 
+## 2026-06-08 — tesla-redesign section-experience Figma 재동기 (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** section-experience · PC only  
+**기준:** Figma `79:2266` · MCP JSON · `50-qa-checklist.mdc`  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 섹션 1920×800 풀블리드 | PASS (코드) |
+| 2 | 오버레이 rgba(0,0,0,0.3) | PASS (코드) |
+| 3 | 타이틀 42/700 · 설명 24/500 · gap 16/64 | PASS (코드) |
+| 4 | CTA outline 2px r · 18/500 · hover fill | PASS (코드) |
+| 5 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → footer 또는 전체 QA
+
+---
+
+## 2026-06-08 — tesla-redesign models~footer Figma 재동기 (PC)
+
+**템플릿:** `tesla-redesign` · **범위:** models · fsd-row · charging-slider · experience · footer (header/hero 제외)  
+**기준:** Figma MCP fresh · `50-qa-checklist.mdc`  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | models 가로 카드 830×551 · 한글 · 흰 배경 · CTA 2개 | PASS (코드) |
+| 2 | fsd-row 960×430 2열 · CTA 각 1개 | PASS (코드) |
+| 3 | charging-slider 3-slide fade · 6s auto · hover pause | PASS (코드) |
+| 4 | experience 1920×800 풀블리드 · CTA 1개 | PASS (코드) |
+| 5 | footer 한글 nav/legal | PASS (코드) |
+| 6 | `#technology` 제거 · pin-scroll JS 제거 | PASS (코드) |
+| 7 | 모바일 @768 | 보류 |
+
+**다음:** 사용자 PASS → PC 메인 전체 QA
+
+---
+
 ## 2026-06-08 — tesla-redesign 인터랙션 3종 (PC)
 
 **템플릿:** `tesla-redesign` · **범위:** scroll-reveal · hero-progress-slider · button-text-slide-hover · PC only  
