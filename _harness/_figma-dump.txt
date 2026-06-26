@@ -1,0 +1,142 @@
+﻿
+===== 13:436 section-hero, header =====
+13:436 | section-hero, header | FRAME | 1920x855 | layout=VERTICAL gap=10 primary=None
+  13:437 | section-hero | FRAME | 1920x855 | pad=180,240,180,240 | layout=VERTICAL gap=10 primary=MAX
+    13:438 | Frame 48 | FRAME | 865x276 | layout=VERTICAL gap=32 primary=None
+      13:439 | Frame 60 | FRAME | 865x178 | layout=VERTICAL gap=16 primary=None
+        13:440 | ?쇰? 怨좊????쒖옉遺???뚮났??怨쇱젙源뚯? ?④퍡?⑸땲??| TEXT | 865x130 | fs=46 | fw=400 | lh=65.31999969482422 | #ffffff
+        13:441 | 媛쒖씤蹂??쇰? ?곹깭??留욎떠 ?ъ꽭??吏꾨즺 諛⑺뼢???쒖븞?⑸땲?? | TEXT | 865x32 | fs=20 | fw=500 | lh=31.600000381469727 | #ffffff
+      13:442 | Frame 103 | FRAME | 203x66 | #554e49 | r=99 | pad=20,36,20,36 | layout=HORIZONTAL gap=6 primary=CENTER
+        13:443 | ?곷떞 ?덉빟?섍린 | TEXT | 99x18 | fs=18 | fw=600 | lh=18 | #ffffff
+        13:444 | Group 60 | GROUP | 26x26
+          13:445 | Rectangle 69 | RECTANGLE | 26x26 | #d9d9d9
+          13:446 | Arrow - Left 2 - Iconly Pro | FRAME | 20x20 | #ffffff
+  13:450 | section-header | FRAME | 1920x121 | #5a4a42 | pad=32,240,32,240 | layout=HORIZONTAL gap=269 primary=SPACE_BETWEEN
+    13:451 | Group 53 | GROUP | 219x57
+      13:452 | Mask group | GROUP | 219x57
+        13:453 | Rectangle 67 | RECTANGLE | 219x57 | #d9d9d9
+        13:454 | image 52 | RECTANGLE | 219x57
+    13:455 | Frame 54 | FRAME | 800x52 | layout=HORIZONTAL gap=31 primary=MAX
+      13:456 | Frame 62 | FRAME | 602x22 | layout=HORIZONTAL gap=36 primary=None
+        13:457 | ?ㅻ쭏???대━???뚭컻 | TEXT | 135x22 | fs=18 | fw=600 | lh=21.600000381469727 | #ffffff
+        13:458 | 吏꾨즺怨쇰ぉ | TEXT | 63x22 | fs=18 | fw=600 | lh=21.600000381469727 | #ffffff
+        13:459 | ?λ퉬쨌?꾨줈洹몃옩 | TEXT | 104x22 | fs=18 | fw=600 | lh=21.600000381469727 | #ffffff
+        13:460 | ?대깽??| TEXT | 48x22 | fs=18 | fw=600 | lh=21.600000381469727 | #ffffff
+        13:461 | ?덉빟쨌?ㅼ떆??湲?| TEXT | 108x22 | fs=18 | fw=600 | lh=21.600000381469727 | #ffffff
+      13:462 | Frame 105 | FRAME | 167x52 | #ffffff | r=12 | pad=15,34,15,34 | layout=HORIZONTAL gap=10 primary=CENTER
+        13:463 | 移댁뭅?ㅽ넚 ?곷떞 | TEXT | 99x22 | fs=18 | fw=600 | lh=21.600000381469727 | #5a4a42
+
+===== 13:464 section-treatment =====
+13:464 | section-treatment | FRAME | 1920x1171 | pad=120,240,120,240 | layout=VERTICAL gap=48 primary=None
+  13:465 | Frame 61 | FRAME | 1440x805 | layout=VERTICAL gap=64 primary=None
+    13:466 | Frame 45 | FRAME | 1440x155 | layout=HORIZONTAL gap=10 primary=None
+      13:467 | Frame 46 | FRAME | 1312x155 | layout=VERTICAL gap=16 primary=None
+        13:468 | signature | TEXT | 154x27 | fs=17 | fw=700 | ls=6.800000000000001 | lh=26.51999855041504 | #1f1b18
+        13:469 | Frame 62 | FRAME | 1288x112 | layout=VERTICAL gap=8 primary=None
+          13:470 | ?쇰? 怨좊???留욎텣 ?ㅻ쭏???대━?????吏꾨즺 | TEXT | 1288x72 | fs=46 | fw=700 | lh=71.75999450683594 | #1f1b18
+          13:471 | ?щ뱶由? ?됱냼, 由ы봽?? ?쇰?寃?怨좊????쇰? ?곹깭???곕씪 ?곷떞?⑸땲?? | TEXT | 1288x32 | fs=20 | fw=500 | lh=32 | #1f1b18
+      13:472 | Frame 46 | FRAME | 118x54 | layout=HORIZONTAL gap=10 primary=None
+        13:473 | Frame 47 | FRAME | 54x54 | #5a4a42 | r=999 | pad=11,11,11,11 | layout=HORIZONTAL gap=10 primary=CENTER
+          13:474 | Arrow - Right - Iconly Pro | FRAME | 24x24 | #ffffff
+        13:477 | Frame 46 | FRAME | 54x54 | #5a4a42 | r=999 | pad=11,11,11,11 | layout=HORIZONTAL gap=10 primary=CENTER
+          13:478 | Arrow - Right - Iconly Pro | FRAME | 24x24 | #ffffff
+    13:481 | frame | FRAME | 1440x586 | layout=VERTICAL gap=10 primary=None
+      13:482 | Frame 48 | FRAME | 1920x586 | layout=HORIZONTAL gap=24 primary=None
+        13:483 | Frame 51 | FRAME | 464x586 | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=10 primary=MAX
+          13:484 | Frame 49 | FRAME | 400x87 | layout=VERTICAL gap=6 primary=MAX
+        13:487 | Frame 52 | FRAME | 464x586 | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=10 primary=MAX
+          13:488 | Frame 49 | FRAME | 400x87 | layout=VERTICAL gap=6 primary=MAX
+        13:491 | Frame 50 | FRAME | 464x586 | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=10 primary=MAX
+          13:492 | Frame 49 | FRAME | 400x87 | layout=VERTICAL gap=6 primary=MAX
+        13:495 | Frame 48 | FRAME | 464x586 | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=10 primary=MAX
+          13:496 | Frame 49 | FRAME | 400x87 | layout=VERTICAL gap=6 primary=MAX
+  13:499 | Frame 46 | FRAME | 284x78 | r=99 | pad=26,37,26,37 | layout=HORIZONTAL gap=10 primary=None
+    13:500 | 吏꾨즺怨쇰ぉ ?꾩껜蹂닿린 | TEXT | 174x24 | fs=24 | fw=700 | lh=24 | #5a4a42
+    13:501 | Group 60 | GROUP | 26x26
+      13:502 | Rectangle 69 | RECTANGLE | 26x26 | #d9d9d9
+      13:503 | Arrow - Left 2 - Iconly Pro | FRAME | 20x20 | #ffffff
+        13:504 | Iconly/Light/Arrow---Left-2 | GROUP | 6x12
+          13:505 | Arrow---Left-2 | GROUP | 6x12
+
+===== 13:507 section-strength =====
+13:507 | section-strength | FRAME | 1920x997 | #fffefd | pad=120,240,120,240 | layout=VERTICAL gap=64 primary=CENTER
+  13:508 | Frame 46 | FRAME | 1440x139 | layout=VERTICAL gap=8 primary=None
+    13:509 | OUR STRENGTH | TEXT | 1440x27 | fs=17 | fw=700 | ls=6.800000000000001 | lh=26.51999855041504 | #1f1b18
+    13:510 | Frame 62 | FRAME | 1440x104 | layout=VERTICAL gap=None primary=None
+      13:511 | 怨쇱젙???몄븞???쇰? ?대━??| TEXT | 1440x72 | fs=46 | fw=700 | lh=71.75999450683594 | #1f1b18
+      13:512 | 異⑸텇???곷떞??諛뷀깢?쇰줈 ?꾩슂??吏꾨즺瑜?李⑤텇?섍쾶 ?덈궡?⑸땲?? | TEXT | 1440x32 | fs=20 | fw=500 | lh=32 | #1f1b18
+  13:513 | Frame 61 | FRAME | 1440x554 | #3f3a35 | r=277 | layout=VERTICAL gap=10 primary=CENTER
+    13:514 | Frame 46 | FRAME | 1440x243 | pad=64,120,64,120 | layout=HORIZONTAL gap=10 primary=SPACE_BETWEEN
+      13:515 | Frame 47 | FRAME | 54x54 | #5a4a42 | r=999 | pad=11,11,11,11 | layout=HORIZONTAL gap=10 primary=CENTER
+        13:516 | Arrow - Right - Iconly Pro | FRAME | 24x24 | #ffffff
+          13:517 | Vector | VECTOR | 14x0
+          13:518 | Vector | VECTOR | 6x12
+      13:519 | Frame 61 | FRAME | 1092x115 | pad=None,120,None,120 | layout=VERTICAL gap=10 primary=None
+        13:520 | 異⑸텇???ｊ퀬, ?쇰? ?곹깭??留욊쾶 ?곷떞?⑸땲?? | TEXT | 852x47 | fs=30 | fw=600 | lh=46.79999923706055 | #ffffff
+        13:521 | ?쇰? 怨좊?怨??앺솢 ?듦?, ?댁쟾 ?쒖닠 寃쏀뿕???④퍡 ?뺤씤?⑸땲?? 
+媛숈? 怨좊??대씪???쇰? ?곹깭???곕씪 ?꾩슂???묎렐? ?щ씪吏????덇린 ?뚮Ц?낅땲?? | TEXT | 852x58 | fs=19 | fw=500 | lh=28.5 | #ffffff
+      13:522 | Frame 62 | FRAME | 54x54 | #5a4a42 | r=999 | pad=11,11,11,11 | layout=HORIZONTAL gap=10 primary=CENTER
+        13:523 | Arrow - Right - Iconly Pro | FRAME | 24x24 | #ffffff
+          13:524 | Vector | VECTOR | 14x0
+          13:525 | Vector | VECTOR | 6x12
+
+===== 13:526 section-process =====
+13:526 | section-process | FRAME | 1920x1260 | pad=120,240,120,240 | layout=VERTICAL gap=48 primary=None
+  13:527 | Frame 61 | FRAME | 1440x1020 | layout=VERTICAL gap=64 primary=None
+    13:528 | Frame 45 | FRAME | 1440x1020 | layout=HORIZONTAL gap=24 primary=None
+      13:529 | Frame 46 | FRAME | 586x259 | layout=VERTICAL gap=16 primary=None
+        13:530 | PROCESS | TEXT | 121x27 | fs=17 | fw=700 | ls=6.800000000000001 | lh=26.51999855041504 | #1f1b18
+        13:531 | Frame 62 | FRAME | 586x216 | layout=VERTICAL gap=8 primary=None
+          13:532 | ?곷떞遺??愿由ш퉴吏 ?④퀎蹂?吏꾨즺 怨쇱젙 | TEXT | 586x144 | fs=46 | fw=700 | lh=71.75999450683594 | #1f1b18
+          13:533 | ?쇰? 怨좊? ?뺤씤遺???쒖닠, ?ы썑愿由ш퉴吏 李⑤텇???쒖꽌濡?吏꾪뻾?⑸땲?? | TEXT | 586x64 | fs=20 | fw=500 | lh=32 | #1f1b18
+      13:534 | Frame 62 | FRAME | 830x1020 | layout=VERTICAL gap=24 primary=None
+        13:535 | Frame 62 | FRAME | 830x1020 | layout=VERTICAL gap=24 primary=CENTER
+          13:536 | Frame 61 | FRAME | 830x237 | #ffffff | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=6 primary=MAX
+          13:542 | Frame 63 | FRAME | 830x237 | #ffffff | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=6 primary=MAX
+          13:548 | Frame 64 | FRAME | 830x237 | #ffffff | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=6 primary=MAX
+          13:554 | Frame 65 | FRAME | 830x237 | #ffffff | r=28 | pad=38,32,38,32 | layout=VERTICAL gap=6 primary=MAX
+
+===== 13:560 section-strength =====
+13:560 | section-strength | FRAME | 1920x832 | #fffefd | pad=120,240,120,240 | layout=VERTICAL gap=64 primary=CENTER
+  13:561 | Frame 61 | FRAME | 1440x592 | #262220 | r=28 | pad=100,80,100,80 | layout=VERTICAL gap=46 primary=CENTER
+    13:562 | Frame 47 | FRAME | 1280x139 | layout=VERTICAL gap=8 primary=None
+      13:563 | RESERVATION | TEXT | 1280x27 | fs=17 | fw=700 | ls=6.800000000000001 | lh=26.51999855041504 | #ffffff
+      13:564 | Frame 62 | FRAME | 1280x104 | layout=VERTICAL gap=None primary=None
+        13:565 | ?쇰? 怨좊?, 吏湲??곷떞?섏꽭??| TEXT | 1280x72 | fs=46 | fw=700 | lh=71.75999450683594 | #ffffff
+        13:566 | 吏꾨즺?쒓컙怨??덉빟 諛⑸쾿???뺤씤?????명븳 諛⑹떇?쇰줈 臾몄쓽?댁＜?몄슂. | TEXT | 1280x32 | fs=20 | fw=500 | lh=32 | #ffffff
+    13:567 | Frame 62 | FRAME | 1280x72 | pad=None,350,None,350 | layout=HORIZONTAL gap=16 primary=CENTER
+      13:568 | Frame 46 | FRAME | 282x72 | r=16 | pad=23,33,23,33 | layout=HORIZONTAL gap=10 primary=CENTER
+        13:569 | 移댁뭅?ㅽ넚 ?곷떞?섍린 | TEXT | 167x23 | fs=23 | fw=700 | lh=23 | #ffffff
+        13:570 | Group 60 | GROUP | 26x26
+          13:571 | Rectangle 69 | RECTANGLE | 26x26 | #d9d9d9
+          13:572 | Arrow - Left 2 - Iconly Pro | FRAME | 20x20 | #ffffff
+      13:576 | Frame 94 | FRAME | 282x72 | r=16 | pad=23,33,23,33 | layout=HORIZONTAL gap=10 primary=CENTER
+        13:577 | ?ㅼ씠踰??덉빟?섍린 | TEXT | 147x23 | fs=23 | fw=700 | lh=23 | #ffffff
+        13:578 | Group 60 | GROUP | 26x26
+          13:579 | Rectangle 69 | RECTANGLE | 26x26 | #d9d9d9
+          13:580 | Arrow - Left 2 - Iconly Pro | FRAME | 20x20 | #ffffff
+
+===== 13:584 section-footer =====
+13:584 | section-footer | FRAME | 1920x703 | #262220 | pad=120,240,120,240 | layout=HORIZONTAL gap=48 primary=None
+  13:585 | Frame 61 | FRAME | 1440x463 | layout=VERTICAL gap=None primary=None
+    13:586 | Frame 61 | FRAME | 1440x243 | layout=HORIZONTAL gap=48 primary=SPACE_BETWEEN
+      13:587 | Frame 61 | FRAME | 650x128 | layout=HORIZONTAL gap=48 primary=None
+        13:588 | Frame 61 | FRAME | 311x128 | layout=VERTICAL gap=14 primary=CENTER
+          13:589 | ?ㅼ떆??湲?| TEXT | 75x31 | fs=20 | fw=700 | lh=31.19999885559082 | #ffffff
+          13:590 | Frame 61 | FRAME | 311x83 | layout=VERTICAL gap=16 primary=None
+        13:596 | Frame 62 | FRAME | 291x93 | layout=VERTICAL gap=11 primary=CENTER
+          13:597 | ??쒖쟾??| TEXT | 70x31 | fs=20 | fw=700 | lh=31.19999885559082 | #ffffff
+          13:598 | Frame 61 | FRAME | 291x51 | layout=VERTICAL gap=10 primary=None
+      13:600 | Frame 63 | FRAME | 338x183 | layout=VERTICAL gap=14 primary=None
+        13:601 | 吏꾨즺?쒓컙 | TEXT | 338x31 | fs=20 | fw=700 | lh=31.19999885559082 | #ffffff
+        13:602 | Frame 61 | FRAME | 338x138 | layout=VERTICAL gap=16 primary=CENTER
+          13:603 | Frame 62 | FRAME | 338x94 | layout=VERTICAL gap=5 primary=None
+          13:613 | Frame 63 | FRAME | 338x28 | layout=HORIZONTAL gap=10 primary=None
+    13:615 | Frame 62 | FRAME | 1440x220 | layout=HORIZONTAL gap=48 primary=SPACE_BETWEEN
+      13:616 | Frame 61 | FRAME | 1440x160 | layout=VERTICAL gap=46 primary=None
+        13:617 | Frame 61 | FRAME | 1440x57 | layout=HORIZONTAL gap=10 primary=SPACE_BETWEEN
+          13:618 | Group 53 | GROUP | 219x57
+          13:622 | Frame 61 | FRAME | 1221x32 | layout=HORIZONTAL gap=6 primary=MAX
+        13:637 | Frame 61 | FRAME | 1440x57 | layout=VERTICAL gap=10 primary=None
+          13:638 | Frame 62 | FRAME | 1440x25 | layout=HORIZONTAL gap=26 primary=None
+          13:644 | Frame 63 | FRAME | 1440x22 | layout=HORIZONTAL gap=26 primary=SPACE_BETWEEN
