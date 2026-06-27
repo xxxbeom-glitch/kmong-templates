@@ -1,5 +1,25 @@
 # QA Log
 
+## 2026-06-08 — skhynix-redesign 인터랙션 Package B (PC)
+
+**템플릿:** `skhynix-redesign` · **범위:** 전 섹션 preset · news JS  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| preset | 섹션 | 확인 |
+|--------|------|------|
+| `scroll-reveal` | products · heritage · sustainability · news · investor | IntersectionObserver · reduced-motion 즉시 표시 |
+| `stats-counter` | heritage 4 stats | 1983 · 66.2 · 23.5 · 321 · 1회 |
+| `hover-tone` | product/news/investor card · filter/tab/link | fine pointer only · opacity 0.85 |
+| `drag-scroll` | sustainability | 기존 유지 |
+| news filter | category show/hide · row sync | `data-news-filter` · `data-news-category` |
+| news pagination | tab active state | `data-news-page` · static demo |
+| smooth scroll | `html` | full-page snap 없음 |
+| scroll top | pageshow | 40-template-code-style |
+
+**다음:** 사용자 PASS → PC 메인 전체 QA
+
+---
+
 ## 2026-06-08 — skhynix-redesign section-footer (PC)
 
 **템플릿:** `skhynix-redesign` · **범위:** section-footer (`154:940`) · Figma MCP 전수 대조  

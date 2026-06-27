@@ -1,5 +1,22 @@
 # Decision Log
 
+## 2026-06-08 — [template] skhynix-redesign 인터랙션 (Package B · 사용자 승인)
+
+| # | 결정 |
+|---|------|
+| 1 | **스크롤:** `scroll-behavior: smooth` (full-page wheel snap **미적용**) |
+| 2 | **preset:** `scroll-reveal` · `stats-counter` · `hover-tone` · `drag-scroll`(sustainability) · news filter/pagination JS |
+
+```
+[template skhynix-redesign] products: preset — scroll-reveal, hover-tone
+[template skhynix-redesign] heritage: preset — scroll-reveal, stats-counter
+[template skhynix-redesign] sustainability: preset — scroll-reveal, drag-scroll
+[template skhynix-redesign] news: preset — scroll-reveal, hover-tone · filter/pagination JS
+[template skhynix-redesign] investor: preset — scroll-reveal, hover-tone
+```
+
+---
+
 ## 2026-06-08 — [template] skhynix-redesign 신규 템플릿
 
 | # | 결정 |

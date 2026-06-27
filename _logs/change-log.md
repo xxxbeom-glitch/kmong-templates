@@ -1,5 +1,95 @@
 # Change Log
 
+## 2026-06-08 — [template] skhynix-redesign scroll-reveal 섹션 스냅 연동
+
+**범위:** `js/main.js`  
+**내용:** 로드 일괄 등장 제거 · magnetic snap 완료 시 해당 섹션 reveal · 이탈 시 reset · news 카드 `is-revealed` 제거 · heritage digit roll snap 연동
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign 전 섹션 magnetic scroll
+
+**범위:** `js/main.js`  
+**내용:** hero~footer 7스냅 — 휠 down/up 섹션 단위 이동 · PC only · 민감도 유지
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero magnetic scroll
+
+**범위:** `js/main.js`  
+**내용:** PC · hero → `#products` 휠 1회 스냅 · products 진입선 휠 up → top 복귀
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero scale-out 제거
+
+**범위:** `css/style.css` · `js/main.js`  
+**내용:** 카피 scale-out(`.is-hero-exiting`) 제거 · 줄별 slide-up만 유지
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero 패딩·카피 정렬 (Figma 149:465)
+
+**범위:** `css/style.css` — hero only  
+**내용:** pad 114/240/114/240 · copy 하단·좌측 · 1440px · 2줄 LEFT · `#f8f9fb`
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero mp4 구간·크롭
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** YouTube → `assets/hero.mp4` · 00:00–00:10 ↔ 01:16–01:19 루프 · scale 1.32 + object-position (하단 자막 크롭)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero YouTube 배경
+
+**범위:** `index.html` · `css/style.css`  
+**내용:** hero — YouTube `rpmUKAh1Z0w` iframe cover · autoplay/mute/loop · 밝은 overlay 20%
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero 카피 scale-out
+
+**범위:** `css/style.css` · `js/main.js`  
+**내용:** slide-up 완료 후 1s 유지 → `.hero__copy` scale(1.12) + opacity 0 (1s)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero 줄별 slide-up
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** hero 타이틀 2줄 — mask + `translateY(100%→0)` · load 시 `.is-hero-ready` · 줄별 delay (brainall.kr 패턴)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign heritage 핀텔식 digit roll
+
+**범위:** `index.html` · `js/main.js` · `css/style.css`  
+**내용:** heritage stats — `stats-counter` → 자릿수별 위·아래 교차 롤링 (`data-digit-roll`)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign products·heritage 카드 hover lift
+
+**범위:** `css/style.css` — `#products` · `#heritage` 카드 PC hover `translateY` lift
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign news 페이지네이션 콘텐츠 30건
+
+**범위:** `index.html` · `js/main.js`  
+**내용:** 5페이지 × 6카드(3×2) JS 생성 · 탭·필터 전환 시 그리드 렌더
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign 인터랙션 Package B 적용
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**preset:** `scroll-reveal`(products·heritage·sustainability·news·investor) · `stats-counter`(heritage) · `hover-tone`(product/news/investor card · filter/tab/link) · `drag-scroll`(sustainability 유지) · news filter/pagination JS · `scroll-behavior: smooth`
+
+---
+
 ## 2026-06-08 — [template] skhynix-redesign CSS 공통 토큰·유틸 정리
 
 **범위:** `css/style.css`  

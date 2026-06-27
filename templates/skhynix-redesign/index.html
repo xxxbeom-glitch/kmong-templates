@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,12 +43,28 @@
   </header>
 
   <section id="hero" class="section section--hero" aria-labelledby="hero-title">
-    <div class="hero__media hero__media--placeholder" aria-hidden="true"></div>
+    <div class="hero__media" aria-hidden="true">
+      <div class="hero__video-wrap">
+        <video
+          class="hero__video"
+          src="assets/hero.mp4"
+          muted
+          playsinline
+          autoplay
+          preload="auto"
+        ></video>
+      </div>
+      <div class="hero__media-overlay"></div>
+    </div>
     <div class="hero__inner">
       <div class="hero__copy">
         <h1 class="hero__title" id="hero-title">
-          <span class="hero__title-line">보이지 않는 곳에서,</span>
-          <span class="hero__title-line hero__title-line--bold">AI의 속도를 완성합니다.</span>
+          <span class="hero__title-line-wrap">
+            <span class="hero__title-line">보이지 않는 곳에서,</span>
+          </span>
+          <span class="hero__title-line-wrap">
+            <span class="hero__title-line hero__title-line--bold">AI의 속도를 완성합니다.</span>
+          </span>
         </h1>
       </div>
     </div>
@@ -58,10 +74,10 @@
     <section id="products" class="section section--products" aria-labelledby="products-title">
       <div class="section-shell">
         <header class="section-head">
-          <h2 class="section-title" id="products-title"><span class="section-title__accent">보이지 않는 곳</span>에서,<br>AI의 속도는 완성됩니다.</h2>
+          <h2 class="section-title scroll-reveal" id="products-title"><span class="section-title__accent">보이지 않는 곳</span>에서,<br>AI의 속도는 완성됩니다.</h2>
         </header>
         <div class="products__grid">
-          <article class="product-card product-card--hbm">
+          <article class="product-card product-card--hbm scroll-reveal">
             <div class="product-card__body">
               <div class="product-card__text">
                 <h3 class="product-card__name">HBM</h3>
@@ -81,7 +97,7 @@
           </article>
           <div class="products__side">
             <div class="products__row">
-              <article class="product-card product-card--wide">
+              <article class="product-card product-card--wide scroll-reveal">
                 <div class="product-card__body">
                   <div class="product-card__text">
                     <h3 class="product-card__name">Advanced Packaging</h3>
@@ -99,7 +115,7 @@
                   </div>
                 </div>
               </article>
-              <article class="product-card product-card--square">
+              <article class="product-card product-card--square scroll-reveal">
                 <div class="product-card__body">
                   <div class="product-card__text">
                     <h3 class="product-card__name">NAND</h3>
@@ -119,7 +135,7 @@
               </article>
             </div>
             <div class="products__row">
-              <article class="product-card product-card--square">
+              <article class="product-card product-card--square scroll-reveal">
                 <div class="product-card__body">
                   <div class="product-card__text">
                     <h3 class="product-card__name">CXL</h3>
@@ -137,7 +153,7 @@
                   </div>
                 </div>
               </article>
-              <article class="product-card product-card--wide product-card--ddr5">
+              <article class="product-card product-card--wide product-card--ddr5 scroll-reveal">
                 <div class="product-card__body">
                   <div class="product-card__text">
                     <h3 class="product-card__name">DDR5</h3>
@@ -174,53 +190,53 @@
       </div>
       <div class="section-shell heritage__shell">
         <header class="section-head">
-          <h2 class="section-title" id="heritage-title">새로운 기준을 만들어온<br><span class="section-title__accent">SK hynix의 핵심</span></h2>
+          <h2 class="section-title scroll-reveal" id="heritage-title">새로운 기준을 만들어온<br><span class="section-title__accent">SK hynix의 핵심</span></h2>
         </header>
         <div class="heritage__stats">
-          <article class="heritage-stat">
+          <article class="heritage-stat scroll-reveal">
             <div class="heritage-stat__body">
               <div class="heritage-stat__text">
                 <p class="heritage-stat__label">ORIGIN</p>
                 <p class="heritage-stat__desc">메모리 기술의 출발점</p>
               </div>
               <div class="heritage-stat__value-row">
-                <span class="heritage-stat__number">1983</span>
+                <span class="heritage-stat__number" data-digit-roll data-count-value="1983" aria-label="1983">1983</span>
                 <span class="heritage-stat__unit">년</span>
               </div>
             </div>
           </article>
-          <article class="heritage-stat">
+          <article class="heritage-stat scroll-reveal">
             <div class="heritage-stat__body">
               <div class="heritage-stat__text">
                 <p class="heritage-stat__label">REVENUE</p>
                 <p class="heritage-stat__desc">성장으로 이어진 수요</p>
               </div>
               <div class="heritage-stat__value-row">
-                <span class="heritage-stat__number">66.2</span>
+                <span class="heritage-stat__number" data-digit-roll data-count-value="66.2" aria-label="66.2">66.2</span>
                 <span class="heritage-stat__unit">조원</span>
               </div>
             </div>
           </article>
-          <article class="heritage-stat">
+          <article class="heritage-stat scroll-reveal">
             <div class="heritage-stat__body">
               <div class="heritage-stat__text">
                 <p class="heritage-stat__label">PROFIT</p>
                 <p class="heritage-stat__desc">경쟁력이 만든 성과</p>
               </div>
               <div class="heritage-stat__value-row">
-                <span class="heritage-stat__number">23.5</span>
+                <span class="heritage-stat__number" data-digit-roll data-count-value="23.5" aria-label="23.5">23.5</span>
                 <span class="heritage-stat__unit">조원</span>
               </div>
             </div>
           </article>
-          <article class="heritage-stat">
+          <article class="heritage-stat scroll-reveal">
             <div class="heritage-stat__body">
               <div class="heritage-stat__text">
                 <p class="heritage-stat__label">NAND</p>
                 <p class="heritage-stat__desc">더 높아진 적층 기술</p>
               </div>
               <div class="heritage-stat__value-row">
-                <span class="heritage-stat__number">321</span>
+                <span class="heritage-stat__number" data-digit-roll data-count-value="321" aria-label="321">321</span>
                 <span class="heritage-stat__unit">단</span>
               </div>
             </div>
@@ -233,7 +249,7 @@
       <div class="section-shell">
         <header class="section-head sustainability__head">
           <div class="sustainability__head-row">
-            <h2 class="section-title" id="sustainability-title">기술의 성장은<br><span class="section-title__accent">지속가능한 내일</span>과 함께합니다.</h2>
+            <h2 class="section-title scroll-reveal" id="sustainability-title">기술의 성장은<br><span class="section-title__accent">지속가능한 내일</span>과 함께합니다.</h2>
             <div class="sustainability__nav">
               <button type="button" class="sustainability__nav-btn sustainability__nav-btn--prev" data-sustainability-prev aria-label="이전 카드" disabled>
                 <img class="sustainability__nav-icon" src="assets/icons/icon-arrow-right.png" alt="" width="24" height="24" decoding="async">
@@ -302,88 +318,23 @@
           <div class="news__content">
             <header class="news__head">
               <div class="news__head-row">
-                <h2 class="section-title" id="news-title">뉴스와 인사이트<br><span class="section-title__accent">미래를 향한 시선</span>을 전합니다</h2>
+                <h2 class="section-title scroll-reveal" id="news-title">뉴스와 인사이트<br><span class="section-title__accent">미래를 향한 시선</span>을 전합니다</h2>
                 <div class="news__filter" role="tablist" aria-label="뉴스 카테고리">
-                  <button type="button" class="news__filter-btn is-active" role="tab" aria-selected="true">전체</button>
-                  <button type="button" class="news__filter-btn" role="tab" aria-selected="false">뉴스</button>
-                  <button type="button" class="news__filter-btn" role="tab" aria-selected="false">스토리</button>
-                  <button type="button" class="news__filter-btn" role="tab" aria-selected="false">인사이트</button>
+                  <button type="button" class="news__filter-btn is-active" role="tab" aria-selected="true" data-news-filter="all">전체</button>
+                  <button type="button" class="news__filter-btn" role="tab" aria-selected="false" data-news-filter="news">뉴스</button>
+                  <button type="button" class="news__filter-btn" role="tab" aria-selected="false" data-news-filter="story">스토리</button>
+                  <button type="button" class="news__filter-btn" role="tab" aria-selected="false" data-news-filter="insight">인사이트</button>
                 </div>
               </div>
             </header>
-            <div class="news__grid">
-              <div class="news__row">
-                <article class="news-card">
-                  <div class="news-card__body">
-                    <h3 class="news-card__title">HBM 신제품으로 고성능 메모리 시장<br>확대</h3>
-                    <div class="news-card__meta">
-                      <span class="news-card__category">뉴스</span>
-                      <span class="news-card__dot" aria-hidden="true"></span>
-                      <time class="news-card__date" datetime="2026-06-25">2026. 6 .25</time>
-                    </div>
-                  </div>
-                </article>
-                <article class="news-card">
-                  <div class="news-card__body">
-                    <h3 class="news-card__title">차세대 낸드 솔루션 양산 체계 강화</h3>
-                    <div class="news-card__meta">
-                      <span class="news-card__category">뉴스</span>
-                      <span class="news-card__dot" aria-hidden="true"></span>
-                      <time class="news-card__date" datetime="2026-06-20">2026. 6 .20</time>
-                    </div>
-                  </div>
-                </article>
-                <article class="news-card">
-                  <div class="news-card__body">
-                    <h3 class="news-card__title">데이터센터 효율을 높이는 메모리<br>아키텍처</h3>
-                    <div class="news-card__meta">
-                      <span class="news-card__category">인사이트</span>
-                      <span class="news-card__dot" aria-hidden="true"></span>
-                      <time class="news-card__date" datetime="2026-06-16">2026. 6 .16</time>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="news__row">
-                <article class="news-card">
-                  <div class="news-card__body">
-                    <h3 class="news-card__title">제조 현장에서 시작되는 자원 순환의<br>변화</h3>
-                    <div class="news-card__meta">
-                      <span class="news-card__category">스토리</span>
-                      <span class="news-card__dot" aria-hidden="true"></span>
-                      <time class="news-card__date" datetime="2026-06-03">2026. 6 .3</time>
-                    </div>
-                  </div>
-                </article>
-                <article class="news-card">
-                  <div class="news-card__body">
-                    <h3 class="news-card__title">AI 시대, 메모리 기술은 어떻게<br>진화하는가</h3>
-                    <div class="news-card__meta">
-                      <span class="news-card__category">인사이트</span>
-                      <span class="news-card__dot" aria-hidden="true"></span>
-                      <time class="news-card__date" datetime="2026-05-15">2026. 5 .15</time>
-                    </div>
-                  </div>
-                </article>
-                <article class="news-card">
-                  <div class="news-card__body">
-                    <h3 class="news-card__title">글로벌 반도체 협력 네트워크 확대</h3>
-                    <div class="news-card__meta">
-                      <span class="news-card__category">뉴스</span>
-                      <span class="news-card__dot" aria-hidden="true"></span>
-                      <time class="news-card__date" datetime="2026-05-12">2026. 5 .12</time>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
+            <div class="news__grid" data-news-grid></div>
           </div>
           <div class="news__tabs" role="tablist" aria-label="뉴스 페이지">
-            <button type="button" class="news__tab is-active" role="tab" aria-selected="true">01</button>
-            <button type="button" class="news__tab" role="tab" aria-selected="false">02</button>
-            <button type="button" class="news__tab" role="tab" aria-selected="false">03</button>
-            <button type="button" class="news__tab" role="tab" aria-selected="false">04</button>
-            <button type="button" class="news__tab" role="tab" aria-selected="false">05</button>
+            <button type="button" class="news__tab is-active" role="tab" aria-selected="true" data-news-page="1">01</button>
+            <button type="button" class="news__tab" role="tab" aria-selected="false" data-news-page="2">02</button>
+            <button type="button" class="news__tab" role="tab" aria-selected="false" data-news-page="3">03</button>
+            <button type="button" class="news__tab" role="tab" aria-selected="false" data-news-page="4">04</button>
+            <button type="button" class="news__tab" role="tab" aria-selected="false" data-news-page="5">05</button>
           </div>
         </div>
       </div>
@@ -392,24 +343,24 @@
     <section id="investor" class="section section--investor" aria-labelledby="investor-title">
       <div class="section-shell investor__shell">
         <header class="section-head investor__head">
-          <h2 class="section-title" id="investor-title">투자정보</h2>
+          <h2 class="section-title scroll-reveal" id="investor-title">투자정보</h2>
         </header>
         <div class="investor__grid">
-          <article class="investor-card">
+          <article class="investor-card scroll-reveal">
             <p class="investor-card__label">FINANCIAL INFORMATION</p>
             <div class="investor-card__body">
               <h3 class="investor-card__title">재무정보</h3>
               <p class="investor-card__desc">주요 재무 지표를 확인하세요.</p>
             </div>
           </article>
-          <article class="investor-card">
+          <article class="investor-card scroll-reveal">
             <p class="investor-card__label">IR LIBRARY</p>
             <div class="investor-card__body">
               <h3 class="investor-card__title">IR자료실</h3>
               <p class="investor-card__desc">투자자 대상 자료를 제공합니다.</p>
             </div>
           </article>
-          <article class="investor-card">
+          <article class="investor-card scroll-reveal">
             <p class="investor-card__label">DISCLOSURE</p>
             <div class="investor-card__body">
               <h3 class="investor-card__title">공시공고</h3>
