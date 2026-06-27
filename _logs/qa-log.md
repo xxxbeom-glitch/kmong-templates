@@ -1,5 +1,145 @@
 # QA Log
 
+## 2026-06-08 — skhynix-redesign section-footer (PC)
+
+**템플릿:** `skhynix-redesign` · **범위:** section-footer (`154:940`) · Figma MCP 전수 대조  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| bg | `#f3f4f5` | `--color-footer-bg` | PASS |
+| pad | 96/240 | section tokens | PASS |
+| logo | 170×89 · gap 38 | `footerlogo.png` | PASS |
+| policy | 16/700 op1 · gap 16 | `.footer__policy-link` | PASS |
+| address | 16/500 op0.8 · gap 16 | `--color-footer-address` | PASS |
+| copyright | 16/500 op0.9 · 우측 | `--color-footer-copyright` | PASS |
+| copy | Figma 문자열 | `index.html` | PASS |
+| @1024 meta stack · @768 address stack | — | CSS | PASS |
+
+**다음:** 사용자 PASS → PC 메인 전체 QA
+
+---
+
+## 2026-06-08 — skhynix-redesign section-investor (PC)
+
+**템플릿:** `skhynix-redesign` · **범위:** section-investor (`109:152`) · Figma MCP 전수 대조  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| section pad | 96/240 | tokens | PASS |
+| head gap | 57 | `--investor-head-gap` | PASS |
+| title | 38/700 `#151414` · accent 없음 | `.section-title` | PASS |
+| cards row gap | 24 | `--grid-gap` | PASS |
+| card | 464×288 · r26 · pad 46/36 · `#fff` | `.investor-card` | PASS |
+| card inner gap | 100 (label↔body) | `--investor-card-inner-gap` | PASS |
+| label | 14/700 `#ff7a00` op1 | `.investor-card__label` | PASS |
+| title | 25/600 lh41 op1 | `.investor-card__title` | PASS |
+| desc | 20/500 lh32 · op0.9 | `--color-investor-desc` | PASS |
+| copy 3장 | Figma 문자열 | `index.html` | PASS |
+| @1024 2열 · @768 1열 | — | CSS | PASS |
+
+**다음:** 사용자 PASS → footer
+
+---
+
+## 2026-06-08 — skhynix-redesign section-news 전수 검수 (PC)
+
+**템플릿:** `skhynix-redesign` · **범위:** section-news (`109:93`) · Figma MCP 전수 대조  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+### 레이아웃 · spacing
+
+| 항목 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| section pad | 96 / 240 | `--section-pad-y` · `--section-inset-x` | PASS |
+| body gap (content↔tabs) | 64 | `--news-body-gap` | PASS |
+| content gap (head↔cards) | 56 | `--news-content-gap` | PASS |
+| cards grid gap | 24 | `--grid-gap` | PASS |
+| row gap | 24 | `--grid-gap` | PASS |
+| head row gap · align | 10 · MAX/MAX | gap 10 · `flex-end` | PASS |
+| filter group gap | 21 | `--news-filter-gap` | PASS |
+| pagination gap | 12 | `--news-tab-gap` | PASS |
+
+### 타이틀 · 필터
+
+| 항목 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| title | 38/700 lh51.68 · accent 「미래를 향한 시선」 | `.section-title` + accent | PASS |
+| filter active | 19/700 `#ff7a00` op1 · box 32h · bottom stroke 1 | accent + inset shadow · `min-height 32` | PASS |
+| filter inactive | 19/500 `#151414` **op0.2** · stroke 없음 · padB 6 | `--color-filter-inactive` | PASS |
+
+### 카드
+
+| 항목 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| card | 464×258 · r26 · pad 36/26 · `#fff` | flex 1 · tokens | PASS |
+| card inner | VERTICAL space-between · gap 76 | `.news-card__body` | PASS |
+| title | 26/600 lh42 · `#151414` op1 | tokens | PASS |
+| meta | 16/500 lh26 · `#151414` **op0.9** | `--color-news-meta` | PASS |
+| dot | 2×2 · `#151414` op1 | `.news-card__dot` | PASS |
+| meta row gap | 8 | `--news-meta-gap` | PASS |
+| copy 6장 | Figma 문자열 | `index.html` | PASS |
+
+### 페이지네이션
+
+| 항목 | Figma | 구현 | RESULT |
+|------|-------|------|--------|
+| active 01 | bg `#ffead7` **op0.4** · text 18/600 `#ff7a00` | `--color-tab-bg-active` | PASS |
+| inactive 02–05 | bg 없음 · text 18/400 `#151414` **op0.3** | `--color-tab-inactive` | PASS |
+| size | 56×56 r99 | `--news-tab-size` | PASS |
+
+**수정 (검수 중):** filter btn `min-height: 32px` · `align-items: flex-start` (Figma 텍스트 박스 정렬)
+
+**다음:** 사용자 PASS → investor
+
+---
+
+## 2026-06-08 — skhynix-redesign section-news (PC) — superseded
+
+_위 「전수 검수」 항목으로 대체_
+
+---
+
+## 2026-06-08 — skhynix-redesign section-sustainability (PC)
+
+**템플릿:** `skhynix-redesign` · **범위:** section-sustainability (`111:254`) · PC only  
+**기준:** Figma MCP · `50-qa-checklist.mdc`  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | 타이틀 accent 「지속가능한 내일」 `#ff7a00` | PASS (코드) |
+| 2 | head row · nav 56×56 gap 12 · title/nav MAX 정렬 | PASS (코드) |
+| 3 | esg card 952×613 · img 504 r26 · inner gap 26 | PASS (코드) |
+| 4 | card title 26/600 lh42 · desc 20/500 lh32 · gap 9 | PASS (코드) |
+| 5 | track gap 24 · 1440 viewport · 카드 peek | PASS (코드) |
+| 6 | drag-scroll + prev/next 버튼 | PASS (코드) |
+
+**다음:** 사용자 PASS → news
+
+---
+
+## 2026-06-08 — skhynix-redesign section-heritage (PC)
+
+**템플릿:** `skhynix-redesign` · **범위:** section-heritage (`142:2`) · PC only  
+**기준:** Figma MCP · `50-qa-checklist.mdc`  
+**결과:** **구현 완료 — 사용자 브라우저 확인 대기**
+
+| # | 항목 | 결과 |
+|---|------|------|
+| 1 | bg `section-heritage.jpg` opacity 0.56 풀블리드 | PASS (코드) |
+| 2 | container 1440 · pad 96/240 · head gap 57 | PASS (코드) |
+| 3 | 타이틀 accent 「SK hynix의 핵심」 `#ff7a00` | PASS (코드) |
+| 4 | stat 4열 342×342 · gap 24 · r26 · pad 36/26 | PASS (코드) |
+| 5 | label 26/600 lh34 · desc 20/500 lh26 · gap 6 | PASS (코드) |
+| 6 | value 80/800 lh96 · unit 26/800 · unit offset 13 | PASS (코드) |
+| 7 | @1024 2열 · @768 1열 | PASS (코드) |
+
+**다음:** 사용자 PASS → sustainability
+
+---
+
 ## 2026-06-08 — tesla-redesign section-experience Figma 재동기 (PC)
 
 **템플릿:** `tesla-redesign` · **범위:** section-experience · PC only  

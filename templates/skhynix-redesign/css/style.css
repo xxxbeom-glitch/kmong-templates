@@ -1,0 +1,1070 @@
+/* SK hynix Redesign — Figma portfolio_skhynix_main @1920 */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-text: #151414;
+  --color-accent: #ff7a00;
+  --color-page-bg: #f8f9fb;
+  --color-card-bg: #ffffff;
+  --color-footer-bg: #f3f4f5;
+  --color-hero-placeholder: #d9d9d9;
+  --color-tab-bg: #ffead7;
+  --color-tab-bg-active: rgba(255, 234, 215, 0.4);
+  --color-text-subtle-90: rgba(21, 20, 20, 0.9);
+  --color-text-subtle-80: rgba(21, 20, 20, 0.8);
+  --color-text-subtle-30: rgba(21, 20, 20, 0.3);
+  --color-text-subtle-20: rgba(21, 20, 20, 0.2);
+  --color-nav-btn-bg: rgba(244, 244, 244, 0.6);
+
+  /* Font */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* Layout shell */
+  --layout-max: 1920px;
+  --container-max: 1440px;
+  --section-inset-x: clamp(20px, 12.5vw, 240px);
+  --shell-max: calc(var(--container-max) + var(--section-inset-x) * 2);
+  --shell-gutter-offset: max(0px, calc((100vw - min(100vw, var(--shell-max))) / 2));
+  --shell-content-inset: calc(var(--shell-gutter-offset) + var(--section-inset-x));
+  --section-pad-y: clamp(48px, 5vw, 96px);
+  --section-head-gap: clamp(28px, 2.9688vw, 57px);
+  --section-head-row-gap: clamp(8px, 0.5208vw, 10px);
+  --grid-gap: clamp(16px, 1.25vw, 24px);
+  --gap-inline-md: 16px;
+  --gap-meta-dot: 8px;
+
+  /* Card */
+  --card-radius: clamp(18px, 1.3542vw, 26px);
+  --card-pad-y: clamp(24px, 1.875vw, 36px);
+  --card-pad-x: clamp(18px, 1.3542vw, 26px);
+  --card-width-3col: clamp(280px, 24.1667vw, 464px);
+
+  /* Typography — shared scale */
+  --fs-section-title: clamp(24px, 1.9792vw, 38px);
+  --fs-card-title: clamp(20px, 1.3542vw, 26px);
+  --lh-card-title: clamp(32px, 2.1937vw, 42px);
+  --fs-body-md: clamp(16px, 1.0417vw, 20px);
+  --lh-body-md: clamp(26px, 1.6875vw, 32px);
+  --fs-body-sm: clamp(14px, 0.8333vw, 16px);
+  --lh-body-sm: clamp(22px, 1.35vw, 26px);
+  --fs-label-accent: clamp(12px, 0.7292vw, 14px);
+  --lh-label-accent: clamp(20px, 1.1813vw, 23px);
+  --fs-tab-num: clamp(15px, 0.9375vw, 18px);
+  --lh-tab-num: clamp(15px, 0.9375vw, 18px);
+  --fs-filter-tab: clamp(16px, 0.9896vw, 19px);
+  --lh-filter-tab: clamp(22px, 1.35vw, 26px);
+
+  /* Header */
+  --header-height: clamp(64px, 4.2708vw, 82px);
+  --header-pad-y: clamp(8px, 0.625vw, 12px);
+  --header-pad-x: clamp(20px, 12.5vw, 240px);
+  --header-row-height: clamp(36px, 2.1875vw, 42px);
+  --header-logo-slot: clamp(96px, 6.25vw, 120px);
+  --header-logo-width: clamp(64px, 4.1667vw, 80px);
+  --header-menu-gap: clamp(20px, 1.875vw, 36px);
+  --header-actions-gap: clamp(10px, 0.7292vw, 14px);
+  --header-actions-width: clamp(96px, 6.25vw, 120px);
+
+  /* Hero */
+  --hero-height: clamp(480px, 41.6667vw, 800px);
+  --hero-pad-y: clamp(120px, 16.1458vw, 310px);
+  --hero-pad-x: clamp(24px, 31.5625vw, 606px);
+  --hero-copy-gap: clamp(12px, 1.0938vw, 21px);
+  --hero-copy-width: clamp(280px, 36.875vw, 708px);
+  --hero-title-size: clamp(32px, 3.125vw, 60px);
+  --hero-title-lh: clamp(42px, 4.0625vw, 78px);
+
+  /* Products */
+  --product-text-gap: 6px;
+  --product-inner-gap: clamp(12px, 0.8333vw, 16px);
+  --product-inner-gap-ddr5: clamp(8px, 0.5208vw, 10px);
+  --fs-product-name: clamp(18px, 1.3021vw, 25px);
+  --fs-product-desc: var(--fs-body-md);
+  --lh-product-name: clamp(32px, 2.1354vw, 41px);
+  --lh-product-desc: var(--lh-body-sm);
+
+  /* Heritage */
+  --heritage-min-height: clamp(400px, 36.1979vw, 695px);
+  --heritage-bg-opacity: 0.56;
+  --heritage-stat-size: clamp(220px, 17.8125vw, 342px);
+  --stat-text-gap: 6px;
+  --stat-value-gap: clamp(8px, 0.5208vw, 10px);
+  --stat-unit-offset: clamp(8px, 0.6771vw, 13px);
+  --fs-stat-label: var(--fs-card-title);
+  --lh-stat-label: clamp(28px, 1.7708vw, 34px);
+  --fs-stat-desc: var(--fs-body-md);
+  --lh-stat-desc: var(--lh-body-sm);
+  --fs-stat-value: clamp(48px, 4.1667vw, 80px);
+  --lh-stat-value: clamp(58px, 5vw, 96px);
+  --fs-stat-unit: clamp(20px, 1.3542vw, 26px);
+  --lh-stat-unit: clamp(24px, 1.6406vw, 31px);
+
+  /* Sustainability */
+  --esg-card-width: clamp(280px, 49.5833vw, 952px);
+  --esg-card-height: clamp(360px, 31.9271vw, 613px);
+  --esg-card-img-height: clamp(300px, 26.25vw, 504px);
+  --esg-card-inner-gap: clamp(18px, 1.3542vw, 26px);
+  --esg-card-text-gap: clamp(6px, 0.4688vw, 9px);
+  --esg-head-nav-gap: clamp(8px, 0.625vw, 12px);
+  --esg-nav-btn-size: clamp(40px, 2.9167vw, 56px);
+
+  /* News */
+  --news-body-gap: clamp(32px, 3.3333vw, 64px);
+  --news-content-gap: clamp(28px, 2.9167vw, 56px);
+  --news-card-height: clamp(180px, 13.4375vw, 258px);
+  --news-card-inner-gap: clamp(40px, 3.9583vw, 76px);
+  --news-filter-gap: clamp(14px, 1.0938vw, 21px);
+  --news-filter-height: 32px;
+  --news-filter-underline-pad: 6px;
+  --news-filter-underline: 1px;
+  --news-tab-gap: clamp(8px, 0.625vw, 12px);
+  --news-tab-size: clamp(40px, 2.9167vw, 56px);
+
+  /* Investor */
+  --investor-card-height: clamp(220px, 15vw, 288px);
+  --investor-card-pad-y: clamp(32px, 2.3958vw, 46px);
+  --investor-card-inner-gap: clamp(60px, 5.2083vw, 100px);
+  --fs-investor-title: clamp(20px, 1.3021vw, 25px);
+  --lh-investor-title: clamp(32px, 2.1094vw, 41px);
+
+  /* Footer */
+  --footer-logo-gap: clamp(24px, 1.9792vw, 38px);
+  --footer-logo-width: clamp(120px, 8.8542vw, 170px);
+  --footer-logo-height: clamp(63px, 4.6354vw, 89px);
+  --footer-address-gap: clamp(10px, 0.8333vw, 16px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-page-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.section-shell {
+  width: 100%;
+  max-width: var(--shell-max);
+  margin-inline: auto;
+  padding-inline: var(--section-inset-x);
+}
+
+.section-head {
+  margin-bottom: var(--section-head-gap);
+}
+
+.section-title {
+  font-size: var(--fs-section-title);
+  font-weight: 700;
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.section-title__accent {
+  color: var(--color-accent);
+}
+
+/* Shared layout · surface */
+.section {
+  padding-block: var(--section-pad-y);
+}
+
+.section--hero {
+  padding-block: 0;
+}
+
+.section-head-row,
+.sustainability__head-row,
+.news__head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--section-head-row-gap);
+}
+
+.section-head-row .section-title,
+.sustainability__head-row .section-title,
+.news__head-row .section-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.flex-grid-row,
+.products__row,
+.heritage__stats,
+.news__row,
+.investor__grid {
+  display: flex;
+  gap: var(--grid-gap);
+  align-items: stretch;
+}
+
+.card-surface,
+.product-card,
+.heritage-stat,
+.news-card,
+.investor-card {
+  background: var(--color-card-bg);
+  border-radius: var(--card-radius);
+}
+
+.page-main__inner:empty {
+  display: none;
+}
+
+/* Header — Figma nav 149:308 · nav-links 149:309 */
+.header {
+  background: var(--color-white);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  padding: var(--header-pad-y) var(--header-pad-x);
+  max-width: var(--layout-max);
+  margin-inline: auto;
+}
+
+.header__logo {
+  flex: 0 0 var(--header-logo-slot);
+  display: flex;
+  align-items: center;
+  min-height: var(--header-row-height);
+}
+
+.header__logo-img {
+  width: var(--header-logo-width);
+  height: auto;
+}
+
+.header__nav {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  min-height: var(--header-row-height);
+  align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--header-menu-gap);
+}
+
+.header__link {
+  font-size: clamp(15px, 0.9375vw, 18px);
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.header__actions {
+  flex: 0 0 var(--header-actions-width);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--header-actions-gap);
+  min-height: var(--header-row-height);
+}
+
+.header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.header__icon-btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Hero — Figma section-hero 149:465 · hero-copy gap 21 */
+.section--hero {
+  position: relative;
+  min-height: var(--hero-height);
+  background: var(--color-hero-placeholder);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__media--placeholder {
+  background: var(--color-hero-placeholder);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--hero-height);
+  padding: var(--hero-pad-y) var(--hero-pad-x);
+}
+
+.hero__copy {
+  width: min(100%, var(--hero-copy-width));
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-copy-gap);
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-copy-gap);
+  width: 100%;
+  font-size: var(--hero-title-size);
+  line-height: calc(var(--hero-title-lh) / var(--hero-title-size));
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.hero__title-line {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  text-align: left;
+}
+
+.hero__title-line--bold {
+  font-weight: 800;
+  text-align: right;
+}
+
+/* Products — Figma section-products 149:334 */
+.products__grid {
+  display: flex;
+  gap: var(--grid-gap);
+  align-items: stretch;
+}
+
+.products__side {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+}
+
+.products__row {
+  flex: 1;
+}
+
+.product-card {
+  min-height: clamp(280px, 17.8125vw, 342px);
+}
+
+.product-card--hbm {
+  flex: 0 0 clamp(320px, 30.5208vw, 586px);
+  min-height: clamp(480px, 36.875vw, 708px);
+}
+
+.products__side .product-card--wide {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.products__side .product-card--square {
+  flex: 0 0 clamp(220px, 17.8125vw, 342px);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  min-height: inherit;
+  padding: var(--card-pad-y) var(--card-pad-x);
+}
+
+.product-card--hbm .product-card__body {
+  justify-content: space-between;
+  gap: clamp(8px, 0.5208vw, 10px);
+}
+
+.products__side .product-card__body {
+  justify-content: flex-start;
+  gap: var(--product-inner-gap);
+}
+
+.product-card--ddr5 .product-card__body {
+  justify-content: space-between;
+  gap: var(--product-inner-gap-ddr5);
+}
+
+.product-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--product-text-gap);
+}
+
+.product-card__name,
+.product-card__desc {
+  margin: 0;
+}
+
+.product-card__name {
+  font-size: var(--fs-product-name);
+  font-weight: 600;
+  line-height: var(--lh-product-name);
+}
+
+.product-card__desc {
+  font-size: var(--fs-product-desc);
+  font-weight: 500;
+  line-height: var(--lh-product-desc);
+}
+
+.product-card__media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+  flex-shrink: 0;
+}
+
+.product-card__media--lg .product-card__img {
+  width: clamp(200px, 18.3333vw, 352px);
+  height: auto;
+  object-fit: contain;
+}
+
+.product-card__media--sm .product-card__img {
+  width: clamp(100px, 8.0729vw, 155px);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Heritage — Figma section-heritage 142:2 */
+.section--heritage {
+  position: relative;
+  min-height: var(--heritage-min-height);
+  overflow: hidden;
+}
+
+.heritage__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heritage__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: var(--heritage-bg-opacity);
+}
+
+.heritage__shell {
+  position: relative;
+  z-index: 1;
+}
+
+.heritage-stat {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: var(--heritage-stat-size);
+}
+
+.heritage-stat__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 100%;
+  min-height: var(--heritage-stat-size);
+  padding: var(--card-pad-y) var(--card-pad-x);
+}
+
+.heritage-stat__text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--stat-text-gap);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.heritage-stat__label,
+.heritage-stat__desc {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.heritage-stat__label {
+  font-size: var(--fs-stat-label);
+  font-weight: 600;
+  line-height: var(--lh-stat-label);
+}
+
+.heritage-stat__desc {
+  font-size: var(--fs-stat-desc);
+  font-weight: 500;
+  line-height: var(--lh-stat-desc);
+}
+
+.heritage-stat__value-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--stat-value-gap);
+  width: 100%;
+  flex-shrink: 0;
+  min-height: var(--lh-stat-value);
+}
+
+.heritage-stat__number {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: var(--fs-stat-value);
+  font-weight: 800;
+  line-height: var(--lh-stat-value);
+  text-align: right;
+}
+
+.heritage-stat__unit {
+  flex: 0 0 auto;
+  font-size: var(--fs-stat-unit);
+  font-weight: 800;
+  line-height: var(--lh-stat-unit);
+  padding-bottom: var(--stat-unit-offset);
+}
+
+/* Sustainability — Figma section-sustainability 111:254 */
+.sustainability__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--esg-head-nav-gap);
+  flex: 0 0 auto;
+}
+
+.sustainability__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--esg-nav-btn-size);
+  height: var(--esg-nav-btn-size);
+  border-radius: 50%;
+  background: var(--color-nav-btn-bg);
+  transition: opacity 0.2s ease;
+}
+
+.sustainability__nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.sustainability__nav-icon {
+  display: block;
+  width: clamp(20px, 1.25vw, 24px);
+  height: clamp(20px, 1.25vw, 24px);
+  max-width: none;
+  flex-shrink: 0;
+}
+
+.sustainability__nav-btn--prev .sustainability__nav-icon {
+  transform: rotate(180deg);
+}
+
+.sustainability__viewport {
+  width: calc(100vw - var(--shell-content-inset));
+  margin-left: var(--shell-content-inset);
+  overflow: hidden;
+}
+
+.sustainability__track {
+  display: flex;
+  gap: var(--grid-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  padding-right: 0;
+}
+
+.sustainability__track::-webkit-scrollbar {
+  display: none;
+}
+
+.sustainability__track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.esg-card {
+  flex: 0 0 var(--esg-card-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--esg-card-inner-gap);
+  width: var(--esg-card-width);
+  min-height: var(--esg-card-height);
+  scroll-snap-align: start;
+}
+
+.esg-card__media {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+}
+
+.esg-card__img {
+  width: 100%;
+  height: var(--esg-card-img-height);
+  object-fit: cover;
+}
+
+.esg-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esg-card-text-gap);
+}
+
+.esg-card__title,
+.esg-card__desc {
+  margin: 0;
+}
+
+.esg-card__title {
+  font-size: var(--fs-card-title);
+  font-weight: 600;
+  line-height: var(--lh-card-title);
+}
+
+.esg-card__desc {
+  font-size: var(--fs-body-md);
+  font-weight: 500;
+  line-height: var(--lh-body-md);
+}
+
+/* News — Figma section-news 109:93 */
+.news__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--news-body-gap);
+}
+
+.news__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--news-content-gap);
+}
+
+.news__filter {
+  display: flex;
+  align-items: center;
+  gap: var(--news-filter-gap);
+  flex: 0 0 auto;
+}
+
+.news__filter-btn {
+  display: inline-flex;
+  align-items: flex-start;
+  min-height: var(--news-filter-height);
+  font-size: var(--fs-filter-tab);
+  line-height: var(--lh-filter-tab);
+  white-space: nowrap;
+  padding-bottom: var(--news-filter-underline-pad);
+  border: 0;
+}
+
+.news__filter-btn:not(.is-active) {
+  font-weight: 500;
+  color: var(--color-text-subtle-20);
+}
+
+.news__filter-btn.is-active {
+  font-weight: 700;
+  color: var(--color-accent);
+  box-shadow: inset 0 calc(-1 * var(--news-filter-underline)) 0 0 var(--color-accent);
+}
+
+.news__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+}
+
+.news-card {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: var(--news-card-height);
+}
+
+.news-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--news-card-inner-gap);
+  height: 100%;
+  min-height: var(--news-card-height);
+  padding: var(--card-pad-y) var(--card-pad-x);
+}
+
+.news-card__title {
+  margin: 0;
+  font-size: var(--fs-card-title);
+  font-weight: 600;
+  line-height: var(--lh-card-title);
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-meta-dot);
+}
+
+.news-card__category,
+.news-card__date {
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-subtle-90);
+}
+
+.news-card__dot {
+  flex-shrink: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--color-text);
+}
+
+.news__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--news-tab-gap);
+}
+
+.news__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--news-tab-size);
+  height: var(--news-tab-size);
+  border-radius: 999px;
+  font-size: var(--fs-tab-num);
+  line-height: var(--lh-tab-num);
+  border: 0;
+}
+
+.news__tab:not(.is-active) {
+  background: none;
+  font-weight: 400;
+  color: var(--color-text-subtle-30);
+}
+
+.news__tab.is-active {
+  background: var(--color-tab-bg-active);
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Investor — Figma section-investor 109:152 */
+.investor__shell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-head-gap);
+}
+
+.investor__head {
+  margin-bottom: 0;
+}
+
+.investor-card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--investor-card-inner-gap);
+  min-height: var(--investor-card-height);
+  padding: var(--investor-card-pad-y) var(--card-pad-x);
+}
+
+.investor-card__label {
+  margin: 0;
+  font-size: var(--fs-label-accent);
+  font-weight: 700;
+  line-height: var(--lh-label-accent);
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.investor-card__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.investor-card__title {
+  margin: 0;
+  font-size: var(--fs-investor-title);
+  font-weight: 600;
+  line-height: var(--lh-investor-title);
+  color: var(--color-text);
+}
+
+.investor-card__desc {
+  margin: 0;
+  font-size: var(--fs-body-md);
+  font-weight: 500;
+  line-height: var(--lh-body-md);
+  color: var(--color-text-subtle-90);
+}
+
+/* Footer — Figma section-footer 154:940 */
+.footer {
+  background: var(--color-footer-bg);
+  padding-block: var(--section-pad-y);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-logo-gap);
+}
+
+.footer__logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: var(--footer-logo-width);
+}
+
+.footer__logo-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 170 / 89;
+  object-fit: contain;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-inline-md);
+}
+
+.footer__policy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap-inline-md);
+}
+
+.footer__policy-link {
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  line-height: var(--lh-body-sm);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.footer__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--footer-address-gap);
+}
+
+.footer__address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--footer-address-gap);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.footer__address-item {
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-subtle-80);
+  white-space: nowrap;
+}
+
+.footer__copyright {
+  margin: 0;
+  flex: 0 0 auto;
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-subtle-90);
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .products__grid {
+    flex-direction: column;
+  }
+
+  .product-card--hbm {
+    flex: none;
+    width: 100%;
+  }
+
+  .products__row {
+    flex-direction: column;
+  }
+
+  .products__side .product-card--square,
+  .products__side .product-card--wide {
+    flex: none;
+    width: 100%;
+  }
+
+  .heritage__stats {
+    flex-wrap: wrap;
+  }
+
+  .heritage-stat {
+    flex: 1 1 calc(50% - var(--grid-gap) / 2);
+  }
+
+  .news__row {
+    flex-wrap: wrap;
+  }
+
+  .news-card {
+    flex: 1 1 calc(50% - var(--grid-gap) / 2);
+  }
+
+  .investor__grid {
+    flex-wrap: wrap;
+  }
+
+  .investor-card {
+    flex: 1 1 calc(50% - var(--grid-gap) / 2);
+  }
+
+  .footer__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__copyright {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__actions .header__icon-btn:not(.header__menu-btn) {
+    display: none;
+  }
+
+  .hero__inner {
+    padding-inline: var(--section-inset-x);
+  }
+
+  .heritage__stats {
+    flex-direction: column;
+  }
+
+  .heritage-stat {
+    flex: none;
+    width: 100%;
+  }
+
+  .news__head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news__row {
+    flex-direction: column;
+  }
+
+  .news-card {
+    flex: none;
+    width: 100%;
+  }
+
+  .investor__grid {
+    flex-direction: column;
+  }
+
+  .investor-card {
+    flex: none;
+    width: 100%;
+  }
+
+  .footer__address {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__address-item {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

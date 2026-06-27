@@ -1,5 +1,200 @@
 # Change Log
 
+## 2026-06-08 — [template] skhynix-redesign CSS 공통 토큰·유틸 정리
+
+**범위:** `css/style.css`  
+**내용:** opacity `--color-text-subtle-*` · typography `--fs-card-title` / `--fs-body-md` / `--fs-body-sm` · `.section` pad · `.section-head-row` · `.flex-grid-row` · `.card-surface` 그룹화 · 섹션별 중복 토큰 제거
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign footer 텍스트 opacity 명시
+
+**범위:** `css/style.css` — footer policy · address · copyright  
+**Figma:** policy 16/700 `#151414` op1 · address 16/500 op0.8 · copyright 16/500 op0.9
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-footer
+
+**범위:** `index.html` · `css/style.css` — section-footer (`154:940`)  
+**Figma:** bg `#f3f4f5` · pad 96/240 · logo 170×89 · logo↔content gap 38 · policy 16/700 gap16 · address 16/500 op0.8 gap16 · copyright 16/500 op0.9
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-investor
+
+**범위:** `index.html` · `css/style.css` — section-investor (`109:152`)  
+**Figma:** title 38/700 (accent 없음) · head gap 57 · card 464×288 r26 pad 46/36 · inner gap 100 · label 14/700 accent · title 25/600 lh41 · desc 20/500 op0.9
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news 전수 Figma 검수
+
+**범위:** `css/style.css` · `index.html` · qa-log  
+**결과:** MCP 전수 대조 PASS · filter `min-height: 32px` 보완
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news card meta opacity
+
+**범위:** `css/style.css` — `.news-card__category` · `.news-card__date`  
+**Figma:** 16/500 `#151414` fill opacity **0.9** · dot separator opacity **1** (유지)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news filter 탭 정렬
+
+**범위:** `css/style.css` — filter active 밑줄  
+**이슈:** active만 `border-bottom` → 텍스트 1px 위로 밀림  
+**수정:** 공통 `padding-bottom: 6` · 밑줄 `box-shadow: inset` (레이아웃 영향 없음)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news tab opacity
+
+**범위:** `css/style.css` — inactive opacity Figma 반영  
+**Figma:** filter inactive text `#151414` **0.2** · pagination inactive text **0.3** · pagination active bg `#ffead7` **0.4**
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news 비선택 탭 속성 명시
+
+**범위:** `css/style.css` — `.news__filter-btn:not(.is-active)` · `.news__tab:not(.is-active)`  
+**Figma inactive:** filter 19/500 `#151414` pad-bottom 6 · stroke 없음 · pagination bg null 18/400 `#151414`
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news filter 밑줄·inactive 재적용
+
+**범위:** `css/style.css` — `.news__filter-btn` · `.news__tab`  
+**Figma (`154:723`):** active pad-bottom 6 · bottom stroke 1px `#ff7a00` · inactive stroke 없음 fw500 `#151414` · pagination inactive bg null
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news 카드 간격 수정
+
+**범위:** `css/style.css` — news card grid gap  
+**Figma:** `news-cards` · `news-row-*` gap **24** (가로·세로 동일)  
+**수정:** 행 간격 `--news-rows-gap` 32 → `--grid-gap` 24 통일
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news filter·pagination 스타일 수정
+
+**범위:** `css/style.css` — news filter · news-tabs  
+**Figma:** filter active `#ff7a00` fw700 · inactive `#151414` fw500 · tab active만 bg `#ffead7` + text accent fw600 · inactive bg 없음 fw400
+
+---
+
+**수정:** 전 탭 `#ffe9d6` 배경 — Figma inactive는 fill null
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-news
+
+**범위:** `index.html` · `css/style.css` — section-news (`109:93`)  
+**Figma:** accent 「미래를 향한 시선」 · filter 19px · card 464×258 r26 · title 26/600 lh42 · meta 16/500 gap8 · tabs 56 r99 `#ffe9d6`  
+**내용:** 3×2 카드 그리드 · 카테고리 필터 · 하단 01–05 탭 (정적)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign sustainability track 좌측 shell 정렬 유지
+
+**범위:** `css/style.css` — `--shell-content-inset` · sustainability viewport  
+**내용:** 좌측 시작 = section-shell 콘텐츠 edge · 우측만 viewport 끝까지 확장
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign sustainability track 우측 full-bleed
+
+**범위:** `css/style.css` — sustainability viewport/track  
+**내용:** viewport `max-width`·`margin`·track `padding-right` 제거 — 좌 inset 240 유지 · 우측 화면 끝까지 스크롤
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign sustainability nav PNG · disabled
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` · `assets/icons/icon-arrow-right.png`  
+**규칙:** `45-interaction-patterns` · `interaction-presets-guide` — 첫 scroll prev disabled · 마지막 next disabled · `:disabled` opacity 0.35  
+**내용:** SVG → PNG · scroll/resize마다 `prop("disabled")` 동기화
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-sustainability
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — section-sustainability (`111:254`)  
+**Figma:** head gap 57 · accent 「지속가능한 내일」 · esg card 952×613 · img 504 r26 · text gap 9 · track gap 24 · nav 56  
+**내용:** 5 ESG 카드 가로 드래그 스크롤 · prev/next nav · img-card-1~5 매핑
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign HBM 카드 텍스트 side 카드와 통일
+
+**범위:** `css/style.css` — product card typography  
+**내용:** HBM 전용 26/18 타이포 제거 · 전 카드 name 25/600 lh41 · desc 20/500 lh26
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign heritage stat 카드 텍스트·위치 재정렬
+
+**범위:** `css/style.css` — heritage-stat card inner layout  
+**Figma:** Frame 73 `SPACE_BETWEEN` · Frame 69 top-left pad 26/36 · label/desc gap 6 · value row full-width · number RIGHT + unit padB 13  
+**내용:** body `align-items:stretch` · text top-left · value bottom · body gap 제거 · number flex:1
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign section-heritage
+
+**범위:** `index.html` · `css/style.css` — section-heritage (`142:2`)  
+**Figma:** bg image opacity 0.56 · container 1440 · head gap 57 · stats 342×342 gap 24 · accent 「SK hynix의 핵심」  
+**내용:** 풀블리드 bg · 4 stat 카드 · label/desc gap 6 · value 80/800 + unit offset 13px
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign products 카드 이미지 우하단 정렬
+
+**범위:** `css/style.css` — product card image position  
+**Figma:** Frame 73 `counterAxisAlignItems: MAX` · image inset card pad 26R/36B · HBM/DDR5 `SPACE_BETWEEN` gap 10  
+**내용:** media `justify-content/align-self: flex-end` · side gap 16 · DDR5 body `space-between`
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign products 카드 타이포·간격 Figma 재정렬
+
+**범위:** `css/style.css` · `index.html` — product card title/desc gap · line-height · body gap  
+**Figma:** Frame 69/74 `gap: 6` · HBM lh 34/29 · side lh 41/26 · inner gap 16 (DDR5 10)  
+**내용:** 타이틀↔서브 6px 고정 · lh px 토큰화 · side 카드 space-between → gap 16 · `p` margin 0
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign page-bg · section-products
+
+**범위:** `css/style.css` · `index.html` — page bg `#f8f9fb` · section-products (`149:334`)  
+**Figma:** container 1440 · head gap 57 · cards 586+830 bento · card `#fff` r26 · pad 36/26
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign header · hero 재구현 (섹션 순차)
+
+**범위:** `index.html` · `css/style.css` · `js/main.js` — header · hero only  
+**Figma:** `149:307` · `149:465`  
+**내용:** 전체 HTML 초기화 후 header+hero만 구현 · hero `#d9d9d9` placeholder 유지
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign PC 메인 페이지 구현 (롤백)
+
+**범위:** ~~전체 8섹션~~ → header·hero부터 순차 재진행으로 롤백
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign 폴더·스캐폴드 생성
+
+**범위:** `templates/skhynix-redesign/` — `index.html` · `css/style.css` · `js/main.js` · `assets/` · `_source/`  
+**Figma:** `portfolio_skhynix_main` (`98:2344`) · 에셋 사용자 투입 대기
+
+---
+
 ## 2026-06-08 — [template] tesla-redesign models carousel 1920 cap (ultrawide)
 
 **범위:** `css/style.css` — models 카드 viewport  

@@ -1,5 +1,17 @@
 # Decision Log
 
+## 2026-06-08 — [template] skhynix-redesign 신규 템플릿
+
+| # | 결정 |
+|---|------|
+| 1 | slug **`skhynix-redesign`** · 경로 `templates/skhynix-redesign/` |
+| 2 | Figma `portfolio_skhynix_main` (`XSWmFlkkzLChor3uaf7veF` · node `98:2344`) |
+| 3 | 범위: **PC 메인 1페이지** (nav · hero · products · heritage · sustainability · news · investor · footer) |
+| 4 | 모바일 — **추후 진행** (768px 대응 보류) |
+| 5 | 에셋: 사용자 `_source/` 투입 후 `assets/`로 정리·매핑 |
+
+---
+
 ## 2026-06-08 — [template] tesla-redesign 신규 템플릿
 
 | # | 결정 |
