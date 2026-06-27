@@ -218,21 +218,23 @@
 
     $sections.each(function () {
       var $section = $(this);
-      var $targets = $section.find(".scroll-reveal");
-
-      if (!$targets.length) {
-        return;
-      }
 
       var observer = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
-            if (!entry.isIntersecting || $section.hasClass("is-scroll-reveal-started")) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            var $pending = $section.find(".scroll-reveal:not(.is-revealed)");
+
+            if (!$pending.length) {
+              observer.unobserve(entry.target);
               return;
             }
 
             $section.addClass("is-scroll-reveal-started");
-            revealSequential($targets, sectionIntervalMs);
+            revealSequential($pending, sectionIntervalMs);
             observer.unobserve(entry.target);
           });
         },
@@ -678,10 +680,10 @@
   $(function () {
     initHeroVideo();
     initHeroTitleReveal();
+    initNewsControls();
     initScrollReveal();
     initDigitRollCounter();
     initSectionMagneticScroll();
-    initNewsControls();
     initSustainabilityTrack();
   });
 })(jQuery);
