@@ -66,15 +66,12 @@
   --header-actions-gap: clamp(10px, 0.7292vw, 14px);
   --header-actions-width: clamp(96px, 6.25vw, 120px);
 
-  /* Hero */
-  --hero-height: 100vh;
-  --hero-pad-top: clamp(48px, 5.9375vw, 114px);
-  --hero-pad-bottom: clamp(48px, 5.9375vw, 114px);
-  --hero-pad-x: clamp(20px, 12.5vw, 240px);
-  --hero-copy-gap: clamp(12px, 1.0938vw, 21px);
-  --hero-copy-width: clamp(280px, 75vw, 1440px);
-  --hero-title-size: clamp(32px, 3.125vw, 60px);
-  --hero-title-lh: clamp(42px, 4.0625vw, 78px);
+  /* Hero — Kakao Bank main-visual pattern (center title + auto mask reveal) */
+  --hero-height: 100svh;
+  --hero-title-size: 6.25vw;
+  --hero-title-lh: 1.3;
+  --hero-mask-width: 72px;
+  --hero-mask-height: 336px;
 
   /* Products */
   --product-text-gap: 6px;
@@ -333,7 +330,19 @@ h2.scroll-reveal {
 
 /* Header — Figma nav 149:308 · nav-links 149:309 */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   background: var(--color-white);
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.header.is-header-hidden {
+  transform: translate3d(0, -100%, 0);
 }
 
 .header__inner {
@@ -403,110 +412,180 @@ h2.scroll-reveal {
   object-fit: contain;
 }
 
-/* Hero — Figma section-hero 149:465 · hero-copy gap 21 */
+/* Hero — Kakao Bank main-visual · fixed dual text + clipPath reveal */
 .section--hero {
   position: relative;
-  min-height: var(--hero-height);
-  background: var(--color-hero-placeholder);
+  width: 100%;
+  height: var(--hero-height);
+  background: var(--color-white);
   overflow: hidden;
 }
 
-.hero__media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero__video-wrap {
-  position: absolute;
-  inset: 0;
+.hero__sticky {
+  position: relative;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  pointer-events: none;
 }
 
-.hero__video {
+.hero__svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 38%;
-  border: 0;
-  transform: translate(-50%, -50%) scale(1.32);
-  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 4px);
+  height: 100vh;
   pointer-events: none;
+  overflow: visible;
 }
 
-.hero__media-overlay {
+#heroMaskRectEl {
+  width: var(--hero-mask-width);
+  height: var(--hero-mask-height);
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.hero__default-wrap,
+.hero__mask-wrap {
   position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.2);
-  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 4px);
+  height: 100%;
 }
 
-.hero__inner {
-  position: relative;
+.hero__default-wrap {
+  z-index: 1;
+}
+
+.hero__mask-wrap {
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-end;
-  min-height: var(--hero-height);
-  padding: var(--hero-pad-top) var(--hero-pad-x) var(--hero-pad-bottom);
-}
-
-.hero__copy {
-  width: min(100%, var(--hero-copy-width));
-  display: flex;
-  flex-direction: column;
-  gap: var(--hero-copy-gap);
-}
-
-.hero__title {
-  display: flex;
-  flex-direction: column;
-  gap: var(--hero-copy-gap);
-  width: 100%;
-  font-size: var(--hero-title-size);
-  line-height: calc(var(--hero-title-lh) / var(--hero-title-size));
-  letter-spacing: 0;
-  color: #f8f9fb;
-}
-
-.hero__title-line-wrap {
-  display: block;
-  width: 100%;
   overflow: hidden;
 }
 
-.hero__title-line {
-  display: block;
+.hero__text-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  font-weight: 700;
-  text-align: left;
+  text-align: center;
 }
 
-.hero__title-line--bold {
+.hero__title,
+.hero__title--mirror {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+.hero__text-cover {
+  overflow: hidden;
+}
+
+.hero__title-text {
+  display: inline-block;
+  font-size: var(--hero-title-size);
   font-weight: 800;
-  text-align: left;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  white-space: nowrap;
 }
 
-/* Hero title — line mask slide-up (brainall.kr pattern) */
-.js .hero__title-line {
-  transform: translate3d(0, 100%, 0);
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+.hero__title-text--bold {
+  font-weight: 800;
 }
 
-.js .hero__title.is-hero-ready .hero__title-line-wrap:nth-child(1) .hero__title-line {
-  transform: translate3d(0, 0, 0);
-  transition-delay: 0.2s;
+.hero__title-text--mask {
+  color: var(--color-white);
+  opacity: 0.4;
 }
 
-.js .hero__title.is-hero-ready .hero__title-line-wrap:nth-child(2) .hero__title-line {
-  transform: translate3d(0, 0, 0);
-  transition-delay: 0.45s;
+.hero__mask-wrap .hero__text-item {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__mask-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: calc(100% + 4px);
+  height: 100%;
+}
+
+.hero__video-bx,
+.hero__video-con {
+  width: calc(100% + 4px);
+  height: 100%;
+}
+
+.hero__video {
+  width: calc(100% + 4px);
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border: 0;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 2561px) {
+  .hero__title-text {
+    font-size: 160px;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  :root {
+    --hero-mask-width: 72px;
+    --hero-mask-height: 336px;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  :root {
+    --hero-mask-width: 60px;
+    --hero-mask-height: 280px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .hero__title-text {
+    font-size: 6.6406vw;
+    letter-spacing: -0.01em;
+  }
+
+  :root {
+    --hero-mask-width: 54px;
+    --hero-mask-height: 250px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero__title-text {
+    font-size: 8.5333vw;
+    letter-spacing: -0.01em;
+  }
+
+  :root {
+    --hero-mask-width: 42px;
+    --hero-mask-height: 194px;
+  }
+}
+
+.no-js .hero__title-text,
+.section--hero.is-hero-complete .hero__title-text {
+  transform: none;
+}
+
+.no-js .hero__title-text--mask,
+.section--hero.is-hero-complete .hero__title-text--mask {
+  opacity: 1;
 }
 
 /* Products — Figma section-products 149:334 */
@@ -1206,10 +1285,6 @@ h2.scroll-reveal {
     display: none;
   }
 
-  .hero__inner {
-    padding: var(--hero-pad-top) var(--section-inset-x) var(--hero-pad-bottom);
-  }
-
   .heritage__stats {
     flex-direction: column;
   }
@@ -1257,6 +1332,10 @@ h2.scroll-reveal {
     scroll-behavior: auto;
   }
 
+  .header {
+    transition: none;
+  }
+
   .scroll-reveal {
     opacity: 1;
     transform: none;
@@ -1274,8 +1353,11 @@ h2.scroll-reveal {
     transform: none;
   }
 
-  .js .hero__title-line {
+  .js .hero__title-text {
     transform: none;
-    transition: none;
+  }
+
+  .js .hero__title-text--mask {
+    opacity: 1;
   }
 }

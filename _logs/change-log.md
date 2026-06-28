@@ -1,5 +1,75 @@
 # Change Log
 
+## 2026-06-08 — [template] skhynix-redesign hero mask coords + scroll-down remove
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** maskRect 좌표 카카오뱅크 viewport 비율(0.48x · 50vh-Yoffset) + SVG transform attr 방식 복원 · hero scroll-down 버튼 제거
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero Kakao clipPath restore
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** div mask-window 제거 → 카카오뱅크 구조 복원(default-wrap + mask-wrap 고정 텍스트 · SVG clipPath scale) · mirror JS 위치 보정 제거
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero expand no-scale
+
+**범위:** `css/style.css` · `js/main.js`  
+**내용:** scale 확대 제거 → pill→fullscreen layout clip 확장(영상 풀사이즈 고정) · expand 중 mirror fade-out
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero expand perf
+
+**범위:** `css/style.css` · `js/main.js`  
+**내용:** 확대 구간 layout 재계산/onUpdate 제거 · rest 고정 후 GSAP scale(GPU) · coverScale · 종료 시 fullscreen 스냅
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero div mask window
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** SVG clipPath 제거 → div mask-window · 영상/ mirror 윈도우 오프셋 동기화 · pill 정지 좌표 live rest 측정
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero mask pixel-sync
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** hero__stage 레이어 분리 · mirror absolute+getBoundingClientRect 픽셀 동기화 · clip SVG mask 레이어 내부 · 줄별 cover height sync · onUpdate 추적
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero mask align fix (root)
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** clipPath 좌표 → mask-wrap 기준 재계산 · dual layer flex center 통일 · mirror width sync · CSS/GSAP transform 충돌 제거
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero copy·mask align
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** hero 카피 변경 · 마스크 rect DOM 측정(타이틀 중심·높이) · default/mask 텍스트 레이어 정렬 통일
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero auto-play intro
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** scroll scrub 제거 → 첫 진입 GSAP auto-play · hero 100svh · ScrollTrigger CDN 제거 · intro 재생 중 magnetic snap 차단 · scroll-down → products
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero Kakao Bank mask reveal
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**내용:** 카카오뱅크 main-visual 패턴 — 중앙 정렬 6.25vw 타이틀 · SVG clipPath pill mask · scroll scrub(GSAP+ScrollTrigger) · 200svh sticky · magnetic snap hero reveal 구간 추가 · scroll-down 버튼
+
+---
+
 ## 2026-06-08 — [template] skhynix-redesign scroll-reveal 섹션 스냅 연동
 
 **범위:** `js/main.js`  

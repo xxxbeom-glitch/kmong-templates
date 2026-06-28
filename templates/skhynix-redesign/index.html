@@ -43,29 +43,53 @@
   </header>
 
   <section id="hero" class="section section--hero" aria-labelledby="hero-title">
-    <div class="hero__media" aria-hidden="true">
-      <div class="hero__video-wrap">
-        <video
-          class="hero__video"
-          src="assets/hero.mp4"
-          muted
-          playsinline
-          autoplay
-          preload="auto"
-        ></video>
+    <div class="hero__sticky">
+      <svg class="hero__svg" aria-hidden="true" focusable="false">
+        <clipPath id="heroMaskRect" clipPathUnits="userSpaceOnUse">
+          <rect id="heroMaskRectEl"></rect>
+        </clipPath>
+      </svg>
+
+      <div class="hero__default-wrap">
+        <div class="hero__text-item">
+          <h1 class="hero__title" id="hero-title">
+            <div class="hero__text-cover">
+              <span class="hero__title-text">더 빠르게 연결되고</span>
+            </div>
+            <div class="hero__text-cover">
+              <span class="hero__title-text hero__title-text--bold">더 깊게 생각하는 세상</span>
+            </div>
+          </h1>
+        </div>
       </div>
-      <div class="hero__media-overlay"></div>
-    </div>
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <h1 class="hero__title" id="hero-title">
-          <span class="hero__title-line-wrap">
-            <span class="hero__title-line">보이지 않는 곳에서,</span>
-          </span>
-          <span class="hero__title-line-wrap">
-            <span class="hero__title-line hero__title-line--bold">AI의 속도를 완성합니다.</span>
-          </span>
-        </h1>
+
+      <div class="hero__mask-wrap" style="clip-path: url(#heroMaskRect);">
+        <div class="hero__text-item" aria-hidden="true">
+          <div class="hero__title hero__title--mirror">
+            <div class="hero__text-cover">
+              <span class="hero__title-text hero__title-text--mask">더 빠르게 연결되고</span>
+            </div>
+            <div class="hero__text-cover">
+              <span class="hero__title-text hero__title-text--mask hero__title-text--bold">더 깊게 생각하는 세상</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__mask-item">
+          <div class="hero__video-bx">
+            <div class="hero__video-con">
+              <video
+                class="hero__video"
+                src="assets/hero.mp4"
+                muted
+                playsinline
+                autoplay
+                loop
+                preload="auto"
+                aria-label="SK hynix 메인 비주얼 영상"
+              ></video>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -404,6 +428,7 @@
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
