@@ -1,5 +1,52 @@
 # Change Log
 
+## 2026-06-08 — [template] skhynix-redesign hero title 90px (Figma 수정 반영)
+
+**범위:** `css/style.css` — hero title font-size · line-height only  
+**Figma:** hero copy · **90px** @1920 (기존 60px 오독 수정)  
+**내용:** `clamp(45px, 4.6875vw, 90px)` · lh `clamp(58.5px, 6.09375vw, 117px)` (1.3 비율)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign products 타이틀 공통 컬러 패턴
+
+**범위:** `index.html` · `css/style.css`  
+**Figma:** `149:336` · news/heritage와 동일 — 38/700 `#151414` + accent `#ff7a00`  
+**내용:** 잘못 적용된 `--color-text-subtle-30` muted 제거 · accent 외 `--color-text` 상속
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign products 타이틀 muted 공통 적용
+
+**범위:** `index.html` · `css/style.css`  
+**Figma:** `149:336` · non-accent = `--color-text-subtle-30`  
+**내용:** `이,` muted span 누락 수정 · `.section-title__muted` 공통화(products 전용 선택자 제거)
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero intro → products auto-scroll
+
+**범위:** `js/main.js`  
+**내용:** hero intro 1회 완료 시 `#products` 자동 스크롤 · magnetic snapTo 연동 · reduced-motion 동일
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign hero title size (Figma 149:465)
+
+**범위:** `css/style.css` — hero title font-size only  
+**Figma:** `149:465` · 1920 → 60px (`3.125vw`)  
+**내용:** Kakao 6.25vw/브레이크포인트 override 제거 → `clamp(32px, 3.125vw, 60px)`
+
+---
+
+## 2026-06-08 — [template] skhynix-redesign products 섹션 타이틀 Figma 수정
+
+**범위:** `index.html` · `css/style.css`  
+**Figma:** `149:336` · copy·accent·2줄 muted  
+**내용:** `보이지 않는 기술이,` / `AI의 속도를 만듭니다.` · 2줄 `--color-text-subtle-30` · `font-weight: 400`
+
+---
+
 ## 2026-06-08 — [template] skhynix-redesign hero mask coords + scroll-down remove
 
 **범위:** `index.html` · `css/style.css` · `js/main.js`  

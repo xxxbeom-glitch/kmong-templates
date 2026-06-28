@@ -3,6 +3,7 @@
 
   var headerScrollControl = null;
   var heroIntroControl = null;
+  var sectionSnapControl = null;
 
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
@@ -93,13 +94,51 @@
     });
   }
 
+  function scrollToProductsAfterIntro() {
+    var $products = $("#products");
+
+    if (!$products.length) {
+      return;
+    }
+
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > 64) {
+      return;
+    }
+
+    var targetY = Math.round($products.offset().top);
+
+    if (headerScrollControl) {
+      headerScrollControl.onScrollDown();
+    }
+
+    if (sectionSnapControl && sectionSnapControl.snapTo) {
+      sectionSnapControl.snapTo(targetY);
+      return;
+    }
+
+    window.scrollTo({
+      top: targetY,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }
+
   function initHeroKakaoMask() {
     var heroEl = document.getElementById("hero");
+    var maskWrapEl = heroEl ? heroEl.querySelector(".hero__mask-wrap") : null;
     var maskRectEl = document.getElementById("heroMaskRectEl");
     var titleEl = heroEl ? heroEl.querySelector(".hero__default-wrap .hero__title") : null;
     var mirrorTitleEl = heroEl ? heroEl.querySelector(".hero__title--mirror") : null;
 
-    if (!heroEl || !maskRectEl || !titleEl || !mirrorTitleEl || typeof gsap === "undefined") {
+    if (
+      !heroEl ||
+      !maskWrapEl ||
+      !maskRectEl ||
+      !titleEl ||
+      !mirrorTitleEl ||
+      typeof gsap === "undefined"
+    ) {
       return null;
     }
 
@@ -110,60 +149,59 @@
     var visualTl = gsap.timeline({ paused: true });
     var isIntroComplete = false;
     var isIntroPlaying = false;
+    var cachedLayout = null;
 
-    function getYOffset() {
-      var w = window.innerWidth;
+    function readMaskSize() {
+      var rootStyle = window.getComputedStyle(document.documentElement);
 
-      if (w >= 1921) {
-        return 221;
-      }
-
-      if (w >= 1600) {
-        return 168;
-      }
-
-      if (w >= 1024) {
-        return 140;
-      }
-
-      if (w >= 768) {
-        return 125;
-      }
-
-      return 97;
+      return {
+        width: parseFloat(rootStyle.getPropertyValue("--hero-mask-width")) || 72,
+        height: parseFloat(rootStyle.getPropertyValue("--hero-mask-height")) || 336,
+      };
     }
 
-    function getXRatio() {
-      var w = window.innerWidth;
+    function getMaskLayout() {
+      var titleRect = titleEl.getBoundingClientRect();
+      var maskSize = readMaskSize();
+      var maskWidth = maskSize.width;
+      var maskHeight = maskSize.height;
+      var centerX = titleRect.left + titleRect.width / 2;
+      var centerY = titleRect.top + titleRect.height / 2;
 
-      if (w >= 1024) {
-        return 0.48;
-      }
+      return {
+        x: centerX - maskWidth / 2,
+        y: centerY - maskHeight / 2,
+        startY: window.innerHeight,
+      };
+    }
 
-      if (w >= 768) {
-        return 0.47;
-      }
-
-      return 0.46;
+    function measureMaskLayout() {
+      gsap.set(baseLines, { y: 0 });
+      gsap.set(mirrorLines, { y: 0 });
+      cachedLayout = getMaskLayout();
+      return cachedLayout;
     }
 
     function getMaskX() {
-      return getXRatio() * window.innerWidth;
+      return (cachedLayout || measureMaskLayout()).x;
     }
 
     function getMaskRestY() {
-      return 0.5 * window.innerHeight - getYOffset();
+      return (cachedLayout || measureMaskLayout()).y;
     }
 
     function getMaskStartY() {
-      return window.innerHeight;
+      return (cachedLayout || measureMaskLayout()).startY;
     }
 
     function setInitialMaskRect() {
+      var layout = measureMaskLayout();
+
+      setTitleHidden();
       gsap.set(maskRectEl, {
         attr: {
-          x: getMaskX(),
-          y: getMaskStartY(),
+          x: layout.x,
+          y: layout.startY,
           transform: "rotate(12 0 0) scale(1)",
         },
       });
@@ -182,10 +220,12 @@
 
     function setCompleteState() {
       setTitleVisible();
+      var layout = measureMaskLayout();
+
       gsap.set(maskRectEl, {
         attr: {
-          x: getMaskX(),
-          y: getMaskRestY(),
+          x: layout.x,
+          y: layout.y,
           transform: "rotate(0 0 0) scale(80)",
         },
       });
@@ -196,8 +236,15 @@
     }
 
     function buildTimeline() {
+      measureMaskLayout();
       setTitleHidden();
-      setInitialMaskRect();
+      gsap.set(maskRectEl, {
+        attr: {
+          x: getMaskX(),
+          y: getMaskStartY(),
+          transform: "rotate(12 0 0) scale(1)",
+        },
+      });
 
       visualTl.clear();
       visualTl
@@ -260,6 +307,7 @@
 
     function finishIntro() {
       setCompleteState();
+      queueMicrotask(scrollToProductsAfterIntro);
     }
 
     function playIntro() {
@@ -287,7 +335,7 @@
     setInitialMaskRect();
 
     if (prefersReducedMotion) {
-      setCompleteState();
+      finishIntro();
     } else {
       requestAnimationFrame(function () {
         requestAnimationFrame(startIntro);
@@ -326,7 +374,7 @@
       },
       replay: function () {
         if (prefersReducedMotion) {
-          setCompleteState();
+          finishIntro();
           return;
         }
 
@@ -472,6 +520,10 @@
       },
       { passive: false }
     );
+
+    return {
+      snapTo: snapTo,
+    };
   }
 
   function initHeroVideo() {
@@ -985,7 +1037,7 @@
     initNewsControls();
     initScrollReveal();
     initDigitRollCounter();
-    initSectionMagneticScroll();
+    sectionSnapControl = initSectionMagneticScroll();
     initSustainabilityTrack();
   });
 })(jQuery);
