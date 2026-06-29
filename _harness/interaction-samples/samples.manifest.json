@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "updated": "2026-06-08",
+  "interactions": [
+    {
+      "id": "intro-pin-scrub-hero",
+      "title": "인트로 pin + scrub 히어로",
+      "reference": {
+        "label": "예손커뮤니케이션 · 최상단 히어로",
+        "url": "https://yesoni.kr/main"
+      },
+      "stack": ["HTML", "CSS", "jQuery", "GSAP ScrollTrigger"],
+      "summary": "첫 화면을 스크롤에 고정(pin)한 뒤, 스크롤 양에 비례(scrub)해 인트로→메인 비디오로 이어지는 연출.",
+      "description": "페이지 맨 위에서 스크롤하면 화면이 잠깐 멈춘 것처럼 고정되고, 스크롤을 내릴수록 순서대로 변합니다. (1) 회색 원형 마스크가 줄어들고 (2) YESON 로고가 크게 확대되며 사라지고 (3) PC에서는 전체 화면 비디오가 작은 둥근 프레임으로 줄어들며 (4) 하단 연락처·빠른상담 링크가 나타납니다. 스크롤을 올리면 역재생됩니다. 프리미엄 사이트의 '오프닝 시네마' 느낌.",
+      "howToTest": "메인 최상단 · 천천히 스크롤하며 로고 확대·비디오 프레임 축소·하단 CTA 등장 확인. 스크롤 올려 역재생도 확인.",
+      "status": "reference",
+      "tags": ["scroll", "pin", "gsap", "hero", "intro"],
+      "added": "2026-06-08"
+    },
+    {
+      "id": "scroll-pin-multi-step",
+      "title": "스크롤 고정 다단 전환",
+      "reference": {
+        "label": "예손커뮤니케이션 · 서비스 소개(섹션01)",
+        "url": "https://yesoni.kr/main"
+      },
+      "stack": ["HTML", "CSS", "jQuery", "GSAP ScrollTrigger"],
+      "summary": "한 섹션을 pin한 채 스크롤 scrub으로 콘텐츠 3단(01→02→03)을 순차 전환.",
+      "description": "서비스 소개 구간에서 스크롤하면 섹션이 화면에 고정된 상태로, 스크롤량에 따라 01·02·03 세 가지 카드/문구가 차례로 바뀝니다. 배경색도 단계마다 바뀌고, 뒤쪽 SVG 타원 장식은 위로 밀리며 clip-path로 드러납니다. '한 화면에서 스토리를 여러 장면으로 넘기는' 패턴으로, 회사소개·서비스 3축 소개에 재사용하기 좋습니다. (모바일 767px 이하는 pin 미적용)",
+      "howToTest": "히어로 직후 첫 번째 서비스 섹션 · 스크롤하며 01→02→03 전환·배경색·SVG 움직임 확인.",
+      "status": "reference",
+      "tags": ["scroll", "pin", "gsap", "multi-step"],
+      "added": "2026-06-08"
+    },
+    {
+      "id": "scroll-enter-act-reveal",
+      "title": "스크롤 진입 시퀀스 reveal",
+      "reference": {
+        "label": "예손커뮤니케이션 · OUR TEAM · Notice",
+        "url": "https://yesoni.kr/main"
+      },
+      "stack": ["HTML", "CSS", "jQuery", "GSAP ScrollTrigger"],
+      "summary": "섹션 진입 시 .act 클래스로 배경·카드·말풍선이 순차 등장. pin 없이 가벼운 스크롤 연출.",
+      "description": "pin(화면 고정) 없이, 섹션이 뷰포트에 들어오면 CSS transition/animation이 한꺼번에 켜집니다. OUR TEAM: 어두운 원이 퍼지며 배경이 바뀌고, 양쪽 팀 카드가 안쪽으로 슬라이드인. Notice: 배경이 밝아지고, 왼쪽 말풍선 3개가 위에서 차례로 뜨며 이모지·타이핑 연출이 이어집니다. 구현 부담이 pin보다 적으면서도 '섹션마다 다른 오프닝'을 줄 수 있습니다.",
+      "howToTest": "OUR TEAM·Notice 섹션 · 처음 진입할 때 원형 배경·카드 슬라이드·말풍선 순차 등장 확인.",
+      "status": "reference",
+      "tags": ["scroll", "gsap", "reveal", "sequence"],
+      "added": "2026-06-08"
+    },
+    {
+      "id": "3d-carousel-ring",
+      "title": "3D 링 캐러셀",
+      "reference": {
+        "label": "예손커뮤니케이션 · PROJECTS",
+        "url": "https://yesoni.kr/main"
+      },
+      "stack": ["HTML", "CSS 3D", "jQuery"],
+      "summary": "10장 카드를 rotateY+translateZ 원둘레 배치. 부모 링 rotateY 회전, prev/next, 드래그, 36° 스냅.",
+      "description": "포트폴리오 카드 10장이 3D 원통처럼 둘러싸여 있고, 좌우 화살표·드래그로 링 전체가 Y축 회전합니다. 정면에 오는 카드가 활성(active)이 되어 제목·설명·썸네일(또는 비디오)이 바뀝니다. 손을 떼면 36° 단위로 딱 맞게 스냅됩니다. 섹션에 스크롤하면 카드들이 펼쳐지는(hover) 연출도 함께 붙어 있습니다. 일반 가로 슬라이더와 달리 '회전목마' 형태의 3D 쇼케이스입니다.",
+      "howToTest": "PROJECTS 섹션 · 화살표·드래그로 카드 회전, 가운데 카드 정보·이미지 변경, 스크롤 진입 시 펼침 확인.",
+      "status": "reference",
+      "tags": ["carousel", "3d", "drag"],
+      "added": "2026-06-08"
+    },
+    {
+      "id": "css-3d-flip-card",
+      "title": "CSS 3D 플립 카드",
+      "reference": {
+        "label": "예손커뮤니케이션 · OUR TEAM",
+        "url": "https://yesoni.kr/main"
+      },
+      "stack": ["HTML", "CSS 3D"],
+      "summary": "카드 hover 시 앞면·뒷면이 Y축 180° 회전하며 뒤집힘.",
+      "description": "팀 소개 카드 3장. 기본은 앞면(팀명·일러스트·영문 타이틀)만 보이고, 마우스를 올리면 카드가 뒤집혀 뒷면(인사말·이모지 텍스트)이 나타납니다. JS 없이 CSS transform만으로 동작하는 단순하지만 효과적인 패턴입니다. 팀·서비스·가격 카드 등 '앞=요약 / 뒤=상세' 구조에 바로 쓸 수 있습니다.",
+      "howToTest": "OUR TEAM 섹션 · 각 카드에 마우스 올려 앞뒤 전환 확인.",
+      "status": "reference",
+      "tags": ["card", "3d", "hover", "css"],
+      "added": "2026-06-08"
+    },
+    {
+      "id": "scroll-pin-scale-card",
+      "title": "스크롤 고정 카드 확대",
+      "reference": {
+        "label": "HD현대M&S · 회사소개(2번째 섹션)",
+        "url": "https://hd-hmns.co.kr/kr/main"
+      },
+      "stack": ["HTML", "CSS", "jQuery", "GSAP ScrollTrigger"],
+      "summary": "섹션 pin + scrub. 배경 카드 소형→풀사이즈, 딤, 텍스트 순차 등장.",
+      "description": "히어로 다음 회사소개에서 스크롤하면 섹션이 고정되고, 작은 사각형 이미지 카드가 스크롤에 맞춰 점점 커져 화면을 채웁니다. 동시에 어두운 딤이 걸리고, 첫 번째 문구 블록이 사라진 뒤 두 번째 문구 블록이 나타나며, 하단 그라데이션 라인이 드러납니다. '작은 썸네일이 풀블리드 비주얼로 성장한다'는 스크롤 내러티브 패턴입니다.",
+      "howToTest": "HD 메인 히어로 직후 회사소개 · 스크롤하며 카드 확대·딤·텍스트 2단 전환 확인.",
+      "status": "reference",
+      "tags": ["scroll", "pin", "gsap"],
+      "added": "2026-06-08"
+    },
+    {
+      "id": "infinite-text-marquee",
+      "title": "무한 가로 텍스트",
+      "reference": {
+        "label": "HD현대M&S · 사업소개(3번째 섹션)",
+        "url": "https://hd-hmns.co.kr/kr/main"
+      },
+      "stack": ["HTML", "CSS"],
+      "summary": "동일 문구 2벌 + CSS translateX(-50%) 로 가로 무한 흐름. JS 없음.",
+      "description": "사업소개 섹션 상단에 'The Future Made with Technology and Quality' 같은 긴 문구가 왼쪽으로 끊김 없이 계속 흐릅니다. 같은 텍스트를 2번 나란히 두고, animation으로 정확히 한 세트 너비(-50%)만 이동시켜 무한 루프를 만듭니다. 섹션 배경 장식용 마키 패턴입니다.",
+      "howToTest": "HD 메인 회사소개 다음 사업소개 섹션 · 상단 대형 영문이 가로로 무한 스크롤되는지 확인.",
+      "status": "reference",
+      "tags": ["marquee", "text", "css", "decorative"],
+      "added": "2026-06-08"
+    }
+  ],
+  "backlog": [
+    {
+      "id": "scroll-pin-scale-card-v2",
+      "title": "스크롤 고정 카드 확대 (2단계 텍스트)",
+      "note": "HD main-company box-1→box-2 패턴. Figma test_section 이식 시 검토."
+    }
+  ]
+}

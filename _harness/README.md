@@ -11,6 +11,7 @@
 | **템플릿 허브 (납품)** | `_delivery/index.html` | 패키징 시 `templates/index.html` **자동 복사** — 직접 수정 ❌ |
 | **납품 복사** | `_delivery/{slug}/` | QA PASS **후** 패키징 (`node _harness/package-delivery.js {slug}`) |
 | **비교 캡처** | `_harness/snapshots/{slug}/` | PNG만 (선택) |
+| **인터랙션 카탈로그** | `_harness/interaction-samples/` | 참고 URL 목록 [`index.html`](interaction-samples/index.html) · [`samples.manifest.json`](interaction-samples/samples.manifest.json) |
 
 **진행하지 않음:** `_harness/workbench/`, `review/`, `reports/` — 별도 공간에서 짜고 본문에 씌우는 단계 **사용 안 함**.
 
@@ -62,3 +63,9 @@ AI 작업 품질은 **「무엇을 읽는가」**와 **「무엇을 무시하는
 - **10종 등록 · 섹션 연결은 사용자 선택·승인 후** — `templates/{slug}/`에 직접 구현
 - **연결 기록:** `_logs/decision-log.md` · `qa-log.md` (가이드 md 수정 ❌)
 - 명령은 **한글명**으로 가능 (예: 「story에 스크롤 등장 적용해줘」)
+
+## Interaction Catalog (harness)
+
+- **허브:** `_harness/interaction-samples/index.html` — 외부 참고 인터랙션 목록·검토
+- **정본:** `_harness/interaction-samples/samples.manifest.json`
+- 로컬 프리뷰 HTML 없음 · 참고 URL만 관리

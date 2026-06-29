@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaction Catalog — Harness</title>
+  <link rel="stylesheet" href="css/hub.css">
+</head>
+<body>
+  <div class="hub">
+    <header class="hub__head">
+      <p class="hub__label">Harness · Interaction Catalog</p>
+      <h1 class="hub__title">인터랙션 참고 목록</h1>
+      <p class="hub__lead">템플릿 적용 전 참고할 외부 사이트 인터랙션 카탈로그 · 카드 클릭 또는 「참고 사이트」로 이동 · PASS/HOLD/REJECT는 브라우저에 저장</p>
+      <div class="hub__toolbar">
+        <button type="button" class="hub__filter is-active" data-filter="all">전체</button>
+        <button type="button" class="hub__filter" data-filter="pending">미검토</button>
+        <button type="button" class="hub__filter" data-filter="pass">PASS</button>
+        <button type="button" class="hub__filter" data-filter="hold">HOLD</button>
+        <button type="button" class="hub__filter" data-filter="reject">REJECT</button>
+        <button type="button" class="hub__tool-btn" id="clear-reviews">검토 초기화</button>
+      </div>
+    </header>
+
+    <main class="hub__main">
+      <ul class="sample-list" id="sample-list">
+        <li class="sample-list__empty">목록 불러오는 중…</li>
+      </ul>
+      <section class="backlog" id="backlog" hidden>
+        <h2 class="backlog__title">보류 / 검토 예정</h2>
+        <ul class="backlog__list" id="backlog-list"></ul>
+      </section>
+    </main>
+
+    <footer class="hub__foot">
+      목록 데이터: <code>samples.manifest.json</code> (갱신일 <span id="manifest-updated">-</span>)
+      · 로컬 프리뷰 없음 · 참고 URL만 관리
+    </footer>
+  </div>
+
+  <script src="js/hub.js"></script>
+</body>
+</html>

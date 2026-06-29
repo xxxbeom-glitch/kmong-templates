@@ -1,5 +1,77 @@
 # Change Log
 
+## 2026-06-08 — [docs] infinite-text-marquee 참고 카탈로그 추가
+
+**범위:** `_docs/interaction-presets-guide.md` · `samples.manifest.json`  
+**추가:** `infinite-text-marquee` — HD현대M&S 사업소개 `.bg-txt` CSS 마키
+
+---
+
+## 2026-06-08 — [docs] interaction-presets-guide 묘사·참고 카탈로그 6종 반영
+
+**범위:** `_docs/interaction-presets-guide.md`  
+**내용:** 표준 preset 10종 «묘사» 열 추가 · 참고 카탈로그(예손·HD 6종) 섹션 추가
+
+---
+
+## 2026-06-08 — [harness] interaction catalog 예손 4종 추가 + description 필드
+
+**범위:** `_harness/interaction-samples/` manifest · hub.js · hub.css · README  
+**추가:** `intro-pin-scrub-hero` · `scroll-pin-multi-step` · `scroll-enter-act-reveal` · `css-3d-flip-card`  
+**내용:** 전 항목 `description`(상세 묘사) 필드 · 허브 카드에 summary/description/howToTest 3단 표시
+
+---
+
+## 2026-06-08 — [harness] interaction catalog 정리 (로컬 프리뷰 삭제)
+
+**범위:** `_harness/interaction-samples/`  
+**삭제:** `3d-carousel-ring/` · `scroll-pin-scale-card/` · `embed-mode.js`  
+**내용:** 로컬 샘플 HTML 제거 · manifest 참고 URL 목록 + 허브 검토 UI만 유지
+
+---
+
+## 2026-06-08 — [harness] interaction hub iframe 제거 → 리스트+새창
+
+**범위:** `_harness/interaction-samples/` index · hub.css · hub.js · README  
+**내용:** iframe/전체화면 미리보기 제거 · 샘플 카드 클릭 시 `window.open` 새 창
+
+---
+
+## 2026-06-08 — [harness] interaction hub 미리보기 개선 (embed · 전체화면)
+
+**범위:** `_harness/interaction-samples/` hub · 3d-carousel · scroll-pin  
+**내용:** iframe `embed=1` 축소 모드 · 전체화면 미리보기 · 3D 링 overflow·스케일 조정
+
+---
+
+## 2026-06-08 — [harness] interaction-samples 허브 (manifest · 미리보기 · 검토)
+
+**범위:** `_harness/interaction-samples/` · `_harness/index.html` · `_harness/README.md`  
+**내용:** `samples.manifest.json` 정본 · 허브 UI(목록+iframe) · PASS/HOLD/REJECT localStorage · 필터
+
+---
+
+## 2026-06-08 — [harness] interaction-samples 목록·허브
+
+**범위:** `_harness/interaction-samples/README.md` · `index.html` · `_harness/README.md`  
+**내용:** 3d-carousel-ring · scroll-pin-scale-card 카탈로그 등록 · 샘플 허브 페이지
+
+---
+
+## 2026-06-08 — [harness] interaction sample scroll-pin-scale-card
+
+**범위:** `_harness/interaction-samples/scroll-pin-scale-card/`  
+**내용:** HD현대M&S `main-company` 패턴 프로토타입 — pin + scrub · 배경 카드 30%→풀 · 텍스트 순차 등장
+
+---
+
+## 2026-06-08 — [harness] interaction sample 3d-carousel-ring
+
+**범위:** `_harness/interaction-samples/3d-carousel-ring/`  
+**내용:** 예손 PROJECTS 패턴 CSS 3D ring carousel 샘플 (10 cards · rotateY/translateZ · drag/snap)
+
+---
+
 ## 2026-06-08 — [template] skhynix-redesign hero title 90px (Figma 수정 반영)
 
 **범위:** `css/style.css` — hero title font-size · line-height only  
