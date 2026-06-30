@@ -1,5 +1,305 @@
 # QA Log
 
+## 2026-06-08 — hd-ec vision scroll-pin-scale-card (PC)
+
+**템플릿:** `hd-ec` · **catalog:** `scroll-pin-scale-card` · **범위:** vision (`225:2128`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| pin | sticky · scroll 100vh | PASS |
+| scale | 0.32→1 scrub | PASS |
+| overlay | 딤 점진 강화 | PASS |
+| title | 후반 fade-in · scroll-reveal 제거 | PASS |
+| @768 | pin 비활성 · 정적 | PASS |
+| reduced-motion | 정적 fallback | PASS |
+| 충돌 | vision scroll-reveal 제외 | PASS |
+
+**다음:** 사용자 PASS
+
+---
+
+## 2026-06-08 — hd-ec scroll-reveal (PC · 1/5)
+
+**템플릿:** `hd-ec` · **preset:** `scroll-reveal`  
+**결과:** **PASS** — 사용자 확인 완료
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| 대상 | hero/header/footer 제외 6섹션 | PASS |
+| 동작 | IO 진입 · 180ms stagger · 1회 | PASS |
+| reduced-motion | 즉시 `is-revealed` | PASS |
+| 중복 | hero 첫 화면 미적용 | PASS |
+| 기존 | projects `drag-scroll` 유지 | PASS |
+
+---
+
+## 2026-06-08 — hd-ec hover-tone (PC · 2/5)
+
+**템플릿:** `hd-ec` · **preset:** `hover-tone`  
+**결과:** **PASS** — 사용자 확인 완료
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| GNB | header link · lang btn opacity | PASS |
+| CTA | business · newsroom · careers opacity | PASS |
+| newsroom row | item link opacity | PASS |
+| investor card | brightness only · no transform | PASS |
+| fine pointer | `@media (hover: hover)` only | PASS |
+| scroll-reveal | 동일 요소 transform 충돌 없음 | PASS |
+
+---
+
+## 2026-06-08 — hd-ec image-scale-hover (PC · 3/5)
+
+**템플릿:** `hd-ec` · **preset:** `image-scale-hover`  
+**결과:** **PASS** — 사용자 확인 완료
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| business | card hover · bg scale 1.05 | PASS |
+| projects | card hover · bg scale 1.05 | PASS |
+| investor panel | panel hover · bg scale 1.05 | PASS |
+| clip | inner/panel `overflow:hidden` | PASS |
+| hover-tone | img vs link/button 분리 · 충돌 없음 | PASS |
+| reduced-motion | scale 비활성 | PASS |
+
+---
+
+## 2026-06-08 — hd-ec stats-counter (PC · 4/5)
+
+**템플릿:** `hd-ec` · **preset:** `stats-counter`  
+**결과:** **PASS** — 사용자 확인 완료
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| 대상 | investor panel price | PASS |
+| 동작 | 0→223,000 · comma grouping | PASS |
+| 트리거 | `#investor` IO · 1회 | PASS |
+| reduced-motion | 최종값 즉시 | PASS |
+| scroll-reveal | price 노드 transform 없음 | PASS |
+
+---
+
+## 2026-06-08 — hd-ec button-text-slide-hover (PC · 5/5)
+
+**템플릿:** `hd-ec` · **preset:** `button-text-slide-hover`  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| business | 4× CTA text slide | PASS |
+| newsroom | more btn text slide | PASS |
+| careers | CTA text slide | PASS |
+| arrow | 아이콘 slide 밖 · 유지 | PASS |
+| hover-tone | CTA 병용 · preset 허용 | PASS |
+| reduced-motion | slide 비활성 | PASS |
+
+**다음:** 사용자 PASS → 인터랙션 전체 QA
+
+---
+
+## 2026-06-08 — hd-ec careers (PC static)
+
+**템플릿:** `hd-ec` · **범위:** careers (`231:2187`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| Shell | gutter 40 | `careers__shell` | PASS |
+| 카드 | 1840×304 · r16 · #d9d9d9 | `.careers__card` | PASS |
+| pad | 86/56 | `--careers-card-pad-*` | PASS |
+| title→btn | gap 26 | `--careers-card-gap` | PASS |
+| 타이틀 | 30/700 center | Figma 카피 | PASS |
+| CTA | border 1px · pad 16/30 · r6 | `채용 공고 바로가기` | PASS |
+| @1024 | — | CTA wrap | PASS |
+
+**다음:** 사용자 PASS → 전체 QA
+
+---
+
+## 2026-06-08 — hd-ec footer (PC static)
+
+**템플릿:** `hd-ec` · **범위:** footer (`244:2298`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기 · `footer-logo.png` export 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| 배경 | `#f3f4f5` | `--footer-bg` | PASS |
+| 패딩 | 96 / 240 | `--footer-pad-y/x` | PASS |
+| 상단 간격 | 180 (careers 없음 → investor 후) | `margin-top: section-gap` | PASS |
+| 로고 | 192×38 | `footer-logo.png` placeholder | PASS |
+| logo→content | gap 38 | `--footer-logo-gap` | PASS |
+| policy | 16/700 · gap 16 | 3링크 | PASS |
+| content→meta | gap 16 | `--footer-content-gap` | PASS |
+| address | 16/500 · gap 16 | 3항목 | PASS |
+| copyright | 16/500 우측 | `footer__copy` | PASS |
+| @1024 | — | meta 세로 stack | PASS |
+
+**다음:** `section-careers` (`231:2187`) 또는 사용자 전체 QA
+
+---
+
+## 2026-06-08 — hd-ec investor (PC static)
+
+**템플릿:** `hd-ec` · **범위:** investor (`224:2080`)  
+**Figma MCP:** title·cards·panel 수치 대조  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기 · `investor-panel.jpg` 실제 export 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| Shell | gutter 40 | `investor__shell` | PASS |
+| 타이틀 | 42px / 800 / center | `투자정보` | PASS |
+| head→layout | gap 68 | `--business-head-gap` | PASS |
+| 카드 그리드 | 597+753 / 753+597 · gap 24 | `investor__row--top/bottom` | PASS |
+| 카드 | r16 · #f3f6fa · pad 56/36 | title 32/800 · desc 26/500 | PASS |
+| 패널 | 442×858 · overlay 20% | `investor-panel` | PASS |
+| 주가 | 55/800 · meta 22/500 white | `223,000` · KOSPI | PASS |
+| @1024 | — | 패널 하단 stack | PASS |
+| @768 | — | 카드 1열 | PASS |
+
+**다음:** 사용자 PASS → `section-careers` (`231:2187`)
+
+---
+
+## 2026-06-08 — hd-ec business·projects·newsroom Figma 수정 QA
+
+**템플릿:** `hd-ec` · **범위:** business 카드 비율 · project 텍스트 weight · newsroom border  
+**Figma MCP:** `207:1313` · `212:1419` · `212:2037` (file `6966c0dd…`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 수정 | 결과 |
+|------|-------|------|------|
+| business 카드 | 442×588 (`card-infra` 등) | `aspect-ratio: 442/588` · `min-height` 제거 | PASS |
+| project date | 18px / **600** | `--project-date-weight: 600` | PASS |
+| project name | 28px / **700** | `--project-name-weight: 700` | PASS |
+| newsroom row stroke | `bottom:1` only · `#ededed` | `border-bottom` only · collapse hack 제거 | PASS |
+
+---
+
+## 2026-06-08 — hd-ec newsroom (PC static)
+
+**템플릿:** `hd-ec` · **범위:** newsroom (`212:2037`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| Shell | gutter 40 | `newsroom__shell` | PASS |
+| 타이틀 | 42px / 800 / center | 1줄 카피 | PASS |
+| head→list | gap 68 | `--business-head-gap` | PASS |
+| row | 128px · pad 36/46 · border #ededed | `.newsroom-item__link` | PASS |
+| title | 24px / 600 | Figma 카피 ×4 | PASS |
+| date | 18px / 400 / 60% | 우측 정렬 | PASS |
+| list→btn | gap 56 | `--newsroom-content-btn-gap` | PASS |
+| CTA | border #1a1a1a · r6 · 20px | `더 많은 소식 보기` | PASS |
+| @768 | — | row 세로 stack | PASS |
+
+**다음:** 사용자 PASS → `대표 프로젝트` (`224:2080`)
+
+---
+
+## 2026-06-08 — hd-ec projects (PC static)
+
+**템플릿:** `hd-ec` · **범위:** projects (`212:1419`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| Shell | gutter 40 | `projects__shell` | PASS |
+| 타이틀 | 42px / 800 / center | 1줄 카피 | PASS |
+| head→track | gap 68 | `--business-head-gap` | PASS |
+| 카드 | 1063×561 · gap 24 | 가로 스크롤 트랙 | PASS |
+| radius | 16 | `--project-card-radius` | PASS |
+| date/name | 18/600 · 28/700 white | 4항목 | PASS |
+| pad | 36 · bottom 64 | `--project-card-pad-*` | PASS |
+
+**다음:** Figma 카드 이미지 export · 사용자 PASS → `뉴스룸` (`212:2037`)
+
+---
+
+## 2026-06-08 — hd-ec business (PC static)
+
+**템플릿:** `hd-ec` · **범위:** business (`207:1313`)  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| Shell | gutter 40 | `business__shell` pad | PASS |
+| 타이틀 | 42px / 800 / center | 2줄 카피 | PASS |
+| head→grid | gap 68 | `--business-head-gap` | PASS |
+| 카드 | 442×588 ×4 · gap 24 | flex 4열 | PASS |
+| overlay | black 40% | `--business-card-overlay` | PASS |
+| radius | 16 | `--business-card-radius` | PASS |
+| btn | border 1px white · r6 | `.business-card__link` | PASS |
+| @1024 | — | 2열 | PASS |
+| @768 | — | 1열 | PASS |
+
+**다음:** Figma 카드 이미지 export · 사용자 PASS → `대표 프로젝트` (`212:1419`)
+
+---
+
+## 2026-06-08 — hd-ec header·hero·vision 재검수 (PC)
+
+**템플릿:** `hd-ec` · **범위:** header · hero · vision  
+**결과:** **PASS (코드)** — vision 배경 이미지 export 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| header logo | 193×39 PNG | `header-logo.png` | PASS |
+| header globe | 54×54 `#D9D9D9` | `header-globe.png` | PASS |
+| GNB center | cx 961 | absolute 50% | PASS |
+| GNB gap | 36 | `--header-nav-gap` | PASS |
+| hero bg | image | `hero-bg.jpg` | PASS |
+| hero overlay | black **32%** | `--color-hero-overlay` | PASS (수정) |
+| hero title | 70px / lh 102.2 / left 96·348 | clamp + padding | PASS |
+| vision card | 1840×900 · overlay **60%** | 구조 일치 | PASS |
+| vision bg | image `ea3951cf…` | placeholder | **FAIL** — export 필요 |
+| vision title | 56px / center | 2줄 카피 | PASS |
+
+---
+
+## 2026-06-08 — hd-ec vision (PC static)
+
+**템플릿:** `hd-ec` · **범위:** vision (`225:2128`) · 인터랙션 없음  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| 섹션 높이 | 900px | `--vision-h` clamp | PASS |
+| 카드 폭 | 1840 (gutter 40) | `--layout-content` | PASS |
+| 배경 | image + black 60% | `.vision__overlay` | PASS |
+| 타이틀 | 56px / 700 / center / white | 2줄 카피 | PASS |
+| line-height | 90.72px | `--vision-title-lh` | PASS |
+| max-width | 1245px | `--vision-title-max` | PASS |
+| pin/scrub | 보류 | JS 없음 | PASS |
+
+**다음:** Figma `vision-card` 이미지 export · 사용자 PASS → `사업영역` (`207:1313`)
+
+---
+
+## 2026-06-08 — hd-ec header + hero (PC static)
+
+**템플릿:** `hd-ec` · **범위:** header (`231:2166`) · hero (`220:2078`) · 인터랙션 없음  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 영역 | Figma | 구현 | 결과 |
+|------|-------|------|------|
+| header 높이 | 128px | `--header-h` clamp | PASS |
+| header bg | `#ffffff` | `--color-white` | PASS |
+| logo | 193×39 | placeholder SVG | PASS (에셋 교체 대기) |
+| GNB | 24px / 500 / gap 36 | 6항목 Figma 카피 | PASS |
+| lang btn | 54×54 `#D9D9D9` | `.header__lang` | PASS |
+| hero 높이 | 900px | `--hero-h` clamp | PASS |
+| hero title | 70px / 700 / white | 2줄 카피 | PASS |
+| hero bg | image cover | placeholder jpg + gradient fallback | PASS (Figma export 대기) |
+| JS | — | `main.js` stub only | PASS |
+| @1024 | — | nav 숨김 | PASS |
+| @768 | — | hero padding 조정 | PASS |
+
+**다음:** Figma 로고·hero 이미지 export 교체 · 사용자 PASS → `비전` 섹션
+
+---
+
 ## 2026-06-08 — skhynix-redesign 인터랙션 Package B (PC)
 
 **템플릿:** `skhynix-redesign` · **범위:** 전 섹션 preset · news JS  

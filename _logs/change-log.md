@@ -1,5 +1,270 @@
 # Change Log
 
+## 2026-06-08 — [template] hd-ec business card white arrow icon
+
+**범위:** `index.html` · `assets/icons/icon-arrow-right-white.png`  
+**변경:** 사업영역 CTA 4곳 → 흰색 `>` 아이콘 · 루트 loose PNG 정리
+
+---
+
+## 2026-06-08 — [template] hd-ec business card text alignment fix
+
+**범위:** `css/style.css` · business card body/copy  
+**Figma:** `205:1236` — VERTICAL · pad 36/46 · gap 76 · primary MAX · copy 370×117 고정  
+**변경:** copy min-h 117 · name min-h 82(2줄 박스) · align-items flex-start · text-align left
+
+---
+
+## 2026-06-08 — [template] hd-ec vision pin M&S 구조 정합 (2차)
+
+**범위:** `css/style.css` · `js/main.js`  
+**원인:** scale 전 구간 + 3500px + scrub 2s → M&S 대비 과도하게 느림  
+**변경:** width/height 박스 확대(560×340→풀) · 이미지 100vw 고정 · 펼침 구간 14% · pin 1800px · scrub 0.85s · 타이틀 y 100% 슬라이드
+
+---
+
+## 2026-06-08 — [template] hd-ec vision pin scrub HD M&S 정합
+
+**범위:** `css/style.css` · `js/main.js`  
+**참고:** HD현대M&S `main-company` — `scrub:2` · `end:+=3500`  
+**변경:** pin 거리 3500px · scrub 2s lerp · scale/딤 linear · easeOutCubic 제거
+
+---
+
+## 2026-06-08 — [template] hd-ec header scroll auto-hide
+
+**범위:** `css/style.css` · `js/main.js`  
+**동작:** 스크롤 down → `is-header-hidden` · up → 표시 · top(≤8px) 항상 표시 · transform slide
+
+---
+
+## 2026-06-08 — [template] hd-ec vision 카드 상하 gutter 통일
+
+**범위:** `css/style.css`  
+**변경:** `vision__shell` `padding: var(--layout-pad-x)` (좌우·상하 동일 40px) · card `min-height` viewport 고정 제거
+
+---
+
+## 2026-06-08 — [template] hd-ec vision 카드 높이 100dvh
+
+**범위:** `css/style.css`  
+**변경:** `--vision-h: 100dvh` · pin padding 제거 · card/shell flex stretch · pin-wrap `calc(vision-h + pin-scroll)`
+
+---
+
+## 2026-06-08 — [template] hd-ec hero viewport 100% (HD M&S 참고)
+
+**범위:** `css/style.css`  
+**변경:** `--hero-h: 100dvh` · header `position: fixed` overlay · 타이틀 pad `header-h + offset`
+
+---
+
+## 2026-06-08 — [template] hd-ec vision catalog — scroll-pin-scale-card
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**catalog:** `scroll-pin-scale-card` — vision (`225:2128`)  
+**동작:** sticky pin · 카드 scale 0.32→1 · overlay 0.28→1 · 타이틀 45% 이후 fade-in · `scroll-reveal` vision 제외 · @768/reduced-motion 정적
+
+---
+
+## 2026-06-08 — [template] hd-ec 인터랙션 5/5 — button-text-slide-hover
+
+**범위:** `index.html` · `css/style.css`  
+**preset:** `button-text-slide-hover` — business CTA(4) · newsroom more · careers CTA  
+**동작:** `btn-slide-hover` · 텍스트 2줄 stack · hover 시 translateY slide · arrow 아이콘 유지
+
+---
+
+## 2026-06-08 — [template] hd-ec 인터랙션 4/5 — stats-counter
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**preset:** `stats-counter` — investor panel 주가 `223,000`  
+**동작:** `#investor` IO 진입 · 0→223000 · grouping · 1600ms ease-out · 1회 · reduced-motion 즉시 최종값
+
+---
+
+## 2026-06-08 — [template] hd-ec 인터랙션 3/5 — image-scale-hover
+
+**범위:** `css/style.css`  
+**preset:** `image-scale-hover` — business card bg · project card bg · investor panel bg  
+**동작:** card/panel hover · img `scale(1.05)` · overflow hidden 프레임 유지 · fine pointer only
+
+---
+
+## 2026-06-08 — [template] hd-ec 인터랙션 2/5 — hover-tone
+
+**범위:** `css/style.css`  
+**preset:** `hover-tone` — GNB · business CTA · newsroom row/btn · investor card · careers CTA · footer policy  
+**동작:** fine pointer · opacity 0.85 (링크/버튼) · investor card `brightness(0.96)` · transform 없음
+
+---
+
+## 2026-06-08 — [template] hd-ec 인터랙션 1/5 — scroll-reveal
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**preset:** `scroll-reveal` — vision · business · projects · newsroom · investor · careers (hero/header/footer 제외)  
+**동작:** 섹션 진입 시 제목→카드 순차 등장 · 180ms stagger · IO threshold 0.1 · reduced-motion 즉시 표시
+
+---
+
+## 2026-06-08 — [template] hd-ec assets 정리 · 아이콘·investor panel 연결
+
+**범위:** `index.html` · `css/style.css` · `assets/`  
+**icons:** `Arrow - Down 2 - Iconly Pro.png` → `assets/icons/icon-arrow-right.png` · business/newsroom/careers 인라인 SVG → `<img>`  
+**investor:** `9d4aeb5b…` → `assets/images/investor-panel.png` · HTML 경로 갱신  
+**정리:** `assets/` 루트 해시 PNG·중복 jpg/mp4·구 header/hero 파일 삭제 · `images/` 중복 jpg(business·vision·investor) 제거
+
+---
+
+## 2026-06-08 — [template] hd-ec careers section static (Figma 231:2187)
+
+**범위:** `index.html` · `css/style.css`  
+**Figma:** gutter 40 · card **1840×304** · `#d9d9d9` · r16 · title **30/700** center · CTA border `#1a1a1a` r6 **20/500**
+
+---
+
+## 2026-06-08 — [template] hd-ec footer 패딩 본문 gutter 통일
+
+**범위:** `css/style.css`  
+**변경:** footer `padding-inline: var(--layout-pad-x)` (40px @1920) — `business__shell` 등과 동일 · 240px 전용 규칙 제거
+
+---
+
+## 2026-06-08 — [template] hd-ec footer 좌우 마진 재수정 (pad-x 240)
+
+**범위:** `css/style.css`  
+**Figma:** frame `padding 96/240` · inner **1920** cap · content **1440**  
+**변경:** `--footer-pad-x: clamp(20px, 12.5vw, 240px)` + `footer__inner` padding-inline
+
+---
+
+## 2026-06-08 — [template] hd-ec 사용자 에셋 연결 (hero video · business · vision)
+
+**범위:** `index.html` · `css/style.css` · `assets/videos/` · `assets/images/`  
+**hero:** `assets/videos/hero-bg.mp4` (autoplay · muted · loop) · poster `hero-bg.jpg`  
+**business:** Figma ref → `business-card-01~04.png` (인프라·건축·주택·에너지)  
+**vision:** `ea3951cf…` → `vision-card.png`  
+**investor panel:** Figma ref `9d4aeb5b…` 파일 미확인 — `investor-panel.jpg` placeholder 유지
+
+---
+
+## 2026-06-08 — [template] hd-ec footer 좌우 마진 수정
+
+**범위:** `css/style.css`  
+**Figma:** 콘텐츠 **1440px** @1920 → 좌우 **240px** (`(1920-1440)/2`)  
+**변경:** `padding-inline: 240` 제거 → `max-width: 1440` + `margin: auto` (ultrawide 포함 동일 비율)
+
+---
+
+## 2026-06-08 — [template] hd-ec footer section static (Figma 244:2298)
+
+**범위:** `index.html` · `css/style.css` · `assets/images/footer-logo.png` (placeholder)  
+**Figma:** bg `#f3f4f5` · pad **96/240** · logo **192×38** · policy **16/700** · meta **16/500** `#151414`
+
+---
+
+## 2026-06-08 — [template] hd-ec investor 레이아웃 flex 비율 재구성
+
+**범위:** `css/style.css`  
+**Figma Auto Layout:** `1374:442` · 행별 `597:753` / `753:597` · 높이 **417** · 패널 **858**  
+**변경:** CSS Grid/`fr` 제거 → Figma grow 비율 flex (`1374/442`, `597/753`)
+
+---
+
+## 2026-06-08 — [template] hd-ec investor 카드 크기 Figma 수정
+
+**범위:** `css/style.css`  
+**Figma:** layout **1374:442** · 카드 행 **417px** · 열 **597:753** / **753:597** · 패널 **858px** (=417×2+24)  
+**변경:** `aspect-ratio` 제거 → 행 고정 높이 + fr 비율 그리드
+
+---
+
+## 2026-06-08 — [template] hd-ec projects 가로 스크롤 복원 · scrollbar 숨김 · drag-scroll
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**변경:** 1063×561 가로 트랙 복원 · `scrollbar-width: none` · `drag-scroll` preset (`data-projects-scroll`) · jQuery CDN
+
+---
+
+## 2026-06-08 — [template] hd-ec investor section static (Figma 224:2080)
+
+**범위:** `index.html` · `css/style.css` · `assets/images/investor-panel.jpg` (placeholder)  
+**Figma:** `투자정보` · gutter 40 · title 42/800 · 4 cards #f3f6fa (597/753 비율) · panel 442×858 · overlay 20% · stock 55/800
+
+---
+
+## 2026-06-08 — [template] hd-ec projects 가로 스크롤 제거
+
+**범위:** `index.html` · `css/style.css`  
+**변경:** `projects__scroll` 제거 → `projects__grid` 4열 flex · 카드 `aspect-ratio: 1063/561` · @1024 2열 · @768 1열
+
+---
+
+## 2026-06-08 — [template] hd-ec business·projects·newsroom Figma 수정
+
+**범위:** `css/style.css`  
+**business:** 카드 `aspect-ratio: 442/588` (min-height 제거 — ultrawide 비율 짧음 수정)  
+**projects:** date **600** · name **700** 토큰 명시  
+**newsroom:** 행 stroke **bottom만** (`individualStrokeWeights` Figma 일치) · 사방 border 제거
+
+---
+
+## 2026-06-08 — [template] hd-ec newsroom section static (Figma 212:2037)
+
+**범위:** `index.html` · `css/style.css`  
+**Figma:** `뉴스룸` · gutter 40 · title 42/800 · row 128px border #ededed · date 60% · CTA 중앙
+
+---
+
+## 2026-06-08 — [template] hd-ec projects section static (Figma 212:1419)
+
+**범위:** `index.html` · `css/style.css` · `assets/images/project-card-01~04.jpg`  
+**Figma:** `대표 프로젝트` · gutter 40 · title 42/800 · 가로 카드 1063×561 gap 24 · overflow-x scroll  
+**수정:** vision `.vision__title` 중복 CSS 블록 제거
+
+---
+
+## 2026-06-08 — [template] hd-ec business section static (Figma 207:1313)
+
+**범위:** `index.html` · `css/style.css` · `assets/images/business-card-01~04.jpg`  
+**Figma:** `사업영역` · gutter 40 · title 42/800 · 4 cards 442×588 gap 24 · overlay 40% · btn border white  
+**Shell:** guttered (vision과 동일 pad 패턴)
+
+---
+
+## 2026-06-08 — [template] hd-ec shell 타입 정리 (Figma MCP)
+
+**범위:** `index.html` · `css/style.css`  
+**Shell:** hero full-bleed · vision full shell + `section-shell--gutter` · header guttered  
+**공통:** `.section-shell` · `.section-shell--gutter` · `.is-bleed-x` · `--layout-pad-x` 40
+
+---
+
+## 2026-06-08 — [template] hd-ec header·hero·vision 재검수 + 에셋 연결
+
+**범위:** `index.html` · `css/style.css` · `assets/images/`  
+**에셋:** `header-logo.png` · `header-globe.png` · `hero-bg.jpg` (사용자 제공)  
+**수정:** hero overlay **32%** · GNB letter-spacing 0 · lang PNG · vision card radius 16px · vision **좌우 40px + 카드 채움** · 섹션 간격 180px · placeholder 경로 정리  
+**미제공:** vision 카드 배경 (`225:2129` imageRef) — `vision-card.jpg` placeholder 유지
+
+---
+
+## 2026-06-08 — [template] hd-ec vision section static (Figma 225:2128)
+
+**범위:** `templates/hd-ec/` · `index.html` · `css/style.css` · `assets/images/vision-card.jpg`  
+**Figma:** `비전` (`225:2128`) · card `225:2129` 1840×900 · overlay 60% · title 56px center  
+**내용:** pin/scrub 없이 최종(100%) 정적 레이아웃 · placeholder 배경
+
+---
+
+## 2026-06-08 — [template] hd-ec header + hero static (Figma 199:951)
+
+**범위:** `templates/hd-ec/` · `index.html` · `css/style.css` · `js/main.js` · assets  
+**Figma:** `portfolio_HD_E&C_main` (`199:951`) · header `231:2166` · hero `220:2078`  
+**내용:** 인터랙션 없이 헤더(128px·GNB 6·언어 버튼) + hero(900px·70px 타이틀) PC 정적 구현 · hero placeholder(picsum) · 로고 placeholder SVG · **GNB 헤더 전체 너비 중앙 정렬** (`Frame 69` cx 961)
+
+---
+
 ## 2026-06-08 — [docs] infinite-text-marquee 참고 카탈로그 추가
 
 **범위:** `_docs/interaction-presets-guide.md` · `samples.manifest.json`  

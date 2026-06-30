@@ -1,0 +1,1390 @@
+/* HD E&C — Figma portfolio_HD_E&C_main @1920 · header + hero + vision (static) */
+
+:root {
+  --color-white: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted-bg: #d9d9d9;
+  --color-hero-fallback-top: #1a2838;
+  --color-hero-fallback-bottom: #4a3728;
+  --color-hero-overlay: rgba(0, 0, 0, 0.32);
+  --color-vision-overlay: rgba(0, 0, 0, 0.6);
+
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  --layout-max: 1920px;
+  --layout-content: clamp(920px, 95.8333vw, 1840px);
+  --layout-pad-x: clamp(20px, 2.0833vw, 40px);
+  --section-gap: clamp(90px, 9.375vw, 180px);
+  --header-h: clamp(72px, 6.6667vw, 128px);
+  --header-pad-x: var(--layout-pad-x);
+  --header-logo-w: clamp(120px, 10.0521vw, 193px);
+  --header-logo-h: clamp(24px, 2.0313vw, 39px);
+  --header-nav-size: clamp(16px, 1.25vw, 24px);
+  --header-nav-lh: clamp(24px, 1.8229vw, 35px);
+  --header-nav-gap: clamp(18px, 1.875vw, 36px);
+  --header-lang-size: clamp(44px, 2.8125vw, 54px);
+
+  --hero-h: 100vh;
+  --hero-h: 100dvh;
+  --hero-title-size: clamp(32px, 3.6458vw, 70px);
+  --hero-title-lh: clamp(44px, 5.3125vw, 102px);
+  --hero-text-pl: clamp(20px, 5vw, 96px);
+  --hero-text-pt: calc(var(--header-h) + clamp(80px, 11.458vw, 220px));
+
+  --vision-h: 100vh;
+  --vision-h: 100dvh;
+  --vision-card-radius: clamp(8px, 0.8333vw, 16px);
+  --vision-card-start-w: clamp(280px, 29.1667vw, 560px);
+  --vision-card-start-h: clamp(170px, 31.4815vh, 340px);
+  --vision-pin-distance: clamp(1200px, 93.75vw, 1800px);
+  --vision-pin-scrub: 0.85;
+  --vision-grow-phase: 0.14;
+  --vision-title-size: clamp(24px, 2.9167vw, 56px);
+  --vision-title-lh: clamp(36px, 4.725vw, 90.72px);
+  --vision-title-max: clamp(280px, 64.8438vw, 1245px);
+
+  --business-title-size: clamp(24px, 2.1875vw, 42px);
+  --business-title-lh: clamp(34px, 3.2813vw, 63px);
+  --business-head-gap: clamp(34px, 3.5417vw, 68px);
+  --business-grid-gap: clamp(12px, 1.25vw, 24px);
+  --business-card-ratio-w: 442;
+  --business-card-ratio-h: 588;
+  --business-card-radius: clamp(8px, 0.8333vw, 16px);
+  --business-card-overlay: rgba(0, 0, 0, 0.4);
+  --business-card-pad-x: clamp(20px, 1.875vw, 36px);
+  --business-card-pad-y: clamp(24px, 2.3958vw, 46px);
+  --business-card-label-size: clamp(14px, 0.9375vw, 18px);
+  --business-card-label-lh: clamp(18px, 1.2188vw, 23.4px);
+  --business-card-name-size: clamp(20px, 1.4583vw, 28px);
+  --business-card-name-lh: clamp(30px, 2.1583vw, 41.44px);
+  --business-card-copy-gap: clamp(8px, 0.625vw, 12px);
+  --business-card-copy-min-h: clamp(90px, 6.09375vw, 117px);
+  --business-card-name-min-h: clamp(56px, 4.2708vw, 82px);
+  --business-card-body-gap: clamp(40px, 3.9583vw, 76px);
+  --business-btn-radius: clamp(4px, 0.3125vw, 6px);
+  --business-btn-size: clamp(14px, 0.8854vw, 17px);
+  --business-btn-lh: clamp(20px, 1.3125vw, 25.16px);
+  --business-btn-pad-x: clamp(18px, 1.3542vw, 26px);
+  --business-btn-pad-y: clamp(10px, 0.7292vw, 14px);
+
+  --project-card-w: clamp(280px, 55.3646vw, 1063px);
+  --project-card-h: clamp(300px, 29.2188vw, 561px);
+  --project-card-radius: clamp(8px, 0.8333vw, 16px);
+  --project-track-gap: clamp(12px, 1.25vw, 24px);
+  --project-card-pad-x: clamp(20px, 1.875vw, 36px);
+  --project-card-pad-bottom: clamp(32px, 3.3333vw, 64px);
+  --project-card-copy-gap: clamp(6px, 0.5208vw, 10px);
+  --project-date-weight: 600;
+  --project-name-weight: 700;
+
+  --newsroom-row-border: #ededed;
+  --newsroom-row-h: clamp(80px, 6.6667vw, 128px);
+  --newsroom-row-pad-x: clamp(20px, 1.875vw, 36px);
+  --newsroom-row-pad-y: clamp(24px, 2.3958vw, 46px);
+  --newsroom-item-title-size: clamp(18px, 1.25vw, 24px);
+  --newsroom-item-title-lh: clamp(26px, 1.85vw, 35.52px);
+  --newsroom-date-size: clamp(14px, 0.9375vw, 18px);
+  --newsroom-date-lh: clamp(18px, 1.2188vw, 23.4px);
+  --newsroom-date-color: rgba(26, 26, 26, 0.6);
+  --newsroom-content-btn-gap: clamp(28px, 2.9167vw, 56px);
+  --newsroom-btn-radius: clamp(4px, 0.3125vw, 6px);
+  --newsroom-btn-size: clamp(16px, 1.0417vw, 20px);
+  --newsroom-btn-lh: clamp(24px, 1.5417vw, 29.6px);
+  --newsroom-btn-pad-x: clamp(20px, 1.5625vw, 30px);
+  --newsroom-btn-pad-y: clamp(12px, 0.8333vw, 16px);
+
+  --investor-card-bg: #f3f6fa;
+  --investor-card-radius: clamp(8px, 0.8333vw, 16px);
+  --investor-layout-gap: clamp(12px, 1.25vw, 24px);
+  --investor-card-pad-x: clamp(20px, 1.875vw, 36px);
+  --investor-card-pad-y: clamp(28px, 2.9167vw, 56px);
+  --investor-card-gap: clamp(14px, 1.3542vw, 26px);
+  --investor-card-title-size: clamp(20px, 1.6667vw, 32px);
+  --investor-card-title-lh: clamp(30px, 2.4479vw, 47px);
+  --investor-card-desc-size: clamp(16px, 1.3542vw, 26px);
+  --investor-card-desc-lh: clamp(26px, 2.2396vw, 43px);
+  --investor-card-h: clamp(240px, 21.7188vw, 417px);
+  --investor-panel-h: calc(var(--investor-card-h) * 2 + var(--investor-layout-gap));
+  --investor-flex-grid: 1374;
+  --investor-flex-panel: 442;
+  --investor-flex-narrow: 597;
+  --investor-flex-wide: 753;
+  --investor-panel-overlay: rgba(0, 0, 0, 0.2);
+  --investor-stock-size: clamp(32px, 2.8646vw, 55px);
+  --investor-stock-lh: clamp(48px, 4.2188vw, 81px);
+  --investor-stock-meta-size: clamp(14px, 1.1458vw, 22px);
+  --investor-stock-meta-lh: clamp(22px, 1.7188vw, 33px);
+  --investor-stock-gap: clamp(4px, 0.3125vw, 6px);
+
+  --footer-bg: #f3f4f5;
+  --footer-text: #151414;
+  --footer-pad-y: clamp(48px, 5vw, 96px);
+  --footer-logo-w: clamp(120px, 10vw, 192px);
+  --footer-logo-h: clamp(24px, 1.9792vw, 38px);
+  --footer-logo-gap: clamp(20px, 1.9792vw, 38px);
+  --footer-content-gap: clamp(12px, 0.8333vw, 16px);
+  --footer-policy-gap: clamp(12px, 0.8333vw, 16px);
+  --footer-meta-gap: clamp(8px, 0.5208vw, 10px);
+  --footer-address-gap: clamp(12px, 0.8333vw, 16px);
+  --footer-link-size: clamp(14px, 0.8333vw, 16px);
+  --footer-link-lh: clamp(22px, 1.3542vw, 26px);
+  --footer-meta-size: clamp(14px, 0.8333vw, 16px);
+  --footer-meta-lh: clamp(22px, 1.3542vw, 26px);
+
+  --careers-card-h: clamp(200px, 15.8333vw, 304px);
+  --careers-card-radius: clamp(8px, 0.8333vw, 16px);
+  --careers-card-pad-y: clamp(44px, 4.4792vw, 86px);
+  --careers-card-pad-x: clamp(20px, 2.9167vw, 56px);
+  --careers-card-gap: clamp(14px, 1.3542vw, 26px);
+  --careers-title-size: clamp(18px, 1.5625vw, 30px);
+  --careers-title-lh: clamp(28px, 2.2917vw, 44px);
+  --careers-btn-radius: clamp(4px, 0.3125vw, 6px);
+  --careers-btn-size: clamp(16px, 1.0417vw, 20px);
+  --careers-btn-lh: clamp(24px, 1.5625vw, 30px);
+  --careers-btn-pad-x: clamp(20px, 1.5625vw, 30px);
+  --careers-btn-pad-y: clamp(12px, 0.8333vw, 16px);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  min-width: 320px;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Preset: scroll-reveal — 46-interaction-presets */
+.js .scroll-reveal:not(.is-revealed) {
+  opacity: 0;
+  transform: translate3d(0, clamp(8px, 0.625vw, 12px), 0);
+}
+
+.scroll-reveal {
+  transition:
+    opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+  backface-visibility: hidden;
+}
+
+h2.scroll-reveal {
+  display: block;
+}
+
+.business-card.scroll-reveal,
+.project-card.scroll-reveal,
+.newsroom-item.scroll-reveal {
+  display: block;
+}
+
+.investor-card.scroll-reveal {
+  display: flex;
+}
+
+.investor-panel.scroll-reveal {
+  display: block;
+}
+
+.newsroom__more.scroll-reveal,
+.careers__cta.scroll-reveal {
+  display: inline-flex;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Preset: hover-tone — 46-interaction-presets */
+@media (hover: hover) and (pointer: fine) {
+  .header__link,
+  .header__lang,
+  .business-card__link,
+  .newsroom-item__link,
+  .newsroom__more,
+  .careers__cta,
+  .footer__policy-link {
+    transition: opacity 0.22s ease, filter 0.22s ease, background-color 0.22s ease;
+  }
+
+  .header__link:hover,
+  .header__lang:hover,
+  .business-card__link:hover,
+  .newsroom-item__link:hover,
+  .newsroom__more:hover,
+  .careers__cta:hover,
+  .footer__policy-link:hover {
+    opacity: 0.85;
+  }
+
+  .investor-card.is-revealed {
+    transition: filter 0.22s ease;
+  }
+
+  .investor-card.is-revealed:hover {
+    filter: brightness(0.96);
+  }
+}
+
+/* Preset: image-scale-hover — 46-interaction-presets */
+.business-card__bg,
+.project-card__bg,
+.investor-panel__bg {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.45s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .business-card__inner:hover .business-card__bg,
+  .project-card__inner:hover .project-card__bg,
+  .investor-panel:hover .investor-panel__bg {
+    transform: scale(1.05);
+  }
+}
+
+/* Preset: button-text-slide-hover — 46-interaction-presets */
+.btn-slide-hover {
+  overflow: hidden;
+}
+
+.btn-slide-hover .btn__label {
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 1lh;
+}
+
+.btn-slide-hover .btn__track {
+  display: block;
+  transform: translateY(-1lh);
+}
+
+.btn-slide-hover .btn__text {
+  display: block;
+  height: 1lh;
+  line-height: 1lh;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-slide-hover .btn__track {
+    transition: transform 0.35s ease;
+  }
+
+  .btn-slide-hover:hover .btn__track {
+    transform: translateY(0);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+/* Section stack — Figma Frame 68 itemSpacing 180 */
+.section + .section {
+  margin-top: var(--section-gap);
+}
+
+/* Shell — 30-figma-to-code.mdc */
+.section-shell {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+}
+
+.section-shell--gutter {
+  max-width: calc(var(--layout-content) + var(--layout-pad-x) * 2);
+  padding-inline: var(--layout-pad-x);
+}
+
+.is-bleed-x {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Header — Figma 231:2166 · guttered · 1920×128 · hero 위 fixed overlay · scroll auto-hide */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-white);
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.header.is-header-hidden {
+  transform: translate3d(0, -100%, 0);
+}
+
+.header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px);
+  min-height: var(--header-h);
+}
+
+.header__logo {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-img {
+  width: var(--header-logo-w);
+  height: var(--header-logo-h);
+  object-fit: contain;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.header__menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--header-nav-gap);
+  pointer-events: auto;
+}
+
+.header__link {
+  font-size: var(--header-nav-size);
+  font-weight: 500;
+  line-height: var(--header-nav-lh);
+  white-space: nowrap;
+}
+
+.header__lang {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--header-lang-size);
+  height: var(--header-lang-size);
+  padding: 0;
+}
+
+.header__lang-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hero — Figma 220:2078 · viewport 100% full-bleed (HD M&S 참고) */
+.section--hero {
+  position: relative;
+  padding-inline: 0;
+  min-height: var(--hero-h);
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-hero-fallback-top) 0%, var(--color-hero-fallback-bottom) 100%);
+}
+
+.hero__panel {
+  position: relative;
+  min-height: var(--hero-h);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__video,
+.hero__bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__video {
+  display: block;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-overlay);
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: var(--layout-max);
+  min-height: var(--hero-h);
+  margin-inline: auto;
+  padding: var(--hero-text-pt) var(--layout-pad-x) clamp(40px, 4vw, 80px) var(--hero-text-pl);
+}
+
+.hero__title {
+  max-width: clamp(280px, 90vw, 1728px);
+  font-size: var(--hero-title-size);
+  font-weight: 700;
+  line-height: var(--hero-title-lh);
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+/* Vision — Figma 225:2128 · catalog scroll-pin-scale-card · pin + scrub scale */
+.section--vision {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.vision__pin-wrap {
+  position: relative;
+  height: calc(var(--vision-h) + var(--vision-pin-distance));
+}
+
+.vision__pin {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: stretch;
+  min-height: var(--vision-h);
+  height: var(--vision-h);
+  padding-block: 0;
+}
+
+.vision__shell {
+  position: relative;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: var(--layout-pad-x);
+}
+
+.js .section--vision.is-vision-pin-active .vision__shell {
+  padding: 0;
+}
+
+.vision__card {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--vision-card-radius);
+  background: var(--color-muted-bg);
+}
+
+.js .section--vision.is-vision-pin-active .vision__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  flex: none;
+  width: var(--vision-card-w, var(--vision-card-start-w));
+  height: var(--vision-card-h, var(--vision-card-start-h));
+  transform: translate(-50%, -50%);
+  will-change: width, height;
+}
+
+.vision__media {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.vision__bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+.js .section--vision.is-vision-pin-active .vision__bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  max-width: none;
+  height: var(--vision-h);
+  transform: translate(-50%, -50%);
+}
+
+.vision__overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-vision-overlay);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.js .section--vision.is-vision-pin-active .vision__overlay {
+  opacity: var(--vision-overlay-strength, 0);
+}
+
+.vision__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  height: 100%;
+  padding: clamp(40px, 4vw, 80px) clamp(20px, 2.0833vw, 40px);
+}
+
+.vision__title {
+  max-width: var(--vision-title-max);
+  font-size: var(--vision-title-size);
+  font-weight: 700;
+  line-height: var(--vision-title-lh);
+  text-align: center;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+.js .section--vision.is-vision-pin-active .vision__title {
+  opacity: var(--vision-title-opacity, 0);
+  transform: translate3d(0, var(--vision-title-shift, 100%), 0);
+}
+
+/* Business — Figma 207:1313 · guttered · 4 cards 442×588 · gap 24 */
+.section--business {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.business__shell {
+  width: 100%;
+  padding-inline: var(--layout-pad-x);
+}
+
+.business__head {
+  margin-bottom: var(--business-head-gap);
+}
+
+.business__title {
+  font-size: var(--business-title-size);
+  font-weight: 800;
+  line-height: var(--business-title-lh);
+  text-align: center;
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.business__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--business-grid-gap);
+  list-style: none;
+}
+
+.business-card {
+  flex: 1 1 calc(25% - var(--business-grid-gap) * 0.75);
+  min-width: 0;
+}
+
+.business-card__inner {
+  position: relative;
+  display: flex;
+  width: 100%;
+  aspect-ratio: var(--business-card-ratio-w) / var(--business-card-ratio-h);
+  overflow: hidden;
+  border-radius: var(--business-card-radius);
+  background: var(--color-muted-bg);
+}
+
+.business-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.business-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--business-card-overlay);
+  pointer-events: none;
+}
+
+.business-card__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: var(--business-card-body-gap);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: var(--business-card-pad-y) var(--business-card-pad-x);
+}
+
+.business-card__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--business-card-copy-gap);
+  width: 100%;
+  min-height: var(--business-card-copy-min-h);
+}
+
+.business-card__label {
+  font-size: var(--business-card-label-size);
+  font-weight: 600;
+  line-height: var(--business-card-label-lh);
+  text-align: left;
+  color: var(--color-white);
+}
+
+.business-card__name {
+  min-height: var(--business-card-name-min-h);
+  font-size: var(--business-card-name-size);
+  font-weight: 700;
+  line-height: var(--business-card-name-lh);
+  text-align: left;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+.business-card__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 3px;
+  padding: var(--business-btn-pad-y) var(--business-btn-pad-x);
+  border: 1px solid var(--color-white);
+  border-radius: var(--business-btn-radius);
+  font-size: var(--business-btn-size);
+  font-weight: 500;
+  line-height: var(--business-btn-lh);
+  color: var(--color-white);
+}
+
+.business-card__arrow,
+.newsroom__more-arrow,
+.careers__cta-arrow {
+  flex-shrink: 0;
+  display: block;
+  width: 16px;
+  height: 17px;
+  object-fit: contain;
+}
+
+/* Projects — Figma 212:1419 · guttered · horizontal cards 1063×561 · drag-scroll · scrollbar hidden */
+.section--projects {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.projects__shell {
+  width: 100%;
+  padding-inline: var(--layout-pad-x);
+}
+
+.projects__head {
+  margin-bottom: var(--business-head-gap);
+}
+
+.projects__title {
+  font-size: var(--business-title-size);
+  font-weight: 800;
+  line-height: var(--business-title-lh);
+  text-align: center;
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.projects__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-inline: calc(var(--layout-pad-x) * -1);
+  padding-inline: var(--layout-pad-x);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.projects__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.projects__scroll.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.projects__scroll.is-dragging .project-card__bg {
+  pointer-events: none;
+}
+
+.projects__track {
+  display: flex;
+  gap: var(--project-track-gap);
+  width: max-content;
+  list-style: none;
+}
+
+.project-card {
+  flex: 0 0 auto;
+}
+
+.project-card__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: var(--project-card-w);
+  min-height: var(--project-card-h);
+  overflow: hidden;
+  border-radius: var(--project-card-radius);
+  background: var(--color-muted-bg);
+}
+
+.project-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-card__inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.72) 100%);
+  pointer-events: none;
+}
+
+.project-card__copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--project-card-copy-gap);
+  padding: 0 var(--project-card-pad-x) var(--project-card-pad-bottom);
+}
+
+.project-card__date {
+  font-size: var(--business-card-label-size);
+  font-weight: var(--project-date-weight);
+  line-height: var(--business-card-label-lh);
+  color: var(--color-white);
+}
+
+.project-card__name {
+  font-size: var(--business-card-name-size);
+  font-weight: var(--project-name-weight);
+  line-height: var(--business-card-name-lh);
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+/* Newsroom — Figma 212:2037 · guttered · list rows 128px · btn center */
+.section--newsroom {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.newsroom__shell {
+  width: 100%;
+  padding-inline: var(--layout-pad-x);
+}
+
+.newsroom__head {
+  margin-bottom: var(--business-head-gap);
+}
+
+.newsroom__title {
+  font-size: var(--business-title-size);
+  font-weight: 800;
+  line-height: var(--business-title-lh);
+  text-align: center;
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.newsroom__list {
+  list-style: none;
+}
+
+.newsroom-item__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px);
+  min-height: var(--newsroom-row-h);
+  padding: var(--newsroom-row-pad-y) var(--newsroom-row-pad-x);
+  border: 0;
+  border-bottom: 1px solid var(--newsroom-row-border);
+}
+
+.newsroom-item__title {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--newsroom-item-title-size);
+  font-weight: 600;
+  line-height: var(--newsroom-item-title-lh);
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.newsroom-item__date {
+  flex-shrink: 0;
+  font-size: var(--newsroom-date-size);
+  font-weight: 400;
+  line-height: var(--newsroom-date-lh);
+  color: var(--newsroom-date-color);
+  white-space: nowrap;
+}
+
+.newsroom__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--newsroom-content-btn-gap);
+}
+
+.newsroom__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: var(--newsroom-btn-pad-y) var(--newsroom-btn-pad-x);
+  border: 1px solid var(--color-text);
+  border-radius: var(--newsroom-btn-radius);
+  font-size: var(--newsroom-btn-size);
+  font-weight: 500;
+  line-height: var(--newsroom-btn-lh);
+  color: var(--color-text);
+}
+
+/* Investor — Figma 224:2080 · guttered · flex ratios 1374:442 · rows 597:753 / 753:597 × 417 */
+.section--investor {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.investor__shell {
+  width: 100%;
+  padding-inline: var(--layout-pad-x);
+}
+
+.investor__head {
+  margin-bottom: var(--business-head-gap);
+}
+
+.investor__title {
+  font-size: var(--business-title-size);
+  font-weight: 800;
+  line-height: var(--business-title-lh);
+  text-align: center;
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.investor__layout {
+  display: flex;
+  align-items: stretch;
+  gap: var(--investor-layout-gap);
+}
+
+.investor__cards {
+  display: flex;
+  flex: var(--investor-flex-grid) 1 0;
+  flex-direction: column;
+  gap: var(--investor-layout-gap);
+  min-width: 0;
+  height: var(--investor-panel-h);
+}
+
+.investor__row {
+  display: flex;
+  flex: 1 1 0;
+  gap: var(--investor-layout-gap);
+  min-height: 0;
+}
+
+.investor-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--investor-card-gap);
+  min-width: 0;
+  height: 100%;
+  padding: var(--investor-card-pad-y) var(--investor-card-pad-x);
+  border-radius: var(--investor-card-radius);
+  background: var(--investor-card-bg);
+  text-decoration: none;
+}
+
+.investor-card--narrow {
+  flex: var(--investor-flex-narrow) 1 0;
+}
+
+.investor-card--wide {
+  flex: var(--investor-flex-wide) 1 0;
+}
+
+.investor-card__title {
+  font-size: var(--investor-card-title-size);
+  font-weight: 800;
+  line-height: var(--investor-card-title-lh);
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.investor-card__desc {
+  font-size: var(--investor-card-desc-size);
+  font-weight: 500;
+  line-height: var(--investor-card-desc-lh);
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.investor-panel {
+  position: relative;
+  display: flex;
+  flex: var(--investor-flex-panel) 0 0;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--investor-card-gap);
+  min-width: 0;
+  height: var(--investor-panel-h);
+  padding: var(--investor-card-pad-y) var(--investor-card-pad-x);
+  overflow: hidden;
+  border-radius: var(--investor-card-radius);
+  background: var(--color-muted-bg);
+}
+
+.investor-panel__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.investor-panel__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--investor-panel-overlay);
+  pointer-events: none;
+}
+
+.investor-panel__title {
+  position: relative;
+  z-index: 1;
+  font-size: var(--investor-card-title-size);
+  font-weight: 800;
+  line-height: var(--investor-card-title-lh);
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+.investor-panel__stock {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--investor-stock-gap);
+}
+
+.investor-panel__price {
+  font-size: var(--investor-stock-size);
+  font-weight: 800;
+  line-height: var(--investor-stock-lh);
+  color: var(--color-white);
+  font-variant-numeric: tabular-nums;
+}
+
+.investor-panel__meta {
+  font-size: var(--investor-stock-meta-size);
+  font-weight: 500;
+  line-height: var(--investor-stock-meta-lh);
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+/* Careers — Figma 231:2187 · guttered · card 1840×304 · r16 · CTA center */
+.section--careers {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.careers__shell {
+  width: 100%;
+  padding-inline: var(--layout-pad-x);
+}
+
+.careers__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--careers-card-gap);
+  min-height: var(--careers-card-h);
+  padding: var(--careers-card-pad-y) var(--careers-card-pad-x);
+  border-radius: var(--careers-card-radius);
+  background: var(--color-muted-bg);
+  text-align: center;
+}
+
+.careers__title {
+  max-width: 100%;
+  font-size: var(--careers-title-size);
+  font-weight: 700;
+  line-height: var(--careers-title-lh);
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+.careers__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: var(--careers-btn-pad-y) var(--careers-btn-pad-x);
+  border: 1px solid var(--color-text);
+  border-radius: var(--careers-btn-radius);
+  font-size: var(--careers-btn-size);
+  font-weight: 500;
+  line-height: var(--careers-btn-lh);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* Footer — Figma 244:2298 · gutter 본문 동일 · pad-y 96 */
+.footer {
+  margin-top: var(--section-gap);
+  padding-block: var(--footer-pad-y);
+  background: var(--footer-bg);
+}
+
+.footer__inner {
+  width: 100%;
+  padding-inline: var(--layout-pad-x);
+}
+
+.footer__logo {
+  display: inline-flex;
+  margin-bottom: var(--footer-logo-gap);
+}
+
+.footer__logo-img {
+  width: var(--footer-logo-w);
+  height: var(--footer-logo-h);
+  object-fit: contain;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-content-gap);
+}
+
+.footer__policy-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--footer-policy-gap);
+}
+
+.footer__policy-link {
+  font-size: var(--footer-link-size);
+  font-weight: 700;
+  line-height: var(--footer-link-lh);
+  color: var(--footer-text);
+  white-space: nowrap;
+}
+
+.footer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--footer-meta-gap);
+}
+
+.footer__address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--footer-address-gap);
+}
+
+.footer__address-item,
+.footer__copy {
+  font-size: var(--footer-meta-size);
+  font-weight: 500;
+  line-height: var(--footer-meta-lh);
+  color: var(--footer-text);
+}
+
+.footer__copy {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
+
+  .business-card {
+    flex: 1 1 calc(50% - var(--business-grid-gap) * 0.5);
+  }
+
+  .investor__layout {
+    flex-direction: column;
+  }
+
+  .investor__cards {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .investor__row {
+    flex: 0 0 var(--investor-card-h);
+    height: var(--investor-card-h);
+  }
+
+  .investor-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    height: var(--investor-panel-h);
+  }
+
+  .footer__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .careers__cta {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section--hero {
+    padding-inline: 0;
+  }
+
+  .section-shell--gutter {
+    max-width: 100%;
+    padding-inline: var(--layout-pad-x);
+  }
+
+  .hero__inner {
+    align-items: flex-start;
+    padding-top: calc(var(--header-h) + clamp(48px, 14vw, 112px));
+    padding-left: var(--layout-pad-x);
+  }
+
+  .business-card {
+    flex: 1 1 100%;
+  }
+
+  .investor__row {
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: auto;
+  }
+
+  .investor-card--narrow,
+  .investor-card--wide {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: var(--investor-card-h);
+  }
+
+  .investor-card--narrow {
+    aspect-ratio: 597 / 417;
+  }
+
+  .investor-card--wide {
+    aspect-ratio: 753 / 417;
+  }
+
+  .newsroom-item__link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vision__pin-wrap {
+    height: auto;
+  }
+
+  .vision__pin {
+    position: relative;
+    min-height: 0;
+    padding-block: 0;
+  }
+
+  .section--vision.is-vision-pin-active .vision__card,
+  .js .section--vision.is-vision-pin-active .vision__card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__shell {
+    padding: var(--layout-pad-x);
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__bg {
+    position: static;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__overlay {
+    opacity: 1;
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__title {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .header {
+    transition: none;
+  }
+
+  .header.is-header-hidden {
+    transform: none;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .js .scroll-reveal:not(.is-revealed) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .business-card__bg,
+  .project-card__bg,
+  .investor-panel__bg {
+    transition: none;
+  }
+
+  .business-card__inner:hover .business-card__bg,
+  .project-card__inner:hover .project-card__bg,
+  .investor-panel:hover .investor-panel__bg {
+    transform: scale(1);
+  }
+
+  .btn-slide-hover .btn__track {
+    transition: none;
+    transform: translateY(0);
+  }
+
+  .vision__pin-wrap {
+    height: auto;
+  }
+
+  .vision__pin {
+    position: relative;
+    min-height: 0;
+    padding-block: 0;
+  }
+
+  .section--vision.is-vision-pin-active .vision__card,
+  .js .section--vision.is-vision-pin-active .vision__card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__shell {
+    padding: var(--layout-pad-x);
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__bg {
+    position: static;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .js .section--vision.is-vision-pin-active .vision__overlay,
+  .js .section--vision.is-vision-pin-active .vision__title {
+    opacity: 1;
+    transform: none;
+  }
+}

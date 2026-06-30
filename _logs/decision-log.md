@@ -1,5 +1,53 @@
 # Decision Log
 
+---
+
+## 2026-06-08 — [template] hd-ec 인터랙션 (사용자 승인 · 순차 적용)
+
+| # | 결정 |
+|---|------|
+| 1 | **순서:** ① `scroll-reveal` → ② `hover-tone` → ③ `image-scale-hover` → ④ `stats-counter` → ⑤ `button-text-slide-hover` |
+| 2 | **적용:** 한 preset씩 구현 → 사용자 확인 → 다음 |
+| 3 | **유지:** projects `drag-scroll` (기존) |
+| 4 | **보류 해제:** vision → `scroll-pin-scale-card` (2026-06-08 사용자 승인) |
+
+```
+[template hd-ec] vision: catalog — scroll-pin-scale-card
+[template hd-ec] business: preset — scroll-reveal · hover-tone (CTA) · image-scale-hover · button-text-slide-hover (CTA)
+[template hd-ec] projects: preset — scroll-reveal · drag-scroll · image-scale-hover
+[template hd-ec] newsroom: preset — scroll-reveal · hover-tone · button-text-slide-hover
+[template hd-ec] investor: preset — scroll-reveal · hover-tone · image-scale-hover (panel) · stats-counter
+[template hd-ec] careers: preset — scroll-reveal · hover-tone · button-text-slide-hover
+[template hd-ec] header: interaction — scroll auto-hide (down hide · up show)
+[template hd-ec] footer: preset — hover-tone
+```
+
+---
+
+## 2026-06-08 — [template] hd-ec 신규 템플릿 (header · hero)
+
+| # | 결정 |
+|---|------|
+| 1 | slug **`hd-ec`** · 경로 `templates/hd-ec/` |
+| 2 | Figma `portfolio_HD_E&C_main` (`XSWmFlkkzLChor3uaf7veF` · node `199:951`) |
+| 3 | 1차 범위: **header + hero 정적** · pin/scrub 등 인터랙션 **보류** |
+| 4 | PC @1920 우선 · 모바일 768은 nav 숨김만 |
+| 5 | **Shell:** hero full-bleed · vision **뷰포트 풀폭 + pad 40px** (max-width cap 없음) · header guttered |
+
+### 레이아웃 그리드 (Figma @1920 · 사용자 확정)
+
+| 항목 | 값 |
+|------|-----|
+| 열 개수 | **12** |
+| 유형 | 늘리기(Stretch) · 열 너비 자동 |
+| 마진(좌우) | **40px** |
+| 간격(Gutter) | **24px** |
+| 콘텐츠 폭 | **1840px** (1920 − 40×2) |
+| 1열 너비 | **≈131.33px** ((1840 − 11×24) ÷ 12) |
+| 섹션 간격 | **180px** (`Frame 68` itemSpacing) |
+
+---
+
 ## 2026-06-08 — [template] skhynix-redesign 인터랙션 (Package B · 사용자 승인)
 
 | # | 결정 |
