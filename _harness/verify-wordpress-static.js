@@ -57,6 +57,16 @@ var CONTENT_SKIP_EXTENSIONS = {
 
 var THEME_NAME_PATTERN = /Theme\s*Name\s*:/i;
 
+// PHP CLI 후보 (앞에서부터 사용 가능한 첫 경로 선택)
+var PHP_BIN_CANDIDATES = [
+  process.env.WP_VERIFY_PHP,
+  process.env.PHP_BIN,
+  "C:\\laragon\\bin\\php\\php-8.3.30-Win32-vs16-x64\\php.exe",
+  "php",
+];
+
+var resolvedPhpBin = null;
+
 function createResult() {
   return {
     ok: false,
@@ -282,14 +292,43 @@ function collectPhpFiles(themeDir) {
   return phpFiles;
 }
 
+// PHP CLI 실행 파일 찾기
+function resolvePhpBin() {
+  if (resolvedPhpBin) {
+    return resolvedPhpBin;
+  }
+
+  var i;
+  var candidate;
+
+  for (i = 0; i < PHP_BIN_CANDIDATES.length; i += 1) {
+    candidate = PHP_BIN_CANDIDATES[i];
+
+    if (!candidate) {
+      continue;
+    }
+
+    if (candidate !== "php" && !fs.existsSync(candidate)) {
+      continue;
+    }
+
+    try {
+      childProcess.execSync('"' + candidate.replace(/"/g, '\\"') + '" -v', {
+        stdio: "pipe",
+      });
+      resolvedPhpBin = candidate;
+      return resolvedPhpBin;
+    } catch (error) {
+      // 다음 후보 시도
+    }
+  }
+
+  return null;
+}
+
 // PHP CLI 설치 여부
 function isPhpCliAvailable() {
-  try {
-    childProcess.execSync("php -v", { stdio: "pipe" });
-    return true;
-  } catch (error) {
-    return false;
-  }
+  return !!resolvePhpBin();
 }
 
 // PHP 문법 검사
@@ -306,19 +345,25 @@ function checkPhpSyntax(result, themeDir) {
       result,
       "FAIL",
       "PHP 명령줄(CLI)이 설치되어 있지 않습니다",
-      "php -l 문법 검사를 실행할 수 없습니다"
+      "php -l 문법 검사를 실행할 수 없습니다 · 환경변수 WP_VERIFY_PHP 로 경로 지정 가능"
     );
     return;
   }
+
+  var phpBin = resolvePhpBin();
+  addCheck(result, "PASS", "PHP CLI 확인", phpBin);
 
   var hasSyntaxError = false;
 
   phpFiles.forEach(function (filePath) {
     try {
-      childProcess.execSync('php -l "' + filePath.replace(/"/g, '\\"') + '"', {
-        stdio: "pipe",
-        encoding: "utf8",
-      });
+      childProcess.execSync(
+        '"' + phpBin.replace(/"/g, '\\"') + '" -l "' + filePath.replace(/"/g, '\\"') + '"',
+        {
+          stdio: "pipe",
+          encoding: "utf8",
+        }
+      );
       addCheck(result, "PASS", "PHP 문법 정상", relativePath(themeDir, filePath));
     } catch (error) {
       hasSyntaxError = true;

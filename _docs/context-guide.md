@@ -82,13 +82,14 @@
 충돌이 발생하면 아래 순서를 따른다.
 
 1. 최신 사용자 명시 승인/지시
-2. active rules
-3. `decision-log.md`
-4. 현재 작업 범위
-5. Figma MCP 수치
-6. `qa-log.md` / `failure-log.md`
-7. `change-log.md`
-8. legacy 문서
+2. **Figma 파일 댓글** (`read_comments` — 범위·카피·동작·보류)
+3. active rules
+4. `decision-log.md`
+5. 현재 작업 범위
+6. Figma MCP 수치 (JSON)
+7. `qa-log.md` / `failure-log.md`
+8. `change-log.md`
+9. legacy 문서
 
 모호하면 구현하지 말고 **질문**한다.
 
@@ -99,6 +100,7 @@
 **작업 전** — 3~5줄 이내
 
 - 이번에 할 **섹션** (Figma 이름)
+- **댓글 요약** (있으면 — 범위·카피·지시)
 - **눈에 보이는 수치** (여백, 글자, 정렬, 이미지 비율)
 - **물어볼 것** (있을 때만)
 
