@@ -42,6 +42,35 @@ wordpress/{slug}/
 - slug 승인 전 `wordpress/{slug}/` 폴더 생성 **금지**
 - `decision-log`에 `[type: wordpress]` · theme-slug · hosting 기록
 
+## 킥오프 — 다시 묻지 않을 기본값
+
+아래는 **질문하지 않고** 적용 · `decision-log`에 없어도 본 규칙이 우선.
+
+| 항목 | 기본값 |
+|------|--------|
+| 관리자 수정 범위 | **공지(`notice`)만** — hero·GNB·섹션 카피는 코드 고정 |
+| 공지 CPT slug | **`notice`** |
+| 메인 공지 노출 | 최신 **3건** |
+| 호스팅 | **카페24 뉴아우토반 WordPress** |
+| 개발 방식 | Figma부터 **`wordpress/{slug}/` 테마 직접 구현** |
+| 정적 선행 | **`templates/` HTML 선행 제작·기본 이식 없음** |
+| 개발 중 확인 | **로컬 WordPress 우선** (레이아웃·섹션) |
+| 최종 QA | **카페24 업로드 후** (공지·permalink·테마 활성) |
+| 납품물 | `package-delivery-wp.js` → **`{slug}.zip`** 테마 |
+| 업로드·활성화 | **사용자 수행** — AI는 ZIP·안내만 |
+
+## 킥오프 — 조건부 질문만
+
+> 공통 킥오프 5항목: `00-project-tracks.mdc` · 이미 답했거나 위 기본값이면 **재질문 금지**
+
+| 조건 | 질문 |
+|------|------|
+| 공지 **외** 콘텐츠도 관리자에서 수정해야 함 | 어떤 영역(hero·메뉴·배너 등)·CPT/필드 범위 |
+| Figma에 **문의·상담·예약 폼** 있음 | **디자인(화면)만** vs **실제 전송·연동**까지 필요한지 |
+| 해당 섹션 **인터랙션** 검토·적용 시 | preset ID·한글명 **승인** (`46-interaction-presets.mdc` — 카탈로그 자동 적용 금지) |
+| **이미지·원고** 최종본 여부 불분명 | 최종본 vs 개발 중 placeholder·추후 교체 |
+| **정적 완성본 → WordPress 이식** 요청 | 이식 범위·slug · **기본 워크플로 아님** — 승인 후 진행 |
+
 ## functions.php · enqueue
 
 - CSS/JS는 **`wp_enqueue_style` / `wp_enqueue_script`** — `functions.php`에서만 등록

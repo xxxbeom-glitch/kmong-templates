@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Project Tracks
 
-작업 시작 전 **트랙**을 확인한다. `decision-log`에 `[type: static]` 또는 `[type: wordpress]`가 없으면 slug·트랙을 사용자에게 확인한다.
+작업 시작 전 **트랙**을 확인한다.
 
 | 트랙 | 개발 경로 | 규칙 | 납품 |
 |------|-----------|------|------|
@@ -18,7 +18,30 @@ alwaysApply: true
 - Figma부터 `wordpress/{slug}/`에 **Classic Custom Theme** 직접 구현 (정적 HTML 선행 **기본 아님**)
 - `templates/` 완성본 → `wordpress/` **이식**은 사용자 **명시 요청 시만**
 - 호스팅: **카페24 뉴아우토반 WordPress** · 업로드 `wp-content/themes/{theme-slug}/`
-- CMS: **공지(`notice` CPT)만** 관리자 수정 · 메인 최신 **3건**
+- CMS: **공지(`notice` CPT)만** 관리자 수정 · 메인 최신 **3건** — 상세·기본값 `70-wordpress.mdc`
+
+## 프로젝트 킥오프 — 질문 규칙
+
+> **원칙:** 필요한 결정만 질문 · 이미 말한 내용·`decision-log` 확정·규칙 기본값은 **재질문 금지** · Figma·기존 폴더로 명확하면 **질문 대신 근거 1줄 보고**
+
+### 항상 확인 (불명확할 때만)
+
+| # | 확인 항목 | 질문 예시 | 생략 조건 |
+|---|-----------|-----------|-----------|
+| 1 | **트랙** static / wordpress | 「크몽 **정적**이에요, **WordPress 운영**이에요?」 | 요청·`decision-log`에 `[type: static]` 또는 `[type: wordpress]` 있음 |
+| 2 | **신규 vs 기존 수정** | 「**신규** 프로젝트예요, **기존 slug 수정**이에요?」 | `templates/{slug}/` 또는 `wordpress/{slug}/` 존재 + 로그에 동일 slug 작업 이력 |
+| 3 | **slug** (신규만) | Figma 프레임명 → kebab-case **제안** → 승인 | slug·폴더 경로 사용자가 이미 지정 · `decision-log` 확정 |
+| 4 | **페이지·화면 범위** | 「이번에 **만드는 페이지**가 뭐예요?」 | Figma 프레임·요청에 범위 명시 · WP 기본 화면은 `70-wordpress.mdc` 근거로 보고 가능 |
+| 5 | **Figma 코딩 승인** | MCP 분석 보고 후 「**이대로 진행할까요?**」 | **항상 필수** — 사용자 **「확인했어, 진행해」**·「진행」 등 명시 승인 전 코딩 **금지** (`20-harness-workflow.mdc`) |
+
+- 킥오프 질문은 **한 메시지에 묶어** 가능 · 아직 결정 불필요한 항목(인터랙션·폼 상세 등)은 **미리 묻지 않음**
+- **조건부 질문** — WordPress: `70-wordpress.mdc` 「킥오프 — 조건부」 · static 인터랙션: `46-interaction-presets.mdc`
+
+### 질문 생략 (공통)
+
+- 사용자가 **이번 대화에서 이미 답한** 내용
+- **`decision-log`에 확정**된 내용
+- Figma MCP·기존 폴더·로그로 **판단 가능**한 내용 — 추측 구현 금지, **근거 1줄 보고**로 대체
 
 ## 충돌 시 우선순위
 
