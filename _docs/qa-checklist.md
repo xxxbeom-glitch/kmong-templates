@@ -149,6 +149,7 @@
 - [ ] GNB `is-active` 해당 페이지 HTML에만 적용
 - [ ] FAQ 아코디언 · 캐러셀 · AOS · CTA hover
 - [ ] **Preset ID** = 사용자 승인 목록 · 섹션당 상한 · **중복 animation 없음**
+- [ ] **`scroll-reveal` 등장 단위** — 카드는 루트 통째(배경+내용) · 헤드·비카드 본문은 세부 · 카드 자식에 `scroll-reveal` 없음 (`46` 기본값)
 - [ ] `prefers-reduced-motion` 동작
 - [ ] 콘솔 에러 없음
 

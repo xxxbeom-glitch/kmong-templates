@@ -3,6 +3,7 @@ description: 섹션·페이지 QA 통과 기준
 alwaysApply: false
 globs:
   - templates/**/*
+  - wordpress/**/*
   - _docs/qa-checklist.md
   - _logs/qa-log.md
 ---
@@ -128,6 +129,7 @@ globs:
 - [ ] **F5 새로고침** — scroll top (`scrollRestoration` + `pageshow`) · 중간 위치 복원 **금지**
 - [ ] GNB 햄버거 · FAQ · 캐러셀 · AOS · CTA hover (fine pointer만)
 - [ ] **Interaction preset** — 적용 ID = 사용자 승인 목록 · 섹션당 상한 · 중복 animation 없음 (`46-interaction-presets.mdc`)
+- [ ] **`scroll-reveal` 등장 단위** — 카드 루트 통째 · 헤드·비카드 본문 세부 · 카드 내 자식 `scroll-reveal` 없음 (`46` · `45`)
 - [ ] 링크·GNB `is-active` 페이지별 정확
 
 ## 납품·삽입

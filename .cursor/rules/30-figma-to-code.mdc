@@ -11,45 +11,63 @@ globs:
 
 ## MCP 시작 시 보고 (코딩·폴더 생성 전)
 
-0. **Figma 댓글** — `read_comments` (`file_key`) · 아래 「Figma 댓글」절차
+0. **Figma 댓글·주석** — `read_comments` + JSON 주석 스캔 · 아래 「Figma 댓글·주석」절차
 1. **최상위 프레임명** (원본) + 정규화 **Proposed slug** + `templates/{slug}/` 또는 `wordpress/{slug}/` (신규 시)
 2. **섹션 구조:** 하위 레이어 이름·개수
 3. 이후 레이아웃·수치 분석 (`20-harness-workflow.mdc` 참고)
 4. 사용자 승인 전 — 폴더 생성·코딩 **금지**
 
-## Figma 댓글 (코멘트) — 필수
+## Figma 댓글·주석 — 필수
 
-> Figma MCP **`read_comments`** · JSON·썸네일보다 **먼저** 확인한다.
+> **댓글**(`read_comments`)과 **주석**(Annotations·Description·전달 메모)을 JSON·썸네일보다 **먼저** 확인한다.
+
+### Figma에서 구분
+
+| 구분 | Figma UI | MCP·확인 방법 |
+|------|----------|----------------|
+| **댓글** | Comments (💬 협업 댓글) | **`read_comments(file_key)`** |
+| **주석** | Dev Mode **Annotations** (주황 핀) | `add_figma_file` JSON · 노드 `description` · 전달 메모 레이어 |
+| **전달 메모** | 설명 텍스트·`note`/`memo`/`주석` 등 이름의 레이어 | JSON 레이어명·TEXT 내용 스캔 |
+
+> 주석 전용 MCP 도구는 **없음** — JSON 파싱 + (필요 시) Figma 화면에서 교차 확인.
 
 ### 절차
 
 ```
 add_figma_file / file_key 확보
 → read_comments(file_key)
-→ 이번 섹션·페이지·범위와 관련 댓글만 추려 요약
-→ add_figma_file JSON 파싱
+→ add_figma_file JSON 파싱 — 이번 섹션 관련 주석·description·메모 레이어 추출
+→ 이번 섹션·페이지·범위와 관련 댓글·주석만 추려 요약
 → (필요 시) view_node 썸네일
 ```
+
+### JSON에서 주석 찾기 (해당 섹션 노드·자식)
+
+- 프레임·컴포넌트 **`description`** 필드
+- Dev Mode **annotation**·dev resource 관련 필드 (JSON에 있으면)
+- 전달용 **TEXT** · 이름에 `note` · `memo` · `주석` · `dev` · `전달` 포함 레이어
+- 이번 작업 **섹션 프레임 하위만** 스캔 — 파일 전체 무작위 나열 **금지**
 
 ### 보고에 포함할 것
 
 | 항목 | 내용 |
 |------|------|
 | **관련 댓글** | 본문 요약 · 달린 프레임/노드(알 수 있으면) · 확정·보류·수정 지시 |
+| **관련 주석** | Annotation·description·메모 레이어 요약 · node-id(알 수 있으면) |
 | **이번 작업 반영** | 범위·카피·동작·인터랙션·납품 제외 항목 |
-| **댓글 없음** | 「댓글 없음」 1줄 명시 |
+| **댓글·주석 없음** | 「댓글 없음」·「주석 없음」 각각 1줄 명시 |
 
-### 우선순위 (댓글 vs JSON)
+### 우선순위 (댓글·주석 vs JSON)
 
 | 주제 | 우선 |
 |------|------|
-| **범위·카피·동작·보류·「하지 말 것」** | **댓글** |
+| **범위·카피·동작·보류·「하지 말 것」** | **댓글·주석** |
 | **padding·gap·색·font·bbox·Section BG** | **JSON** (`fills[]` 등) |
-| **댓글과 JSON이 모순** | 구현 **금지** — 양쪽 1줄씩 보고 후 사용자 확인 |
+| **댓글·주석과 JSON이 모순** | 구현 **금지** — 양쪽 1줄씩 보고 후 사용자 확인 |
 
 **금지:**
-- 댓글 미확인 상태에서 범위·카피·동작을 JSON·썸네일만으로 추측
-- 해결되지 않은 댓글 지시를 임의로 무시
+- 댓글·주석 미확인 상태에서 범위·카피·동작을 JSON·썸네일만으로 추측
+- 해결되지 않은 댓글·주석 지시를 임의로 무시
 
 ## MCP JSON 분석 (필수 — 코딩 전)
 
@@ -59,12 +77,12 @@ add_figma_file / file_key 확보
 
 | 순위 | 소스 | 용도 |
 |------|------|------|
-| 0 | **`read_comments`** | 범위·카피·동작·보류·수정 지시 · **MCP 연결 직후 1순위** |
+| 0 | **`read_comments` + JSON 주석** | 댓글 · Annotations · `description` · 전달 메모 레이어 · **MCP 연결 직후 1순위** |
 | 1 | **`add_figma_file` JSON** | `fills[]` · padding · gap · bbox · TEXT color · gradient stops |
 | 2 | **`_harness/_figma-dump.txt`** 등 구조화 dump | 빠른 섹션 스캔 · JSON 교차 확인 |
 | 3 | **`view_node` 썸네일** | 레이아웃·구성 **참고만** — Section BG · overlay · hex **확정 근거로 사용 금지** |
 
-댓글과 JSON이 충돌하면 **구현하지 않고** 보고한다. 수치·색은 JSON, 의도·범위는 댓글을 각각 근거로 쓴다.
+댓글·주석과 JSON이 충돌하면 **구현하지 않고** 보고한다. 수치·색은 JSON, 의도·범위는 댓글·주석을 각각 근거로 쓴다.
 
 JSON과 썸네일이 충돌하면 **JSON 우선**. TEXT color와 Section BG가 모순이면 **fill 상속·형제 섹션 대조**로 Section BG를 확정하고, head 타이포는 TEXT `fills[]` MCP 값을 따른다.
 

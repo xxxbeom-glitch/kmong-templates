@@ -1,5 +1,192 @@
 # Change Log
 
+## 2026-07-07 — [project] scroll-reveal 등장 단위 프로젝트 기본값 확정
+
+**범위:** `46-interaction-presets.mdc` · `45-interaction-patterns.mdc` · `interaction-presets-guide.md` · `50-qa-checklist.mdc` · `_docs/qa-checklist.md` · `decision-log` · `70-wordpress.mdc`  
+**내용:** 카드=루트 통째 등장 · 헤드·비카드 본문=세부 등장 · 카드 자식 scroll-reveal 금지 · QA 체크리스트 반영
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental scroll-reveal 카드 단위 통합
+
+**변경:** 카드 내부만 등장하던 문제 수정 — 피처드·미디어·info·matrix·process·space·digital 사진/탭은 **카드 전체** `scroll-reveal` · 헤드·philosophy 본문은 줄 단위 유지
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental scroll-reveal 세부 단위 수정
+
+**범위:** section template-parts · `main.js` · `style.css`  
+**변경:** band/블록 묶음 제거 · 라벨·제목 줄·본문·번호·사진·캡션·매트릭스 항목 **요소마다** `scroll-reveal` · JS 전 요소 개별 큐 순차 등장
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental 추천 인터랙션 preset 적용
+
+**범위:** `main.js` · `style.css` · `inc/assets.php` · header · section template-parts  
+**preset:** `scroll-reveal` · `hover-tone` · `image-scale-hover` · `button-text-slide-hover`  
+**유지:** digital 탭 클릭·opacity (Figma 주석)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental reservation CTA 섹션
+
+**범위:** `template-parts/section-reservation.php` · `front-page.php` · `style.css`  
+**Figma:** `453:582` 07_Reservation CTA / Conversion  
+**변경:** 가운데 정렬 eyebrow·제목 2줄 · CTA 2버튼(카카오톡·게시판) · green 11% BG · Space↔Footer 사이 배치
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental space 섹션
+
+**범위:** `template-parts/section-space.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**Figma:** `453:543` 06_Space / Clinic Gallery  
+**변경:** 헤더 + 4열 갤러리 카드(500:420) · caption overlay 80% · gap 24 · imageRef 매핑 · fluid clamp · 태블릿·모바일 보류
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental digital 2열 레이아웃 수정
+
+**범위:** `style.css`  
+**원인:** `var(--digital-media-fr)fr` — CSS에서 `fr` 단위와 변수 조합 불가 → 그리드 무효·상하 스택  
+**변경:** `grid-template-columns: 908fr / 532fr` (Figma 908+532=1440)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental digital 섹션
+
+**범위:** `template-parts/section-digital.php` · `front-page.php` · `style.css` · `assets/js/main.js` · `inc/assets.php` · `functions.php`  
+**Figma:** `453:516` 05_Digital / Clinical Environment  
+**변경:** 헤더 + 2열(908 이미지 + 532 리스트) · 4항목·구분선 gap 54 · 항목 클릭 시 이미지 교환 · fluid clamp · 태블릿·모바일 보류  
+**이미지:** 01 scanner · 02 imaging · 03 examination · 04 treatment-room(임시)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental process 번호 알파
+
+**범위:** `style.css`  
+**Figma:** `462:54` step-number · `#0d422e` opacity **0.15**  
+**변경:** 번호 색 `rgba(13,66,46,0.15)` (기존 `#0d422e` 100% 오류)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental process 섹션
+
+**범위:** `template-parts/section-process.php` · `front-page.php` · `style.css`  
+**Figma:** `453:478` 04_Process / Patient Journey  
+**변경:** 헤더 + 5단계 카드 그리드 · bg `#f8f8f8` · 카드 pad 24 · gap 24/12/8 · fluid clamp · 태블릿·모바일 보류  
+**부가:** treatments 매트릭스 번호 고정폭 44px 롤백 (gap 12만 유지)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental treatments 2×2 숫자 간격
+
+**범위:** `style.css`  
+**Figma:** `453:649` Treatment Item — Index w 44 · index↔copy gap 12 · counterAlign CENTER  
+**변경:** 매트릭스 번호 고정폭 44px + gap 12px (숫자 텍스트폭만 쓰던 오류)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental treatments 피처드 이미지·텍스트 간격
+
+**범위:** `inc/assets.php` · `style.css` · `assets/images/03-treatments/featured-card.png`  
+**Figma:** `453:409` featured-card · imageRef `35da1d25…`  
+**이미지:** `treatments-featured` → `03-treatments/featured-card.png` (기존 consultation-room 오류)  
+**간격:** 피처드 head↔본문 16px · 본문 줄 사이 gap 제거(Figma Body 스택)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental treatments 색·오버레이 정합
+
+**범위:** `style.css` · `inc/assets.php`  
+**Figma:** `453:404` — 섹션 fill `rgba(118,161,125,0.11)` (기존 `#76a17d` 오류) · 피처드 overlay 45% · 임플란트 overlay `rgba(255,255,255,0.6)` · 본문 60% · 매트릭스 번호 세로 center  
+**이미지:** `treatments-featured` → `01-hero/hero-main.png`
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental treatments 섹션
+
+**범위:** `template-parts/section-treatments.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**Figma:** `453:404` 03_Treatments / Service Overview  
+**변경:** 헤더+2열(피처드 620 + 우측 796) · 카드행(임플란트 400+예방 372) · 2×2 매트릭스 구분선(24/29/28) · fluid clamp · 태블릿·모바일 보류  
+**이미지:** `treatments-featured` → patient-care · `treatments-implant` → implant-illustration
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental philosophy 섹션
+
+**범위:** `template-parts/section-philosophy.php` · `front-page.php` · `style.css`  
+**Figma:** `474:877` 02_Philosophy / Care Principles  
+**변경:** 2열(소개+3원칙 리스트) · fluid clamp · @1024 1열 스택
+
+---
+
+# Change Log
+
+## 2026-07-06 — [wordpress] 365-barun-dental typography · SUIT 가이드
+
+**범위:** `style.css` · `functions.php` · 메인 페이지 전 섹션  
+**변경:** Pretendard → **SUIT** CDN · `:root` type scale 토큰 · eyebrow/본문/푸터 색·크기 가이드 정합 · Space H1 48/62 · Digital H4 18/28 · Treatments 카드 H3 24/32 · Hero 본문 17/30
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental digital 탭 opacity 주석 반영
+
+**범위:** `style.css` · Digital `453:516`  
+**Figma 주석:** 탭 클릭 시 활성 `opacity:1` · 비활성 `0.3` · 좌측 이미지 전환 · 기본 01 활성  
+**변경:** `.section-digital__item` 비활성 0.3 · `.is-active` 1 (이미지 전환·기본 01은 기존 구현)
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental footer logo 새로고침 사라짐 수정
+
+**범위:** `footer.php` · `style.css` · `assets/images/logos/footer-logo.png`  
+**원인:** 로고 PNG 1774×887(검정 여백 과다) + `height:auto`/`object-fit` 충돌로 새로고침 시 렌더 불안정  
+**변경:** PNG 크롭·검정→투명(1573×309) · 로고 wrapper + Figma 258×58 고정 · `loading=eager`
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental hero / KV
+
+**범위:** `template-parts/section-hero.php` · `front-page.php` · `style.css` · `inc/assets.php` · `header.php`  
+**Figma:** `453:348` · imageRef `41f54d2c…` → `04-process/patient-care.png`  
+**변경:** KV 정적 구현 · eyebrow/headline/desc/CTA 2개 · gradient overlay · fluid clamp · @768 스택
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental assets 정리 · 매핑
+
+**범위:** `wordpress/365-barun-dental/assets/images/` · `inc/assets.php` · `functions.php` · `header.php` · `footer.php`  
+**변경:** 해시·임시 파일명 → 섹션별 폴더·kebab-case 리네이밍 · `barun_dental_asset_uri()` 매핑 · 헤더·푸터 로고 PNG 연결 · JS `barunDentalAssets` 전달  
+**폴더:** `logos/` · `01-hero/` · `02-philosophy/` · `03-treatments/` · `04-process/` · `05-digital/` · `06-space/gallery/`  
+**확인 필요:** `smile-01.jpg`~`04.jpg` — 정리 중 누락 가능 · `assets/images/06-space/gallery/`에 재투입
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental header GNB 간격 수정
+
+**범위:** `style.css` · Header `453:331`  
+**Figma:** 메뉴 셀 110px · center · gap 12 · 메뉴↔CTA 16 · nav-container space-between  
+**변경:** 메뉴 항목 고정폭 110 + 가운데 정렬 · 잘못된 logo-gap 126 제거 · right 그룹 flex-end/stretch 제거
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental footer 간격·구조 전면 정합
+
+**범위:** `footer.php` · `style.css` · Footer `453:603`  
+**Figma:** pad 96/600 · inner 720 · stack gap 24 · hours divider→grid 24 · grid gap 16 · row gap 12 · legal pad-top 24 · meta gap 12 · copy gap 20  
+**변경:** HTML 블록 구조 Figma 계층에 맞춤 · 색 opacity MCP 확정값 · 카피(화·목 야간·학동로/유신빌딩) · copyright 위 구분선 제거
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental header · footer
+
+**범위:** `wordpress/365-barun-dental/` — `style.css` · `functions.php` · `header.php` · `footer.php` · `index.php` · `front-page.php` · `assets/js/main.js` · `assets/images/*.svg`  
+**Figma:** `453:331` Header · `453:603` Footer  
+**변경:** 테마 스캐폴드 + GNB(5메뉴·상담·예약 CTA) + 푸터(진료시간·주소·사업자·약관 링크) · Fluid clamp · @1024 햄버거 · verify PASS 15/15  
+**미완:** Figma 로고 VECTOR → PNG/SVG 교체 · 메뉴·CTA 실 URL · 본문 섹션 01–07
+
+---
+
 ## 2026-06-08 — [template] hd-ec vision box-2 type = section title
 
 **범위:** `css/style.css`  

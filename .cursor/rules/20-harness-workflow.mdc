@@ -12,7 +12,7 @@ alwaysApply: true
 새 작업 또는 새 섹션 착수 전 `_docs/context-guide.md`의 우선순위에 따라 **현재 작업에 필요한 컨텍스트만** 확인한다.
 
 **기본 순서:**
-현재 사용자 요청 → active rules → project-overview → 관련 로그 → 템플릿별 확정 기준 → **Figma 댓글(`read_comments`)** → Figma MCP 분석 → 사용자 선호
+현재 사용자 요청 → active rules → project-overview → 관련 로그 → 템플릿별 확정 기준 → **Figma 댓글·주석** → Figma MCP 분석 → 사용자 선호
 
 - 작업과 무관한 과거 정보는 끌어오지 않는다.
 - legacy 문서는 active rules가 아니므로 **근거로 사용하지 않는다**.
@@ -44,7 +44,7 @@ alwaysApply: true
 컨텍스트 확인
 → 로그 확인
 → 범위 확인
-→ Figma 댓글 확인 (`read_comments`)
+→ Figma 댓글·주석 확인 (`read_comments` + JSON 주석)
 → Figma MCP 분석 보고
 → 사용자 승인 대기
 → 섹션 구현
@@ -57,7 +57,7 @@ alwaysApply: true
 1. **범위 확인** (코딩 전 필수)
    - `작업 범위: [파일] / [섹션] / [변경 요약]` 한 줄 제시
 2. **Figma 분석 보고** (MCP 사용 시, 코딩 전 필수)
-   - **`read_comments`** — 파일 연결 직후 **가장 먼저** (`30-figma-to-code.mdc` 「Figma 댓글」) · 이번 섹션·범위와 관련 댓글 요약
+   - **Figma 댓글·주석** — 파일 연결 직후 **가장 먼저** (`30-figma-to-code.mdc`) · `read_comments` + JSON에서 Annotations·description·메모 레이어 · 이번 섹션·범위 요약
    - **`add_figma_file` JSON 파싱** (`30-figma-to-code.mdc` 「MCP JSON 분석」) — `view_node` 썸네일만으로 BG·overlay 확정 **금지**
    - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · **Section BG 1줄 (node-id · fills | 부모 상속)** · **Overlays 1줄** · **(2섹션+) 인접 Section BG 표** · 모호한 점
    - **(인터랙션 검토 시)** preset 후보 ID · `46-interaction-presets.mdc` — **사용자 선택·승인 전 구현 금지**
@@ -72,7 +72,7 @@ alwaysApply: true
 템플릿 페이지 구현은 **한 번에 한 섹션**을 기본 단위로 한다.
 
 ```
-Figma 댓글 확인 (read_comments)
+Figma 댓글·주석 확인 (read_comments + JSON)
 → Figma MCP 분석(해당 섹션)
 → 사용자 승인
 → 섹션 구현
@@ -159,7 +159,7 @@ QA PASS 후
 
 ### Figma 분석 보고 (코딩 전)
 - **한 줄:** 이번에 할 섹션·파일
-- **댓글 요약 (필수):** `read_comments` — 이번 섹션·범위 관련 지시·카피·보류·확정 (없으면 「댓글 없음」)
+- **댓글·주석 요약 (필수):** 댓글(`read_comments`) + 주석(JSON·Annotations·description·메모 레이어) — 이번 섹션·범위 관련 지시·카피·보류·확정 (없으면 「댓글 없음」「주석 없음」)
 - **눈으로 보이는 것:** 레이아웃, 여백, 글자 크기·정렬, 이미지 비율
 - **Shell 1줄 (필수):** `guttered | full-bleed | breakout` + bg·content bbox width (CTA·stats 등 **섹션마다**)
 - **Section BG 1줄 (필수):** `#hex` + node-id + fills 또는 부모 상속 근거 · **인접 섹션과 다르면 표로 대조**
@@ -190,7 +190,7 @@ QA PASS 후
 
 금지:
 - Figma 보고·승인 없이 바로 코딩
-- **`read_comments` 없이** JSON·썸네일만으로 범위·카피·동작 확정
+- **댓글·주석 미확인** 상태에서 JSON·썸네일만으로 범위·카피·동작 확정
 - QA 생략 후 완료 처리
 - **`_harness/workbench/`·별도 공간에서 구현 후 templates 반영**
 - 요청 밖 섹션 추가·삭제·클래스명·카피·수치 임의 변경

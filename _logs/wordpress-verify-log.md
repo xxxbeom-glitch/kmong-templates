@@ -139,3 +139,87 @@
 - 최종 결과: **PASS**
 - PASS: 12 · FAIL: 0 · WARN: 0
 
+## 2026-07-06T12:27:16.658Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 15 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T12:34:57.178Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 16 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T12:52:18.767Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 16 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T12:59:27.733Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 17 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T13:12:14.279Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 18 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T13:26:23.640Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 19 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T13:48:56.127Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 20 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:06:31.242Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 21 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:12:06.407Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 21 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:16:15.494Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 22 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:43:26.886Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 22 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:46:09.068Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 23 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:47:47.881Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 23 · FAIL: 0 · WARN: 0
+
+## 2026-07-06T14:56:27.116Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 23 · FAIL: 0 · WARN: 0
+

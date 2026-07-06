@@ -2,6 +2,45 @@
 
 ---
 
+## 2026-07-07 — [project] `scroll-reveal` 등장 단위 기본값 (전 템플릿)
+
+| # | 결정 |
+|---|------|
+| 1 | **카드**(사진·패널 BG·캡션 프레임) → **루트 1개** `scroll-reveal` · 배경+내용 **함께** 등장 |
+| 2 | **섹션 헤드** → label · title 줄 · lead 문장 **각각** |
+| 3 | **비카드 리스트 행** → 번호 · 제목 · 본문 **각각** |
+| 4 | 카드 루트에 `scroll-reveal` 시 **자식에 동일 클래스 금지** |
+| 5 | JS band/batch 일괄 재생 **금지** — 개별 observe + 문서순 큐 |
+| 6 | 규칙: `46-interaction-presets.mdc` · `45-interaction-patterns.mdc` · `_docs/interaction-presets-guide.md` · QA `50` · `_docs/qa-checklist.md` §4 |
+| 7 | 참고 구현: `wordpress/365-barun-dental/` |
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental 인터랙션 (추천 preset · 사용자 승인)
+
+| # | 결정 |
+|---|------|
+| 1 | **scroll-reveal** — philosophy · treatments · process · digital · space · reservation (hero 제외) |
+| 1-1 | **scroll-reveal 단위** — **카드**(배경+내용 한 덩어리) · **섹션 헤드·본문**(라벨·제목 줄·문장) 세부 등장 |
+| 2 | **hover-tone** — GNB 링크 · 푸터 약관 링크 |
+| 3 | **image-scale-hover** — treatments 피처드·미디어 카드 · space 갤러리 |
+| 4 | **button-text-slide-hover** — header CTA · hero CTA ×2 · reservation CTA ×2 |
+| 5 | **유지** — digital 탭 클릭·opacity·이미지 교환 (Figma 주석, catalog 외) |
+
+---
+
+## 2026-07-06 — [wordpress] 365-barun-dental 신규 테마 (header · footer)
+
+| # | 결정 |
+|---|------|
+| 1 | slug **`365-barun-dental`** · 경로 `wordpress/365-barun-dental/` |
+| 2 | Figma `포포포포폴` · `00_page-home` (`XSWmFlkkzLChor3uaf7veF` · node `453:330`) |
+| 3 | 1차 범위: **00_Header + 11_Footer** · 본문 섹션 보류 |
+| 4 | **Shell:** header guttered 1440 + pad 240 · footer inner **720** + pad **600** (1920 기준) |
+| 5 | 로고: Figma VECTOR 미수출 → 임시 SVG · 납품 전 교체 |
+
+---
+
 ## 2026-06-08 — [template] hd-ec 인터랙션 (사용자 승인 · 순차 적용)
 
 | # | 결정 |

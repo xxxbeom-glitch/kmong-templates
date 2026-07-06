@@ -104,15 +104,15 @@ new WP_Query(array(
 
 ## Figma → 테마
 
-- MCP 연결 시 **`read_comments` 먼저** · 이후 수치·shell — `30-figma-to-code.mdc` 「Figma 댓글」
+- MCP 연결 시 **댓글·주석 먼저** · 이후 수치·shell — `30-figma-to-code.mdc` 「Figma 댓글·주석」
 - 수치·shell·Section BG·gap·font — `30-figma-to-code.mdc` **동일 기준**
 - 출력은 **PHP 템플릿** (`get_header()` / `get_footer()` · template parts 허용)
-- 반응형 · 인터랙션: `35-responsive.mdc` · 승인된 preset만 `46-interaction-presets.mdc`
+- 반응형 · 인터랙션: `35-responsive.mdc` · 승인된 preset만 `46-interaction-presets.mdc` · **`scroll-reveal` 등장 단위는 `46` 기본값**(카드 통째 · 헤드 세부) 별도 지시 없으면 필수
 
 ## 워크플로 (섹션 단위)
 
 ```
-로그 확인 → 범위 확인 → Figma 댓글 → Figma MCP 보고 → 사용자 승인
+로그 확인 → 범위 확인 → Figma 댓글·주석 → Figma MCP 보고 → 사용자 승인
 → wordpress/{slug}/ 섹션 구현 (HTML 구조 대신 PHP 템플릿)
 → 섹션 QA → qa-log → 사용자 PASS → 다음 섹션
 ```

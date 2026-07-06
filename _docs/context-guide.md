@@ -58,6 +58,7 @@
 7. **Interaction preset** (인터랙션 작업·승인 시)
    - `.cursor/rules/46-interaction-presets.mdc` · `_docs/interaction-presets-guide.md`
    - **사용자가 선택·승인한 preset ID만** — 카탈로그 10종 전체 ≠ 자동 적용
+   - **`scroll-reveal` 기본값:** 카드 루트 통째 · 헤드·비카드 본문 세부 (`decision-log` 2026-07-07)
 
 8. **사용자 선호**
    - **비개발 UI 디자이너** — 설명은 **짧고·Figma 말·쉬운 한국어** (`20-harness-workflow.mdc` 「사용자 커뮤니케이션」)
@@ -82,7 +83,7 @@
 충돌이 발생하면 아래 순서를 따른다.
 
 1. 최신 사용자 명시 승인/지시
-2. **Figma 파일 댓글** (`read_comments` — 범위·카피·동작·보류)
+2. **Figma 파일 댓글·주석** (`read_comments` + JSON Annotations·description·메모 레이어 — 범위·카피·동작·보류)
 3. active rules
 4. `decision-log.md`
 5. 현재 작업 범위
@@ -100,7 +101,7 @@
 **작업 전** — 3~5줄 이내
 
 - 이번에 할 **섹션** (Figma 이름)
-- **댓글 요약** (있으면 — 범위·카피·지시)
+- **댓글·주석 요약** (있으면 — 범위·카피·지시)
 - **눈에 보이는 수치** (여백, 글자, 정렬, 이미지 비율)
 - **물어볼 것** (있을 때만)
 

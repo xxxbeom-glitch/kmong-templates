@@ -1,5 +1,275 @@
 # QA Log
 
+## 2026-07-06 — 365-barun-dental 인터랙션 preset (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** 메인 페이지 PC 인터랙션  
+**결과:** **PASS (코드)** — 브라우저 확인 대기
+
+| preset | 적용 위치 | 상한 | 결과 |
+|--------|-----------|------|------|
+| scroll-reveal | philosophy~reservation (hero 제외) | 섹션당 1종 | PASS |
+| hover-tone | GNB · footer links | hover 2종 이하 | PASS |
+| image-scale-hover | treatments·space 이미지 | digital과 분리 | PASS |
+| button-text-slide-hover | header·hero·reservation CTA | | PASS |
+| digital 탭 | 453:516 주석 | 기존 유지 | PASS |
+| reduced-motion | 즉시 표시 | 45 규칙 | PASS |
+| verify | static | 23/23 | PASS |
+
+**다음:** `http://barun.test` 스크롤·hover·버튼·갤러리 확인
+
+---
+
+## 2026-07-06 — 365-barun-dental 메인 페이지 통합 재검수 (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:330` 전체 (Header → Footer)  
+**결과:** **PASS (코드·Figma 대조)** — 브라우저 눈검수·태블릿/모바일 보류 항목 별도
+
+| 파트 | node | 코드 | 결과 | 비고 |
+|------|------|------|------|------|
+| Header | 453:331 | style/header | PASS | GNB·CTA·SUIT 16px |
+| Hero | 453:348 | section-hero | PASS | 17/30 본문 · gradient 30% |
+| Philosophy | 474:877 | section-philosophy | PASS | Hero와 동일 BG 연속 |
+| Treatments | 453:404 | section-treatments | PASS | green 11% tint |
+| Process | 453:478 | section-process | PASS | step num 44/900 @15% |
+| Digital | 453:516 | section-digital | PASS | 탭 opacity 0.3/1 · 04 이미지 임시 |
+| Space | 453:543 | section-space | PASS | H1 48/62 · 4열 축소 의도 |
+| Reservation | 453:582 | section-reservation | PASS | center · CTA hero 토큰 |
+| Footer | 453:603 | footer | PASS | legal white 100% · logo crop |
+| 인접 BG | — | — | PASS | f8f8f8 ↔ tint ↔ 004346 |
+| Typography | SUIT 가이드 | :root tokens | PASS | Pretendard 제거 완료 |
+| verify | static | 23/23 | PASS | PHP 문법 전부 OK |
+
+**확인 필요 (브라우저):** Digital 04 멸균 사진 · KV/카드 crop · 푸터 로고 새로고침 · 전 링크 `#`  
+**보류:** Treatments~Reservation @1024/@768 레이아웃 (Hero·Philosophy만 부분 반응형)  
+**다음:** 사용자 눈 PASS → 실 URL 반영 → 태블릿/모바일 착수
+
+---
+
+## 2026-07-06 — 365-barun-dental reservation CTA (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:582` 07_Reservation CTA  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | Figma | 코드 | 결과 |
+|------|-------|------|------|
+| Shell | guttered 1440 · py 64 | `--reservation-py` · shell | PASS |
+| Section BG | green 11% tint | `--color-reservation-bg` | PASS |
+| 인접 | Space `#f8f8f8` ↔ tint ↔ Footer `#004346` | ✓ | PASS |
+| 라벨 | RESERVATION 13/600/#618074 · center · upper | `--type-label` | PASS |
+| 제목 | 48/62 · 2줄 · center | `--type-h1` | PASS |
+| 라벨↔제목 | 24 | `--reservation-header-gap` | PASS |
+| 제목↔버튼 | 64 | `--reservation-inner-gap` | PASS |
+| CTA | 174×54 r10 · gap 16 | hero-btn 토큰 재사용 | PASS |
+| Primary | `#0d422e` · white 15/600 | `--primary` + `--type-ui` | PASS |
+| Outline | white · `#0d422e` text | btn--outline | PASS |
+| 링크 | `#` placeholder | 외부 URL 추후 | PASS |
+| verify | 23/23 | | PASS |
+
+**다음:** 사용자 PASS → 페이지 통합 QA
+
+---
+
+## 2026-07-06 — 365-barun-dental space (WP) · 재검수
+
+**템플릿:** `365-barun-dental` · **범위:** `453:543` 06_Space  
+**결과:** **PASS (코드)** — 캡션 비율 수정 · 브라우저 확인 대기
+
+| 항목 | Figma | 코드 | 결과 |
+|------|-------|------|------|
+| Shell | guttered 1440 · py 64 | ✓ | PASS |
+| Section BG | `#f8f8f8` | `--color-hero-bg` | PASS |
+| 인접 | Digital tint ↔ Space `#f8f8f8` | ✓ | PASS |
+| 헤더↔갤러리 | 64 | `--space-inner-gap` 64 | PASS |
+| 라벨↔제목 | 24 | `--space-header-gap` 24 | PASS |
+| 제목 | 46/60 · 2줄 | clamp 46/60 | PASS |
+| 갤러리 gap | 24 | `--space-gallery-gap` 24 | PASS |
+| 카드 비율 | 500×420 · r24 | aspect-ratio + radius | PASS |
+| 4열 1440 | 342×287 (축소) | repeat(4,1fr) | PASS (의도) |
+| Caption | h 102/420=24.3% · pad 18/24 | % 기반 | PASS (수정) |
+| Caption BG | `#fff` 80% | `rgba(255,255,255,0.8)` | PASS |
+| eyebrow | 11/18 · 80% | clamp + muted | PASS |
+| card title | 24/32 · 700 | clamp + 700 | PASS |
+| eyebrow↔title | 6 | `--space-caption-gap` 6 | PASS |
+| 카피 4장 | Figma 텍스트 | `barun_dental_space_gallery()` | PASS |
+| 이미지 | 4 imageRef | hash 매핑 | PASS |
+
+**비고:** Figma 원본 카드 500px×4=2072 > 1440 → 4열 균등 축소(비율 유지). 태블릿·모바일 보류.
+
+---
+
+## 2026-07-06 — 365-barun-dental space (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:543` 06_Space  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Shell | guttered 1440 · py 64 · bg #f8f8f8 | PASS |
+| 헤더↔갤러리 | gap 64 · label/title 24 | PASS |
+| 갤러리 | 4열 · gap 24 · ratio 500:420 · r24 | PASS |
+| Caption | h 102 · pad 24/18 · bg #fff 80% | PASS |
+| 타이포 | title 46/60 · eyebrow 11/80% · card 24/32 | PASS |
+| 이미지 | f9d7099·c5333d7d·dec7e9fe·3e8ab736 | PASS |
+| verify | static | PASS |
+
+**다음:** 사용자 PASS → 페이지 통합 QA
+
+---
+
+## 2026-07-06 — 365-barun-dental digital (WP) · 재검수
+
+**템플릿:** `365-barun-dental` · **범위:** `453:516` 05_Digital  
+**결과:** **PASS (코드)** — 사진 crop 미세조정 · 브라우저 최종 확인 대기
+
+| 항목 | Figma | 코드 | 결과 |
+|------|-------|------|------|
+| Shell | guttered 1440 · py 64 | `--layout-pad-x` · `--digital-py` | PASS |
+| Section BG | `#76a17d` @ 11% | `rgba(118,161,125,0.11)` | PASS |
+| 인접 BG | Process `#f8f8f8` ↔ Digital tint | 동일 | PASS |
+| 헤더↔본문 | 64 | `--digital-inner-gap` 64 | PASS |
+| 라벨↔제목 | 24 | `--digital-header-gap` 24 | PASS |
+| 2열 비율 | 908 + 532 · gap 0 | `908fr`/`532fr` gap 0 | PASS |
+| 사진 박스 | 908×723 · r14 | min-h 723 · absolute cover | PASS |
+| 사진 crop | mask offset | `object-position: 50% 56%` | PASS (수정) |
+| 리스트 pad | 64 L/T/B | `--digital-list-pad` | PASS |
+| stack gap | 54 (항목·구분선) | `--digital-list-stack-gap` 54 | PASS |
+| 번호 | w70 · gap34 · top · #0d422e 100% | flex-start · num-w70 | PASS |
+| 제목↔본문 | 12 | `--digital-copy-gap` 12 | PASS |
+| 구분선 | 1px · #0d422e 10% | `--color-digital-divider` | PASS |
+| 타이포 | label 13/600 · title 48/700 · item 21/15 | clamp 일치 | PASS |
+| 본문 색 | 60% | `--color-digital-muted` | PASS |
+| 카피 4항목 | Figma 텍스트 | `barun_dental_digital_features()` | PASS |
+| 이미지 01 | `e32e13d4…` scanner | PASS |
+| 이미지 02~04 | 클릭 교환 | 04 `treatment-room` 임시 | 확인 필요 |
+| 인터랙션 | PC 프레임 없음 | 클릭 시 src 교환 | 승인 반영 |
+| verify | static 21/21 | PASS |
+
+**비고:** 04번 사진·crop 눈 검수는 사용자 확인. 태블릿·모바일 보류.
+
+---
+
+## 2026-07-06 — 365-barun-dental digital (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:516` 05_Digital  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Shell | guttered 1440 · py 64 · bg rgba(118,161,125,0.11) | PASS |
+| 헤더↔본문 | inner gap 64 · label/title gap 24 | PASS |
+| 2열 | 908:532 · 열 gap 0 · media h 723 · radius 14 | PASS |
+| 리스트 | pad 64 · stack gap 54 · divider 10% | PASS |
+| 항목 | num w70 gap 34 · title/desc gap 12 · top align | PASS |
+| 타이포 | num #0d422e 100% · desc 60% | PASS |
+| 이미지 | imageRef 매핑 · 클릭 교환 · 04 임시 | PASS |
+| verify | static | PASS |
+
+**다음:** 사용자 PASS → 06_Space
+
+---
+
+## 2026-07-06 — 365-barun-dental process (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:478` 04_Process / Patient Journey  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Shell | guttered 1440 · py 64 · bg #f8f8f8 | PASS |
+| 헤더↔스텝 | inner gap 64 · label/title gap 24 | PASS |
+| 스텝 그리드 | 5열 · gap 24 · 카드 min-h 240 · pad 24 | PASS |
+| 카드 타이포 | num 44/900/#0d422e · title 18/600 · desc 14/60% | PASS |
+| 카드 내부 | num↔body 12 · title↔desc 8 | PASS |
+| 인접 | Treatments green tint ↔ Process #f8f8f8 | PASS |
+| verify | static | PASS |
+
+**다음:** 사용자 PASS → 05_Digital
+
+---
+
+## 2026-07-06 — 365-barun-dental treatments (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:404` 03_Treatments  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Shell | guttered 1440 · py 64 · bg #76a17d | PASS |
+| 헤더↔콘텐츠 | inner gap 64 · label/title gap 24 | PASS |
+| 2열 | gap 24 · featured 620 / aside 796 · 높이 505 | PASS |
+| 피처드 | pad 36 · radius 24 · 01 타이포 · overlay | PASS |
+| 카드행 | gap 24 · 400+372 · h 276 · radius 20 | PASS |
+| 매트릭스 | pad 20/24/42 · radius 18 · 구분선 #e8e8e8 · 03~06 | PASS |
+| 인접 | Philosophy #f8f8f8 ↔ Treatments #76a17d · gap 0 | PASS |
+| verify | 19/19 | PASS |
+
+**다음:** 사용자 PASS → 04_Process
+
+---
+
+## 2026-07-06 — 365-barun-dental philosophy (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `474:877` 02_Philosophy  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Shell | guttered 1440 · py 64 · bg #f8f8f8 | PASS |
+| 좌열 | label 13 · title 48/62 · desc 17/30 · gap 22/24 | PASS |
+| 우열 | 3원칙 · num 15 · title 28 · body 16 · divider #e8e8e8 | PASS |
+| 열 gap | 120 · 좌 560 / 우 760 | PASS |
+| 인접 | KV와 gap 0 (동일 BG) | PASS |
+| @1024 | 1열 스택 | PASS |
+| verify | 18/18 | PASS |
+
+**다음:** 사용자 PASS → 03_Treatments
+
+---
+
+## 2026-07-06 — 365-barun-dental hero / KV (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:348` 01_Hero / Main Visual  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Shell | guttered 1440 · pad-y 54 · pad-x 240 | PASS |
+| Section | 1920×820 · bg #f8f8f8 + image + gradient 30% | PASS |
+| Eyebrow | pill #ebf4f0 · 12px w600 #28654a · pad 9/30 | PASS |
+| Title | 76/90 · 2줄 · #11211b | PASS |
+| Desc | 18/32 · 60% · 2줄 | PASS |
+| Gap | heading 28 · copy 32 · content→cta 58 · cta 16 | PASS |
+| CTA | 174×54 r10 · primary #0d422e · outline white | PASS |
+| Image | Figma imageRef → patient-care.png | PASS |
+| Preset | 정적 1장 · slider 미적용 | PASS |
+| @1024/@768 | object-position · overlay · CTA wrap | PASS |
+| verify | 16/16 | PASS |
+
+**다음:** 사용자 PASS → 02_Philosophy
+
+---
+
+## 2026-07-06 — 365-barun-dental header · footer (WP)
+
+**템플릿:** `365-barun-dental` · **범위:** `453:331` Header · `453:603` Footer  
+**결과:** **PASS (코드)** — 사용자 브라우저 확인 대기
+
+| 항목 | 기준 | 결과 |
+|------|------|------|
+| Header BG | `#ffffff` · 89px(h) · pad 240 | PASS |
+| GNB | 5메뉴 16px w500 · gap 12 · CTA `#0d422e` 15px | PASS |
+| Footer BG | `#004346` · py 96 · inner 720 · pad 600 | PASS |
+| 푸터 카피 | 진료시간 3행 · 주소 · 사업자 · 약관 3 · ©2026 | PASS |
+| Fluid | clamp/vw 1920 기준 | PASS |
+| @1024 | GNB 숨김 · 햄버거 토글 | PASS |
+| @768 | 푸터 시간 행 세로 정렬 | PASS |
+| verify | `verify-wordpress-static.js` 15/15 | PASS |
+| 로고 | Figma VECTOR 미반영 · 임시 SVG | 확인 필요 |
+
+**다음:** 사용자 PASS → 01_Hero 착수
+
+---
+
 ## 2026-06-08 — hd-ec vision scroll-pin-scale-card (PC)
 
 **템플릿:** `hd-ec` · **catalog:** `scroll-pin-scale-card` · **범위:** vision (`225:2128`)  

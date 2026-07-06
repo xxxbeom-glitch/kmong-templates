@@ -4,6 +4,8 @@ alwaysApply: false
 globs:
   - templates/**/js/**
   - templates/**/*.html
+  - wordpress/**/assets/js/**
+  - wordpress/**/*.php
 ---
 
 # Interaction Patterns
@@ -22,6 +24,32 @@ globs:
 - CSS `transition`과 jQuery `slideToggle` 타이밍 충돌 금지
 - **슬라이더 방향 버튼** (`prev` / `next`): **첫 슬라이드**에서 `prev` **`disabled`**, **마지막**에서 `next` **`disabled`** — JS에서 인덱스마다 `prop("disabled")` 동기화 · HTML 초기값(첫 화면 `prev` disabled) · CSS `:disabled` 시각 비활성(opacity 등) 필수
 - **46에 없는 preset 이름·승인 없는 motion 구현 금지**
+
+## `scroll-reveal` 구현 (프로젝트 기본값)
+
+> 등장 단위 정의: `46-interaction-presets.mdc` 「scroll-reveal」「등장 단위」
+
+**HTML**
+- `html`에 `js` 클래스 (`main.js` `$(function(){ $("html").addClass("js"); … })`).
+- 클래스명: `scroll-reveal` · revealed: `is-revealed`.
+- **카드:** 루트 1개만 — 자식 img · caption · title · `p`에 `scroll-reveal` **금지**.
+- **헤드·비카드 본문:** label · `__title-line` · lead `p` · 리스트 번호·제목·본문 **각각**.
+
+**CSS**
+- `.js .scroll-reveal:not(.is-revealed)` — `opacity: 0` · `translateY` 소폭.
+- 카드 루트에 transition — **자식은 부모 opacity 상속** (카드 통째 등장).
+- `@media (prefers-reduced-motion: reduce)` — 즉시 `opacity: 1` · `transform: none`.
+
+**JS (`main.js`)**
+- `IntersectionObserver` — **모든** `.scroll-reveal` 개별 observe (카드 band 묶음 **금지**).
+- 진입 시 문서순 **큐** + 약 **85ms** 간격 `is-revealed` (동시에 여러 개 보여도 순차).
+- `prefers-reduced-motion: reduce` — 전부 즉시 `is-revealed`.
+- Observer 없음 fallback — 문서순 일괄 sequential.
+
+**QA FAIL 예**
+- 카드 BG·패널은 보이는데 안 글자만 순차 등장.
+- 카드 루트·자식 **둘 다** `scroll-reveal`.
+- philosophy 등 비카드 행을 카드처럼 1덩어리만.
 
 적용 기준:
 - **승인된 preset** 구현·수정 시 · 햄버거·아코디언·슬라이더 등.

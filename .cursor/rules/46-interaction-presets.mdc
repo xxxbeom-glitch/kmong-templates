@@ -3,6 +3,7 @@ description: PC 인터랙션 프리셋 카탈로그·선택·승인 (구현은 4
 alwaysApply: false
 globs:
   - templates/**/*
+  - wordpress/**/*
   - .cursor/rules/45-interaction-patterns.mdc
   - _docs/interaction-presets-guide.md
   - _logs/decision-log.md
@@ -88,6 +89,22 @@ Figma MCP 분석
 | **동작 설명** | 스크롤로 트리거 영역 진입 시 opacity 0→1 · translateY(소폭) · **1회** 재생 |
 | **권장 옵션** | duration 0.5~0.8s · easing ease-out · threshold 10~15% · `prefers-reduced-motion: reduce` 시 **즉시 표시** |
 | **사용 금지** | hero 첫 화면(이미 보임) · header · **같은 섹션에 typing-text와 동시** · 전 페이지 모든 블록 일괄(과부하) |
+
+#### 등장 단위 — **프로젝트 기본값** (2026-07-06 확정 · 별도 지시 없으면 필수)
+
+> **카드 = 배경+내용 한 덩어리** · **헤드·본문(카드 아님) = 세부 단위**  
+> 참고 구현: `wordpress/365-barun-dental/` · 규칙 본문: `45-interaction-patterns.mdc` 「scroll-reveal」
+
+| 콘텐츠 유형 | `scroll-reveal` 위치 | 금지 |
+|-------------|---------------------|------|
+| **카드** — 사진 BG · 흰/색 패널 BG · 오버레이·캡션이 **한 프레임**인 블록 | **카드 루트 1개** (`article` / `figure` / `li` 카드 셸 · matrix 패널 · media `figure` 등) — **배경·사진·글자 함께** 등장 | 카드 **안** img · caption · title · `p`에 각각 `scroll-reveal` → **BG만 남고 글자만 뜨는 현상** |
+| **섹션 헤드** — label · section title · lead | label · `__title-line` **줄마다** · lead `p` **문장마다** | 헤드 전체를 카드처럼 1덩어리만 (예외는 사용자 승인) |
+| **리스트 행** — 카드 BG **없는** 원칙·스텝 설명 등 | 번호 · 제목 · 본문 **각각** | 행 전체 1덩어리만 (카드가 아닌 경우) |
+| **hero · header · footer** | **미적용** | — |
+
+- 카드 루트에 `scroll-reveal`이면 **자식에 `scroll-reveal` 없음** (중첩 금지).
+- JS: 카드 묶음 **band/batch 일괄 재생 금지** — 요소별 observe + 문서순 큐(약 85ms) (`45`).
+- QA: 카드 스크롤 시 **프레임·배경·내용이 동시에** 나타나는지 눈으로 확인 (`50` · `_docs/qa-checklist.md` §4).
 
 ---
 
@@ -232,6 +249,7 @@ Figma MCP 분석
 - [ ] 적용 preset ID = **사용자 승인 목록**과 일치
 - [ ] 섹션당 **상한** 준수
 - [ ] **중복** animation·transition 없음
+- [ ] **`scroll-reveal` 등장 단위** = 기본값 표 준수 (카드 루트 통째 · 헤드·비카드 본문 세부 · 카드 내 자식 `scroll-reveal` 없음)
 - [ ] `prefers-reduced-motion` · 768 hover 정책 (`45` · `35`)
 - [ ] 카탈로그 **미등록** 커스텀 motion 없음
 
