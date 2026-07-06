@@ -1,0 +1,121 @@
+---
+description: WordPress Classic Theme 운영 프로젝트 (카페24 뉴아우토반)
+alwaysApply: false
+globs:
+  - wordpress/**
+  - _delivery-wp/**
+  - _harness/package-delivery-wp.js
+  - _docs/wordpress-guide.md
+---
+
+# WordPress (운영 트랙)
+
+> **트랙 분기:** `00-project-tracks.mdc` · **사람용 요약:** `_docs/wordpress-guide.md`
+
+## 범위
+
+- **대상:** 일부 **실제 운영** 사이트만 · 크몽용 정적 `templates/` **유지**
+- **기존 정적 템플릿 WordPress 변환 금지** · 신규 slug 승인 후 `wordpress/{slug}/`만 생성
+- **개발 방식:** Figma MCP 분석 → 승인 → **`wordpress/{slug}/`에 PHP 테마 직접 구현** (`20-harness-workflow`와 동일 리듬)
+- **정적 HTML 선행 후 이식** — 기본 워크플로 **아님** · 사용자 명시 요청 시만
+- **호스팅:** 카페24 **뉴아우토반 WordPress**
+- **스택:** WordPress **Classic Custom Theme** · PHP 템플릿 · CSS · jQuery 3.x (`wp_enqueue_script`) · React/Next **금지**
+
+## 작업 공간
+
+```
+wordpress/{slug}/
+├── style.css              # Theme Header 필수
+├── functions.php          # enqueue · notice CPT · theme support
+├── header.php
+├── footer.php
+├── front-page.php         # 메인 + 최신 공지 3건
+├── index.php              # fallback
+├── archive-notice.php     # 공지 목록
+├── single-notice.php      # 공지 상세
+└── assets/
+    ├── css/
+    ├── js/
+    └── images/
+```
+
+- slug 승인 전 `wordpress/{slug}/` 폴더 생성 **금지**
+- `decision-log`에 `[type: wordpress]` · theme-slug · hosting 기록
+
+## functions.php · enqueue
+
+- CSS/JS는 **`wp_enqueue_style` / `wp_enqueue_script`** — `functions.php`에서만 등록
+- jQuery는 WordPress 번들 의존 (`array('jquery')`) 우선 · CDN 중복 로드 **금지**
+- 테마 버전은 `wp_get_theme()->get('Version')` 또는 파일mtime으로 cache bust
+
+## 공지 (notice CPT) — 유일 CMS
+
+| 항목 | 값 |
+|------|-----|
+| post type slug | **`notice`** |
+| 관리자 | 등록 · 수정 · 삭제 (WP 기본 편집 UI) |
+| 목록 | `archive-notice.php` — URL `/notice/` (rewrite flush 필요) |
+| 상세 | `single-notice.php` |
+| 메인 | `front-page.php` — **`WP_Query` 최신 3건** · 날짜·제목·목록 링크 |
+
+**메인 공지 쿼리 (기준):**
+
+```php
+new WP_Query(array(
+  'post_type'      => 'notice',
+  'posts_per_page' => 3,
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+  'post_status'    => 'publish',
+));
+```
+
+- hero·섹션 카피·GNB 등 **공지 외 콘텐츠** — 첫 단계 **PHP/HTML 고정** (관리자 수정 범위 밖)
+- 공지 외 CPT·ACF·커스텀 관리 화면 — 사용자 승인 전 **추가 금지**
+
+## Figma → 테마
+
+- 수치·shell·Section BG·gap·font — `30-figma-to-code.mdc` **동일 기준**
+- 출력은 **PHP 템플릿** (`get_header()` / `get_footer()` · template parts 허용)
+- 반응형 · 인터랙션: `35-responsive.mdc` · 승인된 preset만 `46-interaction-presets.mdc`
+
+## 워크플로 (섹션 단위)
+
+```
+로그 확인 → 범위 확인 → Figma MCP 보고 → 사용자 승인
+→ wordpress/{slug}/ 섹션 구현 (HTML 구조 대신 PHP 템플릿)
+→ 섹션 QA → qa-log → 사용자 PASS → 다음 섹션
+```
+
+- QA PASS 전 완료 처리 **금지** · git commit — 사용자 명시 시만 (`55-git-workflow.mdc`)
+
+## QA (최소)
+
+- [ ] 테마 활성화 · 치명적 PHP 오류 없음
+- [ ] 공지 CRUD (관리자에서 등록·수정·삭제)
+- [ ] `/notice/` 목록 · 단일 공지 상세
+- [ ] 메인 최신 공지 **3건** 노출
+- [ ] **설정 → 고유주소** 저장 후 permalink 동작
+- [ ] 1024 · 768 레이아웃 (`35-responsive.mdc`)
+- [ ] 카페24 업로드 후 동일 확인 (납품 전)
+
+## 납품
+
+```bash
+node _harness/package-delivery-wp.js {slug}
+```
+
+- 출력: `_delivery-wp/{slug}/` · `_delivery-wp/{slug}.zip`
+- 업로드: 카페24 `wp-content/themes/{theme-slug}/` (ZIP 또는 폴더)
+- `_delivery-wp/`는 개발 workbench **아님** — QA PASS 후 패키징만
+
+## 금지
+
+- `templates/{slug}/`에 WP 테마 작성 · 정적 `package-delivery.js`로 WP 납품
+- `_delivery/cafe24/` 등 플랫폼 하위 폴더
+- 템플릿 간 PHP/CSS/JS 공유 · `_modules` / `_tokens`
+- 공지 외 관리자 기능을 승인 없이 추가
+
+## 규칙 분리 (나중)
+
+공지·QA·납품이 복잡해지면 `71-wordpress-notice.mdc` 등으로 **분리** — 첫 프로젝트는 본 파일만 유지.

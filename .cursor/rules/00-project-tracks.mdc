@@ -1,0 +1,34 @@
+---
+description: 정적 HTML vs WordPress 운영 프로젝트 트랙 분기
+alwaysApply: true
+---
+
+# Project Tracks
+
+작업 시작 전 **트랙**을 확인한다. `decision-log`에 `[type: static]` 또는 `[type: wordpress]`가 없으면 slug·트랙을 사용자에게 확인한다.
+
+| 트랙 | 개발 경로 | 규칙 | 납품 |
+|------|-----------|------|------|
+| **static** (크몽 정적) | `templates/{slug}/` | `00-core` · `10`~`60` | `node _harness/package-delivery.js {slug}` → `_delivery/{slug}/` |
+| **wordpress** (운영) | `wordpress/{slug}/` | `70-wordpress.mdc` + 공통 `35` · `45` · `46` · `55` | `node _harness/package-delivery-wp.js {slug}` → `_delivery-wp/{slug}/` · `{slug}.zip` |
+
+## WordPress 트랙 (요약)
+
+- **새 운영 프로젝트만** — 기존 `templates/*`를 WordPress로 **변환하지 않음**
+- Figma부터 `wordpress/{slug}/`에 **Classic Custom Theme** 직접 구현 (정적 HTML 선행 **기본 아님**)
+- `templates/` 완성본 → `wordpress/` **이식**은 사용자 **명시 요청 시만**
+- 호스팅: **카페24 뉴아우토반 WordPress** · 업로드 `wp-content/themes/{theme-slug}/`
+- CMS: **공지(`notice` CPT)만** 관리자 수정 · 메인 최신 **3건**
+
+## 충돌 시 우선순위
+
+1. 사용자 명시 지시
+2. 본 파일 (트랙)
+3. 트랙별 규칙 (`static` → `00~60` / `wordpress` → `70-wordpress.mdc`)
+4. `_docs/context-guide.md`
+
+## 금지
+
+- `templates/{slug}/`에 PHP 테마·`functions.php` 작성
+- `wordpress/{slug}/`를 `package-delivery.js`(정적)로 납품
+- 플랫폼별 `_delivery/cafe24/` 등 하위 폴더 생성 (`00-core` 동일)

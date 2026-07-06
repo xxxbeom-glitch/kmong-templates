@@ -10,6 +10,8 @@
 | **템플릿 허브 (dev)** | `templates/index.html` | 텍스트 링크 · 신규 slug마다 `<li>` 추가 |
 | **템플릿 허브 (납품)** | `_delivery/index.html` | 패키징 시 `templates/index.html` **자동 복사** — 직접 수정 ❌ |
 | **납품 복사** | `_delivery/{slug}/` | QA PASS **후** 패키징 (`node _harness/package-delivery.js {slug}`) |
+| **WP 개발** | `wordpress/{slug}/` | 운영용 Classic Theme · 상세 `_docs/wordpress-guide.md` |
+| **WP 납품** | `_delivery-wp/{slug}/` · `{slug}.zip` | `node _harness/package-delivery-wp.js {slug}` |
 | **비교 캡처** | `_harness/snapshots/{slug}/` | PNG만 (선택) |
 | **인터랙션 카탈로그** | `_harness/interaction-samples/` | 참고 URL 목록 [`index.html`](interaction-samples/index.html) · [`samples.manifest.json`](interaction-samples/samples.manifest.json) |
 
