@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-07 — [wordpress] 365-barun-dental README 클래스 맵
+
+**범위:** `wordpress/365-barun-dental/README.md`  
+**내용:** 메인 DOM·공통 shell/헤더 패턴·인터랙션·섹션별 클래스·서브페이지 체크리스트 참조 문서 추가
+
+---
+
 ## 2026-07-07 — [project] scroll-reveal 등장 단위 프로젝트 기본값 확정
 
 **범위:** `46-interaction-presets.mdc` · `45-interaction-patterns.mdc` · `interaction-presets-guide.md` · `50-qa-checklist.mdc` · `_docs/qa-checklist.md` · `decision-log` · `70-wordpress.mdc`  
