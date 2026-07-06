@@ -11,7 +11,8 @@
 | **템플릿 허브 (납품)** | `_delivery/index.html` | 패키징 시 `templates/index.html` **자동 복사** — 직접 수정 ❌ |
 | **납품 복사** | `_delivery/{slug}/` | QA PASS **후** 패키징 (`node _harness/package-delivery.js {slug}`) |
 | **WP 개발** | `wordpress/{slug}/` | 운영용 Classic Theme · 상세 `_docs/wordpress-guide.md` |
-| **WP 납품** | `_delivery-wp/{slug}/` · `{slug}.zip` | `node _harness/package-delivery-wp.js {slug}` |
+| **WP 납품** | `_delivery-wp/{slug}/` · `{slug}.zip` | `node _harness/package-delivery-wp.js {slug}` (패키징 **전** 정적 검사 자동 실행) |
+| **WP 정적 검사** | `wordpress/{slug}/` | `node _harness/verify-wordpress-static.js {slug}` · 결과 `_logs/wordpress-verify-log.md` |
 | **비교 캡처** | `_harness/snapshots/{slug}/` | PNG만 (선택) |
 | **인터랙션 카탈로그** | `_harness/interaction-samples/` | 참고 URL 목록 [`index.html`](interaction-samples/index.html) · [`samples.manifest.json`](interaction-samples/samples.manifest.json) |
 

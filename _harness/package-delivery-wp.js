@@ -5,6 +5,7 @@
 var fs = require("fs");
 var path = require("path");
 var childProcess = require("child_process");
+var verifyWordPress = require("./verify-wordpress-static.js");
 
 var slug = process.argv[2];
 
@@ -26,10 +27,16 @@ var EXCLUDE_NAMES = {
   "node_modules": true,
 };
 
-if (!fs.existsSync(srcDir)) {
-  console.error("[delivery-wp] source not found: " + srcDir);
+console.log("[delivery-wp] pre-check: static verify for " + slug);
+
+var verifyResult = verifyWordPress.runVerify(slug, { writeLog: true });
+
+if (!verifyResult.ok) {
+  console.error("[delivery-wp] packaging stopped — static verify FAIL");
   process.exit(1);
 }
+
+console.log("[delivery-wp] static verify PASS — packaging " + slug);
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -104,8 +111,6 @@ function createZip(sourceDir, destinationZip) {
     console.warn("[delivery-wp] ZIP skipped — create manually from: " + destDir);
   }
 }
-
-console.log("[delivery-wp] packaging " + slug);
 
 removeDir(destDir);
 ensureDir(path.join(root, "_delivery-wp"));
