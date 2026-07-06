@@ -1,5 +1,27 @@
 # Change Log
 
+## 2026-06-08 — [template] hd-ec vision box-2 type = section title
+
+**범위:** `css/style.css`  
+**변경:** 시퀀스 2 headline/desc → `--business-title-size/lh` · weight 800 (사업/프로젝트/뉴스룸 섹션 타이틀과 동일)
+
+---
+
+## 2026-06-08 — [template] hd-ec vision box-2 type = newsroom article title
+
+**범위:** `css/style.css`  
+**변경:** 시퀀스 2 headline/desc → `--newsroom-item-title-size/lh` · weight 600
+
+---
+
+## 2026-06-08 — [template] hd-ec vision 2-step text sequence (M&S box-1/box-2)
+
+**범위:** `index.html` · `css/style.css` · `js/main.js`  
+**패턴:** M&S `main-company` — box-1 등장·퇴장 → box-2 등장  
+**box-2 카피:** 기술로 도시를 연결하고… / 현대건설은 사람과 공간… · pin 2800px
+
+---
+
 ## 2026-06-08 — [template] hd-ec business card white arrow icon
 
 **범위:** `index.html` · `assets/icons/icon-arrow-right-white.png`  

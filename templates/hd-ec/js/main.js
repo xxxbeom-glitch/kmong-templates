@@ -252,8 +252,6 @@
     var startW = 0;
     var startH = 0;
     var growPhase = 0.14;
-    var titleStart = 0.05;
-    var titleSpan = 0.22;
 
     function clamp(value, min, max) {
       return Math.min(Math.max(value, min), max);
@@ -285,8 +283,10 @@
       sectionEl.style.removeProperty("--vision-card-w");
       sectionEl.style.removeProperty("--vision-card-h");
       sectionEl.style.removeProperty("--vision-overlay-strength");
-      sectionEl.style.removeProperty("--vision-title-opacity");
-      sectionEl.style.removeProperty("--vision-title-shift");
+      sectionEl.style.removeProperty("--vision-box-1-y");
+      sectionEl.style.removeProperty("--vision-box-1-opacity");
+      sectionEl.style.removeProperty("--vision-box-2-y");
+      sectionEl.style.removeProperty("--vision-box-2-opacity");
       $section.removeClass("is-vision-pin-active");
     }
 
@@ -294,18 +294,65 @@
       resetPinState();
     }
 
+    function phaseProgress(progress, start, end) {
+      return clamp((progress - start) / (end - start), 0, 1);
+    }
+
+    function applyTextBoxes(progress) {
+      var box1Y = 100;
+      var box1Opacity = 0;
+      var box2Y = 100;
+      var box2Opacity = 0;
+
+      if (progress < 0.06) {
+        box1Y = 100;
+        box1Opacity = 0;
+      } else if (progress < 0.22) {
+        var enter1 = phaseProgress(progress, 0.06, 0.22);
+
+        box1Y = (1 - enter1) * 100;
+        box1Opacity = enter1;
+      } else if (progress < 0.34) {
+        box1Y = 0;
+        box1Opacity = 1;
+      } else if (progress < 0.5) {
+        var exit1 = phaseProgress(progress, 0.34, 0.5);
+
+        box1Y = exit1 * -100;
+        box1Opacity = 1;
+      } else {
+        box1Y = -100;
+        box1Opacity = 0;
+      }
+
+      if (progress < 0.42) {
+        box2Y = 100;
+        box2Opacity = 0;
+      } else if (progress < 0.58) {
+        var enter2 = phaseProgress(progress, 0.42, 0.58);
+
+        box2Y = (1 - enter2) * 100;
+        box2Opacity = enter2;
+      } else {
+        box2Y = 0;
+        box2Opacity = 1;
+      }
+
+      sectionEl.style.setProperty("--vision-box-1-y", box1Y + "%");
+      sectionEl.style.setProperty("--vision-box-1-opacity", String(box1Opacity));
+      sectionEl.style.setProperty("--vision-box-2-y", box2Y + "%");
+      sectionEl.style.setProperty("--vision-box-2-opacity", String(box2Opacity));
+    }
+
     function applyPinState(progress) {
       var growProgress = clamp(progress / growPhase, 0, 1);
       var cardW = startW + (endW - startW) * growProgress;
       var cardH = startH + (endH - startH) * growProgress;
-      var titleProgress = clamp((progress - titleStart) / titleSpan, 0, 1);
-      var titleShift = (1 - titleProgress) * 100;
 
       sectionEl.style.setProperty("--vision-card-w", cardW + "px");
       sectionEl.style.setProperty("--vision-card-h", cardH + "px");
       sectionEl.style.setProperty("--vision-overlay-strength", String(growProgress));
-      sectionEl.style.setProperty("--vision-title-opacity", String(titleProgress));
-      sectionEl.style.setProperty("--vision-title-shift", titleShift + "%");
+      applyTextBoxes(progress);
       $section.addClass("is-vision-pin-active");
     }
 
