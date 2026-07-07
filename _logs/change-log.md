@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 설계서 IA 전체 페이지 연결
+
+**범위:** `inc/page-registry.php` · `inc/content-registry.php` · `inc/pages.php` · `template-parts/pages/*` · `functions.php` · `page.php` · `assets.php` · `header.php` · `style.css`  
+**내용:** §04-2 IA 40개 페이지 자동 등록·라우팅 · 허브/상세/소개/접수·FAQ·공지 콘텐츠 반영 · 메인 GNB·대표진료 링크 연결
+
+---
+
 ## 2026-07-07 — [wordpress] 365-hes-womens-clinic 여성질환 OK식 레이아웃
 
 **범위:** `inc/content-womens-disease.php` · `womens-disease-content.php` · `style.css`  

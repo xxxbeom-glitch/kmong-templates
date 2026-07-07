@@ -1838,6 +1838,258 @@ p {
   padding-right: 44px;
 }
 
+/* Prose · schedule · reservation · notice */
+.sub-prose {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.sub-prose__block + .sub-prose__block {
+  margin-top: clamp(32px, 2.5vw, 48px);
+}
+
+.sub-prose__title {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 1.4583vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.sub-prose__text {
+  margin: 0 0 12px;
+  font-size: clamp(16px, 1.0417vw, 18px);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.sub-prose__list {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: clamp(16px, 1.0417vw, 18px);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.sub-prose__cta-wrap {
+  margin-top: clamp(24px, 2vw, 32px);
+}
+
+.sub-prose__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--staff-cta-h);
+  padding: var(--staff-cta-py) var(--staff-cta-px);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--staff-cta-size);
+  font-weight: 700;
+}
+
+.sub-schedule {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg-alt);
+}
+
+.sub-schedule__panel {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(28px, 2.5vw, 40px);
+  border-radius: var(--location-hours-radius);
+  background: var(--color-white);
+  box-shadow: 0 12px 40px rgba(28, 25, 23, 0.04);
+}
+
+.sub-schedule__title {
+  margin: 0 0 20px;
+  font-size: clamp(20px, 1.4583vw, 28px);
+  font-weight: 700;
+}
+
+.sub-schedule__hours {
+  margin: 0;
+}
+
+.sub-schedule__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.08);
+  font-size: clamp(16px, 1.0417vw, 18px);
+}
+
+.sub-schedule__row:last-child {
+  border-bottom: 0;
+}
+
+.sub-schedule__row dt {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sub-schedule__row dd {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.sub-schedule__note,
+.sub-schedule__phone {
+  margin: 16px 0 0;
+  font-size: clamp(15px, 0.9375vw, 17px);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.sub-reservation {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.sub-reservation__form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(28px, 2.5vw, 40px);
+  border-radius: var(--location-hours-radius);
+  background: var(--color-white);
+  box-shadow: 0 12px 40px rgba(28, 25, 23, 0.04);
+}
+
+.sub-reservation__row + .sub-reservation__row {
+  margin-top: 20px;
+}
+
+.sub-reservation__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sub-reservation__req {
+  color: var(--color-accent);
+}
+
+.sub-reservation__input,
+.sub-reservation__textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.sub-reservation__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.sub-reservation__choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.sub-reservation__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sub-reservation__actions {
+  margin-top: 24px;
+}
+
+.sub-reservation__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--staff-cta-h);
+  padding: var(--staff-cta-py) var(--staff-cta-px);
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sub-reservation__help {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.sub-notice-list {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.sub-notice-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.sub-notice-list__item {
+  border-bottom: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.sub-notice-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4px;
+  color: var(--color-text);
+}
+
+.sub-notice-list__title {
+  font-size: clamp(16px, 1.0417vw, 18px);
+  font-weight: 600;
+}
+
+.sub-notice-list__date {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.sub-notice-list__empty {
+  margin: 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.sub-notice-list__more-wrap {
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+.sub-notice-list__more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 @media (max-width: 1024px) {
   .section-hero__bg {
     object-position: 72% center;

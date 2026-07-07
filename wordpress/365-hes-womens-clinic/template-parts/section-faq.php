@@ -3,13 +3,18 @@
  * S08 FAQ — Figma 614:344
  */
 $items = hes_womens_clinic_faq_items();
+$hide_header = !empty($args['hide_header']);
 ?>
 <section class="section-faq" aria-labelledby="faq-title">
   <div class="section-shell section-shell--gutter">
+    <?php if (!$hide_header) : ?>
     <header class="section-faq__header">
       <p class="section-faq__eyebrow">FAQ</p>
       <h2 id="faq-title" class="section-faq__title">자주 하는 질문</h2>
     </header>
+    <?php else : ?>
+    <h2 id="faq-title" class="screen-reader-text">자주 묻는 질문</h2>
+    <?php endif; ?>
 
     <div class="section-faq__list">
       <?php foreach ($items as $index => $item) : ?>

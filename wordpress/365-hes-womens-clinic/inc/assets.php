@@ -66,6 +66,7 @@ function hes_womens_clinic_gnb_items() {
       'label' => '여성검진',
       'url' => home_url('/checkup/'),
       'children' => array(
+        array('label' => '여성검진 안내', 'url' => home_url('/checkup/')),
         array('label' => '기본 검진', 'url' => home_url('/checkup/basic/')),
         array('label' => '자궁경부암 검사', 'url' => home_url('/checkup/cervical-cancer/')),
         array('label' => '미혼 여성 검진', 'url' => home_url('/checkup/unmarried/')),
@@ -117,6 +118,17 @@ function hes_womens_clinic_gnb_items() {
   );
 }
 
+function hes_womens_clinic_subpage_cta_args() {
+  return array(
+    'title' => '증상이 반복되거나 걱정된다면',
+    'desc' => '온라인으로 먼저 진료 접수를 남겨주세요',
+    'primary_label' => '진료 접수',
+    'primary_url' => home_url('/support/reservation/'),
+    'secondary_label' => '카카오톡 상담',
+    'secondary_url' => home_url('/support/kakao/'),
+  );
+}
+
 function hes_womens_clinic_phone() {
   return array(
     'display' => '070-0000-0000',
@@ -139,12 +151,12 @@ function hes_womens_clinic_footer_meta() {
 
 function hes_womens_clinic_symptom_items() {
   return array(
-    array('label' => '질염이 반복돼요', 'url' => '#'),
-    array('label' => '생리가 불규칙해요', 'url' => '#'),
-    array('label' => '갑작스러운 출혈이 있어요', 'url' => '#'),
-    array('label' => '임신 여부를 확인하고 싶어요', 'url' => '#'),
-    array('label' => '임신을 준비하고 있어요', 'url' => '#'),
-    array('label' => '정기검진을 받고 싶어요', 'url' => '#'),
+    array('label' => '질염이 반복돼요', 'url' => home_url('/womens-disease/')),
+    array('label' => '생리가 불규칙해요', 'url' => home_url('/womens-disease/menstrual-disorder/')),
+    array('label' => '갑작스러운 출혈이 있어요', 'url' => home_url('/womens-disease/abnormal-bleeding/')),
+    array('label' => '임신 여부를 확인하고 싶어요', 'url' => home_url('/pregnancy-birth/confirmation/')),
+    array('label' => '임신을 준비하고 있어요', 'url' => home_url('/fertility/pregnancy-plan/')),
+    array('label' => '정기검진을 받고 싶어요', 'url' => home_url('/checkup/')),
   );
 }
 
@@ -155,19 +167,19 @@ function hes_womens_clinic_treatment_rows() {
       'items' => array(
         array(
           'label' => '여성질환',
-          'url' => '#',
+          'url' => home_url('/womens-disease/'),
           'image' => 'treatment-womens-disease',
           'wide' => true,
         ),
         array(
           'label' => '여성검진',
-          'url' => '#',
+          'url' => home_url('/checkup/'),
           'image' => 'treatment-checkup',
           'wide' => false,
         ),
         array(
           'label' => '임신·산전관리',
-          'url' => '#',
+          'url' => home_url('/pregnancy-birth/'),
           'image' => 'treatment-prenatal',
           'wide' => false,
         ),
@@ -178,19 +190,19 @@ function hes_womens_clinic_treatment_rows() {
       'items' => array(
         array(
           'label' => '분만',
-          'url' => '#',
+          'url' => home_url('/pregnancy-birth/delivery/'),
           'image' => 'treatment-delivery',
           'wide' => false,
         ),
         array(
           'label' => '난임·가임력',
-          'url' => '#',
+          'url' => home_url('/fertility/'),
           'image' => 'treatment-fertility',
           'wide' => false,
         ),
         array(
           'label' => '여성수술',
-          'url' => '#',
+          'url' => home_url('/surgery/'),
           'image' => 'treatment-surgery',
           'wide' => true,
         ),
@@ -204,7 +216,7 @@ function hes_womens_clinic_medical_staff_content() {
     'eyebrow' => 'TEAMS',
     'title' => '각 분야 전문가들이 모여<br>신뢰할 수 있는 진료를 제공합니다',
     'cta_label' => '의료진 소개',
-    'cta_url' => '#',
+    'cta_url' => home_url('/about/doctors/'),
   );
 }
 

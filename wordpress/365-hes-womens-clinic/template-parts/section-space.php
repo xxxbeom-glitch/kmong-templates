@@ -3,15 +3,20 @@
  * S07 Our space — Figma 614:313
  */
 $spaces = hes_womens_clinic_space_items();
+$hide_header = !empty($args['hide_header']);
 $tab_group_id = 'space-tabs';
 $panel_id = 'space-panel';
 ?>
 <section class="section-space" aria-labelledby="space-title">
   <div class="section-shell section-shell--gutter">
+    <?php if (!$hide_header) : ?>
     <header class="section-space__header">
       <p class="section-space__eyebrow">OUR SPACE</p>
       <h2 id="space-title" class="section-space__title">진료 환경과 프라이버시</h2>
     </header>
+    <?php else : ?>
+    <h2 id="space-title" class="screen-reader-text">진료 공간</h2>
+    <?php endif; ?>
 
     <div class="section-space__panel">
       <div

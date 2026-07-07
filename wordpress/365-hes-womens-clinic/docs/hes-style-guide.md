@@ -197,7 +197,21 @@
 | 여성수술 | `/surgery` |
 | 상담·안내 | `/support` |
 
-**진행 순서:** 공통 sub-hero + CTA → **여성질환 1페이지 파일럿 PASS** → 나머지 GNB 복제·변형
+**진행 순서:** 공통 sub-hero + CTA → **여성질환 파일럿 PASS** → **IA 전체 페이지 콘텐츠 1차 반영 ✓ (2026-07-07)**
+
+### IA 전체 페이지 (39경로)
+
+| 허브 | 하위 | 렌더 타입 |
+|------|------|-----------|
+| `/about` | clinic · doctors · schedule · space · location | hub / prose / schedule / section |
+| `/womens-disease` | 5 상세 | clinic (OK식) |
+| `/checkup` | 5 상세 | clinic |
+| `/pregnancy-birth` | 5 상세 | clinic |
+| `/fertility` | 4 상세 | clinic |
+| `/surgery` | 4 상세 | clinic |
+| `/support` | reservation · kakao · faq · notice | form / prose / section / list |
+
+**인프라:** `inc/page-registry.php` · `inc/content-registry.php` · `inc/pages.php` · `page.php` · `template-parts/pages/*`
 
 ---
 
@@ -284,9 +298,9 @@ assets/
 | S09 오시는길 | ✓ | `section-location.php` |
 | S10 Footer | ✓ | `footer.php` |
 | 서브 히어로 | ✓ | `sub-hero.php` |
-| CTA band | ✓ | `cta-band.php` |
-| 여성질환 `/womens-disease` | 콘텐츠·디자인 1차 ✓ | `page-womens-disease.php` |
-| GNB 나머지 서브 | 미구현 | — |
+| CTA band | ✓ | `cta-band.php` · `page.php` 연동 |
+| IA 전체 서브 (39경로) | 콘텐츠 1차 ✓ | `page-registry` · `content-registry` · `page.php` |
+| 디자인 폴리시 | 사용자 진행 | — |
 
 ---
 

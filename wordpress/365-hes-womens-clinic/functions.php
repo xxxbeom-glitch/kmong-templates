@@ -2,8 +2,10 @@
 
 require_once get_template_directory() . '/inc/assets.php';
 require_once get_template_directory() . '/inc/notice.php';
-require_once get_template_directory() . '/inc/pages.php';
+require_once get_template_directory() . '/inc/page-registry.php';
 require_once get_template_directory() . '/inc/content-womens-disease.php';
+require_once get_template_directory() . '/inc/content-registry.php';
+require_once get_template_directory() . '/inc/pages.php';
 
 function hes_womens_clinic_setup() {
   add_theme_support('title-tag');
