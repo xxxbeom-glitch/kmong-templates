@@ -1,5 +1,45 @@
 # Change Log
 
+## 2026-07-07 — [wordpress] 365-barun-dental 온라인 상담 3페이지 (PC)
+
+**범위:** `page-consultation*.php` · `template-parts/consultation/*` · `inc/consultation.php` · `style.css` · `main.js` · `header.php` · `inc/assets.php`  
+**내용:** Figma `504:136` 목록 · `538:148` 상세 · `511:140` 작성. 헤더 상담·예약 → `/consultation/` 링크. assets 아이콘·서브히어로 연결. **미리보기:** `inc/consultation-pages.php`로 WP 페이지 3건 자동 생성 · URL은 `get_permalink()` 사용.
+
+---
+
+**범위:** `header.php` · `style.css` · `assets/js/main.js` · `decision-log`  
+**내용:** `gnb-full-expand` 제거 · 항목별 `.site-header__dropdown` 패널 + `initHeaderDropdown()` 복원. gap+15·딤20%·닫기220ms·overlap 12px·left −16px 유지.
+
+---
+
+## 2026-07-07 — [project] `gnb-full-expand` 규칙·로그 확정 (barun 구현 반영)
+
+**범위:** `46-interaction-presets.mdc` · `45-interaction-patterns.mdc` · `interaction-presets-guide.md` · `samples.manifest.json` · `decision-log.md`  
+**내용:** 풀 패널 구현에서 확정된 동작을 규칙화 — 기본 닫힘(`hidden`+`display:none`) · 열림 후 rAF 정렬 · 라벨 기준 슬롯 · 열 배경 박스 금지 · sublink padding 0 · barun gap+15·딤20%·닫기220ms를 decision-log에 통합
+
+---
+
+## 2026-07-07 — [wordpress] 365-barun-dental GNB → gnb-full-expand (구현)
+
+**범위:** `header.php` · `style.css` · `assets/js/main.js`  
+**내용:** 공용 메가패널 · 정렬·간격·박스 제거 등 UI 수정. 패턴 ID·수치는 `decision-log` GNB 항목.
+
+---
+
+## 2026-07-07 — [project] GNB 2depth 패턴 카탈로그 추가
+
+**범위:** `46-interaction-presets.mdc` · `45-interaction-patterns.mdc` · `_docs/interaction-presets-guide.md` · `_harness/interaction-samples/samples.manifest.json` · `interaction-samples/README.md`  
+**내용:** `gnb-full-expand`(원안과형 전체 펼침) · `gnb-item-panel`(항목별 패널) 정의·구현 요약·허브 manifest 2건. 정렬·딤·타이밍은 Figma/decision-log. 템플릿 header당 1패턴만.
+
+---
+
+## 2026-07-07 — [wordpress] 365-barun-dental GNB 2depth (PC)
+
+**범위:** `header.php` · `inc/assets.php` · `style.css` · `main.js` · `decision-log`  
+**내용:** Figma `583:54` + 주석 기준 GNB 6항목 · 2depth 패널 4곳 · 사랑니·턱관절 직링크 · 딤 80% · close delay 220ms · URL `#` · 모바일 정식 보류
+
+---
+
 ## 2026-07-07 — [wordpress] 365-barun-dental README 클래스 맵
 
 **범위:** `wordpress/365-barun-dental/README.md`  

@@ -6,7 +6,7 @@
 
 ## 한 줄 요약
 
-- **10가지 표준 preset** + **7가지 참고 카탈로그(고급 패턴)** 를 정리해 두었습니다.
+- **10가지 표준 preset** + **GNB 패턴 2종** + **7가지 참고 카탈로그(고급 패턴)** 를 정리해 두었습니다.
 - **지금은 가이드만** — 템플릿에 **자동으로 붙지 않습니다.**
 - 표준 preset은 **한글명**으로 「story에 **스크롤 등장** 적용해줘」처럼 **연결·승인** 후 구현합니다.
 - 참고 카탈로그는 외부 사이트에서 본 **pin·3D·마키 등 고급 패턴** — ID로 승인 후 이식합니다.
@@ -18,6 +18,8 @@
 | 「stats에 **숫자 카운트업** 적용해줘」 |
 | 「news 카드에 **이미지 확대 호버** + **가로 드래그** 연결해줘」 |
 | 「hero **히어로 슬라이더** 적용해줘」 |
+| 「header **GNB 전체 펼침** (`gnb-full-expand`) 적용해줘」 |
+| 「header **GNB 항목별 패널** (`gnb-item-panel`) 적용해줘」 |
 | 「PROJECTS에 **3D 링 캐러셀** 참고해서 넣어줘」 (`3d-carousel-ring`) |
 | 「사업소개 위에 **무한 가로 텍스트** 넣어줘」 (`infinite-text-marquee`) |
 
@@ -57,6 +59,7 @@
 | 슬라이드·드래그 | 히어로 슬라이더, 가로 드래그 | **1개** |
 | hover | 호버 톤, 이미지 확대 호버 등 | **합쳐서 2개 이하** |
 | 숫자 | 숫자 카운트업 | **1개** |
+| **GNB 2depth** | GNB 전체 펼침 · GNB 항목별 패널 | **템플릿 header당 1개** (표준 preset 상한과 별도) |
 | pin·고급 스크롤 | 인트로 pin+scrub, 카드 확대 등 | **섹션 1개** (과다 금지) |
 | 장식·마키 | 무한 가로 텍스트 | **섹션 1개** (본문 가독성 방해 금지) |
 
@@ -98,6 +101,35 @@
 
 ---
 
+## GNB 패턴 (header 2depth · 2종)
+
+> **섹션 preset과 별도** — 템플릿 **header당 1개만** · 두 패턴 **동시 적용 금지**  
+> 정렬·딤·gap·속도 등 수치는 **Figma + decision-log** · 구현은 `45-interaction-patterns.mdc`
+
+| 한글명 | ID | 한 줄 | 묘사 (눈에 보이는 것) | 참고 |
+|--------|-----|-------|------------------------|------|
+| **GNB 전체 펼침** | `gnb-full-expand` | 헤더 아래 **공용 패널 1개**가 펼쳐짐 | **기본=닫힘.** 1depth hover 시 헤더 밑 **전체 폭** 패널이 열리고, 다른 1depth로 옮겨도 **같은 패널** 유지. 1depth·2depth **글자 시작점** 맞춤. **열 뒤 박스 없음.** | [원안과](https://www.oneretinaclinic.com/) |
+| **GNB 항목별 패널** | `gnb-item-panel` | 1depth마다 **개별 2depth 박스** | 메뉴 항목마다 **그 아래에 작은 패널**이 따로 열림. 한 번에 **하나만**. 전체 폭 메가메뉴 **아님**. | Figma `583:54` · 구현 `365-barun-dental` |
+
+### `gnb-full-expand` 구현 체크 (요약)
+
+| 항목 | 맞아야 하는 것 |
+|------|----------------|
+| 기본 | 2depth **안 보임** (`display:none` · `hidden` — `[hidden]{display:grid}` 금지) |
+| 열림 | hover 시 **전체 폭** 패널 1개 · 1depth 바꿔도 **패널 유지** |
+| 정렬 | 1depth **라벨 left** = 2depth **첫 줄 left** |
+| 열 너비 | 다음 1depth 라벨까지 **슬롯** (글자 겹침 없음) |
+| 활성 | 1depth **굵게**만 · 2depth 열 **배경 박스 없음** |
+| 딤·닫기 | `decision-log` (예: barun — 20% · 220ms) |
+
+**명령 예**
+- 「header **GNB 전체 펼침** 연결해줘」
+- 「GNB를 **항목별 패널**로 구현해줘 (`gnb-item-panel`)」
+
+**decision-log 기록 예:** `[template {slug}] header: gnb-pattern — gnb-full-expand`
+
+---
+
 ## 참고 카탈로그 (고급 패턴 · 7종)
 
 외부 사이트에서 뽑은 **특수 패턴**. GSAP ScrollTrigger·CSS 3D·CSS animation 등이 필요할 수 있습니다.  
@@ -132,6 +164,7 @@
 - 이 문서 = **공통 카탈로그·한글명·묘사**만. **템플릿마다 수정하지 않음.**
 - 「skhynix products에 drag-scroll 연결됨」 같은 **연결 현황** → `_logs/decision-log.md` · `_logs/qa-log.md`
 - 기록 형식: `[template {slug}] {section-id}: preset — scroll-reveal`  
+  GNB: `[template {slug}] header: gnb-pattern — gnb-full-expand`  
   참고 카탈로그: `[template {slug}] {section-id}: catalog — infinite-text-marquee`
 
 ## 전역 규칙

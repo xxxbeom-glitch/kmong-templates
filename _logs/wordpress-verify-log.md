@@ -223,3 +223,15 @@
 - 최종 결과: **PASS**
 - PASS: 23 · FAIL: 0 · WARN: 0
 
+## 2026-07-07T04:20:29.230Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 23 · FAIL: 0 · WARN: 0
+
+## 2026-07-07T05:10:53.731Z
+
+- slug: `365-barun-dental`
+- 최종 결과: **PASS**
+- PASS: 23 · FAIL: 0 · WARN: 0
+

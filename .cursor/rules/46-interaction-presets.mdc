@@ -19,6 +19,7 @@ globs:
 - 템플릿 제작 시 **반복 인터랙션**을 preset ID로 표준화한다.
 - **카탈로그 10종 전부 등록** — 템플릿·섹션에 **연결(적용)은 사용자가 선택·승인**할 때만 한다.
 - **현재 범위: PC (@1920 desktop)** — 모바일·터치 대체는 `35-responsive.mdc` + `45-interaction-patterns.mdc`.
+- **GNB 2depth 패턴 2종** (`gnb-full-expand` · `gnb-item-panel`) — header 전용 · 표준 preset 10종과 **별도** · 아래 「GNB 패턴」.
 - **실제 JS/CSS 구현 코드는 이 파일에 두지 않는다.** (템플릿 `main.js` / 섹션 CSS에만)
 
 ## 전역 규칙
@@ -39,6 +40,7 @@ globs:
 | 슬라이드·드래그 | `hero-progress-slider`, `drag-scroll` | **1개** |
 | hover 계열 | `hover-tone`, `image-scale-hover`, `grayscale-hover-color`, `button-text-slide-hover`, `expand-card-hover` | **합계 2개 이하** |
 | 숫자 | `stats-counter` | **1개** (stats 섹션 등) |
+| **GNB 2depth** | `gnb-full-expand`, `gnb-item-panel` | **템플릿당 1개** (header 전용 · 표준 preset 상한 **미포함**) |
 
 초과 시 **사용자 승인** 없이 적용 금지.
 
@@ -76,6 +78,8 @@ Figma MCP 분석
 | 카드 넓히기 호버 | `expand-card-hover` |
 | 숫자 카운트업 | `stats-counter` |
 | 히어로 슬라이더 | `hero-progress-slider` |
+| GNB 전체 펼침 | `gnb-full-expand` |
+| GNB 항목별 패널 | `gnb-item-panel` |
 
 ## Interaction Catalog
 
@@ -229,6 +233,49 @@ Figma MCP 분석
 
 ---
 
+## GNB 패턴 (header 2depth · 표준 preset 상한 **미포함**)
+
+> **정의만 이 파일** — nav 정렬(중앙/우측)·열 너비·딤·닫기 지연·열림 duration 등 **시각·수치는 Figma + `decision-log`**  
+> **구현:** `45-interaction-patterns.mdc` 「GNB 2depth 패턴」  
+> **참고 허브:** `_harness/interaction-samples/samples.manifest.json`
+
+- 템플릿 **header당 GNB 패턴 1개만** — `gnb-full-expand` 와 `gnb-item-panel` **동시 적용 금지**.
+- 2depth **자식 1개** 메뉴는 **패널 없이** 1depth 링크 직행 (`decision-log`에 예외 없으면 기본).
+- PC **fine pointer** hover 기준 — 모바일 GNB는 `35-responsive.mdc` · 별도 승인.
+
+### `gnb-full-expand` · GNB 전체 펼침
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **GNB 전체 펼침** |
+| **목적** | 1depth 호버 시 2depth가 **헤더 아래 공용 패널 1개**로 펼쳐짐 |
+| **사용 위치** | header · GNB · **2depth가 있는** PC 메뉴 |
+| **동작 설명 (필수)** | ① 2depth = **단일 패널** (헤더 하위·전체 폭) ② 1depth 전환 = 패널을 새로 띄우지 않고 **같은 패널 유지** ③ 1depth 수와 동일한 **열(column) 슬롯**이 패널 안에 미리 존재 (2depth 없는 항목은 **빈 슬롯**) ④ 항목마다 **따로 뜨는 박스 아님** ⑤ **기본=닫힘** · hover·focus 시에만 열림 |
+| **참고** | [원안과](https://www.oneretinaclinic.com/) |
+| **Figma / decision-log** | nav 정렬(중앙/우측) · 1depth gap · 패널 BG · 딤 유무·opacity · 닫기 지연·외부 클릭 · 열림 duration · **열 정렬 방식**(라벨 기준 등) · `@1024` 모바일 대체 UI |
+| **사용 금지** | 1depth마다 **개별 패널** (`gnb-item-panel`과 혼용) · **`[hidden]`인데 CSS로 `display:grid` 등 강제 노출** · 2depth **열 배경 하이라이트 박스**(활성은 1depth 타이포만) · 섹션 `scroll-reveal` 등과 **동일 노드** 중복 motion · 승인·decision-log 없이 적용 |
+
+### `gnb-item-panel` · GNB 항목별 패널
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **GNB 항목별 패널** |
+| **목적** | 1depth마다 **해당 항목 아래(또는 근처)에 2depth 패널이 개별**로 열림 |
+| **사용 위치** | header · GNB · Figma에 **항목별 드롭다운 박스**가 있는 PC 메뉴 |
+| **동작 설명 (필수)** | ① 2depth = **1depth 트리거마다 (또는 공유 1개를 이동하는) 개별 패널** ② 한 시점에 **하나의 패널만** 표시 ③ 패널 위치는 **트리거 기준** (겹침·offset은 Figma) ④ **전체 폭 메가메뉴 1개가 아님** |
+| **참고** | Figma `583:54` `GNB / 2depth Dropdown Spec` · **참고 구현** `wordpress/365-barun-dental/` (`initHeaderDropdown`) |
+| **Figma / decision-log** | 패널 bbox · 트리거 overlap · 딤 범위(헤더 아래만 등) · 닫기(mouseleave 지연·외부 클릭) · 자식 1개=링크 직행 · 모바일 |
+| **사용 금지** | **전체 펼침 단일 패널** (`gnb-full-expand`와 혼용) · 2depth 없는 항목에 빈 패널 · 승인·decision-log 없이 적용 |
+
+**기록 형식 (decision-log):**
+
+```
+[template {slug}] header: gnb-pattern — gnb-full-expand
+[template {slug}] header: gnb-pattern — gnb-item-panel
+```
+
+---
+
 ## Preset ID 목록 (고정)
 
 | 한글명 | ID |
@@ -244,6 +291,13 @@ Figma MCP 분석
 | 숫자 카운트업 | `stats-counter` |
 | 히어로 슬라이더 | `hero-progress-slider` |
 
+### GNB 패턴 (header · 상한 별도)
+
+| 한글명 | ID |
+|--------|-----|
+| GNB 전체 펼침 | `gnb-full-expand` |
+| GNB 항목별 패널 | `gnb-item-panel` |
+
 ## QA (`50-qa-checklist.mdc` 연동)
 
 - [ ] 적용 preset ID = **사용자 승인 목록**과 일치
@@ -251,6 +305,8 @@ Figma MCP 분석
 - [ ] **중복** animation·transition 없음
 - [ ] **`scroll-reveal` 등장 단위** = 기본값 표 준수 (카드 루트 통째 · 헤드·비카드 본문 세부 · 카드 내 자식 `scroll-reveal` 없음)
 - [ ] `prefers-reduced-motion` · 768 hover 정책 (`45` · `35`)
+- [ ] **GNB 패턴** = decision-log 승인 ID와 일치 · **한 템플릿에 2종 동시 없음**
+- [ ] **`gnb-full-expand`:** 기본 닫힘 · hover 시만 전체 폭 패널 · 1depth↔2depth **텍스트 시작점 정렬** · **열 배경 박스 없음**
 - [ ] 카탈로그 **미등록** 커스텀 motion 없음
 
 적용 기준:
@@ -259,6 +315,7 @@ Figma MCP 분석
 금지:
 - 카탈로그에 없는 preset 이름 invent
 - 승인 없이 10종 중 **임의 다수** 섹션 일괄 적용
+- **GNB 패턴 2종 동시** · 승인 없는 header 2depth 동작
 - `_modules` · 템플릿 간 공유 JS 런타임 생성
 
 완료 기준:

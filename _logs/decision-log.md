@@ -2,6 +2,40 @@
 
 ---
 
+## 2026-07-07 — [wordpress] 365-barun-dental GNB · `gnb-item-panel` 확정
+
+| # | 결정 |
+|---|------|
+| 0 | **GNB 패턴 ID:** `gnb-item-panel` (`46` · `45` · `interaction-presets-guide`) |
+| 1 | **1depth 6개:** 병원소개 · 임플란트 · 사랑니 발치 · 일반진료 · 턱관절 치료 · 소식 + CTA 상담·예약 |
+| 2 | **2depth 트리:** 병원소개 4 · 임플란트 6 · 사랑니 1 · 일반진료 4 · 턱관절 1 · 소식 2 |
+| 3 | **URL:** 전 항목 `#` placeholder |
+| 4 | **모바일 GNB:** 보류 — `@1024` 햄버거 + 중첩 `.site-header__dropdown` |
+| 5 | **2depth 1개** (사랑니 · 턱관절) → 1depth 직링크 · 패널 없음 |
+| 6 | **2depth 2개 이상** → 해당 1depth `li` 안 **개별 패널** · hover 트리거 |
+| 7 | **1depth gap:** `clamp(27px, 3.8021vw, 73px)` — Figma `583:54` 기준 **+15px** |
+| 8 | **딤:** opacity **20%** (`--header-dim-opacity: 0.2`) · 헤더 **아래만** · 패널 열릴 때 |
+| 9 | **닫기:** mouseleave · 딤·바깥 클릭 · `Escape` · **220ms** 지연 |
+| 10 | **패널 위치 (Figma annotation):** `position: fixed` · `headerInner.bottom − 12px` overlap · `trigger.left − 16px` |
+| 11 | **패널 스타일:** pad 30/18 · radius 8 · shadow `0 8px 24px rgba(0,0,0,0.12)` · BG `#fff` |
+| 12 | **활성 표시:** 1depth `font-weight: 600` (`.is-open`) |
+| 13 | **한 시점에 패널 1개만** — 다른 1depth hover 시 이전 패널 닫힘 |
+
+**2depth 패널 유무**
+
+| 1depth | 2depth 수 | 패널 |
+|--------|-----------|------|
+| 병원소개 | 4 | O |
+| 임플란트 | 6 | O |
+| 사랑니 발치 | 1 | X (직링크) |
+| 일반진료 | 4 | O |
+| 턱관절 치료 | 1 | X (직링크) |
+| 소식 | 2 | O |
+
+> **이전:** 2026-07-07 중 `gnb-full-expand`로 전환했으나 사용자 요청으로 **`gnb-item-panel` 복원** (Figma `583:54` 개별 박스 스펙).
+
+---
+
 ## 2026-07-07 — [project] `scroll-reveal` 등장 단위 기본값 (전 템플릿)
 
 | # | 결정 |

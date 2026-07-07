@@ -1,6 +1,8 @@
 <?php
 
 require_once get_template_directory() . '/inc/assets.php';
+require_once get_template_directory() . '/inc/consultation.php';
+require_once get_template_directory() . '/inc/consultation-pages.php';
 
 function barun_dental_setup() {
   add_theme_support('title-tag');
@@ -39,6 +41,9 @@ function barun_dental_enqueue_assets() {
       'images' => barun_dental_asset_map(),
       'digitalFeatures' => barun_dental_digital_features(),
       'spaceGallery' => barun_dental_space_gallery(),
+      'icons' => array(
+        'icon-x' => barun_dental_asset_uri('icon-x'),
+      ),
     )
   );
 }

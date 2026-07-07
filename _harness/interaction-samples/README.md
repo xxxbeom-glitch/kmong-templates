@@ -114,6 +114,28 @@
 
 ---
 
+### `gnb-full-expand` · GNB 전체 펼침
+
+| | |
+|--|--|
+| **참고** | [oneretinaclinic.com](https://www.oneretinaclinic.com/) · 구현 `365-barun-dental` / barun.test |
+| **한 줄** | 헤더 아래 **공용 패널 1개** · **기본 닫힘** · hover 시만 열림 |
+| **묘사** | 1depth hover → 전체 폭 패널. 메뉴 이동 시 패널 유지. 1depth·2depth left 정렬. 열 배경 박스 없음. `[hidden]{display:grid}` 금지 |
+| **확인** | 로드 시 2depth 숨김 · hover 정렬 · 열 하이라이트 없음 |
+
+---
+
+### `gnb-item-panel` · GNB 항목별 패널
+
+| | |
+|--|--|
+| **참고** | Figma `583:54` (개별 박스 스펙 · 현재 barun은 full-expand) |
+| **한 줄** | 1depth마다 **개별 패널** · full-expand와 **별도** |
+| **묘사** | 항목 아래 작은 박스만 열림. 전체 메가 한 장 아님 |
+| **확인** | Figma annotation vs barun( full-expand ) 혼동 없는지 |
+
+---
+
 > 정본·필드 정의: `samples.manifest.json`
 
 ---
@@ -129,5 +151,5 @@
 ## preset 카탈로그와의 관계
 
 - 이 허브 = **외부 참고 사이트** 인터랙션 (고급·특수 패턴)
-- `_docs/interaction-presets-guide.md` = **템플릿 표준 preset 10종** (scroll-reveal, drag-scroll 등)
+- `_docs/interaction-presets-guide.md` = **템플릿 표준 preset 10종** + **GNB 패턴 2종** (scroll-reveal, gnb-full-expand 등)
 - 허브 ID와 preset ID는 별개. 이식 시 decision-log에 기록

@@ -11,10 +11,25 @@ function barun_dental_asset_map() {
   }
 
   $base = trailingslashit(get_template_directory_uri()) . 'assets/images';
+  $icons = trailingslashit(get_template_directory_uri()) . 'assets';
 
   $map = array(
     'logo-header' => $base . '/logos/header-logo.png',
     'logo-footer' => $base . '/logos/footer-logo.png',
+
+    'consultation-sub-hero' => $icons . '/sub hero.png',
+    'icon-lock' => $icons . '/lock.png',
+    'icon-list-lock' => $icons . '/list_lock.png',
+    'icon-message-circle' => $icons . '/message-circle.png',
+    'icon-clipboard-list' => $icons . '/clipboard-list.png',
+    'icon-search' => $icons . '/search.png',
+    'icon-chevron-down' => $icons . '/chevron-down.png',
+    'icon-chevron-left' => $icons . '/chevron-left.png',
+    'icon-chevron-right' => $icons . '/chevron-right.png',
+    'icon-plus' => $icons . '/plus.png',
+    'icon-x' => $icons . '/x.png',
+    'icon-info' => $icons . '/info-icon.png',
+    'consultation-sample-xray' => $icons . '/source/image.png',
 
     'hero-main' => $base . '/01-hero/hero-main.png',
     'hero-kv' => $base . '/04-process/patient-care.png',
@@ -120,6 +135,63 @@ function barun_dental_space_gallery() {
       'eyebrow' => 'Consultation Room',
       'title' => '상담실',
       'image' => 'space-gallery-consultation',
+    ),
+  );
+}
+
+/**
+ * GNB — Figma 583:54 + decision-log 2026-07-07
+ * children 2개 이상만 드롭다운 · URL 미정 시 #
+ */
+function barun_dental_nav_menu() {
+  return array(
+    array(
+      'label' => '병원소개',
+      'href' => '#',
+      'children' => array(
+        array('label' => '병원소개의 특별함', 'href' => '#'),
+        array('label' => '의료진 소개', 'href' => '#'),
+        array('label' => '진료안내 및 오시는길', 'href' => '#'),
+        array('label' => '감염차단시스템', 'href' => '#'),
+      ),
+    ),
+    array(
+      'label' => '임플란트',
+      'href' => '#',
+      'children' => array(
+        array('label' => '일반 임플란트', 'href' => '#'),
+        array('label' => '네비게이션 임플란트', 'href' => '#'),
+        array('label' => '발치 후 즉시 임플란트', 'href' => '#'),
+        array('label' => '고난이도 임플란트', 'href' => '#'),
+        array('label' => '임플란트 틀니', 'href' => '#'),
+        array('label' => '보험 임플란트', 'href' => '#'),
+      ),
+    ),
+    array(
+      'label' => '사랑니 발치',
+      'href' => '#',
+    ),
+    array(
+      'label' => '일반진료',
+      'href' => '#',
+      'children' => array(
+        array('label' => '충치 치료', 'href' => '#'),
+        array('label' => '신경 치료', 'href' => '#'),
+        array('label' => '잇몸 치료', 'href' => '#'),
+        array('label' => '틀니', 'href' => '#'),
+      ),
+    ),
+    array(
+      'label' => '턱관절 치료',
+      'href' => '#',
+    ),
+    array(
+      'label' => '소식',
+      'href' => '#',
+      'children' => array(
+        array('label' => '공지사항', 'href' => '#'),
+        array('label' => '블로그', 'href' => '#'),
+      ),
     ),
   );
 }

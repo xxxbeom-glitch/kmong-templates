@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-06-08",
+  "updated": "2026-07-07",
   "interactions": [
     {
       "id": "intro-pin-scrub-hero",
@@ -106,6 +106,36 @@
       "status": "reference",
       "tags": ["marquee", "text", "css", "decorative"],
       "added": "2026-06-08"
+    },
+    {
+      "id": "gnb-full-expand",
+      "title": "GNB 전체 펼침",
+      "reference": {
+        "label": "원안과 (참고)",
+        "url": "https://www.oneretinaclinic.com/"
+      },
+      "stack": ["HTML", "CSS", "jQuery"],
+      "summary": "1depth hover 시 헤더 아래 공용 2depth 패널 1개. 기본 닫힘. 메뉴 이동 시 패널 유지.",
+      "description": "PC GNB 1depth hover → 헤더 하단 전체 폭 패널 1개가 열림. 다른 1depth로 옮겨도 패널은 유지되고 열(컬럼)만 바뀜. 1depth·2depth 텍스트 시작점 정렬. 2depth 열 배경 박스 없음. 기본 display:none+hidden — [hidden]{display:grid} 금지. gap·딤·닫기 지연은 decision-log.",
+      "howToTest": "원안과 PC 1025px+ · 로드 시 2depth 숨김 · hover → 전체 패널 · 1depth↔2depth left 정렬 · 열 배경 없음 · nav 밖 닫힘.",
+      "status": "reference",
+      "tags": ["gnb", "header", "hover", "mega-menu"],
+      "added": "2026-07-07"
+    },
+    {
+      "id": "gnb-item-panel",
+      "title": "GNB 항목별 패널",
+      "reference": {
+        "label": "Figma 583:54 · 365-barun-dental (barun.test)",
+        "url": "https://www.oneretinaclinic.com/"
+      },
+      "stack": ["HTML", "CSS", "jQuery"],
+      "summary": "1depth마다 개별 2depth 패널. 한 번에 하나만. 전체 폭 mega 아님.",
+      "description": "2depth가 있는 1depth hover 시 해당 항목 아래(또는 Figma offset)에 패널 박스만 열림. gnb-full-expand와 혼용 금지. 참고 구현: wordpress/365-barun-dental initHeaderDropdown. overlap 12px·left −16px·딤20%·닫기220ms는 decision-log.",
+      "howToTest": "barun.test PC 1025px+ · Figma 583:54 annotation(개별 박스·overlap·shadow)과 대비. full-expand와 동시에 쓰이지 않는지 확인.",
+      "status": "reference",
+      "tags": ["gnb", "header", "hover", "dropdown"],
+      "added": "2026-07-07"
     }
   ],
   "backlog": [
