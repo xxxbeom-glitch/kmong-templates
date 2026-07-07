@@ -1,0 +1,240 @@
+---
+description: WordPress 납품 전 최종 검수·패키징 실행 절차 (사용자 명시 요청 시만)
+alwaysApply: false
+globs:
+  - wordpress/**
+  - _delivery-wp/**
+  - _harness/verify-wordpress-static.js
+  - _harness/verify-wordpress-links.js
+  - _harness/verify-wordpress-runtime.js
+  - _harness/verify-wordpress.js
+  - _harness/package-delivery-wp.js
+  - _logs/wordpress-verify-log.md
+---
+
+# WordPress 최종 검수 (납품 전)
+
+> **개발·구조:** `70-wordpress.mdc` · **보안 차단:** `71-wordpress-security.mdc` · **정적 크몽 납품:** `60-delivery.mdc` (WP와 별도)
+> **본 파일:** 사용자가 **최종 검수·패키징**을 **명시 요청**했을 때만 따르는 **실행 절차** — 일반 섹션 구현·디자인 작업 중 **자동 적용·자동 실행 금지**
+
+---
+
+## 트리거 (이때만 본 규칙 실행)
+
+사용자 메시지에 아래 의도가 **명시**될 때:
+
+- 「최종 검수해줘」
+- 「납품 전 검수해줘」
+- 「패키징 준비해줘」
+- 「WordPress 최종 확인해줘」
+
+동의어·유사 표현도 동일하게 취급하되, **애매하면 실행하지 말고** 「최종 검수·패키징 요청이 맞는지」 한 줄 확인.
+
+### 실행 금지 (트리거 아님)
+
+- 섹션 구현·Figma 맞춤·CSS·인터랙션·`href="#"` placeholder 유지 중인 **일반 디자인 작업**
+- `package-delivery-wp.js`를 사용자 요청 없이 선제 실행
+- FAIL을 이유로 **사용자 승인 없이** 테마 코드·링크·placeholder 수정
+- 정적 크몽 트랙 (`templates/`) — 본 규칙 **비적용** (`60-delivery.mdc`)
+
+---
+
+## 1. 사전 확인
+
+### 1-1. WordPress 트랙 여부
+
+다음 중 하나로 확인:
+
+- 작업 대상이 `wordpress/{slug}/` (운영 트랙)
+- `_logs/decision-log.md`에 `[type: wordpress]` · slug
+- 사용자가 WordPress slug를 명시
+
+**static 트랙만**이면 본 규칙 중단 → `60-delivery.mdc` 안내.
+
+### 1-2. slug 확정
+
+- `decision-log` · 사용자 발화 · `wordpress/` 하위 실제 폴더명
+- 모호하면 **질문 후** 진행 — slug 추측 금지
+
+### 1-3. 테마 폴더 존재
+
+- 경로: `wordpress/{slug}/`
+- 없으면 **FAIL 보고** · 검사·패키징 중단
+
+---
+
+## 2. 실행 순서 (구현된 것만)
+
+아래 순서를 **고정**. 각 단계는 **해당 스크립트 파일이 존재할 때만** 실행.
+
+```
+① 정적 검증 (필수 · 현재 구현됨)
+② 링크 검증 (파일 있을 때만)
+③ 런타임 검증 (파일 + 로컬 WP 환경 있을 때만)
+④ 전 단계 FAIL 0건 → 패키징
+⑤ 최종 보고 (본 파일 「보고 형식」)
+```
+
+### ② 링크 검증 — 조건부
+
+- 경로: `_harness/verify-wordpress-links.js`
+- **파일 없음** → 단계 **생략** (FAIL 아님) · 보고에 「미구현 — 생략」기록
+
+### ③ 런타임 검증 — 조건부
+
+다음 **모두** 충족 시만:
+
+- `_harness/verify-wordpress-runtime.js` **또는** `_harness/verify-wordpress.js`에 런타임 단계가 구현되어 있음
+- 로컬 WordPress 환경 설정됨 — 예: `WP_VERIFY_URL` (또는 프로젝트 문서에 정의된 동등 변수) · 테마가 해당 사이트에 배치·활성화 가능
+
+**하나라도 없으면** → 단계 **생략** · 보고에 「환경 미설정 — 생략」기록
+
+### 오케스트레이터 (`verify-wordpress.js`)
+
+- 존재하고 사용자가 「전체 검수」를 요청한 경우, 위 ①~③을 내부에서 수행한다면 **오케스트레이터 1회**로 대체 가능
+- 없으면 ①부터 개별 실행
+
+---
+
+## 3. 명령 (현재·향후)
+
+| 단계 | 명령 | 현재 |
+|------|------|------|
+| ① 정적 | `node _harness/verify-wordpress-static.js {slug}` | **실행** |
+| ② 링크 | `node _harness/verify-wordpress-links.js {slug}` | 파일 없으면 생략 |
+| ③ 런타임 | `node _harness/verify-wordpress-runtime.js {slug}` (또는 오케스트레이터) | 미구현 시 생략 |
+| ④ 패키징 | `node _harness/package-delivery-wp.js {slug}` | ①~③ FAIL 0 **후만** |
+
+- 정적 검사 로그: `_logs/wordpress-verify-log.md` (기존 스크립트가 append)
+- PHP CLI 경로: `WP_VERIFY_PHP` 환경변수 (`verify-wordpress-static.js` 참고)
+
+---
+
+## 4. FAIL 시 행동
+
+**FAIL이 하나라도 있으면:**
+
+1. **`package-delivery-wp.js` 실행 금지** (ZIP·`_delivery-wp/` 생성 안 함)
+2. **테마 코드 임의 수정 금지** — placeholder(`href="#"`) 포함 · 디자인 진행 중 상태 유지
+3. **먼저 보고** — 항목마다:
+   - 파일 경로
+   - 행 번호 (스크립트 출력 또는 소스 확인)
+   - 원인 (한 줄)
+   - 수정 방향 (한 줄 · **사용자 승인 후** 작업)
+
+사용자가 「고쳐줘」라고 **별도 승인**하기 전까지 구현·패키징 금지.
+
+---
+
+## 5. WARN 보고 구분
+
+WARN은 아래 **세 가지로 라벨**하여 보고:
+
+| 구분 | 의미 | 예 |
+|------|------|-----|
+| **실제 위험** | 납품·운영 시 문제 가능 | 의심 비밀 문자열, 외부 임시 URL |
+| **개발 중 의도** | 지금 단계에서 허용·추후 연결 예정 | `href="#"`, 미완 섹션 링크 (`delivery-spec` 도입 전) |
+| **자동 판단 불가** | 사람이 맥락 확인 필요 | 카드 클릭 영역, 관리자 전용 페이지, 법무 문구 |
+
+- WARN만 있고 FAIL 없음 → **패키징 가능 여부**는 프로젝트 정책·사용자 확인에 따름. 기본: **실제 위험 WARN이 있으면** 패키징 전 사용자에게 한 줄 확인.
+
+---
+
+## 6. 자동 검증 불가 → 수동 QA
+
+아래는 스크립트로 **완전 자동 판정 불가**. 최종 보고의 「수동 QA」에 **체크리스트**로 나열 (`70-wordpress.mdc` QA·`_docs/qa-checklist.md`와 중복 나열 최소화 — 항목명만).
+
+- 테마 활성화 · 화면 치명적 PHP 오류 없음
+- 공지(`notice`) CRUD · `/notice/` · 메인 3건 (`70` 기준)
+- **설정 → 고유주소** 저장 후 permalink
+- GNB·푸터·CTA **실제 연결 URL** (placeholder 해소 후)
+- 약관·개인정보·404·사이트맵 등 **필수 페이지** 존재·문구 (`delivery-spec` 도입 전에는 decision·기획 기준)
+- 1024 · 768 · 390 레이아웃 (`35-responsive.mdc`)
+- 인터랙션·preset 동작 (승인된 preset만)
+- 폼·예약·외부 연동 실제 전송 (있는 경우)
+- 카페24 업로드 후 동일 확인 (아래 §8)
+
+---
+
+## 7. 패키징 조건
+
+**다음을 모두 만족할 때만** `node _harness/package-delivery-wp.js {slug}` 실행:
+
+1. ① 정적 검증 **FAIL 0**
+2. ② 링크 검증을 **실행한 경우** FAIL 0 (미구현으로 생략 시 해당 없음)
+3. ③ 런타임 검증을 **실행한 경우** FAIL 0 (생략 시 해당 없음)
+4. 사용자가 이번 턴에서 **패키징·최종 검수**를 요청함
+
+성공 시 출력:
+
+- `_delivery-wp/{slug}/`
+- `_delivery-wp/{slug}.zip`
+
+`package-delivery-wp.js`는 내부에서 ① 정적 검사를 다시 호출할 수 있음 — **이중 FAIL**이면 패키징 중단된 상태로 보고.
+
+---
+
+## 8. 카페24 업로드 후 확인 (자동 아님 · 보고에 항상 포함)
+
+업로드·활성화는 **사용자 수행**. AI는 ZIP·경로·체크리스트만 안내.
+
+- WordPress 관리자 → 외모 → 테마 업로드·**활성화**
+- **설정 → 고유주소** 저장 (permalink)
+- 메인·서브·공지·약관·404 URL 브라우저 확인
+- 공지 등록 후 목록/상세/메인 3건
+- SSL·혼합콘텐츠
+- 카카오톡 인앱·모바일 실기기 (`_docs/qa-checklist.md` §3-1)
+- 예약·문의 폼 실제 수신 (연동 시)
+
+---
+
+## 9. 최종 보고 형식 (필수)
+
+사용자-facing 메시지는 **비개발자도 읽을 수 있게** 짧은 한국어. 아래 헤딩 **순서 고정**:
+
+```markdown
+## WordPress 최종 검수 결과
+
+- **프로젝트 slug:** {slug}
+- **실행한 검사:** (정적 / 링크 / 런타임 — 각 실행·생략·미구현 명시)
+- **PASS / FAIL / WARN:** {n} / {n} / {n}
+
+### FAIL 상세
+(없으면 「없음」)
+- 파일 · 행 · 원인 · 수정 방향
+
+### WARN 상세
+- [실제 위험] …
+- [개발 중 의도] …
+- [자동 판단 불가] …
+
+### 자동 검증 불가 항목
+(스크립트로 못 본 것 요약)
+
+### 수동 QA 항목
+(§6 체크리스트 — 미확인 표시)
+
+### 패키징
+- 실행 여부: 예 / 아니오 (사유)
+- ZIP 경로: `_delivery-wp/{slug}.zip` 또는 「생성 안 함」
+
+### 카페24 업로드 후 확인
+(§8 bullet 요약)
+```
+
+---
+
+## 10. 금지·완료
+
+**금지:**
+
+- 트리거 없이 본 절차 자동 실행
+- FAIL·WARN을 이유로 승인 없이 코드·링크 수정
+- 미구현 스크립트를 「있다」고 가정하고 실행
+- static 트랙에 `package-delivery-wp.js` 적용
+
+**완료:**
+
+- 위 보고 형식으로 결과 전달
+- FAIL 시 패키징 없음 · 수정 방향만 제시
+- PASS 시에만 ZIP 경로까지 보고
