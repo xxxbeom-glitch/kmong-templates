@@ -2,6 +2,20 @@
 
 ---
 
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 킥오프 · Figma 기준 확정
+
+| # | 결정 |
+|---|------|
+| 1 | **트랙:** WordPress · slug **`365-hes-womens-clinic`** · `wordpress/365-hes-womens-clinic/` |
+| 2 | **디자인 기준:** Figma `365hes-homepage-1920` (`614:4`) **우선** — `docs/365hes-womens-clinic-project-spec.md`는 참고(디자인 과정에서 삭제·수정 반영) |
+| 3 | **Figma 파일:** `XSWmFlkkzLChor3uaf7veF` (포포포포폴) |
+| 4 | **1차 메인 섹션:** S00 Header · S01 Hero · S02 Today status(공지) · S03~S09 · S10 Footer — 생애주기·임신흐름·의료진 3카드 등 **설계서 항목은 Figma에 없으면 미구현** |
+| 5 | **CMS 1단계:** `notice` CPT · 메인 최신 **1건** → S02 공지 바 |
+| 6 | **호스팅:** 카페24 뉴아우토반 WordPress (`70-wordpress.mdc` 기본값) |
+| 7 | **로컬 확인:** Laragon 등 — `README.md` 절차 |
+
+---
+
 ## 2026-07-07 — [wordpress] 365-barun-dental GNB · `gnb-item-panel` 확정
 
 | # | 결정 |

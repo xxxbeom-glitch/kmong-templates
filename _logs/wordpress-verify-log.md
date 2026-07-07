@@ -235,3 +235,15 @@
 - 최종 결과: **PASS**
 - PASS: 23 · FAIL: 0 · WARN: 0
 
+## 2026-07-07T11:45:56.204Z
+
+- slug: `365-hes-womens-clinic`
+- 최종 결과: **PASS**
+- PASS: 21 · FAIL: 0 · WARN: 0
+
+## 2026-07-07T11:55:21.585Z
+
+- slug: `365-hes-womens-clinic`
+- 최종 결과: **PASS**
+- PASS: 21 · FAIL: 0 · WARN: 0
+

@@ -1,5 +1,145 @@
 # Change Log
 
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 여성질환 OK식 레이아웃
+
+**범위:** `inc/content-womens-disease.php` · `womens-disease-content.php` · `style.css`  
+**내용:** 인트로 → 공감 2열(증상|진료필요) → 질환 7카드 그리드 → 검사 → 진료과정 (OK 클리닉 정보 배열 차용)
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 서브 히어로 공통 규칙
+
+**범위:** `sub-hero.php` · `style.css` · `inc/content-womens-disease.php` · `hes-style-guide.md`  
+**내용:** eyebrow·설명·CTA·breadcrumb 제거 · 타이틀만 중앙 정렬
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 여성질환 D07~D10 제외
+
+**범위:** `template-parts/pages/womens-disease-content.php` · `inc/content-womens-disease.php` · `inc/pages.php`  
+**내용:** 치료·의료진·FAQ·하단 CTA band 제거 · D01~D06만 유지 (히어로 CTA는 D01에 유지)
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 여성질환 서브 디자인 발전
+
+**범위:** `inc/content-womens-disease.php` · `template-parts/pages/womens-disease-content.php` · `template-parts/sub-hero.php` · `style.css`  
+**내용:** 스타일가이드 토큰·메인 패턴(P04·P05·P07·P09·P12) 재조합 + 서브 전용 발전 — 카드 그리드·이미지 featured·원형 스텝·FAQ 패널·의료진 카드·섹션 배경 리듬 · §07 콘텐츠 유지
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 여성질환 §07 콘텐츠 정렬
+
+**범위:** `inc/content-womens-disease.php` · `template-parts/pages/womens-disease-content.php` · `template-parts/sub-hero.php` · `style.css`  
+**내용:** project-spec §07 카피·섹션 순서(D02→D04→D03→D05~D09) 반영 · FAQ 질문 6개만 · 의료진 필드 구조만 · 디자인은 최소 scaffold CSS(클래스·마크업 유지, 스타일 TBD)
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 서브페이지 1: 여성질환
+
+**범위:** `sub-hero.php` · `cta-band.php` · `page-womens-disease.php` · `inc/pages.php` · `inc/content-womens-disease.php` · `template-parts/pages/womens-disease-content.php` · `style.css`  
+**내용:** 공통 sub-hero·CTA band · `/womens-disease` 자동 페이지 등록 · spec §07 섹션 D01~D10 · 메인 패턴 재조합
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic GNB hover dropdown (gnb-item-panel)
+
+**범위:** `header.php` · `inc/assets.php` · `style.css` · `assets/js/main.js`  
+**내용:** GNB 7개 2depth · PC hover 패널(`initHeaderDropdown`) · dim · 모바일 드로어 내 하위메뉴 노출 · IA 경로(project-spec §04-2)
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic hes-style-guide + cursor rule
+
+**범위:** `docs/hes-style-guide.md` · `.cursor/rules/75-hes-womens-clinic.mdc` · `README.md`  
+**내용:** 메인 기반 토큰·패턴(P01~P12)·서브페이지 청사진 · GNB IA 매핑 · 서브 작업 전 필수 읽기 규칙
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic assets 영어 네이밍·폴더 정리
+
+**범위:** `assets/**` · `inc/assets.php` · `README.md`  
+**내용:** icons/logos/hero/treatments/spaces/staff 하위로 분류 · 한글 파일명 영어 kebab-case · `hes_womens_clinic_asset_uri` 경로 동기화 · treatment-surgery → `treatments/surgery.png` (operating-room 복사본)
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic Figma 검수 반영 (2·5번)
+
+**범위:** `inc/assets.php` · `template-parts/section-examination.php` · `style.css` · `footer.php` · `assets/chevron-right.png`  
+**내용:** 대표전화 `070-0000-0000` 단일 소스(`hes_womens_clinic_phone`) · S06 chevron-right · S02 shadow y8/10% · 헤더 border 제거 · Copyright 2024 고정
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S09 location (Figma 614:368)
+
+**범위:** `template-parts/section-location.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**내용:** LOCATION · 오시는 길 · 지도 placeholder #f4f1ea · 주소·전화 · 진료시간 패널 #f5f4f3 r16 · 830+562 2열 · #faf9f6
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S08 FAQ (Figma 614:344)
+
+**범위:** `template-parts/section-faq.php` · `front-page.php` · `style.css` · `inc/assets.php` · `assets/js/main.js`  
+**내용:** FAQ · 자주 하는 질문 · 아코디언 6항목(1번 기본 열림) · Q 22px · A 17px · chevron up/down · `initFaqAccordion()` · #f8f5f0
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S07 our space (Figma 614:313)
+
+**범위:** `template-parts/section-space.php` · `front-page.php` · `style.css` · `inc/assets.php` · `assets/js/main.js`  
+**내용:** OUR SPACE · 진료 환경과 프라이버시 · 7탭 pill(활성 accent) · 카드 682px r12 · 공간 이미지 7종 · `initSpaceTabs()` · #faf7f6
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S06 examination (Figma 614:284)
+
+**범위:** `template-parts/section-examination.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**내용:** SYSTEM · 체계적인 진료 시스템 · 6단계 원형(180px) · 배경숫자 86px accent 12% · chevron 연결 · #f8f5f0 · @1024 가로 스크롤
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S05 medical staff (Figma 614:191)
+
+**범위:** `template-parts/section-medical-staff.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**내용:** TEAMS · 2줄 타이틀 42px white · CTA pill 「의료진 소개」 · full-bleed 560px · `의료진소개.png` · #1c1917 40% 오버레이
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S04 treatments (Figma 614:88)
+
+**범위:** `template-parts/section-treatments.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**내용:** SIGNATURE · 대표 진료 · 2행 비대칭 그리드(754+327+327) · 카드 400px r16 · 하단 그라데이션 · 라벨 28px white · 6진료 이미지 연결(여성수술=수술실 임시)
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic S02 floating · S03 symptom (Figma 614:46 · 614:61)
+
+**범위:** `template-parts/section-today-status.php` · `template-parts/section-symptom.php` · `front-page.php` · `style.css` · `inc/assets.php`  
+**내용:** S02 — hero 하단 50px 겹침 플로팅 카드(1440×100 · #f8f8f8 · r12 · pad 70 · 공지 CPT) · `hero-float-wrap` · S03 — SYMPTOM FINDER · 3×2 카드 6항목 · #f8f5f1 · pad 160/100 · dev-preview 제거
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic Hero (Figma 614:22)
+
+**범위:** `template-parts/section-hero.php` · `front-page.php` · `style.css`  
+**내용:** S01 hero — `kv.png` full-bleed 800px · 대각 그라데이션 오버레이(40→60% black ×0.9) · 타이틀 64/76.8 w700 · 본문 24/36 w400 80% white · gutter 240 · CTA 없음(Figma 기준) · @1024/@768 object-position·min-height
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic Header · Footer (Figma 652:69 · 652:84)
+
+**범위:** `header.php` · `footer.php` · `style.css` · `inc/assets.php` · `assets/js/main.js`  
+**내용:** Figma S00/S10 — 로고·GNB gap 40·진료 상담 pill CTA · 푸터 SNS·사업자 정보·약관 링크 · @1024 햄버거 · placeholder `#`
+
+---
+
+## 2026-07-07 — [wordpress] 365-hes-womens-clinic 로컬 테스트 사전작업
+
+**범위:** `wordpress/365-hes-womens-clinic/` — `style.css` · `functions.php` · `header.php` · `footer.php` · `front-page.php` · `index.php` · `archive-notice.php` · `single-notice.php` · `inc/*` · `assets/js/main.js` · `template-parts/*` · `README.md`  
+**내용:** Theme Header·SUIT enqueue·`notice` CPT·공지 바(S02)·헤더/푸터 플레이스홀더·dev-preview 임시 메인. Figma 614:4 기준 토큰. `verify-wordpress-static.js` PASS.
+
+---
+
 ## 2026-07-07 — [wordpress] 365-barun-dental 온라인 상담 3페이지 (PC)
 
 **범위:** `page-consultation*.php` · `template-parts/consultation/*` · `inc/consultation.php` · `style.css` · `main.js` · `header.php` · `inc/assets.php`  
