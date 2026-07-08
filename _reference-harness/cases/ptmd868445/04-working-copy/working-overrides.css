@@ -228,8 +228,9 @@ button {
  * tokens only · MOALUCK copy / SUIT keep
  * ========================================================= */
 
-#header.header--two-row {
-  border-bottom: 1px solid var(--ds-c-line-main);
+#header.header--two-row,
+#header.header--two-row.fixed {
+  border-bottom: none;
 }
 
 /* 2열 헤더 높이 증가 → 히어로/본문과 붙음 방지 */
