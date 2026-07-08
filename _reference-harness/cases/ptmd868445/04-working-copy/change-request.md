@@ -8,20 +8,31 @@
 
 ## 요청 범위
 
-1. 기본 폰트: Pretendard → **SUIT** (jsDelivr 웹폰트)  
-2. 시맨틱·크기 토큰(`--ds-fs-*` 등) **유지** (요청 1 범위)
-3. 상품 썸네일 크기감: 참고 [PTMD807311](https://d.cafe24.com/sample?productCode=PTMD807311&frame=P) · **1줄 4개**  
-   - **1차:** `section.md-pick` (MD’S PICK)만  
-   - **승인 후:** 같은 `prdList`/listmain 공통 반영
+1. 기본 폰트: Pretendard → **SUIT** (유지)
+2. 타이포 수치(크기·굵기·행간·자간): **PTMD871337** 기준으로 수정본 **전체** (`--ds-fs/fw/lh/ls` 재정의)
+3. 상품 썸네일 크기감: 참고 PTMD807311 · 1줄 4개 — **MD’S PICK만** (승인 전 공통 반영 보류)
+4. MD’S PICK 부가: 라운드 24 · 네비 상시 · 아이콘 50% · 네비 세로 중앙
+
+## PTMD871337 → MOALUCK `--ds-*` 매핑 (Desktop)
+
+| MOALUCK 토큰 | 이전 | ← 871337 근거 | 새 값 |
+|---|---|---|---|
+| `--ds-fs-caption-md` | 12 | text-extra-small 0.6rem | **12px** |
+| `--ds-fs-body-md` | 14 | body 0.75rem | **15px** |
+| `--ds-fs-body-lg` | 16 | text-medium 0.8rem | **16px** |
+| `--ds-fs-h2` | 28 | title/util mid | **24px** |
+| `--ds-fs-h1` / display-md | 32 / 56 | title 30 / 2rem band | **30 / 30** |
+| `--ds-lh-base` | 1.4 | body line-height | **1.3** |
+| `--ds-ls` | -0.02em | default normal | **0** |
+| `--ds-fw-*` | 400/500/600/700 | 동일 ladder | 유지 |
+
+폰트 패밀리 토큰은 871337의 Montserrat/Pretendard Variable을 쓰지 않고 **SUIT만** 유지.
 
 ## 변경 로그
 
 | 일시 | 내용 |
 |------|------|
-| 2026-07-08 | working-copy 초기화 (원본 복사) |
-| 2026-07-08 | `working-overrides.css` — body 기본 font-family만 SUIT로 교체 · ds 사이즈/시맨틱 미변경 |
-| 2026-07-08 | MD’S PICK만 — swiper 6열→4열 · 썸네일 1:1 cover (참고 ~305px 크기감) · 타 진열 미변경 |
-| 2026-07-08 | MD’S PICK 좌우 네비 → 썸네일 이미지 세로 중앙 정렬 |
-| 2026-07-08 | MD’S PICK 화살표 아이콘만 50% (20→10px) · 원 48px 유지 |
-| 2026-07-08 | MD’S PICK 썸네일 라운드 `r-md` 12 → `--ds-r-lg` 24px |
-| 2026-07-08 | MD’S PICK 좌우 네비 호버 노출 제거 · 상시 표시 |
+| 2026-07-08 | working-copy 초기화 |
+| 2026-07-08 | SUIT 기본 폰트 |
+| 2026-07-08 | MD’S PICK 4열·1:1·네비/라운드/아이콘 |
+| 2026-07-08 | **전체** 타이포 토큰을 PTMD871337 스케일로 재정의 (SUIT 유지) |

@@ -1,14 +1,81 @@
 /**
  * MOALUCK working-copy overrides
- * - base font: Pretendard -> SUIT (jsDelivr webfont)
- * - do NOT change --ds-fs / --ds-fw / --ds-lh semantic or size tokens
  *
- * MD'S PICK only (pending approval for shared product-thumb modules):
- * - 1 row × 4 cards (match PTMD807311 size feel)
- * - thumbnail aspect 1:1
- * - radius --ds-r-lg (24px)
+ * Keep:
+ * - font-family: SUIT (not Pretendard / not 871337 Montserrat)
+ *
+ * Global typography values from PTMD871337 (ecudemo389695):
+ * - rem root html 20px · body 0.75rem(15px) / lh 1.3 / letter-spacing normal
+ * - util: text-extra-small 12 / text-small 14 / text-medium 16 / text-large 18 / text-extra-large 20
+ * Mapped onto MOALUCK --ds-fs / --ds-fw / --ds-lh / --ds-ls (semantic names kept)
+ *
+ * MD'S PICK only (layout):
+ * - 4-col · thumb 1:1 · radius --ds-r-lg · nav always visible
  */
 @import url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css');
+
+:root {
+  /* ---- size (PTMD871337 rem util → px @ html 20px) ---- */
+  --ds-fs-xs: 12px; /* 0.6rem text-extra-small */
+  --ds-fs-sm: 14px; /* 0.7rem text-small */
+  --ds-fs-md: 16px; /* 0.8rem text-medium */
+  --ds-fs-lg: 18px; /* 0.9rem text-large */
+  --ds-fs-xl: 20px; /* 1rem text-extra-large */
+  --ds-fs-2xl: 24px;
+  --ds-fs-3xl: 28px;
+  --ds-fs-4xl: 30px; /* 871337 section title frequency */
+  --ds-fs-5xl: 40px; /* 2rem */
+
+  --ds-fs-display-lg: 40px;
+  --ds-fs-display-md: 30px;
+  --ds-fs-h1: 30px;
+  --ds-fs-h2: 24px;
+  --ds-fs-h3: 20px;
+  --ds-fs-h4: 18px;
+  --ds-fs-h5: 16px;
+
+  --ds-fs-body-lg: 16px; /* text-medium */
+  --ds-fs-body-md: 15px; /* 871337 body (0.75rem) */
+  --ds-fs-caption-lg: 14px; /* text-small */
+  --ds-fs-caption-md: 12px; /* text-extra-small */
+  --ds-fs-caption-sm: 12px; /* no 11px util — snap to xs */
+
+  /* ---- weight (same ladder; 871337 uses 400/500/600/700) ---- */
+  --ds-fw-regular: 400;
+  --ds-fw-medium: 500;
+  --ds-fw-semibold: 600;
+  --ds-fw-bold: 700;
+
+  /* ---- line-height ---- */
+  --ds-lh-tight: 1.2;
+  --ds-lh-base: 1.3; /* 871337 body */
+  --ds-lh-loose: 1.5;
+
+  /* ---- letter-spacing ---- */
+  --ds-ls: 0; /* 871337 default normal (was -0.02em) */
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ds-fs-display-lg: 30px;
+    --ds-fs-display-md: 28px;
+    --ds-fs-h1: 24px;
+    --ds-fs-h2: 20px;
+    --ds-fs-h3: 18px;
+    --ds-fs-h4: 16px;
+    --ds-fs-h5: 15px;
+    --ds-fs-body-lg: 15px;
+    --ds-fs-body-md: 14px;
+    --ds-fs-caption-lg: 12px;
+    --ds-fs-caption-md: 12px;
+    --ds-fs-caption-sm: 12px;
+    --ds-fs-xl: 18px;
+    --ds-fs-2xl: 20px;
+    --ds-fs-3xl: 24px;
+    --ds-fs-4xl: 28px;
+    --ds-fs-5xl: 32px;
+  }
+}
 
 body,
 code,
@@ -17,9 +84,11 @@ select,
 textarea,
 button {
   font-family: 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  letter-spacing: var(--ds-ls);
+  line-height: var(--ds-lh-base);
 }
 
-/* ---- MD'S PICK only ---- */
+/* ---- MD'S PICK only (layout / chrome) ---- */
 section.md-pick .prdList .thumbnail {
   position: relative;
   width: 100%;
@@ -43,7 +112,7 @@ section.md-pick .prdList .thumbnail a img {
   max-width: none !important;
   object-fit: cover;
   object-position: center;
-  border-radius: var(--ds-r-lg) !important; /* 24px · was r-md 12px */
+  border-radius: var(--ds-r-lg) !important;
 }
 
 section.md-pick .prdList .thumbnail img.img-after {
@@ -52,7 +121,7 @@ section.md-pick .prdList .thumbnail img.img-after {
   left: 0;
 }
 
-/* nav: always visible (no hover-to-show) · vertical center via JS */
+/* nav: always visible · vertical center via JS */
 section.md-pick .swiper-box .swiper-button-next,
 section.md-pick .swiper-box .swiper-button-prev,
 section.md-pick .ds-base-product .swiper-box .swiper-button-next,
@@ -71,7 +140,7 @@ section.md-pick .swiper-box .swiper-button-prev.swiper-button-disabled {
   visibility: visible !important;
 }
 
-/* circle size unchanged (48px) — icon glyph only 50% */
+/* circle 48px 유지 — icon glyph만 50% */
 section.md-pick .swiper-box .swiper-button-next:after,
 section.md-pick .swiper-box .swiper-button-prev:after {
   font-size: 10px !important;
