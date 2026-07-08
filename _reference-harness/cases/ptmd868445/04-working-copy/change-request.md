@@ -22,3 +22,4 @@
 | 2026-07-08 | working-copy · SUIT · 871337 타이포 |
 | 2026-07-08 | MD’S PICK만 4열·1:1·네비/라운드 |
 | 2026-07-08 | **승인:** MD PICK 규칙을 상품 공통 모듈(`.ds-base-product` / product swiper)에 확장 |
+| 2026-07-08 | BEST prdList grid6 → grid4 (MD PICK과 동일 4열 크기감)

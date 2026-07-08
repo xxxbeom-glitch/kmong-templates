@@ -128,23 +128,36 @@ button {
   left: 0;
 }
 
-/* Desktop / tablet grid widths stay 4-col when class is grid4; force 25% when swiper not yet patched */
+/* Desktop 4-col size feel (MD'S PICK) — includes BEST listmain-17 which uses grid6 */
 .ds-base-product ul.prdList.grid4 > li,
-.ds-base-product ul.grid4 > li {
-  width: 25%;
+.ds-base-product ul.grid4 > li,
+.ds-base-product ul.prdList.grid6 > li,
+.ds-base-product ul.grid6 > li,
+.xans-product-listmain-17 ul.prdList > li {
+  width: 25% !important;
+  max-width: 25%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1023px) {
   .ds-base-product ul.prdList.grid4 > li,
-  .ds-base-product ul.grid4 > li {
-    width: 33.33%;
+  .ds-base-product ul.grid4 > li,
+  .ds-base-product ul.prdList.grid6 > li,
+  .ds-base-product ul.grid6 > li,
+  .xans-product-listmain-17 ul.prdList > li {
+    width: 33.33% !important;
+    max-width: 33.33%;
   }
 }
 
 @media (max-width: 767px) {
   .ds-base-product ul.prdList.grid4 > li,
-  .ds-base-product ul.grid4 > li {
-    width: 50%;
+  .ds-base-product ul.grid4 > li,
+  .ds-base-product ul.prdList.grid6 > li,
+  .ds-base-product ul.grid6 > li,
+  .xans-product-listmain-17 ul.prdList > li {
+    width: 50% !important;
+    max-width: 50%;
   }
 }
 
