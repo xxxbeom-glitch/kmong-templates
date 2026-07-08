@@ -139,6 +139,11 @@ button {
   box-sizing: border-box;
 }
 
+/* BEST: show first row only (4 cards) */
+.xans-product-listmain-17 ul.prdList > li:nth-child(n + 5) {
+  display: none !important;
+}
+
 @media (max-width: 1023px) {
   .ds-base-product ul.prdList.grid4 > li,
   .ds-base-product ul.grid4 > li,
