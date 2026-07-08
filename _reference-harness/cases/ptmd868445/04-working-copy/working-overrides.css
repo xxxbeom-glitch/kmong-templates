@@ -56,3 +56,9 @@ section.md-pick .swiper-box .swiper-button-prev {
   margin-top: 0 !important;
   transform: translateY(-50%) !important;
 }
+
+/* circle size unchanged (48px) — icon glyph only 50% */
+section.md-pick .swiper-box .swiper-button-next:after,
+section.md-pick .swiper-box .swiper-button-prev:after {
+  font-size: 10px !important;
+}
