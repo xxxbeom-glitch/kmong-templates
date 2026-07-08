@@ -203,6 +203,11 @@ button {
   border-bottom: 1px solid var(--ds-c-line-main);
 }
 
+/* 2열 헤더 높이 증가 → 히어로/본문과 붙음 방지 */
+body:has(#header.header--two-row) #container {
+  padding-top: var(--ds-sp-24);
+}
+
 #header.header--two-row .header__main {
   display: flex !important;
   flex-direction: column;
