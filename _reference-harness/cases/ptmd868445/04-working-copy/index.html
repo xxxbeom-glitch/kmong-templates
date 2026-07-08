@@ -856,6 +856,9 @@ CAFE24.ROUTE = {"is_mobile":false,"is_need_route":false,"language_code":"ZZ","pa
                 </div>
             </div>
             <div class="kv-pagination"></div>
+            <!-- theme initKVSwiper on.init requires these; missing → throw → 200ms re-init loop (flash) -->
+            <span class="kv-page-current" hidden aria-hidden="true"></span>
+            <span class="kv-page-total" hidden aria-hidden="true"></span>
             <button type="button" class="kv-btn-prev" aria-label="이전">
                 <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />

@@ -1,5 +1,9 @@
 # QA Log
 
+## 2026-07-09 · [reference-harness] ptmd868445 KV flash fix
+**범위:** working-copy KV hero (style-A)
+**결과:** **확인 필요** (코드 수정 완료 · 브라우저 하드 리프레시 후 슬라이드 간격 ~5초인지 확인)
+**비고:** 테마 init throw 루프 + destroy 레이스 제거
 ## 2026-07-08 · [reference-harness] ptmd871337·868445·864942 수집 QA
 
 **결과:** 각 **PARTIAL** (60 pages · browser-captured · Track C)

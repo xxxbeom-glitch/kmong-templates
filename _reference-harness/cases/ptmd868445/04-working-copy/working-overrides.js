@@ -150,108 +150,144 @@
  * KV → PTMD869920 기본형(A)
  * Full-bleed 1-slide · autoplay 5s.
  *
- * Do NOT repeatedly destroy/rebuild or autoplay.stop/start — that made
- * hero image+text flash rapidly. Init once; only re-fix if theme
- * re-binds card-mode / 3s autoplay.
+ * Theme `initKVSwiper` (optimizer_user): card mode + delay 3000, and its
+ * on.init writes `.kv-page-current` (missing in style-A markup → can throw).
+ * Previous override raced early + 1.5s destroy/rebuild → image+text flash.
+ *
+ * Rule: wait Morenvy `.init`, let theme bind once, then take over ONCE.
+ * No periodic destroy.
  */
 (function () {
   var AUTOPLAY_MS = 5000;
-  var locked = false;
-  var fixing = false;
+  var owned = false;
 
-  function isOurSwiper(sw) {
+  function realSlideCount(el) {
+    return el.querySelectorAll(
+      '.swiper-wrapper > .swiper-slide.kv-slide, .swiper-wrapper > .kv-slide'
+    ).length;
+  }
+
+  function destroyKvInstances(el) {
+    if (el && el.swiper) {
+      try {
+        el.swiper.destroy(true, true);
+      } catch (e) {}
+    }
+    if (window.kvSwiper && typeof window.kvSwiper.destroy === 'function') {
+      try {
+        window.kvSwiper.destroy(true, true);
+      } catch (e) {}
+    }
+    window.kvSwiper = null;
+  }
+
+  function ensureThemePagestubs(box) {
+    // Theme initKVSwiper on.init touches these; missing nodes throw mid-init.
+    if (!box) return;
+    if (!box.querySelector('.kv-page-current')) {
+      var cur = document.createElement('span');
+      cur.className = 'kv-page-current';
+      cur.setAttribute('aria-hidden', 'true');
+      cur.style.display = 'none';
+      box.appendChild(cur);
+    }
+    if (!box.querySelector('.kv-page-total')) {
+      var tot = document.createElement('span');
+      tot.className = 'kv-page-total';
+      tot.setAttribute('aria-hidden', 'true');
+      tot.style.display = 'none';
+      box.appendChild(tot);
+    }
+  }
+
+  function isStyleA(sw) {
     if (!sw || !sw.params) return false;
-    var spv = sw.params.slidesPerView;
-    if (spv === 'auto' || (typeof spv === 'number' && spv > 1)) return false;
+    if (sw.params.slidesPerView !== 1) return false;
     var ap = sw.params.autoplay;
     if (ap && typeof ap === 'object' && ap.delay && ap.delay < 4000) return false;
     return true;
   }
 
-  function rebuildKv(force) {
-    if (fixing) return false;
-    var el = document.querySelector('.kv-section--style-a .kv-swiper');
-    if (!el || typeof Swiper === 'undefined') return false;
+  function takeOver() {
+    if (owned) return true;
+    var section = document.querySelector('.kv-section--style-a');
+    var el = section && section.querySelector('.kv-swiper');
+    var area = section && section.querySelector('.morenvy-banner-area.init');
+    var box = section && section.querySelector('.kv-container');
+    if (!el || !area || typeof Swiper === 'undefined') return false;
 
-    if (!force && locked && el.swiper && isOurSwiper(el.swiper)) return true;
-
-    var slides = el.querySelectorAll('.swiper-slide.kv-slide, .kv-slide');
+    var slides = realSlideCount(el);
     var hasImg = el.querySelector('.kv-image img');
-    if (!slides.length || !hasImg) return false;
+    if (slides < 1 || !hasImg) return false;
 
-    fixing = true;
-    try {
-      if (el.swiper) {
-        try {
-          el.swiper.destroy(true, true);
-        } catch (e) {}
-      }
-      if (window.kvSwiper && window.kvSwiper !== el.swiper && typeof window.kvSwiper.destroy === 'function') {
-        try {
-          window.kvSwiper.destroy(true, true);
-        } catch (e) {}
-      }
+    ensureThemePagestubs(box);
+    destroyKvInstances(el);
 
-      var slideCount = el.querySelectorAll('.swiper-slide').length;
-      window.kvSwiper = new Swiper(el, {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 0,
-        loop: slideCount > 1,
-        speed: 600,
-        autoplay:
-          slideCount > 1
-            ? {
-                delay: AUTOPLAY_MS,
-                disableOnInteraction: false,
-              }
-            : false,
-        pagination: {
-          el: '.kv-section--style-a .kv-pagination',
-          clickable: true,
-          type: 'bullets',
+    window.kvSwiper = new Swiper(el, {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 0,
+      centeredSlides: false,
+      loop: slides > 1,
+      speed: 600,
+      autoplay:
+        slides > 1
+          ? {
+              delay: AUTOPLAY_MS,
+              disableOnInteraction: false,
+            }
+          : false,
+      pagination: {
+        el: '.kv-section--style-a .kv-pagination',
+        clickable: true,
+        type: 'bullets',
+      },
+      navigation: {
+        nextEl: '.kv-section--style-a .kv-btn-next',
+        prevEl: '.kv-section--style-a .kv-btn-prev',
+      },
+      on: {
+        init: function () {
+          if (box) box.classList.add('init');
         },
-        navigation: {
-          nextEl: '.kv-section--style-a .kv-btn-next',
-          prevEl: '.kv-section--style-a .kv-btn-prev',
-        },
-        on: {
-          init: function () {
-            var box = document.querySelector('.kv-section--style-a .kv-container');
-            if (box) box.classList.add('init');
-          },
-        },
-      });
-      locked = true;
-    } finally {
-      fixing = false;
-    }
+      },
+    });
+
+    owned = true;
+    el.setAttribute('data-moa-kv', 'style-a');
     return true;
   }
 
-  var bootTries = 0;
-  var bootTimer = setInterval(function () {
-    bootTries += 1;
-    if (rebuildKv(false) || bootTries > 80) clearInterval(bootTimer);
-  }, 250);
-
-  // Slow watchdog only — theme may init card Swiper (3s) after us
-  setInterval(function () {
-    var el = document.querySelector('.kv-section--style-a .kv-swiper');
-    if (!el || !el.swiper) return;
-    if (!isOurSwiper(el.swiper)) {
-      locked = false;
-      rebuildKv(true);
+  // Theme polls .init every 200ms then inits card Swiper.
+  // Stub page nodes early so theme on.init does not throw.
+  // Take over after theme's first bind (~250–400ms after .init).
+  var waitTries = 0;
+  var waitTimer = setInterval(function () {
+    waitTries += 1;
+    var box = document.querySelector('.kv-section--style-a .kv-container');
+    var area = document.querySelector(
+      '.kv-section--style-a .morenvy-banner-area.init'
+    );
+    if (box) ensureThemePagestubs(box);
+    if (!area) {
+      if (waitTries > 120) clearInterval(waitTimer);
+      return;
     }
-  }, 1500);
-
-  document.addEventListener('DOMContentLoaded', function () {
-    rebuildKv(false);
-  });
-  window.addEventListener('load', function () {
-    rebuildKv(false);
+    clearInterval(waitTimer);
+    // After theme's 200ms poll likely ran
     setTimeout(function () {
-      rebuildKv(false);
-    }, 1200);
-  });
+      takeOver();
+      // One late retry if Morenvy images/slides arrived after theme
+      setTimeout(function () {
+        if (!owned) takeOver();
+        else {
+          var el = document.querySelector('.kv-section--style-a .kv-swiper');
+          if (el && el.swiper && !isStyleA(el.swiper)) {
+            owned = false;
+            takeOver();
+          }
+        }
+      }, 600);
+    }, 350);
+  }, 100);
 })();
