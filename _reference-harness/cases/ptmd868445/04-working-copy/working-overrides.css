@@ -323,37 +323,60 @@ button {
   justify-content: center;
 }
 
-/* search as field (triggers existing .dsSearch popup) */
-#header.header--two-row .header__search .header__search-trigger {
-  display: flex !important;
+/* search: inline field (no popup) */
+#header.header--two-row .header__search-form {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--ds-sp-8);
   width: 220px;
   height: 40px;
-  padding: 0 var(--ds-sp-16);
+  padding: 0 var(--ds-sp-12) 0 var(--ds-sp-16);
   box-sizing: border-box;
   border-radius: var(--ds-r-round);
   background: var(--ds-c-bg-section);
   color: var(--ds-c-icon-main);
-  font-size: inherit !important;
+  margin: 0;
 }
 
-#header.header--two-row .header__search-placeholder {
+#header.header--two-row .header__search-input {
   flex: 1 1 auto;
   min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0;
   font-size: var(--ds-fs-caption-lg);
   font-weight: var(--ds-fw-medium);
   line-height: var(--ds-lh-base);
+  letter-spacing: var(--ds-ls);
+  color: var(--ds-c-text-main);
+  font-family: inherit;
+}
+
+#header.header--two-row .header__search-input::placeholder {
   color: var(--ds-c-text-placeholder);
+  font-weight: var(--ds-fw-medium);
+}
+
+#header.header--two-row .header__search-submit {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ds-c-icon-main);
+  cursor: pointer;
 }
 
 #header.header--two-row .header__search svg {
-  flex: 0 0 auto;
-  color: var(--ds-c-icon-main);
+  display: block;
+  color: currentColor;
 }
 
 #header.header--two-row .header__btnMenu {
@@ -388,17 +411,10 @@ button {
     font-size: var(--ds-fs-h3);
   }
 
-  #header.header--two-row .header__search .header__search-trigger {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    justify-content: center;
-    border-radius: var(--ds-r-round);
-    background: transparent;
-  }
-
-  #header.header--two-row .header__search-placeholder {
-    display: none;
+  #header.header--two-row .header__search-form {
+    width: min(160px, 36vw);
+    height: 36px;
+    padding: 0 var(--ds-sp-8) 0 var(--ds-sp-12);
   }
 
   #header.header--two-row .header_mypage {

@@ -756,14 +756,16 @@ CAFE24.ROUTE = {"is_mobile":false,"is_need_route":false,"language_code":"ZZ","pa
             </ul>
         </div>
         <ul class="header_mypage">
-            <li class="dsSearch header__search">
-                <a href="javascript:;" class="header__search-trigger" aria-label="검색">
-                    <span class="header__search-placeholder caption-md">검색어를 입력해주세요</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <li class="header__search">
+                <form class="header__search-form" action="/product/search.html" method="get" role="search">
+                    <input type="text" name="keyword" class="header__search-input" placeholder="검색어를 입력해주세요" autocomplete="off" />
+                    <button type="submit" class="header__search-submit" aria-label="검색">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <path d="M20.9999 21.0002L16.6599 16.6602" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
-                </a>
+                    </button>
+                </form>
             </li>
             <li class="header__icon-my"><a href="/myshop/index.html" aria-label="마이페이지"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 21V19C20 17.9391 19.5184 16.9217 18.6611 16.1716C17.8038 15.4214 16.641 15 15.4286 15H8.57143C7.35901 15 6.19625 15.4214 5.33894 16.1716C4.48163 16.9217 4 17.9391 4 19V21" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
