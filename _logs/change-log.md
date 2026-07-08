@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-07-08 · [reference-harness] ptmd869920 분석 보강
+
+**범위:** `cases/ptmd869920/00-reference/`
+**내용:** analysis.md 사이트맵·PLP/PDP/cart IA · module 후보 · Desktop/Mobile · component-map · interaction-map · analysis-extract.json
+**다음:** Track C 종료 가능 · ZIP 없으면 working/map 없음
+
 ## 2026-07-08 · [rules] site-clone-fidelity 후속 이슈 보완
 
 **범위:** `site-clone-fidelity.md` · `browser-capture-qa.md` · `83` · failure-log

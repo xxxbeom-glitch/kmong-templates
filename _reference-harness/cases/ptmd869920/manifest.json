@@ -12,9 +12,13 @@
   "viewports": { "desktop": 1920, "mobile": 390 },
   "stages": {
     "source": { "status": "pass", "updatedAt": "2026-07-08" },
-    "originalCapture": { "status": "pass", "updatedAt": "2026-07-08" },
-    "originalQa": { "status": "partial", "updatedAt": "2026-07-08", "note": "browser-capture-qa · 메인 fold/full만" },
-    "analysis": { "status": "pass", "updatedAt": "2026-07-08" },
+    "originalCapture": { "status": "pass", "updatedAt": "2026-07-08", "note": "multipage pristine ~60p + preview" },
+    "originalQa": { "status": "partial", "updatedAt": "2026-07-08", "note": "nav·visual PASS · /exec proxy · remaining queue" },
+    "analysis": {
+      "status": "pass",
+      "updatedAt": "2026-07-08",
+      "note": "메인 IA + PLP/PDP/cart/board · component/interaction map · modules unverified"
+    },
     "workingCopy": { "status": "skipped", "updatedAt": "2026-07-08", "note": "Track C · demo → working 금지" },
     "workingQa": { "status": "skipped", "updatedAt": "" },
     "normalized": { "status": "skipped", "updatedAt": "" },

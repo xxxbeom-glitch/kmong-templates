@@ -7,6 +7,6 @@
 | 디자인센터 | https://d.cafe24.com/sample?productCode=PTMD869920 |
 | 데모몰 | https://ecudemo391069.cafe24.com/ |
 | 등급 | browser-captured |
-| 문서 | `00-source/` · `00-reference/analysis.md` · `02-original-qa/report.md` |
+| 문서 | `00-reference/analysis.md` · `component-map.md` · `interaction-map.md` · `02-original-qa/report.md` |
 
 수정은 하지 않음. ZIP 구매 후 Track A로만 제품 작업 가능.

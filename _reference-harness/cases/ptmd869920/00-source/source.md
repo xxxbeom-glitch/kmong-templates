@@ -26,7 +26,7 @@
 - [x] Desktop 1920 fold/full + outline.json
 - [x] Mobile 390 fold/full + outline.json
 - [x] inventory.json · license.md
-- [x] analysis.md (메인 IA)
+- [x] analysis.md (메인 IA + PLP/PDP/cart/보드 · component/interaction map)
 - [x] **멀티페이지 pristine 미러** (~60p · assets 800+) + live proxy
 - [x] 로컬 페이지 이동 (카테고리·어바웃·장바구니·게시판·이벤트·검색·상품상세)
 - [x] 퀵카테고리 8개 · 히어로 Swiper (메인 fidelity)

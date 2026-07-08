@@ -1,5 +1,11 @@
 # QA Log
 
+## 2026-07-08 · [reference-harness] ptmd869920 analysis PASS (Track C 범위)
+
+**결과:** **PASS (분석 산출)** — 메인+하위화면 IA · commerce slot · interaction map
+**한계:** 모듈명 unverified · remaining 미러·주문서 제외 · 납품/working skipped
+**문서:** `00-reference/analysis.md`
+
 ## 2026-07-08 · [reference-harness] ptmd869920 멀티페이지 네비 QA
 
 **결과:** **PASS (주요 페이지 이동)** · PARTIAL (큐 잔여 ~190 · ZIP 아님)
