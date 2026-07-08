@@ -128,8 +128,8 @@ button {
   left: 0;
 }
 
-/* Static grid (BEST etc.) — 4-col. Exclude .swiper-slide so Swiper
- * can set slide width (our previous width:auto !important blew thumbs up). */
+/* Static grid (BEST etc.) — 4-col. Swiper slides excluded
+ * (Swiper sets slide width inline from slidesPerView). */
 .ds-base-product ul.prdList.grid4 > li:not(.swiper-slide),
 .ds-base-product ul.grid4 > li:not(.swiper-slide),
 .ds-base-product ul.prdList.grid6 > li:not(.swiper-slide),
@@ -140,12 +140,13 @@ button {
   box-sizing: border-box;
 }
 
-/* Swiper: kill theme margin-right only — leave width to Swiper inline */
-.ds-base-product .swiper .prdList > li,
-.ds-base-product .swiper ul.prdList.grid4 > li,
-.ds-base-product .swiper ul.prdList.grid6 > li {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+/* Swiper: neutralize theme grid % width only (no !important on margin —
+ * Swiper spaceBetween uses inline margin-right). */
+.ds-base-product .swiper .prdList.grid4 > li.swiper-slide,
+.ds-base-product .swiper .prdList.grid6 > li.swiper-slide,
+.ds-base-product .swiper .prdList > li.swiper-slide {
+  width: auto;
+  max-width: none;
   box-sizing: border-box;
 }
 

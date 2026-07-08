@@ -1,8 +1,11 @@
 /**
  * MOALUCK working overrides — shared product modules
  * Apply MD'S PICK decisions to all product carousels (.prdList inside .swiper):
- * - Desktop 4 / tablet 3 / mobile 2
+ * - Desktop 4 / tablet 3 / mobile 2 · spaceBetween 16 (desktop/tablet) / 8 (mobile)
  * - Nav Y synced to thumbnail center
+ *
+ * Do NOT set margin-right:0 !important in CSS — that kills Swiper spaceBetween
+ * (Swiper applies gap as inline margin-right).
  */
 (function () {
   var FOUR_COL = {
@@ -10,6 +13,12 @@
     tablet: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 16 },
     desktop: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 16 },
   };
+
+  function cfgForWidth() {
+    if (window.innerWidth >= 1024) return FOUR_COL.desktop;
+    if (window.innerWidth >= 768) return FOUR_COL.tablet;
+    return FOUR_COL.mobile;
+  }
 
   function syncNavToThumb(box) {
     if (!box) return;
@@ -33,18 +42,38 @@
   }
 
   function applyViewportParams(sw) {
-    var cfg;
-    if (window.innerWidth >= 1024) cfg = FOUR_COL.desktop;
-    else if (window.innerWidth >= 768) cfg = FOUR_COL.tablet;
-    else cfg = FOUR_COL.mobile;
+    var cfg = cfgForWidth();
     sw.params.slidesPerView = cfg.slidesPerView;
     sw.params.slidesPerGroup = cfg.slidesPerGroup;
     sw.params.spaceBetween = cfg.spaceBetween;
-    // grid % width + theme margin-right break Swiper math — keep slides under Swiper control
     sw.params.watchOverflow = true;
+    // keep breakpoint table in sync so resize/breakpointChange don't revert to 6
+    sw.params.breakpoints = {
+      768: {
+        slidesPerView: FOUR_COL.tablet.slidesPerView,
+        slidesPerGroup: FOUR_COL.tablet.slidesPerGroup,
+        spaceBetween: FOUR_COL.tablet.spaceBetween,
+      },
+      1024: {
+        slidesPerView: FOUR_COL.desktop.slidesPerView,
+        slidesPerGroup: FOUR_COL.desktop.slidesPerGroup,
+        spaceBetween: FOUR_COL.desktop.spaceBetween,
+      },
+    };
+  }
+
+  function refreshSwiper(sw) {
+    applyViewportParams(sw);
+    if (typeof sw.breakpoint === 'function') {
+      try {
+        sw.breakpoint();
+      } catch (e) {}
+    }
     if (typeof sw.updateSize === 'function') sw.updateSize();
     if (typeof sw.updateSlides === 'function') sw.updateSlides();
+    if (typeof sw.updateProgress === 'function') sw.updateProgress();
     if (typeof sw.updateSlidesClasses === 'function') sw.updateSlidesClasses();
+    sw.update();
   }
 
   function patchProductSwiper(el) {
@@ -56,36 +85,26 @@
 
     if (!sw.__moaPrdPatched) {
       sw.__moaPrdPatched = true;
-      sw.params.breakpoints = {
-        768: {
-          slidesPerView: FOUR_COL.tablet.slidesPerView,
-          slidesPerGroup: FOUR_COL.tablet.slidesPerGroup,
-          spaceBetween: FOUR_COL.tablet.spaceBetween,
-        },
-        1024: {
-          slidesPerView: FOUR_COL.desktop.slidesPerView,
-          slidesPerGroup: FOUR_COL.desktop.slidesPerGroup,
-          spaceBetween: FOUR_COL.desktop.spaceBetween,
-        },
-      };
-      // base (mobile-first) values
+      // base (mobile-first) before first refresh
       sw.params.slidesPerView = FOUR_COL.mobile.slidesPerView;
       sw.params.slidesPerGroup = FOUR_COL.mobile.slidesPerGroup;
       sw.params.spaceBetween = FOUR_COL.mobile.spaceBetween;
 
-      applyViewportParams(sw);
-      sw.update();
+      refreshSwiper(sw);
 
       sw.on('resize', function () {
-        applyViewportParams(sw);
+        refreshSwiper(sw);
+        syncNavToThumb(box);
+      });
+      sw.on('breakpoint', function () {
+        refreshSwiper(sw);
         syncNavToThumb(box);
       });
       sw.on('update', function () {
         syncNavToThumb(box);
       });
     } else {
-      applyViewportParams(sw);
-      sw.update();
+      refreshSwiper(sw);
     }
 
     syncNavToThumb(box);
@@ -98,7 +117,6 @@
     for (var i = 0; i < nodes.length; i++) {
       if (patchProductSwiper(nodes[i])) ok += 1;
     }
-    // also sync static/swiper-box navs that already exist
     document.querySelectorAll('.swiper-box').forEach(function (box) {
       if (box.querySelector('.prdList')) syncNavToThumb(box);
     });
@@ -118,7 +136,6 @@
     patchAll();
   });
 
-  // Brand exhibition / ranking tabs swap panels after init
   document.addEventListener(
     'click',
     function () {
