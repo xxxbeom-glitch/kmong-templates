@@ -839,7 +839,8 @@ CAFE24.ROUTE = {"is_mobile":false,"is_need_route":false,"language_code":"ZZ","pa
     배너영역명 : 메인-키비주얼
 -->
 
-<section class="ds-section full kv-section">
+<!-- KV → PTMD869920 기본형(A): 풀폭 1장 + peek 없는 메인배너 -->
+<section class="ds-section full kv-section kv-section--style-a">
     <div class="kv-container">
         <div class="swiper kv-swiper">
             <div class="swiper-wrapper morenvy-banner-area" area_id="30fd">
@@ -854,33 +855,17 @@ CAFE24.ROUTE = {"is_mobile":false,"is_need_route":false,"language_code":"ZZ","pa
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="kv-indicator">
-            <div class="kv-page-indicator">
-                <div class="kv-page-current"></div>
-                <div class="kv-pagination"></div>
-                <div class="kv-page-total"></div>
-            </div>
-            
-            <!-- <div class="kv-scrollbar"></div> -->
-            <div class="kv-controls">
-                <button class="kv-btn-prev">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M10 12L6 8L10 4" stroke="#161616" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </button>
-                <button class="kv-btn-play-pause">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <rect x="0" y="0" width="2" height="12" fill="#161616" />
-                        <rect x="6" y="0" width="2" height="12" fill="#161616" />
-                    </svg>
-                </button>
-                <button class="kv-btn-next">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M6 4L10 8L6 12" stroke="#161616" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </button>
-            </div>
+            <div class="kv-pagination"></div>
+            <button type="button" class="kv-btn-prev" aria-label="이전">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+            <button type="button" class="kv-btn-next" aria-label="다음">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
         </div>
     </div>
 </section>

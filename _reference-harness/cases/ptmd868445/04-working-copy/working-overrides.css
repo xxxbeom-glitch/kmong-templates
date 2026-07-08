@@ -206,6 +206,174 @@ button {
 }
 
 /* =========================================================
+ * KV hero → PTMD869920 기본형(A)
+ * full-bleed single slide · bullets · side nav (not card+peek)
+ * ========================================================= */
+
+.kv-section.kv-section--style-a {
+  padding: 0;
+}
+
+.kv-section.kv-section--style-a .kv-container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+  opacity: 1 !important;
+}
+
+.kv-section.kv-section--style-a .kv-swiper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 720;
+  max-height: 720px;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.kv-section.kv-section--style-a .kv-swiper .swiper-wrapper {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.kv-section.kv-section--style-a .kv-slide {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border-radius: 0;
+  aspect-ratio: auto;
+  flex-shrink: 0;
+}
+
+.kv-section.kv-section--style-a .kv-slide a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.kv-section.kv-section--style-a .kv-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kv-section.kv-section--style-a .kv-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.kv-section.kv-section--style-a .kv-text {
+  position: absolute;
+  top: 50%;
+  left: max(var(--ds-sp-24), calc((100% - var(--ds-container)) / 2));
+  right: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: min(520px, 42vw);
+  max-width: calc(100% - 80px);
+  padding: 0;
+  background: none;
+  gap: var(--ds-sp-12);
+  color: var(--ds-c-text-invert);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.kv-section.kv-section--style-a .kv-text .h5,
+.kv-section.kv-section--style-a .kv-text .h1,
+.kv-section.kv-section--style-a .kv-text .caption-lg {
+  color: inherit;
+}
+
+.kv-section.kv-section--style-a .kv-btn-prev,
+.kv-section.kv-section--style-a .kv-btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ds-c-text-invert);
+  cursor: pointer;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.kv-section.kv-section--style-a .kv-btn-prev {
+  left: var(--ds-sp-16);
+}
+
+.kv-section.kv-section--style-a .kv-btn-next {
+  right: var(--ds-sp-16);
+}
+
+.kv-section.kv-section--style-a .kv-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: var(--ds-sp-24);
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto !important;
+  height: auto !important;
+}
+
+.kv-section.kv-section--style-a .kv-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  border-radius: var(--ds-r-round);
+  background: rgba(22, 22, 22, 0.25);
+  opacity: 1;
+}
+
+.kv-section.kv-section--style-a .kv-pagination .swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: var(--ds-r-round);
+  background: var(--ds-c-primary);
+}
+
+@media (max-width: 767px) {
+  .kv-section.kv-section--style-a .kv-swiper {
+    aspect-ratio: 390 / 480;
+    max-height: none;
+  }
+
+  .kv-section.kv-section--style-a .kv-text {
+    top: auto;
+    bottom: 56px;
+    left: var(--ds-sp-24);
+    transform: none;
+    width: calc(100% - 48px);
+    max-width: none;
+  }
+
+  .kv-section.kv-section--style-a .kv-btn-prev,
+  .kv-section.kv-section--style-a .kv-btn-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================================================
  * Header 2-row layout (ref PTMD807311 BODYLAB-style)
  * tokens only · MOALUCK copy / SUIT keep
  * ========================================================= */

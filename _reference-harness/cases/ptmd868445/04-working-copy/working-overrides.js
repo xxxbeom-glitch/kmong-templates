@@ -145,3 +145,82 @@
     true
   );
 })();
+
+/**
+ * KV → PTMD869920 기본형(A)
+ * Destroy card+peek KV and re-init as full-bleed 1-slide swiper.
+ */
+(function () {
+  var inited = false;
+
+  function rebuildKv() {
+    var el = document.querySelector('.kv-section--style-a .kv-swiper');
+    if (!el || typeof Swiper === 'undefined') return false;
+
+    // destroy theme instance if already bound
+    if (el.swiper) {
+      try {
+        el.swiper.destroy(true, true);
+      } catch (e) {}
+    }
+    if (window.kvSwiper && typeof window.kvSwiper.destroy === 'function') {
+      try {
+        window.kvSwiper.destroy(true, true);
+      } catch (e) {}
+      window.kvSwiper = null;
+    }
+
+    window.kvSwiper = new Swiper(el, {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 0,
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.kv-section--style-a .kv-pagination',
+        clickable: true,
+        type: 'bullets',
+      },
+      navigation: {
+        nextEl: '.kv-section--style-a .kv-btn-next',
+        prevEl: '.kv-section--style-a .kv-btn-prev',
+      },
+      on: {
+        init: function () {
+          var box = document.querySelector('.kv-section--style-a .kv-container');
+          if (box) box.classList.add('init');
+        },
+      },
+    });
+
+    inited = true;
+    return true;
+  }
+
+  function tryRebuild() {
+    if (inited && document.querySelector('.kv-section--style-a .kv-swiper.swiper-initialized')) {
+      return;
+    }
+    // wait until banner markup expanded (morenvy) or at least one real slide exists
+    var slides = document.querySelectorAll('.kv-section--style-a .kv-slide');
+    if (!slides.length) return;
+    rebuildKv();
+  }
+
+  var tries = 0;
+  var timer = setInterval(function () {
+    tries += 1;
+    tryRebuild();
+    if (inited || tries > 60) clearInterval(timer);
+  }, 200);
+
+  document.addEventListener('DOMContentLoaded', tryRebuild);
+  window.addEventListener('load', function () {
+    setTimeout(tryRebuild, 100);
+    setTimeout(tryRebuild, 800);
+  });
+})();
