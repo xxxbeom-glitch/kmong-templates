@@ -1,0 +1,45 @@
+{
+  "remote": {
+    "cateCount": 8,
+    "names": [
+      "이벤트",
+      "전제품",
+      "세럼",
+      "에센스",
+      "로션&크림",
+      "토너&패드",
+      "마스크팩",
+      "오일"
+    ],
+    "heroInited": true,
+    "slides": 8,
+    "jQuery": "function",
+    "Swiper": "function",
+    "title": "쇼핑몰 이름",
+    "slideAfterClick": {
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for locator('.jsMainSlidePC .swiper-button-next, .main-banner .swiper-button-next').first()\n"
+    }
+  },
+  "local": {
+    "cateCount": 8,
+    "names": [
+      "이벤트",
+      "전제품",
+      "세럼",
+      "에센스",
+      "로션&크림",
+      "토너&패드",
+      "마스크팩",
+      "오일"
+    ],
+    "heroInited": true,
+    "slides": 8,
+    "jQuery": "function",
+    "Swiper": "function",
+    "title": "쇼핑몰 이름",
+    "slideAfterClick": {
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for locator('.jsMainSlidePC .swiper-button-next, .main-banner .swiper-button-next').first()\n"
+    }
+  },
+  "matchCate": true
+}

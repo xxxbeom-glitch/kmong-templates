@@ -8,11 +8,14 @@
 원본(또는 브라우저 수집) **보관 → 필요 시 복사본 수정·분석**.  
 데모는 design reference. skin-zip과 등급을 섞지 않음 (`cafe24-original.md`).
 
+**브라우저 URL 복제:** 캡처·전체 페이지 미러·인터랙션·미리보기를 **한 연속 작업**으로 수행 (`site-clone-fidelity.md`).  
+캡처만 / 메인만으로 01-original을 끝내지 않는다.
+
 ## 파이프라인 (harness case)
 
 ```
-00-source → 01-original (immutable)
-  → integrity 또는 browser-capture QA
+00-source + 01-original (immutable)  ← URL 복제 시: 캡처·멀티페이지 미러·preview를 한 번에
+  → integrity 또는 browser-capture QA (+ site-clone-fidelity)
   → analysis (규모에 따라 선택)
   → working-copy (요청 시)
   → working QA → final?
@@ -35,4 +38,4 @@
 
 ## 관련
 
-`original-immutable.md` · `working-copy.md` · `license.md` · `cafe24-original.md` · `original-integrity-qa.md` · `browser-capture-qa.md` · `83-reference-harness.mdc`
+`site-clone-fidelity.md` · `source-collection.md` · `original-immutable.md` · `working-copy.md` · `license.md` · `cafe24-original.md` · `original-integrity-qa.md` · `browser-capture-qa.md` · `83-reference-harness.mdc`

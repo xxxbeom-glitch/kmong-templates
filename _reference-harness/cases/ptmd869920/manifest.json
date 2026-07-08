@@ -1,0 +1,29 @@
+{
+  "caseId": "ptmd869920",
+  "label": "PURE BLANC (퓨어블랑)",
+  "displayName": "PURE BLANC",
+  "sourceUrl": "https://d.cafe24.com/sample?productCode=PTMD869920",
+  "demoMallUrl": "https://ecudemo391069.cafe24.com/",
+  "productCode": "PTMD869920",
+  "track": "reference-harness",
+  "rightsType": "demo-analysis",
+  "originalCompleteness": "browser-captured",
+  "cafe24Grade": "browser-captured",
+  "viewports": { "desktop": 1920, "mobile": 390 },
+  "stages": {
+    "source": { "status": "pass", "updatedAt": "2026-07-08" },
+    "originalCapture": { "status": "pass", "updatedAt": "2026-07-08" },
+    "originalQa": { "status": "partial", "updatedAt": "2026-07-08", "note": "browser-capture-qa · 메인 fold/full만" },
+    "analysis": { "status": "pass", "updatedAt": "2026-07-08" },
+    "workingCopy": { "status": "skipped", "updatedAt": "2026-07-08", "note": "Track C · demo → working 금지" },
+    "workingQa": { "status": "skipped", "updatedAt": "" },
+    "normalized": { "status": "skipped", "updatedAt": "" },
+    "final": { "status": "skipped", "updatedAt": "" },
+    "platformMap": { "status": "skipped", "updatedAt": "2026-07-08", "note": "Track B만 · 데모 이식 아님" },
+    "platformQa": { "status": "skipped", "updatedAt": "" },
+    "release": { "status": "skipped", "updatedAt": "2026-07-08", "note": "Track C · 84 배포 없음" }
+  },
+  "licenseNote": "카페24 디자인센터 유료 스킨 공개 데모 분석용. 원본 스킨 복제·자산 납품·재판매 금지.",
+  "createdAt": "2026-07-08",
+  "updatedAt": "2026-07-08"
+}

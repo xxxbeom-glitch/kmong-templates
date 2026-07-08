@@ -1,0 +1,413 @@
+{
+  "checkedAt": "2026-07-08T12:52:23.058Z",
+  "remote": {
+    "metrics": {
+      "title": "쇼핑몰 이름",
+      "cssSheetsReadable": 5,
+      "styleSheetCount": 7,
+      "headerH": 70,
+      "heroH": 0,
+      "logoText": "",
+      "bodyBg": "rgb(255, 255, 255)",
+      "font": "\"Pretendard Variable\", \"맑은 고딕\", \"malgun gothic\", 돋움, dotum, sans-serif"
+    },
+    "failed": [
+      {
+        "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=1cF16aV5woLGktFh&ver=2&cmt=0&fs=0&rt=1.598&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=1620&",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/qoe?fmt=396&afmt=251&cpn=ZCFCzTLEx2QSVNfk&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=ZCFCzTLEx2QSVNfk&ver=2&cmt=0.017&fmt=396&fs=0&rt=0.561&euri=https%3A%2F%2Fecudemo391069.cafe24.",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/ptracking?html5=1&video_id=H0OS-Dwmvcs&cpn=ZCFCzTLEx2QSVNfk&ei=B0dOapyCNI2-vcAPl_eUyQs&ptk=youtube_none&pltype=contentugc",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/qoe?fmt=398&cpn=NYPDxS5x1ddIP1i5&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C130",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/ptracking?html5=1&video_id=5vI_NPI8YnI&cpn=NYPDxS5x1ddIP1i5&ei=CEdOaorZDd6C2roPnK_IsAI&ptk=youtube_none&pltype=contentugc",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=NYPDxS5x1ddIP1i5&ver=2&cmt=0.047&fmt=398&fs=0&rt=0.466&euri=https%3A%2F%2Fecudemo391069.cafe24.",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=ZCFCzTLEx2QSVNfk&ver=2&cmt=3.46&fmt=396&fs=0&rt=4.013&euri=https%3A%2F%2Fecudemo391069.cafe24.",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=NYPDxS5x1ddIP1i5&ver=2&cmt=4.602&fmt=398&fs=0&rt=5.017&euri=https%3A%2F%2Fecudemo391069.cafe24",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      }
+    ]
+  },
+  "local": {
+    "metrics": {
+      "title": "- 퓨어블랑",
+      "cssSheetsReadable": 6,
+      "styleSheetCount": 7,
+      "headerH": 70,
+      "heroH": 0,
+      "logoText": "",
+      "bodyBg": "rgb(255, 255, 255)",
+      "font": "\"Pretendard Variable\", \"맑은 고딕\", \"malgun gothic\", 돋움, dotum, sans-serif"
+    },
+    "failed": [
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/_mirror/www.youtube.com/embed/5vI_NPI8YnI.342b5d736444.html",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/app/Eclog/js/crypto-js.min.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/app/Eclog/js/crypto-js.min.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://js-error-tracer-api.cafe24.com/api/v1/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlY3VkZW1vMzkxMDY5LmNhZmUyNC5jb20iLCJhdWQiOiJqcy1lcnJvc",
+        "status": 403
+      },
+      {
+        "url": "http://127.0.0.1:4176/_mirror/www.youtube.com/embed/5vI_NPI8YnI.342b5d736444.html&mute=1&autoplay=1&loop=1&playlist=undefined&controls=0&rel=0&vq=hd720",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      }
+    ]
+  },
+  "localMobile": {
+    "metrics": {
+      "title": "- 퓨어블랑",
+      "cssSheetsReadable": 6,
+      "styleSheetCount": 7,
+      "headerH": 101,
+      "heroH": 0,
+      "logoText": "",
+      "bodyBg": "rgb(255, 255, 255)",
+      "font": "\"Pretendard Variable\", \"맑은 고딕\", \"malgun gothic\", 돋움, dotum, sans-serif"
+    },
+    "failed": [
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/_mirror/www.youtube.com/embed/5vI_NPI8YnI.342b5d736444.html",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/moa/img/icon/icon_arrow_down.svg",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/app/Eclog/js/crypto-js.min.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/app/Eclog/js/crypto-js.min.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/www-player.css",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:4176/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://js-error-tracer-api.cafe24.com/api/v1/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlY3VkZW1vMzkxMDY5LmNhZmUyNC5jb20iLCJhdWQiOiJqcy1lcnJvc",
+        "status": 403
+      },
+      {
+        "url": "https://js-error-tracer-api.cafe24.com/api/v1/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlY3VkZW1vMzkxMDY5LmNhZmUyNC5jb20iLCJhdWQiOiJqcy1lcnJvc",
+        "status": 403
+      },
+      {
+        "url": "http://127.0.0.1:4176/_mirror/www.youtube.com/embed/5vI_NPI8YnI.342b5d736444.html&mute=1&autoplay=1&loop=1&playlist=undefined&controls=0&rel=0&vq=hd720",
+        "status": "failed",
+        "err": "net::ERR_ABORTED"
+      }
+    ]
+  }
+}

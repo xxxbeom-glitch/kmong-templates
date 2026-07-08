@@ -19,7 +19,7 @@
 | `80-cafe24-core.mdc` | 카페24 핵심 | A/B (+C 금지) |
 | `81-cafe24-platform-map.mdc` | platform-map | **B만** |
 | `82-cafe24-qa.mdc` | QA 분기 | A/B/C |
-| `83-reference-harness.mdc` | 데모 하네스 | Track C |
+| `83-reference-harness.mdc` | 데모 하네스 · **사이트 통째 복제** (`site-clone-fidelity`) | Track C |
 | `84-cafe24-release.mdc` | 패키징·테스트 디자인·운영 전환·롤백 | **A/B만** |
 | `docs/cafe24/release.md` | 배포 요약 | 사람용 |
 | `docs/cafe24/release-templates/` | manifest·체크리스트 골격 | `_release` 보고서 |

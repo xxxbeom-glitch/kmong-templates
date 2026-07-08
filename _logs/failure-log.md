@@ -1,5 +1,35 @@
 # Failure Log
 
+## 2026-07-08 — [reference-harness] ptmd869920 미러 fidelity 후속 이슈
+
+### 증상 (순차 발생)
+1. 스타일 붕괴 (레이아웃·폰트 미적용)
+2. 퀵카테고리 과다 (로컬 22 ≠ 원격 8)
+3. 슬라이더/배너 인터랙션 단절
+4. 메인만 미러 → 페이지 이동 불가
+5. preview 포트 충돌 · 구 서버가 수정 무시
+6. Windows 경로 ENOENT (상품 슬러그 제어문자)
+7. 데모 팝업/샘플가이드가 클릭 가로막음
+
+### 원인
+1. `optimizer.php?…` query 묶음 파일명 충돌 + HTML 절대경로 잔존 + `.php` MIME
+2. post-JS DOM을 entry로 저장 → 배너 manager 재클론
+3. `/exec` 미프록시 · preview 미기동
+4. BFS 멀티페이지/url-map 네비 미적용
+5. EADDRINUSE · 스크립트 수정 후 미재기동
+6. URL 디코드 제어문자·예약문자를 경로에 사용
+7. original을 고쳐 오버레이 삭제하려 함(immutable 위반 위험)
+
+### 재발 방지 (지침)
+- `site-clone-fidelity.md` — 금지 표 · 기술 규칙 · **후속 이슈 표** · preview MIME/재기동 · fidelity 수치
+- `browser-capture-qa.md` — CSS MIME · 배너 개수=원격 · preview 재기동 · 슬라이더 init
+- `83-reference-harness.mdc` — query-hash+`.css`/`.js` · EADDRINUSE
+
+### 해결
+- mirror v3 pristine + query-hash · multipage v4 · preview live proxy · inject 숨김 only
+
+---
+
 ## 2026-06-09 — wrap shell PASS · figure UA margin 미검 (smile-clinic intro)
 
 ### 증상

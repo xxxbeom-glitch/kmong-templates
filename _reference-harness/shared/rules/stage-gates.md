@@ -8,14 +8,17 @@
 ## 00-source
 
 **PASS:** URL·라이선스·수집일·목적·원격 캡처(1920/390)·remote request inventory(가능 시)  
-**FAIL:** 메타 없이 수집 · 라이선스 미기록
+**FAIL:** 메타 없이 수집 · 라이선스 미기록  
+
+> URL 복제 시 00-source만 하고 멈추지 않음 — **01-original 미러까지 한 연속** (`site-clone-fidelity.md`).
 
 ---
 
 ## 01-original (immutable)
 
 **PASS:** `source-collection.md` + `original-immutable.md` · 실파일 · completeness 명시  
-**FAIL:** 캡처만 · reconstruction을 original로 위장 · original 내부 수정
+**browser-captured 추가 PASS:** 멀티페이지 `_mirror` · `url-map.json` · `pages.json` · preview로 주요 경로 이동 가능 (`site-clone-fidelity.md`)  
+**FAIL:** 캡처만 · **메인 HTML만** · reconstruction을 original로 위장 · original 내부 수정 · post-JS DOM을 entry로 사용
 
 ---
 
@@ -24,9 +27,9 @@
 | 소스 | QA 문서 |
 |------|---------|
 | skin-zip / owned | `original-integrity-qa.md` |
-| browser-captured | `browser-capture-qa.md` |
+| browser-captured | `browser-capture-qa.md` (+ `site-clone-fidelity.md`) |
 
-**PASS / PARTIAL / FAIL:** 해당 QA 문서 기준.  
+**PASS / PARTIAL / FAIL:** 해당 QA 문서 기준 (시각·**페이지 이동**·인터랙션).  
 → working-copy / Track B map 전 **pass | approved partial** (ZIP 무결성 또는 캡처 QA)
 
 ---

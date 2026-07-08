@@ -1,5 +1,11 @@
 # Decision Log
 
+## 2026-07-08 · [reference-harness] 브라우저 복제 = 한 번에 사이트 전체
+
+**확정:** URL/데모 복제 요청 시 단계 분할(캡처만→나중에 미러) **금지**.  
+**기준:** `site-clone-fidelity.md` · 시각·페이지 이동·인터랙션 동일(preview+live proxy 허용).  
+**등급:** 여전히 Track C · skin-zip과 혼동 금지 · 납품 승격 금지.
+
 ---
 
 ## 2026-07-07 — [wordpress] 365-hes-womens-clinic 킥오프 · Figma 기준 확정

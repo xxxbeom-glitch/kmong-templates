@@ -1,5 +1,5 @@
 ---
-description: Reference harness — 데모·수집 분석 (Track C). 납품 원본 아님
+description: Reference harness — 데모 사이트 통째 복제·분석 (Track C). 납품 원본 아님
 alwaysApply: false
 globs:
   - _reference-harness/**
@@ -8,7 +8,7 @@ globs:
 
 # Reference Harness (Track C)
 
-> **기준 문서:** `_reference-harness/shared/rules/workflow.md` · `cafe24-original.md` · `license.md`  
+> **기준 문서:** `_reference-harness/shared/rules/workflow.md` · **`site-clone-fidelity.md`** · `source-collection.md` · `cafe24-original.md` · `license.md`  
 > **라우터:** 데모·미구매 = Track C. **working skin / 납품 원본 아님.**
 
 ## 핵심만
@@ -18,6 +18,28 @@ globs:
 3. 수집 **original immutable** · 수정은 **working-copy**만
 4. 데모 **코드·이미지·폰트 납품 금지**
 5. `browser-captured` ≠ `skin-zip` 등급
+6. **URL 복제 요청 = 한 번에 전체 사이트 미러** (캡처만·메인만 **금지**) — `site-clone-fidelity.md`
+
+## 브라우저 복제 (에이전트 필수)
+
+사용자가 「복제 / 그대로 가져와 / 로컬에서 이동 / 인터랙션 동일」을 말하면:
+
+```
+캡처(1920/390) + 멀티페이지 pristine 미러 + preview + fidelity QA
+```
+
+를 **한 연속 작업**으로 끝낸다. 중간에 단계만 보고하고 멈추지 않는다.
+
+| 해야 함 | 하면 안 됨 |
+|---------|------------|
+| BFS로 내부 페이지 전부 | PNG 캡처만 완료 처리 |
+| pristine HTML + query-hash **`.css`/`.js`** | post-JS DOM을 entry · optimizer **파일명 충돌** · `.php` MIME |
+| preview에서 클릭 이동·슬라이더·배너 **개수=원격** | `file://`만 · 구 preview 방치(EADDRINUSE) |
+| 잔여 URL·프록시 한계 명시 | ZIP 없는 “완전 오프라인 동일” 거짓 주장 |
+
+실패→수정 사례 표: `site-clone-fidelity.md` 「후속 이슈 → 재발 방지」.
+
+명령: `mirror-original.js` → `preview-original.js`(재기동) → `browser-capture-qa.md` 체크.
 
 ## 강요하지 않음
 
@@ -27,7 +49,7 @@ globs:
 
 ## QA
 
-- 수집물: `82` **Browser capture QA** 또는 `browser-capture-qa.md`
+- 수집물: `82` **Browser capture QA** 또는 **`browser-capture-qa.md`** (+ `site-clone-fidelity.md`)
 - ZIP 원본: `original-integrity-qa.md` (harness)
 
 ## 금지
@@ -35,5 +57,6 @@ globs:
 - 데모 → cafe24 working skin 승격
 - reconstruction을 original로 위장 (archive 참고)
 - `templates/cafe24_shop/` 수정
+- 캡처만 / 메인만으로 browser-captured **PASS** 선언
 
 제품 이식은 Track A(보유 ZIP) 또는 Track B(map)로만.

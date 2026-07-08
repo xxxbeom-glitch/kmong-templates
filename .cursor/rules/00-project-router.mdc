@@ -14,7 +14,7 @@ alwaysApply: true
 | **Static Template** | 크몽 정적 HTML · `templates/{slug}/` (cafe24_shop 제외) | `10-static-template` + `00-core` 중 정적 부분 · `20`~`60` | `templates/{slug}/` |
 | **Cafe24 Track A** | 기존·구매·고객 제공 스킨 (`module=`·`{$}` 존재) | `80` · `82`(Existing) · **`84` release** | `cafe24/{slug}/` · `_release/{slug}/` |
 | **Cafe24 Track B** | 정적/Figma → 카페24 **이식** | `80` · **`81` map** · `82` · **`84`** | map 승인 후 `cafe24/{slug}/` · `_release/` |
-| **Track C / Reference** | 공개 데모·미구매 테마 분석 | `83-reference-harness` · harness shared | `_reference-harness/cases/{slug}/` |
+| **Track C / Reference** | 공개 데모·미구매 테마 **통째 복제·분석** | `83` · `site-clone-fidelity` · harness shared | `_reference-harness/cases/{slug}/` |
 | **WordPress** | WP 테마 | `70`~`72` | `wordpress/{slug}/` |
 
 ## 라우팅 질문 (불명확할 때만)

@@ -34,15 +34,21 @@ viewport 참고: Desktop **1920** · Mobile **390** (파일럿).
 
 소규모 시각만 변경: 영향 페이지만 · 관련 commerce 스모크.
 
-## B. 브라우저 캡처 QA (Track C / harness 수집)
+## B. 브라우저 캡처·복제 QA (Track C / harness 수집)
 
-- [ ] 원격 vs 로컬 화면
-- [ ] CSS·JS·이미지 요청
-- [ ] 인터랙션 · 반응형
-- [ ] console / network 오류
-- [ ] 누락 자산 목록
+기준: `browser-capture-qa.md` · **`site-clone-fidelity.md`**
 
-이 절차를 **구매 스킨 ZIP Track A**에 강제하지 않음.
+- [ ] 한 연속 수집 완료 (캡처만·메인만 = FAIL)
+- [ ] pristine `01-original` · `_mirror` · `url-map` · `pages.json`
+- [ ] 원격 vs 로컬 화면 (1920 / 390)
+- [ ] preview에서 **페이지 클릭 이동** (category·product·board·basket 등)
+- [ ] 인터랙션 (슬라이더 등 · live proxy `/exec` 허용)
+- [ ] CSS·JS·이미지·폰트 · 아이콘 이중 복제 없음
+- [ ] console / network 치명 오류 · 누락 자산 목록
+- [ ] Track C 한계(ZIP 아님·프록시) 명시
+
+이 절차를 **구매 스킨 ZIP Track A**에 강제하지 않음.  
+Track C → upload / production **금지**.
 
 ## C. 정적 디자인 이식 QA (Track B)
 

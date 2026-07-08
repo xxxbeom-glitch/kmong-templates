@@ -1,0 +1,439 @@
+{
+  "caseId": "ptmd869920",
+  "productCode": "PTMD869920",
+  "designCenterUrl": "https://d.cafe24.com/sample?productCode=PTMD869920",
+  "demoMallUrl": "https://ecudemo391069.cafe24.com/",
+  "collectedAt": "2026-07-08",
+  "completeness": "browser-captured",
+  "track": "reference-harness",
+  "rightsType": "demo-analysis",
+  "title": "PURE BLANC (퓨어블랑)",
+  "viewports": {
+    "desktop": 1920,
+    "mobile": 390
+  },
+  "desktopHeadings": [
+    {
+      "tag": "h3",
+      "text": "현재 결제가 진행중입니다.",
+      "top": 0
+    },
+    {
+      "tag": "h3",
+      "text": "WORLD SHIPPING",
+      "top": 0
+    }
+  ],
+  "mobileHeadings": [
+    {
+      "tag": "h3",
+      "text": "현재 결제가 진행중입니다.",
+      "top": 0
+    },
+    {
+      "tag": "h3",
+      "text": "WORLD SHIPPING",
+      "top": 0
+    }
+  ],
+  "desktopOutlineCount": 26,
+  "sampleModules": [
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-footer displaynone chk-moa"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-footer header__bottom relative"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-category category swiper-container jsHCateSlide swiper-contain"
+    },
+    {
+      "module": "",
+      "className": "category__item flex flex--v-center jsPrdCate xans-record- swiper-slide-active"
+    },
+    {
+      "module": "",
+      "className": "category__item flex flex--v-center jsPrdCate xans-record- swiper-slide-next"
+    },
+    {
+      "module": "",
+      "className": "category__item flex flex--v-center jsPrdCate xans-record-"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-boardinfo sub-category sub-category--s"
+    },
+    {
+      "module": "",
+      "className": "sub-category__item xans-record-"
+    },
+    {
+      "module": "",
+      "className": "sub-category__item xans-record-"
+    },
+    {
+      "module": "",
+      "className": "sub-category__item xans-record-"
+    },
+    {
+      "module": "",
+      "className": "sub-category__item xans-record-"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff sub-category__item"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff sub-category__item"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff other__link displaynone EC-Layout_Basket-count-dis"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-boardinfo all-c__child all-c__child--two"
+    },
+    {
+      "module": "",
+      "className": "all-c__item all-c__item--child-two xans-record-"
+    },
+    {
+      "module": "",
+      "className": "all-c__item all-c__item--child-two xans-record-"
+    },
+    {
+      "module": "",
+      "className": "all-c__item all-c__item--child-two xans-record-"
+    },
+    {
+      "module": "",
+      "className": "all-c__item all-c__item--child-two xans-record-"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff all-c__item all-c__item--mymenu flex flex--v-cente"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff all-c__item all-c__item--mymenu flex flex--v-cente"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff all-c__item all-c__item--bars"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-searchheader search__inner"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-search xans-search-hotkeyword skwd__section skwd-hot"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "skwd-hot__item flex xans-record-"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-slidepackage aside display-m"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-statelogoff membership__inner"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-category aside-category__list relative"
+    },
+    {
+      "module": "",
+      "className": "aside-category__item relative xans-record-"
+    },
+    {
+      "module": "",
+      "className": "aside-category__item relative xans-record-"
+    },
+    {
+      "module": "",
+      "className": "xans-element- xans-layout xans-layout-boardinfo aside-child"
+    },
+    {
+      "module": "",
+      "className": "xans-record-"
+    }
+  ],
+  "sampleLinks": [
+    "/member/login.html",
+    "/",
+    "/category/유형별/28/",
+    "/category/고민별/58/",
+    "/category/핫딜/54/",
+    "/board/review/list_photo.html?board_no=4",
+    "/event/list.html?cate_no=56",
+    "/about.html",
+    "/board/free/list.html?board_no=1",
+    "/board/product/list.html?board_no=6",
+    "/board/faq/list.html?board_no=3",
+    "/myshop/index.html",
+    "/member/join.html",
+    "/myshop/order/list.html",
+    "/order/basket.html",
+    "/board/product/list.html?board_no=4",
+    "/board/free/list.html?board_no=3",
+    "/myshop/wish_list.html",
+    "/product/search.html?keyword=클렌징 오일",
+    "/product/search.html?keyword=마스크팩",
+    "/product/search.html?keyword=썬크림",
+    "/product/search.html?keyword=수분 크림",
+    "/product/search.html?keyword=EGF",
+    "/product/search.html?keyword=아이크림",
+    "/product/search.html?keyword=미스트",
+    "/product/search.html?keyword=클렌징",
+    "/product/list.html?cate_no=54"
+  ],
+  "remoteRequestsByType": {
+    "document": {
+      "count": 11,
+      "samples": [
+        "https://ecudemo391069.cafe24.com/",
+        "https://www.youtube.com/embed/5vI_NPI8YnI?si=RsTrRsPszhDmSd54",
+        "https://ecudemo391069.cafe24.com/exec/front/eclog/main/?&rloc=https%3A//ecudemo391069.cafe24.com/&rref=&udim=1920*1080&cid=CID62edc3577b412e22c303a6e3ec4e1c86&role_path=MAIN&stype=e&shop_no=1&lang=ko_KR&ver=2",
+        "https://ca-log.cafe24data.com/session-handler",
+        "https://www.youtube.com/embed/H0OS-Dwmvcs?autoplay=1&controls=0&loop=0&iv_load_policy=3&mute=1&fs=0&rel=0&playlist=H0OS-Dwmvcs&enablejsapi=1&origin=https%3A%2F%2Fecudemo391069.cafe24.com&widgetid=1&forigin=https%3A%2F%2Fecudemo391069.cafe24.com%2F&aoriginsup=1&vf=1",
+        "https://www.youtube.com/embed/5vI_NPI8YnI?si=RsTrRsPszhDmSd54&mute=1&autoplay=1&loop=1&playlist=5vI_NPI8YnI&controls=0&rel=0&vq=hd720",
+        "https://ecudemo391069.cafe24.com/main_banner_card.html",
+        "https://ecudemo391069.cafe24.com/exec/front/eclog/main/?&rloc=https%3A//ecudemo391069.cafe24.com/main_banner_card.html&rref=https%3A//ecudemo391069.cafe24.com/&udim=1920*1080&cid=CIDR437baf19b565ead379a2763aeb46eb0b&role_path=BOARD_PRODUCT_LIST&stype=e&shop_no=1&lang=ko_KR&ver=2",
+        "https://www.youtube.com/embed/H0OS-Dwmvcs?autoplay=1&controls=0&loop=0&iv_load_policy=3&mute=1&fs=0&rel=0&playlist=H0OS-Dwmvcs&enablejsapi=1&origin=https%3A%2F%2Fecudemo391069.cafe24.com&widgetid=1&forigin=https%3A%2F%2Fecudemo391069.cafe24.com%2Fmain_banner_card.html&aoriginsup=1&gporigin=https%3A%2F%2Fecudemo391069.cafe24.com%2F&vf=1",
+        "https://ecudemo391069.cafe24.com/exec/front/eclog/main/?&rloc=https%3A//ecudemo391069.cafe24.com/&rref=&udim=390*844&cid=CIDR437baf19b565ead379a2763aeb46eb0b&role_path=MAIN&stype=e&shop_no=1&lang=ko_KR&ver=2",
+        "https://ecudemo391069.cafe24.com/exec/front/eclog/main/?&rloc=https%3A//ecudemo391069.cafe24.com/main_banner_card.html&rref=https%3A//ecudemo391069.cafe24.com/&udim=390*844&cid=CIDR437baf19b565ead379a2763aeb46eb0b&role_path=BOARD_PRODUCT_LIST&stype=e&shop_no=1&lang=ko_KR&ver=2"
+      ]
+    },
+    "stylesheet": {
+      "count": 5,
+      "samples": [
+        "https://img.echosting.cafe24.com/editors/froala/css/froala_style_ec.min.css?vs=2607081492",
+        "https://ecudemo391069.cafe24.com/ind-script/optimizer.php?filename=ldExDsIwDAXQPcrKOcwAF4AbIHEAJ3VRVDe2HFeC21MmKBISWb_-8x-sJjfDGYyaLJYJcmswmlSHLPMsNa7BTn-3KIcmvHiRGpLcu-qLe98A44OsBzgmpi4gGrhUCglr_drikuBaFPMEl88rZ2SqAxoc4jHuYWR0LXnaYlSFk6ANW7vGMb3imFjy1EeMVMz_Me9fPgE&type=css&k=14c70ebc0a9f7f23e5da8ec1ff8a906067997263&t=1726130154",
+        "https://ecudemo391069.cafe24.com/ind-script/optimizer_user.php?filename=lZQ9cgMhDEZ7223OwfgYKVLlBFrQ7moiELMSSXz7YHvsKrZRx897zIdGoAn3CZWWEvSLyjFkgRBVA9MUQPTQx2_6CMpA5TlxPqba9r1XOzG-Zp-TDCdpFiZQihclSs5SBuHrwiCMcdcnuGvkFKZmNhzpJhlMfmO4SndHhI2q01qRvcosnLxlk1-n0anoVOomqUVzW-m9zOK1YKECNtDz-kMVt0MeeUsJZ2hsL0BPoytTwg8szXm_vtFD_-tcvoZeacabnntm0lXq50q1UlnO4h8&type=css&k=061543acf7e6a1929752be5c3d263a928dc6b934&t=1782089654&user=T",
+        "https://www.youtube.com/s/player/f551602d/www-player.css",
+        "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.PH6_DL9O46E.L.W.O/am=AAAAIA/d=0/br=1/rs=AGKMywFxWiUuLumaXtnx7XK0qW5dDqXKKw"
+      ]
+    },
+    "image": {
+      "count": 140,
+      "samples": [
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_search.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_user.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_basket.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/default/empty_thumb.png",
+        "https://img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif",
+        "https://img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png",
+        "https://img.echosting.cafe24.com/skin/base_ko_KR/product/btn_details.gif",
+        "https://img.echosting.cafe24.com/skin/base_ko_KR/common/ico_tip_title.gif",
+        "https://img.echosting.cafe24.com/skin/base_ko_KR/common/btn_close_tip.gif",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_youtube_shorts.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/bag.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/like-heart.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_p_star.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_video_pause.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_speaker_mute.svg",
+        "https://ecudemo391069.cafe24.com/moa/img/icon/icon_fullscreen.svg",
+        "https://ecudemo391069.cafe24.com/web/product/big/202603/32638f7db36900766fdbf0e227ca8ee7.png",
+        "https://ecudemo391069.cafe24.com/file_data/ecudemo391069/2026/02/27/7940adf4f48ac198da322c9c1be5c448.jpg",
+        "https://ecudemo391069.cafe24.com/web/product/tiny/202603/af4e5a309587f973321424b01a4e7a22.png",
+        "https://ecudemo391069.cafe24.com/web/product/big/202603/c7203c2a8c31961431579a7385d110ab.png",
+        "https://ecudemo391069.cafe24.com/file_data/ecudemo391069/2026/02/27/a4b3a2a635878fc0d514441a3978064c.jpg",
+        "https://ecudemo391069.cafe24.com/web/product/tiny/202603/3ec5f798e981fd640f613893fd2cad12.png",
+        "https://ecudemo391069.cafe24.com/web/product/big/202603/e6bf71549ce300dd7f067c04d3be5f87.png",
+        "https://ecudemo391069.cafe24.com/file_data/ecudemo391069/2026/02/27/337aa163e7bb576703bc3d81c7acf696.jpg",
+        "https://ecudemo391069.cafe24.com/web/product/tiny/202603/4976c97cea8ddf45c6313355060b04eb.png",
+        "https://ecudemo391069.cafe24.com/file_data/ecudemo391069/2026/02/27/255bdc39e2b1b29c51562bd8b5fda8b3.jpg",
+        "https://ecudemo391069.cafe24.com/web/product/big/202603/dbda59d303ef141e8ccdda5849256d03.png",
+        "https://ecudemo391069.cafe24.com/file_data/ecudemo391069/2026/02/27/0782e28374f904edccb08235a3ce8637.jpg",
+        "https://ecudemo391069.cafe24.com/web/product/tiny/202603/c27fed95c0242e8f71b43dd674f77187.png",
+        "https://ecudemo391069.cafe24.com/web/product/big/202603/165a075c01529eab7ca9a364decd4582.png"
+      ]
+    },
+    "script": {
+      "count": 29,
+      "samples": [
+        "https://assets.poxo.com/jet/jet.js",
+        "https://ecudemo391069.cafe24.com/app/Eclog/js/cid.generate.js?vs=332a96be47dc7928f2562a3cf863e245&u=ecudemo391069.1",
+        "https://ecudemo391069.cafe24.com/ind-script/i18n.php?v=2607081492&lang=ko_KR&domain=front&type=",
+        "https://ecudemo391069.cafe24.com/ind-script/optimizer.php?filename=vVlbV-M2EH4Hv_Z3ePf0cvpKktJyFgqHsMuzLI-TwbKk6kLw_vqOL7AEx4nkpH0gcaT5vhlJc5MpDKtgo0yZGrDKGw7pk03x8-8yebI_FcNZj5rxMn36x4Op-6-fk9-ST0Hy8OLASCZsP5BwpUqEaVhvRISRCfCkkJEAJpDZGAzNOmXaBWmjVoTa2ticOXBYQVqpCqRLgd-0D4_o1g_fF8yxpEJ5EC0wI1l4oOcxWasNSleMUinuG8WXylRzJZ1RQoAZk74T3l5oPTOYr0Y1eodibK4wql3tmVWC5JQ8c0qfCZRwljEpxzV3QK6qSsn9Mi9MkuNK8hFtwB1ibKUdVFrQPr4XZVqnNypDAen9O1RnwWCNI9KVyj0N2Q3qEPLCS95sSkpyuecuqT64UChuoJAcJf3a-el7oGDfa6FYHiBaeccaHbeZBfO8va0jEK1EXaA44Aw5FMwL1yzNVsy42cAPmqnlWukt8ssW_IWVTKVl83mHLyCGnrkHPG_P8uuOoxwBLCDzq1By8qeVMvU1WhcIuYcCDEgOc2-a7_rOIB8sZqaYybfQNJpkzei09JmtsAX9_4k7p7wlLTmVnYYHZlGupmErcCxv8mzY2Vhghq8DnN6xoqhfk_dBs7TwK6QM9EwFhqxR5tW8t4GI0jMka1YtczskJQZN2w6n5l2D0PAf2bxmMu9r0ylpKZchndiJWSnvuSM3QijOKNGXaix__tB22C3nRCVzZtJfkl-TT2lB5U4jL6Og4vMn-cGcPRGzbCOmmaB60ZaOV6JAgr9h0_zddTXtVjcUSxDAXQRBfzBPdrttiEC9HWG4ybdClhGIbmnpHy_OsBbe_m5_LpXIlXenIdtZTqZRXVVsdSKqBVpqvmqkJuxowisiWVJJENA5Ckad-l4jDdHNmC3hRIdx6WXeF6_jyR4rG0_0RjEfdNXRBPIY_TOU-RHwRXgV3wX_1mXRD64ylgv7ziy1pOBcfwyoIBTvf50XdOdibprW48A-vOfdzsIR3ew28CI2GH9Al07xmHR6jSWkM6M2VHjmjK8hFhsdD-9Qvc2B4F6aLhaOoUhnvulwaLBSkbt1D88IG8dE2T_OlZfTTqqr27uCat_No6Yq5bOoy4rnPEY8EzvcYB_AgFZmsAc3TFLp2oJsgLhXAYIoC6E2GTA-_hJi7Srqchw6BDsmMze1duoL1AE6ma0l7z4jpSuosuFF-gDo1uRguHSRsK4yTsXpXY1JEHIk3A5gKTjo9hNv7Q0K2NH3HEAtyA8txup6RLvelW0DYHxX7B_AUXsD0aD7FlRCTRebfBL2QVHOmk-wt_XTWJcBCQVOc9FrVkfr-9OwPNZZLrxTVNeRt2BK2JtYH_XC4Z3SXscGhbekGgyF1DPGb-6ie423XKPW1Nde5DllPBtrfN2U0j6op7jFFsGE8Gnd6i9s3t3Xk92yxz-w7Ah0c5WZuoCunbiShYr1AcGwYpmAaO2aubVRAs53vpQIUH394TX0CEQHJ_yu_J1TZUcZIG43CWf7_vdhqMOBS3yh-X8B&type=js&k=c9e77135e4dc02ddcd16519786b32c98dea14ae6&t=1783400867",
+        "https://ecudemo391069.cafe24.com/ind-script/optimizer_user.php?filename=hY_BDcIwDEUHSK_METELE7iJlbrYcRQnoG5PQOKCSnuz5Pf9_C2ii2iUsrc75asXBb-aZ5o9qE2rXewAqQ_H7QwKwMEZMLoKDXdphk178zMYhXfsM-ySYxlURPOZ1frswvAlrdsp-6SCdRI6vHrg_f3fmAYimPu_EqKxM36D0rmRLVpuC5VCOY3YCw&type=js&k=9d751e43c76cf6b683f44a092d0c7d9d48785639&t=1781244900&user=T",
+        "https://ecudemo391069.cafe24.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/3d398c90ee587c8174ac17cd87e59fe5.js?v=1783514157568",
+        "https://ecudemo391069.cafe24.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/3a9afc037c4524b6076f7b1bd90ddea3.js?v=1783514157568",
+        "https://optimizer.poxo.com/ca2/analytics.js?v=20260708",
+        "https://cfa-js.cafe24.com/cfa.js?v=1783514158101",
+        "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=root,base",
+        "https://www.youtube.com/s/player/f551602d/player_embed_es6.vflset/ko_KR/base.js",
+        "https://static.doubleclick.net/instream/ad_status.js",
+        "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/exm=base,root/ed=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=r78Drb",
+        "https://cfa-js.cafe24.com/cfa.html?uid=ecudemo391069&sno=1&stype=e&type=conn&CUK45=&CID=CFAE_CID.ecudemo391069_1.6LQ6KZE.1783514158160&LC=&oLC1=&oLC2=CFAE_LC.ecudemo391069_1.9999999.1783514158160&CUK1Y=CFAE_CUK1Y.ecudemo391069_1.6LQ6KZE.1783514158160&_bc1y=&_ac1y=&_bL1y=&_aL1y=&CVID=CVID.545141505d585f0a0a0104070e3e06.1783514158160&CVID_Y=CVID_Y.545141505d585f0a0a0104070e3e06.1783514158160&CVID_AD=&CVID_E=&new_visit=T&path_role=MAIN&mem_id=&h_member_id=&udim=1920*1080&t=1783514158160&uref=&url=https%3A%2F%2Fecudemo391069.cafe24.com%2F&ttp=&mkt_click_type=&mkt_click_id=&ls_tf=&ck1ylog=&ck_tf=T&cfa_fp=493ede623e62ba0aed038f8ebea185d4",
+        "https://www.google.com/js/th/pDz23ndxccczcloXcpDaiy5RDOq9TK6JnzV7vmT_GQI.js",
+        "https://www.youtube.com/iframe_api",
+        "https://www.youtube.com/s/player/f551602d/www-widgetapi.vflset/www-widgetapi.js",
+        "https://www.youtube.com/s/player/f551602d/player_embed_es6.vflset/ko_KR/captions.js",
+        "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.qkzV44HCfo4.2021.O/am=AAAAIA/d=1/exm=base,r78Drb,root/ed=1/br=1/rs=AGKMywEbKTCzElZ7Lzr_b92AVyaIWliQQQ/m=Nuilue",
+        "https://ecudemo391069.cafe24.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/3d398c90ee587c8174ac17cd87e59fe5.js?v=1783514162494",
+        "https://ecudemo391069.cafe24.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/3a9afc037c4524b6076f7b1bd90ddea3.js?v=1783514162494",
+        "https://cfa-js.cafe24.com/cfa.js?v=1783514162812",
+        "https://cfa-js.cafe24.com/cfa.html?uid=ecudemo391069&sno=1&stype=e&type=conn&CUK45=&CID=CFAE_CID.ecudemo391069_1.6LQ6KZE.1783514158160&LC=CFAE_LC.ecudemo391069_1.6LQ6KZE.1783514158160&oLC1=CFAE_LC.ecudemo391069_1.9999999.1783514158160&oLC2=CFAE_LC.ecudemo391069_1.9999999.1783514162919&CUK1Y=CFAE_CUK1Y.ecudemo391069_1.6LQ6KZE.1783514158160&_bc1y=&_ac1y=&_bL1y=&_aL1y=&CVID=CVID.545141505d585f0a0a0104070e3e06.1783514158160&CVID_Y=CVID_Y.545141505d585f0a0a0104070e3e06.1783514158160&CVID_AD=&CVID_E=&new_visit=F&path_role=BOARD_PRODUCT_LIST&mem_id=&h_member_id=&udim=1920*1080&t=1783514162919&uref=https%3A%2F%2Fecudemo391069.cafe24.com%2F&url=https%3A%2F%2Fecudemo391069.cafe24.com%2Fmain_banner_card.html&ttp=&mkt_click_type=&mkt_click_id=&ls_tf=C&ck1ylog=&ck_tf=T&cfa_fp=493ede623e62ba0aed038f8ebea185d4",
+        "https://ecudemo391069.cafe24.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/3d398c90ee587c8174ac17cd87e59fe5.js?v=1783514170918",
+        "https://cfa-js.cafe24.com/cfa.js?v=1783514171078",
+        "https://cfa-js.cafe24.com/cfa.html?uid=ecudemo391069&sno=1&stype=e&type=conn&CUK45=&CID=CFAE_CID.ecudemo391069_1.6LQ6KZE.1783514158160&LC=CFAE_LC.ecudemo391069_1.EJJOLVB.1783514162919&oLC1=CFAE_LC.ecudemo391069_1.9999999.1783514162919&oLC2=CFAE_LC.ecudemo391069_1.9999999.1783514171119&CUK1Y=CFAE_CUK1Y.ecudemo391069_1.6LQ6KZE.1783514158160&_bc1y=&_ac1y=&_bL1y=&_aL1y=&CVID=CVID.545141505d585f0a0a0104070e3e06.1783514158160&CVID_Y=CVID_Y.545141505d585f0a0a0104070e3e06.1783514158160&CVID_AD=&CVID_E=&new_visit=F&path_role=MAIN&mem_id=&h_member_id=&udim=390*844&t=1783514171119&uref=&url=https%3A%2F%2Fecudemo391069.cafe24.com%2F&ttp=&mkt_click_type=&mkt_click_id=&ls_tf=C&ck1ylog=&ck_tf=T&cfa_fp=2fabf6434895e5473a540aefecb041c5",
+        "https://ecudemo391069.cafe24.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/3d398c90ee587c8174ac17cd87e59fe5.js?v=1783514175253",
+        "https://cfa-js.cafe24.com/cfa.js?v=1783514175383",
+        "https://cfa-js.cafe24.com/cfa.html?uid=ecudemo391069&sno=1&stype=e&type=conn&CUK45=&CID=CFAE_CID.ecudemo391069_1.6LQ6KZE.1783514158160&LC=CFAE_LC.ecudemo391069_1.C0QFQ44.1783514171119&oLC1=CFAE_LC.ecudemo391069_1.9999999.1783514171119&oLC2=CFAE_LC.ecudemo391069_1.9999999.1783514175413&CUK1Y=CFAE_CUK1Y.ecudemo391069_1.6LQ6KZE.1783514158160&_bc1y=&_ac1y=&_bL1y=&_aL1y=&CVID=CVID.545141505d585f0a0a0104070e3e06.1783514158160&CVID_Y=CVID_Y.545141505d585f0a0a0104070e3e06.1783514158160&CVID_AD=&CVID_E=&new_visit=F&path_role=BOARD_PRODUCT_LIST&mem_id=&h_member_id=&udim=390*844&t=1783514175413&uref=https%3A%2F%2Fecudemo391069.cafe24.com%2F&url=https%3A%2F%2Fecudemo391069.cafe24.com%2Fmain_banner_card.html&ttp=&mkt_click_type=&mkt_click_id=&ls_tf=C&ck1ylog=&ck_tf=T&cfa_fp=2fabf6434895e5473a540aefecb041c5"
+      ]
+    },
+    "font": {
+      "count": 16,
+      "samples": [
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.90.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.91.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.88.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.85.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.83.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.87.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.89.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.86.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.82.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.84.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.81.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.78.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.80.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.74.woff2",
+        "https://ecudemo391069.cafe24.com/moa/fonts/pretendard/PretendardVariable.subset.77.woff2",
+        "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2"
+      ]
+    },
+    "ping": {
+      "count": 4,
+      "samples": [
+        "https://ecudemo391069.cafe24.com/exec/front/inflow/main",
+        "https://ca-log.cafe24data.com/sendlog",
+        "https://js-error-tracer-api.cafe24.com/api/v1/vitals?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlY3VkZW1vMzkxMDY5LmNhZmUyNC5jb20iLCJhdWQiOiJqcy1lcnJvci10cmFjZXItYXBpLmNhZmUyNC5jb20iLCJtYWxsX2lkIjoiZWN1ZGVtbzM5MTA2OSIsInNob3Bfbm8iOjEsInBhdGhfcm9sZSI6Ik1BSU4iLCJsYW5ndWFnZV9jb2RlIjoia29fS1IiLCJjb3VudHJ5X2NvZGUiOiJLUiIsImlzX3l0cyI6ZmFsc2UsImlzX2NvbnRhaW5lciI6ZmFsc2UsIndvcmtzcGFjZSI6InByb2R1Y3Rpb24ifQ.6YhOSiaQMA4GBYc7frnD5PNiR-hyNla1aEkM_VD9JkE",
+        "https://js-error-tracer-api.cafe24.com/api/v1/vitals?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlY3VkZW1vMzkxMDY5LmNhZmUyNC5jb20iLCJhdWQiOiJqcy1lcnJvci10cmFjZXItYXBpLmNhZmUyNC5jb20iLCJtYWxsX2lkIjoiZWN1ZGVtbzM5MTA2OSIsInNob3Bfbm8iOjEsInBhdGhfcm9sZSI6IkJPQVJEX1BST0RVQ1RfTElTVCIsImxhbmd1YWdlX2NvZGUiOiJrb19LUiIsImNvdW50cnlfY29kZSI6IktSIiwiaXNfeXRzIjpmYWxzZSwiaXNfY29udGFpbmVyIjpmYWxzZSwid29ya3NwYWNlIjoicHJvZHVjdGlvbiJ9.0Qly-Ocp48pr5u7xGZktf3I9Ht9fLEiLLY-GkwaOggE"
+      ]
+    },
+    "xhr": {
+      "count": 28,
+      "samples": [
+        "https://ecudemo391069.cafe24.com/exec/front/manage/async?module=Basketcnt,BasketProduct,WishList&path_role=MAIN&EC_MOBILE=false",
+        "https://ecudemo391069.cafe24.com/exec/front/Product/SubCategory",
+        "https://ecudemo391069.cafe24.com/exec/front/manage/async?module=BasketProduct",
+        "https://googleads.g.doubleclick.net/pagead/id",
+        "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+        "https://ecudemo391069.cafe24.com/moa/js/lib/srpd.html?product_no=28&cate_no=1&display_group=5",
+        "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+        "https://www.youtube.com/youtubei/v1/player?prettyPrint=false",
+        "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+        "https://www.youtube.com/youtubei/v1/next?prettyPrint=false",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=qcjuBD0PBlNv97YN&ver=2&cmt=0&fs=0&rt=1.359&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=1381&cl=942999743&mos=0&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&epm=1&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&muted=0&docid=5vI_NPI8YnI",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=YMRm-efsPh0dSt_n&ver=2&cmt=2.188&fmt=396&fs=0&rt=2.703&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2721&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=H0OS-Dwmvcs&ei=LUROatWLIoHf2roP9u7WmQ8&plid=AAZWGL_QaLX9phUh&vm=CAEQABgEOjJBSHFpSlRLVDlxSHdMVkJSU3J4UDRSNmpQMGt1cGN5aVRrMkNkYVFKUmJBcW4wblNqd2JuQUxkcUFQSl91emg5dUFuWEZYRGd3Rlhacm9halMyR2NGX2k0SVJNSnVBeGRvWlFqajhSaVNCZmlPaTBNSWQydXY5VFRpakx1YzgzX3hidnFxSmIzM3BqRGJrUDlKaFFGeVkyblU1aFYyT08wSlE",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=nYzGdst3kk5Vh4i2&ver=2&cmt=1.922&fmt=398&fs=0&rt=2.316&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2333&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&delay=4&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=5vI_NPI8YnI&ei=LUROas_-OtCbpt8Pz4bNmQg&plid=AAZWGL_Wvkm9x23q&vm=CAEQABgEOjJBSHFpSlRJT2RUdFViR3RnQ2NvTlhlU3VKSnd0M1R3THdWcFRPWl9rZlpuSXBncjJPZ2JuQUxkcUFQSWw2aEg2NWdTeWZ3VVB2U3JSdm5pSmhGRXBWUGhHOUk3a24wanlueUVoenlxb3NYOFZYSkI4SWFkR0ZqMnNFY0xzeWRaVTNVdm9IUjhreXhLaERLQnItLTEyOGFiS1NSbjh4SjgxT1E",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=fAkL1r1WNzA9vcsR&ver=2&cmt=0&fs=0&rt=1.129&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=1147&cl=942999743&mos=0&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&epm=1&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&muted=0&docid=5vI_NPI8YnI",
+        "https://ecudemo391069.cafe24.com/moa/js/lib/erpd.html?product_no=26&cate_no=60&display_group=1",
+        "https://ecudemo391069.cafe24.com/moa/js/lib/erpd.html?product_no=25&cate_no=60&display_group=1",
+        "https://ecudemo391069.cafe24.com/moa/js/lib/erpd.html?product_no=24&cate_no=60&display_group=1",
+        "https://ecudemo391069.cafe24.com/moa/js/lib/erpd.html?product_no=23&cate_no=60&display_group=1",
+        "https://ecudemo391069.cafe24.com/moa/js/lib/erpd.html?product_no=22&cate_no=60&display_group=1",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=oPbA06ZAzKTciWA8&ver=2&cmt=3.12&fmt=396&fs=0&rt=3.629&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=3655&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C6257%2C16949%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=H0OS-Dwmvcs&ei=MUROavvzL5aTpt8P9Mao4QU&plid=AAZWGMAQ3gOQlrwC&vm=CAEQABgEOjJBSHFpSlRMZTVha0hvNXRiNDZMVXdSak01T3dhT0dpcDc0cGJjMHN0WVZ6OXB5STd4d2JuQUxkcUFQSzRaMzZjWlRzUXZiNVNTT0hsdWxNUEFQenZuNDhXZWpmdXViMm1fNngwdHFEQmRyZkhfeXJFMjY4LWpZUVJXRlNlRWtYNVRrRzFNb19Ha2I5cVIxZ0RzUFFNWV9CZUtjcWp6VVpDNlE",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=Z5lec1uNSPz2Xgnw&ver=2&cmt=3.067&fmt=398&fs=0&rt=3.667&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=3684&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&delay=4&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=5vI_NPI8YnI&ei=MkROavOEDcnT2roP6c_GmQk&plid=AAZWGMAXc4QJ_W88&vm=CAEQABgEOjJBSHFpSlRJVEFST3F5WXpYT3prOWl4RHNtaXFuNkM2WmdmbDJtckxfbmM1dC00SUpvQWJuQUxkcUFQS1l5b1lpbTJtZHI2ZnpMOFZtMHE5OUhoOHo4QXB3SnIySkJjMFNxUGRZdGZHN05rVVdpcEQ4ZEJtOVFfRlJSbVh4bGlWNWJjdHd2UkRsSW9wOHJCZm45dk5tZ05GVmFrVkllZ3JJTGc",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=wy4DpYeHw0Y56_nH&ver=2&cmt=0&fs=0&rt=0.882&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=909&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&hl=ko_KR&cr=KR&len=35&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&muted=1&docid=H0OS-Dwmvcs&list=TLGGZFEvdSupsK8wODA3MjAyNg",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=9at8-EMNatCqe6DZ&ver=2&cmt=0&fs=0&rt=0.875&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=891&cl=942999743&mos=0&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&epm=1&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&muted=0&docid=5vI_NPI8YnI",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=RLlX8eWwkjbTbt2r&ver=2&cmt=1.688&fmt=396&fs=0&rt=3.361&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=3378&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C6258%2C16948%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=H0OS-Dwmvcs&ei=OUROaor4MeeLpt8P7Krw0Qc&plid=AAZWGMCLf_Jy76Pf&vm=CAEQABgEOjJBSHFpSlRJMVE3RWJ1YW51czFIX0pfa0I1VUN0Y2EwM210OF9SS1hJdXpWRlM3RWZtd2JuQUxkcUFQSlBBRW12QUs2ZmRjOHBTRlhOaTFjTkNXSlNhM2tXYUFvT1BQOU80NzFoWHlENnR0RTNWaG1sSjBiVVdYSExDU3pjaldpX2N1UUFfUXZBdEdoY0NSSlNjZnN5SDM5V0MwV0JOTGo3c1E",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=UyN919ij3_O1Mnj7&ver=2&cmt=2.642&fmt=396&fs=0&rt=2.974&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2990&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&delay=4&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=5vI_NPI8YnI&ei=OkROaqHjDb3u2roPv465uQ8&plid=AAZWGMCRpBpwGMDr&vm=CAEQABgEOjJBSHFpSlRKSTY2UHNQNm01dEZnUlAwdDQwZzRHSXphNHhVeEVVODFqb1dyNWlNcUNBQWJuQUxkcUFQSmlpZVVNTGdIZ25LUGhYNU4xTjFCT01RS0pBNU1wX0c4VFNDOHJpMWVZd1h0czBpQWRVZDItdWNJbENTZmtrbHFUbEdjeDFvQ2RTS1FvdlZxcXNoSldzOUJmUk1oeEgtRlg1Q0x1U3c",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=HNpCNPDX5M6WGrNq&ver=2&cmt=0&fs=0&rt=0.914&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=930&cl=942999743&mos=0&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&epm=1&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&muted=0&docid=5vI_NPI8YnI",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=7ymW6-OyZPbMoyn4&ver=2&cmt=3.135&fmt=396&fs=0&rt=3.662&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=3680&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=H0OS-Dwmvcs&ei=PkROarGVDc_m9fwPla-98AY&plid=AAZWGMDO7U8On7sB&vm=CAEQABgEOjJBSHFpSlRKQXQ2bm9BWC1ONmdZYzEtZUNQRWgtblN4X2NWT2RyM1lET05rYVRFVVhCZ2JuQUxkcUFQSm5zbV94UGd6Q2dRUGxBdzU3dzZtZ1FQVmU4OEF1NmxoMkJnMll1S1hpQ01GakVmV0ZEMWRQLW5NWkpZTzhPM3VJNVo2dEFUaERnbXpxX3d1TjlrcDc3RlFJcTlVTjNScHpZa3B5U3c",
+        "https://www.youtube.com/api/stats/atr?ns=yt&el=embedded&cpn=Ec5LXOw-Lb2bvi5K&ver=2&cmt=3.087&fmt=396&fs=0&rt=3.584&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=3600&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&delay=4&hl=ko_KR&cr=KR&len=32&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1680%2C247%2C2963%2C1999%2C2342%2C524%2C16375&afmt=251&muted=1&docid=5vI_NPI8YnI&ei=PkROarb6Jfuapt8PrsDr8Qk&plid=AAZWGMDU0v_BzcgN&vm=CAEQABgEOjJBSHFpSlRMVnk2OUprbmxVX05PS21SanJTY25qRnpGSVpyczRtVXlISG5Mckp4UEctd2JuQUxkcUFQS1RhWThQRW95eEZXX1VCenh4VnBHWUlDZDBNY3FIY2FWY1VzM0Z2dndwLUVCVVNmZTBMbWpLUkM0TXVlaE5NUWlhWGp4LWcwOHVOb3BRUXJoYVE0Qjg0U3l5SVVocjhBSXlKNlY0dEE"
+      ]
+    },
+    "fetch": {
+      "count": 74,
+      "samples": [
+        "https://rr9---sn-n3cgv5qc5oq-bh2dl.googlevideo.com/videoplayback?expire=1783535757&ei=LUROatWLIoHf2roP9u7WmQ8&ip=211.211.31.5&id=o-AFCvbCsOzUQ_oGmSiZu4Nh7SCN4NBma83LKaDjd3F2Kj&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=158&met=1783514157%2C&mh=Mt&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2dl%2Csn-3pm76nes&ms=au%2Conr&mv=m&mvi=9&pl=20&rms=au%2Cau&initcwndbps=3882500&spc=SQ-umlcqPIlfuDvsbGH6KbAS8IF_t16G063GAGT39K4XBKmJqLij7jhzPG42mqRiVelVgg&svpuc=1&ns=GDlot_iyYF41S7vNdjZKzIIW&sabr=1&rqh=1&mt=1783513545&fvip=5&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=AAEaf1CI_1Ii8A&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRgIhAOK8uRZXTHwAQn6JUGuBcR5ndJ9FEv_6oc12C4jzogNBAiEA-tOo-O9Yx4VVb3EwoFWz7HD8jOvClGCVZ8CrboAhWnM%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgB2JJrH5HHyQKSKb_GEX8Bypj3oFQy_SjvQh9CJleefYCIFVhwo_ZWGsz2GvZjDduAGEaIl4Wa1QmdKylzk5UeDEx&cpn=YMRm-efsPh0dSt_n&cver=2.20260630.09.00&rn=1&alr=yes",
+        "https://www.youtube.com/api/stats/qoe?fmt=396&afmt=251&cpn=YMRm-efsPh0dSt_n&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&cl=942999743&seq=1&docid=H0OS-Dwmvcs&ei=LUROatWLIoHf2roP9u7WmQ8&event=streamingstats&plid=AAZWGL_QaLX9phUh&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&vps=0.000:N,0.015:B,0.342:B,0.342:B&cat=streaming,sabr&cmt=0.015:0.000,0.342:0.000&afs=0.337:251;CggKA2RyYxIBMQ::i:fl.-14;tl.-14;vg.-0.9600000000000009;nm.1;sms.2:CAEoAQ&vfs=0.342:396:396::a:sms.2:CAEoAQ&view=0.342:345:535&bwm=0.342:580509:0.152&bwe=0.342:616038&bat=0.342:1:1&vis=0.342:0&bh=0.342:0.000&qclc=ChBZTVJtLWVmc1BoMGRTdF9uEAE",
+        "https://rr9---sn-n3cgv5qc5oq-bh2dl.googlevideo.com/videoplayback?expire=1783535757&ei=LUROatWLIoHf2roP9u7WmQ8&ip=211.211.31.5&id=o-AFCvbCsOzUQ_oGmSiZu4Nh7SCN4NBma83LKaDjd3F2Kj&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=158&met=1783514157%2C&mh=Mt&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2dl%2Csn-3pm76nes&ms=au%2Conr&mv=m&mvi=9&pl=20&rms=au%2Cau&initcwndbps=3882500&spc=SQ-umlcqPIlfuDvsbGH6KbAS8IF_t16G063GAGT39K4XBKmJqLij7jhzPG42mqRiVelVgg&svpuc=1&ns=GDlot_iyYF41S7vNdjZKzIIW&sabr=1&rqh=1&mt=1783513545&fvip=5&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=AAEaf1CI_1Ii8A&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRgIhAOK8uRZXTHwAQn6JUGuBcR5ndJ9FEv_6oc12C4jzogNBAiEA-tOo-O9Yx4VVb3EwoFWz7HD8jOvClGCVZ8CrboAhWnM%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgB2JJrH5HHyQKSKb_GEX8Bypj3oFQy_SjvQh9CJleefYCIFVhwo_ZWGsz2GvZjDduAGEaIl4Wa1QmdKylzk5UeDEx&cpn=YMRm-efsPh0dSt_n&cver=2.20260630.09.00&rn=2&alr=yes",
+        "https://rr2---sn-n3cgv5qc5oq-bh26k.googlevideo.com/videoplayback?expire=1783535757&ei=LUROas_-OtCbpt8Pz4bNmQg&ip=211.211.31.5&id=o-ANKgvHd3BnxJrXThGO-egzZVGZUkabbi8GzxcZLDoMOa&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=328&met=1783514157%2C&mh=o7&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh26k%2Csn-3pm7dner&ms=au%2Conr&mv=m&mvi=2&pl=20&rms=au%2Cau&initcwndbps=4195000&spc=SQ-umnFdiFnLYTTnykXrXPtMF4DgFX_ZR2nl13p8514xM6eIdcyyHv9XoWAwUcxUQjkIMQ&svpuc=1&ns=-SmaPqv-KbKCwb6xIwX4Vn8W&sabr=1&rqh=1&mt=1783513545&fvip=2&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=nP66Vk3a-p6h5w&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIhAK2npjbulWnKDbrB1MnPy2ko2koIZyYcE_HYUl2b4csCAiB6GdTTQhnCa6A1jK3vc-JpvQUXNs8FiCgqCpbNKPi6Xw%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIgEeAEwxwh652EIPIz-a4E1qGaM7iPv7-coqSWv5Pw7j0CIQCRg7J9O6dojNmX7TtakKow1C7qUqrxcRUvvYxj6Bk-qw%3D%3D&cpn=nYzGdst3kk5Vh4i2&cver=2.20260630.09.00&rn=1&alr=yes",
+        "https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=YMRm-efsPh0dSt_n&ver=2&cmt=0.139&fmt=396&fs=0&rt=0.644&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=662&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=34.141&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&rtn=2&afmt=251&size=345%3A535&inview=0&muted=1&docid=H0OS-Dwmvcs&ei=LUROatWLIoHf2roP9u7WmQ8&plid=AAZWGL_QaLX9phUh&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2FH0OS-Dwmvcs%3Fautoplay%3D1%26controls%3D0%26loop%3D0%26iv_load_policy%3D3%26mute%3D1%26fs%3D0%26rel%3D0%26playlist%3DH0OS-Dwmvcs%26enablejsapi%3D1%26origin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%26widgetid%3D1%26forigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252F%26aoriginsup%3D1%26vf%3D1&list=TLGGZFEvdSupsK8wODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRLVDlxSHdMVkJSU3J4UDRSNmpQMGt1cGN5aVRrMkNkYVFKUmJBcW4wblNqd2JuQUxkcUFQSl91emg5dUFuWEZYRGd3Rlhacm9halMyR2NGX2k0SVJNSnVBeGRvWlFqajhSaVNCZmlPaTBNSWQydXY5VFRpakx1YzgzX3hidnFxSmIzM3BqRGJrUDlKaFFGeVkyblU1aFYyT08wSlE",
+        "https://www.youtube.com/ptracking?html5=1&video_id=H0OS-Dwmvcs&cpn=YMRm-efsPh0dSt_n&ei=LUROatWLIoHf2roP9u7WmQ8&ptk=youtube_none&pltype=contentugc",
+        "https://www.youtube.com/api/stats/qoe?fmt=398&afmt=251&cpn=nYzGdst3kk5Vh4i2&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&cl=942999743&seq=1&docid=5vI_NPI8YnI&ei=LUROas_-OtCbpt8Pz4bNmQg&event=streamingstats&plid=AAZWGL_Wvkm9x23q&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&vps=0.000:N,0.014:B,0.265:B,0.265:B&cat=streaming,sabr&cmt=0.014:0.000,0.265:0.000&afs=0.260:251;CggKA2RyYxIBMQ::i:fl.-14.77;tl.-14;vg.-3.0500000000000007;nm.1;sms.2:CAEoAQ&vfs=0.265:398:398::a:sms.2:CAEoAQ&view=0.265:1280:720&bwm=0.265:1243297:0.085&bwe=0.265:616038&bat=0.265:1:1&vis=0.265:0&bh=0.265:0.000&qclc=ChBuWXpHZHN0M2trNVZoNGkyEAE",
+        "https://rr2---sn-n3cgv5qc5oq-bh26k.googlevideo.com/videoplayback?expire=1783535757&ei=LUROas_-OtCbpt8Pz4bNmQg&ip=211.211.31.5&id=o-ANKgvHd3BnxJrXThGO-egzZVGZUkabbi8GzxcZLDoMOa&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=328&met=1783514157%2C&mh=o7&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh26k%2Csn-3pm7dner&ms=au%2Conr&mv=m&mvi=2&pl=20&rms=au%2Cau&initcwndbps=4195000&spc=SQ-umnFdiFnLYTTnykXrXPtMF4DgFX_ZR2nl13p8514xM6eIdcyyHv9XoWAwUcxUQjkIMQ&svpuc=1&ns=-SmaPqv-KbKCwb6xIwX4Vn8W&sabr=1&rqh=1&mt=1783513545&fvip=2&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=nP66Vk3a-p6h5w&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIhAK2npjbulWnKDbrB1MnPy2ko2koIZyYcE_HYUl2b4csCAiB6GdTTQhnCa6A1jK3vc-JpvQUXNs8FiCgqCpbNKPi6Xw%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIgEeAEwxwh652EIPIz-a4E1qGaM7iPv7-coqSWv5Pw7j0CIQCRg7J9O6dojNmX7TtakKow1C7qUqrxcRUvvYxj6Bk-qw%3D%3D&cpn=nYzGdst3kk5Vh4i2&cver=2.20260630.09.00&rn=2&alr=yes",
+        "https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=nYzGdst3kk5Vh4i2&ver=2&cmt=0.063&fmt=398&fs=0&rt=0.448&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=465&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&delay=4&hl=ko_KR&cr=KR&len=31.901&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&rtn=7&afmt=251&size=1280%3A720&inview=0&muted=1&docid=5vI_NPI8YnI&ei=LUROas_-OtCbpt8Pz4bNmQg&plid=AAZWGL_Wvkm9x23q&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2F5vI_NPI8YnI%3Fsi%3DRsTrRsPszhDmSd54%26mute%3D1%26autoplay%3D1%26loop%3D1%26playlist%3D5vI_NPI8YnI%26controls%3D0%26rel%3D0%26vq%3Dhd720&list=TLGGoy5i68q3ZFMwODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRJT2RUdFViR3RnQ2NvTlhlU3VKSnd0M1R3THdWcFRPWl9rZlpuSXBncjJPZ2JuQUxkcUFQSWw2aEg2NWdTeWZ3VVB2U3JSdm5pSmhGRXBWUGhHOUk3a24wanlueUVoenlxb3NYOFZYSkI4SWFkR0ZqMnNFY0xzeWRaVTNVdm9IUjhreXhLaERLQnItLTEyOGFiS1NSbjh4SjgxT1E",
+        "https://www.youtube.com/ptracking?html5=1&video_id=5vI_NPI8YnI&cpn=nYzGdst3kk5Vh4i2&ei=LUROas_-OtCbpt8Pz4bNmQg&ptk=youtube_none&pltype=contentugc",
+        "https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=YMRm-efsPh0dSt_n&ver=2&cmt=1.508&fmt=396&fs=0&rt=2.012&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2030&cl=942999743&state=playing&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&rtn=12&afmt=251&idpj=-9&ldpj=-14&rti=2&size=345%3A535&inview=0&st=0&et=1.508&muted=1&docid=H0OS-Dwmvcs&ei=LUROatWLIoHf2roP9u7WmQ8&plid=AAZWGL_QaLX9phUh&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2FH0OS-Dwmvcs%3Fautoplay%3D1%26controls%3D0%26loop%3D0%26iv_load_policy%3D3%26mute%3D1%26fs%3D0%26rel%3D0%26playlist%3DH0OS-Dwmvcs%26enablejsapi%3D1%26origin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%26widgetid%3D1%26forigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252F%26aoriginsup%3D1%26vf%3D1&list=TLGGZFEvdSupsK8wODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRLVDlxSHdMVkJSU3J4UDRSNmpQMGt1cGN5aVRrMkNkYVFKUmJBcW4wblNqd2JuQUxkcUFQSl91emg5dUFuWEZYRGd3Rlhacm9halMyR2NGX2k0SVJNSnVBeGRvWlFqajhSaVNCZmlPaTBNSWQydXY5VFRpakx1YzgzX3hidnFxSmIzM3BqRGJrUDlKaFFGeVkyblU1aFYyT08wSlE",
+        "https://www.youtube.com/api/stats/qoe?fmt=396&afmt=251&cpn=YMRm-efsPh0dSt_n&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&cl=942999743&seq=2&docid=H0OS-Dwmvcs&ei=LUROatWLIoHf2roP9u7WmQ8&event=streamingstats&plid=AAZWGL_QaLX9phUh&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&bh=0.486:10.001,2.691:16.719&cmt=0.486:0.016,1.247:0.744,2.691:2.188&vps=0.486:PL,2.691:N&user_intent=0.007&bwm=2.691:143:0.063&bwe=2.691:636088&bat=2.691:1:1&df=2.691:0&qclc=ChBZTVJtLWVmc1BoMGRTdF9uEAI",
+        "https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=YMRm-efsPh0dSt_n&ver=2&cmt=2.188&fmt=396&fs=0&rt=2.695&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2713&cl=942999743&state=paused&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&final=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&afmt=251&idpj=-9&ldpj=-14&rti=12&size=345%3A535&inview=0&st=1.508&et=2.188&muted=1&docid=H0OS-Dwmvcs&ei=LUROatWLIoHf2roP9u7WmQ8&plid=AAZWGL_QaLX9phUh&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2FH0OS-Dwmvcs%3Fautoplay%3D1%26controls%3D0%26loop%3D0%26iv_load_policy%3D3%26mute%3D1%26fs%3D0%26rel%3D0%26playlist%3DH0OS-Dwmvcs%26enablejsapi%3D1%26origin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%26widgetid%3D1%26forigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252F%26aoriginsup%3D1%26vf%3D1&list=TLGGZFEvdSupsK8wODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRLVDlxSHdMVkJSU3J4UDRSNmpQMGt1cGN5aVRrMkNkYVFKUmJBcW4wblNqd2JuQUxkcUFQSl91emg5dUFuWEZYRGd3Rlhacm9halMyR2NGX2k0SVJNSnVBeGRvWlFqajhSaVNCZmlPaTBNSWQydXY5VFRpakx1YzgzX3hidnFxSmIzM3BqRGJrUDlKaFFGeVkyblU1aFYyT08wSlE",
+        "https://www.youtube.com/api/stats/qoe?fmt=398&afmt=251&cpn=nYzGdst3kk5Vh4i2&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&cl=942999743&seq=2&docid=5vI_NPI8YnI&ei=LUROas_-OtCbpt8Pz4bNmQg&event=streamingstats&plid=AAZWGL_Wvkm9x23q&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&bh=0.370:6.000,2.306:16.162&cmt=0.370:0.008,1.134:0.750,2.306:1.922&vps=0.370:PL,2.306:N&user_intent=0.006&bwm=2.306:143:0.035&bwe=2.306:3797146&bat=2.306:1:1&df=2.306:0&qclc=ChBuWXpHZHN0M2trNVZoNGkyEAI",
+        "https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=nYzGdst3kk5Vh4i2&ver=2&cmt=1.922&fmt=398&fs=0&rt=2.307&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2325&cl=942999743&state=paused&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&final=1&delay=4&hl=ko_KR&cr=KR&len=32&afmt=251&idpj=-4&ldpj=-5&rti=7&size=1280%3A720&inview=0&st=0&et=1.922&muted=1&docid=5vI_NPI8YnI&ei=LUROas_-OtCbpt8Pz4bNmQg&plid=AAZWGL_Wvkm9x23q&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2F5vI_NPI8YnI%3Fsi%3DRsTrRsPszhDmSd54%26mute%3D1%26autoplay%3D1%26loop%3D1%26playlist%3D5vI_NPI8YnI%26controls%3D0%26rel%3D0%26vq%3Dhd720&list=TLGGoy5i68q3ZFMwODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRJT2RUdFViR3RnQ2NvTlhlU3VKSnd0M1R3THdWcFRPWl9rZlpuSXBncjJPZ2JuQUxkcUFQSWw2aEg2NWdTeWZ3VVB2U3JSdm5pSmhGRXBWUGhHOUk3a24wanlueUVoenlxb3NYOFZYSkI4SWFkR0ZqMnNFY0xzeWRaVTNVdm9IUjhreXhLaERLQnItLTEyOGFiS1NSbjh4SjgxT1E",
+        "https://rr9---sn-n3cgv5qc5oq-bh2dl.googlevideo.com/videoplayback?expire=1783535761&ei=MUROavvzL5aTpt8P9Mao4QU&ip=211.211.31.5&id=o-AIUcw7TIEEaWhr6qKffxbcRxfIrP2wJFmGML2Wr4fabE&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=259&met=1783514161%2C&mh=Mt&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2dl%2Csn-3pm7dnl7&ms=au%2Conr&mv=m&mvi=9&pl=20&rms=au%2Cau&initcwndbps=3882500&spc=SQ-umiOCMEoAoLO9uTNpqzt94mnMID-cclgmUxs31waa1pjUCh6rputsjDUiWfcNwTsi6A&svpuc=1&ns=Btp3xv9KdNdF2AZqn5D1KRYW&sabr=1&rqh=1&mt=1783513545&fvip=1&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=_PUEOHt_fu_3Xw&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRgIhAOX2ME9qgOrt5XyeAkcDVnjLETx3rc56RChZ870sw-I8AiEAp-rMsn3LxBrFL6l5aUXbOeD22FrfJMsWBCKdBOGhLVM%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgfxNatx3jZ5_NYwmlDiBoEtO6Lb8cHWu8IxwEEuetcoICIEcpou1qF3jGjI3NLwMUvgu4WNyweLIvffwrnXbDR146&cpn=oPbA06ZAzKTciWA8&cver=2.20260630.09.00&rn=1&alr=yes",
+        "https://www.youtube.com/api/stats/qoe?fmt=396&afmt=251&cpn=oPbA06ZAzKTciWA8&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C6257%2C16949%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&cl=942999743&seq=1&docid=H0OS-Dwmvcs&ei=MUROavvzL5aTpt8P9Mao4QU&event=streamingstats&plid=AAZWGMAQ3gOQlrwC&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&vps=0.000:N,0.016:B,0.272:B,0.272:B&cat=streaming,sabr&cmt=0.016:0.000,0.272:0.000&afs=0.268:251;CggKA2RyYxIBMQ::i:fl.-14;tl.-14;vg.-0.9600000000000009;nm.1;sms.2:CAEoAQ&vfs=0.272:396:396::a:sms.2:CAEoAQ&view=0.272:345:535&bwm=0.272:580509:0.086&bwe=0.272:616038&bat=0.272:1:1&vis=0.272:0&bh=0.272:0.000&qclc=ChBvUGJBMDZaQXpLVGNpV0E4EAE",
+        "https://rr9---sn-n3cgv5qc5oq-bh2dl.googlevideo.com/videoplayback?expire=1783535761&ei=MUROavvzL5aTpt8P9Mao4QU&ip=211.211.31.5&id=o-AIUcw7TIEEaWhr6qKffxbcRxfIrP2wJFmGML2Wr4fabE&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=259&met=1783514161%2C&mh=Mt&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2dl%2Csn-3pm7dnl7&ms=au%2Conr&mv=m&mvi=9&pl=20&rms=au%2Cau&initcwndbps=3882500&spc=SQ-umiOCMEoAoLO9uTNpqzt94mnMID-cclgmUxs31waa1pjUCh6rputsjDUiWfcNwTsi6A&svpuc=1&ns=Btp3xv9KdNdF2AZqn5D1KRYW&sabr=1&rqh=1&mt=1783513545&fvip=1&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=_PUEOHt_fu_3Xw&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRgIhAOX2ME9qgOrt5XyeAkcDVnjLETx3rc56RChZ870sw-I8AiEAp-rMsn3LxBrFL6l5aUXbOeD22FrfJMsWBCKdBOGhLVM%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgfxNatx3jZ5_NYwmlDiBoEtO6Lb8cHWu8IxwEEuetcoICIEcpou1qF3jGjI3NLwMUvgu4WNyweLIvffwrnXbDR146&cpn=oPbA06ZAzKTciWA8&cver=2.20260630.09.00&rn=2&alr=yes",
+        "https://www.gstatic.com/youtube/img/icons/mweb/youtube_fill/logo/v2/67px.svg",
+        "https://fonts.gstatic.com/s/i/youtube_fill_experimental/skip_previous/v6/24px.svg",
+        "https://fonts.gstatic.com/s/i/youtube_fill_experimental/skip_next/v7/24px.svg",
+        "https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=oPbA06ZAzKTciWA8&ver=2&cmt=0.095&fmt=396&fs=0&rt=0.606&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=632&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=34.141&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C6257%2C16949%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&rtn=2&afmt=251&size=345%3A535&inview=0&muted=1&docid=H0OS-Dwmvcs&ei=MUROavvzL5aTpt8P9Mao4QU&plid=AAZWGMAQ3gOQlrwC&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2FH0OS-Dwmvcs%3Fautoplay%3D1%26controls%3D0%26loop%3D0%26iv_load_policy%3D3%26mute%3D1%26fs%3D0%26rel%3D0%26playlist%3DH0OS-Dwmvcs%26enablejsapi%3D1%26origin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%26widgetid%3D1%26forigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252Fmain_banner_card.html%26aoriginsup%3D1%26gporigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252F%26vf%3D1&list=TLGGZFEvdSupsK8wODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRMZTVha0hvNXRiNDZMVXdSak01T3dhT0dpcDc0cGJjMHN0WVZ6OXB5STd4d2JuQUxkcUFQSzRaMzZjWlRzUXZiNVNTT0hsdWxNUEFQenZuNDhXZWpmdXViMm1fNngwdHFEQmRyZkhfeXJFMjY4LWpZUVJXRlNlRWtYNVRrRzFNb19Ha2I5cVIxZ0RzUFFNWV9CZUtjcWp6VVpDNlE",
+        "https://www.youtube.com/ptracking?html5=1&video_id=H0OS-Dwmvcs&cpn=oPbA06ZAzKTciWA8&ei=MUROavvzL5aTpt8P9Mao4QU&ptk=youtube_none&pltype=contentugc",
+        "https://rr2---sn-n3cgv5qc5oq-bh26k.googlevideo.com/videoplayback?expire=1783535762&ei=MkROavOEDcnT2roP6c_GmQk&ip=211.211.31.5&id=o-ACGrlmWQsoxyaOa-yrzkSQYvKQpTveO-rSVlGwaAY0Ry&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=264&met=1783514162%2C&mh=o7&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh26k%2Csn-3pm7dner&ms=au%2Conr&mv=m&mvi=2&pl=20&rms=au%2Cau&initcwndbps=4195000&spc=SQ-umvkjEqnX18xpXnNz2uydPyMSNtn_POSscQMFdc7kK6v07-juw-et8Ubt94ctM79udA&svpuc=1&ns=hsNribv7wGABkb7fAmKq7k4W&sabr=1&rqh=1&mt=1783513545&fvip=2&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=vyPNvwFbvAgXSg&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIgFgCSx5Gs-_IJkBt4ItHQnyM-lhOJ896hnuT8YkLThA4CIQCRuUM7kIoHpSuEv8oq5KkBOJTaETcuvH-1umNvyk7t8Q%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAJDXd5Ly-Gid987IfNUjQ151gC34Jq1eLhNQ4eQeCpOzAiAYLNIrJizx9Ip9HdaMTyBUTyWN1aMNeS_24yXOMDEQxg%3D%3D&cpn=Z5lec1uNSPz2Xgnw&cver=2.20260630.09.00&rn=1&alr=yes",
+        "https://www.youtube.com/api/stats/qoe?fmt=398&afmt=251&cpn=Z5lec1uNSPz2Xgnw&el=embedded&ns=yt&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&cl=942999743&seq=1&docid=5vI_NPI8YnI&ei=MkROavOEDcnT2roP6c_GmQk&event=streamingstats&plid=AAZWGMAXc4QJ_W88&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&vps=0.000:N,0.015:B,0.342:B,0.342:B&cat=streaming,sabr&cmt=0.015:0.000,0.342:0.000&afs=0.337:251;CggKA2RyYxIBMQ::i:fl.-14.77;tl.-14;vg.-3.0500000000000007;nm.1;sms.2:CAEoAQ&vfs=0.342:398:398::a:sms.2:CAEoAQ&view=0.342:1280:720&bwm=0.342:1243297:0.114&bwe=0.342:616038&bat=0.342:1:1&vis=0.342:0&bh=0.342:0.000&qclc=ChBaNWxlYzF1TlNQejJYZ253EAE",
+        "https://fonts.gstatic.com/s/i/youtube_outline_experimental/player_full_enter_alt/v1/24px.svg",
+        "https://rr2---sn-n3cgv5qc5oq-bh26k.googlevideo.com/videoplayback?expire=1783535762&ei=MkROavOEDcnT2roP6c_GmQk&ip=211.211.31.5&id=o-ACGrlmWQsoxyaOa-yrzkSQYvKQpTveO-rSVlGwaAY0Ry&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=264&met=1783514162%2C&mh=o7&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh26k%2Csn-3pm7dner&ms=au%2Conr&mv=m&mvi=2&pl=20&rms=au%2Cau&initcwndbps=4195000&spc=SQ-umvkjEqnX18xpXnNz2uydPyMSNtn_POSscQMFdc7kK6v07-juw-et8Ubt94ctM79udA&svpuc=1&ns=hsNribv7wGABkb7fAmKq7k4W&sabr=1&rqh=1&mt=1783513545&fvip=2&keepalive=yes&fexp=51565116%2C52017147&c=WEB_EMBEDDED_PLAYER&n=vyPNvwFbvAgXSg&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIgFgCSx5Gs-_IJkBt4ItHQnyM-lhOJ896hnuT8YkLThA4CIQCRuUM7kIoHpSuEv8oq5KkBOJTaETcuvH-1umNvyk7t8Q%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAJDXd5Ly-Gid987IfNUjQ151gC34Jq1eLhNQ4eQeCpOzAiAYLNIrJizx9Ip9HdaMTyBUTyWN1aMNeS_24yXOMDEQxg%3D%3D&cpn=Z5lec1uNSPz2Xgnw&cver=2.20260630.09.00&rn=2&alr=yes",
+        "https://www.youtube.com/api/stats/playback?ns=yt&el=embedded&cpn=Z5lec1uNSPz2Xgnw&ver=2&cmt=0.057&fmt=398&fs=0&rt=0.659&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=676&cl=942999743&mos=1&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&epm=1&delay=4&hl=ko_KR&cr=KR&len=31.901&fexp=v1%2C24004644%2C27058999%2C34656%2C124674%2C117689%2C9252%2C3479%2C13030%2C23206%2C100702%2C2878%2C12227%2C25059%2C4174%2C30447%2C18705%2C21437%2C4571%2C5236%2C7779%2C16088%2C9404%2C23826%2C9500%2C1840%2C45716%2C13159%2C451%2C30490%2C5021%2C9970%2C10619%2C4657%2C25384%2C4272%2C9180%2C15417%2C82%2C4406%2C25554%2C7525%2C6032%2C1168%2C372%2C490%2C2325%2C4944%2C16624%2C5774%2C3094%2C3475%2C5353%2C1900%2C2275%2C5692%2C1595%2C928%2C2248%2C114%2C159%2C7982%2C134%2C528%2C615%2C2550%2C11588%2C25189%2C3970%2C914%2C2699%2C187%2C259%2C565%2C121%2C8261%2C665%2C1557%2C2%2C2619%2C1927%2C2963%2C1999%2C2342%2C524%2C16375&rtn=10&afmt=251&size=1280%3A720&inview=0&muted=1&docid=5vI_NPI8YnI&ei=MkROavOEDcnT2roP6c_GmQk&plid=AAZWGMAXc4QJ_W88&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2F5vI_NPI8YnI%3Fsi%3DRsTrRsPszhDmSd54%26mute%3D1%26autoplay%3D1%26loop%3D1%26playlist%3D5vI_NPI8YnI%26controls%3D0%26rel%3D0%26vq%3Dhd720&list=TLGGoy5i68q3ZFMwODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRJVEFST3F5WXpYT3prOWl4RHNtaXFuNkM2WmdmbDJtckxfbmM1dC00SUpvQWJuQUxkcUFQS1l5b1lpbTJtZHI2ZnpMOFZtMHE5OUhoOHo4QXB3SnIySkJjMFNxUGRZdGZHN05rVVdpcEQ4ZEJtOVFfRlJSbVh4bGlWNWJjdHd2UkRsSW9wOHJCZm45dk5tZ05GVmFrVkllZ3JJTGc",
+        "https://www.youtube.com/ptracking?html5=1&video_id=5vI_NPI8YnI&cpn=Z5lec1uNSPz2Xgnw&ei=MkROavOEDcnT2roP6c_GmQk&ptk=youtube_none&pltype=contentugc",
+        "https://www.youtube.com/api/stats/watchtime?ns=yt&el=embedded&cpn=oPbA06ZAzKTciWA8&ver=2&cmt=1.508&fmt=396&fs=0&rt=2.019&euri=https%3A%2F%2Fecudemo391069.cafe24.com%2F&lact=2044&cl=942999743&state=playing&volume=100&cbr=Chrome&cbrver=122.0.0.0&c=WEB_EMBEDDED_PLAYER&cver=2.20260630.09.00&cplayer=UNIPLAYER&cos=Windows&cosver=10.0&cplatform=DESKTOP&autoplay=1&splay=1&delay=4&hl=ko_KR&cr=KR&len=35&rtn=12&afmt=251&idpj=-9&ldpj=-10&rti=2&size=345%3A535&inview=0&st=0&et=1.508&muted=1&docid=H0OS-Dwmvcs&ei=MUROavvzL5aTpt8P9Mao4QU&plid=AAZWGMAQ3gOQlrwC&referrer=https%3A%2F%2Fwww.youtube.com%2Fembed%2FH0OS-Dwmvcs%3Fautoplay%3D1%26controls%3D0%26loop%3D0%26iv_load_policy%3D3%26mute%3D1%26fs%3D0%26rel%3D0%26playlist%3DH0OS-Dwmvcs%26enablejsapi%3D1%26origin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%26widgetid%3D1%26forigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252Fmain_banner_card.html%26aoriginsup%3D1%26gporigin%3Dhttps%253A%252F%252Fecudemo391069.cafe24.com%252F%26vf%3D1&list=TLGGZFEvdSupsK8wODA3MjAyNg&of=mnLV_fUj0q2yz-hzJBdlDA&vm=CAEQABgEOjJBSHFpSlRMZTVha0hvNXRiNDZMVXdSak01T3dhT0dpcDc0cGJjMHN0WVZ6OXB5STd4d2JuQUxkcUFQSzRaMzZjWlRzUXZiNVNTT0hsdWxNUEFQenZuNDhXZWpmdXViMm1fNngwdHFEQmRyZkhfeXJFMjY4LWpZUVJXRlNlRWtYNVRrRzFNb19Ha2I5cVIxZ0RzUFFNWV9CZUtjcWp6VVpDNlE"
+      ]
+    }
+  },
+  "captures": {
+    "desktop": [
+      "desktop-1920-fold.png",
+      "desktop-1920-full.png",
+      "desktop-1920-outline.json"
+    ],
+    "mobile": [
+      "mobile-390-fold.png",
+      "mobile-390-full.png",
+      "mobile-390-outline.json"
+    ]
+  },
+  "displayName": "PURE BLANC"
+}
