@@ -149,9 +149,25 @@
 /**
  * KV → PTMD869920 기본형(A)
  * Destroy card+peek KV and re-init as full-bleed 1-slide swiper.
+ * Autoplay: 5s (theme default 3s gets overridden).
  */
 (function () {
+  var AUTOPLAY_MS = 5000;
   var inited = false;
+
+  function forceAutoplay5s(sw) {
+    if (!sw) return;
+    if (!sw.params.autoplay || typeof sw.params.autoplay === 'boolean') {
+      sw.params.autoplay = { delay: AUTOPLAY_MS, disableOnInteraction: false };
+    } else {
+      sw.params.autoplay.delay = AUTOPLAY_MS;
+      sw.params.autoplay.disableOnInteraction = false;
+    }
+    if (sw.autoplay) {
+      if (typeof sw.autoplay.stop === 'function') sw.autoplay.stop();
+      if (typeof sw.autoplay.start === 'function') sw.autoplay.start();
+    }
+  }
 
   function rebuildKv() {
     var el = document.querySelector('.kv-section--style-a .kv-swiper');
@@ -177,7 +193,7 @@
       loop: true,
       speed: 600,
       autoplay: {
-        delay: 5000,
+        delay: AUTOPLAY_MS,
         disableOnInteraction: false,
       },
       pagination: {
@@ -190,22 +206,29 @@
         prevEl: '.kv-section--style-a .kv-btn-prev',
       },
       on: {
-        init: function () {
+        init: function (swiper) {
           var box = document.querySelector('.kv-section--style-a .kv-container');
           if (box) box.classList.add('init');
+          forceAutoplay5s(swiper);
         },
       },
     });
 
+    forceAutoplay5s(window.kvSwiper);
     inited = true;
     return true;
   }
 
   function tryRebuild() {
-    if (inited && document.querySelector('.kv-section--style-a .kv-swiper.swiper-initialized')) {
+    var el = document.querySelector('.kv-section--style-a .kv-swiper');
+    if (!el) return;
+
+    // already our instance — still reinforce delay in case theme rewrote it
+    if (inited && el.swiper) {
+      forceAutoplay5s(el.swiper);
       return;
     }
-    // wait until banner markup expanded (morenvy) or at least one real slide exists
+
     var slides = document.querySelectorAll('.kv-section--style-a .kv-slide');
     if (!slides.length) return;
     rebuildKv();
@@ -215,12 +238,13 @@
   var timer = setInterval(function () {
     tries += 1;
     tryRebuild();
-    if (inited || tries > 60) clearInterval(timer);
+    if (tries > 60) clearInterval(timer);
   }, 200);
 
   document.addEventListener('DOMContentLoaded', tryRebuild);
   window.addEventListener('load', function () {
     setTimeout(tryRebuild, 100);
     setTimeout(tryRebuild, 800);
+    setTimeout(tryRebuild, 2000);
   });
 })();
