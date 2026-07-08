@@ -52,12 +52,23 @@ section.md-pick .prdList .thumbnail img.img-after {
   left: 0;
 }
 
-/* nav: vertical center of thumbnail image (not whole card)
-   JS (working-overrides.js) sets exact top; CSS is fallback */
+/* nav: always visible (no hover-to-show) · vertical center via JS */
 section.md-pick .swiper-box .swiper-button-next,
-section.md-pick .swiper-box .swiper-button-prev {
+section.md-pick .swiper-box .swiper-button-prev,
+section.md-pick .ds-base-product .swiper-box .swiper-button-next,
+section.md-pick .ds-base-product .swiper-box .swiper-button-prev {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   margin-top: 0 !important;
   transform: translateY(-50%) !important;
+  pointer-events: auto !important;
+}
+
+section.md-pick .swiper-box .swiper-button-next.swiper-button-disabled,
+section.md-pick .swiper-box .swiper-button-prev.swiper-button-disabled {
+  opacity: 0.35 !important;
+  visibility: visible !important;
 }
 
 /* circle size unchanged (48px) — icon glyph only 50% */
