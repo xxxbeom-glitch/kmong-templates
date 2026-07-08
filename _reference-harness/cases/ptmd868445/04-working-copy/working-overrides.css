@@ -6,6 +6,7 @@
  * MD'S PICK only (pending approval for shared product-thumb modules):
  * - 1 row × 4 cards (match PTMD807311 size feel)
  * - thumbnail aspect 1:1
+ * - radius --ds-r-lg (24px)
  */
 @import url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css');
 
@@ -25,6 +26,7 @@ section.md-pick .prdList .thumbnail {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   margin-bottom: 16px;
+  border-radius: var(--ds-r-lg); /* 24px */
 }
 
 section.md-pick .prdList .thumbnail > a {
@@ -41,6 +43,7 @@ section.md-pick .prdList .thumbnail a img {
   max-width: none !important;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--ds-r-lg) !important; /* 24px · was r-md 12px */
 }
 
 section.md-pick .prdList .thumbnail img.img-after {
