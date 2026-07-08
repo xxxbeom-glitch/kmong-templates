@@ -2,6 +2,10 @@
  * MOALUCK working-copy overrides
  * - base font: Pretendard -> SUIT (jsDelivr webfont)
  * - do NOT change --ds-fs / --ds-fw / --ds-lh semantic or size tokens
+ *
+ * MD'S PICK only (pending approval for shared product-thumb modules):
+ * - 1 row × 4 cards (match PTMD807311 size feel)
+ * - thumbnail aspect 1:1
  */
 @import url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css');
 
@@ -12,4 +16,35 @@ select,
 textarea,
 button {
   font-family: 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* ---- MD'S PICK only ---- */
+section.md-pick .prdList .thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+section.md-pick .prdList .thumbnail > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+section.md-pick .prdList .thumbnail img.img-before,
+section.md-pick .prdList .thumbnail img.img-after,
+section.md-pick .prdList .thumbnail a img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+section.md-pick .prdList .thumbnail img.img-after {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

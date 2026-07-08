@@ -141,21 +141,37 @@ function injectSampleHide(body) {
   return Buffer.from(html + PREVIEW_HIDE_SNIPPET, 'utf8');
 }
 
-/** working-copy only: inject /working-overrides.css on every HTML page (mirror pages included) */
+/** working-copy only: inject override CSS/JS on every HTML page (mirror pages included) */
 function injectWorkingOverrides(body) {
   if (!WORKING) return body;
-  const overridePath = path.join(ROOT, 'working-overrides.css');
-  if (!fs.existsSync(overridePath)) return body;
-  const html = body.toString('utf8');
-  if (html.includes('working-overrides.css') || html.includes('id="working-overrides"')) {
-    return body;
+  const cssPath = path.join(ROOT, 'working-overrides.css');
+  const jsPath = path.join(ROOT, 'working-overrides.js');
+  let html = body.toString('utf8');
+  let changed = false;
+
+  if (fs.existsSync(cssPath) && !html.includes('id="working-overrides"') && !html.includes('working-overrides.css')) {
+    const link =
+      '<link id="working-overrides" rel="stylesheet" href="/working-overrides.css" />\n';
+    if (/<\/head>/i.test(html)) {
+      html = html.replace(/<\/head>/i, link + '</head>');
+    } else {
+      html = link + html;
+    }
+    changed = true;
   }
-  const link =
-    '<link id="working-overrides" rel="stylesheet" href="/working-overrides.css" />\n';
-  if (/<\/head>/i.test(html)) {
-    return Buffer.from(html.replace(/<\/head>/i, link + '</head>'), 'utf8');
+
+  if (fs.existsSync(jsPath) && !html.includes('id="working-overrides-js"') && !html.includes('working-overrides.js')) {
+    const script =
+      '<script id="working-overrides-js" src="/working-overrides.js" defer></script>\n';
+    if (/<\/body>/i.test(html)) {
+      html = html.replace(/<\/body>/i, script + '</body>');
+    } else {
+      html += script;
+    }
+    changed = true;
   }
-  return Buffer.from(link + html, 'utf8');
+
+  return changed ? Buffer.from(html, 'utf8') : body;
 }
 
 function lookupUrlMap(pathname, search) {
@@ -344,12 +360,18 @@ const server = http.createServer((req, res) => {
     });
   }
 
-  // working-copy override stylesheet (not under _mirror)
+  // working-copy override assets (not under _mirror)
   if (WORKING && (u.pathname === '/working-overrides.css' || u.pathname === '/working-overrides.css/')) {
     const overridePath = path.join(ROOT, 'working-overrides.css');
     const css = tryRead(overridePath);
     if (css) return send(res, 200, css, 'text/css; charset=utf-8');
     return send(res, 404, 'working-overrides.css missing');
+  }
+  if (WORKING && (u.pathname === '/working-overrides.js' || u.pathname === '/working-overrides.js/')) {
+    const overridePath = path.join(ROOT, 'working-overrides.js');
+    const js = tryRead(overridePath);
+    if (js) return send(res, 200, js, 'application/javascript; charset=utf-8');
+    return send(res, 404, 'working-overrides.js missing');
   }
 
   const local = resolveLocal(reqUrl);
