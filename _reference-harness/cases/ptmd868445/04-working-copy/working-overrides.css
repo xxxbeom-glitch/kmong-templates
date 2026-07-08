@@ -128,25 +128,22 @@ button {
   left: 0;
 }
 
-/* Static grid (BEST etc.) — 4-col. Swiper slides must NOT use % width
- * (conflicts with slidesPerView + spaceBetween → overflow / misaligned pages). */
-.ds-base-product ul.prdList.grid4 > li,
-.ds-base-product ul.grid4 > li,
-.ds-base-product ul.prdList.grid6 > li,
-.ds-base-product ul.grid6 > li,
-.xans-product-listmain-17 ul.prdList > li {
+/* Static grid (BEST etc.) — 4-col. Exclude .swiper-slide so Swiper
+ * can set slide width (our previous width:auto !important blew thumbs up). */
+.ds-base-product ul.prdList.grid4 > li:not(.swiper-slide),
+.ds-base-product ul.grid4 > li:not(.swiper-slide),
+.ds-base-product ul.prdList.grid6 > li:not(.swiper-slide),
+.ds-base-product ul.grid6 > li:not(.swiper-slide),
+.xans-product-listmain-17 ul.prdList > li:not(.swiper-slide) {
   width: 25% !important;
   max-width: 25%;
   box-sizing: border-box;
 }
 
-/* Swiper product carousels: let Swiper set slide width; kill theme margin-right */
-.ds-base-product .swiper ul.prdList > li,
+/* Swiper: kill theme margin-right only — leave width to Swiper inline */
+.ds-base-product .swiper .prdList > li,
 .ds-base-product .swiper ul.prdList.grid4 > li,
-.ds-base-product .swiper ul.prdList.grid6 > li,
-.swiper:has(.prdList) ul.prdList > li {
-  width: auto !important;
-  max-width: none !important;
+.ds-base-product .swiper ul.prdList.grid6 > li {
   margin-right: 0 !important;
   margin-left: 0 !important;
   box-sizing: border-box;
@@ -158,40 +155,24 @@ button {
 }
 
 @media (max-width: 1023px) {
-  .ds-base-product ul.prdList.grid4 > li,
-  .ds-base-product ul.grid4 > li,
-  .ds-base-product ul.prdList.grid6 > li,
-  .ds-base-product ul.grid6 > li,
-  .xans-product-listmain-17 ul.prdList > li {
+  .ds-base-product ul.prdList.grid4 > li:not(.swiper-slide),
+  .ds-base-product ul.grid4 > li:not(.swiper-slide),
+  .ds-base-product ul.prdList.grid6 > li:not(.swiper-slide),
+  .ds-base-product ul.grid6 > li:not(.swiper-slide),
+  .xans-product-listmain-17 ul.prdList > li:not(.swiper-slide) {
     width: 33.33% !important;
     max-width: 33.33%;
-  }
-
-  .ds-base-product .swiper ul.prdList > li,
-  .ds-base-product .swiper ul.prdList.grid4 > li,
-  .ds-base-product .swiper ul.prdList.grid6 > li,
-  .swiper:has(.prdList) ul.prdList > li {
-    width: auto !important;
-    max-width: none !important;
   }
 }
 
 @media (max-width: 767px) {
-  .ds-base-product ul.prdList.grid4 > li,
-  .ds-base-product ul.grid4 > li,
-  .ds-base-product ul.prdList.grid6 > li,
-  .ds-base-product ul.grid6 > li,
-  .xans-product-listmain-17 ul.prdList > li {
+  .ds-base-product ul.prdList.grid4 > li:not(.swiper-slide),
+  .ds-base-product ul.grid4 > li:not(.swiper-slide),
+  .ds-base-product ul.prdList.grid6 > li:not(.swiper-slide),
+  .ds-base-product ul.grid6 > li:not(.swiper-slide),
+  .xans-product-listmain-17 ul.prdList > li:not(.swiper-slide) {
     width: 50% !important;
     max-width: 50%;
-  }
-
-  .ds-base-product .swiper ul.prdList > li,
-  .ds-base-product .swiper ul.prdList.grid4 > li,
-  .ds-base-product .swiper ul.prdList.grid6 > li,
-  .swiper:has(.prdList) ul.prdList > li {
-    width: auto !important;
-    max-width: none !important;
   }
 }
 
