@@ -1,0 +1,63 @@
+---
+description: reference-harness — 원본 수집·original QA·복사본 수정
+alwaysApply: false
+globs:
+  - _reference-harness/**
+  - .cursor/rules/83-reference-harness.mdc
+---
+
+# Reference Harness
+
+> **SoT:** `_reference-harness/shared/rules/workflow.md`
+
+## 목적 (아닌 것)
+
+레퍼런스 보고 **비슷한 HTML을 새로 만들지 않는다.**  
+mock · wireframe · 새 디자인 · reconstruction 기본 사용 **금지**.
+
+## 목적 (맞는 것)
+
+1. 원본·보유 스킨 **전체 수집**
+2. `01-original/` **immutable**
+3. `02-original-qa` source↔original **PASS | 승인 partial**
+4. `04-working-copy` = 전체 복사본에서 **요청만** 수정
+
+## 단계
+
+```
+00-source → 01-original → 02-original-qa → 03-analysis
+  → 04-working-copy → 05-working-qa → 06-normalized?
+  → 07-final → 08-platform-map? → 09-platform-qa?
+```
+
+## 게이트
+
+| 차단 | 조건 |
+|------|------|
+| working-copy · 수정 · normalized · map · 스킨 이식 · final 완료 | originalQa ≠ pass 이고 승인 partial 아님 |
+| platform 이식 | final PASS + map 승인 전 |
+
+## original 금지
+
+내용·경로·포맷·압축·debug 삽입 등 — `original-immutable.md`  
+산출물은 `_dev/`만.
+
+## working-copy
+
+original **전체 복사** · change-request만 · 새 HTML/CSS 재작성 금지 — `working-copy.md`
+
+## cafe24
+
+ZIP(`skin-zip`) vs 데모(`browser-captured`) 구분 — `cafe24-original.md`  
+map = `08-platform-map` · 승인 전 `cafe24/{slug}/` 금지
+
+## reconstruction
+
+**fallback only** · 사용자 승인 · structure mock 금지
+
+## 이번 작업 금지 (에이전트)
+
+- original 수정 · 결과물 재수집을 규칙 작업과 섞기
+- originalQa 전 working-copy 생성
+
+관련: `00-project-tracks` · `80`~`82` · `legacy-migration.md`

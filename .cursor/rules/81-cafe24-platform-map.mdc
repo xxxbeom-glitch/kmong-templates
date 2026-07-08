@@ -1,0 +1,69 @@
+---
+description: Track B 전용 — 정적 디자인 → 카페24 platform-map. 기존 스킨 수정(A)에는 적용하지 않음
+alwaysApply: false
+globs:
+  - cafe24/**/platform-map/**
+  - cafe24/**/08-platform-map/**
+  - cafe24/**/mapping.md
+  - cafe24/**/mapping.json
+  - _reference-harness/**/08-platform-map/**
+  - _reference-harness/**/mapping.md
+  - _reference-harness/**/mapping.json
+---
+
+# Cafe24 Platform Map (Track B only)
+
+> **선행:** `80-cafe24-core.mdc` · **라우터:** Track B  
+> **목적:** 정적 섹션 ↔ 카페24 module/page 대응표. **승인 전 스킨 코딩 금지.**
+
+## 적용 / 비적용
+
+| 적용 | 비적용 |
+|------|--------|
+| 정적 HTML · Figma · 문법 없는 템플릿 → 스킨 이식 | 구매·고객·공식 계열 **기존 스킨 수정 (Track A)** |
+| | 이미 `module=`/`{$}` 있는 스킨의 시각·카피 수정 |
+| | Track C 데모 분석만 |
+
+## 산출물
+
+```
+cafe24/{slug}/platform-map/   (또는 harness 승격 시 08-platform-map/)
+├── mapping.md
+└── mapping.json
+```
+
+문서만. 여기에 스킨 HTML을 두지 않는다.
+
+## map 승인 전
+
+- `cafe24/{slug}/` 스킨 본문 코딩 · `module=`/`{$}` 대량 적용 **금지**
+- 정적 normalized **만으로** 카페24 구현 시작 **금지**
+
+승인 예: 「map 승인, 스킨 이식 진행」
+
+## row 필수 필드 (최소)
+
+| 필드 | 내용 |
+|------|------|
+| staticSection | 정적 섹션 id |
+| cafe24Page | 대상 페이지 경로 |
+| cafe24Module | working skin · `docs/cafe24` · global syntax reference에서 **확인된** module |
+| variables | 필요 `{$…}` |
+| commerceContract | 유지 form/hidden/옵션 등 |
+| adminDependency | 관리자 데이터·진열·배너 등 |
+| verification | `verified` \| `unverified` |
+
+확인되지 않은 module/변수 → **창작 금지** · `unverified` + 사용자 확인.
+
+조회 순서: `80` §6 (working skin → `docs/cafe24` → `cafe24_shop` → 공식 문서).
+
+## 파일럿 UI (이식 시 기본 개편 후보)
+
+메인 · 헤더 · 푸터 · 메인 진열 · 목록 카드 · 상세 **상단** · Desktop / Mobile 390
+
+가입·장바구니·주문서·결제·마이페이지는 map에서 **preserve** · 대규모 리디자인 row 금지 (`82`).
+
+## PASS
+
+- Track B row 충족 · unverified 목록 명시 · **map 승인 기록**
+- Track A 작업에 이 규칙으로 map을 **강제하지 않음**

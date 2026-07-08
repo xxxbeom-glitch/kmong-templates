@@ -1,0 +1,89 @@
+---
+description: 카페24 스마트디자인 QA — 시각(파일럿 UI) vs 커머스 기능 유지 분리
+alwaysApply: false
+globs:
+  - cafe24/**
+  - _reference-harness/**/09-platform-qa/**
+  - _reference-harness/**/08-platform-map/**
+  - _reference-harness/**/06-platform-map/**
+  - _reference-harness/**/03-cafe24-map/**
+  - .cursor/rules/80-cafe24-smart-design.mdc
+---
+
+# Cafe24 Smart Design QA
+
+> **선행:** `80` · `81` · map 승인 · 스킨 백업  
+> **원칙:** 정적 시각 QA와 카페24 **기능 유지 QA를 분리**한다. 한쪽만 PASS면 스킨 완료 **금지**.
+
+## 1. QA 분리
+
+| 유형 | 대상 | 기준 |
+|------|------|------|
+| **Visual QA** | 파일럿 개편 UI | 레이아웃·카피·이미지·모듈 치환 표시 |
+| **Commerce QA** | 가입~마이페이지 등 | **기존 기능 유지** · 디자인 대수술 없음 |
+
+viewport: Desktop **1920** · Mobile **390** (파일럿).
+
+## 2. Visual QA — 파일럿 화면
+
+개편 대상만 깊게 본다.
+
+- [ ] 메인페이지 섹션·진열 영역
+- [ ] 헤더 · 푸터
+- [ ] 메인 상품 진열
+- [ ] 상품 목록 카드
+- [ ] 상품 상세 **상단**
+- [ ] 1920 / 390 깨짐·가로 스크롤·겹침 없음
+- [ ] `{$변수}` raw 노출·빈 모듈 구멍 없음
+- [ ] map에 없는 module/변수 임의 추가 없음
+
+(레이아웃 디테일은 static `50-qa-checklist` 감각을 참고하되, **완료 판정은 본 문서**.)
+
+## 3. Commerce QA — 기능 유지 (비개편)
+
+대규모 UI 변경 없이 **동작·진입**만 확인.
+
+- [ ] 비로그인 / 로그인 시 헤더 상태 정상
+- [ ] 회원가입 · 로그인 페이지 **열림** · 기본 폼 구조 유지
+- [ ] 상품 상세 → 장바구니 담기
+- [ ] 장바구니 페이지 진입 · 수량/목록 표시
+- [ ] 주문서 · 결제 · 마이페이지 **진입 가능** · 치명 JS/서버 오류 없음
+- [ ] no-touch 페이지의 `module` · form `name`/`action` · `{$}` 가 map·백업 대비 **무단 변경 없음**
+
+스테이징/테스트몰에서 가능한 범위로 수행. 결제 실결제가 불가하면 **진입·폼 렌더**까지를 명시하고 FAIL 사유에 적는다.
+
+## 4. 모듈 · 변수 무결성
+
+- [ ] 개편 블록 = `81` map 승인 row와 일치
+- [ ] SoT(`cafe24_shop`)에 없는 module id 미사용
+- [ ] 상품·회원·주문 관련 name/action/module/변수 **임의 변경 없음**
+
+## 5. 회귀
+
+- [ ] 개편하지 않은 페이지 랜덤 샘플 1~2개 진입 OK
+- [ ] 백업 대비 의도치 않은 파일 대량 diff 없음
+
+## 6. PASS / FAIL · 로그
+
+| 결과 | 조건 |
+|------|------|
+| **PASS** | Visual PASS **그리고** Commerce 유지 PASS · 백업·map 승인 기록 있음 |
+| **FAIL** | 둘 중 하나라도 실패 · `{$}` 노출 · no-touch 폼/모듈 변경 |
+
+기록: `_logs/qa-log.md` (또는 cafe24 전용 로그를 쓰는 경우 change-log에 링크)  
+형식 예:
+
+```
+[cafe24-skin {slug}] Visual: PASS|FAIL · Commerce: PASS|FAIL · viewport 1920/390 · note
+```
+
+## 7. 금지
+
+- Visual만으로 「스킨 완료」 선언
+- Commerce FAIL을 디자인 PASS로 덮기
+- map 미승인·백업 없는 상태에서의 QA PASS
+- `_delivery/cafe24/` 경로 사용
+- 가입~마이페이지를 파일럿에서 통째로 리디자인 후 “개선”으로 보고
+
+적용: `cafe24/{slug}/` 스킨 검수·납품 판정.  
+관련: `80` · `81` · `00-project-tracks`.

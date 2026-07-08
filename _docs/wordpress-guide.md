@@ -1,6 +1,6 @@
 # WordPress 운영 트랙 가이드
 
-> Cursor 규칙: `.cursor/rules/70-wordpress.mdc` · 트랙 분기: `00-project-tracks.mdc`
+> Cursor 규칙: `.cursor/rules/70-wordpress.mdc` · 트랙 분기: `00-project-router.mdc`
 
 ## 언제 쓰나
 

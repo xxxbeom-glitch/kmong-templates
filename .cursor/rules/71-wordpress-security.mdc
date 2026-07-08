@@ -9,7 +9,7 @@ globs:
 
 # WordPress Security (1단계)
 
-> **개발 규칙:** `70-wordpress.mdc` · **트랙:** `00-project-tracks.mdc`
+> **개발 규칙:** `70-wordpress.mdc` · **트랙:** `00-project-router.mdc`
 > **본 파일은 보안·배포 차단만** — 기능·Figma·QA 항목은 `70`·`50`을 따른다.
 
 ## 적용 범위 (1단계 — 첫 포트폴리오 사이트)

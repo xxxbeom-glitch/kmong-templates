@@ -11,3 +11,24 @@ _delivery/*/admin/config.php
 _harness/_tmp*
 _harness/_parse-*
 _harness/_figma-extract.js
+
+# Reference-harness one-off / heavy local artifacts
+_reference-harness/_tmp*
+_reference-harness/**/_tmp*
+_reference-harness/**/_mirror/
+
+# Cafe24 release packages (local only)
+_release/
+
+# WP migration / installer leftovers (never commit)
+wordpress/**/tenfold*
+wordpress/**/*.daf
+wordpress/dup-installer*
+wordpress/check.html
+
+# Deprecated reconstruction assets (keep LEGACY.md only)
+_reference-harness/**/legacy/**/assets/
+_reference-harness/**/legacy/**/captures/
+
+# Review export: zip/samples/backup only (no full project dump)
+_review_exports/**/project-files/

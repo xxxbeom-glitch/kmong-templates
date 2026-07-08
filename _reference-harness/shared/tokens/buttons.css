@@ -1,0 +1,15 @@
+/**
+ * Tenfold SoT — button roles (스펙용 토큰)
+ * 실제 클래스는 shared/components 또는 normalized CSS에서 조립
+ */
+:root {
+  --btn-height: 48px;
+  --btn-pad-x: 24px;
+  --btn-font-size: var(--font-size-sm);
+  --btn-font-weight: var(--font-weight-semibold);
+  --btn-radius: var(--radius-pill);
+  --btn-primary-bg: var(--color-accent);
+  --btn-primary-color: var(--color-on-accent);
+  --btn-ghost-border: var(--color-border);
+  --btn-ghost-color: var(--color-text);
+}

@@ -1,0 +1,97 @@
+{
+  "caseId": "forward-clinic",
+  "displayName": "청담포워드피부과",
+  "sourceUrl": "https://forwardclinic.co.kr/",
+  "track": "reference-harness",
+  "pilot": true,
+  "viewports": [
+    1920,
+    390
+  ],
+  "stages": {
+    "reference": {
+      "status": "in_progress",
+      "updatedAt": "2026-07-08"
+    },
+    "reconstruction": {
+      "status": "pending",
+      "updatedAt": ""
+    },
+    "normalized": {
+      "status": "pending",
+      "updatedAt": ""
+    },
+    "starter": {
+      "status": "skipped",
+      "updatedAt": ""
+    },
+    "portfolio": {
+      "status": "skipped",
+      "updatedAt": ""
+    }
+  },
+  "sections": [
+    {
+      "id": "header",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "hero",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "solutions",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "doctor",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "values",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "space",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "media",
+      "keep": true,
+      "notes": ""
+    },
+    {
+      "id": "footer",
+      "keep": true,
+      "notes": ""
+    }
+  ],
+  "interactions": [
+    {
+      "id": "values-tabs",
+      "sectionId": "values",
+      "presetCandidate": "custom",
+      "status": "planned"
+    },
+    {
+      "id": "header-mobile",
+      "sectionId": "header",
+      "presetCandidate": "custom",
+      "status": "planned"
+    }
+  ],
+  "brandReplaceable": true,
+  "promoteTo": {
+    "templates": null,
+    "wordpress": null
+  },
+  "licenseNote": "분석·복원·정규화 실험용. 원본 상표·카피는 normalized에서 잔류 금지. templates 승격은 별도 승인.",
+  "createdAt": "2026-07-08",
+  "updatedAt": "2026-07-08"
+}

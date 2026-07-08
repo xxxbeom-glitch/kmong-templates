@@ -1,0 +1,39 @@
+---
+description: Reference harness — 데모·수집 분석 (Track C). 납품 원본 아님
+alwaysApply: false
+globs:
+  - _reference-harness/**
+  - .cursor/rules/80-cafe24-core.mdc
+---
+
+# Reference Harness (Track C)
+
+> **기준 문서:** `_reference-harness/shared/rules/workflow.md` · `cafe24-original.md` · `license.md`  
+> **라우터:** 데모·미구매 = Track C. **working skin / 납품 원본 아님.**
+
+## 핵심만
+
+1. 공개 데모 = **design reference / 분석 자료**
+2. **정식 구매·고객 원본**(`project original SoT`, skin-zip)과 **구분** (`cafe24-original` A vs B)
+3. 수집 **original immutable** · 수정은 **working-copy**만
+4. 데모 **코드·이미지·폰트 납품 금지**
+5. `browser-captured` ≠ `skin-zip` 등급
+
+## 강요하지 않음
+
+- 모든 case에 풀 analysis-artifacts · page-index HTML 필수화  
+  → **대규모 재구성·패턴 카탈로그** 시에만 (`analysis-artifacts.md` · `page-index.md`는 **선택**)
+- Track A 기존 스킨 수정에 harness 전 단계(무결성→…→map) **강제 금지**
+
+## QA
+
+- 수집물: `82` **Browser capture QA** 또는 `browser-capture-qa.md`
+- ZIP 원본: `original-integrity-qa.md` (harness)
+
+## 금지
+
+- 데모 → cafe24 working skin 승격
+- reconstruction을 original로 위장 (archive 참고)
+- `templates/cafe24_shop/` 수정
+
+제품 이식은 Track A(보유 ZIP) 또는 Track B(map)로만.

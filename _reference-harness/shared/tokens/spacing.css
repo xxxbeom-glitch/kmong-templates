@@ -1,0 +1,17 @@
+/**
+ * Tenfold SoT — spacing scale
+ */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 100px;
+  --section-pad-y: var(--space-9);
+  --section-gap: var(--space-6);
+}

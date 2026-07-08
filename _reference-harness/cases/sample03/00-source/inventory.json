@@ -1,0 +1,20 @@
+{
+  "caseId": "sample03",
+  "demoMallUrl": "https://ecudemo400494.cafe24.com/",
+  "productCode": "PTMD873955",
+  "collection": {
+    "method": "playwright-response-dump + backfill-fetch",
+    "scripts": ["scripts/mirror-original.js", "scripts/backfill-original.js"],
+    "collectedAt": "2026-07-08"
+  },
+  "counts": {
+    "filesInOriginal": 92,
+    "unresolvedExternal": 4
+  },
+  "captures": {
+    "desktop1920": "captures/desktop-1920/desktop-1920-full.png",
+    "mobile390": "captures/mobile-390/mobile-390-full.png"
+  },
+  "missing": [],
+  "updatedAt": "2026-07-08"
+}

@@ -1,5 +1,58 @@
 # QA Log
 
+## 2026-07-08 — [reference-harness] sample03 01-original 수집
+
+**case:** `sample03` · **기준:** `source-collection.md` · `stage-gates.md`  
+**결과:** **PASS (수집)** — 라이선스 사용자 확인 대기 · working-copy 금지
+
+| 체크 | 결과 | 비고 |
+|------|------|------|
+| `01-original/index.html` 진입 | PASS | rewrite 포함 |
+| CSS·JS·이미지 로컬 | PASS | 92 files |
+| 동일 도메인 backfill | PASS | 상품·배너 21건 추가 |
+| 외부 의존 기록 | PASS | 4건 unresolved |
+| `01-original` 수정 없음 | PASS | README 고정 |
+| 캡처 1920/390 | PASS | `00-source/captures/` |
+
+**잔여:** fonts.gstatic woff · 로컬 오프라인 완전 동작 검증 · `03-working-copy` 수정 범위 승인  
+**레거시:** `legacy/01-reconstruction/` QA는 신 워크플로 기준 **무효**
+
+---
+
+## 2026-07-08 — [reference-harness] sample03 01-high-fidelity-reconstruction v2
+
+**case:** `sample03` · **기준:** `reconstruction.md` · `reconstruction-qa.md`  
+**결과:** **PASS (코드·캡처)** — 사용자 나란히 눈검수 대기 · normalized 금지
+
+| 체크 | 결과 | 비고 |
+|------|------|------|
+| measured typo/layout (210/1500/66/815) | PASS | metrics.json |
+| 로컬 대체 이미지 (ref-*.png) | PASS | gradient 제거 |
+| hero 3패널 + horizontal slide | PASS | ref-4/5/6 |
+| top-band salmon · intro check · chip | PASS | estimated logged |
+| 상품 369×492 · hover · 390 2열 | PASS | |
+| after-fold 1920/390 | PASS | captures/ |
+| module/tokens 없음 | PASS | |
+| 원본 ref overlay-free | 보류 | 데모 캡처 한계 |
+
+**잔여:** ref overlay · slide2/3·상품 SKU 1:1 · review 실사  
+**비교:** `01-reconstruction/captures/*/after-fold.png` vs `00-reference/captures/*/compare-ref-fold.png`
+
+---
+
+## 2026-07-08 — [reference-harness] sample03 reconstruction (메인 통합) — **기준 미달·재검수**
+
+**case:** `sample03` · **범위:** `01-reconstruction/index.html` 전 섹션  
+**결과:** ~~PASS (코드)~~ → **visual fidelity 미달** (wireframe 수준)
+
+| 항목 | 결과 | 비고 |
+|------|------|------|
+| 섹션 IA | PASS | 구조만 |
+| 시각 유사성 | **FAIL** | 폰트·간격·헤더·히어로 불일치 |
+| → 보정 | `reconstruction-log.md` 참고 | after 캡처 제출 |
+
+---
+
 ## 2026-07-06 — 365-barun-dental 인터랙션 preset (WP)
 
 **템플릿:** `365-barun-dental` · **범위:** 메인 페이지 PC 인터랙션  

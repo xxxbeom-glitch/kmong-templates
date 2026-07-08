@@ -1,0 +1,35 @@
+{
+  "caseId": "sample04",
+  "displayName": "Sage",
+  "sourceUrl": "https://d.cafe24.com/sample?productCode=PTMD867235&frame=P",
+  "demoMallUrl": "https://ecudemo387382.cafe24.com/",
+  "productCode": "PTMD867235",
+  "track": "cafe24-skin",
+  "pilot": true,
+  "viewports": [1920, 390],
+  "stages": {
+    "reference": { "status": "in_progress", "updatedAt": "2026-07-08" },
+    "reconstruction": { "status": "pending", "updatedAt": "" },
+    "normalized": { "status": "pending", "updatedAt": "" },
+    "cafe24-map": { "status": "pending", "updatedAt": "" },
+    "starter": { "status": "skipped", "updatedAt": "" },
+    "portfolio": { "status": "skipped", "updatedAt": "" }
+  },
+  "sections": [
+    { "id": "header", "keep": true },
+    { "id": "hero-cta", "keep": true },
+    { "id": "sub-banner", "keep": true },
+    { "id": "main-display-products", "keep": true },
+    { "id": "archive-gallery", "keep": true },
+    { "id": "story-section", "keep": true },
+    { "id": "shorts-picks", "keep": true },
+    { "id": "marquee-text", "keep": true },
+    { "id": "footer", "keep": true },
+    { "id": "notice-popup", "keep": true, "notes": "optional" }
+  ],
+  "skinRisk": "medium",
+  "reconstructionDifficulty": "medium-high",
+  "promoteTo": { "cafe24-skin": "cafe24/sample04" },
+  "createdAt": "2026-07-08",
+  "updatedAt": "2026-07-08"
+}

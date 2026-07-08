@@ -1,0 +1,7 @@
+﻿HTML_COUNT=228
+TOP_FOLDERS=attend,board,config,coupon,css,estimate,ez,intro,js,layout,member,myshop,order,preference,product,shopinfo,SkinImg,smart-banner,supply,svg
+LAYOUT_FILES=layout/basic/layout.html,layout/basic/popup.html,layout/basic/header.html,layout/basic/footer.html,layout/basic/main.html
+INVENTORY_GENERATED=yes (docs/cafe24/*.json)
+ORIGINAL_MODIFIED=no (per instruction; inventory only reads)
+RULE_ROLE=read-only SoT / module-variable vocabulary (00-project-tracks, 80, 81)
+EXCLUDED_FROM_ZIP=entire templates/cafe24_shop/

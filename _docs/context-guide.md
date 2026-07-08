@@ -9,7 +9,7 @@
 
 ## 작업 전 컨텍스트 확인 순서
 
-0. **프로젝트 트랙** — `static` → `templates/{slug}/` + 규칙 `00~60` / `wordpress` → `wordpress/{slug}/` + `70-wordpress.mdc` (`00-project-tracks.mdc`)
+0. **프로젝트 트랙** — `00-project-router.mdc`: Static · Cafe24 A/B · Reference C · WordPress. 개요 `docs/cafe24/CAFE24_RULES_OVERVIEW.md`
 
 1. **현재 사용자 요청**
    - 이번에 작업할 템플릿

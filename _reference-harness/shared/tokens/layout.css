@@ -1,0 +1,8 @@
+/**
+ * Tenfold SoT — container / gutter
+ */
+:root {
+  --layout-max: 1440px;
+  --layout-pad-x: clamp(16px, 12.5vw, 240px);
+  --layout-content: min(100% - var(--layout-pad-x) * 2, var(--layout-max));
+}

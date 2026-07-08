@@ -1,0 +1,1420 @@
+{
+  "caseId": "sample01",
+  "title": "Rêverio",
+  "url": "https://ecudemo370921.cafe24.com/",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "headings": [
+    {
+      "tag": "h2",
+      "text": "검색",
+      "top": 98
+    },
+    {
+      "tag": "div",
+      "text": "인기 검색어",
+      "top": 224
+    },
+    {
+      "tag": "h2",
+      "text": "인기 검색어",
+      "top": 224
+    },
+    {
+      "tag": "div",
+      "text": "최근 검색어",
+      "top": 441
+    },
+    {
+      "tag": "h2",
+      "text": "최근 검색어",
+      "top": 441
+    },
+    {
+      "tag": "div",
+      "text": "최근 본 상품",
+      "top": 578
+    },
+    {
+      "tag": "h2",
+      "text": "최근 본 상품",
+      "top": 578
+    },
+    {
+      "tag": "h2",
+      "text": "로그인 후 이용하세요",
+      "top": 492
+    },
+    {
+      "tag": "h2",
+      "text": "Elevate Your Everyday",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Where Luxury Finds Its True Expression",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Unparalleled Quality and Design",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "It's a Lifestyle Defined",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Transform Your World",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Indulge in a World of Premium Selections",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Unparalleled Quality and Design",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Elevate Your Everyday",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Elevate Your Everyday",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Where Luxury Finds Its True Expression",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Unparalleled Quality and Design",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "It's a Lifestyle Defined",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Transform Your World",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Indulge in a World of Premium Selections",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Unparalleled Quality and Design",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Elevate Your Everyday",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Elevate Your Everyday",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Where Luxury Finds Its True Expression",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Unparalleled Quality and Design",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "It's a Lifestyle Defined",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Transform Your World",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Indulge in a World of Premium Selections",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Unparalleled Quality and Design",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Elevate Your Everyday",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "하나의 스킨, 다양한 디자인",
+      "top": 145
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인01",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인01",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인02 ( 1-02)",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인02 ( 1-02)",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인03",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인03",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인04",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인04",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인05",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인05",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인06",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인06",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인07 ( 6-02 )",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인07 ( 6-02 )",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인08",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인08",
+      "top": 524
+    },
+    {
+      "tag": "h2",
+      "text": "상단디자인09",
+      "top": 0
+    }
+  ],
+  "outline": [
+    {
+      "tag": "body",
+      "id": "main",
+      "className": "btnsection01",
+      "top": 0,
+      "height": 9198,
+      "text": "전체상품목록 바로가기 본문 바로가기 신규 회원가입 +30,000 포인트 지급 5시 이전 주문시 당일 배송! 0 검색 인기 검색어 하나의 디자인으로 다양한 디자인을 사용해보세요 최근 검색어 최근 검색어가 없습니다. 최근 본 상품 베스트 타임세일 신상품 스킨케어 메이크업 바디케어 헤어케어 클렌징 BRAND COMMUNITY "
+    },
+    {
+      "tag": "header",
+      "id": "header",
+      "className": "header08 scroll-up black",
+      "top": 0,
+      "height": 74,
+      "text": "신규 회원가입 +30,000 포인트 지급 5시 이전 주문시 당일 배송! 0"
+    },
+    {
+      "tag": "section",
+      "id": "design-popup",
+      "className": "webpublic-banner-area",
+      "top": 0,
+      "height": 783,
+      "text": "하나의 스킨, 다양한 디자인 다양한 레이아웃과 디자인을 하나의 스킨에서 구성할 수 있도록 제작되었습니다. 특정 업종에 국한되지 않고, 패션, 뷰티, 식품, 가구, 반려동물 등 다양한 브랜드에 자연스럽게 어울리도록 설계되었습니다. 브랜드만의 분위기에 맞춰 자유롭게 커스터마이징해보세요. 상단디자인01 대분류 상품카테고리 6개"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-wrap",
+      "top": 0,
+      "height": 783,
+      "text": "하나의 스킨, 다양한 디자인 다양한 레이아웃과 디자인을 하나의 스킨에서 구성할 수 있도록 제작되었습니다. 특정 업종에 국한되지 않고, 패션, 뷰티, 식품, 가구, 반려동물 등 다양한 브랜드에 자연스럽게 어울리도록 설계되었습니다. 브랜드만의 분위기에 맞춰 자유롭게 커스터마이징해보세요. 상단디자인01 대분류 상품카테고리 6개"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "",
+      "top": 0,
+      "height": 548,
+      "text": "An Everyday Routine, An Extraordinary Difference 매일의 루틴, 특별한 차이 More View The Science of Restoring Balance 피부의 균형을 찾아주는 과학 More View Turning Back the Time of Your Skin 피부의 시간을 되돌리다"
+    },
+    {
+      "tag": "div",
+      "id": "swiper-wrapper-e10c91cbe3e7fb2f3",
+      "className": "swiper-wrapper webpublic-banner-area",
+      "top": 0,
+      "height": 548,
+      "text": "An Everyday Routine, An Extraordinary Difference 매일의 루틴, 특별한 차이 More View The Science of Restoring Balance 피부의 균형을 찾아주는 과학 More View Turning Back the Time of Your Skin 피부의 시간을 되돌리다"
+    },
+    {
+      "tag": "div",
+      "id": "board-side",
+      "className": "xans-element- xans-layout xans-layout-boardinfo h-side-cate board-cate",
+      "top": 75,
+      "height": 732,
+      "text": "COMMUNITY NOTICE REVIEW Q&A EVENT FAQ"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-layout xans-layout-category SSCateAll_0 common-cate",
+      "top": 87,
+      "height": 285,
+      "text": "베스트 타임세일 신상품 스킨케어 메이크업 바디케어 헤어케어 클렌징"
+    },
+    {
+      "tag": "ul",
+      "id": "",
+      "className": "brand-side-list webpublic-banner-area",
+      "top": 123,
+      "height": 107,
+      "text": "ABOUT BRAND LIST STOCKIST"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-title",
+      "top": 145,
+      "height": 168,
+      "text": "하나의 스킨, 다양한 디자인 다양한 레이아웃과 디자인을 하나의 스킨에서 구성할 수 있도록 제작되었습니다. 특정 업종에 국한되지 않고, 패션, 뷰티, 식품, 가구, 반려동물 등 다양한 브랜드에 자연스럽게 어울리도록 설계되었습니다. 브랜드만의 분위기에 맞춰 자유롭게 커스터마이징해보세요."
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-search xans-search-hotkeyword ",
+      "top": 273,
+      "height": 136,
+      "text": "하나의 디자인으로 다양한 디자인을 사용해보세요"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-box",
+      "top": 338,
+      "height": 300,
+      "text": "상단디자인01 대분류 상품카테고리 6개 이하 적합 상단디자인02 ( 1-02) 대분류 상품카테고리 6개 이하 적합 상단디자인03 대분류 상품카테고리 6개 이하 적합 상단디자인04 대분류 상품카테고리 4개 이하 적합 상단디자인05 상단디자인06 상단디자인07 ( 6-02 ) 상단디자인08 상단디자인09 상단디자인10"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "swiper-slide webpublic-banner-item swiper-slide-active",
+      "top": 338,
+      "height": 247,
+      "text": "상단디자인01 대분류 상품카테고리 6개 이하 적합"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-img",
+      "top": 338,
+      "height": 175,
+      "text": ""
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "swiper-slide webpublic-banner-item swiper-slide-next",
+      "top": 338,
+      "height": 261,
+      "text": "상단디자인02 ( 1-02) 대분류 상품카테고리 6개 이하 적합"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "swiper-slide webpublic-banner-item",
+      "top": 338,
+      "height": 225,
+      "text": "상단디자인05"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "swiper-slide webpublic-banner-item",
+      "top": 338,
+      "height": 239,
+      "text": "상단디자인07 ( 6-02 )"
+    },
+    {
+      "tag": "section",
+      "id": "popup-banner04",
+      "className": "pb02 webpublic-banner-area",
+      "top": 440,
+      "height": 344,
+      "text": "쉽고 간편하게 변경하실 수 있는 디자인입니다. More view 배너매니저를 통해 쉽게 ON / OFF 가능하며 More view 텍스트 내용 또한 수정이 간편합니다. More view 33 오늘 하루 열지 않기"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-wrap",
+      "top": 440,
+      "height": 344,
+      "text": "쉽고 간편하게 변경하실 수 있는 디자인입니다. More view 배너매니저를 통해 쉽게 ON / OFF 가능하며 More view 텍스트 내용 또한 수정이 간편합니다. More view 33 오늘 하루 열지 않기"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-t",
+      "top": 440,
+      "height": 293,
+      "text": "쉽고 간편하게 변경하실 수 있는 디자인입니다. More view 배너매니저를 통해 쉽게 ON / OFF 가능하며 More view 텍스트 내용 또한 수정이 간편합니다. More view 33"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text top left",
+      "top": 457,
+      "height": 84,
+      "text": "쉽고 간편하게 변경하실 수 있는 디자인입니다. More view"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text center top",
+      "top": 457,
+      "height": 125,
+      "text": "텍스트 내용 또한 수정이 간편합니다. More view"
+    },
+    {
+      "tag": "div",
+      "id": "aside-account",
+      "className": "xans-element- xans-layout xans-layout-statelogoff",
+      "top": 467,
+      "height": 175,
+      "text": "로그인 후 이용하세요 회원가입 후 다양한 혜택 받아가세요 로그인 / 회원가입 주문조회 최근 본 상품 관심상품 장바구니"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text-flex ",
+      "top": 512,
+      "height": 72,
+      "text": "상단디자인01 대분류 상품카테고리 6개 이하 적합"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text-flex ",
+      "top": 512,
+      "height": 86,
+      "text": "상단디자인02 ( 1-02) 대분류 상품카테고리 6개 이하 적합"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text-flex ",
+      "top": 512,
+      "height": 50,
+      "text": "상단디자인05"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text-flex ",
+      "top": 512,
+      "height": 64,
+      "text": "상단디자인07 ( 6-02 )"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-text mo-text center",
+      "top": 523,
+      "height": 125,
+      "text": "배너매니저를 통해 쉽게 ON / OFF 가능하며 More view"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "section_margin_top mov webpublic-banner-area act",
+      "top": 648,
+      "height": 158,
+      "text": "자연 유래 성분과 과학의 균형을 바탕으로, 자극 없이 깊이 스며드는 보습과 진정을 제공합니다. Based on a balance of nature-derived ingredients and science, it delivers deep hydration and soothing care without irritation."
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "text-banner webpublic-banner-item",
+      "top": 648,
+      "height": 158,
+      "text": "자연 유래 성분과 과학의 균형을 바탕으로, 자극 없이 깊이 스며드는 보습과 진정을 제공합니다. Based on a balance of nature-derived ingredients and science, it delivers deep hydration and soothing care without irritation."
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "text-banner-title emptycontent",
+      "top": 648,
+      "height": 50,
+      "text": "자연 유래 성분과 과학의 균형을 바탕으로, 자극 없이 깊이 스며드는 보습과 진정을 제공합니다."
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "text-banner-text emptycontent",
+      "top": 717,
+      "height": 90,
+      "text": "Based on a balance of nature-derived ingredients and science, it delivers deep hydration and soothing care without irritation."
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "popup-banner-b",
+      "top": 732,
+      "height": 51,
+      "text": "오늘 하루 열지 않기"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "section_margin_top mov webpublic-banner-area act",
+      "top": 906,
+      "height": 126,
+      "text": "스킨케어 메이크업 바디케어 헤어케어 클렌징 브랜드"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "icon-banner",
+      "top": 906,
+      "height": 126,
+      "text": "스킨케어 메이크업 바디케어 헤어케어 클렌징 브랜드"
+    },
+    {
+      "tag": "ul",
+      "id": "swiper-wrapper-9c1ecc9b3bd9f5ef",
+      "className": "swiper-wrapper icon-banner-box ",
+      "top": 906,
+      "height": 126,
+      "text": "스킨케어 메이크업 바디케어 헤어케어 클렌징 브랜드"
+    },
+    {
+      "tag": "li",
+      "id": "",
+      "className": "icon-banner-list swiper-slide webpublic-banner-item swiper-slide-active",
+      "top": 906,
+      "height": 126,
+      "text": "스킨케어"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "section_margin_top width1600 mov act",
+      "top": 1133,
+      "height": 425,
+      "text": "고객님을 위한 추천 상품 Weekly Best 모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0 에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500원 5% 리뷰 : 0 트루벨 릴리프 크림 트러블·민감성 피부"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-1 xans-product-listmain xans-product-1 ec-base-product cpb-prd slide-pr",
+      "top": 1133,
+      "height": 425,
+      "text": "고객님을 위한 추천 상품 Weekly Best 모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0 에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500원 5% 리뷰 : 0 트루벨 릴리프 크림 트러블·민감성 피부"
+    },
+    {
+      "tag": "ul",
+      "id": "swiper-wrapper-e6bf1060e69d920ff",
+      "className": "prdList swiper-wrapper",
+      "top": 1205,
+      "height": 325,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0 에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500원 5% 리뷰 : 0 트루벨 릴리프 크림 트러블·민감성 피부를 위한 진정&보습 솔루션 50,000원47,5"
+    },
+    {
+      "tag": "li",
+      "id": "anchorBoxId_38",
+      "className": "swiper-slide xans-record- swiper-slide-prev",
+      "top": 1205,
+      "height": 325,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prd-box",
+      "top": 1205,
+      "height": 317,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prdImg",
+      "top": 1205,
+      "height": 180,
+      "text": ""
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prd-icon",
+      "top": 1205,
+      "height": 62,
+      "text": ""
+    },
+    {
+      "tag": "ul",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listitem-1 xans-product-listitem xans-product-1 spec",
+      "top": 1431,
+      "height": 92,
+      "text": "꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "section_margin_top mov emptycontent act",
+      "top": 1658,
+      "height": 351,
+      "text": "레브리오 브랜드 모음 Reverio Brand List 레브리오 브랜드 Reverio Brand More view 레브리오 기획전 Reverio Exhibition More view 레브리오 매거진 Reverio Magazine More view"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "grid-banner",
+      "top": 1658,
+      "height": 351,
+      "text": "레브리오 브랜드 모음 Reverio Brand List 레브리오 브랜드 Reverio Brand More view 레브리오 기획전 Reverio Exhibition More view 레브리오 매거진 Reverio Magazine More view"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "webpublic-banner-area",
+      "top": 1658,
+      "height": 73,
+      "text": "레브리오 브랜드 모음 Reverio Brand List"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "grid-banner-content swiper grid-banner-slide webpublic-banner-area swiper-initialized swiper-horizontal swiper-backface-",
+      "top": 1730,
+      "height": 278,
+      "text": "레브리오 브랜드 Reverio Brand More view 레브리오 기획전 Reverio Exhibition More view 레브리오 매거진 Reverio Magazine More view"
+    },
+    {
+      "tag": "ul",
+      "id": "swiper-wrapper-fa743447eb602e4e",
+      "className": "grid-banner-box swiper-wrapper",
+      "top": 1730,
+      "height": 278,
+      "text": "레브리오 브랜드 Reverio Brand More view 레브리오 기획전 Reverio Exhibition More view 레브리오 매거진 Reverio Magazine More view"
+    },
+    {
+      "tag": "li",
+      "id": "",
+      "className": "grid-banner-list swiper-slide webpublic-banner-item",
+      "top": 1730,
+      "height": 278,
+      "text": "레브리오 브랜드 Reverio Brand More view"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "grid-banner-text mo-text center bottom emptycontent",
+      "top": 1898,
+      "height": 86,
+      "text": "레브리오 브랜드 Reverio Brand More view"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "section_margin_top mov webpublic-banner-area act",
+      "top": 2109,
+      "height": 1582,
+      "text": "주목해야 할 브랜드 매주 오후 5시 신상품 입고 베스트 스킨케어 메이크업 바디케어 헤어케어 클렌징 브랜드 모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0 에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "tab-title custom-title emptycontent padding-lr webpublic-banner-item",
+      "top": 2109,
+      "height": 128,
+      "text": "주목해야 할 브랜드 매주 오후 5시 신상품 입고 베스트 스킨케어 메이크업 바디케어 헤어케어 클렌징 브랜드"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-3 xans-product-listmain xans-product-3 ec-base-product padding-lr  cpb-",
+      "top": 2237,
+      "height": 1371,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0 에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500원 5% 리뷰 : 0 트루벨 릴리프 크림 트러블·민감성 피부를 위한 진정&보습 솔루션 50,000원47,5"
+    },
+    {
+      "tag": "ul",
+      "id": "",
+      "className": "prdList grid4 ",
+      "top": 2237,
+      "height": 1371,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0 에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500원 5% 리뷰 : 0 트루벨 릴리프 크림 트러블·민감성 피부를 위한 진정&보습 솔루션 50,000원47,5"
+    },
+    {
+      "tag": "li",
+      "id": "anchorBoxId_38",
+      "className": "xans-record-",
+      "top": 2237,
+      "height": 325,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prd-box",
+      "top": 2237,
+      "height": 317,
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prdImg",
+      "top": 2237,
+      "height": 179,
+      "text": ""
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prd-icon",
+      "top": 2237,
+      "height": 62,
+      "text": ""
+    }
+  ],
+  "moduleHints": [
+    {
+      "tag": "li",
+      "module": "",
+      "className": "selected xans-record-",
+      "text": "한국어 KRW"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "English USD"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "日本語 JPY"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "中文 USD"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "하나의"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "디자인으로"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "다양한"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "디자인을"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "사용해보세요"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- asideAllCategory_1_Sub",
+      "text": "베스트"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- no-child",
+      "text": "타임세일"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- no-child",
+      "text": "신상품"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- asideAllCategory_1_Sub",
+      "text": "스킨케어"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- asideAllCategory_1_Sub",
+      "text": "메이크업"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- asideAllCategory_1_Sub",
+      "text": "바디케어"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- asideAllCategory_1_Sub",
+      "text": "헤어케어"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "asidecate_li xans-record- asideAllCategory_1_Sub",
+      "text": "클렌징"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "selected xans-record-",
+      "text": "한국어"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "English"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "日本語"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "中文"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- SideAllCategory_1_Sub",
+      "text": "베스트2025 BESTBEST01BEST02BEST032026 BEST2025 Brand Best2026 Brand Best"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- no-child",
+      "text": "타임세일"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- no-child",
+      "text": "신상품"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- SideAllCategory_1_Sub",
+      "text": "스킨케어스킨/토너에센스크림미스트세럼"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- SideAllCategory_1_Sub",
+      "text": "메이크업립베이스아이쿠션 / 미니쿠션"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- SideAllCategory_1_Sub",
+      "text": "바디케어샤워/입욕로션/오일핸드케어풋케어베이비"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- SideAllCategory_1_Sub",
+      "text": "헤어케어샴푸/린스트리트먼트에센스앰플헤어기기"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "Sidecate_li xans-record- SideAllCategory_1_Sub",
+      "text": "클렌징클렌징폼오일/밤워터/밀크티슈/패드디바이스"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- SSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- no-child",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- no-child",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- SSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- SSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- SSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- SSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSidecate_li xans-record- SSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- SSSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- no-child",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- no-child",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- SSSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- SSSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- SSSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- SSSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "SSSidecate_li xans-record- SSSideAllCategory_1_Sub",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "NOTICE"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "REVIEW"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Q&A"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "EVENT"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "FAQ"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record- swiper-slide-prev",
+      "text": "모네 플로럴 크림 꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "꽃 추출물로 피부를 편안하게 감싸는 데일리 플로럴 보습"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record- swiper-slide-active",
+      "text": "에델바이오 크림 에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "에델바이스 줄기세포 추출로 피부 활력을 회복하는 집중 크림"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record- swiper-slide-next",
+      "text": "트루벨 릴리프 크림 트러블·민감성 피부를 위한 진정&보습 솔루션 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "트러블·민감성 피부를 위한 진정&보습 솔루션"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record-",
+      "text": "오로라 나이트 크림 밤사이 피부 재생을 돕는 고기능 수면 집중 크림 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "밤사이 피부 재생을 돕는 고기능 수면 집중 크림"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record-",
+      "text": "글라시에르 수딩 크림 빙하수 기반의 쿨링 수분 진정 크림 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "빙하수 기반의 쿨링 수분 진정 크림"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record-",
+      "text": "루미에르 리프트 크림 탄력 저하 피부를 위한 고기능 안티에이징 크림 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "탄력 저하 피부를 위한 고기능 안티에이징 크림"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record-",
+      "text": "클라우드 모이스처 크림 마치 구름처럼 가벼운 텍스처의 고보습 수분크림 50,000원47,500원 5% 리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " summary_desc xans-record-",
+      "text": "마치 구름처럼 가벼운 텍스처의 고보습 수분크림"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_custom xans-record- displaynone",
+      "text": "소비자가 : 65,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "product_price xans-record- sale_per line-through",
+      "text": "50,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " optimum_discount_price xans-record-",
+      "text": "47,500원 5%"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " option_colorchip xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " review_cnt xans-record-",
+      "text": "리뷰 : 0"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "swiper-slide xans-record-",
+      "text": "시에르 트리트 크림 외부 자극으로 민감해진 피부를 진정시키는 데일리 회복 크림 50,000원47,500원 5% 리뷰 : 0"
+    }
+  ],
+  "commerceHints": {
+    "navLinks": [
+      "신규 회원가입 +30,000 포인트 지급",
+      "5시 이전 주문시 당일 배송!",
+      "한국어 KRW",
+      "English USD",
+      "日本語 JPY",
+      "中文 USD",
+      "로그인",
+      "회원가입",
+      "주문조회",
+      "최근 본 상품",
+      "관심 상품",
+      "0"
+    ],
+    "productNames": [
+      "한국어",
+      "English",
+      "日本語",
+      "中文",
+      "최근 본 상품",
+      "한국어",
+      "English",
+      "日本語",
+      "中文",
+      "모네 플로럴 크림",
+      "상품명 :",
+      "상품요약정보 :",
+      "소비자가 :",
+      "판매가 :",
+      "최적할인가 :",
+      "상품색상 :",
+      "리뷰 :",
+      "에델바이오 크림",
+      "상품명 :",
+      "상품요약정보 :"
+    ],
+    "productCards": 705,
+    "prices": [
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원",
+      "50,000원",
+      "47,500원"
+    ],
+    "cartText": 2,
+    "loginText": 5,
+    "reviewText": 50,
+    "banners": 606
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "caseId": "sample03",
+  "displayName": "Knotted. (노티드 원디자인)",
+  "sourceUrl": "https://d.cafe24.com/sample?productCode=PTMD873955&frame=P",
+  "demoMallUrl": "https://ecudemo400494.cafe24.com/",
+  "productCode": "PTMD873955",
+  "track": "cafe24-skin",
+  "rightsType": "demo-analysis",
+  "pilot": true,
+  "viewports": [1920, 390],
+  "stages": {
+    "source": { "status": "pass", "updatedAt": "2026-07-08" },
+    "original": { "status": "pass", "updatedAt": "2026-07-08", "files": 92 },
+    "analysis": { "status": "pass", "updatedAt": "2026-07-08" },
+    "working-copy": { "status": "pending", "updatedAt": "" },
+    "normalized": { "status": "pending", "updatedAt": "" },
+    "final": { "status": "pending", "updatedAt": "" },
+    "platform-map": { "status": "pending", "updatedAt": "" }
+  },
+  "legacy": {
+    "reference": { "status": "superseded", "path": "00-reference/", "updatedAt": "2026-07-08" },
+    "reconstruction": { "status": "deprecated", "path": "legacy/01-reconstruction/", "label": "01-high-fidelity-reconstruction", "updatedAt": "2026-07-08" }
+  },
+  "sections": [
+    { "id": "top-band", "keep": true },
+    { "id": "header", "keep": true },
+    { "id": "hero-slide", "keep": true },
+    { "id": "brand-intro", "keep": true },
+    { "id": "weekly-banner", "keep": true },
+    { "id": "main-display-best", "keep": true },
+    { "id": "main-display-new", "keep": true },
+    { "id": "main-display-md", "keep": true },
+    { "id": "photo-review", "keep": true },
+    { "id": "footer", "keep": true }
+  ],
+  "skinRisk": "medium-high",
+  "promoteTo": { "cafe24-skin": "cafe24/sample03" },
+  "createdAt": "2026-07-08",
+  "updatedAt": "2026-07-08"
+}

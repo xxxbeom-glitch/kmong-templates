@@ -1,0 +1,23 @@
+{
+  "caseId": "sample02",
+  "sourceUrl": "https://d.cafe24.com/sample?productCode=PTMD856032&frame=P",
+  "demoMallUrl": "https://ecudemo371233.cafe24.com/",
+  "productCode": "PTMD856032",
+  "viewports": [1920, 390],
+  "commerceSlots": ["category", "member-cart", "product-card", "timesale-timer", "board-news", "bank-info"],
+  "moduleCandidates": [
+    { "area": "category", "candidate": "layout_category", "changeType": "skin-visual" },
+    { "area": "main-display", "candidate": "product_listmain_1", "changeType": "skin-visual" },
+    { "area": "list-card", "candidate": "product_ListItem", "changeType": "skin-visual" },
+    { "area": "board", "candidate": "board_listpackage_1", "changeType": "skin-visual" },
+    { "area": "footer", "candidate": "layout_footer", "changeType": "skin-visual" }
+  ],
+  "reconstructionDifficulty": "medium-high",
+  "skinRisk": "medium",
+  "removeCandidates": ["layer-popup"],
+  "captures": {
+    "desktop1920": "captures/desktop-1920/desktop-1920-full.png",
+    "mobile390": "captures/mobile-390/mobile-390-full.png"
+  },
+  "updatedAt": "2026-07-08"
+}

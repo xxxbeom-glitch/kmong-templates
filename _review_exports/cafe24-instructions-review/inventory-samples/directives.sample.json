@@ -1,0 +1,528 @@
+{
+  "_sampleNote": "sample up to 50",
+  "sourceStats": {
+    "uniqueDirectives": 280,
+    "totalOccurrences": 747,
+    "byType": {
+      "layout": 4,
+      "css": 191,
+      "js": 34,
+      "import": 50,
+      "contents": 1
+    }
+  },
+  "count": 50,
+  "directives": [
+    {
+      "type": "contents",
+      "target": null,
+      "purpose": "unknown",
+      "occurrenceCount": 7,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/attend/calendarPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "attend/comment.html",
+        "attend/stamp.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/attend/commentPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "attend/comment.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/catemove.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "board/free/list.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/commentDeletePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/comment_del.html",
+        "board/gallery/comment_del.html",
+        "board/product/comment_del.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/commentPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 7,
+      "files": [
+        "board/free/comment_all.html",
+        "board/free/read.html",
+        "board/gallery/comment_all.html",
+        "board/gallery/read.html",
+        "board/opdiary/read_blog.html",
+        "board/product/comment_all.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/function.css",
+      "purpose": "unknown",
+      "occurrenceCount": 7,
+      "files": [
+        "board/free/list.html",
+        "board/free/read.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/gallery/read.html",
+        "board/product/list.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquiryForm.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/write.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquiryModify.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquirySearch.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquiryView.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listPackage_11.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/opdiary/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listPackage_gallary.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/gallery/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "board/consult/list.html",
+        "board/free/list.html",
+        "board/gallery/list2.html",
+        "board/product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listsgroup.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/memoPackage_1001.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/memo/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/modifyPackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/modifyPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/modify.html",
+        "board/gallery/modify.html",
+        "board/product/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/movement.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/read.html",
+        "board/gallery/read.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/readPackage_11.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/opdiary/read_blog.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/readPackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/readPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/read.html",
+        "board/gallery/read.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/replyPackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/reply.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/replyPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 9,
+      "files": [
+        "board/free/comment_all.html",
+        "board/free/reply.html",
+        "board/free/reply_all.html",
+        "board/gallery/comment_all.html",
+        "board/gallery/reply.html",
+        "board/gallery/reply_all.html",
+        "board/product/comment_all.html",
+        "board/product/reply.html",
+        "board/product/reply_all.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/report.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/report_popup.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/search.css",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "board/consult/list.html",
+        "board/free/list.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/opdiary/list.html",
+        "board/product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/securePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/secret.html",
+        "board/gallery/secret.html",
+        "board/product/secret.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/urgencycall.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/urgency/urgency.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/urgencycallSearchoutline.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/urgency/urgency_search.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/writePackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/write.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/writePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/write.html",
+        "board/gallery/write.html",
+        "board/product/write.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/couponDownResult.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_down_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/couponList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/join.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/join_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/productDetailAjax.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_productdetail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/productPopup.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/coupon_popup.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/zonePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_zone.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/estimate/estimateInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "estimate/print.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/estimate/userform.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "estimate/userform.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/intro/intro.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "intro/adult_certification.html",
+        "intro/adult_i.html",
+        "intro/adult_i_recommend.html",
+        "intro/adult_im.html",
+        "intro/member.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/boardInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/category.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/navigation.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/categorySupplyList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/main_supply.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/conversionpc.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/footer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/info.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/login.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/logobottom.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/logotop.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/multishopList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    }
+  ]
+}

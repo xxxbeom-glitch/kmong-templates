@@ -1,0 +1,2984 @@
+{
+  "source": "templates/cafe24_shop",
+  "generatedAt": "2026-07-08T11:59:29.542Z",
+  "readOnly": true,
+  "note": "Separated from modules.json. Types: layout, css, js, import, contents.",
+  "stats": {
+    "uniqueDirectives": 280,
+    "totalOccurrences": 747,
+    "byType": {
+      "layout": 4,
+      "css": 191,
+      "js": 34,
+      "import": 50,
+      "contents": 1
+    }
+  },
+  "count": 280,
+  "directives": [
+    {
+      "type": "contents",
+      "target": null,
+      "purpose": "unknown",
+      "occurrenceCount": 7,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/attend/calendarPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "attend/comment.html",
+        "attend/stamp.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/attend/commentPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "attend/comment.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/catemove.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "board/free/list.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/commentDeletePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/comment_del.html",
+        "board/gallery/comment_del.html",
+        "board/product/comment_del.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/commentPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 7,
+      "files": [
+        "board/free/comment_all.html",
+        "board/free/read.html",
+        "board/gallery/comment_all.html",
+        "board/gallery/read.html",
+        "board/opdiary/read_blog.html",
+        "board/product/comment_all.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/function.css",
+      "purpose": "unknown",
+      "occurrenceCount": 7,
+      "files": [
+        "board/free/list.html",
+        "board/free/read.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/gallery/read.html",
+        "board/product/list.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquiryForm.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/write.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquiryModify.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquirySearch.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/inquiryView.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/inquiry/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listPackage_11.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/opdiary/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listPackage_gallary.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/gallery/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "board/consult/list.html",
+        "board/free/list.html",
+        "board/gallery/list2.html",
+        "board/product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/listsgroup.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/memoPackage_1001.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/memo/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/modifyPackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/modifyPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/modify.html",
+        "board/gallery/modify.html",
+        "board/product/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/movement.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/read.html",
+        "board/gallery/read.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/readPackage_11.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/opdiary/read_blog.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/readPackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/readPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/read.html",
+        "board/gallery/read.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/replyPackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/reply.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/replyPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 9,
+      "files": [
+        "board/free/comment_all.html",
+        "board/free/reply.html",
+        "board/free/reply_all.html",
+        "board/gallery/comment_all.html",
+        "board/gallery/reply.html",
+        "board/gallery/reply_all.html",
+        "board/product/comment_all.html",
+        "board/product/reply.html",
+        "board/product/reply_all.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/report.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/report_popup.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/search.css",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "board/consult/list.html",
+        "board/free/list.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/opdiary/list.html",
+        "board/product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/securePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/secret.html",
+        "board/gallery/secret.html",
+        "board/product/secret.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/urgencycall.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/urgency/urgency.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/urgencycallSearchoutline.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/urgency/urgency_search.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/writePackage_9.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "board/consult/write.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/board/writePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/write.html",
+        "board/gallery/write.html",
+        "board/product/write.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/couponDownResult.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_down_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/couponList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/join.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/join_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/productDetailAjax.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_productdetail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/productPopup.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/coupon_popup.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/coupon/zonePackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_zone.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/estimate/estimateInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "estimate/print.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/estimate/userform.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "estimate/userform.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/intro/intro.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "intro/adult_certification.html",
+        "intro/adult_i.html",
+        "intro/adult_i_recommend.html",
+        "intro/adult_im.html",
+        "intro/member.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/boardInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/category.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/navigation.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/categorySupplyList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/main_supply.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/conversionpc.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/footer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/info.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/login.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/logobottom.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/logotop.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/multishopList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/multishopShipping.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/myshop.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/orderBasketcount.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/main_supply.html",
+        "layout/basic/quick.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/poll.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/productRecent.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/main_supply.html",
+        "layout/basic/quick.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/project.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/searchHeader.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/searchSide.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/shoppingInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/statelogoff.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/main_supply.html",
+        "layout/basic/state_login.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/layout/statelogon.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/mall/company.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "shopinfo/company.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/mall/faq.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "shopinfo/guide.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/mall/privacy.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/privacy.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/mall/supplySearch.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "supply/index.html",
+        "supply/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/certification_layer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/certification_layer.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/change_passwd.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/change_passwd.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/checkpassword.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/check_password.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/checkunderfourteen.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/check_under_fourteen.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/edit.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/find_id_result.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/id/find_id_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/find_id.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/id/find_id.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/find_passwd_method.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/passwd/find_passwd_method.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/find_passwd_question.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/passwd/find_passwd_question.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/find_passwd_result.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/passwd/find_passwd_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/find_passwd.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/passwd/find_passwd_info.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/join_agreement.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "member/agreement.html",
+        "member/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/join_confirm.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/join_confirm.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/join.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/join.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/joincomplete.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/join_result.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/layer_login.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/mapping_join.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/lifetime_event.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/lifetime_event.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/login.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "intro/adult_im.html",
+        "intro/member.html",
+        "member/login.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/mapping_join.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/mapping_join.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/mapping_login_kakao.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/mapping_login.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/passwd_reset.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/passwd/passwd_reset.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/update_event.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/update_event.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/updateeventlogon.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/member/user_verification.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/passwd/user_verification.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/addrList_pop.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/addr_popup/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/addrModify_pop.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/addr_popup/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/addrModify.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/addr/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/addrRegister_pop.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/addr_popup/register.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/addrRegister.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/addr/register.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/bankbook.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/index.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/benefit.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/modify.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/boardlistSearch.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/board_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/boardPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/board_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/couponList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/coupon/coupon.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/couponProductPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/coupon/coupon_product_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/couponSerial.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/coupon/coupon.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/depositHistoryCallPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/deposits/refund_call.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/depositHistoryPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/deposits/historyList.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/depositRefundPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/deposits/refund_cancel.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/likeitPrdPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/likeit/product.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/main.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/myshop_main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/mileageCouponPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/mileage/couponList.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/mileageHistoryPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/mileage/historyList.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/mileageUnavailPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/mileage/unavailList.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryAccount.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/account.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryApplyCancel.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/cancel.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryApplyExchange.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/exchange.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryApplyReturn.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/return.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryDetail.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "myshop/order/detail.html",
+        "myshop/order/detail_old.html",
+        "myshop/order/order_detail_cs.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryHead.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "myshop/order/list.html",
+        "myshop/order/list_past.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryListItem.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/history_list_item.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryListPast.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/list_past.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderHistoryNologin.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/login.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderOldHistoryList.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/list_old.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderPrintSpec.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "myshop/order/print/spec.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderPrintTax.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/print/tax.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderState.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/index.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/orderStorePickup.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/store_pickup.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/receiverUpdate.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/receiver_update.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/regularDeliveryDetail.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/regular_delivery_detail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/regularDeliveryListItem.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/regular_delivery.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/regularDeliveryPayInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/regular_delivery.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/regularDeliveryUpdate.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/regular_delivery_update.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/searchProduct.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/order/search_product.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/myshop/wishlist.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/wish_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/basketPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/basket.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/boardListPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/search_board_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/confirm_layer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/order_confirm_layer.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/ec_orderform/form_onetouch_layer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/gift_select.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/ec_orderform/form_onetouch_popup.css",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "coupon/coupon_select.html",
+        "myshop/order/issue/cash.html",
+        "myshop/order/issue/tax.html",
+        "order/custom_ship_area.html",
+        "order/store_pickup_info.html",
+        "order/store_pickup_shop.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/ec_orderform/form_onetouch_v2.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "order/order_result.html",
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/ec_orderform/form_onetouch.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "order/order_result.html",
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/gift_list.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "order/gift_list.html",
+        "order/gift_list_detail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/order/throttleWaiting.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/traffic.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/additional.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/basketAdd.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/add_basket.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/basketAdd2.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/add_basket2.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/compare.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/compare.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/detail_option.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/layer_option.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/detail.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/hashtag.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/hashtag.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/layer_wish.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/layer_wish.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/listnew_swipe.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "ez/ez-module.html",
+        "product/list.html",
+        "supply/index.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/listnormal.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "product/list.html",
+        "supply/index.html",
+        "supply/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/listrecommend_swipe.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "ez/ez-module.html",
+        "product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/listrecommend.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "supply/index.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/menupackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/mobileImage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/optionPreview.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/option_preview.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/optionSelectLayer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/basket_option.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/product_request.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/request.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/productDetailInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/product_detail_info.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/project_package.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/project.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/recentlist.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/recent_view_product.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/recommend_mail.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/recommend_mail.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/restock_email.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/email_restock.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/restockSms.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "product/sms_restock.html",
+        "product/sms_restock_layer.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/search_FromPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/search_board_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/searchdata.css",
+      "purpose": "unknown",
+      "occurrenceCount": 8,
+      "files": [
+        "product/shoppQ/layout_sticky.html",
+        "product/shoppQ/searchConditionData.html",
+        "product/shoppQ/searchContent.html",
+        "product/shoppQ/searchForm.html",
+        "product/shoppQ/searchForm_typeTop.html",
+        "product/shoppQ/searchSidebar.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/sizeguide.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/sizeguide.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/stocklayer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/stocklayer.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/zoomPackage.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/image_zoom.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/css/module/product/zoomPackage2.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/image_zoom2.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/add_layout.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/add_theme01.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/add_theme02.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/add_theme03.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/common.css",
+      "purpose": "unknown",
+      "occurrenceCount": 9,
+      "files": [
+        "board/opdiary/read_blog.html",
+        "layout/basic/detail_layout.html",
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "order/traffic.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-box.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-button.css",
+      "purpose": "unknown",
+      "occurrenceCount": 12,
+      "files": [
+        "board/opdiary/read_blog.html",
+        "layout/basic/detail_layout.html",
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/popup.html",
+        "member/certification_layer.html",
+        "member/join_confirm.html",
+        "member/lifetime_event.html",
+        "member/update_event.html",
+        "myshop/order/order_detail_cs.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-desc.css",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-fold.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-help.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-layer.css",
+      "purpose": "unknown",
+      "occurrenceCount": 22,
+      "files": [
+        "board/report_popup.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/popup.html",
+        "member/certification_layer.html",
+        "member/join_confirm.html",
+        "member/lifetime_event.html",
+        "member/mapping_join.html",
+        "member/modify.html",
+        "member/update_event.html",
+        "myshop/order/exchange.html",
+        "myshop/order/order_detail_cs.html",
+        "myshop/regular_delivery_detail.html",
+        "order/basket.html",
+        "order/gift_list_detail.html",
+        "order/order_confirm_layer.html",
+        "product/add_basket.html",
+        "product/shoppQ/layout_sticky.html",
+        "product/shoppQ/searchForm.html",
+        "product/shoppQ/searchForm_typeTop.html",
+        "product/sizeguide.html",
+        "product/stocklayer.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-paginate.css",
+      "purpose": "unknown",
+      "occurrenceCount": 8,
+      "files": [
+        "board/opdiary/read_blog.html",
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "product/add_basket2.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-prdInfo.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "coupon/coupon_list.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "myshop/order/search_product.html",
+        "order/search_board_list.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-product.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-tab.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-table.css",
+      "purpose": "unknown",
+      "occurrenceCount": 10,
+      "files": [
+        "board/opdiary/read_blog.html",
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "myshop/order/order_detail_cs.html",
+        "product/shoppQ/layout_sticky.html",
+        "product/sizeguide.html",
+        "product/stocklayer.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-tooltip.css",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/ec-base-ui.css",
+      "purpose": "unknown",
+      "occurrenceCount": 8,
+      "files": [
+        "board/opdiary/read_blog.html",
+        "layout/basic/detail_layout.html",
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/layout.css",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/main.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "index.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/slideMenu.css",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/sidebar.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/sub_style.css",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/sub_theme.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "css",
+      "target": "/layout/basic/css/swiper.min.css",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/board/report_popup.html",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "board/free/read.html",
+        "board/gallery/read.html",
+        "board/product/read.html",
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/coupon/coupon_productdetail.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/footer.html",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/header.html",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/navigation.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/detail_layout.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/quick.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/detail_layout.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/sidebar.html",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/state_login.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/detail_layout.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/layout/basic/topbanner.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/detail_layout.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/member/join_confirm.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/join.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/myshop/myshop_main.html",
+      "purpose": "unknown",
+      "occurrenceCount": 26,
+      "files": [
+        "board/inquiry/list.html",
+        "board/inquiry/modify.html",
+        "board/inquiry/read.html",
+        "myshop/addr/list.html",
+        "myshop/addr/modify.html",
+        "myshop/addr/register.html",
+        "myshop/board_list.html",
+        "myshop/coupon/coupon.html",
+        "myshop/deposits/historyList.html",
+        "myshop/index.html",
+        "myshop/likeit/category.html",
+        "myshop/likeit/product.html",
+        "myshop/mileage/couponList.html",
+        "myshop/mileage/historyList.html",
+        "myshop/mileage/unavailList.html",
+        "myshop/order/cancel.html",
+        "myshop/order/detail.html",
+        "myshop/order/exchange.html",
+        "myshop/order/list.html",
+        "myshop/order/list_old.html",
+        "myshop/order/list_past.html",
+        "myshop/order/return.html",
+        "myshop/regular_delivery.html",
+        "myshop/regular_delivery_detail.html",
+        "myshop/wish_list.html",
+        "product/recent_view_product.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/myshop/order/history_list_item.html",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "myshop/index.html",
+        "myshop/order/list.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/additionalInput.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/agreement_v2.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/benefit.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/billingNshipping_v2.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/confirm.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/discount.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/gift.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/header.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/orderProduct_v2.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/payment_v2.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/paymethod_v2.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/order/ec_orderform/product_detail.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/product/list_product_slide.html",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "ez/ez-module.html",
+        "index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/product/list_product.html",
+      "purpose": "unknown",
+      "occurrenceCount": 19,
+      "files": [
+        "ez/ez-module.html",
+        "index.html",
+        "product/list.html",
+        "supply/index.html",
+        "supply/main.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/product/shoppQ/searchContent.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/list.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/product/shoppQ/searchForm_typeTop.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/search.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/smart-banner/shop1/smart-banner-admin-RES00001.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/smart-banner/shop1/smart-banner-admin-RES00002.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-blog.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-cart.html",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/footer.html",
+        "layout/basic/header.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-coupon.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-empty.html",
+      "purpose": "unknown",
+      "occurrenceCount": 19,
+      "files": [
+        "myshop/addr/list.html",
+        "myshop/board_list.html",
+        "myshop/coupon/coupon.html",
+        "myshop/deposits/historyList.html",
+        "myshop/likeit/category.html",
+        "myshop/likeit/product.html",
+        "myshop/mileage/couponList.html",
+        "myshop/mileage/historyList.html",
+        "myshop/mileage/unavailList.html",
+        "myshop/order/exchange.html",
+        "myshop/order/exchange_product.html",
+        "myshop/order/history_list_item.html",
+        "myshop/order/list_old.html",
+        "myshop/order/list_past.html",
+        "myshop/order/search_product.html",
+        "myshop/regular_delivery.html",
+        "myshop/wish_list.html",
+        "order/basket.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-facebook.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-go-back.html",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-heart.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/navigation.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-home.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-instagram.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-kakao.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-mileage.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-order.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-quick-arrow.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-search.html",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/footer.html",
+        "layout/basic/header.html",
+        "layout/basic/navigation.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-sort-list.html",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "board/gallery/list.html",
+        "board/gallery/list2.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-sort-thumb.html",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "board/gallery/list.html",
+        "board/gallery/list2.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-twitter.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-user.html",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/footer.html",
+        "layout/basic/header.html",
+        "layout/basic/navigation.html",
+        "myshop/index.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-warning.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/searchForm_typeTop.html"
+      ]
+    },
+    {
+      "type": "import",
+      "target": "/svg/icon-youtube.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/footer.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/ez/init.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/common.js",
+      "purpose": "unknown",
+      "occurrenceCount": 9,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "layout/basic/popup.html",
+        "order/gift_select.html",
+        "order/store_pickup_info.html",
+        "order/store_pickup_shop.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/board/readPackage.js",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "board/free/read.html",
+        "board/gallery/read.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/coupon/zonePackage.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "coupon/coupon_zone.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/layout/category.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/layout/multishopShipping.js",
+      "purpose": "unknown",
+      "occurrenceCount": 4,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/layout/project.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/layout/quick_view.js",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/member/join_agreement.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "member/agreement.html",
+        "member/modify.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/member/login.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/login.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/myshop/couponList.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/coupon/coupon.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/myshop/regularDeliveryDetail.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/regular_delivery_detail.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/myshop/regularDeliveryPayInfo.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "myshop/regular_delivery.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/order/basket.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "order/basket.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/order/ec_orderform/orders_v2.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "order/order_result.html",
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/order/ec_orderform/orders.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "order/order_result.html",
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/detail_option.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/layer_option.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/detail.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/menucategory.js",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "product/list.html",
+        "supply/index.html",
+        "supply/main.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/normalmenu.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "product/list.html",
+        "supply/index.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/product_image.js",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "product/detail.html",
+        "product/image_zoom.html",
+        "product/image_zoom2.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/product_selectsearch.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "product/list.html",
+        "supply/index.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/qna.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/review.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/detail.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/module/product/sale_price.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/popup_scroll.js",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "coupon/coupon_select.html",
+        "myshop/order/issue/cash.html",
+        "myshop/order/issue/tax.html",
+        "order/custom_ship_area.html",
+        "order/store_pickup_info.html",
+        "order/store_pickup_shop.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/js/rotate.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/basic.js",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/intro.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html",
+        "layout/basic/main_supply.html",
+        "product/shoppQ/layout_sticky.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/common.js",
+      "purpose": "unknown",
+      "occurrenceCount": 6,
+      "files": [
+        "coupon/coupon_select.html",
+        "myshop/order/issue/cash.html",
+        "myshop/order/issue/tax.html",
+        "order/custom_ship_area.html",
+        "order/order_result.html",
+        "order/orderform.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/layout.js",
+      "purpose": "unknown",
+      "occurrenceCount": 3,
+      "files": [
+        "layout/basic/detail_layout.html",
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/main.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "index.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/popup.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/popup.html",
+        "order/gift_select.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/slide_menu.js",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "layout/basic/sidebar.html"
+      ]
+    },
+    {
+      "type": "js",
+      "target": "/layout/basic/js/swiper-bundle.min.js",
+      "purpose": "unknown",
+      "occurrenceCount": 2,
+      "files": [
+        "layout/basic/layout.html",
+        "layout/basic/main.html"
+      ]
+    },
+    {
+      "type": "layout",
+      "target": "/layout/basic/intro.html",
+      "purpose": "unknown",
+      "occurrenceCount": 5,
+      "files": [
+        "intro/adult_certification.html",
+        "intro/adult_i.html",
+        "intro/adult_i_recommend.html",
+        "intro/adult_im.html",
+        "intro/member.html"
+      ]
+    },
+    {
+      "type": "layout",
+      "target": "/layout/basic/layout.html",
+      "purpose": "unknown",
+      "occurrenceCount": 99,
+      "files": [
+        "attend/comment.html",
+        "attend/stamp.html",
+        "board/consult/list.html",
+        "board/consult/modify.html",
+        "board/consult/read.html",
+        "board/consult/reply.html",
+        "board/consult/write.html",
+        "board/free/comment_all.html",
+        "board/free/comment_del.html",
+        "board/free/list.html",
+        "board/free/modify.html",
+        "board/free/read.html",
+        "board/free/reply.html",
+        "board/free/reply_all.html",
+        "board/free/secret.html",
+        "board/free/write.html",
+        "board/gallery/comment_all.html",
+        "board/gallery/comment_del.html",
+        "board/gallery/list.html",
+        "board/gallery/list2.html",
+        "board/gallery/modify.html",
+        "board/gallery/read.html",
+        "board/gallery/reply.html",
+        "board/gallery/reply_all.html",
+        "board/gallery/secret.html",
+        "board/gallery/write.html",
+        "board/index.html",
+        "board/inquiry/list.html",
+        "board/inquiry/modify.html",
+        "board/inquiry/read.html",
+        "board/inquiry/write.html",
+        "board/memo/list.html",
+        "board/opdiary/list.html",
+        "board/product/comment_all.html",
+        "board/product/comment_del.html",
+        "board/product/list.html",
+        "board/product/modify.html",
+        "board/product/read.html",
+        "board/product/reply.html",
+        "board/product/reply_all.html",
+        "board/product/secret.html",
+        "board/product/write.html",
+        "board/urgency/urgency.html",
+        "coupon/coupon_zone.html",
+        "index.html",
+        "member/agreement.html",
+        "member/change_passwd.html",
+        "member/check_password.html",
+        "member/id/find_id.html",
+        "member/id/find_id_result.html",
+        "member/join.html",
+        "member/join_result.html",
+        "member/login.html",
+        "member/mall_agreement.html",
+        "member/mapping_join.html",
+        "member/mapping_login.html",
+        "member/modify.html",
+        "member/passwd/find_passwd_info.html",
+        "member/passwd/find_passwd_method.html",
+        "member/passwd/find_passwd_question.html",
+        "member/passwd/find_passwd_result.html",
+        "member/passwd/passwd_reset.html",
+        "member/passwd/user_verification.html",
+        "member/privacy.html",
+        "myshop/addr/list.html",
+        "myshop/addr/modify.html",
+        "myshop/addr/register.html",
+        "myshop/board_list.html",
+        "myshop/coupon/coupon.html",
+        "myshop/deposits/historyList.html",
+        "myshop/index.html",
+        "myshop/likeit/category.html",
+        "myshop/likeit/product.html",
+        "myshop/mileage/couponList.html",
+        "myshop/mileage/historyList.html",
+        "myshop/mileage/unavailList.html",
+        "myshop/order/cancel.html",
+        "myshop/order/detail.html",
+        "myshop/order/detail_old.html",
+        "myshop/order/exchange.html",
+        "myshop/order/list.html",
+        "myshop/order/list_old.html",
+        "myshop/order/list_past.html",
+        "myshop/order/return.html",
+        "myshop/regular_delivery.html",
+        "myshop/regular_delivery_detail.html",
+        "myshop/wish_list.html",
+        "order/basket.html",
+        "order/gift_list.html",
+        "product/compare.html",
+        "product/detail.html",
+        "product/list.html",
+        "product/project.html",
+        "product/recent_view_product.html",
+        "product/search.html",
+        "shopinfo/company.html",
+        "shopinfo/guide.html",
+        "supply/index.html",
+        "supply/main.html"
+      ]
+    },
+    {
+      "type": "layout",
+      "target": "/layout/basic/popup.html",
+      "purpose": "unknown",
+      "occurrenceCount": 28,
+      "files": [
+        "board/report_popup.html",
+        "coupon/coupon_list.html",
+        "estimate/userform.html",
+        "member/check_under_fourteen.html",
+        "myshop/addr_popup/list.html",
+        "myshop/addr_popup/modify.html",
+        "myshop/addr_popup/register.html",
+        "myshop/coupon/coupon_product_list.html",
+        "myshop/deposits/refund_call.html",
+        "myshop/deposits/refund_cancel.html",
+        "myshop/order/account.html",
+        "myshop/order/receiver_update.html",
+        "myshop/order/search_product.html",
+        "myshop/order/store_pickup.html",
+        "myshop/regular_delivery_update.html",
+        "order/search_board_list.html",
+        "product/basket_option.html",
+        "product/coupon_popup.html",
+        "product/email_restock.html",
+        "product/image_zoom.html",
+        "product/image_zoom2.html",
+        "product/layer_option.html",
+        "product/product_detail_info.html",
+        "product/recommend_mail.html",
+        "product/request.html",
+        "product/search_board_list.html",
+        "product/sms_restock.html",
+        "product/sms_restock_layer.html"
+      ]
+    },
+    {
+      "type": "layout",
+      "target": "/layout/intro/layout.html",
+      "purpose": "unknown",
+      "occurrenceCount": 1,
+      "files": [
+        "member/adminFail.html"
+      ]
+    }
+  ]
+}

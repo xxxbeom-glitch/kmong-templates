@@ -1,0 +1,26 @@
+{
+  "caseId": "{slug}",
+  "label": "{display name}",
+  "sourceUrl": "",
+  "track": "reference-harness",
+  "rightsType": "demo-analysis",
+  "originalCompleteness": "incomplete",
+  "viewports": { "desktop": 1920, "mobile": 390 },
+  "stages": {
+    "source": { "status": "not-started", "updatedAt": "" },
+    "originalCapture": { "status": "not-started", "updatedAt": "" },
+    "originalQa": { "status": "not-started", "updatedAt": "" },
+    "analysis": { "status": "not-started", "updatedAt": "" },
+    "workingCopy": { "status": "not-started", "updatedAt": "" },
+    "workingQa": { "status": "not-started", "updatedAt": "" },
+    "normalized": { "status": "not-started", "updatedAt": "" },
+    "final": { "status": "not-started", "updatedAt": "" },
+    "platformMap": { "status": "not-started", "updatedAt": "" },
+    "platformQa": { "status": "not-started", "updatedAt": "" }
+  },
+  "legacy": {
+    "reference": null,
+    "reconstruction": null,
+    "classification": null
+  }
+}

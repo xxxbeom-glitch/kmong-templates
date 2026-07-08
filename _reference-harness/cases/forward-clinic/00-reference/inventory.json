@@ -1,0 +1,93 @@
+{
+  "caseId": "forward-clinic",
+  "sourceUrl": "https://forwardclinic.co.kr/",
+  "viewports": [
+    1920,
+    390
+  ],
+  "sections": [
+    {
+      "id": "header",
+      "keep": true
+    },
+    {
+      "id": "hero",
+      "keep": true
+    },
+    {
+      "id": "solutions",
+      "keep": true
+    },
+    {
+      "id": "doctor",
+      "keep": true
+    },
+    {
+      "id": "values",
+      "keep": true
+    },
+    {
+      "id": "space",
+      "keep": true
+    },
+    {
+      "id": "media",
+      "keep": true
+    },
+    {
+      "id": "footer",
+      "keep": true
+    }
+  ],
+  "slots": [
+    "hero.titleLines",
+    "hero.desc",
+    "hero.cta",
+    "solutions.items[4]",
+    "doctor.stats",
+    "doctor.bio",
+    "values.keywords[4]",
+    "media.items[]"
+  ],
+  "assets": [
+    {
+      "key": "logo",
+      "status": "listed"
+    },
+    {
+      "key": "hero-media",
+      "status": "listed"
+    },
+    {
+      "key": "solution-thumbs",
+      "status": "listed"
+    },
+    {
+      "key": "doctor-portrait",
+      "status": "listed"
+    },
+    {
+      "key": "space-media",
+      "status": "listed"
+    },
+    {
+      "key": "media-thumbs",
+      "status": "listed"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "values-tabs",
+      "sectionId": "values",
+      "presetCandidate": "custom",
+      "status": "planned"
+    },
+    {
+      "id": "header-mobile",
+      "sectionId": "header",
+      "presetCandidate": "custom",
+      "status": "planned"
+    }
+  ],
+  "updatedAt": "2026-07-08"
+}

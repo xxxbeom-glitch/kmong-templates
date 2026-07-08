@@ -1,0 +1,115 @@
+---
+description: 카페24 스킨 핵심 — Track A 기존 스킨 · Track B 이식 공통. Track C 데모 납품 금지
+alwaysApply: false
+globs:
+  - cafe24/**
+  - docs/cafe24/**
+  - _release/**
+  - .cursor/rules/81-cafe24-platform-map.mdc
+  - .cursor/rules/82-cafe24-qa.mdc
+  - .cursor/rules/84-cafe24-release.mdc
+---
+
+# Cafe24 Core
+
+> **개요:** `docs/cafe24/CAFE24_RULES_OVERVIEW.md` · **팝업:** `docs/cafe24/popup-rules.md` · **인벤토리:** `docs/cafe24/README.md`  
+> **배포:** `84-cafe24-release.mdc` · `docs/cafe24/release.md`  
+> **라우터:** `00-project-router.mdc`
+
+## 1. 세 경로
+
+| Track | 대상 | map(`81`) | 비고 |
+|-------|------|-----------|------|
+| **A 기존 스킨** | 구매 ZIP · 고객 스킨 · `module=`/`{$}` 있는 스킨 | **불필요** | 수정 → QA → **release (`84`)** |
+| **B 정적→이식** | 정적 HTML · Figma · 문법 없는 디자인 | **필수** | map 승인 → 구현 → QA → **release (`84`)** |
+| **C 데모 분석** | 미구매·브라우저 캡처 | 해당 없음 | 분석만 · **배포 없음** → `83` |
+
+## 2. 용어
+
+| 용어 | 의미 |
+|------|------|
+| **global syntax reference** | `templates/cafe24_shop/` — 읽기만 |
+| **project original SoT** | 프로젝트 정식 원본 스킨 (수정 금지) |
+| **working skin** | 수정용 사본만 |
+| **design reference** | 데모·캡처 (코드·자산 납품 금지) |
+| **static design source** | 카페24 문법 없는 디자인 |
+
+둘 다 막연히 `SoT`라고만 부르지 않는다. `baseline` 용어 사용 안 함.
+
+## 3. Track A 흐름
+
+```
+원본 백업 → 원본 무결성 확인 → working skin 생성
+→ 요청 범위 수정 → 카페24 테스트몰 QA (`82` Existing)
+→ release candidate → upload package → test design 배포
+→ production readiness → 대표 디자인 전환(승인) → rollback 보관 (`84`)
+```
+
+**적용하지 않음:** 정적 normalized 생성 · platform-map · 「카페24로 재이식」.  
+**금지:** working skin을 production에 직접 업로드.
+
+## 4. Track B 흐름 (요약)
+
+```
+디자인 분석 → 정적 기준 확정 → platform-map (`81`) → map 승인
+→ cafe24 구현 → `82` Migrate QA
+→ release candidate → upload package → test design 배포
+→ production readiness → 대표 디자인 전환(승인) → rollback 보관 (`84`)
+```
+
+정적 normalized **만으로** 스킨 코딩을 시작하지 않는다. **map 승인 후** 시작한다.
+
+## 5. 수정 원칙
+
+- **project original SoT / global syntax reference 직접 수정 금지**
+- **working skin에서만** 수정
+- module 이름 · `{$변수}` **임의 생성 금지**
+- form · hidden · 필수 ID · data-* · onclick · 카페24 JS **보존** (commerceContract: preserve)
+- 현재 **작업 스킨** 구조를 인벤토리·참고본보다 우선
+
+## 6. 지식 조회 순서 (고정)
+
+1. **현재 working skin**에서 동일 기능 검색  
+2. **`docs/cafe24/` 인벤토리** 검색 (`modules`·`variables`·`forms`·`pages`·`directives`)  
+3. **`templates/cafe24_shop/`** 실제 파일 확인 (global syntax reference)  
+4. 카페24 **공식 문서**  
+5. 확인 안 되면 **생성하지 않고** `unverified` 표시  
+
+`docs/cafe24`는 **검색 색인**이다. `purpose: unknown` 의미를 인벤토리만 보고 **추측하지 않는다.**
+
+팝업·레이어: 수정 전 **`docs/cafe24/popup-rules.md` 필수**.
+
+## 7. 위험 필드 (페이지/블록)
+
+`no-touch`(레거시 inventory `risk`) = **페이지 전체 디자인 금지**가 아니라  
+**검증 없이 기능 계약을 바꾸지 말 것**.
+
+| 필드 | 값 예 |
+|------|--------|
+| designFreedom | free · guarded · locked |
+| functionalRisk | low · medium · high · critical |
+| allowedChange | visual-only · wrapper-only · structural · functional |
+| commerceContract | preserve · verified-change |
+
+**commerce contract:** module · form action · hidden · `{$form.*}` · 필수 ID · data · onclick · 카페24 전역 함수 · 옵션·장바구니·로그인·주문·결제 연결.
+
+작은 시각 수정(색·여백·카피·이미지) ≠ 기능 변경. 기능 변경 시 범위 승인 + 테스트몰 검증.
+
+## 8. 승인 (축소)
+
+- 범위 승인: 불명확·다지점·기능·대규모만 (소규모는 요청=승인)
+- Map 승인: **Track B만**
+- 최종 QA: 테스트 디자인 검증 후
+- **대표 디자인 전환:** 항상 별도 승인 (`84`)
+
+## 9. 금지
+
+- `templates/cafe24_shop/` 수정·이사·overwrite
+- Track C 자산을 working·납품·upload package에 사용
+- unverified module/변수 창작 후 적용
+- `_delivery/cafe24/` 경로 사용
+- Track A에 platform-map·normalized 게이트 강제
+- working skin → production 직업로드
+- 인증 정보 문서·패키지 저장 · 인증 없이 자동 업로드
+
+관련: `81` (B만) · `82` · `84` · `83` · `docs/cafe24/README.md` · `docs/cafe24/release.md`

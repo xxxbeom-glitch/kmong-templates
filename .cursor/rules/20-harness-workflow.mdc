@@ -1,11 +1,14 @@
 ---
-description: Figma MCP → 구현 → QA → 로그 작업 흐름
+description: Figma MCP → 구현 → QA → 로그 (정적 HTML 트랙 기본). 트랙 판별은 라우터
 alwaysApply: true
 ---
 
-# Harness Workflow
+# Harness Workflow (Static Template)
 
-> **작업 공간:** 구현은 **`templates/{slug}/` 직접** — workbench·임시 복사본→반영 단계 **없음** (`10-project-structure.mdc`).
+> **트랙:** 먼저 `00-project-router.mdc`.  
+> **본 파일:** 정적 `templates/{slug}/` Figma→구현→QA.  
+> Cafe24 A/B → `80`~`82` · Reference → `83` · WP → `70`.  
+> 작업 공간(정적): **`templates/{slug}/` 직접** (`10-project-structure` · `10-static-template`).
 
 ## 작업 시작 전 — 컨텍스트 확인
 

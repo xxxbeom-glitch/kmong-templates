@@ -1,5 +1,245 @@
 # Change Log
 
+## 2026-07-08 — [cafe24] release·배포 규칙 `84`
+
+**범위:** `.cursor/rules/84-cafe24-release.mdc` · `docs/cafe24/release*.md` · release-templates · `80`/`82`/`00-router`/`OVERVIEW` 연결만  
+**미수정:** `templates/cafe24_shop/` · `docs/cafe24/*.json` · 원본/운영 스킨 · 실제 업로드 미수행
+
+**내용:**
+- Track A/B: QA → RC → upload package → test design → production readiness → 전환 → rollback
+- Track C 배포 제외 · working → production 직업로드 금지
+- 보고서 템플릿 5종 · small patch 간소화 · 인증 없으면 업로드 안 함
+
+---
+
+## 2026-07-08 — [cafe24 rules] Track A/B/C 분리 · 규칙 리팩터
+
+**범위:** `.cursor/rules` · `docs/cafe24/*.md` · `_reference-harness/shared/rules` · 관련 `_docs` 참조만  
+**미수정:** `templates/cafe24_shop/` · `docs/cafe24/*.json` · 판매/고객 스킨
+
+**내용:**
+- `00-project-router` (A 기존 스킨 / B 정적→이식 / C 데모) · `10-static-template`
+- `80-cafe24-core` · `81-cafe24-platform-map`(B만) · `82-cafe24-qa` 분기 · `83` 슬림
+- 구 `00-project-tracks` · 구 80/81/82/83 · reconstruction → `.cursor/rules/archive/*.md` (frontmatter 제거)
+- harness: `original-integrity-qa` / `browser-capture-qa` · workflow·stage-gates 완화 · 구 original-qa·track·legacy → archive
+- `docs/cafe24/README.md` · `CAFE24_RULES_OVERVIEW.md` · `UNRESOLVED_REFERENCES.md`
+- 백업: `_review_exports/cafe24-rules-before-refactor/`
+
+---
+
+## 2026-07-08 — [docs/cafe24] 인벤토리 보정
+
+**범위:** `docs/cafe24/*` only · `templates/cafe24_shop/` **미수정**  
+**내용:**
+- `directives.json` 분리 (`@layout|css|js|import|contents`)
+- modules 통계: unique / totalOccurrences / instance(`_N`)
+- module `rawName`·`baseName`·`instanceSuffix`
+- variables `baseName` 집계 + `raw`/`modifiers` + `contextModule`(null 허용)
+- forms kind 유지 유지 · `popup-rules.md` 추가
+
+---
+
+## 2026-07-08 — [reference-harness] 규칙 rev2 (original-qa · working-qa · _dev)
+
+**범위:** 규칙·README·manifest template·tracks·cafe24 연계만 · **case 결과물 미수정**  
+**배경:** 수집 후 analysis→working으로 바로 가던 흐름에 **source↔original QA**·Page Index·immutable/revision·cafe24 ZIP vs demo 등급이 빠짐
+
+### 조사 요약 (문제)
+
+1. 현재 흐름: `00→01→02-analysis→03-working` — **02-original-qa / 05-working-qa / _dev 없음**
+2. reconstruction 잔존: deprecated 문서·일부 cafe24 문구·sample03 legacy
+3. source-to-original QA 빠진 위치: `workflow`·`stage-gates`·`83`·cafe24 게이트·manifest stages
+4. revision·page inventory·designFreedom 미정의
+
+### 신규 SoT
+
+| 파일 | |
+|------|--|
+| `original-immutable.md` | 수정 금지·checksum |
+| `original-revision.md` | rev 적용안 (즉시 rename 안 함) |
+| `original-qa.md` | source↔original QA |
+| `analysis-artifacts.md` | 03-analysis 필수 산출물 |
+| `working-copy.md` | 04 수정 원칙 |
+| `page-index.md` · `page-inventory.md` | `_dev/` · 스키마 |
+| `cafe24-original.md` | skin-zip vs browser-captured |
+
+### 갱신
+
+- `workflow.md` · `track.md` · `stage-gates.md` · `source-collection.md` · `license.md` · `legacy-migration.md`
+- `reconstruction.md` → fallback only
+- README · manifest.template · case/original/`_dev` templates
+- `.cursor/rules/83-reference-harness.mdc` · `00-project-tracks` · `80`·`81`·`82`
+- tokens/components/interactions README → `06-normalized`
+
+### 폴더 번호 (신) — case rename 보류
+
+`00-source` → `01-original` → `02-original-qa` → `03-analysis` → `04-working-copy` → `05-working-qa` → `06-normalized` → `07-final` → `08-platform-map` → `09-platform-qa` + `_dev/`
+
+### 미수행
+
+- sample03 등 case 폴더 rename·재수집·working-copy·original 수정
+
+---
+
+## 2026-07-08 — [reference-harness] sample03 신 워크플로 적용
+
+**범위:** `cases/sample03/`  
+**내용:** 원본 수집·신 단계 구조 적용 · 구 reconstruction 레거시 이동
+
+### 신규
+
+| 경로 | 내용 |
+|------|------|
+| `00-source/` | source.md · license.md · inventory · captures |
+| `01-original/` | 데모몰 mirror 92 files · index.html · manifest-original.json |
+| `02-analysis/` | analysis.md · inventory · dependencies |
+| `scripts/mirror-original.js` | Playwright 원본 수집 |
+| `scripts/backfill-original.js` | 동일 도메인 누락 자산 backfill |
+| `README.md` | case 단계 안내 |
+
+### 이동·레거시
+
+- `01-reconstruction/` → `legacy/01-reconstruction/` (DEPRECATED)
+- `00-reference/` — LEGACY.md · 신 경로 참조
+
+### manifest
+
+- stages: source/original/analysis **pass** · working-copy pending
+- legacy.reference · legacy.reconstruction 기록
+
+### 미수행
+
+- `03-working-copy` — 수정 범위 승인 대기
+- `00-reference/` 폴더 삭제 (참고용 유지)
+
+---
+
+## 2026-07-08 — [reference-harness] 워크플로 재정의 (원본 수집·복사본 수정)
+
+**범위:** 규칙·문서만 · **case 결과물·폴더 rename 미수행**  
+**배경:** 1차 목적을 「유사 재구현」→「원본 수집·불변 보관·전체 복사본 수정」으로 변경
+
+### 신규 단계
+
+`00-source` → `01-original` → `02-analysis` → `03-working-copy` → `04-normalized` → `05-final` → `06-platform-map`
+
+### 신규 SoT
+
+| 파일 | 내용 |
+|------|------|
+| `shared/rules/workflow.md` | 파이프라인·게이트 |
+| `shared/rules/source-collection.md` | 수집 대상·완료 기준 |
+| `shared/rules/license.md` | 권리 원칙 |
+| `shared/rules/stage-gates.md` | 단계별 PASS/FAIL |
+| `shared/rules/legacy-migration.md` | 구 `00-reference`/`01-reconstruction` 대응 |
+| `.cursor/rules/83-reference-harness.mdc` | 에이전트 규칙 |
+| `shared/templates/manifest.template.json` | 신 manifest stages |
+| `shared/templates/case-readme.template.md` | case README |
+| `shared/templates/01-original-README.template.md` | original 수정금지 |
+
+### 갱신
+
+- `_reference-harness/README.md` · `shared/rules/track.md`
+- `.cursor/rules/00-project-tracks.mdc` · `80` · `81` · `82`
+- `shared/tokens|components|interactions/README.md` — `04-normalized` 기준
+
+### Deprecated
+
+- `reconstruction.md` · `reconstruction-qa.md` · `83-reference-reconstruction.mdc`
+- `01-reconstruction/` 방식 — sample03 등 **레거시 보존** · 신 case 미사용
+- 구 `03-cafe24-map` → `06-platform-map` (레거시 경로 병행 인정)
+
+### 미수행 (사용자 승인 후)
+
+- 기존 case `00-reference` → `00-source`/`02-analysis` rename
+- `01-original` 실파일 수집 (sample01~04 등)
+
+---
+
+## 2026-07-08 — [rules] 01-high-fidelity-reconstruction 정의 확정
+
+**범위:** reference-harness 규칙 전반 · `.cursor/rules/83-reference-reconstruction.mdc` 신규  
+**배경:** `01-reconstruction`이 구조 mock으로 해석되어 sample03 wireframe 수준 PASS 발생
+
+### 신규
+
+| 파일 | 내용 |
+|------|------|
+| `shared/rules/reconstruction.md` | 목적·PASS/FAIL·산출물·manifest label·라이선스 SoT |
+| `shared/rules/reconstruction-qa.md` | Desktop/Mobile 비교 QA 체크리스트 |
+| `shared/templates/01-reconstruction-README.template.md` | case README 템플릿 |
+| `shared/templates/00-reference-for-reconstruction.md` | reference → reconstruction 입력 체크리스트 |
+| `.cursor/rules/83-reference-reconstruction.mdc` | 에이전트 규칙 (globs: 01-reconstruction·00-reference) |
+
+### 갱신
+
+| 파일 | 내용 |
+|------|------|
+| `shared/rules/track.md` | 단계 표기 `01-high-fidelity-reconstruction` · SoT 링크 |
+| `_reference-harness/README.md` | 「정적 복원」→ high-fidelity visual reconstruction |
+| `.cursor/rules/00-project-tracks.mdc` | 단계명·`83` 참조 |
+| `.cursor/rules/80-cafe24-smart-design.mdc` | reconstruction 시각 재현 명시 |
+| `shared/tokens|components|interactions/README.md` | reconstruction 미적용·FAIL 조건 |
+| `package.json` | description 갱신 |
+
+### 폴더명
+
+- **유지:** `01-reconstruction/` (9 case·캡처·스크립트 경로)
+- **문서·manifest `label`만:** `01-high-fidelity-reconstruction`
+
+### 후속 (별도 작업)
+
+- sample03 **01-high-fidelity-reconstruction v2** — 로컬 ref 이미지·horizontal hero·PASS 체크리스트 · after 캡처 재제출
+
+---
+
+## 2026-07-08 — [reference-harness] sample03 01-high-fidelity-reconstruction v2
+
+**범위:** `cases/sample03/01-reconstruction/`  
+**내용:** 확정 규칙 기준 재작업 — gradient→`assets/ref-*.png` · hero horizontal track · top-band #e69c95 · USP check · SVG nav · reconstruction-log/qa-log · after 캡처 1920/390
+
+---
+
+**범위:** `cases/sample03/01-reconstruction/` · `shared/rules/track.md` · harness README  
+**내용:** 데모몰 computed style 기반 시각 보정 — Pretendard/Outfit · 210/1500 · header overlap · 3-panel hero · 369×492 카드 · chip/intro/best typo · before/after 캡처 · `reconstruction-log.md` · 01-reconstruction 정의 보강 (wireframe≠완료)
+
+---
+
+## 2026-07-08 — [reference-harness] sample03 reconstruction 착수
+
+**범위:** `cases/sample03/01-reconstruction/`  
+**내용:** reference 사용자 확인 · Knotted. 정적 복원(헤더·히어로·진열·푸터) · Tenfold 토큰·module 태그 없음 · 플레이스홀더 색면 → **후속 visual 보정으로 대체**
+
+---
+
+## 2026-07-08 — [reference-harness] cafe24-skin sample01~04 00-reference
+
+**범위:** `cases/sample{01..04}/00-reference/` · manifest  
+**내용:** 카페24 디자인센터 4스킨 IA·commerce slot·모듈 후보·캡처(1920/390) · reconstruction 미착수 · 상세상단 캡처 후속
+
+---
+
+## 2026-07-08 — [rules] cafe24-skin 트랙 규칙 초안
+
+**범위:** `.cursor/rules/00-project-tracks.mdc` · `80`~`82` · `_reference-harness/README.md`  
+**내용:** cafe24-skin 트랙·용어 분리(WP vs 스마트디자인) · map 승인 게이트 · 시각/커머스 QA 분리 · `03-cafe24-map` 단계 1줄 · `templates/cafe24_shop` read-only · `cafe24/`·`_delivery/cafe24/` 미생성
+
+---
+
+## 2026-07-08 — [reference-harness] 4사이트 00-reference 초안
+
+**범위:** `cases/{forward-clinic,celltrion,reone-skin,bv-clinic}/`  
+**내용:** URL·analysis.md·inventory.json·manifest 섹션 IA 초안 · captures/assets 빈 폴더 · reconstruction 미착수 · 캡처는 사용자/후속 보완
+
+---
+
+## 2026-07-08 — [reference-harness] 트랙 골격 · lu-dental 00-reference 틀
+
+**범위:** `_reference-harness/` · `shared/` · `cases/lu-dental/00-reference/`  
+**내용:** 실험 트랙 독립 생성 · Tenfold 최소 SoT · 파일럿 `lu-dental` manifest·분석 문서 틀 · reconstruction/normalized·templates/wordpress 미착수
+
+---
+
 ## 2026-07-08 — [wordpress] 365-hes-womens-clinic checkup 섹션헤더 토큰 정렬
 
 **범위:** `style.css` (checkup만)  

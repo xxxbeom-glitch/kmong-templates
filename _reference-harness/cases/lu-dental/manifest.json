@@ -1,0 +1,25 @@
+{
+  "caseId": "lu-dental",
+  "displayName": "엘유치과",
+  "sourceUrl": "",
+  "track": "reference-harness",
+  "pilot": true,
+  "viewports": [1920, 390],
+  "stages": {
+    "reference": { "status": "pending", "updatedAt": "" },
+    "reconstruction": { "status": "pending", "updatedAt": "" },
+    "normalized": { "status": "pending", "updatedAt": "" },
+    "starter": { "status": "skipped", "updatedAt": "" },
+    "portfolio": { "status": "skipped", "updatedAt": "" }
+  },
+  "sections": [],
+  "interactions": [],
+  "brandReplaceable": true,
+  "promoteTo": {
+    "templates": null,
+    "wordpress": null
+  },
+  "licenseNote": "분석·복원·정규화 실험용. 원본 상표·카피는 normalized에서 잔류 금지. templates 승격은 별도 승인.",
+  "createdAt": "2026-07-08",
+  "updatedAt": "2026-07-08"
+}

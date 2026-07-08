@@ -1,0 +1,113 @@
+---
+description: 카페24 스마트디자인(EC 스킨) 제품 트랙 — 경로·게이트·파일럿 범위
+alwaysApply: false
+globs:
+  - cafe24/**
+  - _reference-harness/**/08-platform-map/**
+  - _reference-harness/**/06-platform-map/**
+  - _reference-harness/**/03-cafe24-map/**
+  - .cursor/rules/81-cafe24-module-map.mdc
+  - .cursor/rules/82-cafe24-qa.mdc
+---
+
+# Cafe24 Smart Design (스킨 트랙)
+
+> **트랙 분기:** `00-project-tracks.mdc` · **매핑:** `81` · **QA:** `82`  
+> **WP 호스팅(뉴아우토반)은 이 문서 범위 밖** → `70-wordpress.mdc`
+
+## 1. 목적 · 용어
+
+| 용어 | 의미 |
+|------|------|
+| **cafe24-skin** | 쇼핑몰 **스마트디자인** 스킨 (`module=` · `{$}` · `<!--@layout-->`) |
+| **cafe24-wp** | 카페24 **WordPress** 호스팅 — `70` |
+
+이 트랙은 **스킨**만 다룬다.
+
+## 2. 경로 · SoT
+
+| 구분 | 경로 | 역할 |
+|------|------|------|
+| 실험 | `_reference-harness/cases/{slug}/` | `00`→`01-original`→**`02-original-qa`**→`04-working`→`07-final`→**`08-platform-map`**→`09-platform-qa` |
+| 제품 | `cafe24/{slug}/` | map **승인 후** 스킨 이식 |
+| SoT | `templates/cafe24_shop/` | 모듈·변수 **읽기 전용** vocabulary |
+
+- `templates/cafe24_shop/` **수정·이동·직접 고객 작업 금지** (이번 단계)
+- map 승인·파일럿 착수 전 **`cafe24/` 폴더 생성 금지**가 기본 (사용자 명시 시만 예외)
+- 납품: 스킨 ZIP / 디자인 관리자 — **`_delivery/cafe24/` 재사용 금지**
+
+## 3. 작업 순서 · 게이트
+
+```
+00-source → 01-original (immutable) → 02-original-qa (PASS|승인 partial)
+  → 03-analysis → 04-working-copy → 05-working-qa → 07-final
+  → 08-platform-map (mapping.md|json)
+  → 사용자 map 승인 → cafe24/{slug}/ 이식 → 09-platform-qa (82)
+```
+
+`originalQa`·`07-final` PASS 전 스킨 코딩 금지. ZIP vs 데모: `_reference-harness/shared/rules/cafe24-original.md`.  
+구 경로 `03-cafe24-map` / `06-platform-map` = `08-platform-map` 레거시.
+
+| 게이트 | 규칙 |
+|--------|------|
+| normalized PASS | **스킨 코딩 시작 금지** |
+| map 미승인 | `module=` · `{$}` · `<!--@layout-->` **금지** (normalized·working-copy 포함) |
+| 백업 없음 | 스킨 수정 **금지** |
+| 시각 QA만 PASS | 스킨 **완료 선언 금지** (`82` 기능 유지 QA 필요) |
+
+## 4. 파일럿 범위 (기본값 · 재질문 금지)
+
+**UI 개편 대상**
+
+- 메인페이지
+- 헤더 · 푸터
+- 메인 상품 진열
+- 상품 목록 카드
+- 상품 상세 **상단**
+- Desktop · Mobile **390**
+
+**대규모 디자인 변경 금지 (기능 유지 QA만)**
+
+- 회원가입 · 로그인
+- 장바구니 · 주문서 · 결제
+- 마이페이지
+
+## 5. HTML / CSS / JS 제약
+
+- 모듈·치환·폼의 **`module` · `{$변수}` · `name` · `action` 임의 변경 금지**
+- 스타일·장식은 CSS로 처리 · SoT·map에 없는 module id **창작 금지**
+- 터치 금지 페이지(가입~마이페이지)는 레이아웃·카피 **대수술 금지**
+- jQuery는 기존 스킨·공통 패턴과 충돌하지 않게 · 커머스 이벤트를 깨는 바인딩 금지
+
+## 6. `cafe24_shop` 사용법
+
+- 모듈명·변수·레이아웃 include **참고만**
+- copy-paste 시 map에 기록된 값만 사용
+- SoT 파일을 고객 slug 작업본으로 **overwrite 금지**
+
+## 7. 승격 · 백업
+
+- map 승인 문구 예: 「map 승인, 스킨 이식 진행」
+- 이식 전: 기존 스킨/베이스 **백업** (경로·일시를 change-log 또는 decision-log)
+- decision-log: `[type: cafe24-skin]` · slug · source case · map 승인일
+
+## 8. 금지 · 완료
+
+**금지**
+
+- normalized 직후 스킨 코딩
+- map 없이 모듈 태그 삽입
+- `_delivery/cafe24/` 생성
+- `cafe24_shop` 수정·이사
+- 상품·회원·주문 폼의 name/action/module/변수 임의 변경
+- 파일럿 non-UI 페이지 대규모 리디자인
+
+**완료 (파일럿)**
+
+- 개편 UI 시각 PASS (`82`)
+- map 반영 · 모듈 치환 정상
+- 가입~마이페이지 **기능 유지 QA PASS** (`82`)
+- 백업·로그 기록
+
+적용: 카페24 스마트디자인 작업·매핑·스킨 QA 전.  
+관련: `81` · `82` · `00-project-tracks`.

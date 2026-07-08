@@ -1,0 +1,86 @@
+---
+description: 카페24 QA — Track A 기존 스킨 / Track B 이식 / Track C 캡처 분기
+alwaysApply: false
+globs:
+  - cafe24/**
+  - docs/cafe24/**
+  - _release/**
+  - .cursor/rules/80-cafe24-core.mdc
+  - .cursor/rules/81-cafe24-platform-map.mdc
+  - .cursor/rules/84-cafe24-release.mdc
+---
+
+# Cafe24 QA
+
+> **선행:** `80` · (Track B만) map 승인 · 원본 백업  
+> **팝업:** `docs/cafe24/popup-rules.md`  
+> **배포 단계 QA:** `84-cafe24-release` · `_release/.../reports/QA_RESULT.md` · `DEPLOYMENT_CHECKLIST.md`  
+> Visual만으로 완료 선언 금지 · 한쪽 PASS로 덮지 않음 · 미테스트=`PASS` 금지.
+
+viewport 참고: Desktop **1920** · Mobile **390** (파일럿).
+
+## A. 기존 카페24 스킨 QA (Track A)
+
+강제하지 않음: 브라우저 캡처용 visual fidelity 전수 · harness DOM hash 전수.
+
+- [ ] 원본 ZIP/폴더 무결성 (파일 수·경로·대략 크기)
+- [ ] 작업 전후 **diff** (의도 외 대량 변경 없음)
+- [ ] module · `{$}` · form name/action · hidden **보존** (commerceContract)
+- [ ] 테스트몰 렌더링
+- [ ] 상품 옵션 · 장바구니 · 로그인·가입 · 주문·결제(가능 범위)
+- [ ] 쿠폰·배송지·**팝업** (`popup-rules` · 하루 닫기 실재 시 유지)
+- [ ] 모바일
+- [ ] console 치명 오류 없음
+
+소규모 시각만 변경: 영향 페이지만 · 관련 commerce 스모크.
+
+## B. 브라우저 캡처 QA (Track C / harness 수집)
+
+- [ ] 원격 vs 로컬 화면
+- [ ] CSS·JS·이미지 요청
+- [ ] 인터랙션 · 반응형
+- [ ] console / network 오류
+- [ ] 누락 자산 목록
+
+이 절차를 **구매 스킨 ZIP Track A**에 강제하지 않음.
+
+## C. 정적 디자인 이식 QA (Track B)
+
+- [ ] 디자인 일치 (합의된 섹션)
+- [ ] **module map** 일치 (`81`)
+- [ ] 관리자 데이터 연결(진열·배너 등)
+- [ ] 테스트몰 기능 검증 (옵션·카트·회원·주문 스모크)
+- [ ] no-touch/preserve 영역 무단 변경 없음
+
+## PASS / FAIL / PARTIAL / NOT_TESTED
+
+| | 조건 |
+|--|------|
+| **PASS** | 해당 Track 체크 + 백업·(B) map 승인 · (배포 시) test design 기능 QA |
+| **PARTIAL** | 일부만 검증 · 결제 미완료 등 — 사유 명시 |
+| **NOT_TESTED** | 미실시 — PASS로 쓰지 않음 |
+| **FAIL** | `{$}` raw 노출 · commerce 깨짐 · map 미승인 이식 · 데모 자산 납품 |
+
+## 배포로의 연결 (A/B만 · Track C 제외)
+
+```
+기능 QA (`82`)
+→ release candidate · upload package (`84`)
+→ test design 배포 · DEPLOYMENT_CHECKLIST
+→ QA_RESULT (PASS|PARTIAL 후 production readiness)
+→ 대표 전환 승인 · rollback 보관
+```
+
+관리자 미확인: `ADMIN_CHECK_REQUIRED` — “정상” 단정 금지.
+
+로그: `_logs/qa-log.md`  
+예: `[cafe24 TrackA|B {slug}] PASS|FAIL · release:{id} · note`
+
+## 금지
+
+- Track A에 캡처 fidelity 전 절차 강제
+- Track B map 없이 완료
+- Track C 산출물을 스킨 PASS·배포로 위장
+- `_delivery/cafe24/` 사용
+- working → production 직업로드
+- 인증 정보로 자동 업로드 (기본)

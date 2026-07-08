@@ -10,7 +10,7 @@ globs:
 
 # WordPress (운영 트랙)
 
-> **트랙 분기:** `00-project-tracks.mdc` · **사람용 요약:** `_docs/wordpress-guide.md`
+> **트랙 분기:** `00-project-router.mdc` · **사람용 요약:** `_docs/wordpress-guide.md`
 
 ## 범위
 
@@ -61,7 +61,7 @@ wordpress/{slug}/
 
 ## 킥오프 — 조건부 질문만
 
-> 공통 킥오프 5항목: `00-project-tracks.mdc` · 이미 답했거나 위 기본값이면 **재질문 금지**
+> 공통 킥오프: `00-project-router.mdc` · 이미 답했거나 위 기본값이면 **재질문 금지**
 
 | 조건 | 질문 |
 |------|------|

@@ -1,0 +1,993 @@
+{
+  "caseId": "sample04",
+  "title": "😊 Sage - 세이지",
+  "url": "https://ecudemo387382.cafe24.com/",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "headings": [
+    {
+      "tag": "p",
+      "text": "Community",
+      "top": 0
+    },
+    {
+      "tag": "p",
+      "text": "A BLESSING OF WATER FOR EVERY SKIN",
+      "top": 113
+    },
+    {
+      "tag": "p",
+      "text": "A BLESSING OF WATER FOR EVERY SKIN",
+      "top": 796
+    },
+    {
+      "tag": "h2",
+      "text": "Products",
+      "top": 2130
+    },
+    {
+      "tag": "strong",
+      "text": "할인기간",
+      "top": 0
+    },
+    {
+      "tag": "strong",
+      "text": "할인기간",
+      "top": 0
+    },
+    {
+      "tag": "strong",
+      "text": "할인기간",
+      "top": 0
+    },
+    {
+      "tag": "strong",
+      "text": "할인기간",
+      "top": 0
+    },
+    {
+      "tag": "strong",
+      "text": "할인기간",
+      "top": 0
+    },
+    {
+      "tag": "strong",
+      "text": "할인기간",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Archive",
+      "top": 2977
+    },
+    {
+      "tag": "h2",
+      "text": "Archive",
+      "top": 0
+    },
+    {
+      "tag": "h2",
+      "text": "Stories from scientists, innovators, and members like you.",
+      "top": 3973
+    },
+    {
+      "tag": "h2",
+      "text": "Shorts Picks",
+      "top": 4674
+    },
+    {
+      "tag": "div",
+      "text": "Form & Function Cream",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Jojoba Infused Repair Oil",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Skin Renewal Essence",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Soft Ritual Daily Care",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Form & Function Cream",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Form & Function Cream",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Soft Ritual Daily Care",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Skin Renewal Essence",
+      "top": 5311
+    },
+    {
+      "tag": "div",
+      "text": "Jojoba Infused Repair Oil",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Form & Function Cream",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Form & Function Cream",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Soft Ritual Daily Care",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Skin Renewal Essence",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Jojoba Infused Repair Oil",
+      "top": 5276
+    },
+    {
+      "tag": "div",
+      "text": "Form & Function Cream",
+      "top": 5276
+    },
+    {
+      "tag": "h2",
+      "text": "ABOUT",
+      "top": 5602
+    },
+    {
+      "tag": "h2",
+      "text": "LEGAL",
+      "top": 5602
+    },
+    {
+      "tag": "h2",
+      "text": "SOCIAL",
+      "top": 5602
+    },
+    {
+      "tag": "h2",
+      "text": "COMPANY",
+      "top": 5765
+    },
+    {
+      "tag": "h3",
+      "text": "WORLD SHIPPING",
+      "top": 0
+    }
+  ],
+  "outline": [
+    {
+      "tag": "div",
+      "id": "main_section1",
+      "className": "",
+      "top": 113,
+      "height": 1013,
+      "text": "LESS FORM, MORE INTENT A BLESSING OF WATER FOR EVERY SKIN SHOP NOW LESS FORM, MORE INTENT A BLESSING OF WATER FOR EVERY SKIN SHOP NOW"
+    },
+    {
+      "tag": "div",
+      "id": "main_section4",
+      "className": "slick_main_banner",
+      "top": 1151,
+      "height": 909,
+      "text": "New Arrival 5% Best Products"
+    },
+    {
+      "tag": "div",
+      "id": "main_product",
+      "className": "main_new main_section",
+      "top": 2110,
+      "height": 868,
+      "text": "Products VIEW ALL Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4 Daily Skin Renewal Essence 10% 29,000원 26,000원 4.8 리뷰 4 2002일 05 : 15 : 52 Barrier Jojoba Infused Repair"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "dj-product dj-main-product dj_slider",
+      "top": 2191,
+      "height": 697,
+      "text": "Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4 Daily Skin Renewal Essence 10% 29,000원 26,000원 4.8 리뷰 4 2002일 05 : 15 : 52 Barrier Jojoba Infused Repair Oil 10% 54,000원 4"
+    },
+    {
+      "tag": "ul",
+      "id": "",
+      "className": "prdList grid4 slick_best slick-initialized slick-slider",
+      "top": 2191,
+      "height": 697,
+      "text": "Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4 Daily Skin Renewal Essence 10% 29,000원 26,000원 4.8 리뷰 4 2002일 05 : 15 : 52 Barrier Jojoba Infused Repair Oil 10% 54,000원 4"
+    },
+    {
+      "tag": "li",
+      "id": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "top": 2191,
+      "height": 697,
+      "text": "Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "prdImg",
+      "top": 2192,
+      "height": 550,
+      "text": ""
+    },
+    {
+      "tag": "div",
+      "id": "main_section3",
+      "className": "main_section only_pc",
+      "top": 2977,
+      "height": 659,
+      "text": "Archive VIEW ALL Clean Beauty, Easy Choice 5% Off New Arrivals Refined Beauty, Made Easy"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-board xans-board-list-8 xans-board-list xans-board-8 img",
+      "top": 3038,
+      "height": 598,
+      "text": "Clean Beauty, Easy Choice 5% Off New Arrivals Refined Beauty, Made Easy"
+    },
+    {
+      "tag": "li",
+      "id": "",
+      "className": "list dj__action__mov_top xans-record- active",
+      "top": 3038,
+      "height": 598,
+      "text": "Clean Beauty, Easy Choice"
+    },
+    {
+      "tag": "div",
+      "id": "main_section7",
+      "className": "main_section",
+      "top": 3636,
+      "height": 947,
+      "text": "Stories from scientists, innovators, and members like you. Every is different! Our makeup products comes in a range of colors so you can swipe right on your best match. READ MORE"
+    },
+    {
+      "tag": "div",
+      "id": "section_short",
+      "className": "xans-element- xans-product xans-product-listnormal",
+      "top": 4740,
+      "height": 630,
+      "text": "Basic Form & Function Cream 33,000원 Barrier Jojoba Infused Repair Oil 54,000원 Daily Skin Renewal Essence 29,000원 Essential Soft Ritual Daily Care 51,000원 Basic Form & Function Crea"
+    },
+    {
+      "tag": "div",
+      "id": "id_23",
+      "className": "xans-record-",
+      "top": 4775,
+      "height": 559,
+      "text": "Basic Form & Function Cream 33,000원"
+    },
+    {
+      "tag": "div",
+      "id": "main_slide_text",
+      "className": "",
+      "top": 5405,
+      "height": 90,
+      "text": "Because Your Beauty Begins, Evolves 😊 And Returns Always to You ✨ Beauty That Begins With You - Because Your Beauty Begins, Evolves 😊 And Returns Always to You ✨ Beauty That Begi"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-layout xans-layout-footer footer_start",
+      "top": 5602,
+      "height": 289,
+      "text": "1577-0012 AM10 - PM6 (Sat, Sun Closed) ABOUT Brand Story Contact LEGAL Guide Agreement Privacy SOCIAL Instagram Kakao COMPANY Sage Business Registration No. 120035 CEO Aller E-comm"
+    }
+  ],
+  "moduleHints": [
+    {
+      "tag": "li",
+      "module": "",
+      "className": "cate_list xans-record-",
+      "text": "All"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "cate_list xans-record-",
+      "text": "Event"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "first selected xans-record-",
+      "text": "KR"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "EN"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list no23 xans-record-",
+      "text": "BEST"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list no24 xans-record-",
+      "text": "ALL SKIN CARE BODY CARE FRAGRANCE ETC"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list no25 xans-record-",
+      "text": "EVENT NEW IN 5% SOFT LAUNCH"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "first selected xans-record-",
+      "text": "KR"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": " xans-record-",
+      "text": "EN"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Silky"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "45,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "Daily Skin Renewal Essence 10% 29,000원 26,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Daily"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "29,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "26,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "2002일 05 : 15 : 52 Barrier Jojoba Infused Repair Oil 10% 54,000원 48,300원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Barrier"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "54,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,300원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "Smooth Emulsion 05 : Comfort 7% 41,000원 38,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Smooth"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "41,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "38,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide",
+      "text": "2002일 05 : 15 : 52 Basic Form & Function Cream 14% 33,000원 28,350원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "33,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "28,350원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-current slick-active",
+      "text": "Essential Soft Ritual Daily Care 5% 51,000원 48,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Essential"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "51,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-active",
+      "text": "2002일 05 : 15 : 52 Calming Defined Intention Serum 18% 22,000원 17,900원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Calming"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "22,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "17,900원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-active",
+      "text": "Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Silky"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "45,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-active",
+      "text": "Daily Skin Renewal Essence 10% 29,000원 26,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Daily"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "29,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "26,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide",
+      "text": "2002일 05 : 15 : 52 Barrier Jojoba Infused Repair Oil 10% 54,000원 48,300원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Barrier"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "54,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,300원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide",
+      "text": "Smooth Emulsion 05 : Comfort 7% 41,000원 38,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Smooth"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "41,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "38,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "2002일 05 : 15 : 52 Basic Form & Function Cream 14% 33,000원 28,350원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "33,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "28,350원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "Essential Soft Ritual Daily Care 5% 51,000원 48,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Essential"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "51,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "2002일 05 : 15 : 52 Calming Defined Intention Serum 18% 22,000원 17,900원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Calming"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "22,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "17,900원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": ""
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "item_list xans-record- slick-slide slick-cloned",
+      "text": "Silky Daily Dew Skin Emulsion 6% 48,000원 45,000원 4.8 리뷰 4"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Silky"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "48,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "xans-record-",
+      "text": "45,000원"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- active",
+      "text": "Clean Beauty, Easy Choice"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- active",
+      "text": "5% Off New Arrivals"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- active",
+      "text": "Refined Beauty, Made Easy"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide slick-cloned",
+      "text": "5% Off New Arrivals"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide slick-cloned",
+      "text": "Refined Beauty, Made Easy"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide",
+      "text": "Clean Beauty, Easy Choice"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide slick-current slick-active slick-center",
+      "text": "5% Off New Arrivals"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide",
+      "text": "Refined Beauty, Made Easy"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide slick-cloned",
+      "text": "Clean Beauty, Easy Choice"
+    },
+    {
+      "tag": "li",
+      "module": "",
+      "className": "list dj__action__mov_top xans-record- slick-slide slick-cloned",
+      "text": "5% Off New Arrivals"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic Form & Function Cream 33,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Barrier Jojoba Infused Repair Oil 54,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Daily Skin Renewal Essence 29,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Essential Soft Ritual Daily Care 51,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic Form & Function Cream 33,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic Form & Function Cream 33,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Essential Soft Ritual Daily Care 51,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record- is-active",
+      "text": "Daily Skin Renewal Essence 29,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Barrier Jojoba Infused Repair Oil 54,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic Form & Function Cream 33,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Basic Form & Function Cream 33,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Essential Soft Ritual Daily Care 51,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Daily Skin Renewal Essence 29,000원"
+    },
+    {
+      "tag": "div",
+      "module": "",
+      "className": "xans-record-",
+      "text": "Barrier Jojoba Infused Repair Oil 54,000원"
+    }
+  ],
+  "commerceHints": {
+    "navLinks": [
+      "ABOUT",
+      "SHOP",
+      "BEST",
+      "ALL",
+      "SKIN CARE",
+      "BODY CARE",
+      "FRAGRANCE",
+      "ETC",
+      "EVENT",
+      "NEW IN 5%",
+      "SOFT LAUNCH",
+      "ARCHIVE",
+      "COMMUNITY",
+      "NOTICE",
+      "Q&A",
+      "REVIEW",
+      "Archive",
+      "CONTACT",
+      "Lookbook",
+      "SHORTS +",
+      "LOGIN",
+      "MY PAGE",
+      "0",
+      "KR",
+      "EN"
+    ],
+    "productNames": [
+      "Daily Dew Skin Emulsion",
+      "Skin Renewal Essence",
+      "Jojoba Infused Repair Oil",
+      "할인기간",
+      "Emulsion 05 : Comfort",
+      "Form & Function Cream",
+      "할인기간",
+      "Soft Ritual Daily Care",
+      "Defined Intention Serum",
+      "할인기간",
+      "Daily Dew Skin Emulsion",
+      "Skin Renewal Essence",
+      "Jojoba Infused Repair Oil",
+      "할인기간",
+      "Emulsion 05 : Comfort",
+      "Form & Function Cream",
+      "할인기간",
+      "Soft Ritual Daily Care",
+      "Defined Intention Serum",
+      "할인기간"
+    ],
+    "productCards": 113,
+    "prices": [
+      "48,000원",
+      "45,000원",
+      "29,000원",
+      "26,000원",
+      "54,000원",
+      "48,300원",
+      "41,000원",
+      "38,000원",
+      "33,000원",
+      "28,350원",
+      "51,000원",
+      "48,000원",
+      "22,000원",
+      "17,900원",
+      "48,000원",
+      "45,000원",
+      "29,000원",
+      "26,000원",
+      "54,000원",
+      "48,300원",
+      "41,000원",
+      "38,000원",
+      "33,000원",
+      "28,350원",
+      "51,000원",
+      "48,000원",
+      "22,000원",
+      "17,900원",
+      "48,000원",
+      "45,000원"
+    ],
+    "cartText": 0,
+    "loginText": 1,
+    "reviewText": 17,
+    "banners": 44
+  }
+}

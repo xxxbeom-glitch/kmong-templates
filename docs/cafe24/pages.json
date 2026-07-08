@@ -1,0 +1,5756 @@
+{
+  "source": "templates/cafe24_shop",
+  "generatedAt": "2026-07-08T11:59:29.566Z",
+  "readOnly": true,
+  "count": 228,
+  "stats": {
+    "popupLayoutPages": 28
+  },
+  "pages": [
+    {
+      "path": "attend/comment.html",
+      "category": "attend",
+      "modules": [
+        "Attend_commentPackage",
+        "attend_calendarhead",
+        "attend_calendar",
+        "attend_CommentTitle",
+        "attend_message",
+        "attend_commentwrite",
+        "attend_commentList",
+        "attend_commentpaging"
+      ],
+      "moduleOccurrenceCount": 8,
+      "variableCount": 46,
+      "uniqueVariableBaseCount": 28,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/attend/calendarPackage.css",
+        "css:/css/module/attend/commentPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "attend/stamp.html",
+      "category": "attend",
+      "modules": [
+        "Attend_calendarPackage",
+        "attend_calendarhead",
+        "attend_calendar",
+        "attend_message",
+        "attend_button"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 25,
+      "uniqueVariableBaseCount": 18,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/attend/calendarPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/consult/list.html",
+      "category": "board",
+      "modules": [
+        "Board_ListPackage_9",
+        "board_title_9",
+        "board_category_9",
+        "board_ReplySort_9",
+        "board_listheader_9",
+        "board_list_9",
+        "board_empty_9",
+        "board_ButtonList_9",
+        "board_paging_9",
+        "board_search_9"
+      ],
+      "moduleOccurrenceCount": 11,
+      "variableCount": 60,
+      "uniqueVariableBaseCount": 39,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/listPackage.css",
+        "css:/css/module/board/search.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/consult/modify.html",
+      "category": "board",
+      "modules": [
+        "board_ModifyPackage_9",
+        "board_title_9",
+        "board_modify_9"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 27,
+      "uniqueVariableBaseCount": 22,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/modifyPackage_9.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/consult/read.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_9",
+        "board_title_9",
+        "Board_Read_9"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 26,
+      "uniqueVariableBaseCount": 26,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/readPackage_9.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/consult/reply.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_9",
+        "board_title_9",
+        "Board_Read_9",
+        "board_reply_9"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage_9.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/consult/write.html",
+      "category": "board",
+      "modules": [
+        "board_writePackage_9",
+        "board_title_9",
+        "board_write_9"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 24,
+      "uniqueVariableBaseCount": 19,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/writePackage_9.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/comment_all.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_4",
+        "board_title_4",
+        "board_CommentPackage_4",
+        "board_replyList_4",
+        "board_commentwrite_4"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 21,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css",
+        "css:/css/module/board/commentPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/comment_del.html",
+      "category": "board",
+      "modules": [
+        "board_CommentDeletePackage_1002",
+        "board_title_1002",
+        "Board_CommentDel_1002"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 3,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/commentDeletePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/free/list.html",
+      "category": "board",
+      "modules": [
+        "Board_ListPackage_1002",
+        "board_title_1002",
+        "Layout_BoardInfo",
+        "board_category_1002",
+        "board_ReplySort_1002",
+        "board_listheader_1002",
+        "board_notice_1002",
+        "board_fixed_1002",
+        "board_list_1002",
+        "board_empty_1002",
+        "board_ButtonList_1002",
+        "board_search_1002",
+        "board_paging_1002",
+        "board_catemove_1002",
+        "board_function_1002"
+      ],
+      "moduleOccurrenceCount": 16,
+      "variableCount": 219,
+      "uniqueVariableBaseCount": 62,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/listPackage.css",
+        "css:/css/module/board/search.css",
+        "css:/css/module/board/catemove.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/modify.html",
+      "category": "board",
+      "modules": [
+        "board_ModifyPackage_1002",
+        "board_title_1002",
+        "board_modify_1002"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 40,
+      "uniqueVariableBaseCount": 34,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/modifyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/read.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_1002",
+        "board_title_1002",
+        "board_read_1002",
+        "board_CommentPackage_1002",
+        "board_commentlist_1002",
+        "board_commentpaging_1002",
+        "board_commentform_1002",
+        "board_commentformsecret_1002",
+        "board_commentwrite_1002",
+        "board_commentreply_1002",
+        "board_movement_1002",
+        "board_function_1002"
+      ],
+      "moduleOccurrenceCount": 12,
+      "variableCount": 172,
+      "uniqueVariableBaseCount": 109,
+      "formCount": 5,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 5,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/readPackage.css",
+        "js:/js/module/board/readPackage.js",
+        "import:/board/report_popup.html",
+        "css:/css/module/board/commentPackage.css",
+        "css:/css/module/board/movement.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/reply_all.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_4",
+        "board_title_4",
+        "board_reply_4",
+        "board_replyList_4"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 37,
+      "uniqueVariableBaseCount": 28,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/reply.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_1002",
+        "board_title_1002",
+        "board_reply_1002"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 35,
+      "uniqueVariableBaseCount": 29,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/free/secret.html",
+      "category": "board",
+      "modules": [
+        "board_SecurePackage_1002",
+        "board_title_1002",
+        "board_secure_1002"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 5,
+      "uniqueVariableBaseCount": 5,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/securePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/free/write.html",
+      "category": "board",
+      "modules": [
+        "board_writePackage_1002",
+        "board_title_1002",
+        "board_write_1002"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 38,
+      "uniqueVariableBaseCount": 32,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/writePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/comment_all.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_4",
+        "board_title_4",
+        "board_CommentPackage_4",
+        "board_replyList_4",
+        "board_commentwrite_4"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 21,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css",
+        "css:/css/module/board/commentPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/comment_del.html",
+      "category": "board",
+      "modules": [
+        "board_CommentDeletePackage_8",
+        "board_title_8",
+        "Board_CommentDel_8"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/commentDeletePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/gallery/list.html",
+      "category": "board",
+      "modules": [
+        "Board_ListPackage_8",
+        "board_title_8",
+        "board_listheader_8",
+        "board_category_8",
+        "board_notice_8",
+        "board_fixed_8",
+        "board_list_8",
+        "board_empty_8",
+        "board_ButtonList_8",
+        "board_search_8",
+        "board_paging_8",
+        "board_catemove_8",
+        "board_function_8"
+      ],
+      "moduleOccurrenceCount": 13,
+      "variableCount": 114,
+      "uniqueVariableBaseCount": 44,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/listPackage_gallary.css",
+        "import:/svg/icon-sort-thumb.html",
+        "import:/svg/icon-sort-list.html",
+        "css:/css/module/board/search.css",
+        "css:/css/module/board/catemove.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/list2.html",
+      "category": "board",
+      "modules": [
+        "Board_ListPackage_8",
+        "board_title_8",
+        "board_listheader_8",
+        "board_category_8",
+        "board_notice_8",
+        "board_fixed_8",
+        "board_list_8",
+        "board_empty_8",
+        "board_ButtonList_8",
+        "board_search_8",
+        "board_paging_8",
+        "board_catemove_8",
+        "board_function_8"
+      ],
+      "moduleOccurrenceCount": 15,
+      "variableCount": 212,
+      "uniqueVariableBaseCount": 62,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/listPackage.css",
+        "import:/svg/icon-sort-thumb.html",
+        "import:/svg/icon-sort-list.html",
+        "css:/css/module/board/search.css",
+        "css:/css/module/board/catemove.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/modify.html",
+      "category": "board",
+      "modules": [
+        "board_ModifyPackage_8",
+        "board_title_8",
+        "board_modify_8"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 40,
+      "uniqueVariableBaseCount": 34,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/modifyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/read.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_8",
+        "board_title_8",
+        "board_read_8",
+        "board_CommentPackage_8",
+        "board_commentlist_8",
+        "board_commentpaging_8",
+        "board_commentform_8",
+        "board_commentformsecret_8",
+        "board_commentwrite_8",
+        "board_commentreply_8",
+        "board_movement_8",
+        "board_function_8"
+      ],
+      "moduleOccurrenceCount": 12,
+      "variableCount": 172,
+      "uniqueVariableBaseCount": 109,
+      "formCount": 5,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 5,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/readPackage.css",
+        "js:/js/module/board/readPackage.js",
+        "import:/board/report_popup.html",
+        "css:/css/module/board/commentPackage.css",
+        "css:/css/module/board/movement.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/reply_all.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_4",
+        "board_title_4",
+        "board_reply_4",
+        "board_replyList_4"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 37,
+      "uniqueVariableBaseCount": 28,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/reply.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_8",
+        "board_title_8",
+        "board_reply_8"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 35,
+      "uniqueVariableBaseCount": 29,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/gallery/secret.html",
+      "category": "board",
+      "modules": [
+        "board_SecurePackage_8",
+        "board_title_8",
+        "board_secure_8"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 5,
+      "uniqueVariableBaseCount": 5,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/securePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/gallery/write.html",
+      "category": "board",
+      "modules": [
+        "board_writePackage_8",
+        "board_title_8",
+        "board_write_8"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 38,
+      "uniqueVariableBaseCount": 32,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/writePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/index.html",
+      "category": "board",
+      "modules": [
+        "board_MainHit",
+        "board_MainRecommend",
+        "board_listpackage_1",
+        "board_title_1",
+        "board_listheader_1",
+        "board_list_1",
+        "board_listpackage_2",
+        "board_title_2",
+        "board_listheader_2",
+        "board_list_2",
+        "board_listpackage_5",
+        "board_title_5",
+        "board_listheader_5",
+        "board_list_5",
+        "board_listpackage_3",
+        "board_title_3",
+        "board_listheader_3",
+        "board_list_3",
+        "board_listpackage_7",
+        "board_title_7",
+        "board_listheader_7",
+        "board_list_7",
+        "board_listpackage_6",
+        "board_title_6",
+        "board_list_6",
+        "board_listpackage_8",
+        "board_title_8",
+        "board_list_8"
+      ],
+      "moduleOccurrenceCount": 28,
+      "variableCount": 167,
+      "uniqueVariableBaseCount": 15,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/inquiry/list.html",
+      "category": "board",
+      "modules": [
+        "board_InquiryList",
+        "board_inquiryPaging",
+        "board_inquirySearch"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 33,
+      "uniqueVariableBaseCount": 21,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/inquirySearch.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/inquiry/modify.html",
+      "category": "board",
+      "modules": [
+        "board_inquiryModify",
+        "board_InquiryHead"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 23,
+      "uniqueVariableBaseCount": 22,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/inquiryModify.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/inquiry/read.html",
+      "category": "board",
+      "modules": [
+        "board_InquiryHead",
+        "board_InquiryView",
+        "board_inquiryViewFile_1",
+        "myshop_inquiryViewFile_2",
+        "myshop_inquiryButton"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 36,
+      "uniqueVariableBaseCount": 29,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/inquiryView.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/inquiry/write.html",
+      "category": "board",
+      "modules": [
+        "board_InquiryForm",
+        "board_InquiryHead"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 27,
+      "uniqueVariableBaseCount": 26,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/inquiryForm.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/memo/list.html",
+      "category": "board",
+      "modules": [
+        "board_MemoPackage_1001",
+        "board_title_1001",
+        "board_memowrite_1001",
+        "board_memolist_1001",
+        "board_memocmt_1001",
+        "board_memoformcmtsecret_1001",
+        "board_memoformsecret_1001",
+        "board_memoformmodify_1001",
+        "board_memoformdelete_1001",
+        "board_memoformcmtwrite_1001",
+        "board_memoformcmtmodify_1001",
+        "board_memoformcmtdelete_1001",
+        "board_paging_1001"
+      ],
+      "moduleOccurrenceCount": 13,
+      "variableCount": 110,
+      "uniqueVariableBaseCount": 63,
+      "formCount": 8,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 8,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/memoPackage_1001.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/opdiary/list.html",
+      "category": "board",
+      "modules": [
+        "Board_ListPackage_11",
+        "board_title_11",
+        "board_list_11",
+        "board_paging_11",
+        "board_search_11"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 18,
+      "uniqueVariableBaseCount": 14,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/listPackage_11.css",
+        "css:/css/module/board/search.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/opdiary/read_blog.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_11",
+        "Board_Read_11",
+        "board_CommentPackage_11",
+        "Board_CommentList_11",
+        "board_commentpaging_11",
+        "board_commentwrite_11",
+        "board_commentreply_11"
+      ],
+      "moduleOccurrenceCount": 7,
+      "variableCount": 79,
+      "uniqueVariableBaseCount": 46,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/css/module/board/readPackage_11.css",
+        "css:/css/module/board/commentPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/product/comment_all.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_4",
+        "board_title_4",
+        "board_CommentPackage_4",
+        "board_replyList_4",
+        "board_commentwrite_4"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 21,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css",
+        "css:/css/module/board/commentPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/product/comment_del.html",
+      "category": "board",
+      "modules": [
+        "board_CommentDeletePackage_4",
+        "board_title_4",
+        "Board_CommentDel_4"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/commentDeletePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/product/list.html",
+      "category": "board",
+      "modules": [
+        "Board_ListPackage_4",
+        "board_title_4",
+        "Layout_BoardInfo",
+        "board_category_4",
+        "board_ReplySort_4",
+        "board_listheader_4",
+        "board_notice_4",
+        "board_fixed_4",
+        "board_list_4",
+        "board_empty_4",
+        "board_ButtonList_4",
+        "board_search_4",
+        "board_paging_4",
+        "board_catemove_4",
+        "board_function_4"
+      ],
+      "moduleOccurrenceCount": 16,
+      "variableCount": 245,
+      "uniqueVariableBaseCount": 68,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/listPackage.css",
+        "css:/css/module/board/search.css",
+        "css:/css/module/board/catemove.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/product/modify.html",
+      "category": "board",
+      "modules": [
+        "board_ModifyPackage_4",
+        "board_title_4",
+        "board_modify_4"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 57,
+      "uniqueVariableBaseCount": 50,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/modifyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/product/read.html",
+      "category": "board",
+      "modules": [
+        "board_ReadPackage_4",
+        "board_title_4",
+        "board_Product_4",
+        "board_read_4",
+        "board_CommentPackage_4",
+        "board_commentlist_4",
+        "board_commentpaging_4",
+        "board_commentform_4",
+        "board_commentformsecret_1002",
+        "board_commentwrite_4",
+        "board_commentreply_4",
+        "board_movement_4",
+        "board_listsgroup_4",
+        "board_function_4"
+      ],
+      "moduleOccurrenceCount": 14,
+      "variableCount": 228,
+      "uniqueVariableBaseCount": 133,
+      "formCount": 5,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 5,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/readPackage.css",
+        "js:/js/module/board/readPackage.js",
+        "import:/board/report_popup.html",
+        "css:/css/module/board/commentPackage.css",
+        "css:/css/module/board/movement.css",
+        "css:/css/module/board/listsgroup.css",
+        "css:/css/module/board/function.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/product/reply_all.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_4",
+        "board_title_4",
+        "board_reply_4",
+        "board_replyList_4"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 37,
+      "uniqueVariableBaseCount": 28,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/product/reply.html",
+      "category": "board",
+      "modules": [
+        "board_ReplyPackage_4",
+        "board_title_4",
+        "board_reply_4"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 35,
+      "uniqueVariableBaseCount": 29,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/replyPackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/product/secret.html",
+      "category": "board",
+      "modules": [
+        "board_SecurePackage_4",
+        "board_title_4",
+        "board_secure_4"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 5,
+      "uniqueVariableBaseCount": 5,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/securePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/product/write.html",
+      "category": "board",
+      "modules": [
+        "board_writePackage_4",
+        "board_title_4",
+        "board_write_4"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 55,
+      "uniqueVariableBaseCount": 48,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/writePackage.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/report_popup.html",
+      "category": "board",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 3,
+      "uniqueVariableBaseCount": 2,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/board/report.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/urgency/urgency_ord_result.html",
+      "category": "board",
+      "modules": [
+        "Mall_UrgencycallOrdLogout",
+        "Mall_UrgencycallOrdHeader",
+        "Mall_UrgencycallOrdResult",
+        "Mall_UrgencycallOrdPage"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 34,
+      "uniqueVariableBaseCount": 16,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/urgency/urgency_prd_result.html",
+      "category": "board",
+      "modules": [
+        "Mall_UrgencycallPrdResult",
+        "Mall_UrgencycallPrdPage"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 28,
+      "uniqueVariableBaseCount": 12,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "board/urgency/urgency_search.html",
+      "category": "board",
+      "modules": [
+        "Mall_UrgencycallSearchoutline"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 8,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/board/urgencycallSearchoutline.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "board/urgency/urgency.html",
+      "category": "board",
+      "modules": [
+        "Mall_Urgencycall"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 29,
+      "uniqueVariableBaseCount": 25,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/board/urgencycall.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "coupon/coupon_down_result.html",
+      "category": "coupon",
+      "modules": [
+        "Coupon_Downlayer"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/coupon/couponDownResult.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "coupon/coupon_list.html",
+      "category": "coupon",
+      "modules": [
+        "Coupon_CouponList",
+        "Coupon_aPrd"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 29,
+      "uniqueVariableBaseCount": 21,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/layout/basic/css/ec-base-prdInfo.css",
+        "css:/css/module/coupon/couponList.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "coupon/coupon_productdetail.html",
+      "category": "coupon",
+      "modules": [
+        "coupon_productdetailajax"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/coupon/productDetailAjax.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "coupon/coupon_select.html",
+      "category": "coupon",
+      "modules": [
+        "Coupon_SelectNew",
+        "Coupon_aPrd"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 35,
+      "uniqueVariableBaseCount": 26,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch_popup.css",
+        "js:/js/popup_scroll.js",
+        "js:/layout/basic/js/common.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "coupon/coupon_zone.html",
+      "category": "coupon",
+      "modules": [
+        "Coupon_zonePackage",
+        "Coupon_Zonebest",
+        "Coupon_Zonenew",
+        "Coupon_Zone",
+        "Coupon_aZonelist"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 70,
+      "uniqueVariableBaseCount": 12,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/coupon/zonePackage.css",
+        "js:/js/module/coupon/zonePackage.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "estimate/print.html",
+      "category": "estimate",
+      "modules": [
+        "Estimate_Print",
+        "Estimate_EstimateInfo",
+        "Estimate_PurchaseList",
+        "Estimate_list",
+        "Estimate_TotalSummary"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 73,
+      "uniqueVariableBaseCount": 56,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/estimate/estimateInfo.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "estimate/userform.html",
+      "category": "estimate",
+      "modules": [
+        "Estimate_Userform"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/estimate/userform.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "ez/ez-module.html",
+      "category": "ez",
+      "modules": [
+        "image-gallery/2",
+        "product-list-category/2",
+        "product_listmain_1",
+        "product_listmore_1",
+        "product_listmain_2",
+        "product_listmore_2",
+        "product_listmain_3",
+        "product_listmore_3",
+        "product_listmain_4",
+        "product_listmore_4",
+        "video/1",
+        "product-list-slide/2",
+        "product-list/1",
+        "text/1",
+        "map/1",
+        "product-listrecommend/1",
+        "product_listrecommend",
+        "product-listnew/1",
+        "product_listnew"
+      ],
+      "moduleOccurrenceCount": 22,
+      "variableCount": 25,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "import:/product/list_product.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product_slide.html",
+        "import:/product/list_product.html",
+        "css:/css/module/product/listrecommend_swipe.css",
+        "import:/product/list_product.html",
+        "css:/css/module/product/listnew_swipe.css",
+        "import:/product/list_product.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "index.html",
+      "category": "main",
+      "modules": [
+        "image-gallery/2",
+        "product-list-category/2",
+        "product_listmain_1",
+        "product_listmore_1",
+        "product_listmain_2",
+        "product_listmore_2",
+        "product_listmain_3",
+        "product_listmore_3",
+        "product_listmain_4",
+        "product_listmore_4",
+        "video/1",
+        "product-list-slide/2",
+        "product-list/1",
+        "text/1",
+        "map/1"
+      ],
+      "moduleOccurrenceCount": 18,
+      "variableCount": 25,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "js:/layout/basic/js/main.js",
+        "css:/layout/basic/css/main.css",
+        "import:/smart-banner/shop1/smart-banner-admin-RES00001.html",
+        "import:/smart-banner/shop1/smart-banner-admin-RES00002.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product.html",
+        "import:/product/list_product_slide.html",
+        "import:/product/list_product.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "intro/adult_certification.html",
+      "category": "intro",
+      "modules": [
+        "Member_AdultHead"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 15,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/intro.html",
+        "css:/css/module/intro/intro.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "intro/adult_i_recommend.html",
+      "category": "intro",
+      "modules": [
+        "Member_AdultHead"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 13,
+      "uniqueVariableBaseCount": 11,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/intro.html",
+        "css:/css/module/intro/intro.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "intro/adult_i.html",
+      "category": "intro",
+      "modules": [
+        "Member_AdultHead"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 13,
+      "uniqueVariableBaseCount": 11,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/intro.html",
+        "css:/css/module/intro/intro.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "intro/adult_im.html",
+      "category": "intro",
+      "modules": [
+        "Member_AdultHead",
+        "member_login"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 33,
+      "uniqueVariableBaseCount": 29,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/intro.html",
+        "css:/css/module/intro/intro.css",
+        "css:/css/module/member/login.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "intro/member.html",
+      "category": "intro",
+      "modules": [
+        "Intro_memberPackage",
+        "member_login"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 20,
+      "uniqueVariableBaseCount": 18,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/intro.html",
+        "css:/css/module/intro/intro.css",
+        "css:/css/module/member/login.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/detail_layout.html",
+      "category": "layout",
+      "modules": [
+        "Layout_LogoTop",
+        "Layout_MobileAction"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 3,
+      "uniqueVariableBaseCount": 3,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/layout.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/layout/basic/css/ec-base-tooltip.css",
+        "css:/layout/basic/css/ec-base-help.css",
+        "css:/layout/basic/css/ec-base-fold.css",
+        "css:/layout/basic/css/ec-base-box.css",
+        "css:/layout/basic/css/ec-base-product.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "js:/layout/basic/js/basic.js",
+        "js:/layout/basic/js/layout.js",
+        "js:/js/common.js",
+        "js:/js/module/layout/quick_view.js",
+        "import:/layout/basic/topbanner.html",
+        "css:/css/module/layout/logotop.css",
+        "import:/layout/basic/state_login.html",
+        "import:/layout/basic/navigation.html",
+        "import:/layout/basic/sidebar.html",
+        "contents",
+        "import:/svg/icon-go-back.html",
+        "import:/layout/basic/quick.html",
+        "import:/layout/basic/footer.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/footer.html",
+      "category": "layout",
+      "modules": [
+        "bottom-navigation",
+        "Layout_stateLogon",
+        "Layout_stateLogoff",
+        "user-defined/1",
+        "Layout_footer",
+        "Layout_LogoBottom",
+        "Layout_Info",
+        "Layout_SearchHeader"
+      ],
+      "moduleOccurrenceCount": 8,
+      "variableCount": 26,
+      "uniqueVariableBaseCount": 20,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "import:/svg/icon-search.html",
+        "import:/svg/icon-home.html",
+        "import:/svg/icon-cart.html",
+        "import:/svg/icon-cart.html",
+        "import:/svg/icon-user.html",
+        "import:/svg/icon-quick-arrow.html",
+        "import:/svg/icon-instagram.html",
+        "import:/svg/icon-youtube.html",
+        "import:/svg/icon-facebook.html",
+        "import:/svg/icon-kakao.html",
+        "import:/svg/icon-twitter.html",
+        "import:/svg/icon-blog.html",
+        "import:/svg/icon-search.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/header.html",
+      "category": "layout",
+      "modules": [
+        "top-banner",
+        "Layout_multishopList",
+        "Layout_multishopListitem",
+        "Layout_shoppingInfo",
+        "Layout_statelogoff",
+        "Layout_stateLogon",
+        "Layout_BoardInfo",
+        "Layout_LogoTop",
+        "menu-main/1",
+        "Layout_orderBasketcount"
+      ],
+      "moduleOccurrenceCount": 13,
+      "variableCount": 33,
+      "uniqueVariableBaseCount": 28,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "import:/svg/icon-search.html",
+        "import:/svg/icon-user.html",
+        "import:/svg/icon-cart.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/intro.html",
+      "category": "layout",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "js:/layout/basic/js/basic.js",
+        "contents",
+        "css:/layout/basic/css/sub_style.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "layout/basic/layout.html",
+      "category": "layout",
+      "modules": [
+        "Layout_MobileAction",
+        "Layout_multishopShipping",
+        "Layout_multishopShippingCountrylist",
+        "Layout_multishopShippingLanguagelist"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 13,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/layout.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-tab.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/layout/basic/css/ec-base-tooltip.css",
+        "css:/layout/basic/css/ec-base-help.css",
+        "css:/layout/basic/css/ec-base-fold.css",
+        "css:/layout/basic/css/ec-base-box.css",
+        "css:/layout/basic/css/ec-base-desc.css",
+        "css:/layout/basic/css/ec-base-product.css",
+        "css:/layout/basic/css/ec-base-prdInfo.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/layout/basic/css/swiper.min.css",
+        "js:/layout/basic/js/swiper-bundle.min.js",
+        "js:/js/module/product/sale_price.js",
+        "js:/layout/basic/js/basic.js",
+        "js:/layout/basic/js/layout.js",
+        "js:/js/common.js",
+        "js:/ez/init.js",
+        "import:/layout/basic/header.html",
+        "import:/layout/basic/sidebar.html",
+        "import:/svg/icon-go-back.html",
+        "contents",
+        "import:/layout/basic/footer.html",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/layout/multishopShipping.css",
+        "js:/js/module/layout/multishopShipping.js",
+        "css:/layout/basic/css/sub_style.css",
+        "css:/layout/basic/css/sub_theme.css",
+        "css:/layout/basic/css/add_theme01.css",
+        "css:/layout/basic/css/add_theme02.css",
+        "css:/layout/basic/css/add_theme03.css",
+        "css:/layout/basic/css/add_layout.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "layout/basic/main_supply.html",
+      "category": "layout",
+      "modules": [
+        "Layout_LogoTop",
+        "Layout_SearchHeader",
+        "Layout_multishopList",
+        "Layout_multishopListitem",
+        "Layout_multishopListmultioption",
+        "Layout_multishopListmultioptionCountry",
+        "Layout_multishopListmultioptionLanguage",
+        "Layout_statelogoff",
+        "Layout_stateLogon",
+        "Layout_shoppingInfo",
+        "Layout_bookmark",
+        "Layout_shortcut",
+        "Layout_CategorySupplyList",
+        "Layout_Second",
+        "Layout_Third",
+        "Layout_Fourth",
+        "Layout_Fifth",
+        "Layout_orderBasketcount",
+        "Layout_productRecent",
+        "Layout_LogoBottom",
+        "Layout_footer",
+        "Layout_multishopShipping",
+        "Layout_multishopShippingCountrylist",
+        "Layout_multishopShippingLanguagelist",
+        "Layout_conversionPc"
+      ],
+      "moduleOccurrenceCount": 27,
+      "variableCount": 107,
+      "uniqueVariableBaseCount": 66,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/layout.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-tooltip.css",
+        "css:/layout/basic/css/ec-base-product.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/layout/basic/css/ec-base-tab.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "js:/layout/basic/js/basic.js",
+        "js:/js/common.js",
+        "js:/js/module/layout/quick_view.js",
+        "css:/css/module/layout/logotop.css",
+        "css:/css/module/layout/searchHeader.css",
+        "css:/css/module/layout/multishopList.css",
+        "css:/css/module/layout/multishopList.css",
+        "css:/css/module/layout/statelogoff.css",
+        "css:/css/module/layout/statelogon.css",
+        "css:/css/module/layout/shoppingInfo.css",
+        "contents",
+        "css:/css/module/layout/categorySupplyList.css",
+        "css:/css/module/layout/orderBasketcount.css",
+        "css:/css/module/layout/productRecent.css",
+        "css:/css/module/layout/logobottom.css",
+        "css:/css/module/layout/footer.css",
+        "css:/css/module/layout/multishopShipping.css",
+        "js:/js/module/layout/multishopShipping.js",
+        "css:/css/module/layout/conversionpc.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "layout/basic/main.html",
+      "category": "layout",
+      "modules": [
+        "Layout_MobileAction",
+        "Layout_multishopShipping",
+        "Layout_multishopShippingCountrylist",
+        "Layout_multishopShippingLanguagelist"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 13,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/layout.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-tab.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/layout/basic/css/ec-base-tooltip.css",
+        "css:/layout/basic/css/ec-base-help.css",
+        "css:/layout/basic/css/ec-base-fold.css",
+        "css:/layout/basic/css/ec-base-box.css",
+        "css:/layout/basic/css/ec-base-desc.css",
+        "css:/layout/basic/css/ec-base-product.css",
+        "css:/layout/basic/css/ec-base-prdInfo.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/layout/basic/css/swiper.min.css",
+        "js:/layout/basic/js/swiper-bundle.min.js",
+        "js:/js/module/product/sale_price.js",
+        "js:/layout/basic/js/basic.js",
+        "js:/layout/basic/js/layout.js",
+        "js:/js/common.js",
+        "js:/ez/init.js",
+        "import:/layout/basic/header.html",
+        "import:/layout/basic/sidebar.html",
+        "import:/svg/icon-go-back.html",
+        "contents",
+        "import:/layout/basic/footer.html",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/layout/multishopShipping.css",
+        "js:/js/module/layout/multishopShipping.js",
+        "css:/layout/basic/css/sub_style.css",
+        "css:/layout/basic/css/sub_theme.css",
+        "css:/layout/basic/css/add_theme01.css",
+        "css:/layout/basic/css/add_theme02.css",
+        "css:/layout/basic/css/add_theme03.css",
+        "css:/layout/basic/css/add_layout.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "layout/basic/navigation.html",
+      "category": "layout",
+      "modules": [
+        "Layout_category"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 6,
+      "uniqueVariableBaseCount": 2,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/layout/category.css",
+        "import:/svg/icon-search.html",
+        "import:/svg/icon-user.html",
+        "import:/svg/icon-heart.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "layout/basic/popup.html",
+      "category": "layout",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-tab.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/layout/basic/css/ec-base-tooltip.css",
+        "css:/layout/basic/css/ec-base-help.css",
+        "css:/layout/basic/css/ec-base-box.css",
+        "css:/layout/basic/css/ec-base-desc.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "js:/js/common.js",
+        "js:/layout/basic/js/popup.js",
+        "contents"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "layout/basic/quick.html",
+      "category": "layout",
+      "modules": [
+        "Layout_orderBasketcount",
+        "Layout_productRecent"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 7,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/layout/orderBasketcount.css",
+        "css:/css/module/layout/productRecent.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/sidebar.html",
+      "category": "layout",
+      "modules": [
+        "layout_slidePackage",
+        "Layout_LogoTop",
+        "Layout_statelogoff",
+        "Layout_stateLogon",
+        "menu-side/1",
+        "Layout_BoardInfo",
+        "Layout_multishopList",
+        "Layout_multishopListitem"
+      ],
+      "moduleOccurrenceCount": 11,
+      "variableCount": 15,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/slideMenu.css",
+        "js:/layout/basic/js/slide_menu.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/state_login.html",
+      "category": "layout",
+      "modules": [
+        "Layout_statelogoff",
+        "Layout_stateLogon"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 5,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/layout/statelogoff.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "layout/basic/topbanner.html",
+      "category": "layout",
+      "modules": [
+        "custom_moduleedit"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "member/adminFail.html",
+      "category": "member",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/intro/layout.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/agreement.html",
+      "category": "member",
+      "modules": [
+        "member_join"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 77,
+      "uniqueVariableBaseCount": 77,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "js:/js/module/member/join_agreement.js",
+        "css:/css/module/member/join_agreement.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/certification_layer.html",
+      "category": "member",
+      "modules": [
+        "member_certification"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 2,
+      "uniqueVariableBaseCount": 2,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/member/certification_layer.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/change_passwd.html",
+      "category": "member",
+      "modules": [
+        "member_changepasswd"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/change_passwd.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/check_password.html",
+      "category": "member",
+      "modules": [
+        "member_checkpassword"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/checkpassword.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/check_under_fourteen.html",
+      "category": "member",
+      "modules": [
+        "member_checkunderfourteen"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 11,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/member/checkunderfourteen.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/id/find_id_result.html",
+      "category": "member",
+      "modules": [
+        "member_findidresult"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 8,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/find_id_result.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/id/find_id.html",
+      "category": "member",
+      "modules": [
+        "member_findid"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 12,
+      "uniqueVariableBaseCount": 10,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/find_id.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/join_confirm.html",
+      "category": "member",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 122,
+      "uniqueVariableBaseCount": 120,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/css/module/member/join_confirm.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/join_result.html",
+      "category": "member",
+      "modules": [
+        "member_joinComplete",
+        "member_BenefitJoin",
+        "coupon_join"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 34,
+      "uniqueVariableBaseCount": 26,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/joincomplete.css",
+        "css:/css/module/coupon/join.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/join.html",
+      "category": "member",
+      "modules": [
+        "member_join"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 196,
+      "uniqueVariableBaseCount": 191,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/join.css",
+        "import:/member/join_confirm.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/lifetime_event.html",
+      "category": "member",
+      "modules": [
+        "member_lifetimeevent"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 3,
+      "uniqueVariableBaseCount": 2,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/member/lifetime_event.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/login.html",
+      "category": "member",
+      "modules": [
+        "member_login",
+        "MyShop_OrderHistoryNologin"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 27,
+      "uniqueVariableBaseCount": 26,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/login.css",
+        "js:/js/module/member/login.js",
+        "css:/css/module/myshop/orderHistoryNologin.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/loginSns.html",
+      "category": "member",
+      "modules": [
+        "member_loginsns"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/mall_agreement.html",
+      "category": "member",
+      "modules": [
+        "mall_term"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 1,
+      "uniqueVariableBaseCount": 1,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/mapping_join.html",
+      "category": "member",
+      "modules": [
+        "member_joinMapping",
+        "Layout_login"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 27,
+      "uniqueVariableBaseCount": 15,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/mapping_join.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/member/layer_login.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/mapping_login.html",
+      "category": "member",
+      "modules": [
+        "member_loginMapping"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 20,
+      "uniqueVariableBaseCount": 10,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/mapping_login_kakao.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/modify.html",
+      "category": "member",
+      "modules": [
+        "myshop_asyncbenefit",
+        "member_updateeventlogon",
+        "member_edit",
+        "member_editInformation",
+        "member_editConsignment"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 352,
+      "uniqueVariableBaseCount": 312,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/benefit.css",
+        "css:/css/module/member/updateeventlogon.css",
+        "css:/css/module/member/edit.css",
+        "js:/js/module/member/join_agreement.js",
+        "css:/css/module/member/join_agreement.css",
+        "css:/layout/basic/css/ec-base-layer.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/passwd/find_passwd_info.html",
+      "category": "member",
+      "modules": [
+        "member_findpasswd"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 13,
+      "uniqueVariableBaseCount": 11,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/find_passwd.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/passwd/find_passwd_method.html",
+      "category": "member",
+      "modules": [
+        "member_findpasswdmethod"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 7,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/find_passwd_method.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/passwd/find_passwd_question.html",
+      "category": "member",
+      "modules": [
+        "member_findPasswdQuestion"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 4,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/find_passwd_question.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/passwd/find_passwd_result.html",
+      "category": "member",
+      "modules": [
+        "member_findpasswdresult"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 8,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/find_passwd_result.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/passwd/passwd_reset.html",
+      "category": "member",
+      "modules": [
+        "member_passwordreset"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 6,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/passwd_reset.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/passwd/user_verification.html",
+      "category": "member",
+      "modules": [
+        "member_passwordverification"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/member/user_verification.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/privacy.html",
+      "category": "member",
+      "modules": [
+        "mall_privacy"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 6,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/mall/privacy.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "member/update_event.html",
+      "category": "member",
+      "modules": [
+        "member_updateeventpopup"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 1,
+      "uniqueVariableBaseCount": 1,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/member/update_event.css",
+        "css:/layout/basic/css/ec-base-button.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/addr_popup/list.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_AddrList"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 38,
+      "uniqueVariableBaseCount": 19,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/addrList_pop.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/addr_popup/modify.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_AddrModify"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 14,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/addrModify_pop.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/addr_popup/register.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_AddrRegister"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 14,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/addrRegister_pop.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/addr/list.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_AddrList"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 38,
+      "uniqueVariableBaseCount": 18,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/addr/modify.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_AddrModify"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/addrModify.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/addr/register.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_AddrRegister"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/addrRegister.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/board_list.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_BoardPackage",
+        "myshop_boardListHead",
+        "myshop_boardList",
+        "board_listheader_1002",
+        "myshop_boardlistSearch",
+        "myshop_boardlistPaging"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 39,
+      "uniqueVariableBaseCount": 23,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/boardPackage.css",
+        "import:/svg/icon-empty.html",
+        "css:/css/module/myshop/boardlistSearch.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/coupon/coupon_product_list.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_couponProductPackage",
+        "myshop_CouponProductSearch",
+        "myshop_CouponProductList",
+        "myshop_CouponProductPaging"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 36,
+      "uniqueVariableBaseCount": 23,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/couponProductPackage.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/coupon/coupon.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_CouponSerial",
+        "myshop_CouponList",
+        "myshop_CouponListPaging"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 53,
+      "uniqueVariableBaseCount": 27,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/couponSerial.css",
+        "css:/css/module/myshop/couponList.css",
+        "js:/js/module/myshop/couponList.js",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/deposits/historyList.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_DepositHead",
+        "Myshop_depositHistoryPackage",
+        "Myshop_DepositSummary",
+        "Myshop_DepositHistoryList",
+        "myshop_DepositHistoryPaging"
+      ],
+      "moduleOccurrenceCount": 8,
+      "variableCount": 87,
+      "uniqueVariableBaseCount": 21,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/depositHistoryPackage.css",
+        "import:/svg/icon-empty.html",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/deposits/refund_call.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_depositRefundPackage",
+        "Myshop_DepositRefundForm"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 10,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/depositHistoryCallPackage.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/deposits/refund_cancel.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_depositRefundPackage",
+        "Myshop_DepositRefundList",
+        "myshop_DepositRefundPaging"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 67,
+      "uniqueVariableBaseCount": 19,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/depositRefundPackage.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/index.html",
+      "category": "myshop",
+      "modules": [
+        "layout_logincheck",
+        "myshop_asyncbankbook",
+        "myshop_asyncbenefit",
+        "myshop_orderstate"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 153,
+      "uniqueVariableBaseCount": 75,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/bankbook.css",
+        "import:/svg/icon-user.html",
+        "import:/svg/icon-mileage.html",
+        "import:/svg/icon-coupon.html",
+        "import:/svg/icon-order.html",
+        "css:/css/module/myshop/orderState.css",
+        "import:/myshop/order/history_list_item.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/likeit/category.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_likeitCatePackage",
+        "myshop_LikeTab",
+        "myshop_LikeCategoryList",
+        "myshop_LikeCategoryControl",
+        "myshop_LikeCategoryPaging"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 49,
+      "uniqueVariableBaseCount": 17,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/likeit/product.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_likeitPrdPackage",
+        "myshop_LikeTab",
+        "myshop_LikeProductList",
+        "myshop_LikeProductControl",
+        "myshop_LikeProductPaging"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 67,
+      "uniqueVariableBaseCount": 24,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/likeitPrdPackage.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/mileage/couponList.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_mileageCouponPackage",
+        "myshop_head",
+        "myshop_summary",
+        "myshop_couponMemberList",
+        "myshop_couponMemberPaging",
+        "myshop_historyInfo"
+      ],
+      "moduleOccurrenceCount": 7,
+      "variableCount": 75,
+      "uniqueVariableBaseCount": 21,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/mileageCouponPackage.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/mileage/historyList.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_Head",
+        "Myshop_mileageHistoryPackage",
+        "myshop_head",
+        "myshop_summary",
+        "myshop_historyList",
+        "myshop_historyPaging",
+        "myshop_historyInfo"
+      ],
+      "moduleOccurrenceCount": 8,
+      "variableCount": 72,
+      "uniqueVariableBaseCount": 20,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/mileageHistoryPackage.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/mileage/unavailList.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_mileageUnavailPackage",
+        "myshop_head",
+        "myshop_summary",
+        "myshop_unavailList",
+        "myshop_unavailPaging",
+        "myshop_historyInfo"
+      ],
+      "moduleOccurrenceCount": 7,
+      "variableCount": 75,
+      "uniqueVariableBaseCount": 21,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/mileageUnavailPackage.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/myshop_main.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_main",
+        "Myshop_InquiryDash",
+        "Layout_stateLogon"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 10,
+      "uniqueVariableBaseCount": 10,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/myshop/main.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/account.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryAccount"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 10,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/orderHistoryAccount.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/cancel.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryApplyCancel",
+        "Myshop_products",
+        "Myshop_optionSet",
+        "Myshop_Csadd"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 84,
+      "uniqueVariableBaseCount": 48,
+      "formCount": 4,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderHistoryApplyCancel.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/detail_old.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderHistoryDetail",
+        "Myshop_OrderHistoryDetailBasic",
+        "Myshop_OrderHistoryDetailIndividual",
+        "Myshop_OrderHistoryDetailOversea",
+        "Myshop_OrderHistoryDetailGift",
+        "Myshop_OrderHistoryDetailRefund"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 239,
+      "uniqueVariableBaseCount": 90,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderHistoryDetail.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/detail.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderHistoryDetail",
+        "Myshop_OrderHistoryDetailBasic",
+        "Myshop_optionSet",
+        "Myshop_OrderHistoryDetailIndividual",
+        "Myshop_OrderHistoryDetailOversea",
+        "Myshop_OrderHistoryDetailGift",
+        "Myshop_OrderHistoryDetailPaymentFinal",
+        "Myshop_OrderHistoryDetailCsInfo",
+        "Myshop_cancelProduct",
+        "Myshop_exchangeProduct",
+        "Myshop_Csaddinfo",
+        "Myshop_OrderHistoryDetailRefundNew",
+        "Myshop_OrderHistoryDetailPaymentAddUnpaid",
+        "Myshop_OrderHistoryDetailPaymentAddPaid",
+        "Myshop_DeliveryList",
+        "Myshop_ordadd",
+        "Myshop_OrderHistoryDetailPickup"
+      ],
+      "moduleOccurrenceCount": 67,
+      "variableCount": 1299,
+      "uniqueVariableBaseCount": 391,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderHistoryDetail.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/exchange_product.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderHistoryExchangeproduct",
+        "Myshop_selectedProduct",
+        "Myshop_optionAll",
+        "Myshop_optionList",
+        "Myshop_optionAddList"
+      ],
+      "moduleOccurrenceCount": 7,
+      "variableCount": 68,
+      "uniqueVariableBaseCount": 39,
+      "formCount": 4,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "import:/svg/icon-empty.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/exchange.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryApplyExchange",
+        "Myshop_products",
+        "Myshop_optionSet",
+        "Myshop_Csadd"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 137,
+      "uniqueVariableBaseCount": 101,
+      "formCount": 4,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/myshop/orderHistoryApplyExchange.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/history_list_item.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryListitem",
+        "Myshop_optionSet",
+        "Myshop_OrderHistoryPaging"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 152,
+      "uniqueVariableBaseCount": 71,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/myshop/orderHistoryListItem.css",
+        "import:/svg/icon-empty.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/issue/cash.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderIssueCash"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch_popup.css",
+        "js:/js/popup_scroll.js",
+        "js:/layout/basic/js/common.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/issue/tax.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderIssueTax"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 22,
+      "uniqueVariableBaseCount": 22,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch_popup.css",
+        "js:/js/popup_scroll.js",
+        "js:/layout/basic/js/common.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/list_old.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryTab",
+        "Myshop_OrderOldHistoryList",
+        "Myshop_OrderHistoryPaging"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 42,
+      "uniqueVariableBaseCount": 30,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderOldHistoryList.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/list_past.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryTab",
+        "Myshop_OrderHistoryHead",
+        "Myshop_OrderHistoryListPast",
+        "Myshop_optionSet",
+        "Myshop_OrderHistoryPaging"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 80,
+      "uniqueVariableBaseCount": 45,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderHistoryHead.css",
+        "css:/css/module/myshop/orderHistoryListPast.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "login",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/list.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryTab",
+        "Myshop_OrderHistoryHead"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 25,
+      "uniqueVariableBaseCount": 24,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderHistoryHead.css",
+        "import:/myshop/order/history_list_item.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/order_detail_cs.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderHistoryDetail",
+        "Myshop_optionSet",
+        "Myshop_ReasonCancel",
+        "Myshop_ReasonExchange",
+        "Myshop_ReasonReturn",
+        "Myshop_ReasonReject"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 34,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/css/module/myshop/orderHistoryDetail.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/print/spec.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderPrintSpecList",
+        "MyShop_productList",
+        "MyShop_OrderPrintGuide",
+        "MyShop_rulesetGuide"
+      ],
+      "moduleOccurrenceCount": 7,
+      "variableCount": 62,
+      "uniqueVariableBaseCount": 24,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/myshop/orderPrintSpec.css",
+        "css:/css/module/myshop/orderPrintSpec.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/print/tax.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderPrintTax",
+        "Myshop_OrderPrintTaxSupplier",
+        "Myshop_OrderPrintTaxBuyer",
+        "Myshop_OrderPrintTaxAmount",
+        "MyShop_OrderPrintTaxProduct",
+        "MyShop_OrderPrintEtax"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 66,
+      "uniqueVariableBaseCount": 49,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "css:/css/module/myshop/orderPrintTax.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/receiver_update.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_OrderReceiverUpdate"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 52,
+      "uniqueVariableBaseCount": 39,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/receiverUpdate.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/return.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderHistoryApplyReturn",
+        "Myshop_products",
+        "Myshop_optionSet",
+        "Myshop_Csadd"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 135,
+      "uniqueVariableBaseCount": 99,
+      "formCount": 4,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/orderHistoryApplyReturn.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/search_product.html",
+      "category": "myshop",
+      "modules": [
+        "Myshop_OrderSearchproductForm",
+        "Myshop_OrderSearchproductList",
+        "Myshop_OrderSearchproductPaging"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 39,
+      "uniqueVariableBaseCount": 22,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/layout/basic/css/ec-base-prdInfo.css",
+        "css:/css/module/myshop/searchProduct.css",
+        "import:/svg/icon-empty.html"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/order/store_pickup.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderHistoryStorepickup"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 20,
+      "uniqueVariableBaseCount": 20,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/orderStorePickup.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/regular_delivery_detail.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_OrderRegularManageDetailRegister",
+        "myshop_OrderRegularManageDetailList",
+        "myshop_OrderRegularManageDetailPricechangenotify",
+        "Myshop_optionList",
+        "Myshop_optionSet",
+        "myshop_OrderRegularManageDetailReceiver",
+        "myshop_SubscriptionShippingList"
+      ],
+      "moduleOccurrenceCount": 13,
+      "variableCount": 237,
+      "uniqueVariableBaseCount": 95,
+      "formCount": 7,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 7,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/regularDeliveryDetail.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "js:/js/module/myshop/regularDeliveryDetail.js",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/regular_delivery_update.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_OrderRegularManageDetailReceiveredit"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 11,
+      "uniqueVariableBaseCount": 11,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/myshop/regularDeliveryUpdate.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/regular_delivery.html",
+      "category": "myshop",
+      "modules": [
+        "MyShop_OrderRegularPg",
+        "Myshop_OrderRegularManageHead",
+        "myshop_OrderRegularManageList",
+        "Myshop_optionSet",
+        "Myshop_OrderRegularManagePage"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 122,
+      "uniqueVariableBaseCount": 65,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/regularDeliveryPayInfo.css",
+        "js:/js/module/myshop/regularDeliveryPayInfo.js",
+        "css:/css/module/myshop/regularDeliveryListItem.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "myshop/wish_list.html",
+      "category": "myshop",
+      "modules": [
+        "myshop_wishlist",
+        "myshop_wishlistitem",
+        "Myshop_optionAll",
+        "Myshop_optionList",
+        "Myshop_optionAddList",
+        "Myshop_WishlistButton",
+        "myshop_wishlistpaging"
+      ],
+      "moduleOccurrenceCount": 14,
+      "variableCount": 137,
+      "uniqueVariableBaseCount": 40,
+      "formCount": 8,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 8,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/myshop/wishlist.css",
+        "import:/svg/icon-empty.html",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "login",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/basket.html",
+      "category": "order",
+      "modules": [
+        "Order_BasketPackage",
+        "Order_TabInfo",
+        "Order_Empty",
+        "Order_BasketOption",
+        "Order_EmptyItem",
+        "Order_NormTitle",
+        "Order_NormNormal",
+        "Order_list",
+        "Order_optionAll",
+        "Order_SuppNormal",
+        "Order_NormOverseaTitle",
+        "Order_NormOversea",
+        "Order_NormIndividual",
+        "Order_InstTitle",
+        "Order_InstNormal",
+        "Order_InstIndividual",
+        "Order_InstOverseaTitle",
+        "Order_InstOversea",
+        "Order_AllotmentInfo",
+        "Order_Weight",
+        "Order_SelectOrder",
+        "Order_TotalSummary",
+        "Order_TotalOversea",
+        "Order_TotalOrder",
+        "Order_BasketPriceInfoGuide",
+        "Order_BasketGuide"
+      ],
+      "moduleOccurrenceCount": 46,
+      "variableCount": 1453,
+      "uniqueVariableBaseCount": 202,
+      "formCount": 22,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 22,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/order/basketPackage.css",
+        "js:/js/module/order/basket.js",
+        "import:/svg/icon-empty.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/custom_ship_area.html",
+      "category": "order",
+      "modules": [
+        "Order_Customshiparea"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 6,
+      "uniqueVariableBaseCount": 3,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch_popup.css",
+        "js:/js/popup_scroll.js",
+        "js:/layout/basic/js/common.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/gift_list_detail.html",
+      "category": "order",
+      "modules": [
+        "Gift_layerOfferGift",
+        "Gift_Listdetail",
+        "Gift_detail"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/order/gift_list.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/gift_list.html",
+      "category": "order",
+      "modules": [
+        "gift_list",
+        "gift_second",
+        "gift_Third",
+        "gift_listempty"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 21,
+      "uniqueVariableBaseCount": 18,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/order/gift_list.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/gift_select.html",
+      "category": "order",
+      "modules": [
+        "gift_select",
+        "gift_point"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 54,
+      "uniqueVariableBaseCount": 30,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "js:/js/common.js",
+        "js:/layout/basic/js/popup.js",
+        "css:/css/module/order/ec_orderform/form_onetouch_layer.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/gift_selectorderform.html",
+      "category": "order",
+      "modules": [
+        "gift_selectorderform",
+        "gift_point"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 84,
+      "uniqueVariableBaseCount": 28,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/order_confirm_layer.html",
+      "category": "order",
+      "modules": [
+        "Order_normallist",
+        "Order_optionSet",
+        "Order_supplierlist",
+        "Order_individuallist",
+        "Order_oversealist"
+      ],
+      "moduleOccurrenceCount": 12,
+      "variableCount": 643,
+      "uniqueVariableBaseCount": 244,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/order/confirm_layer.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/order_result.html",
+      "category": "order",
+      "modules": [
+        "Layout_LogoTop",
+        "Layout_MobileAction",
+        "Layout_orderBasketcount",
+        "Layout_statelogoff",
+        "Layout_statelogon",
+        "Order_result",
+        "Order_normalresultlist",
+        "Order_optionSet",
+        "Order_individualresultlist",
+        "Order_oversearesultlist",
+        "Order_giftresultlist",
+        "Order_deliverylist",
+        "Order_deliverybindinglist",
+        "Order_ordadd"
+      ],
+      "moduleOccurrenceCount": 24,
+      "variableCount": 533,
+      "uniqueVariableBaseCount": 173,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch.css",
+        "css:/css/module/order/ec_orderform/form_onetouch_v2.css",
+        "js:/layout/basic/js/common.js",
+        "js:/js/module/order/ec_orderform/orders.js",
+        "js:/js/module/order/ec_orderform/orders_v2.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/orderform.html",
+      "category": "order",
+      "modules": [
+        "Order_form"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 10,
+      "uniqueVariableBaseCount": 10,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch.css",
+        "css:/css/module/order/ec_orderform/form_onetouch_v2.css",
+        "js:/layout/basic/js/common.js",
+        "js:/js/module/order/ec_orderform/orders.js",
+        "js:/js/module/order/ec_orderform/orders_v2.js",
+        "import:/order/ec_orderform/header.html",
+        "import:/order/ec_orderform/product_detail.html",
+        "import:/order/ec_orderform/orderProduct_v2.html",
+        "import:/order/ec_orderform/gift.html",
+        "import:/order/ec_orderform/billingNshipping_v2.html",
+        "import:/order/ec_orderform/discount.html",
+        "import:/order/ec_orderform/additionalInput.html",
+        "import:/order/ec_orderform/paymethod_v2.html",
+        "import:/order/ec_orderform/payment_v2.html",
+        "import:/order/ec_orderform/benefit.html",
+        "import:/order/ec_orderform/agreement_v2.html",
+        "import:/order/ec_orderform/confirm.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "order",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/pg_success.html",
+      "category": "order",
+      "modules": [
+        "Order_pgsuccess"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/search_board_list.html",
+      "category": "order",
+      "modules": [
+        "Order_BoardListPackage",
+        "Order_BoardListhead",
+        "Order_BoardList",
+        "Order_BoardPaging"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 34,
+      "uniqueVariableBaseCount": 15,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/layout/basic/css/ec-base-prdInfo.css",
+        "css:/css/module/order/boardListPackage.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/store_pickup_info.html",
+      "category": "order",
+      "modules": [
+        "Order_StorePickupInfo"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 14,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch_popup.css",
+        "js:/js/popup_scroll.js",
+        "js:/js/common.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/store_pickup_shop.html",
+      "category": "order",
+      "modules": [
+        "Order_StorePickupShop"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 7,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/order/ec_orderform/form_onetouch_popup.css",
+        "js:/js/popup_scroll.js",
+        "js:/js/common.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "order/traffic.html",
+      "category": "order",
+      "modules": [
+        "Order_ThrottleWaiting"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 1,
+      "uniqueVariableBaseCount": 1,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/css/module/order/throttleWaiting.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/add_basket.html",
+      "category": "product",
+      "modules": [
+        "Product_BasketAdd"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 1,
+      "uniqueVariableBaseCount": 1,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/product/basketAdd.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/add_basket2.html",
+      "category": "product",
+      "modules": [
+        "Order_LayerBasketPackage",
+        "Order_LayerBasket",
+        "Order_list",
+        "Order_LayerBasketPaging"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 47,
+      "uniqueVariableBaseCount": 23,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/css/module/product/basketAdd2.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "order",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/basket_option.html",
+      "category": "product",
+      "modules": [
+        "Product_OptionSelectLayer",
+        "product_detail",
+        "product_regularDiscount",
+        "product_option",
+        "product_quantity",
+        "product_addoption",
+        "product_fileoption",
+        "product_setproduct",
+        "product_noneoption",
+        "product_action"
+      ],
+      "moduleOccurrenceCount": 24,
+      "variableCount": 143,
+      "uniqueVariableBaseCount": 74,
+      "formCount": 17,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 17,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/optionSelectLayer.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "cart",
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/compare.html",
+      "category": "product",
+      "modules": [
+        "Product_ListCompare",
+        "Product_Productimagetiny",
+        "Product_Productname",
+        "Product_CompareSetList",
+        "Product_Productcustom",
+        "Product_Productprice",
+        "Product_Productsaleprice",
+        "Product_Quantity",
+        "Product_CompareOptionList",
+        "Product_CompareAddOption",
+        "Product_CompareOption",
+        "Product_Model",
+        "Product_Madein",
+        "Product_Manuname",
+        "Product_Brand",
+        "Product_Allotperiod",
+        "Product_Mileage",
+        "Product_Selfproductcode",
+        "Product_Description"
+      ],
+      "moduleOccurrenceCount": 20,
+      "variableCount": 63,
+      "uniqueVariableBaseCount": 34,
+      "formCount": 4,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/product/compare.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/coupon_popup.html",
+      "category": "product",
+      "modules": [
+        "coupon_productpopup"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 7,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/coupon/productPopup.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/detail.html",
+      "category": "product",
+      "modules": [
+        "product_headcategory",
+        "product-head-breadcrumb/1",
+        "product-detail-head-title-mobile/1",
+        "product_detail",
+        "product_image",
+        "product_Imagestyle",
+        "product_addimage",
+        "Product_mobileImage",
+        "product_detaildesign",
+        "product_rental",
+        "product_regularDiscount",
+        "product_option",
+        "product_quantity",
+        "product_addoption",
+        "product_setproduct",
+        "product_noneoption",
+        "product_addproduct",
+        "product_fileoption",
+        "product_action",
+        "myshop_asyncbenefit",
+        "product_additional",
+        "product_relation",
+        "product_relationlist",
+        "product_review",
+        "product_reviewpaging",
+        "product_qna",
+        "product_qnapaging"
+      ],
+      "moduleOccurrenceCount": 54,
+      "variableCount": 529,
+      "uniqueVariableBaseCount": 221,
+      "formCount": 27,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 27,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/product/detail.css",
+        "js:/js/module/product/detail.js",
+        "js:/js/module/product/product_image.js",
+        "css:/css/module/product/mobileImage.css",
+        "import:/coupon/coupon_productdetail.html",
+        "css:/css/module/product/additional.css",
+        "import:/board/report_popup.html",
+        "js:/js/module/product/review.js",
+        "js:/js/module/product/qna.js"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/email_restock.html",
+      "category": "product",
+      "modules": [
+        "Product_RestockEmail",
+        "Product_optionstock"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 9,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/restock_email.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/image_zoom.html",
+      "category": "product",
+      "modules": [
+        "Product_ZoomPackage",
+        "product_zoom",
+        "product_Imagestyle",
+        "product_addimage",
+        "product_Colorchip",
+        "product_detaildesign",
+        "product_customsns",
+        "product_option",
+        "product_quantity",
+        "product_addoption",
+        "product_fileoption",
+        "product_setproduct",
+        "product_noneoption",
+        "product_action"
+      ],
+      "moduleOccurrenceCount": 28,
+      "variableCount": 198,
+      "uniqueVariableBaseCount": 104,
+      "formCount": 18,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 18,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/zoomPackage.css",
+        "js:/js/module/product/product_image.js"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/image_zoom2.html",
+      "category": "product",
+      "modules": [
+        "Product_ZoomPackage",
+        "product_zoom",
+        "product_Imagestyle",
+        "product_addimage"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 10,
+      "uniqueVariableBaseCount": 9,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/zoomPackage2.css",
+        "js:/js/module/product/product_image.js"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/layer_option.html",
+      "category": "product",
+      "modules": [
+        "product_detail",
+        "product_option",
+        "product_quantity",
+        "product_addoption",
+        "product_fileoption",
+        "product_setproduct",
+        "product_noneoption",
+        "product_addproduct",
+        "product_action"
+      ],
+      "moduleOccurrenceCount": 31,
+      "variableCount": 145,
+      "uniqueVariableBaseCount": 53,
+      "formCount": 26,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 26,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/detail_option.css",
+        "js:/js/module/product/detail_option.js"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/layer_wish.html",
+      "category": "product",
+      "modules": [
+        "myshop_layerWish"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/product/layer_wish.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/list_product_slide.html",
+      "category": "product",
+      "modules": [
+        "product_Imagestyle",
+        "product_ListItem"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 74,
+      "uniqueVariableBaseCount": 32,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/list_product.html",
+      "category": "product",
+      "modules": [
+        "product_Imagestyle",
+        "product_ListItem"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 76,
+      "uniqueVariableBaseCount": 33,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/list.html",
+      "category": "product",
+      "modules": [
+        "product_headcategory",
+        "product-head-breadcrumb/1",
+        "product-list-head-title/1",
+        "product-list-subcategory/1",
+        "product_displaysubcategory",
+        "product_children",
+        "product_displaycategory",
+        "product-list-categoryimage/1",
+        "product-listrecommend/1",
+        "product_listrecommend",
+        "product-listnew/1",
+        "product_listnew",
+        "product-normalpackage/1",
+        "product_normalpackage",
+        "product_normalmenu",
+        "product_Orderby",
+        "product_FirstSelect",
+        "product_SecondSelect",
+        "product_listnormal",
+        "product_listmore",
+        "product_normalpaging"
+      ],
+      "moduleOccurrenceCount": 28,
+      "variableCount": 136,
+      "uniqueVariableBaseCount": 42,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "js:/js/module/product/menucategory.js",
+        "css:/css/module/product/menupackage.css",
+        "css:/css/module/product/listrecommend_swipe.css",
+        "import:/product/list_product.html",
+        "css:/css/module/product/listnew_swipe.css",
+        "import:/product/list_product.html",
+        "import:/product/shoppQ/searchContent.html",
+        "css:/css/module/product/listnormal.css",
+        "js:/js/module/product/normalmenu.js",
+        "js:/js/module/product/product_selectsearch.js",
+        "import:/product/list_product.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/option_preview.html",
+      "category": "product",
+      "modules": [
+        "Product_OptionPreview",
+        "Product_optionPreviewList"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 4,
+      "uniqueVariableBaseCount": 3,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/product/optionPreview.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/product_detail_info.html",
+      "category": "product",
+      "modules": [
+        "product_detail",
+        "product_additional"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 2,
+      "uniqueVariableBaseCount": 2,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/productDetailInfo.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/product_detail_layer.html",
+      "category": "product",
+      "modules": [
+        "product_detail",
+        "product_detaildesign",
+        "product_Colorchip"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 11,
+      "uniqueVariableBaseCount": 7,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/project.html",
+      "category": "product",
+      "modules": [
+        "Project_Package",
+        "project_head",
+        "product_headcategory",
+        "product_projectcategory",
+        "project_list",
+        "project_productlist",
+        "product_Imagestyle",
+        "project_ListItem"
+      ],
+      "moduleOccurrenceCount": 11,
+      "variableCount": 83,
+      "uniqueVariableBaseCount": 40,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/product/project_package.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/recent_view_product.html",
+      "category": "product",
+      "modules": [
+        "product_recentlist",
+        "product_listitem",
+        "product_setproduct",
+        "product_mainoption",
+        "product_addoption",
+        "product_recentlistpaging"
+      ],
+      "moduleOccurrenceCount": 9,
+      "variableCount": 82,
+      "uniqueVariableBaseCount": 32,
+      "formCount": 4,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/product/recentlist.css",
+        "import:/myshop/myshop_main.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/recommend_mail.html",
+      "category": "product",
+      "modules": [
+        "Product_RecommMail"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 19,
+      "uniqueVariableBaseCount": 19,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/recommend_mail.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/request.html",
+      "category": "product",
+      "modules": [
+        "product_request"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 18,
+      "uniqueVariableBaseCount": 11,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/product_request.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/search_board_list.html",
+      "category": "product",
+      "modules": [
+        "Search_FromPackage",
+        "Search_BoardForm",
+        "Search_BoardList",
+        "search_paging"
+      ],
+      "moduleOccurrenceCount": 4,
+      "variableCount": 30,
+      "uniqueVariableBaseCount": 18,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/search_FromPackage.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/search.html",
+      "category": "product",
+      "modules": [
+        "Search_Result",
+        "product_Imagestyle",
+        "search_ListItem",
+        "search_paging"
+      ],
+      "moduleOccurrenceCount": 6,
+      "variableCount": 110,
+      "uniqueVariableBaseCount": 40,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "import:/product/shoppQ/searchForm_typeTop.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/shoppQ/hashtag.html",
+      "category": "product",
+      "modules": [
+        "product_hashtag"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 3,
+      "uniqueVariableBaseCount": 2,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/product/hashtag.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/shoppQ/layout_sticky.html",
+      "category": "product",
+      "modules": [
+        "Layout_LogoTop",
+        "Layout_SearchHeader",
+        "Layout_multishopList",
+        "Layout_multishopListitem",
+        "Layout_multishopListmultioption",
+        "Layout_multishopListmultioptionCountry",
+        "Layout_multishopListmultioptionLanguage",
+        "Layout_statelogoff",
+        "Layout_stateLogon",
+        "Layout_shoppingInfo",
+        "Layout_bookmark",
+        "Layout_shortcut",
+        "Layout_category",
+        "product_searchdata",
+        "product_SearchFilterList",
+        "product_filterform",
+        "Layout_BoardInfo",
+        "Layout_SearchSide",
+        "Layout_project",
+        "Layout_login",
+        "Layout_Info",
+        "Layout_Myshop",
+        "Layout_Poll",
+        "Layout_giftBanner",
+        "Layout_opdiaryBanner",
+        "Layout_sosBanner",
+        "Layout_attendBanner",
+        "Layout_couponzoneBanner",
+        "Layout_calendarBanner",
+        "Layout_orderBasketcount",
+        "Layout_productRecent",
+        "Layout_LogoBottom",
+        "Layout_footer",
+        "Layout_multishopShipping",
+        "Layout_multishopShippingCountrylist",
+        "Layout_multishopShippingLanguagelist",
+        "Layout_conversionPc"
+      ],
+      "moduleOccurrenceCount": 39,
+      "variableCount": 152,
+      "uniqueVariableBaseCount": 96,
+      "formCount": 6,
+      "htmlFormCount": 1,
+      "moduleFormStructureCount": 4,
+      "directives": [
+        "css:/layout/basic/css/common.css",
+        "css:/layout/basic/css/layout.css",
+        "css:/layout/basic/css/ec-base-ui.css",
+        "css:/layout/basic/css/ec-base-tooltip.css",
+        "css:/layout/basic/css/ec-base-help.css",
+        "css:/layout/basic/css/ec-base-product.css",
+        "css:/layout/basic/css/ec-base-paginate.css",
+        "css:/layout/basic/css/ec-base-tab.css",
+        "css:/layout/basic/css/ec-base-button.css",
+        "css:/layout/basic/css/ec-base-box.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/layout/basic/css/ec-base-desc.css",
+        "js:/layout/basic/js/basic.js",
+        "js:/js/common.js",
+        "js:/js/module/layout/quick_view.js",
+        "css:/css/module/layout/logotop.css",
+        "css:/css/module/layout/searchHeader.css",
+        "css:/css/module/layout/multishopList.css",
+        "css:/css/module/layout/multishopList.css",
+        "css:/css/module/layout/statelogoff.css",
+        "css:/css/module/layout/statelogon.css",
+        "css:/css/module/layout/shoppingInfo.css",
+        "contents",
+        "css:/css/module/layout/category.css",
+        "js:/js/module/layout/category.js",
+        "css:/css/module/product/searchdata.css",
+        "css:/css/module/layout/boardInfo.css",
+        "css:/css/module/layout/searchSide.css",
+        "css:/css/module/layout/project.css",
+        "js:/js/rotate.js",
+        "js:/js/module/layout/project.js",
+        "css:/css/module/layout/login.css",
+        "css:/css/module/layout/info.css",
+        "css:/css/module/layout/myshop.css",
+        "css:/css/module/layout/poll.css",
+        "css:/css/module/layout/orderBasketcount.css",
+        "css:/css/module/layout/productRecent.css",
+        "css:/css/module/layout/logobottom.css",
+        "css:/css/module/layout/footer.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/layout/multishopShipping.css",
+        "js:/js/module/layout/multishopShipping.js",
+        "css:/css/module/layout/conversionpc.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/shoppQ/searchConditionData.html",
+      "category": "product",
+      "modules": [
+        "product_searchdata",
+        "product_searchConditionData",
+        "product_categoryHashtag"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 6,
+      "uniqueVariableBaseCount": 3,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/css/module/product/searchdata.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/shoppQ/searchContent.html",
+      "category": "product",
+      "modules": [
+        "product_searchdata",
+        "product_SearchFilterList",
+        "product_filterform",
+        "product_categoryHashtag",
+        "product_searchConditionData"
+      ],
+      "moduleOccurrenceCount": 7,
+      "variableCount": 27,
+      "uniqueVariableBaseCount": 19,
+      "formCount": 3,
+      "htmlFormCount": 1,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/product/searchdata.css",
+        "css:/css/module/product/searchdata.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/shoppQ/searchForm_typeTop.html",
+      "category": "product",
+      "modules": [
+        "product_searchdata",
+        "product_RelateKeyword",
+        "product_HotKeyword",
+        "product_SearchFilterList",
+        "product_filterform",
+        "product_searchConditionData"
+      ],
+      "moduleOccurrenceCount": 9,
+      "variableCount": 46,
+      "uniqueVariableBaseCount": 35,
+      "formCount": 5,
+      "htmlFormCount": 2,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "css:/css/module/product/searchdata.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/product/searchdata.css",
+        "import:/svg/icon-warning.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/shoppQ/searchForm.html",
+      "category": "product",
+      "modules": [
+        "product_searchdata",
+        "product_RelateKeyword",
+        "product_HotKeyword",
+        "product_searchConditionData",
+        "product_searchOrderby"
+      ],
+      "moduleOccurrenceCount": 5,
+      "variableCount": 30,
+      "uniqueVariableBaseCount": 21,
+      "formCount": 2,
+      "htmlFormCount": 1,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/product/searchdata.css",
+        "css:/layout/basic/css/ec-base-layer.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/shoppQ/searchSidebar.html",
+      "category": "product",
+      "modules": [
+        "product_searchdata",
+        "product_SearchFilterList",
+        "product_filterform"
+      ],
+      "moduleOccurrenceCount": 3,
+      "variableCount": 19,
+      "uniqueVariableBaseCount": 15,
+      "formCount": 3,
+      "htmlFormCount": 1,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "css:/css/module/product/searchdata.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/sizeguide.html",
+      "category": "product",
+      "modules": [
+        "Product_SizeGuide"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 6,
+      "uniqueVariableBaseCount": 6,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/css/module/product/sizeguide.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "product/sms_restock_layer.html",
+      "category": "product",
+      "modules": [
+        "Product_RestockSms",
+        "Product_optionstock"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 16,
+      "uniqueVariableBaseCount": 16,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/restockSms.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/sms_restock.html",
+      "category": "product",
+      "modules": [
+        "Product_RestockSms",
+        "Product_optionstock"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 15,
+      "uniqueVariableBaseCount": 15,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/popup.html",
+        "css:/css/module/product/restockSms.css"
+      ],
+      "usesPopupLayout": true,
+      "commerceRelated": [
+        "product-option"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "product/stocklayer.html",
+      "category": "product",
+      "modules": [
+        "product_stocklayer"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 7,
+      "uniqueVariableBaseCount": 5,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "css:/layout/basic/css/ec-base-layer.css",
+        "css:/layout/basic/css/ec-base-table.css",
+        "css:/css/module/product/stocklayer.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "shopinfo/company.html",
+      "category": "shopinfo",
+      "modules": [
+        "mall_company",
+        "Layout_footer"
+      ],
+      "moduleOccurrenceCount": 2,
+      "variableCount": 15,
+      "uniqueVariableBaseCount": 13,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/mall/company.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "shopinfo/guide.html",
+      "category": "shopinfo",
+      "modules": [
+        "mall_faq"
+      ],
+      "moduleOccurrenceCount": 1,
+      "variableCount": 11,
+      "uniqueVariableBaseCount": 11,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "css:/css/module/mall/faq.css"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "order",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "smart-banner/init/ez-initialize.html",
+      "category": "smart-banner",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "smart-banner/shop1/smart-banner-admin-INIT00001.html",
+      "category": "smart-banner",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "smart-banner/shop1/smart-banner-admin-INIT00002.html",
+      "category": "smart-banner",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "smart-banner/shop1/smart-banner-admin-RES00001.html",
+      "category": "smart-banner",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "smart-banner/shop1/smart-banner-admin-RES00002.html",
+      "category": "smart-banner",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "supply/index.html",
+      "category": "supply",
+      "modules": [
+        "Layout_CategorySupplyList",
+        "Mall_SupplySearch",
+        "Layout_Second",
+        "Layout_Third",
+        "Layout_Fourth",
+        "Layout_Fifth",
+        "Mall_SupplyMainimage",
+        "product-listrecommend/1",
+        "product_listrecommend",
+        "product-listnew/1",
+        "product_listnew",
+        "product-normalpackage/1",
+        "product_normalpackage",
+        "product_normalmenu",
+        "product_FirstSelect",
+        "product_SecondSelect",
+        "product_listnormal",
+        "product_listmore",
+        "product_normalpaging",
+        "Mall_SupplyInfo"
+      ],
+      "moduleOccurrenceCount": 27,
+      "variableCount": 95,
+      "uniqueVariableBaseCount": 35,
+      "formCount": 2,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 2,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "js:/js/module/product/menucategory.js",
+        "css:/css/module/product/listnormal.css",
+        "css:/css/module/mall/supplySearch.css",
+        "css:/css/module/product/listrecommend.css",
+        "import:/product/list_product.html",
+        "css:/css/module/product/listnew_swipe.css",
+        "import:/product/list_product.html",
+        "css:/css/module/product/listnormal.css",
+        "js:/js/module/product/normalmenu.js",
+        "js:/js/module/product/product_selectsearch.js",
+        "import:/product/list_product.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "supply/main.html",
+      "category": "supply",
+      "modules": [
+        "Layout_CategorySupplyList",
+        "Mall_SupplySearch",
+        "Layout_Second",
+        "Layout_Third",
+        "Layout_Fourth",
+        "Layout_Fifth",
+        "Mall_SupplyMainimage",
+        "product-list/1",
+        "product_listmain_1",
+        "product_listmore_1",
+        "product_supplymainpaging",
+        "Mall_SupplyInfo"
+      ],
+      "moduleOccurrenceCount": 17,
+      "variableCount": 70,
+      "uniqueVariableBaseCount": 22,
+      "formCount": 1,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 1,
+      "directives": [
+        "layout:/layout/basic/layout.html",
+        "js:/js/module/product/menucategory.js",
+        "css:/css/module/product/listnormal.css",
+        "css:/css/module/mall/supplySearch.css",
+        "import:/product/list_product.html"
+      ],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-blog.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-cart-top.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart",
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-cart.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "cart"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-check.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-coupon.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-empty.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-facebook.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-file.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-go-back.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-heart.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-home.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-instagram.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-kakao.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-mileage.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-order.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-pause.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-play.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-quick-arrow.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-search-top.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-search.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-sort-list.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-sort-thumb.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-twitter.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-user-thumb.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-user-top.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [
+        "member"
+      ],
+      "risk": "no-touch"
+    },
+    {
+      "path": "svg/icon-user.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-warning.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    },
+    {
+      "path": "svg/icon-youtube.html",
+      "category": "svg",
+      "modules": [],
+      "moduleOccurrenceCount": 0,
+      "variableCount": 0,
+      "uniqueVariableBaseCount": 0,
+      "formCount": 0,
+      "htmlFormCount": 0,
+      "moduleFormStructureCount": 0,
+      "directives": [],
+      "usesPopupLayout": false,
+      "commerceRelated": [],
+      "risk": "unknown"
+    }
+  ]
+}

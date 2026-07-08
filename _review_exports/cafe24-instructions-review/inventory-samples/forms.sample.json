@@ -1,0 +1,1306 @@
+{
+  "_sampleNote": "max 50; mix kinds and no-touch",
+  "sourceStats": {
+    "total": 149,
+    "byKind": {
+      "hidden-input": 2,
+      "html-form": 2,
+      "module-form-structure": 145
+    },
+    "noTouch": 126
+  },
+  "count": 50,
+  "forms": [
+    {
+      "kind": "hidden-input",
+      "name": "keyword",
+      "id": "{$searchdata_keyword_hidden}",
+      "action": null,
+      "method": null,
+      "module": "product_searchdata",
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [
+        "keyword"
+      ],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "hidden",
+          "name": "keyword",
+          "id": "{$searchdata_keyword_hidden}",
+          "hidden": true,
+          "value": null
+        }
+      ],
+      "files": [
+        "product/shoppQ/layout_sticky.html",
+        "product/shoppQ/searchContent.html",
+        "product/shoppQ/searchForm_typeTop.html",
+        "product/shoppQ/searchSidebar.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Layout_login",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login",
+        "member"
+      ],
+      "cafe24FormFields": [
+        "member_id",
+        "member_passwd"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/mapping_join.html"
+      ]
+    },
+    {
+      "kind": "hidden-input",
+      "name": "sPrdName",
+      "id": "sPrdName",
+      "action": null,
+      "method": null,
+      "module": "Order_form",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "cart",
+        "order",
+        "member"
+      ],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [
+        "sPrdName"
+      ],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "hidden",
+          "name": "sPrdName",
+          "id": "sPrdName",
+          "hidden": true,
+          "value": "{$sPrdName}"
+        }
+      ],
+      "files": [
+        "order/orderform.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_category_1002",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "board_category"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/free/list.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "myshop_AddrModify",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "address_addr1",
+        "address_addr2",
+        "address_zip1",
+        "ma_main_flag",
+        "ma_rcv_mobile_no",
+        "ma_rcv_name",
+        "ma_rcv_phone",
+        "ma_rcv_title"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/addr_popup/modify.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "attend_button",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "secure_text"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "attend/stamp.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Mall_SupplySearch",
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "searchSupply"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "image",
+          "name": null,
+          "id": null,
+          "hidden": false
+        }
+      ],
+      "files": [
+        "supply/index.html",
+        "supply/main.html"
+      ]
+    },
+    {
+      "kind": "html-form",
+      "name": "",
+      "id": "{$searchdata_form}",
+      "action": null,
+      "method": "get",
+      "module": null,
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [
+        "keyword"
+      ],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "hidden",
+          "name": "keyword",
+          "id": "{$searchdata_keyword_hidden}",
+          "hidden": true,
+          "value": null
+        }
+      ],
+      "files": [
+        "product/shoppQ/layout_sticky.html",
+        "product/shoppQ/searchContent.html",
+        "product/shoppQ/searchForm_typeTop.html",
+        "product/shoppQ/searchSidebar.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_certification",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "name": null,
+          "id": "{$checkbox_today_open}",
+          "hidden": false
+        }
+      ],
+      "files": [
+        "member/certification_layer.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_Csadd",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "cafe24FormFields": [
+        "is_new_cs_form"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/order/cancel.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_category_8",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "board_category"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/gallery/list.html",
+        "board/gallery/list2.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "myshop_AddrRegister",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "address_addr1",
+        "address_addr2",
+        "address_zip1",
+        "ma_main_flag",
+        "ma_rcv_mobile_no",
+        "ma_rcv_name",
+        "ma_rcv_phone",
+        "ma_rcv_title"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/addr_popup/register.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "attend_commentwrite",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "comment",
+        "secure_text"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "attend/comment.html"
+      ]
+    },
+    {
+      "kind": "html-form",
+      "name": null,
+      "id": "{$searchkeyword_form}",
+      "action": "/product/search.html",
+      "method": "get",
+      "module": null,
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "image",
+          "name": null,
+          "id": "{$search_submit_button}",
+          "hidden": false
+        }
+      ],
+      "files": [
+        "product/shoppQ/searchForm.html",
+        "product/shoppQ/searchForm_typeTop.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_changepasswd",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "enc_password",
+        "new_passwd",
+        "new_passwd_confirm",
+        "passwd",
+        "returnUrl"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/change_passwd.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_category_9",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "board_category"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/consult/list.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Estimate_Userform",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "member"
+      ],
+      "cafe24FormFields": [
+        "agree_F",
+        "agree_T",
+        "begin",
+        "email",
+        "end",
+        "mobile",
+        "user_name"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "estimate/userform.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_category_4",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "board_category"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/product/list.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_checkpassword",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "cp_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/check_password.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_optionSet",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order",
+        "product-option"
+      ],
+      "cafe24FormFields": [
+        "checkbox",
+        "quantity"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/order/cancel.html",
+        "myshop/order/exchange.html",
+        "myshop/order/return.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Board_CommentDel_1002",
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "comment_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/free/comment_del.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "myshop_AddrModify",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "address",
+        "ma_main_flag",
+        "ma_rcv_mobile_no",
+        "ma_rcv_name",
+        "ma_rcv_phone",
+        "ma_rcv_title"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/addr/modify.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Board_CommentDel_4",
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "comment_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/product/comment_del.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_edit",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "add1",
+        "add10",
+        "add11",
+        "add12",
+        "add13",
+        "add14",
+        "add15",
+        "add2",
+        "add3",
+        "add4",
+        "add5",
+        "add6",
+        "add7",
+        "add8",
+        "add9",
+        "address",
+        "birth_day",
+        "birth_month",
+        "birth_year",
+        "car",
+        "child",
+        "citizenship",
+        "cname",
+        "cssn",
+        "earning",
+        "email",
+        "hint",
+        "hint_answer",
+        "inter_check",
+        "internet",
+        "is_lifetime",
+        "is_news_mail",
+        "is_sex",
+        "is_sms",
+        "is_solar_calendar",
+        "job",
+        "job_class",
+        "marry_day",
+        "marry_month",
+        "marry_year",
+        "member_id",
+        "mobile",
+        "name",
+        "name_en",
+        "new_passwd",
+        "new_passwd_confirm",
+        "nick_name",
+        "partner_day",
+        "partner_month",
+        "partner_year",
+        "passwd",
+        "personal_type",
+        "phone",
+        "reco_id",
+        "region",
+        "school",
+        "user_id_dupl",
+        "user_passwd_confirm",
+        "verify_sms_number"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/modify.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Board_CommentDel_8",
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "comment_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/gallery/comment_del.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentform_4",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "cafe24FormFields": [
+        "comment_modify",
+        "comment_password",
+        "secure"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/product/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_editConsignment",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "agree_information_check",
+        "agree_privacy_optional_check",
+        "check_user_defined_1",
+        "check_user_defined_10",
+        "check_user_defined_2",
+        "check_user_defined_3",
+        "check_user_defined_4",
+        "check_user_defined_5",
+        "check_user_defined_6",
+        "check_user_defined_7",
+        "check_user_defined_8",
+        "check_user_defined_9",
+        "leave_reason",
+        "marketing_consent_check",
+        "subjective_leave_reason"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/modify.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_OrderHistoryAccount",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "acc_bank",
+        "acc_depositor",
+        "acc_no",
+        "check_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/order/account.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentform_1002",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "comment_modify",
+        "comment_password",
+        "secure"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/free/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "myshop_asyncbenefit",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "text",
+          "name": null,
+          "id": "{$reco_url}",
+          "hidden": false
+        }
+      ],
+      "files": [
+        "myshop/index.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentformsecret_1002",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login",
+        "order"
+      ],
+      "cafe24FormFields": [
+        "secure_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/free/read.html",
+        "board/product/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_findid",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "check_method",
+        "email",
+        "mobile1",
+        "mobile2",
+        "mobile3",
+        "name",
+        "searchType",
+        "ssn1",
+        "ssn2"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/id/find_id.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_OrderHistoryHead",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order",
+        "login",
+        "product-option"
+      ],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "image",
+          "name": null,
+          "id": "order_search_btn",
+          "hidden": false
+        }
+      ],
+      "files": [
+        "myshop/order/list_past.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentform_8",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "comment_modify",
+        "comment_password",
+        "secure"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/gallery/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "myshop_CouponSerial",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "coupon_code"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/coupon/coupon.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentreply_4",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "cafe24FormFields": [
+        "captcha",
+        "comment",
+        "comment_name",
+        "comment_password",
+        "comment_point",
+        "secure"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/product/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_findpasswd",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "check_method",
+        "email",
+        "member_id",
+        "mobile1",
+        "mobile2",
+        "mobile3",
+        "name",
+        "searchType",
+        "ssn"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/passwd/find_passwd_info.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_OrderHistoryHead",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order"
+      ],
+      "cafe24FormFields": [
+        "end_date",
+        "order_status",
+        "start_date",
+        "submit_date"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/order/list.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentformsecret_8",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "secure_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/gallery/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_DepositRefundForm",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "request_account_name",
+        "request_account_no",
+        "request_bank_code",
+        "request_deposit_amt"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/deposits/refund_call.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentwrite_4",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "comment",
+        "comment_name"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/free/comment_all.html",
+        "board/gallery/comment_all.html",
+        "board/product/comment_all.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_findpasswdmethod",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "passwd_method_type"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/passwd/find_passwd_method.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "MyShop_OrderIssueCash",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order"
+      ],
+      "cafe24FormFields": [
+        "mobile",
+        "mobile_identity",
+        "order_id",
+        "regno",
+        "regno_identity",
+        "user_type"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/order/issue/cash.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentreply_1002",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [
+        "captcha",
+        "comment",
+        "comment_name",
+        "comment_password",
+        "comment_point",
+        "secure"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/free/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_DepositRefundList",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "login"
+      ],
+      "cafe24FormFields": [],
+      "hiddenInputNames": [],
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "name": "{$chk_id}",
+          "id": "{$chk_id}",
+          "hidden": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "name": "{$chk_id}",
+          "id": "{$chk_id}",
+          "hidden": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "name": "{$chk_id}",
+          "id": "{$chk_id}",
+          "hidden": false
+        }
+      ],
+      "files": [
+        "myshop/deposits/refund_cancel.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentwrite_4",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order",
+        "login"
+      ],
+      "cafe24FormFields": [
+        "captcha",
+        "comment",
+        "comment_name",
+        "comment_password",
+        "comment_point",
+        "secure"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/product/read.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "member_findPasswdQuestion",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "check_method",
+        "passwd_answer"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "member/passwd/find_passwd_question.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "MyShop_OrderIssueTax",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [
+        "order"
+      ],
+      "cafe24FormFields": [
+        "company_condition",
+        "company_line",
+        "company_name",
+        "company_regno",
+        "company_type",
+        "email",
+        "mall_addr",
+        "name",
+        "order_id",
+        "phone",
+        "president_name"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/order/issue/tax.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "board_commentreply_11",
+      "purpose": "unknown",
+      "risk": "unknown",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "captcha",
+        "comment",
+        "comment_name",
+        "comment_password"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "board/opdiary/read_blog.html"
+      ]
+    },
+    {
+      "kind": "module-form-structure",
+      "name": null,
+      "id": null,
+      "action": null,
+      "method": null,
+      "module": "Myshop_optionList",
+      "purpose": "unknown",
+      "risk": "no-touch",
+      "commerceRelated": [],
+      "cafe24FormFields": [
+        "expected_delivery_date",
+        "has_temp_ord",
+        "invoice_no",
+        "max_expected_pay_seq",
+        "option_value",
+        "product_cnt",
+        "return_url",
+        "subscription_cycle"
+      ],
+      "hiddenInputNames": [],
+      "inputs": [],
+      "files": [
+        "myshop/regular_delivery_detail.html"
+      ]
+    }
+  ]
+}

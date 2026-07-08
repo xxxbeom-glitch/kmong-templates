@@ -1,0 +1,100 @@
+{
+  "caseId": "bv-clinic",
+  "sourceUrl": "http://bvclinic.co.kr/landing/",
+  "viewports": [
+    1920,
+    390
+  ],
+  "sections": [
+    {
+      "id": "header",
+      "keep": true
+    },
+    {
+      "id": "hero",
+      "keep": true
+    },
+    {
+      "id": "thread-intro",
+      "keep": true
+    },
+    {
+      "id": "thread-knowhow",
+      "keep": true
+    },
+    {
+      "id": "thread-3d",
+      "keep": true
+    },
+    {
+      "id": "laser",
+      "keep": true
+    },
+    {
+      "id": "laser-why",
+      "keep": true
+    },
+    {
+      "id": "volume",
+      "keep": true
+    },
+    {
+      "id": "doctor",
+      "keep": true
+    },
+    {
+      "id": "location",
+      "keep": true
+    },
+    {
+      "id": "footer",
+      "keep": true
+    }
+  ],
+  "slots": [
+    "hero.title",
+    "thread.knowhow[4]",
+    "thread.menus[]",
+    "laser.devices[4]",
+    "doctor.quote",
+    "location.hours",
+    "location.channels"
+  ],
+  "assets": [
+    {
+      "key": "logo",
+      "status": "listed"
+    },
+    {
+      "key": "hero",
+      "status": "listed"
+    },
+    {
+      "key": "treatment-illustrations",
+      "status": "listed"
+    },
+    {
+      "key": "doctor-portrait",
+      "status": "listed"
+    },
+    {
+      "key": "map",
+      "status": "listed"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "anchor-nav",
+      "sectionId": "header",
+      "presetCandidate": "custom",
+      "status": "planned"
+    },
+    {
+      "id": "treatment-accordion",
+      "sectionId": "thread-3d",
+      "presetCandidate": "custom",
+      "status": "planned"
+    }
+  ],
+  "updatedAt": "2026-07-08"
+}

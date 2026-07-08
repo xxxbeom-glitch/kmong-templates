@@ -1,0 +1,97 @@
+---
+description: 정적 HTML · WordPress · 카페24 스마트디자인 · reference 실험 트랙 분기
+alwaysApply: true
+---
+
+# Project Tracks
+
+작업 시작 전 **트랙**을 확인한다.
+
+| 트랙 | 개발 경로 | 규칙 | 납품 |
+|------|-----------|------|------|
+| **static** (크몽 정적) | `templates/{slug}/` | `00-core` · `10`~`60` | `node _harness/package-delivery.js {slug}` → `_delivery/{slug}/` |
+| **wordpress** (운영) | `wordpress/{slug}/` | `70-wordpress.mdc` + 공통 `35` · `45` · `46` · `55` | `node _harness/package-delivery-wp.js {slug}` → `_delivery-wp/{slug}/` · `{slug}.zip` |
+| **cafe24-skin** (스마트디자인) | `cafe24/{slug}/` | `80` · `81` · `82` (+ 공통 `35` · `45` · `55` 해당 시) | 스킨 ZIP · 디자인 관리자 업로드 (경로 추후 확정). **`_delivery/cafe24/` 금지** |
+| **reference-harness** (실험) | `_reference-harness/cases/{slug}/` | harness README · `83-reference-harness` · `shared/rules` | 제품 트랙으로 **승격만** (직접 납품 아님) |
+
+## 용어 분리 — 「카페24」
+
+| 말 | 의미 | 트랙 |
+|----|------|------|
+| **카페24 WP / 뉴아우토반 WordPress** | WordPress **호스팅** | `wordpress` · `70-wordpress.mdc` |
+| **카페24 스마트디자인 / EC 스킨** | 쇼핑몰 **스마트디자인 스킨** (`module=` · `{$}`) | `cafe24-skin` · `80`~`82` |
+
+혼동 금지: wordpress 규칙의 cafe24-skin 스킨 작업을 대체하지 않는다. 그 반대도 동일.
+
+## WordPress 트랙 (요약)
+
+- **새 운영 프로젝트만** — 기존 `templates/*`를 WordPress로 **변환하지 않음**
+- Figma부터 `wordpress/{slug}/`에 **Classic Custom Theme** 직접 구현 (정적 HTML 선행 **기본 아님**)
+- `templates/` 완성본 → `wordpress/` **이식**은 사용자 **명시 요청 시만**
+- 호스팅: **카페24 뉴아우토반 WordPress** · 업로드 `wp-content/themes/{theme-slug}/`
+- CMS: **공지(`notice` CPT)만** 관리자 수정 · 메인 최신 **3건** — 상세·기본값 `70-wordpress.mdc`
+
+## Cafe24-skin 트랙 (요약)
+
+- **스마트디자인 쇼핑 스킨** 전용 — PHP 테마·크몽 정적 HTML 규칙과 분리
+- **실험:** `_reference-harness/` — `00-source` → `01-original` → **`02-original-qa`** → `03-analysis` → `04-working-copy` → `05-working-qa` → `06-normalized` → `07-final` → **`08-platform-map`** → `09-platform-qa`
+- **제품:** map **사용자 승인 후**만 `cafe24/{slug}/`에서 스킨 이식
+- **SoT (읽기 전용):** `templates/cafe24_shop/` — 모듈·변수 vocabulary. **수정·이동·직접 편집 금지** (이번 단계)
+- **파일럿 UI:** 메인 · 헤더 · 푸터 · 메인 진열 · 목록 카드 · 상세 상단 · Desktop / Mobile 390
+- **파일럿 non-UI:** 가입·로그인·장바구니·주문서·결제·마이페이지 — **기능 유지 QA만** (`82`) · 대규모 디자인 변경 금지
+- 상세: `80-cafe24-smart-design.mdc` · `81-cafe24-module-map.mdc` · `82-cafe24-qa.mdc`
+
+## Reference-harness → 제품 승격
+
+```
+00-source → 01-original (immutable) → 02-original-qa (PASS|승인 partial)
+  → 03-analysis → 04-working-copy → 05-working-qa
+  → 06-normalized? → 07-final → 08-platform-map → 09-platform-qa
+  → 사용자 map 승인 → cafe24/{slug}/ 또는 wordpress/{slug}/ 이식
+```
+
+- SoT: `_reference-harness/shared/rules/workflow.md` · `.cursor/rules/83-reference-harness.mdc`
+- 구 `00-reference` / `01-reconstruction` — `legacy-migration.md` (기존 case 보존 · 즉시 rename 금지)
+
+- clinic/포트폴리오 등 non-shop: `07-final` 후 `templates/{slug}/` 승격
+- shop/cafe24: **map 승인 전 `cafe24/{slug}/` 생성·스킨 코딩 금지**
+- `01-original` 수정 · **originalQa 전 working-copy** · 캡처만으로 진행 **금지**
+
+## 프로젝트 킥오프 — 질문 규칙
+
+> **원칙:** 필요한 결정만 질문 · 이미 말한 내용·`decision-log` 확정·규칙 기본값은 **재질문 금지** · Figma·기존 폴더로 명확하면 **질문 대신 근거 1줄 보고**
+
+### 항상 확인 (불명확할 때만)
+
+| # | 확인 항목 | 질문 예시 | 생략 조건 |
+|---|-----------|-----------|-----------|
+| 1 | **트랙** | 「**정적** / **WordPress** / **카페24 스킨** / **reference 실험**？」 | 요청·`decision-log`에 `[type: static\|wordpress\|cafe24-skin\|reference]` 있음 |
+| 2 | **신규 vs 기존 수정** | 「**신규**예요, **기존 slug 수정**이에요?」 | 해당 트랙 폴더 존재 + 로그 이력 |
+| 3 | **slug** (신규만) | Figma·도메인·브랜드 → kebab-case **제안** → 승인 | 사용자·decision-log 확정 |
+| 4 | **페이지·화면 범위** | 「이번에 **만드는 페이지**가 뭐예요?」 | 요청·파일럿 범위 명시 · WP는 `70` 근거 보고 가능 · cafe24는 `80` 파일럿 기본값 보고 가능 |
+| 5 | **분석/디자인 승인** | Figma 또는 reference 분석 후 「**이대로 진행할까요?**」 | **항상 필수** — 명시 승인 전 코딩 **금지** |
+| 6 | **cafe24 map 승인** (스킨만) | mapping 보고 후 「**map 승인, 스킨 이식 진행**」 | cafe24-skin · map 산출물 있을 때 **필수** |
+
+- 킥오프 질문은 **한 메시지에 묶어** 가능 · 아직 결정 불필요한 항목은 **미리 묻지 않음**
+- **조건부** — WordPress: `70` 「킥오프 — 조건부」 · static 인터랙션: `46` · cafe24: `80`·`81`
+
+### 질문 생략 (공통)
+
+- 사용자가 **이번 대화에서 이미 답한** 내용
+- **`decision-log`에 확정**된 내용
+- Figma MCP·기존 폴더·로그로 **판단 가능**한 내용 — 추측 구현 금지, **근거 1줄 보고**로 대체
+
+## 충돌 시 우선순위
+
+1. 사용자 명시 지시
+2. 본 파일 (트랙)
+3. 트랙별 규칙 (`static` → `00~60` / `wordpress` → `70` / `cafe24-skin` → `80~82` / reference → `83` · harness README · `shared/rules`)
+4. `_docs/context-guide.md`
+
+## 금지
+
+- `templates/{slug}/`에 PHP 테마·`functions.php` 작성
+- `wordpress/{slug}/`를 `package-delivery.js`(정적)로 납품
+- 플랫폼별 `_delivery/cafe24/` · `_delivery/imweb/` 등 하위 폴더 생성 (`00-core` 동일)
+- `templates/cafe24_shop/` 덮어쓰기·이동(장기 `_baseline` 이사는 **별도 승인**)
+- map 승인 전 `cafe24/{slug}/` 스킨 코딩 · normalized에 모듈 태그 혼입

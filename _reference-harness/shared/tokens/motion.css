@@ -1,0 +1,9 @@
+/**
+ * Tenfold SoT — motion (최소)
+ */
+:root {
+  --motion-fast: 160ms;
+  --motion-normal: 240ms;
+  --motion-slow: 400ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}

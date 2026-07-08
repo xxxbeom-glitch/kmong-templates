@@ -1,0 +1,92 @@
+{
+  "caseId": "celltrion",
+  "sourceUrl": "https://www.celltrion.com/",
+  "viewports": [
+    1920,
+    390
+  ],
+  "sections": [
+    {
+      "id": "header",
+      "keep": true
+    },
+    {
+      "id": "popup-shareholder",
+      "keep": false
+    },
+    {
+      "id": "hero",
+      "keep": true
+    },
+    {
+      "id": "one-stop",
+      "keep": true
+    },
+    {
+      "id": "products",
+      "keep": true
+    },
+    {
+      "id": "global",
+      "keep": true
+    },
+    {
+      "id": "magazine",
+      "keep": true
+    },
+    {
+      "id": "news",
+      "keep": true
+    },
+    {
+      "id": "footer",
+      "keep": true
+    }
+  ],
+  "slots": [
+    "hero.title",
+    "oneStop.pillars[3]",
+    "products.modes",
+    "products.items[]",
+    "news.items[]"
+  ],
+  "assets": [
+    {
+      "key": "logo",
+      "status": "listed"
+    },
+    {
+      "key": "hero-kv",
+      "status": "listed"
+    },
+    {
+      "key": "pillar-icons",
+      "status": "listed"
+    },
+    {
+      "key": "product-thumbs",
+      "status": "listed"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "products-tabs",
+      "sectionId": "products",
+      "presetCandidate": "custom",
+      "status": "planned"
+    },
+    {
+      "id": "lang-switch",
+      "sectionId": "header",
+      "presetCandidate": "custom",
+      "status": "planned"
+    },
+    {
+      "id": "shareholder-modal",
+      "sectionId": "popup-shareholder",
+      "presetCandidate": "custom",
+      "status": "skip"
+    }
+  ],
+  "updatedAt": "2026-07-08"
+}

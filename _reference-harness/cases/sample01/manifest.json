@@ -1,0 +1,41 @@
+{
+  "caseId": "sample01",
+  "displayName": "Rêverio (SKIN 멀티레이아웃)",
+  "sourceUrl": "https://d.cafe24.com/sample?productCode=PTMD855689&frame=P",
+  "demoMallUrl": "https://ecudemo370921.cafe24.com/",
+  "productCode": "PTMD855689",
+  "track": "cafe24-skin",
+  "pilot": true,
+  "viewports": [1920, 390],
+  "stages": {
+    "reference": { "status": "in_progress", "updatedAt": "2026-07-08" },
+    "reconstruction": { "status": "pending", "updatedAt": "" },
+    "normalized": { "status": "pending", "updatedAt": "" },
+    "cafe24-map": { "status": "pending", "updatedAt": "" },
+    "starter": { "status": "skipped", "updatedAt": "" },
+    "portfolio": { "status": "skipped", "updatedAt": "" }
+  },
+  "sections": [
+    { "id": "header", "keep": true, "notes": "띠배너·다국어·포인트·장바구니" },
+    { "id": "hero-slide", "keep": true, "notes": "메인 비주얼 슬라이드" },
+    { "id": "vendor-design-popup", "keep": false, "notes": "스킨 판촉 오버레이 — reconstruction 제외" },
+    { "id": "brand-text-band", "keep": true, "notes": "" },
+    { "id": "icon-category", "keep": true, "notes": "카테고리 아이콘 바" },
+    { "id": "main-display-weekly", "keep": true, "notes": "listmain-1 슬라이드" },
+    { "id": "grid-banner-brand", "keep": true, "notes": "" },
+    { "id": "main-display-tabbed", "keep": true, "notes": "카테고리 탭 + listmain-3" },
+    { "id": "footer", "keep": true, "notes": "" }
+  ],
+  "interactions": [
+    { "id": "header-drawer", "sectionId": "header", "presetCandidate": "custom", "status": "planned" },
+    { "id": "hero-autoplay", "sectionId": "hero-slide", "presetCandidate": "custom", "status": "planned" },
+    { "id": "category-tab-filter", "sectionId": "main-display-tabbed", "presetCandidate": "custom", "status": "planned" },
+    { "id": "product-slide", "sectionId": "main-display-weekly", "presetCandidate": "custom", "status": "planned" }
+  ],
+  "skinRisk": "high",
+  "reconstructionDifficulty": "high",
+  "promoteTo": { "cafe24-skin": "cafe24/sample01", "templates": null, "wordpress": null },
+  "licenseNote": "카페24 유료 스킨 샘플 분석용. 원본 스킨 복제·재배포 금지.",
+  "createdAt": "2026-07-08",
+  "updatedAt": "2026-07-08"
+}

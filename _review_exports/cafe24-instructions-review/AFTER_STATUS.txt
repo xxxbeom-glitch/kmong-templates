@@ -1,0 +1,32 @@
+﻿ M .cursor/rules/00-project-tracks.mdc
+ M _logs/change-log.md
+ M _logs/qa-log.md
+?? .cursor/rules/80-cafe24-smart-design.mdc
+?? .cursor/rules/81-cafe24-module-map.mdc
+?? .cursor/rules/82-cafe24-qa.mdc
+?? .cursor/rules/83-reference-harness.mdc
+?? .cursor/rules/83-reference-reconstruction.mdc
+?? _reference-harness/
+?? _review_exports/
+?? docs/
+?? wordpress/check.html
+?? wordpress/dup-installer-bootlog__41682b6-08085725.txt
+?? wordpress/tenfold-migrate.php
+?? wordpress/tenfold_studio_migration_ec32e0f2d83943bb6719_20260708085725_archive.daf
+---
+NOTE: Lines below exclude _review_exports filter for human review. Pre-existing dirty tree may appear.
+
+ M .cursor/rules/00-project-tracks.mdc
+ M _logs/change-log.md
+ M _logs/qa-log.md
+?? .cursor/rules/80-cafe24-smart-design.mdc
+?? .cursor/rules/81-cafe24-module-map.mdc
+?? .cursor/rules/82-cafe24-qa.mdc
+?? .cursor/rules/83-reference-harness.mdc
+?? .cursor/rules/83-reference-reconstruction.mdc
+?? _reference-harness/
+?? docs/
+?? wordpress/check.html
+?? wordpress/dup-installer-bootlog__41682b6-08085725.txt
+?? wordpress/tenfold-migrate.php
+?? wordpress/tenfold_studio_migration_ec32e0f2d83943bb6719_20260708085725_archive.daf

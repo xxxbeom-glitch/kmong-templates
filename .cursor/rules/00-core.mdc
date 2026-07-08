@@ -5,28 +5,32 @@ alwaysApply: true
 
 # Core
 
-- 이 프로젝트는 **크몽 판매용** HTML/CSS/jQuery **독립 완성형** 템플릿 제작 프로젝트다.
-- 각 템플릿은 `templates/{slug}/` 아래 **독립 완성형**으로 개발한다.
-- 스택: 순수 HTML + CSS + jQuery 3.x(CDN). 프레임워크·빌드 도구 없음.
-- Figma **1920px** 기준. 반응형 **1024px**(태블릿)·**768px**(모바일) 필수 — `35-responsive.mdc`.
-- Figma MCP 수치를 **우선**한다. 추측으로 간격·폰트·구조를 바꾸지 않는다.
-- **QA PASS 전**에는 섹션·페이지·작업을 완료 처리하지 않는다.
-- 자세한 가이드는 `_docs/*.md`.
-- 작업 로그(`_logs/*.md`)는 **단순 기록용이 아니라 다음 작업 전 필수 컨텍스트**다. 새 작업 시작 전 `20-harness-workflow.mdc`의 **로그 확인** 절차를 따른다.
-- 새 작업 시작 전 `_docs/context-guide.md`를 기준으로 **필요한 컨텍스트**를 확인한다.
-- 컨텍스트는 많이 넣는 것이 아니라 **현재 작업에 필요한 정보만** 사용한다.
-- 현재 작업 범위와 무관한 과거 로그, legacy 문서, 다른 템플릿 기준을 현재 작업에 섞지 않는다.
+- 이 저장소는 **멀티 트랙**이다. 작업 경로·규칙은 **`00-project-router.mdc`**로 판별한다.
+- **정적(크몽) 트랙:** HTML/CSS/jQuery **독립 완성형** · 작업 공간 `templates/{slug}/` (`cafe24_shop` 제외).
+- 정적 스택: 순수 HTML + CSS + jQuery 3.x(CDN). 프레임워크·빌드 도구 없음.
+- 정적: Figma **1920px** · `@1024` · `@768` — `35-responsive.mdc` · `10-static-template.mdc`.
+- Figma MCP 수치 우선(해당 트랙). 추측으로 간격·폰트·구조를 바꾸지 않는다.
+- **QA PASS 전**에는 섹션·페이지·작업을 완료 처리하지 않는다 (트랙별 QA 문서).
+- 자세한 가이드: `_docs/*.md` · 카페24 개요 `docs/cafe24/CAFE24_RULES_OVERVIEW.md`.
+- 작업 로그(`_logs/*.md`)는 다음 작업 전 필수 컨텍스트. 정적은 `20-harness-workflow` 로그 확인.
+- `_docs/context-guide.md`로 **현재 작업에 필요한 정보만** 확인.
+- 작업과 무관한 과거 로그·legacy·다른 트랙 기준을 섞지 않는다.
 
 적용 기준:
-- 모든 작업의 출발점. 범위·플랫폼·완료 판단이 헷갈릴 때.
+- 범위·플랫폼·완료 판단이 헷갈릴 때 → **먼저 라우터**.
+
+트랙 판별: `00-project-router.mdc` (정적 / Cafe24 A·B / Reference / WP).  
+정적 전용: `10-static-template.mdc`. 카페24: `80`~`82`.
 
 금지:
-- 플랫폼별 납품 하위 폴더 (`imweb`, `cafe24` 등) 생성
+- **정적 납품** 경로에 플랫폼별 하위 폴더 (`_delivery/cafe24/`, `_delivery/imweb/` 등) 생성
 - `_modules`, `_tokens`, 공통 런타임 모듈 생성
-- 템플릿 간 CSS/JS import·공유 의존
+- 정적 템플릿 간 CSS/JS import·공유 의존
 - 사용자 승인·QA PASS 없이 "완료" 선언
 - git commit (사용자 명시 시만, QA PASS 후 — `55-git-workflow.mdc` 참고)
 - Do not push to remote unless the user explicitly requests it.
 
+참고: 제품 작업 경로 `cafe24/{slug}/` 는 Track A/B에서 **허용**(라우터). `_delivery/cafe24/` 와 혼동하지 않는다.
+
 완료 기준:
-- 작업이 독립 템플릿 원칙에 맞고, 후속 QA·납품 단계로 넘길 수 있는 상태.
+- 해당 트랙 규칙에 맞고, 후속 QA·납품으로 넘길 수 있는 상태.

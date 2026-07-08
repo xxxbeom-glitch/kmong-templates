@@ -1,0 +1,6 @@
+﻿AGENTS.md: not found
+CLAUDE.md: not found
+llms.txt (repo root): not found (exists under templates/cafe24_shop/llms.txt — excluded as SoT source)
+.cursor/skills: not found
+.cursor/commands: not found
+README.md (repo root): exists but not cafe24-instruction focussed — excluded unless later found relevant

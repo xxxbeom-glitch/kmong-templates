@@ -1,0 +1,15 @@
+/**
+ * Tenfold SoT — color roles (semantic)
+ * 구체 hex는 파일럿 normalized에서 브랜드에 맞게 덮어쓸 수 있음.
+ * 여기 값은 역할(semantic) 기본값.
+ */
+:root {
+  --color-text: #1c1917;
+  --color-text-muted: rgba(28, 25, 23, 0.6);
+  --color-accent: #2f6b5a;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f5f4;
+  --color-surface: #ffffff;
+  --color-border: rgba(28, 25, 23, 0.12);
+  --color-on-accent: #ffffff;
+}

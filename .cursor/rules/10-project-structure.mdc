@@ -17,21 +17,23 @@ kmong-templates/
     └── {slug}/
 ```
 
-## Active workspace (`templates/`)
+## Active workspace
 
-- **`templates/{slug}/` = 유일한 개발·구현 공간.** 섹션 HTML/CSS/JS·preset JS는 **여기에 직접** 작성한다.
-- **별도 작업실(workbench)·임시 복사본→본문 반영(merge/씌우기) 단계는 사용하지 않는다.** (2026-06-08 확정)
-- `templates/` is the active workspace for new standalone templates.
-- Do not keep old template folders in `templates/` after project reset.
-- Legacy templates must be stored under `_docs/legacy/templates/`.
-- New template folders must be created only after detecting the top-level Figma frame name and receiving user approval.
-- When no active template exists, `templates/` stays empty (`.gitkeep` only) except `templates/index.html` hub.
-- **`templates/index.html`** — 텍스트 링크로 각 `{slug}/index.html` 연결 · 신규 템플릿 승인 시 `<li>` 추가 · 패키징 시 `_delivery/index.html` 동기화
+트랙별 작업 경로: **`00-project-router.mdc`**.
 
-- 템플릿 필수 구성: `index.html`, `css/style.css`, `js/main.js`, `assets/`(images·icons).
-- 서브페이지는 같은 템플릿 폴더 안에 `about.html` 등으로 추가.
-- 스타일·색·폰트·레이아웃 변수는 **해당 템플릿** `css/style.css` `:root`에만 둔다.
-- 레거시 참고: `_docs/legacy/` (수정·복원 금지, 참고만).
+| 트랙 | 경로 |
+|------|------|
+| Static | `templates/{slug}/` (`cafe24_shop` 제외) |
+| Cafe24 A/B | `cafe24/{slug}/` (working skin) · 배포 `_release/{slug}/` (`84`) |
+| Reference C | `_reference-harness/cases/{slug}/` |
+| WordPress | `wordpress/{slug}/` |
+
+### 정적 (`templates/`)
+
+- **`templates/{slug}/` = 정적 템플릿 구현 공간.** workbench→merge 없음.
+- `templates/cafe24_shop/` = **global syntax reference** (이 구조 규칙의 제품 스킨 작업 공간 아님 · 수정 금지).
+- 신규 정적 slug는 Figma 프레임명 → 제안 → 사용자 승인 전 폴더 생성 금지 (`10-static-template`).
+- `templates/index.html` 허브 · 패키징 시 `_delivery/index.html` 동기화.
 
 ## 신규 템플릿 — Figma 프레임명 → slug
 
@@ -62,11 +64,13 @@ Proposed folder: templates/{slug}/
 - 새 템플릿 추가, 파일 생성 위치 결정, 납품물 정리 시.
 
 금지:
-- `_delivery/{platform}` 등 플랫폼별 하위 폴더, `_modules`, `_tokens`, `_common` 재생성
+- `_delivery/{platform}` 등 플랫폼별 **납품** 하위 폴더 (`_delivery/cafe24/` 금지 — 제품 `cafe24/{slug}/`와 혼동 금지)
+- `_modules`, `_tokens`, `_common` 재생성
 - 루트·`_harness`에 템플릿 런타임 코드 배치
-- **`_harness/workbench/` 등 별도 개발 공간 생성·workbench→templates 반영 워크플로**
-- 템플릿 밖에서 다른 템플릿 CSS/JS 참조 (`../../` 공유)
-- 승인 없이 `templates/{slug}/` 폴더 생성
+- **`_harness/workbench/`** 등 별도 개발 공간·workbench→templates 반영
+- 정적 템플릿 간 `../../` CSS/JS 공유
+- 승인 없이 `templates/{slug}/` (정적) 생성
+- `templates/cafe24_shop/` 수정
 
 완료 기준:
 - 변경 파일이 올바른 템플릿·폴더 안에만 존재하고, 독립 실행 가능한 구조.
