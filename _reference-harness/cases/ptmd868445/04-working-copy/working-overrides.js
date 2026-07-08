@@ -40,6 +40,11 @@
     sw.params.slidesPerView = cfg.slidesPerView;
     sw.params.slidesPerGroup = cfg.slidesPerGroup;
     sw.params.spaceBetween = cfg.spaceBetween;
+    // grid % width + theme margin-right break Swiper math — keep slides under Swiper control
+    sw.params.watchOverflow = true;
+    if (typeof sw.updateSize === 'function') sw.updateSize();
+    if (typeof sw.updateSlides === 'function') sw.updateSlides();
+    if (typeof sw.updateSlidesClasses === 'function') sw.updateSlidesClasses();
   }
 
   function patchProductSwiper(el) {
