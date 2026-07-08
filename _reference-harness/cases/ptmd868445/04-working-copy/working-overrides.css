@@ -264,8 +264,8 @@ button {
 }
 
 #header.header--two-row .header__util a {
-  font-size: var(--ds-fs-caption-md);
-  font-weight: var(--ds-fw-regular);
+  font-size: var(--ds-fs-caption-lg);
+  font-weight: var(--ds-fw-medium);
   line-height: var(--ds-lh-base);
   color: var(--ds-c-text-sub);
   text-decoration: none;
@@ -345,7 +345,8 @@ button {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: var(--ds-fs-caption-md);
+  font-size: var(--ds-fs-caption-lg);
+  font-weight: var(--ds-fw-medium);
   line-height: var(--ds-lh-base);
   color: var(--ds-c-text-placeholder);
 }
