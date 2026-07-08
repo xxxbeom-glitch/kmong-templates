@@ -1,16 +1,22 @@
 /**
- * MOALUCK working overrides — MD'S PICK only
- * Target size feel: PTMD807311 grid4 (~1:1, 4 per row on desktop)
- * Do NOT touch other listmain/swiper until user approval.
+ * MOALUCK working overrides — shared product modules
+ * Apply MD'S PICK decisions to all product carousels (.prdList inside .swiper):
+ * - Desktop 4 / tablet 3 / mobile 2
+ * - Nav Y synced to thumbnail center
  */
 (function () {
-  function syncNavToThumb(root) {
-    if (!root) return;
-    var box = root.querySelector('.swiper-box');
-    var thumb = root.querySelector('.thumbnail');
-    var next = root.querySelector('.swiper-button-next');
-    var prev = root.querySelector('.swiper-button-prev');
-    if (!box || !thumb || !next || !prev) return;
+  var FOUR_COL = {
+    mobile: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 8 },
+    tablet: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 16 },
+    desktop: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 16 },
+  };
+
+  function syncNavToThumb(box) {
+    if (!box) return;
+    var thumb = box.querySelector('.thumbnail');
+    var next = box.querySelector('.swiper-button-next');
+    var prev = box.querySelector('.swiper-button-prev');
+    if (!thumb || !next || !prev) return;
 
     var boxRect = box.getBoundingClientRect();
     var thumbRect = thumb.getBoundingClientRect();
@@ -26,65 +32,94 @@
     prev.style.transform = 'translateY(-50%)';
   }
 
-  function patchMdPick() {
-    var root = document.querySelector('section.md-pick');
-    if (!root) return false;
-    var el = root.querySelector('.swiper');
+  function applyViewportParams(sw) {
+    var cfg;
+    if (window.innerWidth >= 1024) cfg = FOUR_COL.desktop;
+    else if (window.innerWidth >= 768) cfg = FOUR_COL.tablet;
+    else cfg = FOUR_COL.mobile;
+    sw.params.slidesPerView = cfg.slidesPerView;
+    sw.params.slidesPerGroup = cfg.slidesPerGroup;
+    sw.params.spaceBetween = cfg.spaceBetween;
+  }
+
+  function patchProductSwiper(el) {
     if (!el || !el.swiper) return false;
+    if (!el.querySelector('.prdList')) return false;
 
     var sw = el.swiper;
-    if (!sw.__moaMdPickPatched) {
-      sw.__moaMdPickPatched = true;
+    var box = el.closest('.swiper-box') || el.parentElement;
 
-      sw.params.slidesPerView = 2;
-      sw.params.slidesPerGroup = 2;
-      sw.params.spaceBetween = 8;
+    if (!sw.__moaPrdPatched) {
+      sw.__moaPrdPatched = true;
       sw.params.breakpoints = {
         768: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 16,
+          slidesPerView: FOUR_COL.tablet.slidesPerView,
+          slidesPerGroup: FOUR_COL.tablet.slidesPerGroup,
+          spaceBetween: FOUR_COL.tablet.spaceBetween,
         },
         1024: {
-          slidesPerView: 4,
-          slidesPerGroup: 4,
-          spaceBetween: 16,
+          slidesPerView: FOUR_COL.desktop.slidesPerView,
+          slidesPerGroup: FOUR_COL.desktop.slidesPerGroup,
+          spaceBetween: FOUR_COL.desktop.spaceBetween,
         },
       };
+      // base (mobile-first) values
+      sw.params.slidesPerView = FOUR_COL.mobile.slidesPerView;
+      sw.params.slidesPerGroup = FOUR_COL.mobile.slidesPerGroup;
+      sw.params.spaceBetween = FOUR_COL.mobile.spaceBetween;
 
-      if (window.innerWidth >= 1024) {
-        sw.params.slidesPerView = 4;
-        sw.params.slidesPerGroup = 4;
-        sw.params.spaceBetween = 16;
-      } else if (window.innerWidth >= 768) {
-        sw.params.slidesPerView = 3;
-        sw.params.slidesPerGroup = 3;
-        sw.params.spaceBetween = 16;
-      }
-
+      applyViewportParams(sw);
       sw.update();
 
       sw.on('resize', function () {
-        syncNavToThumb(root);
+        applyViewportParams(sw);
+        syncNavToThumb(box);
       });
       sw.on('update', function () {
-        syncNavToThumb(root);
+        syncNavToThumb(box);
       });
-      window.addEventListener('resize', function () {
-        syncNavToThumb(root);
-      });
+    } else {
+      applyViewportParams(sw);
+      sw.update();
     }
 
-    syncNavToThumb(root);
+    syncNavToThumb(box);
     return true;
+  }
+
+  function patchAll() {
+    var nodes = document.querySelectorAll('.swiper');
+    var ok = 0;
+    for (var i = 0; i < nodes.length; i++) {
+      if (patchProductSwiper(nodes[i])) ok += 1;
+    }
+    // also sync static/swiper-box navs that already exist
+    document.querySelectorAll('.swiper-box').forEach(function (box) {
+      if (box.querySelector('.prdList')) syncNavToThumb(box);
+    });
+    return ok > 0;
   }
 
   var tries = 0;
   var timer = setInterval(function () {
     tries += 1;
-    if (patchMdPick() || tries > 40) clearInterval(timer);
+    patchAll();
+    if (tries > 40) clearInterval(timer);
   }, 150);
 
-  document.addEventListener('DOMContentLoaded', patchMdPick);
-  window.addEventListener('load', patchMdPick);
+  document.addEventListener('DOMContentLoaded', patchAll);
+  window.addEventListener('load', patchAll);
+  window.addEventListener('resize', function () {
+    patchAll();
+  });
+
+  // Brand exhibition / ranking tabs swap panels after init
+  document.addEventListener(
+    'click',
+    function () {
+      setTimeout(patchAll, 50);
+      setTimeout(patchAll, 300);
+    },
+    true
+  );
 })();

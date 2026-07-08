@@ -5,26 +5,25 @@
  * - font-family: SUIT (not Pretendard / not 871337 Montserrat)
  *
  * Global typography values from PTMD871337 (ecudemo389695):
- * - rem root html 20px · body 0.75rem(15px) / lh 1.3 / letter-spacing normal
- * - util: text-extra-small 12 / text-small 14 / text-medium 16 / text-large 18 / text-extra-large 20
- * Mapped onto MOALUCK --ds-fs / --ds-fw / --ds-lh / --ds-ls (semantic names kept)
+ * Mapped onto MOALUCK --ds-fs / --ds-fw / --ds-lh / --ds-ls
  *
- * MD'S PICK only (layout):
- * - 4-col · thumb 1:1 · radius --ds-r-lg · nav always visible
+ * Shared product module (was MD'S PICK only → all .ds-base-product / .prdList):
+ * - Desktop 4-col feel · thumb 1:1 · radius --ds-r-lg
+ * - product swiper nav always visible · icon 50% · nav Y = thumb center
  */
 @import url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css');
 
 :root {
   /* ---- size (PTMD871337 rem util → px @ html 20px) ---- */
-  --ds-fs-xs: 12px; /* 0.6rem text-extra-small */
-  --ds-fs-sm: 14px; /* 0.7rem text-small */
-  --ds-fs-md: 16px; /* 0.8rem text-medium */
-  --ds-fs-lg: 18px; /* 0.9rem text-large */
-  --ds-fs-xl: 20px; /* 1rem text-extra-large */
+  --ds-fs-xs: 12px;
+  --ds-fs-sm: 14px;
+  --ds-fs-md: 16px;
+  --ds-fs-lg: 18px;
+  --ds-fs-xl: 20px;
   --ds-fs-2xl: 24px;
   --ds-fs-3xl: 28px;
-  --ds-fs-4xl: 30px; /* 871337 section title frequency */
-  --ds-fs-5xl: 40px; /* 2rem */
+  --ds-fs-4xl: 30px;
+  --ds-fs-5xl: 40px;
 
   --ds-fs-display-lg: 40px;
   --ds-fs-display-md: 30px;
@@ -34,25 +33,22 @@
   --ds-fs-h4: 18px;
   --ds-fs-h5: 16px;
 
-  --ds-fs-body-lg: 16px; /* text-medium */
-  --ds-fs-body-md: 15px; /* 871337 body (0.75rem) */
-  --ds-fs-caption-lg: 14px; /* text-small */
-  --ds-fs-caption-md: 12px; /* text-extra-small */
-  --ds-fs-caption-sm: 12px; /* no 11px util — snap to xs */
+  --ds-fs-body-lg: 16px;
+  --ds-fs-body-md: 15px;
+  --ds-fs-caption-lg: 14px;
+  --ds-fs-caption-md: 12px;
+  --ds-fs-caption-sm: 12px;
 
-  /* ---- weight (same ladder; 871337 uses 400/500/600/700) ---- */
   --ds-fw-regular: 400;
   --ds-fw-medium: 500;
   --ds-fw-semibold: 600;
   --ds-fw-bold: 700;
 
-  /* ---- line-height ---- */
   --ds-lh-tight: 1.2;
-  --ds-lh-base: 1.3; /* 871337 body */
+  --ds-lh-base: 1.3;
   --ds-lh-loose: 1.5;
 
-  /* ---- letter-spacing ---- */
-  --ds-ls: 0; /* 871337 default normal (was -0.02em) */
+  --ds-ls: 0;
 }
 
 @media (max-width: 767px) {
@@ -84,31 +80,39 @@ select,
 textarea,
 button {
   font-family: 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: var(--ds-fs-body-md); /* 15px · PTMD871337 body */
+  font-size: var(--ds-fs-body-md);
   font-weight: var(--ds-fw-regular);
   letter-spacing: var(--ds-ls);
   line-height: var(--ds-lh-base);
 }
 
-/* ---- MD'S PICK only (layout / chrome) ---- */
-section.md-pick .prdList .thumbnail {
+/* =========================================================
+ * Shared product card / list (MD'S PICK → .ds-base-product /.prdList)
+ * ========================================================= */
+
+.ds-base-product .prdList .thumbnail,
+.prdList .thumbnail {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   margin-bottom: 16px;
-  border-radius: var(--ds-r-lg); /* 24px */
+  border-radius: var(--ds-r-lg);
 }
 
-section.md-pick .prdList .thumbnail > a {
+.ds-base-product .prdList .thumbnail > a,
+.prdList .thumbnail > a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-section.md-pick .prdList .thumbnail img.img-before,
-section.md-pick .prdList .thumbnail img.img-after,
-section.md-pick .prdList .thumbnail a img {
+.ds-base-product .prdList .thumbnail img.img-before,
+.ds-base-product .prdList .thumbnail img.img-after,
+.ds-base-product .prdList .thumbnail a img,
+.prdList .thumbnail img.img-before,
+.prdList .thumbnail img.img-after,
+.prdList .thumbnail a img {
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
@@ -117,17 +121,38 @@ section.md-pick .prdList .thumbnail a img {
   border-radius: var(--ds-r-lg) !important;
 }
 
-section.md-pick .prdList .thumbnail img.img-after {
+.ds-base-product .prdList .thumbnail img.img-after,
+.prdList .thumbnail img.img-after {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* nav: always visible · vertical center via JS */
-section.md-pick .swiper-box .swiper-button-next,
-section.md-pick .swiper-box .swiper-button-prev,
-section.md-pick .ds-base-product .swiper-box .swiper-button-next,
-section.md-pick .ds-base-product .swiper-box .swiper-button-prev {
+/* Desktop / tablet grid widths stay 4-col when class is grid4; force 25% when swiper not yet patched */
+.ds-base-product ul.prdList.grid4 > li,
+.ds-base-product ul.grid4 > li {
+  width: 25%;
+}
+
+@media (max-width: 1023px) {
+  .ds-base-product ul.prdList.grid4 > li,
+  .ds-base-product ul.grid4 > li {
+    width: 33.33%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ds-base-product ul.prdList.grid4 > li,
+  .ds-base-product ul.grid4 > li {
+    width: 50%;
+  }
+}
+
+/* product swiper nav: always visible · icon 50% */
+.ds-base-product .swiper-box .swiper-button-next,
+.ds-base-product .swiper-box .swiper-button-prev,
+.swiper-box:has(.prdList) .swiper-button-next,
+.swiper-box:has(.prdList) .swiper-button-prev {
   display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -136,14 +161,17 @@ section.md-pick .ds-base-product .swiper-box .swiper-button-prev {
   pointer-events: auto !important;
 }
 
-section.md-pick .swiper-box .swiper-button-next.swiper-button-disabled,
-section.md-pick .swiper-box .swiper-button-prev.swiper-button-disabled {
+.ds-base-product .swiper-box .swiper-button-next.swiper-button-disabled,
+.ds-base-product .swiper-box .swiper-button-prev.swiper-button-disabled,
+.swiper-box:has(.prdList) .swiper-button-next.swiper-button-disabled,
+.swiper-box:has(.prdList) .swiper-button-prev.swiper-button-disabled {
   opacity: 0.35 !important;
   visibility: visible !important;
 }
 
-/* circle 48px 유지 — icon glyph만 50% */
-section.md-pick .swiper-box .swiper-button-next:after,
-section.md-pick .swiper-box .swiper-button-prev:after {
+.ds-base-product .swiper-box .swiper-button-next:after,
+.ds-base-product .swiper-box .swiper-button-prev:after,
+.swiper-box:has(.prdList) .swiper-button-next:after,
+.swiper-box:has(.prdList) .swiper-button-prev:after {
   font-size: 10px !important;
 }
