@@ -48,3 +48,11 @@ section.md-pick .prdList .thumbnail img.img-after {
   top: 0;
   left: 0;
 }
+
+/* nav: vertical center of thumbnail image (not whole card)
+   JS (working-overrides.js) sets exact top; CSS is fallback */
+section.md-pick .swiper-box .swiper-button-next,
+section.md-pick .swiper-box .swiper-button-prev {
+  margin-top: 0 !important;
+  transform: translateY(-50%) !important;
+}

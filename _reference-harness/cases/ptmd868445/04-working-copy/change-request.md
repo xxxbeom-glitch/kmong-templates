@@ -21,3 +21,4 @@
 | 2026-07-08 | working-copy 초기화 (원본 복사) |
 | 2026-07-08 | `working-overrides.css` — body 기본 font-family만 SUIT로 교체 · ds 사이즈/시맨틱 미변경 |
 | 2026-07-08 | MD’S PICK만 — swiper 6열→4열 · 썸네일 1:1 cover (참고 ~305px 크기감) · 타 진열 미변경 |
+| 2026-07-08 | MD’S PICK 좌우 네비 → 썸네일 이미지 세로 중앙 정렬 |
