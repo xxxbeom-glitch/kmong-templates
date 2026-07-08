@@ -3,7 +3,7 @@ Theme Name: 365 Hess Women's Clinic
 Theme URI: https://example.com/
 Author: kmong-templates
 Description: 365헤스여성의원 — Figma 365hes-homepage-1920 (614:4) · 카페24 WordPress 운영 테마
-Version: 0.1.0
+Version: 0.1.1
 Text Domain: 365-hes-womens-clinic
 */
 
@@ -108,8 +108,6 @@ Text Domain: 365-hes-womens-clinic
   --staff-h: clamp(360px, 29.1667vw, 560px);
   --staff-stack-gap: clamp(24px, 1.875vw, 36px);
   --staff-head-gap: clamp(12px, 0.8333vw, 16px);
-  --staff-title-size: clamp(28px, 2.1875vw, 42px);
-  --staff-title-lh: 1.4;
   --staff-cta-h: clamp(42px, 2.4479vw, 47px);
   --staff-cta-px: clamp(28px, 2.2396vw, 43px);
   --staff-cta-py: clamp(12px, 0.7292vw, 14px);
@@ -934,7 +932,7 @@ p {
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 68% center;
+  object-position: 68% top;
 }
 
 .section-medical-staff__overlay {
@@ -981,9 +979,9 @@ p {
 .section-medical-staff__title {
   margin: 0;
   color: var(--color-white);
-  font-size: var(--staff-title-size);
+  font-size: var(--symptom-title-size);
   font-weight: 700;
-  line-height: var(--staff-title-lh);
+  line-height: var(--symptom-title-lh);
 }
 
 .section-medical-staff__cta {
@@ -1497,17 +1495,45 @@ p {
   margin-top: 24px;
 }
 
-/* Sub-hero — 공통 (타이틀만 · 중앙 정렬) */
+/* Sub-hero — Figma Sub Hero / 서브페이지 (공통) */
 .section-sub-hero {
-  padding-block: clamp(56px, 5vw, 96px);
-  min-height: clamp(200px, 14.5833vw, 280px);
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  min-height: clamp(280px, 22.9167vw, 440px);
+  overflow: hidden;
+}
+
+.section-sub-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.section-sub-hero__bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.section-sub-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(28, 25, 23, 0.4);
+  pointer-events: none;
 }
 
 .section-sub-hero .section-shell {
+  position: relative;
+  z-index: 2;
   display: flex;
+  align-items: center;
   justify-content: center;
+  min-height: clamp(280px, 22.9167vw, 440px);
 }
 
 .section-sub-hero__inner {
@@ -1515,9 +1541,40 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
   width: 100%;
   max-width: 960px;
+  padding-block: clamp(40px, 4vw, 72px);
   text-align: center;
+}
+
+.section-sub-hero__breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-sub-hero__breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-sub-hero__breadcrumb-link,
+.section-sub-hero__breadcrumb-current,
+.section-sub-hero__breadcrumb-sep {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.section-sub-hero__breadcrumb-link:hover {
+  color: var(--color-white);
 }
 
 .section-sub-hero__title {
@@ -1525,7 +1582,295 @@ p {
   font-size: clamp(28px, 2.5vw, 48px);
   font-weight: 700;
   line-height: 1.3;
+  color: var(--color-white);
+}
+
+.section-sub-hero__desc {
+  margin: 0;
+  font-size: clamp(15px, 0.9375vw, 18px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* About — clinic */
+.about-clinic {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.about-clinic__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 2.5vw, 48px);
+  align-items: center;
+}
+
+.about-clinic__eyebrow {
+  margin: 0 0 12px;
+  font-size: var(--symptom-eyebrow-size);
+  font-weight: 500;
+  line-height: var(--symptom-eyebrow-lh);
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.about-clinic__title {
+  margin: 0 0 16px;
+  font-size: var(--symptom-title-size);
+  font-weight: 700;
+  line-height: var(--symptom-title-lh);
   color: var(--color-text);
+}
+
+.about-clinic__text {
+  margin: 0 0 12px;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.8;
+  color: #4a4540;
+}
+
+.about-clinic__text:last-child {
+  margin-bottom: 0;
+}
+
+.about-clinic__media {
+  min-height: clamp(280px, 24vw, 420px);
+  border-radius: 12px;
+  background: #e8e4df;
+}
+
+.about-features {
+  padding-block: var(--section-pad-y);
+  background: #f8f5f0;
+}
+
+.about-features__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-features__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-inline: clamp(16px, 2vw, 32px);
+  text-align: center;
+}
+
+.about-features__title {
+  margin: 0;
+  font-size: clamp(18px, 1.1458vw, 22px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.about-features__desc {
+  margin: 0;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.7;
+  color: #6b6560;
+}
+
+.about-features__divider {
+  width: 1px;
+  background: var(--color-accent);
+  opacity: 0.45;
+}
+
+/* About — doctors */
+.about-doctors {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.about-doctors__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--symptom-header-gap);
+  margin-bottom: clamp(32px, 2.5vw, 48px);
+  text-align: center;
+}
+
+.about-doctors__eyebrow {
+  margin: 0;
+  font-size: var(--symptom-eyebrow-size);
+  font-weight: 500;
+  line-height: var(--symptom-eyebrow-lh);
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.about-doctors__title {
+  margin: 0;
+  font-size: var(--symptom-title-size);
+  font-weight: 700;
+  line-height: var(--symptom-title-lh);
+  color: var(--color-text);
+}
+
+.about-doctors__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-doctors__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.about-doctors__card--reverse .about-doctors__photo {
+  order: 2;
+}
+
+.about-doctors__photo {
+  min-height: clamp(320px, 28vw, 480px);
+  background: #e8e4df;
+}
+
+.about-doctors__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: clamp(32px, 2.5vw, 48px) clamp(36px, 3.125vw, 60px);
+  background: var(--color-white);
+}
+
+.about-doctors__name {
+  margin: 0;
+  font-size: clamp(22px, 1.4583vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.about-doctors__role {
+  margin: 6px 0 0;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.about-doctors__label {
+  margin: 0 0 8px;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.about-doctors__value {
+  margin: 0;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.about-doctors__careers {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* About — schedule table */
+.about-schedule-table {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.about-schedule-table__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--symptom-header-gap);
+  margin-bottom: clamp(32px, 2.5vw, 48px);
+  text-align: center;
+}
+
+.about-schedule-table__eyebrow {
+  margin: 0;
+  font-size: var(--symptom-eyebrow-size);
+  font-weight: 500;
+  line-height: var(--symptom-eyebrow-lh);
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.about-schedule-table__title {
+  margin: 0;
+  font-size: var(--symptom-title-size);
+  font-weight: 700;
+  line-height: var(--symptom-title-lh);
+  color: var(--color-text);
+}
+
+.about-schedule-table__wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.about-schedule-table__table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: var(--color-white);
+}
+
+.about-schedule-table__table th,
+.about-schedule-table__table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e8e4df;
+  font-size: clamp(15px, 0.8854vw, 17px);
+  text-align: center;
+}
+
+.about-schedule-table__table thead th {
+  background: #f8f5f0;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.about-schedule-table__table tbody th {
+  font-weight: 500;
+  color: #6b6560;
+  text-align: left;
+}
+
+.about-schedule-table__table td {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.about-schedule-table__table td.is-closed {
+  color: var(--color-accent);
+}
+
+.about-schedule-table__table td.is-muted {
+  font-weight: 400;
+  color: #6b6560;
+}
+
+.about-schedule-table__note {
+  margin: 16px 0 0;
+  font-size: clamp(15px, 0.9375vw, 17px);
+  line-height: 1.7;
+  color: #6b6560;
+  text-align: center;
+}
+
+[data-placeholder] {
+  background: #e8e4df;
 }
 
 /* CTA band — project-spec 05-4 */
@@ -2109,7 +2454,7 @@ p {
   }
 
   .section-medical-staff__bg {
-    object-position: 75% center;
+    object-position: 75% top;
   }
 
   .section-examination__steps {
@@ -2322,7 +2667,7 @@ p {
   }
 
   .section-medical-staff__bg {
-    object-position: 82% center;
+    object-position: 82% top;
   }
 
   .section-examination__title {
@@ -2345,16 +2690,35 @@ p {
     white-space: normal;
   }
 
+  .about-clinic__intro,
+  .about-doctors__card,
+  .about-doctors__card--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .about-doctors__card--reverse .about-doctors__photo {
+    order: 0;
+  }
+
+  .about-features__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-features__divider {
+    display: none;
+  }
+
+  .section-location__title {
+    white-space: normal;
+  }
+
   .sub-areas__grid {
     grid-template-columns: 1fr;
   }
 
   .sub-exams__grid {
     grid-template-columns: 1fr;
-  }
-
-  .section-location__title {
-    white-space: normal;
   }
 
   .site-header__inner {

@@ -51,7 +51,7 @@
 | Section title | 40px / 700 | `--symptom-title-size` · `*__title` |
 | Hero title | 64px / 700 | `--hero-title-size` |
 | Hero desc | 24px / 400 | `--hero-desc-size` |
-| Staff title (on image) | 42px / 700 white | `--staff-title-size` |
+| Staff title (on image) | symptom title 동일 (28~40 / 700) · white | `--symptom-title-size` · `--symptom-title-lh` |
 | Card title (증상) | 26px / 600 | `--symptom-card-text-size` |
 | Treatment card | 28px / 700 white | `--treatment-card-title-size` |
 | FAQ question | 22px / 700 | `--faq-question-size` |
@@ -144,26 +144,27 @@
 글로벌 헤더 (header.php)
 → 서브 히어로 (신규 · P02 축소 또는 전용)
 → 본문 섹션 × N (P01 + 콘텐츠 패턴)
-→ 최종 CTA band (신규 · P11 변형)
+→ 최종 CTA band (Figma 미포함 · 미사용)
 → 글로벌 푸터 (footer.php)
 ```
 
-### 5-1. 서브 히어로 (공통 확정)
+### 5-2. 최종 CTA band
+
+- Figma 서브페이지 프레임에 **없음** → `page.php`에서 **호출하지 않음**
+- `template-parts/cta-band.php` · CSS는 보류 (납품 전 재검토)
+
+### 5-1. 서브 히어로 (Figma 공통 · 692 Sub Hero instance)
 
 | 요소 | 규칙 |
 |------|------|
-| 타이틀 | 페이지명 · 40~48px / 700 · **중앙 정렬** |
-| Eyebrow | **사용 안 함** |
-| 설명·CTA | **사용 안 함** |
-| Breadcrumb | **사용 안 함** |
-| 배경 | `#f8f5f1` (`--color-bg-alt`) |
+| 배경 | `assets/hero/sub-hero.jpg` + rgba(28,25,23,0.4) 오버레이 |
+| 높이 | 440px (clamp) |
+| Breadcrumb | 13px · 흰색 · `홈 > {허브}` (about 하위는 `홈 > 병원소개`) |
+| 타이틀 | `여성의 건강을…` · 48px / 700 · 중앙 · 흰색 (페이지별 override 가능) |
+| 설명 | 18px · 중앙 · 흰색 |
+| gap | 20px |
 
-**구현:** `template-parts/sub-hero.php` + `.section-sub-hero`
-
-### 5-2. 최종 CTA band (구현 ✓ · 디자인 TBD)
-
-- 설계서 `05-4` 카피·버튼 3종(접수 · 카카오 · 전화) 반영
-- `template-parts/cta-band.php` + `.section-cta-band`
+**구현:** `template-parts/sub-hero.php` · `inc/sub-hero.php`
 
 ---
 
@@ -203,7 +204,7 @@
 
 | 허브 | 하위 | 렌더 타입 |
 |------|------|-----------|
-| `/about` | clinic · doctors · schedule · space · location | hub / prose / schedule / section |
+| `/about` | clinic · doctors · info | about-clinic / doctors / info |
 | `/womens-disease` | 5 상세 | clinic (OK식) |
 | `/checkup` | 5 상세 | clinic |
 | `/pregnancy-birth` | 5 상세 | clinic |
@@ -298,7 +299,7 @@ assets/
 | S09 오시는길 | ✓ | `section-location.php` |
 | S10 Footer | ✓ | `footer.php` |
 | 서브 히어로 | ✓ | `sub-hero.php` |
-| CTA band | ✓ | `cta-band.php` · `page.php` 연동 |
+| CTA band | 미사용 | Figma 미포함 |
 | IA 전체 서브 (39경로) | 콘텐츠 1차 ✓ | `page-registry` · `content-registry` · `page.php` |
 | 디자인 폴리시 | 사용자 진행 | — |
 

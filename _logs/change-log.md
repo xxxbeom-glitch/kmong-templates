@@ -1,5 +1,41 @@
 # Change Log
 
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 서브페이지 하단 CTA band 제거
+
+**범위:** `page.php` · `assets.php`  
+**내용:** Figma 미포함 하단 CTA band `page.php` 연동 해제
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 서브히어로 미출력 버그 수정
+
+**범위:** `inc/pages.php` · `content-registry.php` · `style.css`  
+**원인:** `hero => array()`일 때 `!empty()`가 false → 서브히어로·Figma 배경 미렌더  
+**조치:** `array_key_exists('hero')`로 변경 · about/support 허브 기본 히어로 적용 · 구 about 경로 → `/about/info/` 리다이렉트
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 병원소개 IA·서브히어로 Figma 반영
+
+**범위:** GNB · `page-registry` · `content-registry` · `sub-hero.php` · about 3페이지 템플릿 · `style.css` · 구페이지 제거  
+**내용:** 병원소개 하위 3개(병원소개·의료진소개·진료안내) · `/about/info/` 신규 · schedule/space/location 제거 · 서브히어로 이미지+breadcrumb 공통 적용
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic TEAMS 타이틀 폰트 통일
+
+**범위:** `style.css` `.section-medical-staff__title`  
+**내용:** size·lh를 공통 섹션 타이틀(`--symptom-title-size` / `--symptom-title-lh`)에 맞춤 · 컬러·정렬 유지 · 전용 토큰 제거
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic TEAMS 배경 윗라인 맞춤
+
+**범위:** `style.css` `.section-medical-staff__bg`  
+**내용:** `object-position` 세로축 `center` → `top` (PC·1024·768)
+
+---
+
 ## 2026-07-07 — [wordpress] 365-hes-womens-clinic 설계서 IA 전체 페이지 연결
 
 **범위:** `inc/page-registry.php` · `inc/content-registry.php` · `inc/pages.php` · `template-parts/pages/*` · `functions.php` · `page.php` · `assets.php` · `header.php` · `style.css`  

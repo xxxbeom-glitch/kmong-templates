@@ -7,11 +7,9 @@
 function hes_womens_clinic_page_registry() {
   return array(
     'about' => '병원소개',
-    'about/clinic' => '병원 소개',
-    'about/doctors' => '의료진 소개',
-    'about/schedule' => '진료 안내',
-    'about/space' => '진료 공간',
-    'about/location' => '오시는 길',
+    'about/clinic' => '병원소개',
+    'about/doctors' => '의료진소개',
+    'about/info' => '진료안내',
 
     'womens-disease' => '여성질환',
     'womens-disease/vaginitis-cystitis' => '질염·방광염',

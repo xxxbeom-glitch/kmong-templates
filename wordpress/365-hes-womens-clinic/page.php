@@ -11,19 +11,16 @@ if (have_posts()) {
     $path = hes_womens_clinic_get_page_path(get_post());
 
     if (hes_womens_clinic_render_page_content($path)) {
-      if ($path !== 'support/reservation') {
-        get_template_part('template-parts/cta-band', null, hes_womens_clinic_subpage_cta_args());
-      }
-    } else {
-      ?>
-      <article <?php post_class('section-shell section-shell--gutter'); ?> style="padding-block: var(--section-pad-y);">
-        <h1 class="notice-single__title"><?php the_title(); ?></h1>
-        <div class="notice-single__content">
-          <?php the_content(); ?>
-        </div>
-      </article>
-      <?php
+      continue;
     }
+    ?>
+    <article <?php post_class('section-shell section-shell--gutter'); ?> style="padding-block: var(--section-pad-y);">
+      <h1 class="notice-single__title"><?php the_title(); ?></h1>
+      <div class="notice-single__content">
+        <?php the_content(); ?>
+      </div>
+    </article>
+    <?php
   }
 }
 

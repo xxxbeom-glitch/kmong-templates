@@ -3,7 +3,9 @@
 require_once get_template_directory() . '/inc/assets.php';
 require_once get_template_directory() . '/inc/notice.php';
 require_once get_template_directory() . '/inc/page-registry.php';
+require_once get_template_directory() . '/inc/sub-hero.php';
 require_once get_template_directory() . '/inc/content-womens-disease.php';
+require_once get_template_directory() . '/inc/content-about.php';
 require_once get_template_directory() . '/inc/content-registry.php';
 require_once get_template_directory() . '/inc/pages.php';
 

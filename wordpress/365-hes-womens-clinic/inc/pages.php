@@ -82,6 +82,44 @@ function hes_womens_clinic_ensure_pages() {
 }
 add_action('init', 'hes_womens_clinic_ensure_pages', 20);
 
+function hes_womens_clinic_prune_obsolete_pages() {
+  $removed_paths = array('about/schedule', 'about/space', 'about/location');
+
+  foreach ($removed_paths as $path) {
+    $page = get_page_by_path($path);
+    if ($page) {
+      wp_trash_post($page->ID);
+    }
+  }
+}
+add_action('init', 'hes_womens_clinic_prune_obsolete_pages', 25);
+
+function hes_womens_clinic_redirect_obsolete_paths() {
+  if (is_admin()) {
+    return;
+  }
+
+  $request_path = isset($_SERVER['REQUEST_URI']) ? wp_parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) : '';
+  $request_path = trim((string) $request_path, '/');
+
+  $home_path = trim((string) wp_parse_url(home_url('/'), PHP_URL_PATH), '/');
+  if ($home_path && strpos($request_path, $home_path) === 0) {
+    $request_path = trim(substr($request_path, strlen($home_path)), '/');
+  }
+
+  $redirects = array(
+    'about/schedule' => 'about/info',
+    'about/space' => 'about/info',
+    'about/location' => 'about/info',
+  );
+
+  if (isset($redirects[$request_path])) {
+    wp_safe_redirect(home_url('/' . $redirects[$request_path] . '/'), 301);
+    exit;
+  }
+}
+add_action('template_redirect', 'hes_womens_clinic_redirect_obsolete_paths', 1);
+
 function hes_womens_clinic_page_template($template) {
   if (!is_page()) {
     return $template;
@@ -110,8 +148,10 @@ function hes_womens_clinic_render_page_content($path) {
     return false;
   }
 
-  if (!empty($content['hero'])) {
-    get_template_part('template-parts/sub-hero', null, $content['hero']);
+  if (array_key_exists('hero', $content)) {
+    $hero = hes_womens_clinic_merge_sub_hero($content['hero']);
+    $hero['breadcrumb'] = hes_womens_clinic_build_sub_hero_breadcrumb($path);
+    get_template_part('template-parts/sub-hero', null, $hero);
   }
 
   switch ($content['type']) {
@@ -129,6 +169,20 @@ function hes_womens_clinic_render_page_content($path) {
       );
       break;
 
+    case 'about-clinic':
+      get_template_part('template-parts/pages/about-clinic-body');
+      break;
+
+    case 'about-doctors':
+      get_template_part('template-parts/pages/about-doctors-body');
+      break;
+
+    case 'about-info':
+      get_template_part('template-parts/section', 'location');
+      get_template_part('template-parts/pages/schedule-table-body');
+      get_template_part('template-parts/section', 'space');
+      break;
+
     case 'prose':
       get_template_part(
         'template-parts/pages/prose-body',
@@ -139,21 +193,6 @@ function hes_womens_clinic_render_page_content($path) {
           'cta' => isset($content['cta']) ? $content['cta'] : null,
         )
       );
-      break;
-
-    case 'schedule':
-      if (!empty($content['intro'])) {
-        get_template_part('template-parts/pages/clinic-body', null, array('intro' => $content['intro']));
-      }
-      get_template_part('template-parts/pages/schedule-body');
-      break;
-
-    case 'section-space':
-      get_template_part('template-parts/section', 'space', array('hide_header' => true));
-      break;
-
-    case 'section-location':
-      get_template_part('template-parts/section', 'location', array('hide_header' => true));
       break;
 
     case 'section-faq':

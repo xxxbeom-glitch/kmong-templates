@@ -97,80 +97,30 @@ function hes_womens_clinic_hub_areas_from_children($path, $image_map = array()) 
  */
 function hes_womens_clinic_page_content_config($path) {
   $configs = array(
-    'about' => hes_womens_clinic_hub_page(
-      'about',
-      '병원소개',
-      '365일 진료, 서초역 인근, 전원 여의사 3인이 함께하는 여성 전문 의료기관입니다. 여성질환·검진·임신·출산·난임·수술까지 한곳에서 이어지는 진료를 제공합니다.',
-      '병원소개 안내',
-      '궁금한 항목을 선택해 자세한 내용을 확인해 보세요.'
+    'about' => array_replace(
+      hes_womens_clinic_hub_page(
+        'about',
+        '병원소개',
+        '365일 진료, 서초역 인근, 전원 여의사 3인이 함께하는 여성 전문 의료기관입니다. 병원소개·의료진·진료안내에서 자세한 내용을 확인할 수 있습니다.',
+        '병원소개 안내',
+        '궁금한 항목을 선택해 자세한 내용을 확인해 보세요.'
+      ),
+      array('hero' => array())
     ),
 
     'about/clinic' => array(
-      'type' => 'prose',
-      'hero' => array('title' => '병원 소개'),
-      'intro' => array(
-        'text' => '365헤스여성의원은 여성의 건강을 생애주기 전반에서 돌보는 산부인과 전문 클리닉입니다.',
-      ),
-      'sections' => array(
-        array(
-          'title' => '365일 진료',
-          'paragraphs' => array(
-            '평일·주말·공휴일 진료를 운영해 바쁜 일상 속에서도 부담 없이 방문하실 수 있습니다.',
-            '정확한 진료시간은 진료 안내 또는 전화 문의를 통해 확인해 주세요.',
-          ),
-        ),
-        array(
-          'title' => '전원 여의사 진료',
-          'paragraphs' => array(
-            '산부인과 전문의 3인이 상담·검사·치료를 진행합니다.',
-            '민감한 고민도 편안하게 상담할 수 있는 환경을 지향합니다.',
-          ),
-        ),
-        array(
-          'title' => '여성질환 중심 진료',
-          'paragraphs' => array(
-            '질염·생리불순·부정출혈 등 반복되는 여성질환부터 검진·임신·출산·난임·수술까지 폭넓게 안내합니다.',
-          ),
-        ),
-      ),
+      'type' => 'about-clinic',
+      'hero' => array(),
     ),
 
     'about/doctors' => array(
-      'type' => 'prose',
-      'hero' => array('title' => '의료진 소개'),
-      'intro' => array(
-        'text' => '각 분야 경험을 갖춘 산부인과 전문의가 함께합니다. 의료진 상세 정보는 확정 후 업데이트됩니다.',
-      ),
-      'sections' => array(
-        array(
-          'title' => '진료 분야',
-          'list' => array('여성질환·검진', '임신·출산', '난임·가임력', '여성수술'),
-        ),
-        array(
-          'title' => '안내',
-          'paragraphs' => array(
-            '의료진 사진·이름·진료 일정은 CLIENT REQUIRED 항목으로, 확정 후 반영됩니다.',
-          ),
-        ),
-      ),
+      'type' => 'about-doctors',
+      'hero' => array(),
     ),
 
-    'about/schedule' => array(
-      'type' => 'schedule',
-      'hero' => array('title' => '진료 안내'),
-      'intro' => array(
-        'text' => '365일 연중무휴 진료를 원칙으로 합니다. 아래 시간은 기본 안내이며, 공휴일·이벤트 일정은 공지사항을 확인해 주세요.',
-      ),
-    ),
-
-    'about/space' => array(
-      'type' => 'section-space',
-      'hero' => array('title' => '진료 공간'),
-    ),
-
-    'about/location' => array(
-      'type' => 'section-location',
-      'hero' => array('title' => '오시는 길'),
+    'about/info' => array(
+      'type' => 'about-info',
+      'hero' => array(),
     ),
 
     'womens-disease' => array(
@@ -367,12 +317,15 @@ function hes_womens_clinic_page_content_config($path) {
       array('입원 수술 일정이 필요해요', '수술 전 검사·준비가 궁금해요', '퇴원 후 관리가 걱정돼요')
     ),
 
-    'support' => hes_womens_clinic_hub_page(
-      'support',
-      '상담·안내',
-      '진료 접수, 카카오톡 상담, FAQ, 공지사항을 통해 병원 이용 정보를 확인할 수 있습니다.',
-      '상담·안내',
-      '필요한 메뉴를 선택해 주세요.'
+    'support' => array_replace(
+      hes_womens_clinic_hub_page(
+        'support',
+        '상담·안내',
+        '진료 접수, 카카오톡 상담, FAQ, 공지사항을 통해 병원 이용 정보를 확인할 수 있습니다.',
+        '상담·안내',
+        '필요한 메뉴를 선택해 주세요.'
+      ),
+      array('hero' => array())
     ),
 
     'support/reservation' => array(
@@ -385,7 +338,7 @@ function hes_womens_clinic_page_content_config($path) {
 
     'support/kakao' => array(
       'type' => 'prose',
-      'hero' => array('title' => '카카오톡 상담'),
+      'hero' => array(),
       'intro' => array(
         'text' => '카카오톡으로 간단한 문의를 남기실 수 있습니다. 정확한 진료·예약은 전화 또는 온라인 접수를 이용해 주세요.',
       ),
@@ -413,12 +366,12 @@ function hes_womens_clinic_page_content_config($path) {
 
     'support/faq' => array(
       'type' => 'section-faq',
-      'hero' => array('title' => '자주 묻는 질문'),
+      'hero' => array(),
     ),
 
     'support/notice' => array(
       'type' => 'notice-list',
-      'hero' => array('title' => '공지사항'),
+      'hero' => array(),
       'intro' => array(
         'text' => '병원 운영·진료 안내 등 중요한 소식을 확인하세요.',
       ),

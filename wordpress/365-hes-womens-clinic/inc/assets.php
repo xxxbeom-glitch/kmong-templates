@@ -5,6 +5,7 @@ function hes_womens_clinic_asset_uri($key) {
     'logo-header' => 'logos/header.png',
     'logo-footer' => 'logos/footer.png',
     'hero-kv' => 'hero/kv.png',
+    'sub-hero-bg' => 'hero/sub-hero.jpg',
     'icon-chevron-down' => 'icons/chevron-down.png',
     'icon-chevron-up' => 'icons/chevron-up.png',
     'icon-chevron-right' => 'icons/chevron-right.png',
@@ -43,11 +44,9 @@ function hes_womens_clinic_gnb_items() {
       'label' => '병원소개',
       'url' => home_url('/about/'),
       'children' => array(
-        array('label' => '병원 소개', 'url' => home_url('/about/clinic/')),
-        array('label' => '의료진 소개', 'url' => home_url('/about/doctors/')),
-        array('label' => '진료 안내', 'url' => home_url('/about/schedule/')),
-        array('label' => '진료 공간', 'url' => home_url('/about/space/')),
-        array('label' => '오시는 길', 'url' => home_url('/about/location/')),
+        array('label' => '병원소개', 'url' => home_url('/about/clinic/')),
+        array('label' => '의료진소개', 'url' => home_url('/about/doctors/')),
+        array('label' => '진료안내', 'url' => home_url('/about/info/')),
       ),
     ),
     array(
@@ -115,17 +114,6 @@ function hes_womens_clinic_gnb_items() {
         array('label' => '공지사항', 'url' => $notice_url),
       ),
     ),
-  );
-}
-
-function hes_womens_clinic_subpage_cta_args() {
-  return array(
-    'title' => '증상이 반복되거나 걱정된다면',
-    'desc' => '온라인으로 먼저 진료 접수를 남겨주세요',
-    'primary_label' => '진료 접수',
-    'primary_url' => home_url('/support/reservation/'),
-    'secondary_label' => '카카오톡 상담',
-    'secondary_url' => home_url('/support/kakao/'),
   );
 }
 
