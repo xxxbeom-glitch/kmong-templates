@@ -16,4 +16,4 @@
 | I-mobile-tab | 탭 | 화면 이동 | OK | 390 |
 | I-popup | — | — | **제외** | preview hide |
 
-검수 URL: http://127.0.0.1:4180/
+검수 URL: **http://127.0.0.1:4173/** (고정)

@@ -14,8 +14,28 @@
 ```bash
 cd _reference-harness
 node scripts/mirror-original.js {slug} {demoUrl} [maxPages]
-node scripts/preview-original.js {slug} [port]
-# → 로컬에서 페이지 이동 + 슬라이더(/exec proxy) 검수
+```
+
+### 로컬 미리보기 허브 (추천)
+
+미러된 테마를 **한 페이지 목록**에서 새 창으로 연다.  
+`04-working-copy`가 있으면 **수정본 열기** 링크도 표시.
+
+```bash
+cd _reference-harness
+node scripts/preview-hub.js          # → http://127.0.0.1:4173/
+node scripts/preview-hub.js --force  # 포트 정리 후 재기동
+node scripts/init-working-copy.js {slug}   # 원본 복사 → 04-working-copy
+```
+
+- 허브: `http://127.0.0.1:4173/`
+- 원본: `4201`~ · 수정본: `4301`~
+
+단일 테마:
+
+```bash
+node scripts/preview-original.js {slug} 4201
+node scripts/preview-original.js {slug} 4301 --working
 ```
 
 ## 문서

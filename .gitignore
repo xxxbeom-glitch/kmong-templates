@@ -16,6 +16,9 @@ _harness/_figma-extract.js
 _reference-harness/_tmp*
 _reference-harness/**/_tmp*
 _reference-harness/**/_mirror/
+_reference-harness/hub/
+_reference-harness/_pipeline*.log
+_reference-harness/cases/**/01-original/PREVIEW.url*
 
 # Cafe24 release packages (local only)
 _release/

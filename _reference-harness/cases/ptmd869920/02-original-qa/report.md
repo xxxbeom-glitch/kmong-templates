@@ -9,7 +9,7 @@
 - 원격: https://ecudemo391069.cafe24.com/
 - Desktop 1920 · Mobile 390
 - method: `playwright-pristine-html-multipage-v4`
-- preview: http://127.0.0.1:4180/ (local + live proxy)
+- preview: **http://127.0.0.1:4173/** (고정 · local + live proxy)
 
 ## 체크
 

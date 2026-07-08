@@ -1,0 +1,306 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "title": "쇼핑몰 이름",
+  "url": "https://ecudemo389695.cafe24.com/",
+  "outline": [
+    {
+      "tag": "section",
+      "id": "",
+      "className": "mainvisual_wrap df-bannermanager df-bannermanager-01mainbanner",
+      "top": 0,
+      "height": 648,
+      "text": "DAILY LOOK 매일 입기 좋은 데일리 스타일 스타일 추천 편안한 데일리 코디 #맨투맨 #청바지 #후드 BIG SALE 시즌 인기 상품 최대 40% 할인 이벤트 기간 지금 가장 인기있는 아이템 #아우터 #니트 #팬츠 #셔츠 NEW ARRIVAL 이번주 신상 업데이트 트렌디한 신상품 "
+    },
+    {
+      "tag": "div",
+      "id": "popup_bg",
+      "className": "df-bannermanager df-bannermanager-00popup",
+      "top": 0,
+      "height": 844,
+      "text": ""
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "mainvisual_wrap df-bannermanager df-bannermanager-01mainbanner",
+      "top": 0,
+      "height": 648,
+      "text": "DAILY LOOK 매일 입기 좋은 데일리 스타일 스타일 추천 편안한 데일리 코디 #맨투맨 #청바지 #후드 BIG SALE 시즌 인기 상품 최대 40% 할인 이벤트 기간 지금 가장 인기있는 아이템 #아우터 #니트 #팬츠 #셔츠 NEW ARRIVAL 이번주 신상 업데이트 트렌디한 신상품 "
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "imgbtn_wrap",
+      "top": 648,
+      "height": 166,
+      "text": "최대 8% 적립금 스포츠 웨어 최대 10% 할인 프린트 자켓 타임세일 인기 인어웨어 모음 월간 비쥬얼박스 랭킹 프린트 후드 최대 20% 호캉스 필수아이템 러닝포인트 꾸안꾸"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "category_banner df-bannermanager df-bannermanager-04imgbtn",
+      "top": 678,
+      "height": 48,
+      "text": "최대 8% 적립금 스포츠 웨어 최대 10% 할인 프린트 자켓 타임세일 인기 인어웨어 모음 월간 비쥬얼박스 랭킹"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "category_banner df-bannermanager df-bannermanager-05imgbtn",
+      "top": 736,
+      "height": 48,
+      "text": "프린트 후드 최대 20% 호캉스 필수아이템 러닝포인트 꾸안꾸"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "movbanner_wrap df-bannermanager df-bannermanager-02movbanner",
+      "top": 814,
+      "height": 621,
+      "text": "라이브 구매 시, 사은품까지📺 02 / 04"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "movbanner_wrap df-bannermanager df-bannermanager-02movbanner",
+      "top": 814,
+      "height": 621,
+      "text": "라이브 구매 시, 사은품까지📺 02 / 04"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "tab_05_wrap lazyload lazyloaded",
+      "top": 1435,
+      "height": 465,
+      "text": "베스트셀러 라인업 😎 지금 가장 인기있는 상품 신상 트렌드 아이템 모음 MD 추천 스타일 상품 기간한정 특가 할인 상품 경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷 상품요약설명란에 글을 올리시면 여기 노출 95,000원 롱라인 트"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-1 xans-product-listmain xans-product-1 swiper-container swiper_product_",
+      "top": 1602,
+      "height": 298,
+      "text": "경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷 상품요약설명란에 글을 올리시면 여기 노출 95,000원 롱라인 트렌치코트 상품요약설명란에 글을 올리시면 여기 노출 70,000원 소프트 울 가디건 상품요약설명란에 글을 올리시면 여기 노출"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "event_banner_wrap lazyload df-bannermanager df-bannermanager-06banner lazyloaded",
+      "top": 1900,
+      "height": 190,
+      "text": "시즌오프 블랙프라이데이 올해 가장 큰 폭의 할인, 지금이 아니면 절대 만날 수 없습니다. 시즌오프 블랙프라이데이 올해 가장 큰 폭의 할인, 지금이 아니면 절대 만날 수 없습니다. 네이버페이 6만원 결제시 네이버 페이 3,000원 적립 (선착순 적립, 소진 시 조기 종료)"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "event_banner_wrap lazyload df-bannermanager df-bannermanager-06banner lazyloaded",
+      "top": 1900,
+      "height": 190,
+      "text": "시즌오프 블랙프라이데이 올해 가장 큰 폭의 할인, 지금이 아니면 절대 만날 수 없습니다. 시즌오프 블랙프라이데이 올해 가장 큰 폭의 할인, 지금이 아니면 절대 만날 수 없습니다. 네이버페이 6만원 결제시 네이버 페이 3,000원 적립 (선착순 적립, 소진 시 조기 종료)"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "prd_group_wrap lazyload lazyloaded",
+      "top": 2089,
+      "height": 1420,
+      "text": "26SS 시즌 신상 컬렉션✨ 트렌드픽 스타일업 아이템 한정 특가 50% 인기템 특가 REVIEW BEST 후기로 증명된 인기 아이템 리뷰 많은 상품 모음 #후기좋은 #재구매템 전체보기 루즈핏 브이넥 니트 상품요약설명란에 글을 올리시면 여기 노출 20% 120,000원 심플 베이직 후드티"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-5 xans-product-listmain xans-product-5 prd_group_item_box_prdlist mov_r",
+      "top": 2576,
+      "height": 903,
+      "text": "루즈핏 브이넥 니트 상품요약설명란에 글을 올리시면 여기 노출 20% 120,000원 심플 베이직 후드티 상품요약설명란에 글을 올리시면 여기 노출 9% 50,000원 와이드 핏 데님 팬츠 Introducing the Realtree® Boxy Hoodie 29% 850,000원 Sleev"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-5 xans-product-listmain xans-product-5 prd_group_item_box_prdlist mov_r",
+      "top": 2576,
+      "height": 903,
+      "text": "루즈핏 브이넥 니트 상품요약설명란에 글을 올리시면 여기 노출 20% 120,000원 심플 베이직 후드티 상품요약설명란에 글을 올리시면 여기 노출 9% 50,000원 와이드 핏 데님 팬츠 Introducing the Realtree® Boxy Hoodie 29% 850,000원 Sleev"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-5 xans-product-listmain xans-product-5 prd_group_item_box_prdlist",
+      "top": 2576,
+      "height": 903,
+      "text": "루즈핏 브이넥 니트 상품요약설명란에 글을 올리시면 여기 노출 20% 120,000원 심플 베이직 후드티 상품요약설명란에 글을 올리시면 여기 노출 9% 50,000원 와이드 핏 데님 팬츠 Introducing the Realtree® Boxy Hoodie 29% 850,000원 Sleev"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-5 xans-product-listmain xans-product-5 prd_group_item_box_prdlist",
+      "top": 2576,
+      "height": 903,
+      "text": "루즈핏 브이넥 니트 상품요약설명란에 글을 올리시면 여기 노출 20% 120,000원 심플 베이직 후드티 상품요약설명란에 글을 올리시면 여기 노출 9% 50,000원 와이드 핏 데님 팬츠 Introducing the Realtree® Boxy Hoodie 29% 850,000원 Sleev"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "shopinfo_wrap lazyload lazyloaded",
+      "top": 3509,
+      "height": 1658,
+      "text": "시즌이 떠나는 자리, 혜택이 남았다 🤑 경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷 상품요약설명란에 글을 올리시면 여기 노출 95,000원 롱라인 트렌치코트 상품요약설명란에 글을 올리시면 여기 노출 70,000원 소프트 울 가디건"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-4 xans-product-listmain xans-product-4 prdlist_wrapper more_section-1",
+      "top": 3572,
+      "height": 1595,
+      "text": "경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷 상품요약설명란에 글을 올리시면 여기 노출 95,000원 롱라인 트렌치코트 상품요약설명란에 글을 올리시면 여기 노출 70,000원 소프트 울 가디건 상품요약설명란에 글을 올리시면 여기 노출"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "prd_with_mov_wrap",
+      "top": 5167,
+      "height": 580,
+      "text": "스위드 콜라보레이션 🎨 [타임세일]하프 집업 아노락 간략설명란에 글을 올리시면 여기 노출 Introducing the Realtree® Boxy Hoodie in Washed Pink Camo, crafted from heavyweight 480GSM loopback cotton fo"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-6 xans-product-listmain xans-product-6 swiper-container main_theme_swip",
+      "top": 5267,
+      "height": 370,
+      "text": "[타임세일]하프 집업 아노락 간략설명란에 글을 올리시면 여기 노출 Introducing the Realtree® Boxy Hoodie in Washed Pink Camo, crafted from heavyweight 480GSM loopback cotton for structure an"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-6 xans-product-listmain xans-product-6 swiper-container main_theme_thum",
+      "top": 5637,
+      "height": 80,
+      "text": ""
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "prdstyle_wrap lazyload lazyloaded",
+      "top": 5747,
+      "height": 1295,
+      "text": "인플루언서 PICK 📺 더 많은 스포츠/아웃도어 아우터 영하 날씨를 대비하는 헤비 아우터 추천 혜택 룸 업그레이드 BBQ 워터파크 조식 제공 픽업 서비스 경량 패딩 점퍼\"> 경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷\"> 오버핏 "
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "swiper swiper-prdstyle-img swiper-prdstyle-img-0 df-bannermanager df-bannermanager-infleft swiper-initialized swiper-hor",
+      "top": 5856,
+      "height": 230,
+      "text": ""
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-1 xans-product-listmain xans-product-1 prdstyle_box_item__prdlist_box__",
+      "top": 6287,
+      "height": 72,
+      "text": "경량 패딩 점퍼\"> 경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷\"> 오버핏 바람막이 재킷 상품요약설명란에 글을 올리시면 여기 노출 95,000원 롱라인 트렌치코트\"> 롱라인 트렌치코트 상품요약설명란에 글을 올리시면 여기 노출 70,"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "swiper swiper-prdstyle-img swiper-prdstyle-img-1 df-bannermanager df-bannermanager-infright swiper-initialized swiper-ho",
+      "top": 6444,
+      "height": 230,
+      "text": ""
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-1 xans-product-listmain xans-product-1 prdstyle_box_item__prdlist_box__",
+      "top": 6876,
+      "height": 72,
+      "text": "경량 패딩 점퍼\"> 경량 패딩 점퍼 상품요약설명란에 글을 올리시면 여기 노출 25% 15,000원 오버핏 바람막이 재킷\"> 오버핏 바람막이 재킷 상품요약설명란에 글을 올리시면 여기 노출 95,000원 롱라인 트렌치코트\"> 롱라인 트렌치코트 상품요약설명란에 글을 올리시면 여기 노출 70,"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "padding-30px-top padding-70px-bottom",
+      "top": 7042,
+      "height": 893,
+      "text": "일교차만큼 뜨거운 타임세일 🕒 211일 : 01시간 : 13분 [타임세일]하프 집업 아노락 상품요약설명란에 글을 올리시면 여기 노출 85,000원 15% 72,250원 211일 : 01시간 : 13분 [타임세일] 소프트 터치 카라 티셔츠 상품요약설명란에 글을 올리시면 여기 노출 50,"
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "xans-element- xans-product xans-product-listmain-3 xans-product-listmain xans-product-3 prdlist_wrapper more_section-1",
+      "top": 7130,
+      "height": 735,
+      "text": "211일 : 01시간 : 13분 [타임세일]하프 집업 아노락 상품요약설명란에 글을 올리시면 여기 노출 85,000원 15% 72,250원 211일 : 01시간 : 13분 [타임세일] 소프트 터치 카라 티셔츠 상품요약설명란에 글을 올리시면 여기 노출 50,000원 15% 42,500원 2"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "padding-60px-top df-bannermanager df-bannermanager-12slide",
+      "top": 7935,
+      "height": 532,
+      "text": "2025 FW COLLECTION 언제 어디서나 가벼운 발걸음 DETAIL VIEW DETAIL VIEW"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "padding-60px-top df-bannermanager df-bannermanager-12slide",
+      "top": 7935,
+      "height": 532,
+      "text": "2025 FW COLLECTION 언제 어디서나 가벼운 발걸음 DETAIL VIEW DETAIL VIEW"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "xans-element- xans-board xans-board-listpackage-4 xans-board-listpackage xans-board-4 padding-60px-tb sm-padding-70px-to",
+      "top": 8467,
+      "height": 765,
+      "text": "솔직한 사용자 리뷰✨ 체형 보완에 탁월한 핏 어깨 넓어 보이고 상체 비율이 좋아 보이게 잡아주는 핏이에요. 슬림하게 떨어지는데 답답한 느낌도 없고 활동성도 좋아서 장시간 입어도 편합니다. 회사 동료들도 어디서 샀냐고 물어보네요. 쇼핑몰 이름 콜라보 기능성 레깅스 원단이 진짜 고급져요 만"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "padding-60px-top lazyload lazyloaded",
+      "top": 9232,
+      "height": 1379,
+      "text": "공지사항 연말 휴무 및 배송 일정 공지 안녕하세요.올해도 저희 쇼핑몰을 이용해주신 고객분들께 감사의 마음 전합니다.연말·연초 기간 배송 및 휴무 일정 관련 안내드립니다.▶ 배송 마감 일정12월 27일(금) 오후 3시 이전 주문 건까지 출고 가능하며,이후 주문은 1월 2일(목)부터 정상 "
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "p-0 df-bannermanager df-bannermanager-02txtline",
+      "top": 10611,
+      "height": 46,
+      "text": "MD PICK PAYMENT IN YOUR LOCAL CURRENCY SPLIT PAYMENT EASY RETURNS SECURED PAYMENT IN YOUR LOCAL CURRENCY MD PICK PAYMENT IN YOUR LOCAL CURRENCY SPLIT PAYMENT EA"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "className": "p-0 df-bannermanager df-bannermanager-02txtline",
+      "top": 10611,
+      "height": 46,
+      "text": "MD PICK PAYMENT IN YOUR LOCAL CURRENCY SPLIT PAYMENT EASY RETURNS SECURED PAYMENT IN YOUR LOCAL CURRENCY MD PICK PAYMENT IN YOUR LOCAL CURRENCY SPLIT PAYMENT EA"
+    },
+    {
+      "tag": "footer",
+      "id": "footerlink",
+      "className": "footer-area ",
+      "top": 10656,
+      "height": 507,
+      "text": "법인명(상호) : 비쥬얼박스 대표자(성명) : 최상영 개인정보관리책임자 : 최상영(sangmart@naver.com) 사업자 등록번호 안내 : [109-11-65984] 통신판매업 신고 제2013-서울강서-1002호 전화 : 01046408645 주소 : 07792 서울 강서구 강서로 "
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "className": "footer-logo-position df-bannermanager df-bannermanager-00footerlogo",
+      "top": 10687,
+      "height": 45,
+      "text": ""
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "entryUrl": "https://ecudemo389695.cafe24.com/",
+  "pages": [
+    {
+      "url": "https://ecudemo389695.cafe24.com/",
+      "local": "_mirror/ecudemo389695.cafe24.com/index.html",
+      "bytes": 713422
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=25",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q58bfbd800032.html",
+      "bytes": 160479
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/board/product/list_pop.html?board_no=4",
+      "local": "_mirror/ecudemo389695.cafe24.com/board/product/list_pop.q0f188b3d5bc6.html",
+      "bytes": 170182
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/board/event/list.html?board_no=2",
+      "local": "_mirror/ecudemo389695.cafe24.com/board/event/list.q0dff8e8d5ca9.html",
+      "bytes": 158178
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/board/free/list.html?board_no=1",
+      "local": "_mirror/ecudemo389695.cafe24.com/board/free/list.q1a4aa58f0495.html",
+      "bytes": 160922
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/board/gallery/list.html?board_no=8",
+      "local": "_mirror/ecudemo389695.cafe24.com/board/gallery/list.q977c797bf869.html",
+      "bytes": 171971
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/_vb/pages/sub/membership.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/_vb/pages/sub/membership.html",
+      "bytes": 156920
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/order/basket.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/order/basket.html",
+      "bytes": 159698
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/member/login.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/member/login.html",
+      "bytes": 108197
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/member/agreement.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/member/agreement.html",
+      "bytes": 262122
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/member/login.html?noMemberOrder=&returnUrl=%2Fmyshop%2Findex.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/member/login.q09a204e35edf.html",
+      "bytes": 113966
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/member/login.html?noMemberOrder=&returnUrl=%2Fmyshop%2Forder%2Flist.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/member/login.q83e8f2385957.html",
+      "bytes": 114021
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/_vb/pages/sub/biz_01.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/_vb/pages/sub/biz_01.html",
+      "bytes": 164764
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=24",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q46fb57d198e8.html",
+      "bytes": 302970
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=42",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q00e02c089d73.html",
+      "bytes": 160374
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=43",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q16e810c0fd2c.html",
+      "bytes": 160331
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=44",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qb0f0ef99495a.html",
+      "bytes": 160331
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=45",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q3da881de7b69.html",
+      "bytes": 160331
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=46",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qf36453f4362b.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=47",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qbbcb5b791648.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=48",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qfab318ff6fca.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=49",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q22f742e5cf26.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=50",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q5aaf5801b5ea.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=51",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qf6abbb46c6bb.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=52",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q759ae8b71e4a.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=53",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q955665005e6a.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=54",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q182965dc4c03.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=55",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qf602a87869a5.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=56",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q22a006753291.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=57",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qb538b9868893.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=59",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q2c3a5380c618.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=60",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qa04a360a9da1.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=61",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qb1802a7d1879.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=62",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qcc46f0f3d1e5.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=63",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.q5b0b95ec2d6a.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=64",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qa7c4d98a01ba.html",
+      "bytes": 3417
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/list.html?cate_no=29",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/list.qb95d0ac317b9.html",
+      "bytes": 160330
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/_vb/pages/sub/biz_02.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/_vb/pages/sub/biz_02.html",
+      "bytes": 166956
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/_vb/pages/sub/biz_03.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/_vb/pages/sub/biz_03.html",
+      "bytes": 159487
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/_vb/pages/sub/biz_04.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/_vb/pages/sub/biz_04.html",
+      "bytes": 171057
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/board/product/list.html?board_no=6",
+      "local": "_mirror/ecudemo389695.cafe24.com/board/product/list.q4df6c25e49ad.html",
+      "bytes": 157220
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/recent_view_product.html",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/recent_view_product.html",
+      "bytes": 154639
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=33",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.qbe79bc6a7ce3.html",
+      "bytes": 208774
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EA%B2%BD%EB%9F%89-%ED%8C%A8%EB%94%A9-%EC%A0%90%ED%8D%BC/33/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/경량-패딩-점퍼/33/index.html",
+      "bytes": 209147
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=34",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.q2e76b6193739.html",
+      "bytes": 208724
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EC%98%A4%EB%B2%84%ED%95%8F-%EB%B0%94%EB%9E%8C%EB%A7%89%EC%9D%B4-%EC%9E%AC%ED%82%B7/34/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/오버핏-바람막이-재킷/34/index.html",
+      "bytes": 209372
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=35",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.qc6952951a145.html",
+      "bytes": 212404
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EB%A1%B1%EB%9D%BC%EC%9D%B8-%ED%8A%B8%EB%A0%8C%EC%B9%98%EC%BD%94%ED%8A%B8/35/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/롱라인-트렌치코트/35/index.html",
+      "bytes": 212938
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=36",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.q20ae8ce50ffc.html",
+      "bytes": 215054
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EC%86%8C%ED%94%84%ED%8A%B8-%EC%9A%B8-%EA%B0%80%EB%94%94%EA%B1%B4/36/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/소프트-울-가디건/36/index.html",
+      "bytes": 215492
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=37",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.q538c3631ca0b.html",
+      "bytes": 278769
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EB%8D%B0%EB%8B%98-%EC%85%94%EC%B8%A0-%EC%9E%AC%ED%82%B7/37/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/데님-셔츠-재킷/37/index.html",
+      "bytes": 279142
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=38",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.q75377e170648.html",
+      "bytes": 210954
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EC%BD%94%ED%8A%BC-%EB%B0%B4%EB%94%A9-%EB%B0%98%EB%B0%94%EC%A7%80/38/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/코튼-밴딩-반바지/38/index.html",
+      "bytes": 211432
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=39",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.qa60ab31fc258.html",
+      "bytes": 211007
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EB%AC%B4%EC%A7%80-%EB%B2%A0%EC%9D%B4%EC%A7%81-%EB%82%98%EC%8B%9C/39/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/무지-베이직-나시/39/index.html",
+      "bytes": 211485
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=40",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.q492cd099c5c9.html",
+      "bytes": 211045
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%EC%A7%91%EC%97%85-%EA%B0%80%EB%94%94%EA%B1%B4/40/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/콜라보-집업-가디건/40/index.html",
+      "bytes": 211628
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=41",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/detail.qb5cd876d2ab3.html",
+      "bytes": 215184
+    },
+    {
+      "url": "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%EA%B8%B0%EB%8A%A5%EC%84%B1-%EB%A0%88%EA%B9%85%EC%8A%A4/41/",
+      "local": "_mirror/ecudemo389695.cafe24.com/product/콜라보-기능성-레깅스/41/index.html",
+      "bytes": 215832
+    }
+  ],
+  "remaining": [
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=2&product_no=42",
+    "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%EC%98%A4%EB%B2%84%ED%95%8F-%EC%8A%A4%EC%9B%BB%EC%85%94%EC%B8%A0/42/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=23",
+    "https://ecudemo389695.cafe24.com/product/%EB%A3%A8%EC%A6%88%ED%95%8F-%EB%B8%8C%EC%9D%B4%EB%84%A5-%EB%8B%88%ED%8A%B8/23/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=24",
+    "https://ecudemo389695.cafe24.com/product/%EC%8B%AC%ED%94%8C-%EB%B2%A0%EC%9D%B4%EC%A7%81-%ED%9B%84%EB%93%9C%ED%8B%B0/24/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=25",
+    "https://ecudemo389695.cafe24.com/product/%EC%99%80%EC%9D%B4%EB%93%9C-%ED%95%8F-%EB%8D%B0%EB%8B%98-%ED%8C%AC%EC%B8%A0/25/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=26",
+    "https://ecudemo389695.cafe24.com/product/sleeve-graphic-detail/26/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=27",
+    "https://ecudemo389695.cafe24.com/product/%EB%9D%BC%EC%9D%B4%ED%8A%B8-%ED%94%8C%EB%A6%AC%EC%8A%A4-%ED%9B%84%EB%93%9C-%EC%A7%91%EC%97%85/27/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=28",
+    "https://ecudemo389695.cafe24.com/product/%ED%83%80%EC%9E%84-%EC%98%A4%EB%B2%84%ED%95%8F-%EB%B0%94%EB%9E%8C%EB%A7%89%EC%9D%B4-%EC%9E%AC%ED%82%B7/28/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=29",
+    "https://ecudemo389695.cafe24.com/product/sleeve-graphic-detail/29/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=3&product_no=30",
+    "https://ecudemo389695.cafe24.com/product/%EC%99%80%EC%9D%B4%EB%93%9C-%ED%95%8F-%EB%8D%B0%EB%8B%98-%ED%8C%AC%EC%B8%A0/30/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=6&product_no=23",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=6&product_no=24",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=6&product_no=25",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=6&product_no=26",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=6&product_no=27",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=6&product_no=28",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=33",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=34",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=35",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=36",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=37",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=38",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=39",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=40",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=41",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=5&product_no=42",
+    "https://ecudemo389695.cafe24.com/product/%ED%83%80%EC%9E%84%EC%84%B8%EC%9D%BC%ED%95%98%ED%94%84-%EC%A7%91%EC%97%85-%EC%95%84%EB%85%B8%EB%9D%BD/13/",
+    "https://ecudemo389695.cafe24.com/product/%ED%83%80%EC%9E%84%EC%84%B8%EC%9D%BC-%EC%86%8C%ED%94%84%ED%8A%B8-%ED%84%B0%EC%B9%98-%EC%B9%B4%EB%9D%BC-%ED%8B%B0%EC%85%94%EC%B8%A0/14/",
+    "https://ecudemo389695.cafe24.com/product/%ED%83%80%EC%9E%84%EC%84%B8%EC%9D%BC-%ED%85%8C%EC%9D%B4%ED%8D%BC%EB%93%9C-%ED%95%8F-%EC%B9%98%EB%85%B8-%ED%8C%AC%EC%B8%A0/15/",
+    "https://ecudemo389695.cafe24.com/product/%ED%83%80%EC%9E%84%EC%84%B8%EC%9D%BC-%EB%9D%BC%EC%9D%B4%ED%8A%B8-%ED%94%8C%EB%A6%AC%EC%8A%A4-%ED%9B%84%EB%93%9C-%EC%A7%91%EC%97%85/16/",
+    "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%EC%A7%91%EC%97%85-%EC%95%84%EB%85%B8%EB%9D%BD/17/",
+    "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%ED%84%B0%EC%B9%98-%EC%B9%B4%EB%9D%BC-%ED%8B%B0%EC%85%94%EC%B8%A0/18/",
+    "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%ED%85%8C%EC%9D%B4%ED%8D%BC%EB%93%9C-%ED%95%8F-%ED%8C%AC%EC%B8%A0/19/",
+    "https://ecudemo389695.cafe24.com/product/%EC%BD%9C%EB%9D%BC%EB%B3%B4-%ED%94%8C%EB%A6%AC%EC%8A%A4-%ED%9B%84%EB%93%9C-%EC%A7%91%EC%97%85/20/",
+    "https://ecudemo389695.cafe24.com/product/%ED%85%8C%EC%9D%B4%ED%8D%BC%EB%93%9C-%ED%95%8F-%EC%B9%98%EB%85%B8-%ED%8C%AC%EC%B8%A0/21/",
+    "https://ecudemo389695.cafe24.com/product/%EA%B2%BD%EB%9F%89-%ED%8C%A8%EB%94%A9-%EC%A0%90%ED%8D%BC/22/",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=4&product_no=13",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=4&product_no=14",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=4&product_no=15",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=4&product_no=16",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=4&product_no=17",
+    "https://ecudemo389695.cafe24.com/product/detail.html?cate_no=1&display_group=4&product_no=18"
+  ]
+}

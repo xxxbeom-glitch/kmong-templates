@@ -1,5 +1,10 @@
 # QA Log
 
+## 2026-07-08 · [reference-harness] ptmd871337·868445·864942 수집 QA
+
+**결과:** 각 **PARTIAL** (60 pages · browser-captured · Track C)
+**공통:** captures PASS · multipage mirror PASS · analysis draft PASS · working/map skipped
+
 ## 2026-07-08 · [reference-harness] ptmd869920 analysis PASS (Track C 범위)
 
 **결과:** **PASS (분석 산출)** — 메인+하위화면 IA · commerce slot · interaction map

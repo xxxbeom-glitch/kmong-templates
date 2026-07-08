@@ -3,7 +3,7 @@
 > Track C · browser-captured · 분석 보강 2026-07-08  
 > 디자인센터: [PTMD869920](https://d.cafe24.com/sample?productCode=PTMD869920)  
 > 데모: https://ecudemo391069.cafe24.com/  
-> 로컬 미리보기: http://127.0.0.1:4180/ (preview 기동 필요)  
+> 로컬 미리보기: **http://127.0.0.1:4173/** (`preview-original.js` · 고정 포트)  
 > 근거: `00-source/captures/*-outline.json` · `01-original/pages.json` · `02-original-qa/analysis-extract.json`
 
 ## Meta

@@ -80,23 +80,31 @@ completeness: `browser-captured` (또는 더 넓으면 `site-archive`).
 
 ## 미리보기 (검수·인터랙션 SoT)
 
+**고정 로컬 URL (포트 바꾸지 않음):**
+
+```text
+http://127.0.0.1:4173/
+```
+
 ```bash
 cd _reference-harness
 node scripts/mirror-original.js {slug} {demoUrl} [maxPages]
-# 포트 사용 중이면 기존 node 종료 또는 빈 포트 사용
-node scripts/preview-original.js {slug} [port]
-# → http://127.0.0.1:{port}/
+node scripts/preview-original.js {slug}            # → 항상 :4173
+node scripts/preview-original.js {slug} --force    # 이미 켜져 있으면 재기동
 ```
+
+케이스 폴더에 `01-original/PREVIEW.url` / `PREVIEW.url.txt`가 생김 — 브라우저에서 그 주소만 북마크.
 
 ### preview 필수 동작
 
 | 규칙 | 내용 |
 |------|------|
+| **고정 포트 4173** | 4176·4180 등으로 **올리지 않음**. EADDRINUSE면 안내 URL 유지 또는 `--force` |
 | **url-map 우선** | query·해시 CSS/JS·페이지를 로컬에서 해석 |
 | **MIME** | `.css` → `text/css` · `.js` → JS. 경로에 `optimizer`+`.css`면 PHP여도 CSS로 서비스 |
 | **live proxy** | `/exec` · `/api` · 미수집 HTML · `/ind-script` 잔여 · `/web` 등 |
 | **숨김 inject** | `.sample-sg` · `.mpopup` — **응답에만** 주입. original 파일 수정 금지 |
-| **프로세스** | 스크립트 수정 후 **반드시 재기동**. EADDRINUSE면 해당 포트 PID kill 후 재시작 |
+| **프로세스** | 스크립트 수정 후 `--force` 재기동 |
 | **검수 조건** | preview **상시 기동** 상태에서만 인터랙션 QA (`file://` 금지) |
 
 ## 후속 이슈 → 재발 방지 (ptmd869920에서 보완한 것)
@@ -110,7 +118,7 @@ node scripts/preview-original.js {slug} [port]
 | 클릭 이동 실패 | `_mirror` href·url-map 미연결 · 구 preview | 사이트 경로 + url-map · 재기동 |
 | Windows mkdir ENOENT | URL 제어문자·예약 문자 | safeSeg · `_p{id}` fallback |
 | 검색/보드 HTML 서로 덮임 | query를 ASCII만 파일명에 넣음 | HTML query → sha 파일명 |
-| 포트 4176/4180 혼선 | 구 서버 잔존 | kill 후 재기동 · 사용자에게 **현재 URL 1개만** |
+| 포트 혼선 · URL이 매번 바뀜 | 4176/4180 등으로 피해 감 | **고정 4173** · `--force` · 북마크 `PREVIEW.url` |
 
 ## fidelity QA 최소 수치 (메인)
 

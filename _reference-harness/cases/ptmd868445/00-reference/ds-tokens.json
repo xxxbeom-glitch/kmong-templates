@@ -1,0 +1,221 @@
+{
+  "source": "optimizer_user.96ac67369ba3.css",
+  "mediaOverrides": [
+    {
+      "cond": "max-width:767px",
+      "ov": [
+        [
+          "--ds-fs-display-lg",
+          "48px"
+        ],
+        [
+          "--ds-fs-display-md",
+          "44px"
+        ],
+        [
+          "--ds-fs-h1",
+          "24px"
+        ],
+        [
+          "--ds-fs-h2",
+          "20px"
+        ],
+        [
+          "--ds-fs-h3",
+          "18px"
+        ],
+        [
+          "--ds-fs-h4",
+          "18px"
+        ],
+        [
+          "--ds-fs-h5",
+          "16px"
+        ],
+        [
+          "--ds-fs-body-lg",
+          "14px"
+        ],
+        [
+          "--ds-fs-body-md",
+          "14px"
+        ],
+        [
+          "--ds-fs-caption-lg",
+          "12px"
+        ],
+        [
+          "--ds-fs-caption-md",
+          "12px"
+        ],
+        [
+          "--ds-fs-caption-sm",
+          "11px"
+        ],
+        [
+          "--ds-sp-16",
+          "12px"
+        ],
+        [
+          "--ds-sp-24",
+          "16px"
+        ],
+        [
+          "--ds-sp-32",
+          "24px"
+        ],
+        [
+          "--ds-sp-40",
+          "32px"
+        ],
+        [
+          "--ds-sp-48",
+          "32px"
+        ],
+        [
+          "--ds-sp-56",
+          "32px"
+        ],
+        [
+          "--ds-sp-80",
+          "40px"
+        ],
+        [
+          "--ds-sp-112",
+          "64px"
+        ],
+        [
+          "--ds-icon-md",
+          "20px"
+        ]
+      ]
+    },
+    {
+      "cond": "max-width:440px",
+      "ov": [
+        [
+          "--ds-sp-24",
+          "16px"
+        ]
+      ]
+    },
+    {
+      "cond": "min-width:441px",
+      "ov": [
+        [
+          "--ds-sp-24",
+          "24px"
+        ]
+      ]
+    }
+  ],
+  "tokens": {
+    "--ds-bw-medium": "2px",
+    "--ds-bw-thick": "4px",
+    "--ds-bw-thin": "1px",
+    "--ds-c-accent": "#FF6618",
+    "--ds-c-bg-base": "#FFFFFF",
+    "--ds-c-bg-card": "#FFFFFF",
+    "--ds-c-bg-dark": "#161616",
+    "--ds-c-bg-disabled": "#F8F8F8",
+    "--ds-c-bg-disabled-dark": "#E8E8E8",
+    "--ds-c-bg-highlight": "#FFF7F3",
+    "--ds-c-bg-mask": "rgba(0,0,0,0.55)",
+    "--ds-c-bg-page": "#FFFFFF",
+    "--ds-c-bg-section": "#F8F8F8",
+    "--ds-c-bg-translucent": "rgba(255,255,255,0.6)",
+    "--ds-c-brand": "#FF6618",
+    "--ds-c-brand-light": "#FFF7F3",
+    "--ds-c-danger": "#EC2D30",
+    "--ds-c-icon-accent": "#FF6618",
+    "--ds-c-icon-invert": "#FFFFFF",
+    "--ds-c-icon-main": "#161616",
+    "--ds-c-icon-sub": "#737373",
+    "--ds-c-line-dark": "#161616",
+    "--ds-c-line-disabled": "#E8E8E8",
+    "--ds-c-line-error": "#EC2D30",
+    "--ds-c-line-focus": "#000000",
+    "--ds-c-line-hover": "#454545",
+    "--ds-c-line-light": "#E8E8E8",
+    "--ds-c-line-main": "#E8E8E8",
+    "--ds-c-line-sub": "#D0D0D0",
+    "--ds-c-overlay-floating": "rgba(255,255,255,0.5)",
+    "--ds-c-overlay-main": "rgba(22,22,22,0.4)",
+    "--ds-c-overlay-sub": "rgba(22,22,22,0.1)",
+    "--ds-c-primary": "#161616",
+    "--ds-c-success": "#2e8b57",
+    "--ds-c-text-disabled": "#D0D0D0",
+    "--ds-c-text-error": "#EC2D30",
+    "--ds-c-text-invert": "#FFFFFF",
+    "--ds-c-text-link": "#161616",
+    "--ds-c-text-link-hover": "#161616",
+    "--ds-c-text-main": "#161616",
+    "--ds-c-text-mute": "#D0D0D0",
+    "--ds-c-text-placeholder": "#BABABA",
+    "--ds-c-text-sub": "#737373",
+    "--ds-c-warning": "#f5a623",
+    "--ds-container": "1520px",
+    "--ds-fs-2xl": "24px",
+    "--ds-fs-3xl": "28px",
+    "--ds-fs-4xl": "32px",
+    "--ds-fs-5xl": "64px",
+    "--ds-fs-body-lg": "16px",
+    "--ds-fs-body-md": "14px",
+    "--ds-fs-caption-lg": "14px",
+    "--ds-fs-caption-md": "12px",
+    "--ds-fs-caption-sm": "11px",
+    "--ds-fs-display-lg": "64px",
+    "--ds-fs-display-md": "56px",
+    "--ds-fs-h1": "32px",
+    "--ds-fs-h2": "28px",
+    "--ds-fs-h3": "24px",
+    "--ds-fs-h4": "20px",
+    "--ds-fs-h5": "18px",
+    "--ds-fs-lg": "18px",
+    "--ds-fs-md": "16px",
+    "--ds-fs-sm": "14px",
+    "--ds-fs-xl": "20px",
+    "--ds-fs-xs": "12px",
+    "--ds-fw-bold": "700",
+    "--ds-fw-medium": "500",
+    "--ds-fw-regular": "400",
+    "--ds-fw-semibold": "600",
+    "--ds-icon-lg": "72px",
+    "--ds-icon-md": "24px",
+    "--ds-icon-sm": "16px",
+    "--ds-icon-xs": "12px",
+    "--ds-lh-base": "1.4",
+    "--ds-lh-loose": "1.5",
+    "--ds-lh-tight": "1.2",
+    "--ds-ls": "-0.02em",
+    "--ds-r-lg": "24px",
+    "--ds-r-md": "12px",
+    "--ds-r-round": "999px",
+    "--ds-r-sm": "8px",
+    "--ds-r-xs": "4px",
+    "--ds-sh-md": "0 20px 40px rgba(22,22,22,0.1)",
+    "--ds-sh-sm": "0 -5px 20px rgba(22,22,22,0.1)",
+    "--ds-sp-0": "0px",
+    "--ds-sp-112": "112px",
+    "--ds-sp-12": "12px",
+    "--ds-sp-16": "16px",
+    "--ds-sp-2": "2px",
+    "--ds-sp-20": "20px",
+    "--ds-sp-24": "24px",
+    "--ds-sp-32": "32px",
+    "--ds-sp-4": "4px",
+    "--ds-sp-40": "40px",
+    "--ds-sp-48": "48px",
+    "--ds-sp-56": "56px",
+    "--ds-sp-64": "64px",
+    "--ds-sp-8": "8px",
+    "--ds-sp-80": "80px",
+    "--ds-tr-base-all": "all 0.25s ease",
+    "--ds-tr-fast-all": "all 0.15s ease",
+    "--ds-z-dropdown": "200",
+    "--ds-z-header": "100",
+    "--ds-z-modal": "400",
+    "--ds-z-overlay": "300",
+    "--ds-z-toast": "500"
+  }
+}

@@ -67,7 +67,7 @@ async function measure(page, label) {
   await remotePage.close();
 
   const localPage = await browser.newPage({ viewport: { width: 1920, height: 1080 }, locale: 'ko-KR' });
-  await localPage.goto('http://127.0.0.1:4180/', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await localPage.goto('http://127.0.0.1:4173/', { waitUntil: 'domcontentloaded', timeout: 90000 });
   const local = await measure(localPage, 'local-v3');
   await localPage.close();
 

@@ -35,16 +35,17 @@
 
 ### 로컬에서 보기 (페이지 이동 + 인터랙션)
 
+**항상 이 주소만 사용:** http://127.0.0.1:4173/
+
 ```bash
 cd _reference-harness
-node scripts/preview-original.js ptmd869920 4180
-# → http://127.0.0.1:4180/
+node scripts/preview-original.js ptmd869920
+# 이미 켜져 있는데 갱신이 필요하면:
+node scripts/preview-original.js ptmd869920 --force
 ```
 
-**중요:** 미리보기 서버가 켜져 있어야 합니다.  
-- 로컬에 있는 페이지 → `_mirror`  
-- 미수집 페이지·`/exec` API → 라이브 데모 프록시  
-`index.html`만 파일로 열면 이동·인터랙션이 깨집니다.
+`01-original/PREVIEW.url` 파일을 열어도 같은 주소로 갑니다.  
+미리보기 서버가 켜져 있어야 `/exec` 등이 살아 있습니다. `index.html`만 파일로 열면 안 됩니다.
 
 ## Track C 경계
 

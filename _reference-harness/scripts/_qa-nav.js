@@ -1,11 +1,11 @@
 /**
  * Quick nav smoke test against local preview
- *   node scripts/_qa-nav.js http://127.0.0.1:4180
+ *   node scripts/_qa-nav.js http://127.0.0.1:4173
  */
 const http = require('http');
 const { chromium } = require('playwright');
 
-const BASE = process.argv[2] || 'http://127.0.0.1:4180';
+const BASE = process.argv[2] || 'http://127.0.0.1:4173';
 
 function fetchStatus(path) {
   return new Promise((resolve) => {

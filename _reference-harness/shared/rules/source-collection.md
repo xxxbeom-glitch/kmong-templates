@@ -69,8 +69,8 @@ license · source 메타
 # URL 데모 / 사이트 (browser-captured) — 한 번에 전체
 cd _reference-harness
 node scripts/mirror-original.js {slug} {url} [maxPages]
-node scripts/preview-original.js {slug} [port]
-# fidelity QA: 원격 대비 화면 · 클릭 이동 · 슬라이더(/exec)
+node scripts/preview-original.js {slug}
+# → http://127.0.0.1:4173/  (고정 · --force 로 재기동)
 
 # 정식 ZIP (skin-zip) — 수신 후
 # 1) cases/{slug}/00-source/license.md 기록
