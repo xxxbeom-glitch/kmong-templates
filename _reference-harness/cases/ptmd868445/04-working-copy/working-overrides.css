@@ -213,6 +213,8 @@ button {
 #header.header--two-row,
 #header.header--two-row.fixed {
   border-bottom: none;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* 2열 헤더 높이 증가 → 히어로/본문과 붙음 방지 */
@@ -227,7 +229,11 @@ body:has(#header.header--two-row) #container {
   align-items: stretch !important;
   justify-content: flex-start !important;
   height: auto !important;
-  padding: 0 !important;
+  width: 100%;
+  max-width: calc(var(--ds-container) + var(--ds-sp-24) * 2);
+  margin: 0 auto;
+  padding: 0 var(--ds-sp-24) !important;
+  box-sizing: border-box;
   gap: 0;
 }
 
