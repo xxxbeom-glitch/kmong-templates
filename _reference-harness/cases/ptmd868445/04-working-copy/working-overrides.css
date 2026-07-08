@@ -84,6 +84,8 @@ select,
 textarea,
 button {
   font-family: 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: var(--ds-fs-body-md); /* 15px · PTMD871337 body */
+  font-weight: var(--ds-fw-regular);
   letter-spacing: var(--ds-ls);
   line-height: var(--ds-lh-base);
 }
