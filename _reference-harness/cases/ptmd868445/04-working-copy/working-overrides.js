@@ -148,103 +148,110 @@
 
 /**
  * KV → PTMD869920 기본형(A)
- * Destroy card+peek KV and re-init as full-bleed 1-slide swiper.
- * Autoplay: 5s (theme default 3s gets overridden).
+ * Full-bleed 1-slide · autoplay 5s.
+ *
+ * Do NOT repeatedly destroy/rebuild or autoplay.stop/start — that made
+ * hero image+text flash rapidly. Init once; only re-fix if theme
+ * re-binds card-mode / 3s autoplay.
  */
 (function () {
   var AUTOPLAY_MS = 5000;
-  var inited = false;
+  var locked = false;
+  var fixing = false;
 
-  function forceAutoplay5s(sw) {
-    if (!sw) return;
-    if (!sw.params.autoplay || typeof sw.params.autoplay === 'boolean') {
-      sw.params.autoplay = { delay: AUTOPLAY_MS, disableOnInteraction: false };
-    } else {
-      sw.params.autoplay.delay = AUTOPLAY_MS;
-      sw.params.autoplay.disableOnInteraction = false;
-    }
-    if (sw.autoplay) {
-      if (typeof sw.autoplay.stop === 'function') sw.autoplay.stop();
-      if (typeof sw.autoplay.start === 'function') sw.autoplay.start();
-    }
-  }
-
-  function rebuildKv() {
-    var el = document.querySelector('.kv-section--style-a .kv-swiper');
-    if (!el || typeof Swiper === 'undefined') return false;
-
-    // destroy theme instance if already bound
-    if (el.swiper) {
-      try {
-        el.swiper.destroy(true, true);
-      } catch (e) {}
-    }
-    if (window.kvSwiper && typeof window.kvSwiper.destroy === 'function') {
-      try {
-        window.kvSwiper.destroy(true, true);
-      } catch (e) {}
-      window.kvSwiper = null;
-    }
-
-    window.kvSwiper = new Swiper(el, {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 0,
-      loop: true,
-      speed: 600,
-      autoplay: {
-        delay: AUTOPLAY_MS,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.kv-section--style-a .kv-pagination',
-        clickable: true,
-        type: 'bullets',
-      },
-      navigation: {
-        nextEl: '.kv-section--style-a .kv-btn-next',
-        prevEl: '.kv-section--style-a .kv-btn-prev',
-      },
-      on: {
-        init: function (swiper) {
-          var box = document.querySelector('.kv-section--style-a .kv-container');
-          if (box) box.classList.add('init');
-          forceAutoplay5s(swiper);
-        },
-      },
-    });
-
-    forceAutoplay5s(window.kvSwiper);
-    inited = true;
+  function isOurSwiper(sw) {
+    if (!sw || !sw.params) return false;
+    var spv = sw.params.slidesPerView;
+    if (spv === 'auto' || (typeof spv === 'number' && spv > 1)) return false;
+    var ap = sw.params.autoplay;
+    if (ap && typeof ap === 'object' && ap.delay && ap.delay < 4000) return false;
     return true;
   }
 
-  function tryRebuild() {
+  function rebuildKv(force) {
+    if (fixing) return false;
     var el = document.querySelector('.kv-section--style-a .kv-swiper');
-    if (!el) return;
+    if (!el || typeof Swiper === 'undefined') return false;
 
-    // already our instance — still reinforce delay in case theme rewrote it
-    if (inited && el.swiper) {
-      forceAutoplay5s(el.swiper);
-      return;
+    if (!force && locked && el.swiper && isOurSwiper(el.swiper)) return true;
+
+    var slides = el.querySelectorAll('.swiper-slide.kv-slide, .kv-slide');
+    var hasImg = el.querySelector('.kv-image img');
+    if (!slides.length || !hasImg) return false;
+
+    fixing = true;
+    try {
+      if (el.swiper) {
+        try {
+          el.swiper.destroy(true, true);
+        } catch (e) {}
+      }
+      if (window.kvSwiper && window.kvSwiper !== el.swiper && typeof window.kvSwiper.destroy === 'function') {
+        try {
+          window.kvSwiper.destroy(true, true);
+        } catch (e) {}
+      }
+
+      var slideCount = el.querySelectorAll('.swiper-slide').length;
+      window.kvSwiper = new Swiper(el, {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        loop: slideCount > 1,
+        speed: 600,
+        autoplay:
+          slideCount > 1
+            ? {
+                delay: AUTOPLAY_MS,
+                disableOnInteraction: false,
+              }
+            : false,
+        pagination: {
+          el: '.kv-section--style-a .kv-pagination',
+          clickable: true,
+          type: 'bullets',
+        },
+        navigation: {
+          nextEl: '.kv-section--style-a .kv-btn-next',
+          prevEl: '.kv-section--style-a .kv-btn-prev',
+        },
+        on: {
+          init: function () {
+            var box = document.querySelector('.kv-section--style-a .kv-container');
+            if (box) box.classList.add('init');
+          },
+        },
+      });
+      locked = true;
+    } finally {
+      fixing = false;
     }
-
-    var slides = document.querySelectorAll('.kv-section--style-a .kv-slide');
-    if (!slides.length) return;
-    rebuildKv();
+    return true;
   }
 
-  var tries = 0;
-  var timer = setInterval(function () {
-    tries += 1;
-    tryRebuild();
-    if (tries > 60) clearInterval(timer);
-  }, 200);
+  var bootTries = 0;
+  var bootTimer = setInterval(function () {
+    bootTries += 1;
+    if (rebuildKv(false) || bootTries > 80) clearInterval(bootTimer);
+  }, 250);
 
-  document.addEventListener('DOMContentLoaded', tryRebuild);
+  // Slow watchdog only — theme may init card Swiper (3s) after us
+  setInterval(function () {
+    var el = document.querySelector('.kv-section--style-a .kv-swiper');
+    if (!el || !el.swiper) return;
+    if (!isOurSwiper(el.swiper)) {
+      locked = false;
+      rebuildKv(true);
+    }
+  }, 1500);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    rebuildKv(false);
+  });
   window.addEventListener('load', function () {
-    setTimeout(tryRebuild, 100);
-    setTimeout(tryRebuild, 800);
-    setTimeout(tryRebuild, 2000);
+    rebuildKv(false);
+    setTimeout(function () {
+      rebuildKv(false);
+    }, 1200);
   });
 })();
