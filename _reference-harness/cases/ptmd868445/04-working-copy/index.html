@@ -711,17 +711,22 @@ CAFE24.ROUTE = {"is_mobile":false,"is_need_route":false,"language_code":"ZZ","pa
 
 
 
-<header id="header" class="ds-section full">
+<header id="header" class="ds-section full header--two-row">
     <div class="header__main">
-        <div class="xans-element- xans-layout xans-layout-logotop header__logo"><a href="/" class="logo-text">MOALUCK</a>
+        <!-- ROW 1: logo + util text links (layout ref PTMD807311) -->
+        <div class="header__row header__row-top">
+            <div class="xans-element- xans-layout xans-layout-logotop header__logo"><a href="/" class="logo-text">MOALUCK</a>
 </div><!-- //top_logo text -->
-        <!--div class="header__logo" module="Layout_LogoTop"><a href="/"><img src="{$logo}" alt="{$mall_name}"></a></div-->  <!-- //top_logo image -->
-        <button class="header__btnMenu icon-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.10303 4H21.103" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-<path d="M3.10303 12H21.103" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-<path d="M3.10303 20H21.103" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-</svg>
-</button>
+            <ul class="header__util caption-md">
+                <li><a href="/myshop/order/list.html">주문조회</a></li>
+                <li class="xans-element- xans-layout xans-layout-statelogoff"><a href="/member/login.html">로그인</a>
+</li>
+                <li class="xans-element- xans-layout xans-layout-statelogoff"><a href="/member/agreement.html">회원가입</a>
+</li>
+            </ul>
+        </div>
+        <!-- ROW 2: categories + search + my + cart + hamburger -->
+        <div class="header__row header__row-bottom">
         <div class="header__gnb swiper">
             <ul class="d-flex ai-center swiper-wrapper">
                 <li class="main-cate swiper-slide accent fw-bold"><a href="#">가을페스타</a></li>
@@ -751,27 +756,40 @@ CAFE24.ROUTE = {"is_mobile":false,"is_need_route":false,"language_code":"ZZ","pa
             </ul>
         </div>
         <ul class="header_mypage">
-            <li class="dsSearch"><a href="javascript:;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20.9999 21.0002L16.6599 16.6602" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <li class="dsSearch header__search">
+                <a href="javascript:;" class="header__search-trigger" aria-label="검색">
+                    <span class="header__search-placeholder caption-md">검색어를 입력해주세요</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M20.9999 21.0002L16.6599 16.6602" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
-</a></li>
-            <li class="d-none d-lg-block"><a href="/myshop/index.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </a>
+            </li>
+            <li class="header__icon-my"><a href="/myshop/index.html" aria-label="마이페이지"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 21V19C20 17.9391 19.5184 16.9217 18.6611 16.1716C17.8038 15.4214 16.641 15 15.4286 15H8.57143C7.35901 15 6.19625 15.4214 5.33894 16.1716C4.48163 16.9217 4 17.9391 4 19V21" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
 </a></li>
-            <li class="d-none d-lg-block"><a href="/myshop/wish_list.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <li class="displaynone header__icon-wish"><a href="/myshop/wish_list.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2 9.49955C2.00002 8.38675 2.33759 7.30014 2.96813 6.38322C3.59867 5.4663 4.49252 4.76221 5.53161 4.36395C6.5707 3.96569 7.70616 3.892 8.78801 4.1526C9.86987 4.4132 10.8472 4.99583 11.591 5.82355C11.6434 5.87957 11.7067 5.92422 11.7771 5.95475C11.8474 5.98528 11.9233 6.00104 12 6.00104C12.0767 6.00104 12.1526 5.98528 12.2229 5.95475C12.2933 5.92422 12.3566 5.87957 12.409 5.82355C13.1504 4.99045 14.128 4.40292 15.2116 4.13915C16.2952 3.87539 17.4335 3.9479 18.4749 4.34704C19.5163 4.74617 20.4114 5.453 21.0411 6.37345C21.6708 7.2939 22.0053 8.38431 22 9.49955C22 11.7896 20.5 13.4996 19 14.9996L13.508 20.3126C13.3217 20.5266 13.0919 20.6985 12.834 20.8169C12.5762 20.9352 12.296 20.9974 12.0123 20.9992C11.7285 21.001 11.4476 20.9424 11.1883 20.8273C10.9289 20.7122 10.697 20.5432 10.508 20.3316L5 14.9996C3.5 13.4996 2 11.7996 2 9.49955Z" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
 </a></li>
-            <li><a href="/order/basket.html" class="xans-element- xans-layout xans-layout-orderbasketcount"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <li class="header__icon-cart"><a href="/order/basket.html" class="xans-element- xans-layout xans-layout-orderbasketcount"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M3.10303 6.03418H20.897" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 <path d="M3.4 5.467C3.14036 5.81319 3 6.23426 3 6.667V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6.667C21 6.23426 20.8596 5.81319 20.6 5.467L18.6 2.8C18.4137 2.55161 18.1721 2.35 17.8944 2.21115C17.6167 2.07229 17.3105 2 17 2H7C6.68951 2 6.38328 2.07229 6.10557 2.21115C5.82786 2.35 5.58629 2.55161 5.4 2.8L3.4 5.467Z" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
 <span class="count displaynone EC-Layout_Basket-count-display"><span class="EC-Layout-Basket-count">0</span></span></a></li>
+            <li class="header__icon-menu">
+                <button type="button" class="header__btnMenu icon-md" aria-label="메뉴"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.10303 4H21.103" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M3.10303 12H21.103" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M3.10303 20H21.103" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</button>
+            </li>
         </ul>
+        </div>
     </div>
     <div class="header__menuBox">
         <div class="left-box">

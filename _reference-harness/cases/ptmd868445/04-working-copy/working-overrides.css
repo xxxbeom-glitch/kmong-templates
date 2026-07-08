@@ -193,3 +193,228 @@ button {
 .swiper-box:has(.prdList) .swiper-button-prev:after {
   font-size: 10px !important;
 }
+
+/* =========================================================
+ * Header 2-row layout (ref PTMD807311 BODYLAB-style)
+ * tokens only · MOALUCK copy / SUIT keep
+ * ========================================================= */
+
+#header.header--two-row {
+  border-bottom: 1px solid var(--ds-c-line-main);
+}
+
+#header.header--two-row .header__main {
+  display: flex !important;
+  flex-direction: column;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  padding: 0 !important;
+  gap: 0;
+}
+
+#header.header--two-row .header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#header.header--two-row .header__row-top {
+  min-height: 64px;
+  padding: var(--ds-sp-16) 0 var(--ds-sp-8);
+}
+
+#header.header--two-row .header__row-bottom {
+  min-height: 56px;
+  padding: var(--ds-sp-8) 0 var(--ds-sp-16);
+  gap: var(--ds-sp-24);
+}
+
+/* logo — no absolute */
+#header.header--two-row .header__logo {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: auto !important;
+  background: transparent !important;
+  z-index: auto;
+}
+
+#header.header--two-row .header__logo .logo-text {
+  font-size: var(--ds-fs-h2);
+  font-weight: var(--ds-fw-bold);
+  line-height: var(--ds-lh-tight);
+  letter-spacing: var(--ds-ls);
+  color: var(--ds-c-primary);
+}
+
+/* util links (주문조회 · 로그인 · 회원가입) */
+#header.header--two-row .header__util {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ds-sp-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#header.header--two-row .header__util a {
+  font-size: var(--ds-fs-caption-md);
+  font-weight: var(--ds-fw-regular);
+  line-height: var(--ds-lh-base);
+  color: var(--ds-c-text-sub);
+  text-decoration: none;
+}
+
+#header.header--two-row .header__util a:hover {
+  color: var(--ds-c-text-main);
+}
+
+/* gnb — bottom row left */
+#header.header--two-row .header__gnb {
+  order: 0 !important;
+  flex: 1 1 auto;
+  width: auto !important;
+  min-width: 0;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+#header.header--two-row .header__gnb .swiper-slide {
+  font-size: var(--ds-fs-body-md);
+  line-height: var(--ds-lh-base);
+}
+
+#header.header--two-row .header__gnb > ul > li {
+  margin-right: var(--ds-sp-24);
+}
+
+/* mypage / search / icons — bottom row right */
+#header.header--two-row .header_mypage {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  transform: none !important;
+  display: flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ds-sp-16);
+  padding: 0 !important;
+  margin: 0;
+  list-style: none;
+  background: transparent !important;
+  z-index: 2;
+}
+
+#header.header--two-row .header_mypage > li {
+  padding: 0 !important;
+}
+
+#header.header--two-row .header_mypage > li > a,
+#header.header--two-row .header_mypage .header__btnMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* search as field (triggers existing .dsSearch popup) */
+#header.header--two-row .header__search .header__search-trigger {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-sp-8);
+  width: 220px;
+  height: 40px;
+  padding: 0 var(--ds-sp-16);
+  box-sizing: border-box;
+  border-radius: var(--ds-r-round);
+  background: var(--ds-c-bg-section);
+  color: var(--ds-c-icon-main);
+  font-size: inherit !important;
+}
+
+#header.header--two-row .header__search-placeholder {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--ds-fs-caption-md);
+  line-height: var(--ds-lh-base);
+  color: var(--ds-c-text-placeholder);
+}
+
+#header.header--two-row .header__search svg {
+  flex: 0 0 auto;
+  color: var(--ds-c-icon-main);
+}
+
+#header.header--two-row .header__btnMenu {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0;
+  border: 0;
+  background: transparent !important;
+  cursor: pointer;
+}
+
+#header.header--two-row .header_mypage li a.xans-layout-orderbasketcount .count {
+  background: var(--ds-c-brand);
+}
+
+/* tablet / mobile: keep 2-row feel, compact search */
+@media (max-width: 1024px) {
+  #header.header--two-row .header__row-top {
+    min-height: 56px;
+    padding: var(--ds-sp-12) 0 var(--ds-sp-4);
+  }
+
+  #header.header--two-row .header__row-bottom {
+    min-height: 48px;
+    padding: var(--ds-sp-4) 0 var(--ds-sp-12);
+    gap: var(--ds-sp-12);
+  }
+
+  #header.header--two-row .header__logo .logo-text {
+    font-size: var(--ds-fs-h3);
+  }
+
+  #header.header--two-row .header__search .header__search-trigger {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    border-radius: var(--ds-r-round);
+    background: transparent;
+  }
+
+  #header.header--two-row .header__search-placeholder {
+    display: none;
+  }
+
+  #header.header--two-row .header_mypage {
+    gap: var(--ds-sp-12);
+  }
+
+  #header.header--two-row .header__icon-my {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #header.header--two-row .header__util {
+    gap: var(--ds-sp-12);
+  }
+
+  #header.header--two-row .header__util li:first-child {
+    display: none; /* 주문조회 — 모바일 aside에 있음 */
+  }
+}
