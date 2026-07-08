@@ -24,6 +24,12 @@ function hes_womens_clinic_asset_uri($key) {
     'space-exam-c' => 'spaces/exam-c.png',
     'space-surgery' => 'spaces/operating-room.png',
     'space-infusion' => 'spaces/infusion.png',
+    'checkup-overview' => 'spaces/exam-b.png',
+    'checkup-program-01' => 'spaces/consult.png',
+    'checkup-program-02' => 'spaces/exam-a.png',
+    'checkup-program-03' => 'spaces/exam-b.png',
+    'checkup-program-04' => 'spaces/exam-c.png',
+    'checkup-program-05' => 'spaces/lounge.png',
   );
 
   if (!isset($map[$key])) {
@@ -50,18 +56,6 @@ function hes_womens_clinic_gnb_items() {
       ),
     ),
     array(
-      'label' => '여성질환',
-      'url' => home_url('/womens-disease/'),
-      'children' => array(
-        array('label' => '여성질환 클리닉', 'url' => home_url('/womens-disease/')),
-        array('label' => '질염·방광염', 'url' => home_url('/womens-disease/vaginitis-cystitis/')),
-        array('label' => '생리불순', 'url' => home_url('/womens-disease/menstrual-disorder/')),
-        array('label' => '부정출혈', 'url' => home_url('/womens-disease/abnormal-bleeding/')),
-        array('label' => '자궁·난소질환', 'url' => home_url('/womens-disease/uterus-ovary/')),
-        array('label' => '갱년기', 'url' => home_url('/womens-disease/menopause/')),
-      ),
-    ),
-    array(
       'label' => '여성검진',
       'url' => home_url('/checkup/'),
       'children' => array(
@@ -71,6 +65,18 @@ function hes_womens_clinic_gnb_items() {
         array('label' => '미혼 여성 검진', 'url' => home_url('/checkup/unmarried/')),
         array('label' => '예비부부 검진', 'url' => home_url('/checkup/wedding/')),
         array('label' => '연령별 검진', 'url' => home_url('/checkup/age/')),
+      ),
+    ),
+    array(
+      'label' => '여성질환',
+      'url' => home_url('/womens-disease/'),
+      'children' => array(
+        array('label' => '여성질환 클리닉', 'url' => home_url('/womens-disease/')),
+        array('label' => '질염·방광염', 'url' => home_url('/womens-disease/vaginitis-cystitis/')),
+        array('label' => '생리불순', 'url' => home_url('/womens-disease/menstrual-disorder/')),
+        array('label' => '부정출혈', 'url' => home_url('/womens-disease/abnormal-bleeding/')),
+        array('label' => '자궁·난소질환', 'url' => home_url('/womens-disease/uterus-ovary/')),
+        array('label' => '갱년기', 'url' => home_url('/womens-disease/menopause/')),
       ),
     ),
     array(

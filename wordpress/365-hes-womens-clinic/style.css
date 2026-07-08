@@ -3,7 +3,7 @@ Theme Name: 365 Hess Women's Clinic
 Theme URI: https://example.com/
 Author: kmong-templates
 Description: 365헤스여성의원 — Figma 365hes-homepage-1920 (614:4) · 카페24 WordPress 운영 테마
-Version: 0.1.1
+Version: 0.1.8
 Text Domain: 365-hes-womens-clinic
 */
 
@@ -1941,6 +1941,293 @@ p {
   color: var(--color-text);
 }
 
+/* Sub pages — checkup (Figma 728:171) */
+.checkup-overview,
+.checkup-programs,
+.checkup-process {
+  padding-block: var(--section-pad-y);
+  background: var(--color-bg);
+}
+
+.checkup-overview .section-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.checkup-overview__row {
+  display: grid;
+  /* Figma overview-left FIXED 590 · overview-right FILL · gap 80 */
+  grid-template-columns: 590px minmax(0, 1fr);
+  gap: 80px;
+  align-items: stretch;
+}
+
+.checkup-overview__lead {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* about-clinic 섹션헤더 토큰 기준 */
+.checkup-overview__heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkup-overview__eyebrow {
+  margin: 0 0 12px;
+  font-size: var(--symptom-eyebrow-size);
+  font-weight: 500;
+  line-height: var(--symptom-eyebrow-lh);
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.checkup-overview__title {
+  margin: 0;
+  font-size: var(--symptom-title-size);
+  font-weight: 700;
+  line-height: var(--symptom-title-lh);
+  color: var(--color-text);
+}
+
+.checkup-overview__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkup-overview__text {
+  margin: 0 0 12px;
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.8;
+  color: #4a4540;
+}
+
+.checkup-overview__text:last-child {
+  margin-bottom: 0;
+}
+
+.checkup-overview__cases {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #e8e4df;
+  min-height: 100%;
+}
+
+.checkup-overview__case {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e8e4df;
+}
+
+.checkup-overview__check {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2.5 7.2 5.6 10.2 11.5 3.8' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
+
+.checkup-overview__case-text {
+  font-size: clamp(16px, 1.0417vw, 20px);
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.checkup-overview__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.checkup-overview__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 732;
+  object-fit: cover;
+}
+
+.checkup-programs .section-shell,
+.checkup-process .section-shell {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkup-programs .section-shell {
+  gap: clamp(36px, 2.5vw, 48px);
+}
+
+.checkup-process .section-shell {
+  gap: clamp(24px, 1.6667vw, 32px);
+}
+
+/* about-doctors 섹션헤더 토큰 기준 */
+.checkup-programs__header,
+.checkup-process__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--symptom-header-gap);
+  text-align: center;
+}
+
+.checkup-programs__eyebrow,
+.checkup-process__eyebrow {
+  margin: 0;
+  font-size: var(--symptom-eyebrow-size);
+  font-weight: 500;
+  line-height: var(--symptom-eyebrow-lh);
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.checkup-programs__title,
+.checkup-process__title {
+  margin: 0;
+  font-size: var(--symptom-title-size);
+  font-weight: 700;
+  line-height: var(--symptom-title-lh);
+  color: var(--color-text);
+}
+
+.checkup-programs__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 4.1667vw, 80px);
+  align-items: stretch;
+}
+
+.checkup-programs__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: clamp(320px, 27.0833vw, 520px);
+}
+
+.checkup-programs__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkup-programs__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(28, 25, 23, 0.1);
+}
+
+.checkup-programs__item {
+  border-bottom: 1px solid rgba(28, 25, 23, 0.1);
+}
+
+.checkup-programs__trigger {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 2.0833vw, 40px);
+  width: 100%;
+  min-height: 104px;
+  padding: 0 clamp(20px, 1.6667vw, 32px);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.checkup-programs__trigger.is-active,
+.checkup-programs__item.is-active .checkup-programs__trigger {
+  opacity: 1;
+}
+
+.checkup-programs__img {
+  transition: opacity 0.2s ease;
+}
+
+.checkup-programs__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.checkup-programs__num {
+  flex: 0 0 auto;
+  font-size: clamp(16px, 1.0417vw, 18px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-accent);
+}
+
+.checkup-programs__label {
+  font-size: clamp(16px, 1.0417vw, 18px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.checkup-programs__desc {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6b6560;
+}
+
+.checkup-process__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.checkup-process__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: clamp(140px, 9.3229vw, 179px);
+  padding: clamp(20px, 1.4583vw, 28px);
+  border-radius: 12px;
+  background: var(--color-white);
+}
+
+.checkup-process__num {
+  font-size: clamp(18px, 1.0417vw, 20px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-accent);
+}
+
+.checkup-process__label {
+  margin: 0;
+  font-size: clamp(16px, 1.0417vw, 18px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.checkup-process__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b6560;
+}
+
 /* Sub pages — womens-disease (OK 클리닉식 배열) */
 .sub-intro {
   padding-block: clamp(40px, 3.3333vw, 64px);
@@ -2503,6 +2790,27 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .checkup-overview__row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .checkup-overview .section-shell {
+    gap: 32px;
+  }
+
+  .checkup-overview__lead {
+    gap: 28px;
+  }
+
+  .checkup-programs__content {
+    grid-template-columns: 1fr;
+  }
+
+  .checkup-process__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sub-areas__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2600,6 +2908,15 @@ p {
     opacity: 0.85;
   }
 
+  .checkup-programs__trigger:hover {
+    opacity: 0.7;
+  }
+
+  .checkup-programs__trigger.is-active:hover,
+  .checkup-programs__item.is-active .checkup-programs__trigger:hover {
+    opacity: 1;
+  }
+
   .sub-areas__card:hover {
     box-shadow: 0 8px 28px rgba(28, 25, 23, 0.06);
     transform: translateY(-2px);
@@ -2686,8 +3003,24 @@ p {
   .sub-areas__title,
   .sub-exams__title,
   .section-examination__title,
-  .section-sub-hero__title {
+  .section-sub-hero__title,
+  .checkup-programs__title,
+  .checkup-process__title {
     white-space: normal;
+  }
+
+  .checkup-process__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .checkup-programs__trigger {
+    align-items: flex-start;
+    padding-block: 20px;
+    min-height: 0;
+  }
+
+  .checkup-programs__media {
+    min-height: clamp(240px, 56vw, 360px);
   }
 
   .about-clinic__intro,

@@ -1,5 +1,56 @@
 # Change Log
 
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic checkup 섹션헤더 토큰 정렬
+
+**범위:** `style.css` (checkup만)  
+**기준:** 병원소개 `about-clinic` / `about-doctors` eyebrow·title 토큰  
+**내용:** checkup overview·programs·process 헤더를 `--symptom-eyebrow-*` / `--symptom-title-*` / `--symptom-header-gap`에 맞춤 · about 원복 · 공통 클래스 실험 롤백
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 맞춤 검진 프로그램 탭 UX
+
+**범위:** `checkup-body.php` · `content-checkup.php` · `assets.php` · `style.css` · `main.js`  
+**내용:** 우측 항목 클릭 → 좌측 이미지 전환 · 비선택 opacity 0.35 · `>` chevron 제거(링크가 아닌 선택 탭) · 항목별 임시 이미지 5장
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic CHECKUP 타이틀 간격 수정
+
+**범위:** `content-checkup.php` · `checkup-body.php` · `style.css`  
+**원인:** `white-space:pre-line`이 h2 태그 사이 들여쓰기 줄바꿈을 빈 줄(~50px)로 렌더 → CHECKUP↔타이틀 간격이 Figma 12px가 아니라 ~70px+  
+**조치:** 타이틀을 `<br>`+`wp_kses`로 변경 · `pre-line` 제거 · eyebrow `letter-spacing:1.5px`
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic CHECKUP 섹션 정렬 수정
+
+**범위:** `checkup-body.php` · `style.css`  
+**내용:** 타이틀 `nl2br`+`pre-line` 이중줄바꿈 제거 · 체크 아이콘 원+흰체크 복구 · 열 590/1fr·gap80 · 구분선 `#e8e4df` · 우열 stretch 균등행
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 여성검진 Figma 레이어 재확인 반영
+
+**범위:** `style.css`  
+**내용:** PROGRAMS·PROCESS 헤더 가운데 정렬 · overview 체크리스트 사각 박스 → 가로 구분선만 (Figma overview-right Line 구조)
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 여성검진 안내 Figma 레이아웃 재반영
+
+**범위:** `checkup-body.php` · `style.css`  
+**내용:** overview 타이틀 좌열 이동 · 체크리스트·프로그램 구분선 행 · 좌정렬 섹션 헤더 · 프로그램 num+세로카피 · 이미지 비율 1440/732
+
+---
+
+## 2026-07-08 — [wordpress] 365-hes-womens-clinic 여성검진 안내 Figma 반영
+
+**범위:** `content-checkup.php` · `checkup-body.php` · `content-registry.php` · `pages.php` · `assets.php` · `style.css`  
+**내용:** Figma `728:171` 여성검진 안내 3섹션(CHECKUP·PROGRAMS·PROCESS) · 서브히어로 카피 · GNB 여성검진↔여성질환 순서 교체
+
+---
+
 ## 2026-07-08 — [wordpress] 365-hes-womens-clinic 서브페이지 하단 CTA band 제거
 
 **범위:** `page.php` · `assets.php`  

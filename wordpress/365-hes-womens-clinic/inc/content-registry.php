@@ -167,12 +167,9 @@ function hes_womens_clinic_page_content_config($path) {
       array('갑작스러운 열감·홍조가 있어요', '수면이 어렵거나 피로감이 심해요', '건조함·불편감이 늘었어요', '기분 변화가 커졌어요')
     ),
 
-    'checkup' => hes_womens_clinic_hub_page(
-      'checkup',
-      '여성검진',
-      '연령·상황에 맞는 산부인과 검진을 안내합니다. 기본 검진부터 자궁경부암 검사, 예비부부·연령별 검진까지 선택할 수 있습니다.',
-      '나에게 맞는 검진 찾기',
-      '관심 있는 검진 항목을 선택해 보세요.'
+    'checkup' => array(
+      'type' => 'checkup',
+      'hero' => hes_womens_clinic_checkup_hero(),
     ),
 
     'checkup/basic' => hes_womens_clinic_detail_page(

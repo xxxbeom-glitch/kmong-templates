@@ -183,6 +183,10 @@ function hes_womens_clinic_render_page_content($path) {
       get_template_part('template-parts/section', 'space');
       break;
 
+    case 'checkup':
+      get_template_part('template-parts/pages/checkup-body');
+      break;
+
     case 'prose':
       get_template_part(
         'template-parts/pages/prose-body',

@@ -248,6 +248,36 @@
     });
   }
 
+  function initCheckupPrograms() {
+    var $section = $(".checkup-programs");
+    if (!$section.length) {
+      return;
+    }
+
+    var $triggers = $section.find(".checkup-programs__trigger");
+    var $items = $section.find(".checkup-programs__item");
+    var $img = $section.find(".checkup-programs__img");
+
+    if (!$triggers.length || !$img.length) {
+      return;
+    }
+
+    $triggers.on("click", function () {
+      var $trigger = $(this);
+      var imageSrc = $trigger.attr("data-program-image");
+
+      if ($trigger.hasClass("is-active") || !imageSrc) {
+        return;
+      }
+
+      $triggers.removeClass("is-active").attr("aria-selected", "false");
+      $items.removeClass("is-active");
+      $trigger.addClass("is-active").attr("aria-selected", "true");
+      $trigger.closest(".checkup-programs__item").addClass("is-active");
+      $img.attr("src", imageSrc);
+    });
+  }
+
   function initFaqAccordion() {
     var $section = $(".section-faq");
     if (!$section.length) {
@@ -283,6 +313,7 @@
     initHeaderToggle();
     initHeaderDropdown();
     initSpaceTabs();
+    initCheckupPrograms();
     initFaqAccordion();
   });
 })(jQuery);
