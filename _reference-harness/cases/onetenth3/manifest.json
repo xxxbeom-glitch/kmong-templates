@@ -1,0 +1,52 @@
+{
+  "caseId": "onetenth3",
+  "label": "십분의일 - 테크 기업 03",
+  "displayName": "Tech 03",
+  "sourceUrl": "https://onetenth3.mycafe24.com/",
+  "demoMallUrl": "https://onetenth3.mycafe24.com/",
+  "productCode": "ONETENTH03",
+  "track": "reference-harness",
+  "rightsType": "demo-analysis",
+  "originalCompleteness": "browser-captured",
+  "cafe24Grade": "browser-captured",
+  "viewports": {
+    "desktop": 1920,
+    "mobile": 390
+  },
+  "stages": {
+    "source": {
+      "status": "pass",
+      "updatedAt": "2026-07-09"
+    },
+    "originalCapture": {
+      "status": "pass",
+      "updatedAt": "2026-07-09",
+      "note": "80p · remaining 11"
+    },
+    "originalQa": {
+      "status": "pass",
+      "updatedAt": "2026-07-09",
+      "note": "capture PASS · partial queue"
+    },
+    "analysis": {
+      "status": "pass",
+      "updatedAt": "2026-07-09",
+      "note": "analysis + site-structure-audit"
+    },
+    "workingCopy": {
+      "status": "skipped",
+      "note": "Track C"
+    },
+    "platformMap": {
+      "status": "skipped",
+      "note": "Track B only"
+    },
+    "release": {
+      "status": "skipped",
+      "note": "Track C"
+    }
+  },
+  "createdAt": "2026-07-09",
+  "updatedAt": "2026-07-09",
+  "platform": "wordpress-cafe24-hosting"
+}

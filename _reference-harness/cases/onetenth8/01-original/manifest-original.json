@@ -1,0 +1,2021 @@
+{
+  "caseId": "onetenth8",
+  "collectedAt": "2026-07-09T06:39:59.121Z",
+  "entryUrl": "https://onetenth8.mycafe24.com/",
+  "method": "playwright-pristine-html-multipage-v4",
+  "maxPages": 80,
+  "files": [
+    {
+      "url": "https://onetenth8.mycafe24.com/",
+      "local": "_mirror/onetenth8.mycafe24.com/index.html",
+      "bytes": 170287,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/10/girl-hand-on-face.webp",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/10/girl-hand-on-face.webp",
+      "bytes": 205994,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-helper.css?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-helper.css",
+      "bytes": 38411,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.21.7",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css",
+      "bytes": 102424,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/themes/onetenth-child/style.css?ver=7.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/themes/onetenth-child/style.css",
+      "bytes": 250,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/frontend.min.css",
+      "bytes": 54564,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-66.css?ver=1783533402",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-66.css",
+      "bytes": 5194,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/modules/motion-fx.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/modules/motion-fx.min.css",
+      "bytes": 778,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min.css",
+      "bytes": 130,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-Regular.woff",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-Regular.woff",
+      "bytes": 1162848,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css",
+      "bytes": 560,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-image.min.css",
+      "bytes": 214,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-Medium.woff",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-Medium.woff",
+      "bytes": 1166440,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/elements/testimonial-carousel.css?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/elements/testimonial-carousel.css",
+      "bytes": 9053,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-video.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-video.min.css",
+      "bytes": 1243,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css",
+      "bytes": 5486,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/components/global-animations.css?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/components/global-animations.css",
+      "bytes": 2059,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css",
+      "bytes": 10255,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-switcher.css?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-switcher.css",
+      "bytes": 1498,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/elements/accordion.css?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/elements/accordion.css",
+      "bytes": 5693,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-1227.css?ver=1783534316",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-1227.css",
+      "bytes": 88121,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css",
+      "bytes": 16471,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min.css",
+      "bytes": 77,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/components/carousel.css?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/components/carousel.css",
+      "bytes": 285,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/components/global-entrances.css?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/components/global-entrances.css",
+      "bytes": 166,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/uicore-global.css?ver=4575",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/uicore-global.css",
+      "bytes": 123828,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/kboard-comments/skin/default/style.css?ver=5.5",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/kboard-comments/skin/default/style.css",
+      "bytes": 7995,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/kboard/template/css/editor_media.css?ver=6.6",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/kboard/template/css/editor_media.css",
+      "bytes": 410,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/kboard/skin/default/style.css?ver=6.6",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/kboard/skin/default/style.css",
+      "bytes": 26144,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/google-fonts/css/montserrat.css?ver=1751009873",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/google-fonts/css/montserrat.css",
+      "bytes": 38232,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/onetenth-logo-dark.png",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/onetenth-logo-dark.png",
+      "bytes": 24984,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/onetenth-logo-light.png",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/onetenth-logo-light.png",
+      "bytes": 11612,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/jquery/jquery-migrate.min.js",
+      "bytes": 13577,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/jquery/jquery.min.js",
+      "bytes": 87553,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-SemiBold.woff",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-SemiBold.woff",
+      "bytes": 1166632,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-ExtraBold.woff",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-ExtraBold.woff",
+      "bytes": 1173316,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-Bold.woff",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/Pretendard-Bold.woff",
+      "bytes": 1169488,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-divider.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/css/widget-divider.min.css",
+      "bytes": 4258,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js",
+      "local": "_mirror/cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js",
+      "bytes": 43380,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+      "local": "_mirror/cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+      "bytes": 72214,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/10/profile.png",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/10/profile.png",
+      "bytes": 6948,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/10/profile2.png",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/10/profile2.png",
+      "bytes": 4767,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
+      "bytes": 5677,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
+      "bytes": 85769,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/jquery/ui/core.min.js",
+      "bytes": 21464,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/lib/carousel-effects/special-effects.js?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/lib/carousel-effects/special-effects.js",
+      "bytes": 15945,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/frontend.min.js",
+      "bytes": 31880,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/lib/swiper.js?ver=11.2.1-ui",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/lib/swiper.js",
+      "bytes": 159078,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-switcher.min.js?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-switcher.min.js",
+      "bytes": 2339,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/elements/accordion.js?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/elements/accordion.js",
+      "bytes": 5840,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/common/helper.min.js?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/common/helper.min.js",
+      "bytes": 3264,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/uicore-global.js?ver=4575",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/uicore-global.js",
+      "bytes": 16452,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/dist/hooks.min.js",
+      "bytes": 5015,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/dist/i18n.min.js",
+      "bytes": 5697,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/components/global-carousel.js?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/js/components/global-carousel.js",
+      "bytes": 19547,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
+      "bytes": 24047,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/kboard/template/js/script.js?ver=6.6",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/kboard/template/js/script.js",
+      "bytes": 16262,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js",
+      "bytes": 6248,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
+      "bytes": 44258,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/bdt-uikit.min.js?ver=3.21.7",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/bdt-uikit.min.js",
+      "bytes": 146909,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-framework/assets/fonts/uicore-icons.woff?bc5uma",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-framework/assets/fonts/uicore-icons.woff",
+      "bytes": 11260,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js",
+      "local": "_mirror/t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js",
+      "bytes": 34784,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/10/team-highfive-1024x683.webp",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/10/team-highfive-1024x683.webp",
+      "bytes": 83194,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/shared-frontend-handlers.03caa53373b56d3bab67.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/shared-frontend-handlers.03caa53373b56d3bab67.bundle.min.js",
+      "bytes": 8481,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/text-editor.45609661e409413f1cef.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/text-editor.45609661e409413f1cef.bundle.min.js",
+      "bytes": 1348,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/video.86d44e46e43d0807e708.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/js/video.86d44e46e43d0807e708.bundle.min.js",
+      "bytes": 3223,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/wp-emoji-release.min.js?ver=7.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/wp-emoji-release.min.js",
+      "bytes": 22762,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://s.w.org/images/core/emoji/17.0.2/svg/1f603.svg",
+      "local": "_mirror/s.w.org/images/core/emoji/17.0.2/svg/1f603.svg",
+      "bytes": 526,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "https://s.w.org/images/core/emoji/17.0.2/svg/1f642.svg",
+      "local": "_mirror/s.w.org/images/core/emoji/17.0.2/svg/1f642.svg",
+      "bytes": 525,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "https://www.youtube.com/iframe_api",
+      "local": "_mirror/www.youtube.com/iframe_api.js",
+      "bytes": 993,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://www.youtube.com/s/player/b39a0cab/www-widgetapi.vflset/www-widgetapi.js",
+      "local": "_mirror/www.youtube.com/s/player/b39a0cab/www-widgetapi.vflset/www-widgetapi.js",
+      "bytes": 26769,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://www.youtube.com/embed/0PzYE3aQ5y4?controls=0&rel=0&playsinline=1&cc_load_policy=0&autoplay=1&enablejsapi=1&origin=https%3A%2F%2Fonetenth8.mycafe24.com&widgetid=1&forigin=https%3A%2F%2Fonetenth8.mycafe24.com%2F&aoriginsup=1&vf=1",
+      "local": "_mirror/www.youtube.com/embed/0PzYE3aQ5y4.html",
+      "bytes": 143988,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.YciG-8pTcJw.L.W.O/am=AAAAgA/d=0/br=1/rs=AGKMywGIPM6ZHUcF2VmJpA3gL1GwWjT7Jw",
+      "local": "_mirror/www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.YciG-8pTcJw.L.W.O/am=AAAAgA/d=0/br=1/rs=AGKMywGIPM6ZHUcF2VmJpA3gL1GwWjT7Jw.css",
+      "bytes": 470534,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://www.youtube.com/s/player/b39a0cab/www-player.css",
+      "local": "_mirror/www.youtube.com/s/player/b39a0cab/www-player.css",
+      "bytes": 520562,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.0yeJSGDEG8c.2021.O/am=AAAAgA/d=1/br=1/rs=AGKMywF7PMtjYT7kGd8sk2RehSj3qDPBTg/m=root,base",
+      "local": "_mirror/www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.0yeJSGDEG8c.2021.O/am=AAAAgA/d=1/br=1/rs=AGKMywF7PMtjYT7kGd8sk2RehSj3qDPBTg/m=root,base.js",
+      "bytes": 431923,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://www.youtube.com/s/player/b39a0cab/player_embed_es6.vflset/ko_KR/base.js",
+      "local": "_mirror/www.youtube.com/s/player/b39a0cab/player_embed_es6.vflset/ko_KR/base.js",
+      "bytes": 1545343,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.0yeJSGDEG8c.2021.O/am=AAAAgA/d=1/exm=base,root/ed=1/br=1/rs=AGKMywF7PMtjYT7kGd8sk2RehSj3qDPBTg/m=r78Drb",
+      "local": "_mirror/www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.0yeJSGDEG8c.2021.O/am=AAAAgA/d=1/exm=base,root/ed=1/br=1/rs=AGKMywF7PMtjYT7kGd8sk2RehSj3qDPBTg/m=r78Drb.js",
+      "bytes": 693711,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://static.doubleclick.net/instream/ad_status.js",
+      "local": "_mirror/static.doubleclick.net/instream/ad_status.js",
+      "bytes": 29,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://www.youtube.com/youtubei/v1/player?prettyPrint=false",
+      "local": "_mirror/www.youtube.com/youtubei/v1/player.json",
+      "bytes": 98830,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+      "local": "_mirror/googleads.g.doubleclick.net/pagead/id.json",
+      "bytes": 100,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://www.youtube.com/s/player/b39a0cab/player_embed_es6.vflset/ko_KR/captions.js",
+      "local": "_mirror/www.youtube.com/s/player/b39a0cab/player_embed_es6.vflset/ko_KR/captions.js",
+      "bytes": 75771,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback?expire=1783600799&ei=P0JPaq-dLb2dvcAPo-2k6Qs&ip=211.211.31.5&id=o-APalfOIx1emHsgzb8Das8xdeR9Mi-LIV7ii6j6ADng0R&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=437&met=1783579199%2C&mh=cO&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2z7%2Csn-nx57ynsr&ms=au%2Conr&mv=m&mvi=4&pl=20&rms=au%2Cau&initcwndbps=4053750&spc=SQ-umhIAlkA-jR7Omnj5Lhz50_qJ8hyc3vP8n9uBWywEZVVRdbcig4TwANe3GSTdynHF_Q&svpuc=1&ns=SUs-3kQESN3NiDR_Z64AQmoW&sabr=1&rqh=1&mt=1783578804&fvip=1&keepalive=yes&fexp=51565115%2C52017147&c=WEB_EMBEDDED_PLAYER&n=USTLGDaQZgw3Sw&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIhAI75yOea3AAobFmKja0MfjIJzXc_AIih3MYQvCZ5KuTKAiA6M5-IIbdzLhwsaNpIw8k8MXLganDKFGS51zggkj3lLg%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALUEJa2e23tfBMrbDJ52Ho2jewVXdyQqRz69M9lVdCg_AiEAnOTbSsuxRz6JHxL6dsTMmlm7jjDHwLQDYbqdpnoygaU%3D&cpn=VSZMBpdbC3s2mGgv&cver=2.20260708.00.00&rn=1&alr=yes",
+      "local": "_mirror/rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback",
+      "bytes": 1263533,
+      "contentType": "application/vnd.yt-ump"
+    },
+    {
+      "url": "https://rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback?expire=1783600799&ei=P0JPaq-dLb2dvcAPo-2k6Qs&ip=211.211.31.5&id=o-APalfOIx1emHsgzb8Das8xdeR9Mi-LIV7ii6j6ADng0R&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=437&met=1783579199%2C&mh=cO&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2z7%2Csn-nx57ynsr&ms=au%2Conr&mv=m&mvi=4&pl=20&rms=au%2Cau&initcwndbps=4053750&spc=SQ-umhIAlkA-jR7Omnj5Lhz50_qJ8hyc3vP8n9uBWywEZVVRdbcig4TwANe3GSTdynHF_Q&svpuc=1&ns=SUs-3kQESN3NiDR_Z64AQmoW&sabr=1&rqh=1&mt=1783578804&fvip=1&keepalive=yes&fexp=51565115%2C52017147&c=WEB_EMBEDDED_PLAYER&n=USTLGDaQZgw3Sw&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIhAI75yOea3AAobFmKja0MfjIJzXc_AIih3MYQvCZ5KuTKAiA6M5-IIbdzLhwsaNpIw8k8MXLganDKFGS51zggkj3lLg%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALUEJa2e23tfBMrbDJ52Ho2jewVXdyQqRz69M9lVdCg_AiEAnOTbSsuxRz6JHxL6dsTMmlm7jjDHwLQDYbqdpnoygaU%3D&cpn=VSZMBpdbC3s2mGgv&cver=2.20260708.00.00&rn=2&alr=yes",
+      "local": "_mirror/rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback",
+      "bytes": 143,
+      "contentType": "application/vnd.yt-ump"
+    },
+    {
+      "url": "https://i.ytimg.com/vi_webp/0PzYE3aQ5y4/maxresdefault.webp",
+      "local": "_mirror/i.ytimg.com/vi_webp/0PzYE3aQ5y4/maxresdefault.webp",
+      "bytes": 26036,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "local": "_mirror/fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "bytes": 40128,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "https://www.google.com/js/th/l8rDs9OnUnxkmHqqThgubrERnA6biEorxs8d96RcK54.js",
+      "local": "_mirror/www.google.com/js/th/l8rDs9OnUnxkmHqqThgubrERnA6biEorxs8d96RcK54.js",
+      "bytes": 61747,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://www.youtube.com/youtubei/v1/next?prettyPrint=false",
+      "local": "_mirror/www.youtube.com/youtubei/v1/next.json",
+      "bytes": 1058291,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.0yeJSGDEG8c.2021.O/am=AAAAgA/d=1/exm=base,r78Drb,root/ed=1/br=1/rs=AGKMywF7PMtjYT7kGd8sk2RehSj3qDPBTg/m=Nuilue",
+      "local": "_mirror/www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.0yeJSGDEG8c.2021.O/am=AAAAgA/d=1/exm=base,r78Drb,root/ed=1/br=1/rs=AGKMywF7PMtjYT7kGd8sk2RehSj3qDPBTg/m=Nuilue.js",
+      "bytes": 16264,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+      "local": "_mirror/jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+      "bytes": 106,
+      "contentType": "application/json+protobuf"
+    },
+    {
+      "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+      "local": "_mirror/www.youtube.com/youtubei/v1/log_event.json",
+      "bytes": 28,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/i/youtube_outline_experimental/player_full_enter_alt/v1/24px.svg",
+      "local": "_mirror/fonts.gstatic.com/s/i/youtube_outline_experimental/player_full_enter_alt/v1/24px.svg",
+      "bytes": 858,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/10/typing-up01-1024x683.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/10/typing-up01-1024x683.jpg",
+      "bytes": 67550,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://www.gstatic.com/youtube/img/icons/mweb/youtube_fill/logo/v2/67px.svg",
+      "local": "_mirror/www.gstatic.com/youtube/img/icons/mweb/youtube_fill/logo/v2/67px.svg",
+      "bytes": 478,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "https://i.ytimg.com/vi/PcCSRrkEcKE/sddefault.jpg",
+      "local": "_mirror/i.ytimg.com/vi/PcCSRrkEcKE/sddefault.jpg",
+      "bytes": 26320,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://yt3.ggpht.com/Invuj1TG8qFUylxil3OtLoXQF0SzJe7J9CreQNXMkC2iRxIRFcoWCXjW2w5WSFYlCvae4SL9kQ=s400-c-k-c0x00ffffff-no-rj",
+      "local": "_mirror/yt3.ggpht.com/Invuj1TG8qFUylxil3OtLoXQF0SzJe7J9CreQNXMkC2iRxIRFcoWCXjW2w5WSFYlCvae4SL9kQ=s400-c-k-c0x00ffffff-no-rj.jpg",
+      "bytes": 21034,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/light-hand-1024x554.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/light-hand-1024x554.jpg",
+      "bytes": 49599,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://i.ytimg.com/vi_webp/aBVC8L_fhAc/default.webp",
+      "local": "_mirror/i.ytimg.com/vi_webp/aBVC8L_fhAc/default.webp",
+      "bytes": 1828,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://yt3.ggpht.com/Invuj1TG8qFUylxil3OtLoXQF0SzJe7J9CreQNXMkC2iRxIRFcoWCXjW2w5WSFYlCvae4SL9kQ=s88-c-k-c0x00ffffff-no-rj",
+      "local": "_mirror/yt3.ggpht.com/Invuj1TG8qFUylxil3OtLoXQF0SzJe7J9CreQNXMkC2iRxIRFcoWCXjW2w5WSFYlCvae4SL9kQ=s88-c-k-c0x00ffffff-no-rj.jpg",
+      "bytes": 5488,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback?expire=1783600799&ei=P0JPaq-dLb2dvcAPo-2k6Qs&ip=211.211.31.5&id=o-APalfOIx1emHsgzb8Das8xdeR9Mi-LIV7ii6j6ADng0R&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=437&met=1783579199%2C&mh=cO&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2z7%2Csn-nx57ynsr&ms=au%2Conr&mv=m&mvi=4&pl=20&rms=au%2Cau&initcwndbps=4053750&spc=SQ-umhIAlkA-jR7Omnj5Lhz50_qJ8hyc3vP8n9uBWywEZVVRdbcig4TwANe3GSTdynHF_Q&svpuc=1&ns=SUs-3kQESN3NiDR_Z64AQmoW&sabr=1&rqh=1&mt=1783578804&fvip=1&keepalive=yes&fexp=51565115%2C52017147&c=WEB_EMBEDDED_PLAYER&n=USTLGDaQZgw3Sw&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIhAI75yOea3AAobFmKja0MfjIJzXc_AIih3MYQvCZ5KuTKAiA6M5-IIbdzLhwsaNpIw8k8MXLganDKFGS51zggkj3lLg%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALUEJa2e23tfBMrbDJ52Ho2jewVXdyQqRz69M9lVdCg_AiEAnOTbSsuxRz6JHxL6dsTMmlm7jjDHwLQDYbqdpnoygaU%3D&cpn=VSZMBpdbC3s2mGgv&cver=2.20260708.00.00&rn=3&alr=yes",
+      "local": "_mirror/rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback",
+      "bytes": 919541,
+      "contentType": "application/vnd.yt-ump"
+    },
+    {
+      "url": "https://rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback?expire=1783600799&ei=P0JPaq-dLb2dvcAPo-2k6Qs&ip=211.211.31.5&id=o-APalfOIx1emHsgzb8Das8xdeR9Mi-LIV7ii6j6ADng0R&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=437&met=1783579199%2C&mh=cO&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2z7%2Csn-nx57ynsr&ms=au%2Conr&mv=m&mvi=4&pl=20&rms=au%2Cau&initcwndbps=4053750&spc=SQ-umhIAlkA-jR7Omnj5Lhz50_qJ8hyc3vP8n9uBWywEZVVRdbcig4TwANe3GSTdynHF_Q&svpuc=1&ns=SUs-3kQESN3NiDR_Z64AQmoW&sabr=1&rqh=1&mt=1783578804&fvip=1&keepalive=yes&fexp=51565115%2C52017147&c=WEB_EMBEDDED_PLAYER&n=USTLGDaQZgw3Sw&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AHEqNM4wRQIhAI75yOea3AAobFmKja0MfjIJzXc_AIih3MYQvCZ5KuTKAiA6M5-IIbdzLhwsaNpIw8k8MXLganDKFGS51zggkj3lLg%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALUEJa2e23tfBMrbDJ52Ho2jewVXdyQqRz69M9lVdCg_AiEAnOTbSsuxRz6JHxL6dsTMmlm7jjDHwLQDYbqdpnoygaU%3D&cpn=VSZMBpdbC3s2mGgv&cver=2.20260708.00.00&rn=4&alr=yes",
+      "local": "_mirror/rr4---sn-n3cgv5qc5oq-bh2z7.googlevideo.com/videoplayback",
+      "bytes": 145,
+      "contentType": "application/vnd.yt-ump"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/kboard/rss.php",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/kboard/rss.php",
+      "bytes": 467,
+      "contentType": "application/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/feed/",
+      "local": "_mirror/onetenth8.mycafe24.com/feed/index.html",
+      "bytes": 1337,
+      "contentType": "application/rss+xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/comments/feed/",
+      "local": "_mirror/onetenth8.mycafe24.com/comments/feed/index.html",
+      "bytes": 986,
+      "contentType": "application/rss+xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2265,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/index.html",
+      "bytes": 516237,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/1227",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/1227.json",
+      "bytes": 109031,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%9d%b8%ec%82%ac%eb%a7%90/",
+      "local": "_mirror/onetenth8.mycafe24.com/인사말/index.html",
+      "bytes": 91399,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/business-img01-1-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/business-img01-1-1.jpg",
+      "bytes": 133954,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-framework/assets/fonts/themify-icons.css?ver=1.0.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-framework/assets/fonts/themify-icons.css",
+      "bytes": 18552,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-204.css?ver=1783533446",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-204.css",
+      "bytes": 28775,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-advanced-icon-box.css?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-advanced-icon-box.css",
+      "bytes": 8784,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/ceo-01-1-875x1024.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/ceo-01-1-875x1024.jpg",
+      "bytes": 90841,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-advanced-icon-box.min.js?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-advanced-icon-box.min.js",
+      "bytes": 433,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/teams03-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/teams03-1.jpg",
+      "bytes": 334325,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-framework/assets/fonts/themify.woff",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-framework/assets/fonts/themify.woff",
+      "bytes": 56108,
+      "contentType": "application/x-font-woff"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%97%b0%ed%98%81/",
+      "local": "_mirror/onetenth8.mycafe24.com/연혁/index.html",
+      "bytes": 96381,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-font.css?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-font.css",
+      "bytes": 8966,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css",
+      "bytes": 162,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-timeline.css?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-timeline.css",
+      "bytes": 11334,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-273.css?ver=1783559855",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-273.css",
+      "bytes": 16830,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-timeline.min.js?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-timeline.min.js",
+      "bytes": 336,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js",
+      "bytes": 3721,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/vendor/js/timeline.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/vendor/js/timeline.min.js",
+      "bytes": 8062,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/business06-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/business06-1.jpg",
+      "bytes": 175009,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%98%a4%ec%8b%9c%eb%8a%94-%ea%b8%b8/",
+      "local": "_mirror/onetenth8.mycafe24.com/오시는-길/index.html",
+      "bytes": 85178,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-225.css?ver=1783561289",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-225.css",
+      "bytes": 11692,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.4247846301882!2d127.0263264766882!3d37.49789827205637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a2cc3f2a7%3A0xd2e44a2795272fca!2z6rCV64Ko7Jet!5e0!3m2!1sko!2skr!4v1732539873760!5m2!1sko!2skr",
+      "local": "_mirror/www.google.com/maps/embed.html",
+      "bytes": 5213,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&paint_origin=&libraries=geometry,search&v=weekly&loading=async&language=ko&region=kr&experimentation=allowed&callback=onApiLoad",
+      "local": "_mirror/maps.googleapis.com/maps/api/js.js",
+      "bytes": 13464,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.gstatic.com/maps-api-v3/embed/js/65/8c/intl/ko_ALL/init_embed.js",
+      "local": "_mirror/maps.gstatic.com/maps-api-v3/embed/js/65/8c/intl/ko_ALL/init_embed.js",
+      "bytes": 251566,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/search.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/search.js",
+      "bytes": 2621,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/geometry.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/geometry.js",
+      "bytes": 6968,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/main.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/main.js",
+      "bytes": 299373,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "local": "_mirror/maps.googleapis.com/maps/api/mapsjs/gen_204.json",
+      "bytes": 3,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/places_impl.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/places_impl.js",
+      "bytes": 11715,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/onion.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/onion.js",
+      "bytes": 28374,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/search_impl.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/search_impl.js",
+      "bytes": 3569,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/common.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/common.js",
+      "bytes": 128238,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/map.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/map.js",
+      "bytes": 82114,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/controls.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/controls.js",
+      "bytes": 104318,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/util.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/util.js",
+      "bytes": 317869,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/places.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/places.js",
+      "bytes": 454280,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/log.js",
+      "local": "_mirror/maps.googleapis.com/maps-api-v3/api/js/65/8c/intl/ko_ALL/log.js",
+      "bytes": 28607,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://maps.gstatic.com/mapfiles/openhand_8_8.cur",
+      "local": "_mirror/maps.gstatic.com/mapfiles/openhand_8_8.cur",
+      "bytes": 326,
+      "contentType": "image/bmp"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Google+Sans+Text:400&text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&lang=ko",
+      "local": "_mirror/fonts.googleapis.com/css.css",
+      "bytes": 267,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400,500,700&lang=ko",
+      "local": "_mirror/fonts.googleapis.com/css.css",
+      "bytes": 82653,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=chevron_left,chevron_right&lang=ko",
+      "local": "_mirror/fonts.googleapis.com/css2.css",
+      "bytes": 715,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+      "local": "_mirror/maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+      "bytes": 58588,
+      "contentType": "application/json+protobuf"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "local": "_mirror/fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "bytes": 43136,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt",
+      "local": "_mirror/maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt",
+      "bytes": 26,
+      "contentType": "application/json+protobuf"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55890!3i25393!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=86597",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 10400,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55893!3i25395!4i256!2m3!1e0!2sm!3i785551000!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=58010",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 15782,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55892!3i25395!4i256!2m3!1e0!2sm!3i785551000!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=57760",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 12952,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55891!3i25395!4i256!2m3!1e0!2sm!3i785550568!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=81815",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 13424,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55893!3i25394!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=126401",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 14758,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55893!3i25393!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=87347",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 14198,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55891!3i25393!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=86847",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 11804,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55891!3i25394!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=125901",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 10968,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55892!3i25394!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=126151",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 16572,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55894!3i25395!4i256!2m3!1e0!2sm!3i785551108!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=83120",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 14052,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55894!3i25393!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=87597",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 14104,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55890!3i25394!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=125651",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 8056,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55894!3i25394!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=126651",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 15316,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55892!3i25393!4i256!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=87097",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 18072,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i55890!3i25395!4i256!2m3!1e0!2sm!3i785551204!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=32796",
+      "local": "_mirror/www.google.com/maps/vt.webp",
+      "bytes": 17318,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i55894!3i25393!1m4!1m3!1i16!2i55894!3i25394!1m4!1m3!1i16!2i55894!3i25395!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=128214",
+      "local": "_mirror/www.google.com/maps/vt.json",
+      "bytes": 4785,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata",
+      "local": "_mirror/maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata",
+      "bytes": 1417,
+      "contentType": "application/json+protobuf"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i55890!3i25393!1m4!1m3!1i16!2i55891!3i25393!1m4!1m3!1i16!2i55890!3i25394!1m4!1m3!1i16!2i55890!3i25395!1m4!1m3!1i16!2i55891!3i25394!1m4!1m3!1i16!2i55891!3i25395!1m4!1m3!1i16!2i55892!3i25393!1m4!1m3!1i16!2i55893!3i25393!1m4!1m3!1i16!2i55892!3i25394!1m4!1m3!1i16!2i55892!3i25395!1m4!1m3!1i16!2i55893!3i25394!1m4!1m3!1i16!2i55893!3i25395!2m3!1e0!2sm!3i785551240!2m3!1e2!2sspotlit!5i1!3m13!2sko!3sKR!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m15!299174093m14!14m13!1m8!1m2!1y3854132789792469671!2y15196352576521449418!2s%2Fg%2F1tctjqjd!4m2!1x374975114!2x1270267694!15sgcid%3Abus_stop!2b0!3b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=90782",
+      "local": "_mirror/www.google.com/maps/vt.json",
+      "bytes": 27764,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+      "local": "_mirror/places.googleapis.com/$rpc/google.maps.places.v1.Places/GetPlace",
+      "bytes": 1460,
+      "contentType": "application/json+protobuf"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/googlesanstext/v25/5aUp9-KzpRiLCAt4Unrc-xIKmCU5oLlVnmhjtg.woff2",
+      "local": "_mirror/fonts.gstatic.com/s/googlesanstext/v25/5aUp9-KzpRiLCAt4Unrc-xIKmCU5oLlVnmhjtg.woff2",
+      "bytes": 23388,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/googlesanstext/v25/5aUu9-KzpRiLCAt4Unrc-xIKmCU5qEp2iw.woff2",
+      "local": "_mirror/fonts.gstatic.com/s/googlesanstext/v25/5aUu9-KzpRiLCAt4Unrc-xIKmCU5qEp2iw.woff2",
+      "bytes": 22140,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "https://www.google.com/maps/vt?pb=!1m5!1m4!1i12!2i3493!3i1587!4i256!2m1!1e1!3m12!2sko!3sKR!5e289!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmx8cC52Om9mZg!4e0!5m1!1e3!23i47083502&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=86717",
+      "local": "_mirror/www.google.com/maps/vt.jpg",
+      "bytes": 19733,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%82%ac%ec%97%85%eb%b6%84%ec%95%bc-%eb%94%94%ec%9e%90%ec%9d%b8-1/",
+      "local": "_mirror/onetenth8.mycafe24.com/사업분야-디자인-1/index.html",
+      "bytes": 92838,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/page-header-tech-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/page-header-tech-1.jpg",
+      "bytes": 268897,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/elements/icon-list.css?ver=1.3.12",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/uicore-elements/assets/css/elements/icon-list.css",
+      "bytes": 2342,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-135.css?ver=1783560744",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-135.css",
+      "bytes": 15606,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/team01-1-1024x718.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/team01-1-1024x718.jpg",
+      "bytes": 74391,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%82%ac%ec%97%85%eb%b6%84%ec%95%bc-%eb%94%94%ec%9e%90%ec%9d%b8-2/",
+      "local": "_mirror/onetenth8.mycafe24.com/사업분야-디자인-2/index.html",
+      "bytes": 84407,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-237.css?ver=1783558732",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-237.css",
+      "bytes": 6245,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/teams02-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/teams02-1.jpg",
+      "bytes": 266341,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%a0%9c%ed%92%88%ec%86%8c%ea%b0%9c/",
+      "local": "_mirror/onetenth8.mycafe24.com/제품소개/index.html",
+      "bytes": 87910,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/business-3man-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/business-3man-1.jpg",
+      "bytes": 212921,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-303.css?ver=1783562559",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-303.css",
+      "bytes": 5127,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/widget-loop-common.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/widget-loop-common.min.css",
+      "bytes": 208,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/widget-loop-grid.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/widget-loop-grid.min.css",
+      "bytes": 13219,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/widget-loop-filter.min.css?ver=3.34.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/css/widget-loop-filter.min.css",
+      "bytes": 2991,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/product01-1024x683.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/product01-1024x683.jpg",
+      "bytes": 41798,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/product02-1024x683.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/product02-1024x683.jpg",
+      "bytes": 61086,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/product03-1024x683.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/product03-1024x683.jpg",
+      "bytes": 113449,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/imagesloaded.min.js",
+      "bytes": 5520,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/load-more.8b46f464e573feab5dd7.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/load-more.8b46f464e573feab5dd7.bundle.min.js",
+      "bytes": 5346,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/taxonomy-filter.a32526f3e4a201b5fce1.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/taxonomy-filter.a32526f3e4a201b5fce1.bundle.min.js",
+      "bytes": 7600,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/ajax-pagination.2090b5f4906bcda1dcc2.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/ajax-pagination.2090b5f4906bcda1dcc2.bundle.min.js",
+      "bytes": 2814,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/loop.89cc81d2188312a17a17.bundle.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor-pro/assets/js/loop.89cc81d2188312a17a17.bundle.min.js",
+      "bytes": 9006,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/",
+      "local": "_mirror/onetenth8.mycafe24.com/공지사항/index.html",
+      "bytes": 80887,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-409.css?ver=1783549837",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-409.css",
+      "bytes": 3917,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css",
+      "bytes": 30999,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/service-call-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/service-call-1.jpg",
+      "bytes": 136215,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%eb%89%b4%ec%8a%a4/",
+      "local": "_mirror/onetenth8.mycafe24.com/뉴스/index.html",
+      "bytes": 87614,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-419.css?ver=1783559514",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-419.css",
+      "bytes": 4911,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/tessla-car.webp",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/tessla-car.webp",
+      "bytes": 45996,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/asdasdfsaf.webp",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/asdasdfsaf.webp",
+      "bytes": 110916,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/samsung-nano.webp",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/samsung-nano.webp",
+      "bytes": 61670,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/faq/",
+      "local": "_mirror/onetenth8.mycafe24.com/faq/index.html",
+      "bytes": 85419,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-403.css?ver=1783549840",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-403.css",
+      "bytes": 8807,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-accordion.css?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/css/ep-accordion.css",
+      "bytes": 1307,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-accordion.min.js?ver=7.13.4",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-accordion.min.js",
+      "bytes": 1466,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/contact/",
+      "local": "_mirror/onetenth8.mycafe24.com/contact/index.html",
+      "bytes": 94643,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-334.css?ver=1783578699",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-334.css",
+      "bytes": 5131,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/fields/layout.min.css?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/fields/layout.min.css",
+      "bytes": 41126,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/frontend/modern/wpforms-full.min.css?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/frontend/modern/wpforms-full.min.css",
+      "bytes": 54909,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/css/frontend/modern/wpforms-full.min.css?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/css/frontend/modern/wpforms-full.min.css",
+      "bytes": 159803,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/fields/layout-screen-big.min.css?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/fields/layout-screen-big.min.css",
+      "bytes": 4213,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/images/submit-spin.svg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/images/submit-spin.svg",
+      "bytes": 509,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/wp-util.min.js?ver=7.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/wp-util.min.js",
+      "bytes": 1431,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/integrations/elementor/frontend.min.js?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/integrations/elementor/frontend.min.js",
+      "bytes": 1095,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/jquery.validate.min.js?ver=1.21.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/jquery.validate.min.js",
+      "bytes": 25308,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/js/underscore.min.js?ver=1.13.8",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/js/underscore.min.js",
+      "bytes": 19012,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/frontend/wpforms.min.js?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/frontend/wpforms.min.js",
+      "bytes": 49346,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/mailcheck.min.js?ver=1.1.2",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/mailcheck.min.js",
+      "bytes": 4014,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/punycode.min.js?ver=1.0.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/punycode.min.js",
+      "bytes": 1713,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/frontend/wpforms-modern.min.js?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/frontend/wpforms-modern.min.js",
+      "bytes": 6006,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/share/utils.min.js?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/js/share/utils.min.js",
+      "bytes": 1220,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/jquery.inputmask.min.js?ver=5.0.9",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/lib/jquery.inputmask.min.js",
+      "bytes": 117412,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/fields/layout-screen-small.min.css?ver=1.9.2.1",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wpforms/assets/pro/css/fields/layout-screen-small.min.css",
+      "bytes": 1664,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/terms_page/privacy-policy/",
+      "local": "_mirror/onetenth8.mycafe24.com/terms_page/privacy-policy/index.html",
+      "bytes": 76989,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-includes/css/dist/block-library/style.min.css?ver=7.0",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-includes/css/dist/block-library/style.min.css",
+      "bytes": 131189,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-538.css?ver=1783565511",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-538.css",
+      "bytes": 3127,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js",
+      "bytes": 6572,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/terms-page-header-1.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/terms-page-header-1.jpg",
+      "bytes": 81235,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-admin/admin-ajax.php",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-admin/admin-ajax.php",
+      "bytes": 45,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%259d%25b8%25ec%2582%25ac%25eb%25a7%2590%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2365,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/204",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/204.json",
+      "bytes": 24424,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2597%25b0%25ed%2598%2581%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2329,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/273",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/273.json",
+      "bytes": 30640,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2598%25a4%25ec%258b%259c%25eb%258a%2594-%25ea%25b8%25b8%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2406,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/225",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/225.json",
+      "bytes": 15553,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-1%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2524,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/135",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/135.json",
+      "bytes": 24493,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-2%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2524,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/237",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/237.json",
+      "bytes": 15386,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%25a0%259c%25ed%2592%2588%25ec%2586%258c%25ea%25b0%259c%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2401,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/303",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/303.json",
+      "bytes": 17456,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%881/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품1/index.html",
+      "bytes": 75574,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/product01.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/product01.jpg",
+      "bytes": 164615,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-309.css?ver=1783533402",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-309.css",
+      "bytes": 2607,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%882/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품2/index.html",
+      "bytes": 75574,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/product02.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/product02.jpg",
+      "bytes": 256264,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%883/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품3/index.html",
+      "bytes": 75000,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/2024/09/product03.jpg",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/2024/09/product03.jpg",
+      "bytes": 496210,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ea%25b3%25b5%25ec%25a7%2580%25ec%2582%25ac%25ed%2595%25ad%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2401,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/409",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/409.json",
+      "bytes": 10893,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25eb%2589%25b4%25ec%258a%25a4%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2329,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/419",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/419.json",
+      "bytes": 17791,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%ed%85%8c%ec%8a%ac%eb%9d%bc-%ec%9e%90%ec%9c%a8%ec%a3%bc%ed%96%89-%ea%b8%b0%ec%88%a0-%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8-%eb%b0%9c%ed%91%9c/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/테슬라-자율주행-기술-업데이트-발표/index.html",
+      "bytes": 75237,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-153.css?ver=1783562576",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/uploads/elementor/css/post-153.css",
+      "bytes": 2822,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%eb%89%b4%ec%8a%a4-02/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/뉴스-02/index.html",
+      "bytes": 74605,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%eb%89%b4%ec%8a%a4-01/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/뉴스-01/index.html",
+      "bytes": 74146,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Ffaq%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2371,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/403",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/403.json",
+      "bytes": 17767,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fcontact%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2343,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/334",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/334.json",
+      "bytes": 18302,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fterms_page%2Fprivacy-policy%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2453,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/terms_page/535",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/terms_page/535.json",
+      "bytes": 5182,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%259d%25b8%25ec%2582%25ac%25eb%25a7%2590%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2583,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2597%25b0%25ed%2598%2581%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2541,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2598%25a4%25ec%258b%259c%25eb%258a%2594-%25ea%25b8%25b8%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2630,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-1%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2766,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-2%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2766,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%25a0%259c%25ed%2592%2588%25ec%2586%258c%25ea%25b0%259c%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2625,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fproducts%2F%25ec%25a0%259c%25ed%2592%25881%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2504,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/products/313",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/products/313.json",
+      "bytes": 2725,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fproducts%2F%25ec%25a0%259c%25ed%2592%25882%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2504,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/products/324",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/products/324.json",
+      "bytes": 2725,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fproducts%2F%25ec%25a0%259c%25ed%2592%25883%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2504,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/products/325",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/products/325.json",
+      "bytes": 2725,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ea%25b3%25b5%25ec%25a7%2580%25ec%2582%25ac%25ed%2595%25ad%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2625,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25eb%2589%25b4%25ec%258a%25a4%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed",
+      "bytes": 2541,
+      "contentType": "text/xml"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fnews%2F%25ed%2585%258c%25ec%258a%25ac%25eb%259d%25bc-%25ec%259e%2590%25ec%259c%25a8%25ec%25a3%25bc%25ed%2596%2589-%25ea%25b8%25b0%25ec%2588%25a0-%25ec%2597%2585%25eb%258d%25b0%25ec%259d%25b4%25ed%258a%25b8-%25eb%25b0%259c%25ed%2591%259c%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2984,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/news/434",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/news/434.json",
+      "bytes": 1989,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fnews%2F%25eb%2589%25b4%25ec%258a%25a4-02%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.json",
+      "bytes": 2717,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/news/165",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/news/165.json",
+      "bytes": 1687,
+      "contentType": "application/json"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://onetenth8.mycafe24.com/",
+      "local": "_mirror/onetenth8.mycafe24.com/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-content/plugins/kboard/rss.php",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-content/plugins/kboard/rss.php"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/feed/",
+      "local": "_mirror/onetenth8.mycafe24.com/feed/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/comments/feed/",
+      "local": "_mirror/onetenth8.mycafe24.com/comments/feed/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/1227",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/1227.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%9d%b8%ec%82%ac%eb%a7%90/",
+      "local": "_mirror/onetenth8.mycafe24.com/인사말/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%97%b0%ed%98%81/",
+      "local": "_mirror/onetenth8.mycafe24.com/연혁/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%98%a4%ec%8b%9c%eb%8a%94-%ea%b8%b8/",
+      "local": "_mirror/onetenth8.mycafe24.com/오시는-길/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%82%ac%ec%97%85%eb%b6%84%ec%95%bc-%eb%94%94%ec%9e%90%ec%9d%b8-1/",
+      "local": "_mirror/onetenth8.mycafe24.com/사업분야-디자인-1/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%82%ac%ec%97%85%eb%b6%84%ec%95%bc-%eb%94%94%ec%9e%90%ec%9d%b8-2/",
+      "local": "_mirror/onetenth8.mycafe24.com/사업분야-디자인-2/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%a0%9c%ed%92%88%ec%86%8c%ea%b0%9c/",
+      "local": "_mirror/onetenth8.mycafe24.com/제품소개/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/",
+      "local": "_mirror/onetenth8.mycafe24.com/공지사항/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%eb%89%b4%ec%8a%a4/",
+      "local": "_mirror/onetenth8.mycafe24.com/뉴스/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/faq/",
+      "local": "_mirror/onetenth8.mycafe24.com/faq/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/contact/",
+      "local": "_mirror/onetenth8.mycafe24.com/contact/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/terms_page/privacy-policy/",
+      "local": "_mirror/onetenth8.mycafe24.com/terms_page/privacy-policy/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%259d%25b8%25ec%2582%25ac%25eb%25a7%2590%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/204",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/204.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%9d%b8%ec%82%ac%eb%a7%90/",
+      "local": "_mirror/onetenth8.mycafe24.com/인사말/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2597%25b0%25ed%2598%2581%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/273",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/273.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%97%b0%ed%98%81/",
+      "local": "_mirror/onetenth8.mycafe24.com/연혁/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2598%25a4%25ec%258b%259c%25eb%258a%2594-%25ea%25b8%25b8%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/225",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/225.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%98%a4%ec%8b%9c%eb%8a%94-%ea%b8%b8/",
+      "local": "_mirror/onetenth8.mycafe24.com/오시는-길/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-1%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/135",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/135.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%82%ac%ec%97%85%eb%b6%84%ec%95%bc-%eb%94%94%ec%9e%90%ec%9d%b8-1/",
+      "local": "_mirror/onetenth8.mycafe24.com/사업분야-디자인-1/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-2%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/237",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/237.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%82%ac%ec%97%85%eb%b6%84%ec%95%bc-%eb%94%94%ec%9e%90%ec%9d%b8-2/",
+      "local": "_mirror/onetenth8.mycafe24.com/사업분야-디자인-2/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%25a0%259c%25ed%2592%2588%25ec%2586%258c%25ea%25b0%259c%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/303",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/303.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ec%a0%9c%ed%92%88%ec%86%8c%ea%b0%9c/",
+      "local": "_mirror/onetenth8.mycafe24.com/제품소개/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%881/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품1/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%882/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품2/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%883/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품3/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ea%25b3%25b5%25ec%25a7%2580%25ec%2582%25ac%25ed%2595%25ad%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/409",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/409.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/",
+      "local": "_mirror/onetenth8.mycafe24.com/공지사항/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25eb%2589%25b4%25ec%258a%25a4%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/419",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/419.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/%eb%89%b4%ec%8a%a4/",
+      "local": "_mirror/onetenth8.mycafe24.com/뉴스/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%ed%85%8c%ec%8a%ac%eb%9d%bc-%ec%9e%90%ec%9c%a8%ec%a3%bc%ed%96%89-%ea%b8%b0%ec%88%a0-%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8-%eb%b0%9c%ed%91%9c/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/테슬라-자율주행-기술-업데이트-발표/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%eb%89%b4%ec%8a%a4-02/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/뉴스-02/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%eb%89%b4%ec%8a%a4-01/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/뉴스-01/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Ffaq%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/403",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/403.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/faq/",
+      "local": "_mirror/onetenth8.mycafe24.com/faq/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fcontact%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/pages/334",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/pages/334.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/contact/",
+      "local": "_mirror/onetenth8.mycafe24.com/contact/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fterms_page%2Fprivacy-policy%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/terms_page/535",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/terms_page/535.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/terms_page/privacy-policy/",
+      "local": "_mirror/onetenth8.mycafe24.com/terms_page/privacy-policy/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%259d%25b8%25ec%2582%25ac%25eb%25a7%2590%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2597%25b0%25ed%2598%2581%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2598%25a4%25ec%258b%259c%25eb%258a%2594-%25ea%25b8%25b8%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-1%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%2582%25ac%25ec%2597%2585%25eb%25b6%2584%25ec%2595%25bc-%25eb%2594%2594%25ec%259e%2590%25ec%259d%25b8-2%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ec%25a0%259c%25ed%2592%2588%25ec%2586%258c%25ea%25b0%259c%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fproducts%2F%25ec%25a0%259c%25ed%2592%25881%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/products/313",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/products/313.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%881/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품1/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fproducts%2F%25ec%25a0%259c%25ed%2592%25882%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/products/324",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/products/324.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%882/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품2/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fproducts%2F%25ec%25a0%259c%25ed%2592%25883%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/products/325",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/products/325.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/products/%ec%a0%9c%ed%92%883/",
+      "local": "_mirror/onetenth8.mycafe24.com/products/제품3/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25ea%25b3%25b5%25ec%25a7%2580%25ec%2582%25ac%25ed%2595%25ad%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fonetenth8.mycafe24.com%2F%25eb%2589%25b4%25ec%258a%25a4%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fnews%2F%25ed%2585%258c%25ec%258a%25ac%25eb%259d%25bc-%25ec%259e%2590%25ec%259c%25a8%25ec%25a3%25bc%25ed%2596%2589-%25ea%25b8%25b0%25ec%2588%25a0-%25ec%2597%2585%25eb%258d%25b0%25ec%259d%25b4%25ed%258a%25b8-%25eb%25b0%259c%25ed%2591%259c%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/news/434",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/news/434.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%ed%85%8c%ec%8a%ac%eb%9d%bc-%ec%9e%90%ec%9c%a8%ec%a3%bc%ed%96%89-%ea%b8%b0%ec%88%a0-%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8-%eb%b0%9c%ed%91%9c/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/테슬라-자율주행-기술-업데이트-발표/index.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fonetenth8.mycafe24.com%2Fnews%2F%25eb%2589%25b4%25ec%258a%25a4-02%2F",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/oembed/1.0/embed.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/wp-json/wp/v2/news/165",
+      "local": "_mirror/onetenth8.mycafe24.com/wp-json/wp/v2/news/165.html"
+    },
+    {
+      "url": "https://onetenth8.mycafe24.com/news/%eb%89%b4%ec%8a%a4-02/",
+      "local": "_mirror/onetenth8.mycafe24.com/news/뉴스-02/index.html"
+    }
+  ],
+  "externalUnresolved": [],
+  "liveOrigin": "https://onetenth8.mycafe24.com",
+  "pageCount": 80,
+  "queuedRemaining": 11
+}

@@ -1,4 +1,11 @@
 
+## 2026-07-09 — onetenth3/4/6/8 십분의일 WP 데모 복제·분석 (Track C)
+- 케이스: `onetenth3` · `onetenth4` · `onetenth6` · `onetenth8` (`*.mycafe24.com`)
+- 플랫폼: **WordPress + Elementor** (Cafe24 호스팅) — PTMD 쇼핑몰 스킨 아님
+- 수집: `capture-case.js` + `mirror-original.js` (80p) · `write-onetenth-analysis.js`
+- 산출: `01-original/_mirror` · `00-reference/analysis.md` · `site-structure-audit.md` · `02-original-qa/report.md`
+- 변형: Tech 03 · Business 04 · Business 06 · Creative 08
+
 ## 2026-07-09 — wonkangmetal P0 Header/Footer dual-bind (v0.7.2)
 - `header.php` · `footer.php` · `mobile-menu.php` — 원본 class/id 병행 (`s_header`, `pc_gnb`, `#s_gnb`, `utils`, `contact_button`, `lang_box`, `menu_hamberger`, `menu_sidebar`, `mobile_gnb`, `#si_footer`, `footer_logo`, `footer_content`, `info`, `footer_utils`, `copyright`, `top`)
 - `inc/menus.php` — 데스크톱·푸터 GNB `<a>`+서브메뉴(원본 hover CSS 호환) · 모바일은 기존 button+hidden 유지

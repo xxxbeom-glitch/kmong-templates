@@ -1,0 +1,26 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "title": "십분의일 - 크리에이티브 08",
+  "url": "https://onetenth8.mycafe24.com/",
+  "outline": [
+    {
+      "tag": "main",
+      "id": "",
+      "className": "entry-content",
+      "top": 0,
+      "height": 6502,
+      "text": "프리미엄 홈페이지 템플릿, 십분의일 바로 시작하기 더 알아보기 십분의일에서 제작한 홈페이지 템플릿은 싼 티 난다는 틀을 깹니다. 십분의일에서는 트랜디하고 세련된 홈페이지 템플릿을 제작합니다. 실제 300만원에 제작된 홈페이지들을 30만원 템플릿으로 만들었습니다. 300만원 홈페이지를 1"
+    },
+    {
+      "tag": "footer",
+      "id": "uicore-tb-footer",
+      "className": "",
+      "top": 6502,
+      "height": 425,
+      "text": "Address 서울특별시 00구 00동 Contact T. 010 1234 1234 F. 010 1234 1234 십분의일 대표: 안상언 사업자등록번호: 000-00-00000 주소: 서울특별시 00구 00동 개인정보처리방침 One-tenth. All rights reserved."
+    }
+  ]
+}
