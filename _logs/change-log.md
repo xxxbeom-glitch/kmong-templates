@@ -1,4 +1,110 @@
 
+## 2026-07-09 — wonkangmetal P0 Header/Footer dual-bind (v0.7.2)
+- `header.php` · `footer.php` · `mobile-menu.php` — 원본 class/id 병행 (`s_header`, `pc_gnb`, `#s_gnb`, `utils`, `contact_button`, `lang_box`, `menu_hamberger`, `menu_sidebar`, `mobile_gnb`, `#si_footer`, `footer_logo`, `footer_content`, `info`, `footer_utils`, `copyright`, `top`)
+- `inc/menus.php` — 데스크톱·푸터 GNB `<a>`+서브메뉴(원본 hover CSS 호환) · 모바일은 기존 button+hidden 유지
+- `assets/css/original-shell.css` + `tools/build-original-shell-css.js` — s_main header/footer 구간 추출
+- `inc/assets.php` — `original-shell.css` 전역 enqueue
+- `layout.css` · `components.css` · `responsive.css` — `.s_header`/`#si_footer` 와 충돌 최소 스코프 조정
+- `style.css` v0.7.2
+
+## 2026-07-09 — wonkangmetal 메인 토큰·인터랙션·섹션 정의 정리 (v0.7.1)
+- `tokens.css` — s_main breakpoint·섹션별 타이포·간격 토큰 재정의 (S01~S07 주석)
+- `home.css` — 섹션 레지스트리 + WP shell 보정 (stats Pretendard 등)
+- 헤더/푸터 `si-inner` 제거 — gutter 충돌 해소
+- `base.css` — `si-inner` 서브 전용 스코프 · line-height 1.5
+- 메인 템플릿 — `data-aos` · `data-splitting` · `split-title` · business 5슬라이드 · vision_m
+- `main-home.js` — Swiper(hero/news/vision/business-m) · AOS · Splitting · GSAP(business pin·stats)
+- `inc/assets.php` — CDN 라이브러리 enqueue
+- `style.css` v0.7.1
+
+## 2026-07-09 — wonkangmetal 메인·서브 wrap 재정렬 (v0.7.0)
+- 접근: WP 전용 클래스 대신 **원본 mirror 클래스명** (`main_section`, `main_inner`, `stats_list` 등) + `s_main.css` 추출 CSS
+- 추가: `assets/css/pages/original-main.css` · `tools/build-original-main-css.php` · `tools/build-original-main-css.js`
+- 메인 섹션 템플릿 전면 교체: hero · business · company · solution · vision · network · news+contact
+- `inc/assets.php` — front page에 `original-main.css` enqueue · 커스텀 `home.css` 축소
+- 서브: `original-sub.css` — `si_inner` 1820↓ padding 20px 규칙 수정
+- `style.css` v0.7.0
+
+## 2026-07-09 — wonkangmetal wrap·메인 텍스트 정렬 (v0.6.1 — 폐기)
+- `.si-inner` — 원본 `main_inner`/`si_inner` 규칙(1820px · 패딩은 섹션만 · 1820↓ 20px)으로 수정
+- `.main-section` — 원본 `main_section` padding 150px 50px · vision/news flush 변형
+- 메인: 히어로 slide_txt 구조·크기, company/solution/vision/network/news/contact 원본 카피·레이아웃
+- parts/vision 배경 원본 이미지 · stats 단위 strong 내부 · view-more 버튼
+- 서브: `page-original` wrapper 정리 · sub-nav inner 1820 정렬
+- `style.css` v0.6.1
+
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- 목표: placeholder/임의 문구 제거 · 원본 미러 HTML·카피·이미지 유지 · WP shell(hero/nav)만 분리
+- 추가: `content/original/*.html` 12건 · `inc/original-media.php` · `template-parts/pages/original-body.php` · `assets/css/pages/original-sub.css` · `assets/images/mirror/`(img·data/file) · `tools/import-mirror-content.php` · `tools/build-original-css.php`
+- 수정: `inc/pages.php` — 전 서브페이지 `template: original` · sub-hero desc 원본 문구 · `inc/assets.php` · `functions.php` · `style.css` v0.6.0
+- 견적문의: 원본 폼 마크업·라벨 유지 · submit 비활성(mock)
+- 미수정: `01-original/**` · product/news CPT 시드 · 생산공정 Swiper/GSAP JS
+
+- `tokens.css` — 원본 s_main/s_sub 타이포 스케일·breakpoint 반응형 토큰 통합
+- `--font-family` Raleway→Pretendard · 수치 `--font-family-numeric` Pretendard
+- `base.css` · `layout.css` · `components.css` · `home.css` · `sub.css` · `product.css` — 토큰 참조로 통일 · clamp/중복 media 제거
+- `style.css` v0.5.1
+
+## 2026-07-09 — wonkangmetal Visual Parity Recovery
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- 목표: 원본 미러(`s_main.css`·`s_sub.css`·`b_board.css`) 수치·레이아웃을 WP 클래스에 재매핑
+- 수정: `assets/css/tokens.css` · `base.css` · `layout.css` · `components.css` · `pages/home.css` · `sub.css` · `product.css` · `news.css` · `pages.css` · `responsive.css` · `inc/assets.php`(Raleway) · `style.css` v0.5.0
+- 템플릿(스타일 매핑용): `section-hero.php` · `section-solution.php` · `section-vision.php` — modifier 클래스
+- 미수정: `01-original/**` · `_mirror/**` · product/news/inquiry PHP 로직 · CF7·GSAP·다국어
+- placeholder: hero·parts·vision·network·product/news 썸네일·지도 — 원본 비율 유지
+
+## 2026-07-09 — wonkangmetal P2-4 inquiry 구조
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- 추가: `template-parts/pages/inquiry-body.php` — mock 견적문의 폼 UI (CF7 교체 슬롯)
+- 수정: `inc/pages.php` — `inquiry` 페이지 정의·시드·customer sub-nav·`inquiry` 템플릿 라우팅 · rewrite v2
+- 수정: `inc/menus.php` — GNB CUSTOMER 견적문의 → `/inquiry/` · 컨택트 → `/contact/`
+- 수정: `template-parts/sections/section-contact-cta.php` — 홈 견적문의 CTA → `/inquiry/`
+- 수정: `template-parts/pages/contact-body.php` — 지도 placeholder 문구 (폼 언급 제거)
+- 수정: `assets/css/pages/pages.css` · `style.css` v0.4.1
+- 미구현: CF7·실제 메일 전송 · contact 지도
+- 미수정: `inc/product.php` · `inc/news.php` · product/news 템플릿 · `01-original/**` · `_mirror/**`
+
+## 2026-07-09 — wonkangmetal P2-3 page templates 런타임 QA
+- 트랙: wordpress · Laragon `wonkangmetal.test`
+- 결과: **PASS** (URL 11+redirect 2+회귀 4+링크 10항목)
+- 런타임 수정: `inc/pages.php` — 기존 `privacy-policy` 페이지 draft 시 publish·title 동기화 (초기 `/privacy-policy/` 404)
+- 임시: 견적문의 링크 → `/contact/` (P2-4에서 `/inquiry/`로 교체 예정)
+- `/inquiry/` 404 = 정상 (미생성)
+
+## 2026-07-09 — wonkangmetal P2-3 page templates
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- 추가: `inc/pages.php` — 페이지 정의·시드·sub-hero/sub-nav/breadcrumb 라우팅
+- 추가: `template-parts/pages/placeholder-body.php` · `contact-body.php` · `legal-body.php` · `assets/css/pages/pages.css`
+- 수정: `functions.php` · `page.php` · `inc/menus.php` · `inc/assets.php` · `header.php` · `footer.php` · `section-contact-cta.php` · `section-company-stats.php` · `style.css` v0.4.0
+- 미구현: inquiry form · 다국어 · GSAP/Lenis · 원본 이미지 bulk
+- 미수정: `inc/product.php` · `inc/news.php` · product/news 템플릿
+
+## 2026-07-09 — wonkangmetal P2-2 news 구조
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- 추가: `inc/news.php` — CPT `news` · taxonomy `news_type` · `external_url` 메타 · 샘플 3건 시드
+- 추가: `archive-news.php` · `single-news.php` · `template-parts/news/card.php` · `type-filter.php` · `assets/css/pages/news.css`
+- 수정: `functions.php` · `inc/assets.php` · `template-parts/sections/section-news.php` · `components.css` · `style.css` v0.3.0
+- 미구현: inquiry · 다국어 · GSAP · 원본 이미지 bulk · GNB 회사소식 링크
+
+## 2026-07-09 — wonkangmetal P2-1 product 런타임 QA (Laragon)
+- 트랙: wordpress · Laragon `wonkangmetal.test` · 테마 junction `wordpress/wonkangmetal`
+- 결과: **PASS**
+- 확인: 테마 활성화 · permalink `/%postname%/` · 시드 5건 · URL 5종 HTTP 200 · Solution 4카드 href
+- 수정: `inc/product.php` taxonomy rewrite 우선순위 (CPT attachment 규칙이 `product/category/` 가로채던 404)
+
+## 2026-07-09 — wonkangmetal WordPress P2-1 product 구조
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- 추가: `inc/product.php` — CPT `product` · taxonomy `product_category` · 샘플 5건 시드 · URL 헬퍼
+- 추가: `archive-product.php` · `single-product.php` · `taxonomy-product_category.php`
+- 추가: `template-parts/product/card.php` · `part-filter.php` · `assets/css/pages/product.css`
+- 수정: `functions.php` · `inc/menus.php`(PRODUCT URL) · `inc/theme-data.php` · `section-solution.php` · `inc/assets.php` · `style.css` v0.2.0
+- 미구현: news · inquiry · 다국어 · GSAP · 원본 이미지 bulk
+
+## 2026-07-09 — wonkangmetal WordPress P1 골격 QA (수정 최소)
+- 트랙: wordpress · `wordpress/wonkangmetal/`
+- P1 QA: Theme Header · require · enqueue · template-parts · 8섹션 · 모바일 메뉴 · grep · 원본 폴더 무수정 확인
+- 수정: `template-parts/layout/sub-hero.php` · `breadcrumb.php` · `sub-nav.php` — `$args` isset 가드 (PHP 8+)
+- 미수정: CPT · archive · single · CF7 · 다국어 · GSAP · `01-original/**` · `_mirror/**`
 
 ## 2026-07-09 — wonkangmetal + 10PAGE 3종 Site Structure Audit
 - 코드 변경 없음 · `00-reference/site-structure-audit.md` 4건 작성

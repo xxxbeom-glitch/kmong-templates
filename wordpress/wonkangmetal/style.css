@@ -1,0 +1,13 @@
+/*
+Theme Name: Wonkang Metal
+Theme URI: https://example.com/
+Author: kmong-templates
+Description: 원강금속 WordPress 테마 — 메인 토큰·인터랙션·mirror CSS 정렬
+Version: 0.7.2
+Text Domain: wonkangmetal
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+*/
+
+/* 스타일은 assets/css/ 에서 enqueue 합니다. */

@@ -1,0 +1,1282 @@
+{
+  "generated": "2026-07-09T05:38:14.606Z",
+  "summary": {
+    "origMainClassCount": 84,
+    "wpTemplateClassCount": 196,
+    "criticalMissing": 54,
+    "failedCssSelectorCount": 124,
+    "failedJsSelectorCount": 22
+  },
+  "domStructureGaps": [
+    {
+      "area": "Wrapper",
+      "original": "<main> (no class)",
+      "wp": "<main class=\"site-main\" id=\"site-main\">"
+    },
+    {
+      "area": "Header root",
+      "original": "<header class=\"s_header flex_center\">",
+      "wp": "<header class=\"site-header\" id=\"site-header\">"
+    },
+    {
+      "area": "Header logo",
+      "original": "<h1><a><img logo_w.png>",
+      "wp": "<div class=\"site-header__brand\"><a><span text>"
+    },
+    {
+      "area": "GNB",
+      "original": "<nav class=\"pc_gnb\"><ul id=\"s_gnb\">",
+      "wp": "<nav class=\"site-nav site-nav--desktop\"><ul class=\"site-nav__list\">"
+    },
+    {
+      "area": "Mobile menu",
+      "original": "<div class=\"menu_sidebar\"><nav class=\"mobile_gnb\">",
+      "wp": "<div class=\"site-mobile-menu\">"
+    },
+    {
+      "area": "Footer root",
+      "original": "<footer id=\"si_footer\">",
+      "wp": "<footer class=\"site-footer\" id=\"site-footer\">"
+    },
+    {
+      "area": "Footer TOP",
+      "original": "<div class=\"top flex_center\">",
+      "wp": "<button class=\"site-footer__top\">"
+    },
+    {
+      "area": "Sub hero",
+      "original": "<section class=\"sub_visual sub_visual_bg0N\">",
+      "wp": "<section class=\"sub-hero sub-hero--*\">"
+    },
+    {
+      "area": "Sub nav",
+      "original": "<nav class=\"sub_nav\"><ul><li class=\"active\">",
+      "wp": "<nav class=\"sub-nav\"><li class=\"is-active\">"
+    },
+    {
+      "area": "Product card",
+      "original": "b_board / bo_list gallery",
+      "wp": "<article class=\"product-card\">"
+    },
+    {
+      "area": "News archive",
+      "original": "news-card in board_slider slide",
+      "wp": "news-card vs card-home (main only original)"
+    }
+  ],
+  "classReports": [
+    {
+      "group": "header",
+      "present": [
+        "flex_center"
+      ],
+      "missing": [
+        "s_header",
+        "pc_gnb",
+        "s_gnb",
+        "utils",
+        "contact_button",
+        "lang_box",
+        "menu_hamberger",
+        "menu_sidebar",
+        "mobile_gnb",
+        "scrolled",
+        "hide",
+        "active",
+        "is-open"
+      ]
+    },
+    {
+      "group": "main",
+      "present": [
+        "main_visual",
+        "slide_txt",
+        "sub_caption",
+        "main_section",
+        "main_business",
+        "business_title",
+        "mask-fill",
+        "line1",
+        "line2",
+        "line3",
+        "business_slider",
+        "business_pc",
+        "business_m",
+        "business_slider_m",
+        "slider_pagenation",
+        "current_number",
+        "total_number",
+        "scroll",
+        "business_slider_wrap",
+        "busness_slider_nav",
+        "busness_prev",
+        "busness_next",
+        "img_wrap",
+        "main_company",
+        "main_inner",
+        "main_title",
+        "split-title",
+        "stats_list",
+        "unit",
+        "txt",
+        "view_more_01",
+        "view_more_02",
+        "text-top",
+        "text-bottom",
+        "arrows",
+        "arrow",
+        "a1",
+        "a2",
+        "main_solution",
+        "parts",
+        "parts_list",
+        "main_vision",
+        "quality_bg",
+        "vision_item",
+        "main_vision_m",
+        "vision_slider",
+        "vision_slider_nav",
+        "vision_prev",
+        "vision_next",
+        "main_customer",
+        "image_pc",
+        "image_m",
+        "content",
+        "main_gallery",
+        "gallery_slider_wrap",
+        "board_slider",
+        "board_slider_nav",
+        "board_slider_prev",
+        "board_slider_next",
+        "category",
+        "date",
+        "main_contact",
+        "conmtact_title"
+      ],
+      "missing": [
+        "slide01",
+        "slide02",
+        "slide03",
+        "is-anim",
+        "base",
+        "reveal",
+        "ink",
+        "count",
+        "part_01",
+        "part_02",
+        "part_03",
+        "part_04",
+        "vision_01",
+        "vision_02",
+        "vision_03",
+        "vision_04"
+      ]
+    },
+    {
+      "group": "footer",
+      "present": [],
+      "missing": [
+        "si_footer",
+        "footer_logo",
+        "footer_content",
+        "info",
+        "footer_utils",
+        "copyright",
+        "top"
+      ]
+    },
+    {
+      "group": "sub (WP layout tpl)",
+      "present": [
+        "breadcrumb"
+      ],
+      "missing": [
+        "sub_visual",
+        "sub_visual_bg01",
+        "sub_visual_bg02",
+        "sub_visual_bg03",
+        "sub_visual_bg04",
+        "sub_visual_bg05",
+        "sub_nav",
+        "active",
+        "si_inner",
+        "sub_section",
+        "sub_board"
+      ]
+    },
+    {
+      "group": "board (WP product/news)",
+      "present": [],
+      "missing": [
+        "bo_list",
+        "bo_cate",
+        "bo_sch",
+        "tbl_head01",
+        "td_subject",
+        "list_item",
+        "gallery_list"
+      ]
+    }
+  ],
+  "missingByGroup": {
+    "header": [
+      "s_header",
+      "pc_gnb",
+      "s_gnb",
+      "utils",
+      "contact_button",
+      "lang_box",
+      "menu_hamberger",
+      "menu_sidebar",
+      "mobile_gnb",
+      "scrolled",
+      "hide",
+      "active",
+      "is-open"
+    ],
+    "main": [
+      "slide01",
+      "slide02",
+      "slide03",
+      "is-anim",
+      "base",
+      "reveal",
+      "ink",
+      "count",
+      "part_01",
+      "part_02",
+      "part_03",
+      "part_04",
+      "vision_01",
+      "vision_02",
+      "vision_03",
+      "vision_04"
+    ],
+    "footer": [
+      "si_footer",
+      "footer_logo",
+      "footer_content",
+      "info",
+      "footer_utils",
+      "copyright",
+      "top"
+    ],
+    "sub (WP layout tpl)": [
+      "sub_visual",
+      "sub_visual_bg01",
+      "sub_visual_bg02",
+      "sub_visual_bg03",
+      "sub_visual_bg04",
+      "sub_visual_bg05",
+      "sub_nav",
+      "active",
+      "si_inner",
+      "sub_section",
+      "sub_board"
+    ],
+    "board (WP product/news)": [
+      "bo_list",
+      "bo_cate",
+      "bo_sch",
+      "tbl_head01",
+      "td_subject",
+      "list_item",
+      "gallery_list"
+    ]
+  },
+  "presentByGroup": {
+    "header": [
+      "flex_center"
+    ],
+    "main": [
+      "main_visual",
+      "slide_txt",
+      "sub_caption",
+      "main_section",
+      "main_business",
+      "business_title",
+      "mask-fill",
+      "line1",
+      "line2",
+      "line3",
+      "business_slider",
+      "business_pc",
+      "business_m",
+      "business_slider_m",
+      "slider_pagenation",
+      "current_number",
+      "total_number",
+      "scroll",
+      "business_slider_wrap",
+      "busness_slider_nav",
+      "busness_prev",
+      "busness_next",
+      "img_wrap",
+      "main_company",
+      "main_inner",
+      "main_title",
+      "split-title",
+      "stats_list",
+      "unit",
+      "txt",
+      "view_more_01",
+      "view_more_02",
+      "text-top",
+      "text-bottom",
+      "arrows",
+      "arrow",
+      "a1",
+      "a2",
+      "main_solution",
+      "parts",
+      "parts_list",
+      "main_vision",
+      "quality_bg",
+      "vision_item",
+      "main_vision_m",
+      "vision_slider",
+      "vision_slider_nav",
+      "vision_prev",
+      "vision_next",
+      "main_customer",
+      "image_pc",
+      "image_m",
+      "content",
+      "main_gallery",
+      "gallery_slider_wrap",
+      "board_slider",
+      "board_slider_nav",
+      "board_slider_prev",
+      "board_slider_next",
+      "category",
+      "date",
+      "main_contact",
+      "conmtact_title"
+    ],
+    "footer": [],
+    "sub (WP layout tpl)": [
+      "breadcrumb"
+    ],
+    "board (WP product/news)": []
+  },
+  "failedCssSelectors": [
+    {
+      "sel": "header.s_header",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header.hide",
+      "missingClasses": [
+        "s_header",
+        "hide"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header::after",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header.scrolled::after",
+      "missingClasses": [
+        "s_header",
+        "scrolled"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header.active::after",
+      "missingClasses": [
+        "s_header",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header.active::before",
+      "missingClasses": [
+        "s_header",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header:hover::before",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header.menu-open::before",
+      "missingClasses": [
+        "s_header",
+        "menu-open"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header:hover nav.pc_gnb > ul > li > ul",
+      "missingClasses": [
+        "s_header",
+        "pc_gnb"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav.pc_gnb > ul > li.is-open > ul",
+      "missingClasses": [
+        "s_header",
+        "pc_gnb",
+        "is-open"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul > li > ul",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul > li",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul > li > a",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul > li > a.active",
+      "missingClasses": [
+        "s_header",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header > h1",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header > .utils",
+      "missingClasses": [
+        "s_header",
+        "utils"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav.pc_gnb > ul > li > ul",
+      "missingClasses": [
+        "s_header",
+        "pc_gnb"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul > li > ul a",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav > ul > li > ul a:hover",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "/* --- Utils --- */\nheader.s_header .utils",
+      "missingClasses": [
+        "s_header",
+        "utils"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_hamberger",
+      "missingClasses": [
+        "s_header",
+        "menu_hamberger"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_hamberger span",
+      "missingClasses": [
+        "s_header",
+        "menu_hamberger"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils .contact_button",
+      "missingClasses": [
+        "s_header",
+        "utils",
+        "contact_button"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils .contact_button img",
+      "missingClasses": [
+        "s_header",
+        "utils",
+        "contact_button"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils ul",
+      "missingClasses": [
+        "s_header",
+        "utils"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils ul a",
+      "missingClasses": [
+        "s_header",
+        "utils"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils ul a:hover",
+      "missingClasses": [
+        "s_header",
+        "utils"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils ul a.active",
+      "missingClasses": [
+        "s_header",
+        "utils",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils .lang_box",
+      "missingClasses": [
+        "s_header",
+        "utils",
+        "lang_box"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils .lang_box button img",
+      "missingClasses": [
+        "s_header",
+        "utils",
+        "lang_box"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".menu_hamberger.active span:nth-child(1)",
+      "missingClasses": [
+        "menu_hamberger",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".menu_hamberger.active span:nth-child(2)",
+      "missingClasses": [
+        "menu_hamberger",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "/* 모바일 메뉴 */\nheader.s_header .menu_sidebar",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar.active",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li.active",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li::after",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > a",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .mobile_gnb",
+      "missingClasses": [
+        "s_header",
+        "mobile_gnb"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar.revealed .mobile_gnb",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "revealed",
+        "mobile_gnb"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li.open::after",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "open"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > ul > li > a",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > ul > li > a.active",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > ul",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > ul::before",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > ul::after",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li > ul > li",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li.active > ul",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar nav > ul > li.active::after",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header nav.pc_gnb > ul > li",
+      "missingClasses": [
+        "s_header",
+        "pc_gnb"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .utils",
+      "missingClasses": [
+        "s_header",
+        "utils"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header > h1 img",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .pc_gnb #s_gnb",
+      "missingClasses": [
+        "s_header",
+        "pc_gnb"
+      ],
+      "missingIds": [
+        "s_gnb"
+      ]
+    },
+    {
+      "sel": "header.s_header .utils .contact_button span",
+      "missingClasses": [
+        "s_header",
+        "utils",
+        "contact_button"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .lang_box",
+      "missingClasses": [
+        "s_header",
+        "lang_box"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .lang_box ul",
+      "missingClasses": [
+        "s_header",
+        "lang_box"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .lang_box ul li",
+      "missingClasses": [
+        "s_header",
+        "lang_box"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .lang_box ul.active",
+      "missingClasses": [
+        "s_header",
+        "lang_box",
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_visual .swiper-slide.slide01",
+      "missingClasses": [
+        "slide01"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_visual .swiper-slide.slide02",
+      "missingClasses": [
+        "slide02"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_visual .swiper-slide.slide03",
+      "missingClasses": [
+        "slide03"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_visual .swiper-slide.slide04",
+      "missingClasses": [
+        "slide04"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_visual .slide_txt .sub_caption.show",
+      "missingClasses": [
+        "show"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_visual .swiper-button-lock",
+      "missingClasses": [
+        "swiper-button-lock"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".slide_txt [data-splitting] .char",
+      "missingClasses": [
+        "char"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".mask-fill .line1 .reveal",
+      "missingClasses": [
+        "reveal"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".mask-fill .line1 .base",
+      "missingClasses": [
+        "base"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".mask-fill .reveal",
+      "missingClasses": [
+        "reveal"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".mask-fill .reveal .ink",
+      "missingClasses": [
+        "reveal",
+        "ink"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".mask-fill .line3 .reveal",
+      "missingClasses": [
+        "reveal"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".main_company .stats_list p strong span.count",
+      "missingClasses": [
+        "count"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_01::before",
+      "missingClasses": [
+        "part_01"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_01::after",
+      "missingClasses": [
+        "part_01"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_02::before",
+      "missingClasses": [
+        "part_02"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_02::after",
+      "missingClasses": [
+        "part_02"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_03::before",
+      "missingClasses": [
+        "part_03"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_03::after",
+      "missingClasses": [
+        "part_03"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".parts_list li.part_04::before",
+      "missingClasses": [
+        "part_04"
+      ],
+      "missingIds": []
+    }
+  ],
+  "failedJsSelectors": [
+    {
+      "sel": ".s_header",
+      "missingClasses": [
+        "s_header"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".s_header nav > ul > li.is-open > ul",
+      "missingClasses": [
+        "s_header",
+        "is-open"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc",
+      "missingClasses": [
+        "proc"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc_tabs li",
+      "missingClasses": [
+        "proc_tabs"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc_copy_body",
+      "missingClasses": [
+        "proc_copy_body"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc_swiper .swiper-slide",
+      "missingClasses": [
+        "proc_swiper"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".copy",
+      "missingClasses": [
+        "copy"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "footer .top",
+      "missingClasses": [
+        "top"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".base",
+      "missingClasses": [
+        "base"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".reveal",
+      "missingClasses": [
+        "reveal"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": "header.s_header .menu_sidebar .mobile_gnb #s_gnb",
+      "missingClasses": [
+        "s_header",
+        "menu_sidebar",
+        "mobile_gnb"
+      ],
+      "missingIds": [
+        "s_gnb"
+      ]
+    },
+    {
+      "sel": ".lang_box",
+      "missingClasses": [
+        "lang_box"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".menu_hamberger",
+      "missingClasses": [
+        "menu_hamberger"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".menu_sidebar",
+      "missingClasses": [
+        "menu_sidebar"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".sub_nav",
+      "missingClasses": [
+        "sub_nav"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc_stage",
+      "missingClasses": [
+        "proc_stage"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".char",
+      "missingClasses": [
+        "char"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ":scope > li.active",
+      "missingClasses": [
+        "active"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc_tabs li button",
+      "missingClasses": [
+        "proc_tabs"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc_swiper",
+      "missingClasses": [
+        "proc_swiper"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc .proc_nav .swiper-button-next",
+      "missingClasses": [
+        "proc",
+        "proc_nav"
+      ],
+      "missingIds": []
+    },
+    {
+      "sel": ".proc .proc_nav .swiper-button-prev",
+      "missingClasses": [
+        "proc",
+        "proc_nav"
+      ],
+      "missingIds": []
+    }
+  ],
+  "wpOnlyClasses": [
+    "!empty($item[",
+    "<?php",
+    "?>",
+    "breadcrumb",
+    "breadcrumb__item",
+    "breadcrumb__list",
+    "btn-cta",
+    "echo",
+    "entry-content",
+    "esc_attr($bg_class);",
+    "esc_attr($part_class);",
+    "esc_attr($slide_class);",
+    "esc_attr($vision_class);",
+    "home-contact",
+    "home-contact__copy",
+    "home-contact__cta",
+    "home-contact__inner",
+    "img_wrap__placeholder",
+    "inquiry-form",
+    "inquiry-form__actions",
+    "inquiry-form__checkbox",
+    "inquiry-form__field",
+    "inquiry-form__field--consent",
+    "inquiry-form__field--full",
+    "inquiry-form__file-placeholder",
+    "inquiry-form__grid",
+    "inquiry-form__input",
+    "inquiry-form__label",
+    "inquiry-form__notice",
+    "inquiry-form__required",
+    "inquiry-form__select",
+    "inquiry-form__submit",
+    "inquiry-form__textarea",
+    "lang-box",
+    "lang-box__current",
+    "lang-box__list",
+    "lang-box__pending",
+    "lang-box__toggle",
+    "main-contact",
+    "main-section",
+    "main-section--flush",
+    "menu-hamburger",
+    "menu-hamburger__bar",
+    "news-card",
+    "news-card__date",
+    "news-card__placeholder",
+    "news-card__thumb",
+    "news-card__title",
+    "news-card__type",
+    "news-type-filter",
+    "news-type-filter__item<?php",
+    "news-type-filter__list",
+    "page-contact__block",
+    "page-contact__email",
+    "page-contact__grid",
+    "page-contact__heading",
+    "page-contact__label",
+    "page-contact__list",
+    "page-contact__map-placeholder",
+    "page-inquiry__form",
+    "page-inquiry__form-slot",
+    "page-legal__content",
+    "page-legal__note",
+    "page-placeholder__lead",
+    "page-placeholder__note",
+    "page-placeholder__panel",
+    "product-card__body",
+    "product-card__excerpt",
+    "product-card__link",
+    "product-card__media",
+    "product-card__meta",
+    "product-card__more",
+    "product-card__placeholder",
+    "product-card__title",
+    "product-part-filter",
+    "product-part-filter__item<?php",
+    "product-part-filter__list",
+    "screen-reader-text",
+    "section-head__desc",
+    "section-head__title",
+    "si-inner",
+    "site-footer",
+    "site-footer__brand",
+    "site-footer__content",
+    "site-footer__copy",
+    "site-footer__info",
+    "site-footer__inner",
+    "site-footer__legal",
+    "site-footer__logo-text",
+    "site-footer__nav",
+    "site-footer__top",
+    "site-footer__utils",
+    "site-header",
+    "site-header__brand",
+    "site-header__contact",
+    "site-header__inner",
+    "site-header__lang",
+    "site-header__logo",
+    "site-header__logo-text",
+    "site-header__menu-toggle",
+    "site-header__nav",
+    "site-header__utils",
+    "site-main",
+    "site-mobile-menu",
+    "site-mobile-menu__panel",
+    "site-nav",
+    "site-nav--desktop",
+    "site-nav--footer",
+    "site-nav--mobile",
+    "site-nav__list",
+    "site-nav__list--footer",
+    "site-nav__list--mobile",
+    "sub-hero",
+    "sub-hero__desc",
+    "sub-hero__inner",
+    "sub-hero__section",
+    "sub-hero__title",
+    "sub-nav",
+    "sub-nav__current",
+    "sub-nav__inner",
+    "sub-nav__item<?php",
+    "sub-nav__list",
+    "sub-page__inner",
+    "sub-page__placeholder",
+    "view-more-01"
+  ]
+}

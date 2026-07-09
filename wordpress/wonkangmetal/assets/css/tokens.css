@@ -1,0 +1,156 @@
+:root {
+  --color-primary: #021e73;
+  --color-bg: #222222;
+  --color-bg-elevated: #111111;
+  --color-bg-footer: #f1f1f1;
+  --color-surface: #f1f1f1;
+  --color-surface-dark: #2a2a2a;
+  --color-text: #ffffff;
+  --color-text-dark: #222222;
+  --color-text-muted: #cccccc;
+  --color-text-dim: #999999;
+  --color-border: #cccccc;
+  --color-border-dark: #222222;
+  --color-accent: #021e73;
+
+  /* 원본 s_main.css — Raleway(디스플레이) + Pretendard(본문·숫자) */
+  --font-family: "Raleway", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-display: "Raleway", "Pretendard", sans-serif;
+  --font-family-numeric: "Pretendard", "Raleway", sans-serif;
+
+  --font-size-base: 16px;
+
+  /* ── 메인 shell (s_main .main_section / .main_inner) ── */
+  --main-inner-max: 1820px;
+  --main-section-pad-y: 150px;
+  --main-section-pad-x: 50px;
+  --main-section-pad-y-md: 75px;
+  --main-section-pad-x-md: 20px;
+
+  /* ── S01 main_visual ── */
+  --main-hero-title: 7.5rem;
+  --main-hero-caption: 1.5rem;
+  --main-hero-caption-pad-left: 30px;
+
+  /* ── S02 main_business ── */
+  --main-business-pad-bottom: 150px;
+
+  /* ── main_title 블록 (company · solution · vision · customer · gallery) ── */
+  --main-eyebrow: 1.25rem;
+  --main-eyebrow-gap: 40px;
+  --main-section-title: 4rem;
+  --main-section-title-mb: 60px;
+
+  /* ── S03 main_company / stats_list ── */
+  --main-stats-value: 7.5rem;
+  --main-stats-unit: 3rem;
+  --main-stats-title: 1.5rem;
+  --main-stats-desc: 1rem;
+  --main-stats-grid-max: 910px;
+  --main-stats-gap: 90px;
+
+  /* ── S04 main_solution / parts_list ── */
+  --main-parts-gap: 20px;
+  --main-parts-height: 480px;
+  --main-parts-pad: 40px;
+  --main-parts-title: 1.75rem;
+  --main-parts-subtitle: 1.125rem;
+  --main-parts-mt: 100px;
+
+  /* ── S05 main_vision ── */
+  --main-vision-pad-y: 150px;
+  --main-vision-card-h: 640px;
+  --main-vision-title: 2.25rem;
+  --main-vision-stagger: 250px;
+  --main-vision-grid-gap: 55px;
+
+  /* ── S06 main_customer ── */
+  --main-customer-title-mb: 60px;
+
+  /* ── S07 main_gallery + main_contact ── */
+  --main-gallery-title-mb: 100px;
+  --main-contact-h: 800px;
+  --main-contact-title: 7.5rem;
+  --main-contact-desc: 1.25rem;
+  --main-news-card-title: 1.25rem;
+
+  /* ── view_more 버튼 ── */
+  --view-more-01-size: 180px;
+  --view-more-02-w: 240px;
+  --view-more-02-h: 50px;
+
+  /* ── 헤더·푸터 (WP shell) ── */
+  --header-height: 120px;
+  --header-pad-x: 50px;
+  --gutter: 50px;
+  --gutter-mobile: 20px;
+  --container-max: 1820px;
+
+  /* ── 서브 (s_sub) ── */
+  --sub-hero-height: 640px;
+  --sub-nav-height: 80px;
+  --sub-nav-tab-min: 240px;
+  --font-size-sub-nav: 1.125rem;
+  --font-size-sub-desc: 1.5rem;
+
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* alias — 헤더·components.css 호환 */
+  --font-size-eyebrow: var(--main-eyebrow);
+  --font-size-section-title: var(--main-section-title);
+  --font-size-hero: var(--main-hero-title);
+  --font-size-hero-caption: var(--main-hero-caption);
+  --section-pad-y: var(--main-section-pad-y);
+  --stats-value-size: var(--main-stats-value);
+  --font-sans: var(--font-family-numeric);
+  --font-display: var(--font-family-display);
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+  --transition: 0.25s ease;
+}
+
+/* 원본 breakpoint — s_main.css */
+@media screen and (max-width: 1280px) {
+  :root {
+    --main-hero-title: 5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --main-section-pad-y: var(--main-section-pad-y-md);
+    --main-section-pad-x: var(--main-section-pad-x-md);
+    --main-stats-value: 4.375rem;
+    --main-contact-title: 6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --main-hero-title: 4.5rem;
+    --main-section-title: 3rem;
+    --main-hero-caption: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  :root {
+    --main-eyebrow: 0.9375rem;
+    --main-section-title: 2.25rem;
+    --main-hero-title: 2.625rem;
+    --main-hero-caption: 1rem;
+    --main-contact-title: 2.625rem;
+    --main-contact-desc: 0.75rem;
+    --main-stats-title: 1rem;
+    --main-stats-desc: 0.75rem;
+    --main-parts-title: 1.25rem;
+    --main-news-card-title: 0.75rem;
+    --view-more-01-size: 110px;
+  }
+}

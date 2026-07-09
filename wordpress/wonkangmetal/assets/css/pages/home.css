@@ -1,0 +1,35 @@
+/**
+ * Main page — mirror s_main.css + WP shell 보정
+ *
+ * 섹션 정의 (원본 index.html 순서):
+ * S01 .main_visual          — full-bleed hero (padding 없음)
+ * S02 .main_section.main_business — pad-top 0 · pad-bottom 150 · 좌우 50
+ * S03 .main_section.main_company  — .main_inner flex
+ * S04 .main_section.main_solution
+ * S05 .main_section.main_vision     — pad 150px 0 (좌우 flush)
+ * S05m .main_vision_m               — 1024↓ 모바일 vision 슬라이더
+ * S06 .main_section.main_customer
+ * S07 .main_section.main_gallery    — pad 0 · news + .main_contact
+ */
+
+/* WP 전역이 메인 타이포를 덮지 않도록 */
+.site-main .main_section,
+.site-main .main_visual {
+  line-height: inherit;
+}
+
+.site-main .main_company .stats_list p strong {
+  font-family: var(--font-family-numeric);
+}
+
+.site-main .stats_list .txt {
+  font-family: var(--font-family-numeric);
+}
+
+/* 뉴스 썸네일 placeholder */
+.main_gallery .img_wrap__placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  background: var(--color-placeholder);
+}

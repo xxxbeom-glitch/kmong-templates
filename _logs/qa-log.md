@@ -1,5 +1,89 @@
 # QA Log
 
+## 2026-07-09 · [wordpress] wonkangmetal P2-3 page templates 런타임 QA
+**범위:** `wordpress/wonkangmetal/` COMPANY/FACTORY/CUSTOMER/Legal 페이지·GNB·sub-nav·breadcrumb·footer·홈 CTA · product/news 회귀 (CF7·inquiry form·다국어·GSAP·이미지·01-original·_mirror 제외)
+**결과:** **PASS (런타임)** — Laragon `wonkangmetal.test` curl+HTML 검증
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `/company/*` 4 URL | PASS | 200 · sub-nav active 1 · breadcrumb |
+| 2 | `/factory/*` 4 URL | PASS | 200 · sub-nav active 1 · breadcrumb |
+| 3 | `/contact/` · legal 2 URL | PASS | 200 · breadcrumb · pages.css |
+| 4 | `/company/` → overview | PASS | 301 |
+| 5 | `/factory/` → process | PASS | 301 |
+| 6 | GNB COMPANY/FACTORY/PRODUCT/CUSTOMER | PASS | 실 URL · 회사소식 `/news/` |
+| 7 | 헤더 CONTACT · 푸터 legal | PASS | `/contact/` · `/privacy-policy/` · `/email-policy/` |
+| 8 | 홈 CTA · stats more | PASS | 견적문의·회사개요 → `/contact/` · `/company/overview/` |
+| 9 | `href="#"` | PASS | 렌더 HTML 0건 · 테마 소스 0건 |
+| 10 | product/news 회귀 | PASS | 4 URL 200 |
+| 11 | `/inquiry/` | PASS (미구현) | 404 정상 |
+**런타임 수정:** `inc/pages.php` — WP 기본 `privacy-policy` draft → publish 동기화 (초기 404)
+**임시 연결:** GNB·홈 견적문의 → `/contact/` (P2-4 `/inquiry/` 생성 후 교체)
+**남음:** placeholder 본문 · contact 지도/폼 · legal 전문(P2-5) · KO/EN/JP disabled
+
+## 2026-07-09 · [wordpress] wonkangmetal P2-2 news 구조 QA
+**범위:** `wordpress/wonkangmetal/` news CPT·taxonomy·archive/single·card·메인 section-news·news.css (product·inquiry·다국어·GSAP·이미지·01-original·_mirror 제외)
+**결과:** **PASS (정적·런타임)**
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `inc/news.php` require | PASS | product 다음 · menus 전 |
+| 2 | news CPT · news_type taxonomy | PASS | rewrite `news` · `news_type` rewrite false |
+| 3 | 샘플 시드 3건 | PASS | notice 1 · news 2 · `wonkangmetal_news_samples_seeded` |
+| 4 | `/news/` archive | PASS | type-filter · news-grid · news-card |
+| 5 | `?type=news` · `?type=notice` | PASS | 2건 / 1건 필터 |
+| 6 | single `/news/{slug}/` | PASS | meta·본문·목록으로 |
+| 7 | external_url | PASS | sample-news-02 카드→example.com · 상세 원문 보기 |
+| 8 | 메인 section-news | PASS | 최신 3건 WP_Query · 전체 뉴스 보기 링크 |
+| 9 | news.css enqueue | PASS | archive·single만 |
+| 10 | product URL 회귀 | PASS | `/product/` · `/product/category/pump-general/` 200 |
+| 11 | product.php 미수정 | PASS | rewrite 우선순위 필터 유지 |
+| 12 | 그누보드 grep | PASS | 0건 |
+| 13 | `01-original/**` · `_mirror/**` | PASS | git 변경 없음 |
+**런타임:** Laragon `wonkangmetal.test` curl 확인
+**남음:** 썸네일 없음(placeholder) · Swiper 미연동 · GNB 회사소식 `#` · 관리자 external_url UI 없음(메타만)
+
+## 2026-07-09 · [wordpress] wonkangmetal P2-1 product 구조 QA
+**범위:** `wordpress/wonkangmetal/` product CPT·taxonomy·archive/single/taxonomy 템플릿·GNB·Solution·product.css (news·inquiry·다국어·GSAP·이미지 제외)
+**결과:** **PASS (정적·코드)** — WordPress 활성화·permalink·시드·템플릿 로딩은 `[WP 확인 필요]`
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `functions.php` → `inc/product.php` require | PASS | assets 다음 · menus 전 |
+| 2 | product CPT 등록 | PASS | `init` · rewrite `product` · `has_archive` |
+| 3 | product_category taxonomy | PASS | `product/category` · hierarchical · `product`에 연결 |
+| 4 | 샘플 시드 1회 | PASS | 옵션 `wonkangmetal_product_samples_seeded` 가드 · 기존 slug skip |
+| 5 | `/product/` archive | PASS (정적) | `archive-product.php` · sub-hero/sub-nav/card · `[WP 확인 필요]` |
+| 6 | 4카테고리 URL | PASS (정적) | slug·헬퍼 일치 · rewrite flush 옵션 1회 · `[WP 확인 필요]` |
+| 7 | single `/product/{slug}/` | PASS (정적) | `single-product.php` · breadcrumb·sub-nav·part 라벨 |
+| 8 | part 필터 pump만 | PASS | `wonkangmetal_is_pump_category` · taxonomy만 UI · archive는 쿼리만 |
+| 9 | GNB·sub-nav 링크 | PASS | PRODUCT 서브 4탭 = 카테고리 URL · sub-nav 4항목 동일 라벨/slug |
+| 10 | Solution 4카드 | PASS | `theme-data` category → `wonkangmetal_product_category_url()` |
+| 11 | product.css 조건부 enqueue | PASS | archive·single·taxonomy만 · front-page 미로드 |
+| 12 | 그누보드 흔적 grep | PASS | `g5_`·`bo_table`·`bbs/`·`write_update.php`·`wrest.js` 0건 |
+| 13 | `01-original/**` · `_mirror/**` | PASS | git 변경 없음 |
+**수정:** 없음 (정적 QA 기준 이슈 없음)
+**런타임 (Laragon wonkangmetal.test):** 2026-07-09 추가 확인 — 테마 활성화·permalink·시드·URL 5종·Solution 4카드 **PASS**
+**런타임 수정:** `inc/product.php` — taxonomy rewrite 우선순위 (`product/category/` 404 수정)
+**남음:** 로컬 hosts에 `wonkangmetal.test` 추가 필요(관리자) · product UI 골격 수준
+**P2-2:** 런타임 PASS — news 착수 가능
+
+## 2026-07-09 · [wordpress] wonkangmetal P1 골격 QA
+**범위:** `wordpress/wonkangmetal/` 테마 골격만 (P2 CPT·archive·CF7·다국어·GSAP 제외)
+**결과:** **PASS (코드·정적·Playwright @390)** — 실제 WP 설치 런타임·PC GNB 드롭다운은 미확인
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | style.css Theme Header | PASS | Theme Name · Text Domain · Version |
+| 2 | functions.php require (assets/menus/theme-data) | PASS | |
+| 3 | CSS/JS enqueue 경로 | PASS | 등록 파일 전부 `assets/` 존재 |
+| 4 | PHP fatal (header/footer/front-page/page) | 미실행 | 로컬 `php` CLI 없음 · `$args` 가드 추가 |
+| 5 | template-parts 경로 | PASS | sections 8 · layout mobile-menu/sub-hero 등 |
+| 6 | 메인 8섹션 출력 | PASS | front-page.php 8× `get_template_part` |
+| 7 | 모바일 메뉴 JS | PASS | @390px 열림·닫힘 · console error 없음 |
+| 8 | console error | PASS | 정적 프리뷰 + hero NEXT 전환 |
+| 9 | 그누보드 흔적 grep | PASS | `g5_`·`bo_table`·`bbs/`·`wrest.js` 0건 |
+| 10 | `01-original/**` · `_mirror/**` | PASS | git 변경 없음 |
+**수정:** `sub-hero.php` · `breadcrumb.php` · `sub-nav.php` — `$args` 미정의 PHP 8 Warning 방지
+**남음:** 실제 WordPress 활성화 QA · PC GNB 서브메뉴 · placeholder 이미지·카피 · `home.css` 전역 로드(경미)
+**P2:** 골격 기준 착수 가능 (WP 로컬 설치 후 1회 통합 확인 권장)
+
 ## 2026-07-09 · [reference-harness] 10PAGE SVC0002/5/6 browser-capture QA
 **결과:** **PASS** (queue 0) · preview 4211/4212/4213
 ## 2026-07-09 · [reference-harness] wonkangmetal browser-capture QA

@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+  .site-header:not(.s_header) .site-header__nav {
+    display: none;
+  }
+
+  .site-header:not(.s_header) .menu-hamburger {
+    display: flex;
+  }
+}
