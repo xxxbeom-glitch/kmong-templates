@@ -8,6 +8,8 @@ Thumbs.db
 _delivery/*/admin/config.php
 
 # Agent one-off Figma audit scripts (not part of delivery)
+/_tmp*
+/_tmp/
 _harness/_tmp*
 _harness/_parse-*
 _harness/_figma-extract.js

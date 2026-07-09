@@ -1,5 +1,133 @@
 
-## 2026-07-09 — onetenth3/4/6/8 십분의일 WP 데모 복제·분석 (Track C)
+## 2026-07-09 — [static] template-homepage scroll-reveal
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · js/main.js  
+**내용:** S03~S09(히어로·소개·헤더·푸터 제외) `scroll-reveal` — 카드 통째 · 제목·버튼·폼·FAQ 항목 순차 등장(85ms 큐)
+
+---
+
+## 2026-07-09 — [static] template-homepage Header fixed overlay
+
+**범위:** `templates/template-homepage/css/style.css`  
+**내용:** 헤더 `sticky` → `fixed` · 히어로 100vh가 뷰포트 상단부터 시작(헤더 아래로 밀리지 않음)
+
+---
+
+## 2026-07-09 — [static] template-homepage Footer opacity·weight
+
+**범위:** `templates/template-homepage/css/style.css`  
+**내용:** Figma `770:2979` 재확인 — 라벨 fill 80% · 값 100% w600 · copyright 40% w600 · 태그라인 w700
+
+---
+
+## 2026-07-09 — [static] template-homepage Footer 텍스트 컬러
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** Figma 재확인 · 태그라인 악센트 `#525ee3` · 푸터 텍스트/CTA/BG 하드코딩
+
+---
+
+## 2026-07-09 — [static] template-homepage Footer (공통)
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** Figma `770:2979` · BG `#181719` · 태그라인 + CTA · 사업자 정보 2행 · copyright · shell 1440/240
+
+---
+
+## 2026-07-09 — [static] template-homepage Header 정렬 수정
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · js/main.js  
+**내용:** Figma `770:2656` 좌표 재확인 — shell 1440/240 · grid(로고|250|메뉴) · GNB 슬롯 120+gap 66 · 2depth 열 CSS 정렬
+
+---
+
+## 2026-07-09 — [static] template-homepage Header (공통)
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · js/main.js  
+**내용:** Figma `770:2656` · 로고 · GNB 4항목 · CTA pill · `gnb-full-expand` 메가패널 · `@1024` 햄버거(비연동)
+
+---
+
+## 2026-07-09 — [static] template-homepage contact 폼·버튼 수정
+
+**범위:** `templates/template-homepage/css/style.css`  
+**내용:** 입력 보더 `--color-border-default` · 문의 보내기 pill = 인사이트 「전체 글 보기」 동일 스타일
+
+---
+
+## 2026-07-09 — [static] template-homepage S09 Contact
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** Figma `763:355` · 2열 필드 · r12 입력 · 체크박스 · 문의 보내기 버튼 · `id="contact"`
+
+---
+
+## 2026-07-09 — [static] template-homepage 섹션 타이틀 weight
+
+**범위:** `templates/template-homepage/css/style.css`  
+**내용:** `--text-heading-xl-weight` 600 → 700 (서비스·특징·후기·FAQ·인사이트 타이틀)
+
+---
+
+## 2026-07-09 — [static] template-homepage S08 Insight
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** Figma `763:1015` · 태그(뉴스/공지사항) · 리스트 구분선 · pill 「전체 글 보기」
+
+---
+
+## 2026-07-09 — [static] template-homepage S07 CTA
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · assets/images/cta-bg.jpg · js/dev-images.js  
+**내용:** Figma `763:992` · 이미지 BG + 오버레이 42% · 타이틀 display-md 흰색 · pill 버튼 · `#contact` 링크
+
+---
+
+## 2026-07-09 — [static] template-homepage S06 FAQ
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** Figma `763:325` · 배경 `#ffffff` · 아코디언 3항목 · 카드 `r24` · 질문 heading-sm · 답변 body-sm · chevron
+
+---
+
+## 2026-07-09 — [static] template-homepage S05 후기
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** Figma `763:1742` · 배경 `#f8f8f8` · 2×2 카드 `r24` · 호버 `#4A6CF7` + 흰 글자
+
+---
+
+## 2026-07-09 — [static] template-homepage S04 특징 · drag-scroll breakout
+
+**범위:** index.html · css/style.css · js/main.js  
+**내용:** 특징 카드 — 1600 셸 밖 우측 끝까지 breakout · 가로 드래그 스크롤(`data-drag-scroll`) · 카드 고정폭 641@1920
+
+---
+
+## 2026-07-09 — [static] template-homepage S04 특징
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · js/dev-images.js · assets/images/feature-bg-*  
+**내용:** Figma `763:451` · 배경 `#ffffff` · 타이틀 heading-xl · 이미지+텍스트 카드 4열 `r24` · 이미지 641×460 · 카드 타이틀 heading-sm · 본문 body-md
+
+---
+
+## 2026-07-09 — [static] template-homepage S03 서비스
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · js/dev-images.js · assets/images/service-bg-*.jpg  
+**내용:** Figma `763:901` · 배경 `#f8f8f8` · 타이틀 heading-xl · 이미지 카드 3열 `r24` · 호버 시 설명 노출 · 모바일 1열(설명 항상 표시)
+
+---
+
+## 2026-07-09 — [static] template-homepage S02 소개 + 디자인 토큰
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css · js/main.js  
+**내용:** Figma color/typography 토큰 `:root` 반영 · S02 intro( display-lg · surface-base ) · Creative 08 스크롤 텍스트 채움(GSAP ScrollTrigger pin+scrub)
+
+---
+
+**범위:** `templates/template-homepage/` · `templates/index.html` 허브 링크  
+**내용:** Figma `template-homepage-1920` (763:1905) 신규 정적 템플릿 착수 · shell 1600@1920 · S01 히어로(3슬라이드·세그먼트 타임라인)만 구현 · 헤더·푸터 보류 · **4173 허브**(`preview-hub.js`) 정적 섹션 연결
+
 - 케이스: `onetenth3` · `onetenth4` · `onetenth6` · `onetenth8` (`*.mycafe24.com`)
 - 플랫폼: **WordPress + Elementor** (Cafe24 호스팅) — PTMD 쇼핑몰 스킨 아님
 - 수집: `capture-case.js` + `mirror-original.js` (80p) · `write-onetenth-analysis.js`

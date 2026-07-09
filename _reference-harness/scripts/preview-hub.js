@@ -17,8 +17,11 @@ const HUB_PORT = 4173;
 const CASE_PORT_START = 4201;
 /** working-copy previews — separate band so original ports stay stable */
 const WORKING_PORT_START = 4301;
+/** Figma 정적 템플릿 — templates/{slug} */
+const STATIC_PORT_START = 4401;
 const CASES_DIR = path.join(__dirname, '..', 'cases');
 const HUB_DIR = path.join(__dirname, '..', 'hub');
+const STATIC_MANIFEST = path.join(HUB_DIR, 'static-templates.json');
 
 function listMirroredCases() {
   const out = [];
@@ -82,7 +85,45 @@ function probe(url) {
   });
 }
 
-function buildHubHtml(cases) {
+function listStaticTemplates() {
+  if (!fs.existsSync(STATIC_MANIFEST)) return [];
+  try {
+    const man = JSON.parse(fs.readFileSync(STATIC_MANIFEST, 'utf8'));
+    const portStart = Number(man.portStart) || STATIC_PORT_START;
+    const rows = Array.isArray(man.templates) ? man.templates : [];
+    return rows
+      .filter((t) => t && t.slug)
+      .map((t, i) => {
+        const index = path.join(__dirname, '..', '..', 'templates', t.slug, 'index.html');
+        if (!fs.existsSync(index)) return null;
+        return {
+          slug: t.slug,
+          label: t.label || t.slug,
+          figmaNode: t.figmaNode || '',
+          track: t.track || 'static',
+          port: portStart + i,
+        };
+      })
+      .filter(Boolean);
+  } catch (_) {
+    return [];
+  }
+}
+
+function buildStaticTemplateRow(t) {
+  const href = `http://127.0.0.1:${t.port}/`;
+  const meta = [t.figmaNode ? `Figma ${t.figmaNode}` : '', t.slug].filter(Boolean).join(' · ');
+  return `<li>
+  <div class="title-row">
+    <a href="${href}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.label)}</a>
+    <span class="badge badge-static">정적</span>
+  </div>
+  <span class="meta">${escapeHtml(meta)}</span>
+  <span class="url">${href} · templates/${escapeHtml(t.slug)}/</span>
+</li>`;
+}
+
+function buildHubHtml(cases, staticTemplates = []) {
   const items = cases
     .map((c) => {
       const href = `http://127.0.0.1:${c.port}/`;
@@ -105,6 +146,13 @@ function buildHubHtml(cases) {
 </li>`;
     })
     .join('\n');
+
+  const staticBlock = staticTemplates.length
+    ? `<h2 class="section-title">정적 템플릿 (Figma)</h2>
+    <ul>
+${staticTemplates.map(buildStaticTemplateRow).join('\n')}
+    </ul>`
+    : '';
 
   return `<!DOCTYPE html>
 <html lang="ko">
@@ -187,6 +235,17 @@ function buildHubHtml(cases) {
       background: #e8eef8;
       color: var(--accent);
     }
+    .badge-static {
+      background: #e7f5ef;
+      color: #166534;
+    }
+    .section-title {
+      margin: 36px 0 14px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--muted);
+    }
     .chip {
       display: inline-block;
       margin-top: 4px;
@@ -222,8 +281,9 @@ function buildHubHtml(cases) {
     <ul>
 ${items}
     </ul>
+    ${staticBlock}
     <p class="foot">
-      허브: <code>http://127.0.0.1:4173/</code> · 원본 포트 4201~ · 수정본 포트 4301~<br>
+      허브: <code>http://127.0.0.1:4173/</code> · 원본 포트 4201~ · 수정본 포트 4301~ · 정적 템플릿 4401~<br>
       재시작: <code>node scripts/preview-hub.js --force</code>
     </p>
   </div>
@@ -271,6 +331,34 @@ async function ensureCaseServer(caseId, port, opts = {}) {
   return child;
 }
 
+async function ensureStaticServer(slug, port) {
+  const url = `http://127.0.0.1:${port}/`;
+  if (await probe(url)) {
+    if (!FORCE) {
+      console.log(`  · ${slug} [static] already → ${url}`);
+      return null;
+    }
+    killPort(port);
+    await new Promise((r) => setTimeout(r, 400));
+  } else if (FORCE) {
+    killPort(port);
+    await new Promise((r) => setTimeout(r, 200));
+  }
+
+  const args = [path.join(__dirname, 'preview-static-template.js'), slug, String(port)];
+  if (FORCE) args.push('--force');
+
+  const child = spawn(process.execPath, args, {
+    cwd: path.join(__dirname, '..'),
+    stdio: 'ignore',
+    detached: true,
+    windowsHide: true,
+  });
+  child.unref();
+  console.log(`  · started ${slug} [static] → ${url} (pid ${child.pid})`);
+  return child;
+}
+
 (async () => {
   let workingIndex = 0;
   const cases = listMirroredCases().map((c, i) => {
@@ -286,13 +374,15 @@ async function ensureCaseServer(caseId, port, opts = {}) {
     return row;
   });
 
-  if (!cases.length) {
-    console.error('미러된 케이스(01-original/index.html)가 없습니다.');
+  const staticTemplates = listStaticTemplates();
+
+  if (!cases.length && !staticTemplates.length) {
+    console.error('미러된 케이스(01-original/index.html) 또는 정적 템플릿이 없습니다.');
     process.exit(1);
   }
 
   fs.mkdirSync(HUB_DIR, { recursive: true });
-  const html = buildHubHtml(cases);
+  const html = buildHubHtml(cases, staticTemplates);
   fs.writeFileSync(path.join(HUB_DIR, 'index.html'), html, 'utf8');
   fs.writeFileSync(
     path.join(HUB_DIR, 'cases.json'),
@@ -304,6 +394,10 @@ async function ensureCaseServer(caseId, port, opts = {}) {
           previewUrl: `http://127.0.0.1:${c.port}/`,
           workingPreviewUrl: c.workingPort ? `http://127.0.0.1:${c.workingPort}/` : null,
         })),
+        staticTemplates: staticTemplates.map((t) => ({
+          ...t,
+          previewUrl: `http://127.0.0.1:${t.port}/`,
+        })),
       },
       null,
       2
@@ -311,12 +405,15 @@ async function ensureCaseServer(caseId, port, opts = {}) {
     'utf8'
   );
 
-  console.log(`Hub cases (${cases.length}):`);
+  console.log(`Hub cases (${cases.length}) · static (${staticTemplates.length}):`);
   for (const c of cases) {
     await ensureCaseServer(c.caseId, c.port, { working: false });
     if (c.hasWorking && c.workingPort) {
       await ensureCaseServer(c.caseId, c.workingPort, { working: true });
     }
+  }
+  for (const t of staticTemplates) {
+    await ensureStaticServer(t.slug, t.port);
   }
 
   // wait briefly for children

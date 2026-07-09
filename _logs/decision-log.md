@@ -1,5 +1,35 @@
 # Decision Log
 
+## 2026-07-09 — [static] template-homepage · shell · 진행 방식
+
+| # | 결정 |
+|---|------|
+| 1 | **Figma:** `template-homepage-1920` (`763:1905` · [Dev](https://www.figma.com/design/XSWmFlkkzLChor3uaf7veF/%ED%8F%AC%ED%8F%AC%ED%8F%AC%ED%8F%AC%ED%8F%B4?node-id=763-1905&m=dev)) |
+| 2 | **slug:** `template-homepage` · 경로 `templates/template-homepage/` |
+| 3 | **Shell:** Figma 1440 → **콘텐츠 1600px** @1920 · 좌우 gutter **160px** (`clamp(16px, 8.3333vw, 160px)`) |
+| 4 | **헤더·푸터:** Figma 미설계 → **맨 마지막** 섹션 일괄 |
+| 5 | **진행:** 섹션 단위 구현 → 사용자 PASS → 다음 (S01 히어부터) |
+| 6 | **onetenth8 working-copy 덮어쓰기 중단** — 본 템플릿은 정적 신규 |
+| 7 | **S02 intro** — Creative 08 동일 scroll text-fill (GSAP pin+scrub) |
+| 8 | **디자인 토큰** — 사용자 제공 color·typography → `:root` |
+| 9 | **Header:** Figma `770:2656` · `gnb-full-expand` · 딤 20% · 닫기 220ms |
+| 10 | **Header shell:** 콘텐츠 **1440px** @1920 · gutter **240px** · 로고–메뉴 gap **250px** · GNB 슬롯 **120px** · 항목 gap **66px** |
+| 11 | **Footer:** Figma `770:2979` · shell 1440/240 · BG `#181719` |
+| 12 | **Header interaction:** scroll auto-hide (down hide · up show) |
+| 13 | **S01:** `hero-progress-slider` · **S02:** GSAP text-fill · **S04:** `drag-scroll` |
+| 14 | **S03–S09:** preset `scroll-reveal` (hero·intro·header·footer 제외) |
+
+**preset 기록:**
+```
+[template template-homepage] header: gnb-pattern — gnb-full-expand
+[template template-homepage] header: interaction — scroll auto-hide (down hide · up show)
+[template template-homepage] S01: preset — hero-progress-slider
+[template template-homepage] S04: preset — drag-scroll
+[template template-homepage] S03-S09: preset — scroll-reveal
+```
+
+---
+
 ## 2026-07-08 · [reference-harness] 브라우저 복제 = 한 번에 사이트 전체
 
 **확정:** URL/데모 복제 요청 시 단계 분할(캡처만→나중에 미러) **금지**.  
