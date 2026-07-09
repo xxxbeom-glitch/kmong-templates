@@ -1,0 +1,313 @@
+{
+  "caseId": "10pages-svc0002",
+  "collectedAt": "2026-07-09T01:24:45.551Z",
+  "entryUrl": "https://a2462129b.10pages.co.kr/",
+  "method": "playwright-pristine-html-multipage-v4",
+  "maxPages": 80,
+  "files": [
+    {
+      "url": "https://a2462129b.10pages.co.kr/",
+      "local": "_mirror/a2462129b.10pages.co.kr/index.html",
+      "bytes": 47779,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.min.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.min.css",
+      "bytes": 32076,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/adm/modules/fontawesome/css/all.min.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome/css/all.min.css",
+      "bytes": 59305,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/fontawesome.min.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/fontawesome.min.css",
+      "bytes": 80388,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/all.min.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/all.min.css",
+      "bytes": 100782,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+      "local": "_mirror/cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+      "bytes": 18454,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/solid.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/solid.css",
+      "bytes": 611,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/brands.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/brands.css",
+      "bytes": 22257,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+      "local": "_mirror/cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+      "bytes": 154597,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fonts/pretendard/variable/pretendardvariable.css",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fonts/pretendard/variable/pretendardvariable.css",
+      "bytes": 481,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/slick/slick-theme.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/slick/slick-theme.css",
+      "bytes": 3145,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/custom.css?ver26.06.2&t1783560284",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/custom.css",
+      "bytes": 118737,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/fullcalendar.min.css?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/fullcalendar.min.css",
+      "bytes": 16140,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/jquery.base64.min.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/jquery.base64.min.js",
+      "bytes": 1782,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/jquery-3.4.1.min.js?ver=26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/jquery-3.4.1.min.js",
+      "bytes": 88145,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.i18n-ko.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.i18n-ko.js",
+      "bytes": 1195,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.min.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.min.js",
+      "bytes": 253669,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullpage/fullpage.min.js",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullpage/fullpage.min.js",
+      "bytes": 38009,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullpage/scrolloverflow.min.js",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullpage/scrolloverflow.min.js",
+      "bytes": 37600,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200",
+      "local": "_mirror/fonts.googleapis.com/css2.css",
+      "bytes": 631,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/slick/slick.min.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/slick/slick.min.js",
+      "bytes": 42863,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/lib/moment.min.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/lib/moment.min.js",
+      "bytes": 51746,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/gcal.js",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/gcal.js",
+      "bytes": 12966,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/ckeditor/ckeditor.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/ckeditor/ckeditor.js",
+      "bytes": 1287437,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/locale/ko.js",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/locale/ko.js",
+      "bytes": 3117,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/bootstrap.min.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/bootstrap.min.js",
+      "bytes": 39680,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/fullcalendar.min.js?ver26.06.2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/fullcalendar.min.js",
+      "bytes": 216949,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/global.js?ver26.06.2&t1783560284",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/global.js",
+      "bytes": 6619,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/img/slide/slide0002.png",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/img/slide/slide0002.png",
+      "bytes": 1933703,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/passport",
+      "local": "_mirror/a2462129b.10pages.co.kr/passport.json",
+      "bytes": 53,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/img/slide/slide0001.png",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/img/slide/slide0001.png",
+      "bytes": 3305913,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/fonts/pretendard/variable/woff2/PretendardVariable.woff2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/fonts/pretendard/variable/woff2/PretendardVariable.woff2",
+      "bytes": 3226630,
+      "contentType": "text/plain"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/webfonts/fa-solid-900.woff2",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/webfonts/fa-solid-900.woff2",
+      "bytes": 241781,
+      "contentType": "text/plain"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/img/main/m-intro01.png",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/img/main/m-intro01.png",
+      "bytes": 427873,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/img/main/m-contact-bg.png",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/img/main/m-contact-bg.png",
+      "bytes": 373767,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/captcha/get_captcha",
+      "local": "_mirror/a2462129b.10pages.co.kr/captcha/get_captcha.jpg",
+      "bytes": 5384,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/materialsymbolsoutlined/v357/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2",
+      "local": "_mirror/fonts.gstatic.com/s/materialsymbolsoutlined/v357/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2",
+      "bytes": 3960656,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/img/logo/logo_10page.svg",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/img/logo/logo_10page.svg",
+      "bytes": 2710,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/member/privacy",
+      "local": "_mirror/a2462129b.10pages.co.kr/member/privacy.html",
+      "bytes": 39290,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/custom.css?ver26.06.2&t1783560290",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/custom.css",
+      "bytes": 118737,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/global.js?ver26.06.2&t1783560290",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/global.js",
+      "bytes": 6619,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/member/login",
+      "local": "_mirror/a2462129b.10pages.co.kr/member/login.html",
+      "bytes": 33706,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/global.js?ver26.06.2&t1783560295",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/global.js",
+      "bytes": 6619,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/custom.css?ver26.06.2&t1783560295",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/custom.css",
+      "bytes": 118737,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/member/find",
+      "local": "_mirror/a2462129b.10pages.co.kr/member/find.html",
+      "bytes": 32493,
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/public/custom.css?ver26.06.2&t1783560299",
+      "local": "_mirror/a2462129b.10pages.co.kr/public/custom.css",
+      "bytes": 118737,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/assets/js/global.js?ver26.06.2&t1783560299",
+      "local": "_mirror/a2462129b.10pages.co.kr/assets/js/global.js",
+      "bytes": 6619,
+      "contentType": "text/javascript"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://a2462129b.10pages.co.kr/",
+      "local": "_mirror/a2462129b.10pages.co.kr/index.html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/member/privacy",
+      "local": "_mirror/a2462129b.10pages.co.kr/member/privacy.html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/member/login",
+      "local": "_mirror/a2462129b.10pages.co.kr/member/login.html"
+    },
+    {
+      "url": "https://a2462129b.10pages.co.kr/member/find",
+      "local": "_mirror/a2462129b.10pages.co.kr/member/find.html"
+    }
+  ],
+  "externalUnresolved": [],
+  "liveOrigin": "https://a2462129b.10pages.co.kr",
+  "pageCount": 4,
+  "queuedRemaining": 0
+}

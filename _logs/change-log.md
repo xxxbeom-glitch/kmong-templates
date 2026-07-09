@@ -1,5 +1,10 @@
 
-## 2026-07-09 — wonkangmetal Track C 사이트 복제
+
+## 2026-07-09 — 10PAGE 데모 3종 Track C 복제
+- `10pages-svc0002` SAMPLE TAX · 4p · preview :4211
+- `10pages-svc0005` SAMPLE HR · 38p · preview :4212
+- `10pages-svc0006` SAMPLE MARKETING · 35p · preview :4213
+- 큐 잔여 0 (전체 수집 PASS)## 2026-07-09 — wonkangmetal Track C 사이트 복제
 - 트랙: reference-harness · case `wonkangmetal`
 - 원본: http://www.wonkangmetal.co.kr/ (원강금속)
 - 산출: 캡처 1920/390 · 멀티페이지 미러 220p · preview http://127.0.0.1:4210/

@@ -1,5 +1,7 @@
 # QA Log
 
+## 2026-07-09 · [reference-harness] 10PAGE SVC0002/5/6 browser-capture QA
+**결과:** **PASS** (queue 0) · preview 4211/4212/4213
 ## 2026-07-09 · [reference-harness] wonkangmetal browser-capture QA
 **범위:** 원강금속 공개 사이트 복제 (Track C)
 **결과:** **PARTIAL** — 220 pages · nav smoke PASS · queue 160

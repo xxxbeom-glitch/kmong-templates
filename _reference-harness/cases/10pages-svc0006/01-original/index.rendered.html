@@ -1,0 +1,1138 @@
+<!DOCTYPE html><html lang="ko" class="windows10 chrome "><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="10PAGE">
+	<meta name="generator" content="10PAGE Builder (https://www.10page.co.kr/)">
+	<link rel="author" href="https://www.10page.co.kr/">
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드">
+
+	<meta property="og:title" content="10PAGE - SVC0006">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="설명">
+	<meta property="og:url" content="http://a246476f9.10pages.co.kr/">
+	<meta property="og:site_name" content="10PAGE - SVC0006">
+	<meta property="og:locale" content="ko_KR">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="10PAGE - SVC0006">
+	<meta name="twitter:description" content="설명">
+
+	<title>10PAGE - SVC0006</title>
+	<link rel="canonical" href="http://a246476f9.10pages.co.kr/">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.10page.co.kr/#organization","name":"10PAGE","alternateName":["10page","10PAGE Builder"],"url":"https://www.10page.co.kr/","description":"홈페이지 제작 전문 서비스"},{"@type":"Organization","@id":"http://a246476f9.10pages.co.kr/#organization","name":"10PAGE - SVC0006","url":"http://a246476f9.10pages.co.kr/"},{"@type":"WebSite","@id":"http://a246476f9.10pages.co.kr/#website","name":"10PAGE - SVC0006","url":"http://a246476f9.10pages.co.kr/","publisher":{"@id":"http://a246476f9.10pages.co.kr/#organization"},"creator":{"@id":"https://www.10page.co.kr/#organization"},"description":"설명"},{"@type":"WebPage","name":"10PAGE - SVC0006","url":"http://a246476f9.10pages.co.kr/","isPartOf":{"@id":"http://a246476f9.10pages.co.kr/#website"},"creator":{"@id":"https://www.10page.co.kr/#organization"},"inLanguage":"ko","description":"설명"}]}</script>
+	
+
+	
+	
+
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/jquery-ui/jquery-ui.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/fonts/notokr/notokr.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/fontawesome/css/all.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/fontawesome6/css/all.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/fontawesome6/css/fontawesome.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/fontawesome6/css/brands.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/fontawesome6/css/solid.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/material-symbols/MaterialSymbolsOutlined.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/adm/modules/flag-icon-css/css/flag-icon.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/css/animate.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/js/slick/slick-theme.css?ver26.06.2">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="/assets/fullcalendar-3.10.0/fullcalendar.min.css?ver26.06.2">
+<link rel="stylesheet" href="/assets/css/global.css?ver26.06.2&amp;t1783560286">
+<link rel="stylesheet" href="/public/custom.css?ver26.06.2&amp;t1783560286">
+<script src="/assets/jquery-3.4.1.min.js?ver26.06.2"></script>
+<script src="/assets/jquery.base64.min.js?ver26.06.2"></script>
+<script src="/assets/js/slick/slick.min.js?ver26.06.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/assets/jquery-ui/jquery-ui.min.js?ver26.06.2"></script>
+<script src="/assets/jquery-ui/jquery-ui.i18n-ko.js?ver26.06.2"></script>
+<script src="/assets/jquery-ui/jquery-ui.extend.js?ver26.06.2&amp;t1783560286"></script>
+<script src="/ckeditor/ckeditor.js?ver26.06.2"></script><style>.cke{visibility:hidden;}</style>
+<script src="/ckeditor/config.js?ver26.06.2"></script>
+<script src="/assets/fullcalendar-3.10.0/lib/moment.min.js?ver26.06.2"></script>
+<script src="/assets/fullcalendar-3.10.0/fullcalendar.min.js?ver26.06.2"></script>
+<script src="/assets/fullcalendar-3.10.0/gcal.js"></script>
+<script src="/assets/fullcalendar-3.10.0/locale/ko.js"></script>
+<script src="/assets/js/search/search.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+<!-- aos -->
+<link href="/assets/aos.css" rel="stylesheet"> 
+<script src="/assets/aos.js"></script>
+	<script description="10page Custom Script" version="v.2506.01" defer="">
+  $.fn.TP_ME_containsText = function (text, options = {}) {
+    const keywords = Array.isArray(text) ? text : [text];
+    let tpTarget = this.filter(function () {
+      const content = $(this).text();
+      return keywords.some((keyword) => content.includes(keyword));
+    });
+    if (options.parentMatch) {
+      tpTarget = tpTarget.map(function () {
+        let tpParents = $(this).parents();
+        if (options.parentSelector) {
+          tpParents = tpParents.filter(options.parentSelector);
+        }
+        return tpParents.filter(function () {
+          const content = $(this).text();
+          return keywords.some((keyword) => content.includes(keyword));
+        })[0];
+      });
+    }
+    return tpTarget.each(function () {
+      const tpThis = $(this);
+      if (options.addClass) {
+        tpThis.addClass(options.addClass);
+      }
+      if (options.attr) {
+        Object.entries(options.attr).forEach(([key, value]) => {
+          tpThis.attr(key, value);
+        });
+      }
+      if (options.html) {
+        tpThis.html(options.html);
+      }
+    });
+  };
+  const TP_FN_topButton = (target, windowScrollY) => {
+    target = $("#scrollTop");
+    target.click(() => $("body,html").animate({ scrollTop: 0 }, 500, "easeOutCubic"));
+    window.addEventListener("scroll", () => {
+      windowScrollY = window.scrollY;
+      if (windowScrollY == 0) {
+        target.fadeOut();
+      } else if (windowScrollY > 0) {
+        target.fadeIn().css("display", "flex");
+      }
+    });
+  };
+  const TP_FN_initAOS = () => {
+    if (!window.AOS) return;
+
+    AOS.init({
+      duration: 500,
+      easing: "ease-out",
+      once: false,
+      offset: 0,
+      delay: 0,
+      anchorPlacement: "top-bottom",
+    });
+  };
+  const TP_FN_aosRefresh = () => {
+    if (!window.AOS) return;
+
+    document.querySelectorAll("[data-aos].aos-animate").forEach((el) => {
+      el.classList.remove("aos-animate");
+    });
+
+    AOS.refreshHard();
+  };
+  const TP_FN_navbarState = () => {
+    const site = document.getElementById("site");
+    const navbar = document.querySelector(".navbar");
+    const isSubPage = !!document.querySelector(".subpage");
+    const isMainPage = !!document.querySelector(".mainpage") && !isSubPage;
+    if (!navbar) return;
+
+    document.body.classList.toggle("tp-sub-page", isSubPage);
+    document.body.classList.toggle("tp-main-page", isMainPage);
+    site?.classList.toggle("tp-sub-page", isSubPage);
+    site?.classList.toggle("tp-main-page", isMainPage);
+
+    const syncScrolled = () => {
+      navbar.classList.toggle("is-scrolled", isSubPage && window.scrollY > 10);
+    };
+
+    syncScrolled();
+    window.addEventListener("scroll", syncScrolled, { passive: true });
+  };
+  const TP_FN_pageBoardLayout = () => {
+    const page = document.querySelector('.subpage[data-page-id="portfolio01"], .subpage[data-page-id="insight01"]');
+    if (!page) return false;
+
+    const target = page.querySelector("#bbsArea.portfolio-board, .bbs-area.portfolio-board, #bbsArea.insight-board, .bbs-area.insight-board");
+    const board = document.querySelector(".board_wrapper.board_blog2_list, .board_wrapper.board_blog2_view, .board_wrapper.board_blog2_write");
+    const category = board?.querySelector(".category_wrap");
+    const search = document.querySelector(".search_wrap");
+    const pagination = document.querySelector(".pagination_wrap");
+    if (!target || !board) return false;
+
+    if (category && !target.contains(category) && board.classList.contains("board_blog2_list")) {
+      board.insertBefore(category, board.firstChild);
+    }
+    if (!target.contains(board)) {
+      target.appendChild(board);
+    }
+    if (pagination && !target.contains(pagination)) {
+      target.appendChild(pagination);
+    }
+    if (search && !target.contains(search)) {
+      target.appendChild(search);
+    }
+
+    TP_FN_aosRefresh();
+    return true;
+  };
+  const TP_FN_observePageBoardLayout = () => {
+    if (TP_FN_pageBoardLayout()) return;
+
+    const observer = new MutationObserver(() => {
+      if (TP_FN_pageBoardLayout()) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+  const TP_FN_contactFormLayout = () => {
+    const page = document.querySelector('.subpage[data-page-id="contact01"]');
+    if (!page) return false;
+
+    const target = page.querySelector("#contactForm, .contact-form");
+    const form = document.querySelector("#form_contact01");
+    const wrapper = form?.closest(".board_wrapper");
+    const container = wrapper?.closest(".container");
+    if (!target || !container || !wrapper) return false;
+
+    if (!target.contains(container)) {
+      target.appendChild(container);
+    }
+
+    return true;
+  };
+  const TP_FN_observeContactFormLayout = () => {
+    if (TP_FN_contactFormLayout()) return;
+
+    const observer = new MutationObserver(() => {
+      if (TP_FN_contactFormLayout()) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+  const TP_FN_loadSwiper = () => {
+    if (window.Swiper) return Promise.resolve(window.Swiper);
+    if (window.TP_SWIPER_LOAD_PROMISE) return window.TP_SWIPER_LOAD_PROMISE;
+
+    window.TP_SWIPER_LOAD_PROMISE = new Promise((resolve, reject) => {
+      const existingScript = document.querySelector('script[src*="swiper-bundle.min.js"]');
+      const done = () => (window.Swiper ? resolve(window.Swiper) : reject(new Error("Swiper is not available")));
+
+      if (existingScript) {
+        existingScript.addEventListener("load", done, { once: true });
+        existingScript.addEventListener("error", reject, { once: true });
+        window.setTimeout(done, 300);
+        return;
+      }
+
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+      document.head.appendChild(link);
+
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+      script.onload = done;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    }).catch(() => null);
+
+    return window.TP_SWIPER_LOAD_PROMISE;
+  };
+  const TP_FN_mainWorkSwiper = () => {
+    const target = document.querySelector('div.main-board.work-board[data-board="portfolio01"]');
+    const swiperRoot = document.querySelector('.type_swiper_s1[data-swiper-id="portfolio01"]');
+    if (!target || !swiperRoot) return false;
+
+    const board = swiperRoot.closest(".board_swiper_blog2, .board_box_blog2, .board_wrapper") || swiperRoot;
+    if (board.parentElement !== target) {
+      target.appendChild(board);
+    }
+
+    const swiperElement = swiperRoot.querySelector(".swiper");
+    if (!swiperElement) return false;
+    if (swiperRoot.dataset.workSwiperReady === "true") return true;
+
+    const wrapper = swiperRoot.querySelector(".swiper-wrapper");
+    const originalSlides = Array.from(swiperRoot.querySelectorAll(".swiper-slide"));
+    if (!wrapper || !originalSlides.length) return false;
+
+    if (originalSlides.length <= 6 && !swiperRoot.dataset.loopCloned) {
+      originalSlides.forEach((slide) => {
+        wrapper.appendChild(slide.cloneNode(true));
+      });
+      swiperRoot.dataset.loopCloned = "true";
+    }
+
+    TP_FN_loadSwiper().then((SwiperConstructor) => {
+      if (!SwiperConstructor || swiperRoot.dataset.workSwiperReady === "true") return;
+
+      const loopSlides = swiperRoot.querySelectorAll(".swiper-slide");
+
+      window.requestAnimationFrame(() => {
+        swiperElement.swiper?.destroy(true, true);
+        const slideOffset = Math.round((loopSlides[0]?.getBoundingClientRect().width || 0) / 2);
+        const swiper = new SwiperConstructor(swiperElement, {
+          slidesPerView: "auto",
+          centeredSlides: false,
+          spaceBetween: 60,
+          slidesOffsetBefore: -slideOffset,
+          slidesOffsetAfter: slideOffset,
+          speed: 9000,
+          loop: loopSlides.length > 6,
+          loopAdditionalSlides: loopSlides.length,
+          allowTouchMove: false,
+          freeMode: {
+            enabled: true,
+            momentum: false,
+          },
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            waitForTransition: false,
+          },
+        });
+        swiper.update();
+        swiper.autoplay?.start();
+        swiperRoot.dataset.workSwiperReady = "true";
+        TP_FN_aosRefresh();
+      });
+    });
+
+    return true;
+  };
+  const TP_FN_observeMainWorkSwiper = () => {
+    if (TP_FN_mainWorkSwiper()) return;
+
+    const observer = new MutationObserver(() => {
+      if (TP_FN_mainWorkSwiper()) {
+        observer.disconnect();
+        window.clearInterval(timer);
+      }
+    });
+    const timer = window.setInterval(() => {
+      if (TP_FN_mainWorkSwiper()) {
+        observer.disconnect();
+        window.clearInterval(timer);
+      }
+    }, 300);
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+  const TP_FN_mainInsightBoard = () => {
+    const container = document.querySelector("#mainInsight > .container");
+    const target = document.querySelector('div.main-board.insight-board[data-board="insight01"]');
+    const boards = Array.from(document.querySelectorAll("div.board_box_blog2"));
+    const board =
+      boards.find((item) => item.querySelector('[href*="bd_id=insight01"], [value="insight01"], [data-bd-id="insight01"]')) ||
+      boards[0];
+    if (!container || !target || !board) return false;
+
+    if (target.parentElement !== container) {
+      container.appendChild(target);
+    }
+
+    if (board.parentElement !== target) {
+      target.appendChild(board);
+    }
+
+    TP_FN_aosRefresh();
+    return true;
+  };
+  const TP_FN_observeMainInsightBoard = () => {
+    if (TP_FN_mainInsightBoard()) return;
+
+    const observer = new MutationObserver(() => {
+      if (TP_FN_mainInsightBoard()) {
+        observer.disconnect();
+        window.clearInterval(timer);
+      }
+    });
+    const timer = window.setInterval(() => {
+      if (TP_FN_mainInsightBoard()) {
+        observer.disconnect();
+        window.clearInterval(timer);
+      }
+    }, 300);
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+  const TP_FN_navbarContactLayout = () => {
+    const container = document.querySelector(".navbar > .container");
+    const header = container?.querySelector(".navbar-header");
+    const collapse = container?.querySelector(".navbar-collapse");
+    const contactButton = document.querySelector(".navbar .contact-btn, .contact-btn");
+    if (!container || !header || !collapse || !contactButton) return false;
+
+    if (contactButton.parentElement !== container || contactButton !== container.lastElementChild) {
+      container.appendChild(contactButton);
+    }
+
+    return true;
+  };
+  const TP_FN_observeNavbarContactLayout = () => {
+    if (TP_FN_navbarContactLayout()) return;
+
+    const observer = new MutationObserver(() => {
+      if (TP_FN_navbarContactLayout()) {
+        observer.disconnect();
+        window.clearInterval(timer);
+      }
+    });
+    const timer = window.setInterval(() => {
+      if (TP_FN_navbarContactLayout()) {
+        observer.disconnect();
+        window.clearInterval(timer);
+      }
+    }, 300);
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+  document.addEventListener("DOMContentLoaded", () => {
+    const labelMap = { 아이디: "label-id", 비밀번호: "label-pw", "이메일 주소": "label-email" };
+    Object.entries(labelMap).forEach(([text, className]) => {
+      $("#login_form label").TP_ME_containsText(text, { addClass: className, html: " " });
+    });
+    TP_FN_topButton();
+    TP_FN_initAOS();
+    TP_FN_navbarState();
+    TP_FN_observeNavbarContactLayout();
+    TP_FN_observeMainWorkSwiper();
+    TP_FN_observeMainInsightBoard();
+    TP_FN_observePageBoardLayout();
+    TP_FN_observeContactFormLayout();
+    TP_FN_aosRefresh();
+    window.addEventListener("load", TP_FN_aosRefresh, { once: true });
+    document.getElementById("site")?.classList.add("loaded");
+  });
+</script>
+		<script src="/assets/js/bootstrap.min.js?ver26.06.2"></script>
+		<script src="/assets/js/global.js?ver26.06.2&amp;t1783560286"></script>
+
+</head>
+<body id="site" data-aos-easing="ease-out" data-aos-duration="500" data-aos-delay="0" class="tp-main-page loaded">
+<!-- <div class="nav-banner">
+    <div class="container">
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                    d="M720-440v-80h160v80H720Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM200-200v-160h-40q-33 0-56.5-23.5T80-440v-80q0-33 23.5-56.5T160-600h160l200-120v480L320-360h-40v160h-80Zm240-182v-196l-98 58H160v80h182l98 58Zm120 36v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346ZM300-480Z" />
+            </svg>
+            <span>
+                현재 홈페이지가 개발 중이며 일부 내용은 변경될 수 있습니다.
+            </span>
+        </p>
+    </div>
+</div>
+--> 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar .navbar-collapse" aria-expanded="false">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span>
+			</button>
+			<a href="/" class="navbar-brand">
+				<span class="navbar-brand-text"><span class="color">SAMPLE</span> MARKETING</span>			</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+								<li id="gnb_55"><a href="/page/company01" target="_self">회사소개</a></li>
+								<li id="gnb_56"><a href="/page/business01" target="_self">업무분야</a></li>
+								<li id="gnb_57"><a href="/board/list?bd_id=portfolio01" target="_self">포트폴리오</a></li>
+								<li id="gnb_58"><a href="/board/list?bd_id=insight01" target="_self">인사이트</a></li>
+				
+															</ul>
+		</div>
+			<a class="contact-btn" href="/form/write?frm_id=contact01">문의하기</a></div>
+	</nav>
+ 
+
+<main id="main_wrapper">
+															<div id="mainCarouselSwiper" class="main_swiper_widget">
+				<div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+					<div class="swiper-wrapper" id="swiper-wrapper-e104f7eaf5d74ade2" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-1920px, 0px, 0px); transition-delay: 0ms;">
+																	<div class="swiper-slide slide1 swiper-slide-next swiper-slide-prev" data-target="_self" role="group" aria-label="1 / 2" data-swiper-slide-index="0" style="width: 1920px;">
+							<div class="swiper-bg">
+																											<img src="/public/img/slide/main-slide.png" alt="slide1">
+																								</div>
+							<div class="swiper-caption container">
+																	<h1><span>브랜드의 잠재력을 깨우는</span><br><span>성장의 파트너가 되어드립니다</span></h1>
+																									<p>우리는 데이터의 정교함과 직관적인 감각을 결합하여<br>
+브랜드가 나아갈 최적의 방법을 제시합니다.</p>
+																<a href="/" target="_blank" class="btn btn-primary">자세히 보기</a>							</div>
+													</div>
+																							<div class="swiper-slide slide2 swiper-slide-active" data-target="_self" role="group" aria-label="2 / 2" data-swiper-slide-index="1" style="width: 1920px;">
+							<div class="swiper-bg">
+																											<img src="/public/img/slide/main-slide.png" alt="slide2">
+																								</div>
+							<div class="swiper-caption container">
+																	<h1><span>브랜드의 잠재력을 깨우는</span><br><span>성장의 파트너가 되어드립니다</span></h1>
+																									<p>우리는 데이터의 정교함과 직관적인 감각을 결합하여<br>
+브랜드가 나아갈 최적의 방법을 제시합니다.</p>
+																<a href="/" target="_blank" class="btn btn-primary">자세히 보기</a>							</div>
+													</div>
+																																																																																																								</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+								<div class="swiper-indicators-wrap">
+                    <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-e104f7eaf5d74ade2"></div>
+                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e104f7eaf5d74ade2"></div>
+                    <div class="swiper-pagination-container container">
+						<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2" aria-current="true"></span></div>
+					</div>
+                </div>
+							</div>
+			<style>
+							</style>
+			<script>
+				const mainCarouselSwiperInit = new Swiper("#mainCarouselSwiper .swiper", {
+											effect: "slide",
+    			    	slidesPerView: 1,
+    			    	loopedSlides: 2,
+    			    	loop: true,
+						speed: 300,
+													autoplay: {
+    			    	    delay: 4000,
+    			    	    disableOnInteraction: false,
+    			    	},
+						    			    	navigation: {
+    			    	    nextEl: "#mainCarouselSwiper .swiper-button-next",
+    			    	    prevEl: "#mainCarouselSwiper .swiper-button-prev",
+    			    	},
+    			    	pagination: {
+    			    	    el: "#mainCarouselSwiper .swiper-pagination",
+    			    	    clickable: true,
+    			    	},
+					    			});
+			</script>
+																											
+						
+																						
+						
+																	<div class="mainpage">
+  <!-- 인트로 -->
+  <section class="main-con main-intro" id="mainIntro">
+    <div class="container">
+      <div class="intro-head aos-init" data-aos="fade-up">
+        <div class="intro-copy">
+          <span>Business Area</span>
+          <h3>
+            데이터의 정교함과 직관적인 감각을 결합하여
+            <br>
+            브랜드의 최적의 방향을 제시합니다.
+          </h3>
+        </div>
+        <a class="intro-more-link" href="/page/business01">
+          <span>자세히 보기</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="intro-grid">
+      <article class="intro-card intro-card-01">
+        <div class="intro-card-inner aos-init" data-aos="fade-up" data-aos-delay="100">
+          <h4>퍼포먼스 마케팅</h4>
+          <p>
+            효율적인 광고 운영을 실현하고
+            <br>
+            브랜드의 실질적인 성과를 극대화합니다.
+          </p>
+        </div>
+      </article>
+      <article class="intro-card intro-card-02">
+        <div class="intro-card-inner aos-init" data-aos="fade-up" data-aos-delay="100">
+          <h4>브랜딩 전략</h4>
+          <p>
+            브랜드 경험을 구축하여
+            <br>
+            시장 내 독보적인 존재감을 형성합니다.
+          </p>
+        </div>
+      </article>
+      <article class="intro-card intro-card-03">
+        <div class="intro-card-inner aos-init" data-aos="fade-up" data-aos-delay="100">
+          <h4>콘텐츠 제작</h4>
+          <p>
+            콘텐츠를 기획하여 브랜드의 메시지를
+            <br>
+            가장 효과적인 방식으로 전달합니다.
+          </p>
+        </div>
+      </article>
+      <article class="intro-card intro-card-04">
+        <div class="intro-card-inner aos-init" data-aos="fade-up" data-aos-delay="100">
+          <h4>디지털 플랫폼</h4>
+          <p>
+            최적의 디지털 환경을 설계하여,
+            <br>
+            매끄러운 상호작용과 높은 만족도를 제공합니다.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Our Work -->
+  <section class="main-con our-work" id="mainWork">
+    <div class="container">
+      <div class="main-title aos-init" data-aos="fade-up">
+        <span>Our Work</span>
+        <h3>
+          클라이언트의 비전이 현실로 완성된
+          <br>
+          프로젝트를 만나보세요.
+        </h3>
+        <a class="work-more-link" href="/board/list?bd_id=portfolio01">
+          <span>자세히 보기</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="main-board work-board aos-init" data-board="portfolio01" data-aos="fade-up"><div class="board_swiper_blog2" data-bd-id="portfolio01">
+				<div class="page-header">
+					<a href="/board/list?bd_id=portfolio01" class="pull-right"><i class="fas fa-plus"></i></a>
+					<h4>포트폴리오</h4>
+				</div>
+				<div class="type_swiper_s1" data-swiper-id="portfolio01" data-board-option="blog2" style="--board-option: 'portfolio01';" data-loop-cloned="true" data-work-swiper-ready="true">
+					<div class="swiper swiper-initialized swiper-horizontal swiper-free-mode">
+						<div class="swiper-wrapper" id="swiper-wrapper-3bf58ebc05a313c9" aria-live="off" style="transition-duration: 9000ms; transform: translate3d(-533.422px, 0px, 0px);">
+																				<div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 12" data-swiper-slide-index="0" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=14&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/a1e14cfde90d9c00fee87f049395d931.webp" alt="글로벌 기업 Ai 시스템 도입">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=14&amp;main=1">
+												<span class="subject">글로벌 기업 Ai 시스템 도입</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:15:33">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div>
+														<div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 12" data-swiper-slide-index="1" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=13&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/8f899886ad82a4f31d9fd71eddd554e8.webp" alt="친환경 오피스 브랜드 프로모션">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=13&amp;main=1">
+												<span class="subject">친환경 오피스 브랜드 프로모션</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:15:20">2026-06-08</span>
+											<span class="hits">1</span>
+										</div>
+									</div>
+								</div>
+							</div>
+														<div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 12" data-swiper-slide-index="2" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=12&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/44ef127fbfd0a4b6465f4a5d73b46757.webp" alt="코스메틱 브랜드 비주얼 리뉴얼">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=12&amp;main=1">
+												<span class="subject">코스메틱 브랜드 비주얼 리뉴얼</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:15:05">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div>
+														<div class="swiper-slide" role="group" aria-label="4 / 12" data-swiper-slide-index="3" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=11&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/7ec1047a5557efea6ffc1be7876b140d.webp" alt="기업 통합 디지털 전략 수립">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=11&amp;main=1">
+												<span class="subject">기업 통합 디지털 전략 수립</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:14:54">2026-06-08</span>
+											<span class="hits">1</span>
+										</div>
+									</div>
+								</div>
+							</div>
+														<div class="swiper-slide" role="group" aria-label="5 / 12" data-swiper-slide-index="4" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=10&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/3b9946179d49a8901b7c58a62e86e031.webp" alt="F&amp;amp;B 스타트업 브랜드 패키지">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=10&amp;main=1">
+												<span class="subject">F&amp;B 스타트업 브랜드 패키지</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:14:39">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div>
+														<div class="swiper-slide" role="group" aria-label="6 / 12" data-swiper-slide-index="5" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=9&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/be4531d82b18c0ab034c87b5bc24a96c.webp" alt="커머스 프로젝트">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=9&amp;main=1">
+												<span class="subject">커머스 프로젝트</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:14:25">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div>
+																										<div class="swiper-slide" role="group" aria-label="7 / 12" data-swiper-slide-index="6" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=14&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/a1e14cfde90d9c00fee87f049395d931.webp" alt="글로벌 기업 Ai 시스템 도입">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=14&amp;main=1">
+												<span class="subject">글로벌 기업 Ai 시스템 도입</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:15:33">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="swiper-slide" role="group" aria-label="8 / 12" data-swiper-slide-index="7" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=13&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/8f899886ad82a4f31d9fd71eddd554e8.webp" alt="친환경 오피스 브랜드 프로모션">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=13&amp;main=1">
+												<span class="subject">친환경 오피스 브랜드 프로모션</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:15:20">2026-06-08</span>
+											<span class="hits">1</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="swiper-slide" role="group" aria-label="9 / 12" data-swiper-slide-index="8" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=12&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/44ef127fbfd0a4b6465f4a5d73b46757.webp" alt="코스메틱 브랜드 비주얼 리뉴얼">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=12&amp;main=1">
+												<span class="subject">코스메틱 브랜드 비주얼 리뉴얼</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:15:05">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="swiper-slide" role="group" aria-label="10 / 12" data-swiper-slide-index="9" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=11&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/7ec1047a5557efea6ffc1be7876b140d.webp" alt="기업 통합 디지털 전략 수립">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=11&amp;main=1">
+												<span class="subject">기업 통합 디지털 전략 수립</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:14:54">2026-06-08</span>
+											<span class="hits">1</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="swiper-slide" role="group" aria-label="11 / 12" data-swiper-slide-index="10" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=10&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/3b9946179d49a8901b7c58a62e86e031.webp" alt="F&amp;amp;B 스타트업 브랜드 패키지">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=10&amp;main=1">
+												<span class="subject">F&amp;B 스타트업 브랜드 패키지</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:14:39">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="swiper-slide" role="group" aria-label="12 / 12" data-swiper-slide-index="11" style="margin-right: 60px;">
+								<div class="inner">
+																		<div class="top">
+										<a href="/board/view?bd_id=portfolio01&amp;wr_id=9&amp;main=1">
+																							<img class="thumb img-responsive" src="/public/upload/thumbs/be4531d82b18c0ab034c87b5bc24a96c.webp" alt="커머스 프로젝트">
+																					</a>
+									</div>
+																		<div class="bottom" data-bottom="thumb">
+																																								<div class="title">
+											<a href="/board/view?bd_id=portfolio01&amp;wr_id=9&amp;main=1">
+												<span class="subject">커머스 프로젝트</span>
+											</a>
+										</div>
+																				<div class="info">
+											<span class="writer">관리자</span>
+											<span class="regdate" data-bbs-regdate="2026-06-08 11:14:25">2026-06-08</span>
+											<span class="hits">0</span>
+										</div>
+									</div>
+								</div>
+							</div></div>
+					<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+					<div class="swiper-indicators-wrap">
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-pagination"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div></div>
+  </section>
+
+  <!-- Insight -->
+  <section class="main-con insight" id="mainInsight">
+    <div class="container">
+      <div class="main-title aos-init" data-aos="fade-up">
+        <span>Insights</span>
+        <h3>
+          마케팅 인사이트를
+          <br>
+          공유합니다.
+        </h3>
+        <a class="insight-more-link" href="/board/list?bd_id=insight01">
+          <span>자세히 보기</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="main-board insight-board aos-init" data-board="insight01" data-aos="fade-up"><div class="board_box_blog2 col-sm-12 col-xs-12 " data-bd-id="insight01" style="margin-bottom:30px">
+				<div class="page-header">
+					<a href="/board/list?bd_id=insight01" class="pull-right"><i class="fas fa-plus"></i></a>
+					<h4>인사이트</h4>
+				</div>
+								<div class="row type_blog_b type_thumb">
+										<div class="col-md-4 col-xs-6">
+						<div class="inner">
+							<div class="top">
+								<a href="/board/view?bd_id=insight01&amp;wr_id=16&amp;main=1">
+									<span class="thumb" style="background-image:url('/public/upload/thumbs/86bc393649d07c4cd06adac85a24cc3f.webp');"></span>
+									<img class="thumb" loading="lazy" src="/public/upload/thumbs/86bc393649d07c4cd06adac85a24cc3f.webp" alt="2026년 꼭 알아야 할 마케팅 트렌드: 데이터 기반의 초개인화 전략">
+								</a>
+							</div>
+							<div class="bottom">
+								<div class="title">
+									<a href="/board/view?bd_id=insight01&amp;wr_id=16&amp;main=1">
+																		<span class="cate  cate1">Trend</span>																				<span class="subject">2026년 꼭 알아야 할 마케팅 트렌드: 데이터 기반의 초개인화 전략</span>
+									</a>
+								</div>
+								<div class="info">
+									<span class="writer">관리자</span>
+									<span class="regdate" data-bbs-regdate="2026-06-08 11:43:52">2026-06-08</span>
+									<span class="hits">1</span>
+								</div>
+							</div>
+						</div>
+					</div>
+										<div class="col-md-4 col-xs-6">
+						<div class="inner">
+							<div class="top">
+								<a href="/board/view?bd_id=insight01&amp;wr_id=15&amp;main=1">
+									<span class="thumb" style="background-image:url('/public/upload/thumbs/9093eb207d80d1aa936e300a74ee6bb3.webp');"></span>
+									<img class="thumb" loading="lazy" src="/public/upload/thumbs/9093eb207d80d1aa936e300a74ee6bb3.webp" alt="기억에 남는 강력한 이미지를 만드는 방법">
+								</a>
+							</div>
+							<div class="bottom">
+								<div class="title">
+									<a href="/board/view?bd_id=insight01&amp;wr_id=15&amp;main=1">
+																		<span class="cate  cate2">Story</span>																				<span class="subject">기억에 남는 강력한 이미지를 만드는 방법</span>
+									</a>
+								</div>
+								<div class="info">
+									<span class="writer">관리자</span>
+									<span class="regdate" data-bbs-regdate="2026-06-08 11:43:41">2026-06-08</span>
+									<span class="hits">0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+										<div class="col-md-4 col-xs-6">
+						<div class="inner">
+							<div class="top">
+								<a href="/board/view?bd_id=insight01&amp;wr_id=8&amp;main=1">
+									<span class="thumb" style="background-image:url('/public/upload/thumbs/9245bb86374370d7698d746129f33128.webp');"></span>
+									<img class="thumb" loading="lazy" src="/public/upload/thumbs/9245bb86374370d7698d746129f33128.webp" alt="광고 효율을 200% 높이는 마케팅 핵심 가이드">
+								</a>
+							</div>
+							<div class="bottom">
+								<div class="title">
+									<a href="/board/view?bd_id=insight01&amp;wr_id=8&amp;main=1">
+																		<span class="cate  cate1">Trend</span>																				<span class="subject">광고 효율을 200% 높이는 마케팅 핵심 가이드</span>
+									</a>
+								</div>
+								<div class="info">
+									<span class="writer">관리자</span>
+									<span class="regdate" data-bbs-regdate="2026-06-08 10:26:40">2026-06-08</span>
+									<span class="hits">0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+										<div class="col-md-4 col-xs-6">
+						<div class="inner">
+							<div class="top">
+								<a href="/board/view?bd_id=insight01&amp;wr_id=7&amp;main=1">
+									<span class="thumb" style="background-image:url('/public/upload/thumbs/da9dfff624972bf052f01c0b65a08478.webp');"></span>
+									<img class="thumb" loading="lazy" src="/public/upload/thumbs/da9dfff624972bf052f01c0b65a08478.webp" alt="검색 엔진 최적화(SEO)를 통한 웹사이트 유입 극대화 노하우">
+								</a>
+							</div>
+							<div class="bottom">
+								<div class="title">
+									<a href="/board/view?bd_id=insight01&amp;wr_id=7&amp;main=1">
+																		<span class="cate  cate2">Story</span>																				<span class="subject">검색 엔진 최적화(SEO)를 통한 웹사이트 유입 극대화 노하우</span>
+									</a>
+								</div>
+								<div class="info">
+									<span class="writer">관리자</span>
+									<span class="regdate" data-bbs-regdate="2026-06-08 10:26:35">2026-06-08</span>
+									<span class="hits">0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+														</div>
+							</div></div>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <section class="main-con main-contact" id="mainContact">
+    <div class="container">
+      <div class="contact-title aos-init" data-aos="fade-up">
+        <span>Contact Us</span>
+        <h3>
+          당신의 비전이 현실이 되는 첫걸음,
+          <br>
+          함께 고민을 시작해 보세요.
+        </h3>
+      </div>
+      <div class="contact-card-wrap aos-init" data-aos="fade-up">
+        <a href="/form/write?frm_id=contact01" class="contact-card contact-card-primary">
+          <div class="contact-card-content">
+            <div class="contact-card-copy">
+              <h4>문의하기</h4>
+              <p>
+                새로운 도약을 준비하시나요?
+                <br>
+                지금 함께 고민을 시작해 보세요.
+              </p>
+            </div>
+            <span class="contact-card-button">
+              <span>문의하기</span>
+              <i aria-hidden="true"></i>
+            </span>
+          </div>
+        </a>
+        <div class="contact-card-stack">
+          <a href="/page/company01" class="contact-card contact-card-company">
+            <div class="contact-card-copy">
+              <h4>회사소개</h4>
+              <p>
+                브랜드의 가치를
+                <br>
+                지속 가능한 성과로 연결합니다.
+              </p>
+            </div>
+            <span class="contact-text-link">
+              <span>자세히 보기</span>
+              <i aria-hidden="true"></i>
+            </span>
+          </a>
+          <a href="/board/list?bd_id=portfolio01" class="contact-card contact-card-portfolio">
+            <div class="contact-card-copy">
+              <h4>포트폴리오</h4>
+              <p>
+                클라이언트의 비전이 현실로 완성된
+                <br>
+                프로젝트를 만나보세요.
+              </p>
+            </div>
+            <span class="contact-text-link">
+              <span>자세히 보기</span>
+              <i aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+							<script>
+	$(function() {
+		$('#mainCarousel .item[data-href]').on('click', function() {
+			var href = $(this).data('href');
+			var target = $(this).data('target') || '_self';
+
+			if(target == '_blank')
+				window.open(href);
+			else
+				location.href = href;
+		}).on('mouseover', function() {
+			$(this).css('cursor', 'pointer');
+		})
+	});
+</script>
+
+<div class="clearfix"></div>
+</main>
+
+<button id="scrollTop" onclick="pageTop()" style="display: none;">
+  <div class="inner"></div>
+</button>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div class="footer-left">
+          <div class="footer-brand">
+            <strong>
+              <span>Sample</span>Marketing
+            </strong>
+          </div>
+          <ul class="footer-info">
+            <li>서울특별시 강남구 대치동 테헤란로78길 16 8층</li>
+            <li class="contact-row">
+              <span class="contact">
+                <strong>TEL</strong>
+                1522-1040
+              </span>
+              <span class="contact">
+                <strong>FAX</strong>
+                1522-1040
+              </span>
+              <span class="contact">
+                <strong>E-MAIL</strong>
+                10page@mailplug.co.kr
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-sns">
+          <a href="#" class="sns-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+              <path d="M15.6 1.7C15.4 1 14.9 0.5 14.2 0.3C13 1.78814e-07 7.89999 0 7.89999 0C7.89999 0 2.90001 1.78814e-07 1.60001 0.3C0.900006 0.5 0.399997 1 0.199997 1.7C-3.05474e-06 3 0 5.6 0 5.6C0 5.6 3.03984e-06 8.2 0.300003 9.5C0.500003 10.2 0.999997 10.7 1.7 10.9C2.9 11.2 8 11.2 8 11.2C8 11.2 13 11.2 14.3 10.9C15 10.7 15.5 10.2 15.7 9.5C16 8.2 16 5.6 16 5.6C16 5.6 16 3 15.6 1.7ZM6.39999 8V3.2L10.6 5.6L6.39999 8Z" fill="#555555"></path>
+            </svg>
+          </a>
+          <a href="#" class="sns-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M8.3 1.5C10.5 1.5 10.8 1.5 11.7 1.5C12.5 1.5 12.9 1.7 13.2 1.8C13.6 2 13.9 2.1 14.2 2.4C14.5 2.7 14.7 3 14.8 3.4C14.9 3.7 15 4.1 15.1 4.9C15.1 5.8 15.1 6 15.1 8.3C15.1 10.6 15.1 10.8 15.1 11.7C15.1 12.5 14.9 12.9 14.8 13.2C14.6 13.6 14.5 13.9 14.2 14.2C13.9 14.5 13.6 14.7 13.2 14.8C12.9 14.9 12.5 15 11.7 15.1C10.8 15.1 10.6 15.1 8.3 15.1C6 15.1 5.8 15.1 4.9 15.1C4.1 15.1 3.7 14.9 3.4 14.8C3 14.6 2.7 14.5 2.4 14.2C2.1 13.9 1.9 13.6 1.8 13.2C1.7 12.9 1.6 12.5 1.5 11.7C1.5 10.8 1.5 10.6 1.5 8.3C1.5 6 1.5 5.8 1.5 4.9C1.5 4.1 1.7 3.7 1.8 3.4C2 3 2.1 2.7 2.4 2.4C2.7 2.1 3 1.9 3.4 1.8C3.7 1.7 4.1 1.6 4.9 1.5C5.8 1.5 6.1 1.5 8.3 1.5ZM8.3 0C6 0 5.8 0 4.9 0C4 0 3.4 0.200001 2.9 0.400001C2.4 0.600001 1.9 0.900001 1.4 1.4C0.900001 1.9 0.700001 2.3 0.400001 2.9C0.200001 3.4 0.1 4 0 4.9C0 5.8 0 6.1 0 8.3C0 10.6 0 10.8 0 11.7C0 12.6 0.200001 13.2 0.400001 13.7C0.600001 14.2 0.900001 14.7 1.4 15.2C1.9 15.7 2.3 15.9 2.9 16.2C3.4 16.4 4 16.5 4.9 16.6C5.8 16.6 6.1 16.6 8.3 16.6C10.5 16.6 10.8 16.6 11.7 16.6C12.6 16.6 13.2 16.4 13.7 16.2C14.2 16 14.7 15.7 15.2 15.2C15.7 14.7 15.9 14.3 16.2 13.7C16.4 13.2 16.5 12.6 16.6 11.7C16.6 10.8 16.6 10.5 16.6 8.3C16.6 6.1 16.6 5.8 16.6 4.9C16.6 4 16.4 3.4 16.2 2.9C16 2.4 15.7 1.9 15.2 1.4C14.7 0.900001 14.3 0.700001 13.7 0.400001C13.2 0.200001 12.6 0.1 11.7 0C10.8 0 10.6 0 8.3 0Z" fill="#555555"></path>
+              <path d="M8.3 4C5.9 4 4 5.9 4 8.3C4 10.7 5.9 12.6 8.3 12.6C10.7 12.6 12.6 10.7 12.6 8.3C12.6 5.9 10.7 4 8.3 4ZM8.3 11.1C6.8 11.1 5.5 9.9 5.5 8.3C5.5 6.8 6.7 5.5 8.3 5.5C9.8 5.5 11.1 6.7 11.1 8.3C11.1 9.8 9.8 11.1 8.3 11.1Z" fill="#555555"></path>
+              <path d="M12.7 4.9C13.2523 4.9 13.7 4.45229 13.7 3.9C13.7 3.34772 13.2523 2.9 12.7 2.9C12.1477 2.9 11.7 3.34772 11.7 3.9C11.7 4.45229 12.1477 4.9 12.7 4.9Z" fill="#555555"></path>
+            </svg>
+          </a>
+          <a href="#" class="sns-link" aria-label="LinkedIn">
+            <span class="material-symbols-outlined" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M2.925 13H0.162498V4.30625H2.925V13ZM1.54375 3.0875C0.650001 3.0875 0 2.4375 0 1.54375C0 0.65 0.731251 0 1.54375 0C2.4375 0 3.0875 0.65 3.0875 1.54375C3.0875 2.4375 2.4375 3.0875 1.54375 3.0875ZM13 13H10.2375V8.2875C10.2375 6.90625 9.66875 6.5 8.85625 6.5C8.04375 6.5 7.23125 7.15 7.23125 8.36875V13H4.46875V4.30625H7.06875V5.525C7.3125 4.95625 8.28749 4.0625 9.66875 4.0625C11.2125 4.0625 12.8375 4.95625 12.8375 7.6375V13H13Z" fill="#555555"></path>
+              </svg>
+            </span>
+          </a>
+          <a href="#" class="sns-link" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M18 9C18 4.05 13.95 0 9 0C4.05 0 0 4.05 0 9C0 13.5 3.2625 17.2125 7.5375 17.8875V11.5875H5.2875V9H7.5375V6.975C7.5375 4.725 8.8875 3.4875 10.9125 3.4875C11.925 3.4875 12.9375 3.7125 12.9375 3.7125V5.9625H11.8125C10.6875 5.9625 10.35 6.6375 10.35 7.3125V9H12.825L12.375 11.5875H10.2375V18C14.7375 17.325 18 13.5 18 9Z" fill="#555555"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">COPYRIGHT ⓒ mailplug ALL RIGHTS RESERVED</p>
+        <div class="login-btn" id="loginBtn">
+          <a href="/member/logout">
+            <span>관리자 로그아웃</span>
+          </a>
+          <a href="/member/login">
+            <span>관리자 로그인</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+// form 이 존재하는 경우
+if ($('form[id^="form_"').length > 0) {var mailplug_token = 'mailplug_token';
+	// csrf 토큰 hidden 값이 없는 경우 생성
+	if ($("[name='mailplug_token']").length == 0) {$('form[id^="form_"').append('<input type="hidden" name="mailplug_token" value="" />');}
+	// csrf 토큰 재발급
+	$("[name='mailplug_token']").val(passport().mailplug_token);}
+</script>
+
+</body></html>

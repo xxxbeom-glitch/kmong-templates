@@ -1,0 +1,36 @@
+{
+  "caseId": "10pages-svc0002",
+  "label": "10PAGE SAMPLE TAX",
+  "displayName": "10PAGE SAMPLE TAX",
+  "sourceUrl": "https://a2462129b.10pages.co.kr/",
+  "demoMallUrl": "https://a2462129b.10pages.co.kr/",
+  "productCode": "SVC0002",
+  "track": "reference-harness",
+  "rightsType": "demo-analysis",
+  "originalCompleteness": "browser-captured",
+  "cafe24Grade": "browser-captured",
+  "viewports": {
+    "desktop": 1920,
+    "mobile": 390
+  },
+  "stages": {
+    "source": { "status": "pass", "updatedAt": "2026-07-09" },
+    "originalCapture": { "status": "pass", "updatedAt": "2026-07-09", "note": "4p · 47 assets" },
+    "originalQa": { "status": "pass", "updatedAt": "2026-07-09", "note": "queue 0" },
+    "analysis": { "status": "partial", "updatedAt": "2026-07-09", "note": "main IA draft" },
+    "workingCopy": {
+      "status": "skipped",
+      "note": "Track C"
+    },
+    "platformMap": {
+      "status": "skipped",
+      "note": "Track B only"
+    },
+    "release": {
+      "status": "skipped",
+      "note": "Track C"
+    }
+  },
+  "createdAt": "2026-07-09",
+  "updatedAt": "2026-07-09"
+}

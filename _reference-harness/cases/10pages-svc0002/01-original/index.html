@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ko" class="windows10 chrome ">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="10PAGE">
+	<meta name="generator" content="10PAGE Builder (https://www.10page.co.kr/)">
+	<link rel="author" href="https://www.10page.co.kr/">
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드">
+
+	<meta property="og:title" content="10PAGE - SVC0002">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="설명">
+	<meta property="og:url" content="http://a2462129b.10pages.co.kr/">
+	<meta property="og:site_name" content="10PAGE - SVC0002">
+	<meta property="og:locale" content="ko_KR">
+	<meta property="og:image" content="http://a2462129b.10pages.co.kr/public/img/og/og_thumb.jpg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="400">
+	<meta property="og:image:alt" content="10PAGE - SVC0002">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="10PAGE - SVC0002">
+	<meta name="twitter:description" content="설명">
+	<meta name="twitter:image" content="http://a2462129b.10pages.co.kr/public/img/og/og_thumb.jpg">
+
+	<title>10PAGE - SVC0002</title>
+	<link rel="canonical" href="http://a2462129b.10pages.co.kr/">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.10page.co.kr/#organization","name":"10PAGE","alternateName":["10page","10PAGE Builder"],"url":"https://www.10page.co.kr/","description":"홈페이지 제작 전문 서비스"},{"@type":"Organization","@id":"http://a2462129b.10pages.co.kr/#organization","name":"10PAGE - SVC0002","url":"http://a2462129b.10pages.co.kr/","logo":{"@type":"ImageObject","url":"http://a2462129b.10pages.co.kr/public/img/og/og_thumb.jpg"}},{"@type":"WebSite","@id":"http://a2462129b.10pages.co.kr/#website","name":"10PAGE - SVC0002","url":"http://a2462129b.10pages.co.kr/","publisher":{"@id":"http://a2462129b.10pages.co.kr/#organization"},"creator":{"@id":"https://www.10page.co.kr/#organization"},"description":"설명"},{"@type":"WebPage","name":"10PAGE - SVC0002","url":"http://a2462129b.10pages.co.kr/","isPartOf":{"@id":"http://a2462129b.10pages.co.kr/#website"},"creator":{"@id":"https://www.10page.co.kr/#organization"},"inLanguage":"ko","description":"설명"}]}</script>
+	
+
+	
+			<link rel="icon" href="/public/img/favicon/favicon_64.png">
+	
+
+	<!-- head 초기화 -->
+<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.min.css" />
+<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/all.min.css" />
+<link rel="stylesheet"
+    href="/_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/fontawesome.min.css" />
+<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/brands.css" />
+<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/adm/modules/fontawesome6/css/solid.css" />
+<!-- material icon -->
+<link rel="stylesheet"
+    href="/_mirror/fonts.googleapis.com/css2.css" />
+<!-- custom css -->
+<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/public/custom.css" />
+<script src="/_mirror/a2462129b.10pages.co.kr/assets/jquery-3.4.1.min.js"></script>
+<script src="/_mirror/a2462129b.10pages.co.kr/assets/jquery.base64.min.js"></script>
+<script src="/_mirror/a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.min.js"></script>
+<script src="/_mirror/a2462129b.10pages.co.kr/assets/jquery-ui/jquery-ui.i18n-ko.js"></script>
+<script src="/assets/jquery-ui/jquery-ui.extend.js?ver26.06.2&t1783560284"></script>
+<script src="/_mirror/a2462129b.10pages.co.kr/ckeditor/ckeditor.js"></script>
+<!-- swiper@11 -->
+<link rel="stylesheet" href="/_mirror/cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="/_mirror/cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- pretendard -->
+<link rel="stylesheet" type="text/css" href="/_mirror/a2462129b.10pages.co.kr/assets/fonts/pretendard/variable/pretendardvariable.css" />
+<!-- paperlogy -->
+<!-- <link rel="stylesheet" type="text/css" href="/assets/fonts/pplozy/pplozy.css" /> -->
+<!-- fullpage-->
+<script type="text/javascript" src="/_mirror/a2462129b.10pages.co.kr/assets/fullpage/fullpage.min.js"></script>
+<script type="text/javascript" src="/_mirror/a2462129b.10pages.co.kr/assets/fullpage/scrolloverflow.min.js"></script>
+<!-- aos -->
+<!-- <link href="/assets/aos@2.3.1/aos.css" rel="stylesheet" /> -->
+<!-- <script src="/assets/aos@2.3.1/aos.js"></script> -->
+<!-- 하위 버전 브라우저 체크 -->
+<!-- <script src="/assets/js/browser/tp_browser_check.min.js"></script> -->
+<script description="10page Head script" version="v.2602.01" defer>
+    /// =========================================
+    // 빌더 로그인 스크립트
+    /// passport
+    const passport = () => {
+        var result = {};
+        $.ajax({
+            async: false,
+            method: "get",
+            url: "/passport",
+        }).done(function (data) {
+            result = data;
+        });
+        return result;
+    };
+    /// getFormData
+    const getFormData = (form) => {
+        var unindexed_array = form.serializeArray();
+        var indexed_array = {};
+        $.map(unindexed_array, function (n, i) {
+            indexed_array[n["name"]] = n["value"];
+        });
+        return indexed_array;
+    };
+
+    /// =========================================
+    // TP_FN_getPageId 페이지 id 값 조회
+    const TP_FN_getPageId = () => {
+        try {
+            const { pathname, search } = window.location;
+            const searchParams = new URLSearchParams(search);
+            // 주문폼 페이지 체크
+            const frmId = searchParams.get("frm_id");
+            if (pathname.includes("/form/write") && frmId) {
+                return frmId;
+            }
+            // 게시판 페이지 체크
+            const bdId = searchParams.get("bd_id");
+            if (pathname.includes("/board/") && bdId) {
+                const boardPages = ["/board/list", "/board/view", "/board/write"];
+                const isBoardPage = boardPages.some((page) => pathname.includes(page));
+                if (isBoardPage) {
+                    return bdId;
+                }
+            }
+            // 캘린더 페이지 체크
+            const clId = searchParams.get("cl_id");
+            if (pathname.includes("/calendar/") && clId) {
+                const calendarPages = ["/calendar/list", "/calendar/view"];
+                const isCalendarPage = calendarPages.some((page) => pathname.includes(page));
+                if (isCalendarPage) {
+                    return clId;
+                }
+            }
+            // 일반 페이지 ID 반환
+            const pathParts = pathname.split("/");
+            const pageId = pathParts[pathParts.length - 1];
+            return pageId;
+        } catch (error) {
+            return null;
+        }
+    };
+    const TP = {
+        // 공통 셀렉터
+        SELECTOR: {
+            mainPage: "#main_wrapper", // 메인 페이지
+            subPage: ".subpage, .subPage", // 서브 페이지
+            navBar: ".navbar", // 네비게이션 바
+            navItem: ".navbar-nav > li", // 네비게이션 아이템
+            bbsArea: "#bbsArea, .bbsArea, .bbs-area", // 게시판 영역
+            boardWrapper: ".board_wrapper", // 게시판
+            paginationWrap: ".pagination_wrap", // 페이지네이션
+            calenderWrap: ".calendar_wrapper", // 캘린더
+            searchWrap: ".search_wrap", // 검색
+            snbArea: "#snbArea", // 서브 네비게이션 영역
+            snbInner: "#snbInner", // 서브 네비게이션 내부
+            subTitleDepth1: '[data-title="1"]', // 서브 페이지 제목 1
+            subTitleDepth2: '[data-title="2"]', // 서브 페이지 제목 2
+            pageId: TP_FN_getPageId(), // 페이지 ID
+        },
+        // 반응형 뷰포트 감지
+        MEDIA: {
+            xs: window.matchMedia("(min-width: 576px)"), // 모바일
+            md: window.matchMedia("(min-width: 768px)"), // 태블릿
+            lg: window.matchMedia("(min-width: 992px)"), // 데스크탑
+            xl: window.matchMedia("(min-width: 1200px)"), // 데스크탑
+            isDeviceXs: function () {
+                return !this.xs.matches;
+            },
+            isDeviceMd: function () {
+                return !this.md.matches;
+            },
+            isDeviceLg: function () {
+                return !this.lg.matches;
+            },
+            getState: function () {
+                const stateMap = ["xl", "lg", "md", "xs"];
+                return stateMap.find((key) => this[key].matches) || "mobile";
+            },
+            onChange: function (callback) {
+                Object.values(this)
+                    .filter((mq) => typeof mq.addEventListener === "function")
+                    .forEach((mq) => mq.addEventListener("change", callback));
+            },
+        },
+    };
+    /// =========================================
+    // 서브페이지 초기화
+    const TP_FN_resetSubPage = () => {
+        // 현재 페이지 ID와 일치하는 메뉴 아이템의 인덱스 찾기
+        const currentMenuIndex = $(TP.SELECTOR.navItem)
+            .filter(function (index) {
+                const menuLinks = $(this).find("a");
+                return menuLinks.toArray().some((link) => $(link).attr("href")?.includes(TP.SELECTOR.pageId));
+            })
+            .index();
+        // subpage에 id, index 적용
+        $(TP.SELECTOR.subPage)
+            .attr("id", TP.SELECTOR.pageId)
+            .attr("data-menu-index", currentMenuIndex + 1);
+        // subpage-header 아이디 적용
+        $(TP.SELECTOR.subPage)
+            .find(".subpage-header")
+            .attr("id", `visual${currentMenuIndex + 1}`);
+    };
+    /// * TP_FN_commonSetting: 공통 함수
+    const TP_FN_commonSetting = () => {
+        // 자동입력방지 코드
+        $("#wr_captcha").attr("placeholder", "자동입력방지 코드");
+        // 구글 아이콘 적용
+        $(".modal-header .close").html(`<span class="material-symbols-outlined">close</span>`);
+        $("span.material-symbols-outlined").addClass("notranslate");
+        $(".main_popup_optional .close").html('<span class="material-symbols-outlined">close</span>');
+        // 메인 위젯 초기화
+        $(`[class*="board_box_"]`).removeClass("col-sm-12 col-xs-12").removeAttr("style");
+        // 로그인 아이디 설정
+        const labelMap = {
+            아이디: "label-id",
+            비밀번호: "label-pw",
+            "이메일 주소": "label-email",
+        };
+        Object.entries(labelMap).forEach(([text, className]) => {
+            $("#login_form label")
+                .filter(function () {
+                    return $(this).text().includes(text);
+                })
+                .addClass(className).html(" ");
+        });
+    };
+    const TP_FN_SUB_boardArea = (boardType) => {
+        const boardWrapper = $(TP.SELECTOR.boardWrapper);
+        // 게시판 타입 결정
+        const TP_FN_getBoardType = (wrapper) => {
+            if (!wrapper.length) return boardType;
+            if (wrapper.find("form[id^='form_']").length) return "form-wrap";
+            if (wrapper.hasClass("board_list_list")) return "list-wrap";
+            if (wrapper.hasClass("board_blog2_list") || wrapper.hasClass("board_blog_list")) return "blog-wrap";
+            return boardType;
+        };
+        // BBS 영역 자동 생성
+        const TP_FN_createBbsArea = (type) => {
+            const subPage = $(TP.SELECTOR.subPage);
+            const hasBoardWrapper = $(TP.SELECTOR.boardWrapper).length;
+            const hasBbsArea = subPage.find("#bbsArea").length;
+            if (subPage.length && hasBoardWrapper && !hasBbsArea) {
+                const container = subPage.find(".subpage-content section").eq(0).find(".container");
+                const titleH3 = container.find(".title-h3");
+                if (titleH3.length) {
+                    titleH3.after(`<!-- Script Generated --> <div class="${type}" id="bbsArea"></div>`);
+                } else {
+                    container.append(`<!-- Script Generated --> <div class="${type}" id="bbsArea"></div>`);
+                }
+            }
+        };
+        const finalBoardType = TP_FN_getBoardType(boardWrapper);
+        TP_FN_createBbsArea(finalBoardType);
+    };
+    /// * TP_FN_SUB_boardAppend: 서브 게시판 이동
+    const TP_FN_SUB_boardAppend = () => {
+        const bbsTarget = $(TP.SELECTOR.bbsArea);
+        const bbsArray = [TP.SELECTOR.boardWrapper, TP.SELECTOR.paginationWrap, TP.SELECTOR.calenderWrap, TP.SELECTOR.searchWrap];
+        bbsArray.forEach((selector) => {
+            const element = $(selector);
+            if (element.length) {
+                element.appendTo(bbsTarget);
+            }
+        });
+    };
+    /// * TP_FN_MAIN_boardAppend: 메인 게시판 이동
+    const TP_FN_MAIN_boardAppend = () => {
+        $(`${TP.SELECTOR.mainPage} [data-bd-id]`).each(function () {
+            const tpElement = $(this);
+            const tpId = tpElement.attr("data-bd-id");
+            const tpTarget = $(`[data-board="${tpId}"]`);
+            if (tpTarget.length) {
+                tpElement.appendTo(tpTarget);
+            } else {
+                console.warn(`data-board="${tpId}"를 찾을 수 없습니다.`);
+            }
+        });
+        // 카테고리 이동
+        // $(`${TP.SELECTOR.mainPage} .table_blog .cate`).each(function () {
+        //     $(this).prependTo($(this).parents(".right").find(".info"));
+        // });
+        // 블로그 A 게시판 클릭 이벤트 바인딩
+        // $(`${TP.SELECTOR.mainPage} .table_blog dd`).TP_ME_boardClick();
+    };
+    /// * TP_FN_menuAlert: 메뉴 얼럿 설정
+    const TP_FN_menuAlert = () => {
+        $(`${TP.SELECTOR.navBar} a[data-alert]`).click(function (e) {
+            e.preventDefault();
+            var _alert = $(this).data("alert");
+            alert(_alert);
+            return false;
+        });
+    };
+    /// * TP_FN_menuDropdown: 메뉴 드롭다운
+    const TP_FN_menuDropdown = () => {
+        const dropDownHover = (tpTarget, tpExpanded) => {
+            if (!TP.MEDIA.isDeviceMd()) {
+                tpTarget.toggleClass("open");
+                tpTarget.children(".dropdown-toggle").attr("aria-expanded", tpExpanded);
+            }
+        };
+        $(`${TP.SELECTOR.navBar} .navbar-nav .dropdown`).hover(
+            function () {
+                dropDownHover($(this), "true");
+            },
+            function () {
+                dropDownHover($(this), "false");
+            }
+        );
+    };
+    /// * TP_FN_menuPropagation: 메뉴 클릭 시 이동 제한
+    const TP_FN_menuPropagation = () => {
+        $(document).on("click", `${TP.SELECTOR.navBar} .navbar-nav .dropdown-menu`, function (e) {
+            e.stopPropagation();
+        });
+    };
+    /// * TP_FN_menuFirstLink: 데스크탑 메뉴 클릭 첫번째 항목 이동
+    const TP_FN_menuFirstLink = () => {
+        $(".navbar-right li > .dropdown-toggle").on("click", function () {
+            if (!TP.MEDIA.isDeviceMd()) {
+                const navAnchor = $(this).next().children("li").eq(0).children("a");
+                const navAnchorTarget = navAnchor.attr("target");
+                const navAnchorHref = navAnchor.attr("href");
+                // 새창열기 감지
+                navAnchorTarget == "_self" ? (window.location = navAnchorHref) : (window.open("about:blank").location = navAnchorHref);
+            }
+        });
+    };
+    /// * TP_FN_mobileMenuToggle: 모바일 메뉴 클릭
+    const TP_FN_mobileMenuToggle = () => {
+        $(".navbar-toggle").on("click", function () {
+            if (TP.MEDIA.isDeviceMd()) {
+                $(this).toggleClass("open").parent().next().toggleClass("open").parents("#site").toggleClass("menu-overlay");
+            }
+        });
+    };
+    /// * TP_FN_mobileImageResponsive: 모바일 이미지 클래스
+    const TP_FN_mobileImageResponsive = () => {
+        $(".scroll-box-xs").on("click", function () {
+            TP.MEDIA.isDeviceXs() && $(this).toggleClass("on");
+        });
+    };
+    /// * TP_FN_topButton: 상단 버튼
+    const TP_FN_topButton = (target, windowScrollY) => {
+        target = $("#scrollTop");
+        target.click(() => $("body,html").animate({ scrollTop: 0 }, 500, "easeOutCubic"));
+        window.addEventListener("scroll", () => {
+            windowScrollY = window.scrollY;
+            if (windowScrollY == 0) {
+                target.fadeOut();
+            } else if (windowScrollY > 0) {
+                target.fadeIn().css("display", "flex");
+            }
+        });
+    };
+    /// =========================================
+    // resize 이벤트 추가 버전
+    const TP_FN_navScrollFadeLogoTypes = () => {
+        const applyNavbar = () => {
+            if (!TP.MEDIA.isDeviceMd() && $(`${TP.SELECTOR.mainPage}, ${TP.SELECTOR.subPage}`).length) {
+                $("#site").removeAttr("style");
+                const hpNavbar = $(TP.SELECTOR.navBar);
+                const hpNavbarHeight = hpNavbar.outerHeight();
+                // 로고 이미지 src (사용 시 값 추가)
+                const navBrandBasic = "";
+                const navBrandWhite = "";
+                // const navBrandBasic = `/public/img/logo/logo_${TP_LANG_DATA == null ? TP_LANG_CONST.defaultLang : TP_LANG_DATA}_c.png`;
+                // const navBrandWhite = `/public/img/logo/logo_${TP_LANG_DATA == null ? TP_LANG_CONST.defaultLang : TP_LANG_DATA}_w.png`;
+                const navTopClass = "navTop";
+                const navScrollClass = "navScroll";
+                // 로고 함수
+                navBrandImg = (e) => {
+                    hpNavbar.find("img").attr("src", e);
+                };
+                // 스크롤 등록
+                navClassAdd = (rmv, add) => hpNavbar.removeClass(rmv).addClass(add);
+                // 스크롤 함수
+                scrollToggle = (scrollTop) => {
+                    if (scrollTop === 0) {
+                        navClassAdd(navScrollClass, navTopClass);
+                        hpNavbar.hasClass("navHover") ? navBrandBasic && navBrandImg(navBrandBasic) : navBrandWhite && navBrandImg(navBrandWhite);
+                    } else {
+                        navClassAdd(navTopClass, navScrollClass);
+                        navBrandBasic && navBrandImg(navBrandBasic);
+                    }
+                };
+                // nav hover시
+                hpNavbar.off("mouseenter.navbar mouseleave.navbar").hover(
+                    function () {
+                        navBrandBasic && navBrandImg(navBrandBasic);
+                        $(this).addClass("navHover");
+                    },
+                    function () {
+                        hpNavbar.hasClass(navScrollClass) ? false : navBrandWhite && navBrandImg(navBrandWhite);
+                        $(this).removeClass("navHover");
+                    }
+                );
+                // 적용
+                if ($(TP.SELECTOR.mainPage).length || $(TP.SELECTOR.subPage).length) {
+                    scrollToggle($(window).scrollTop());
+                } else {
+                    navClassAdd("", navScrollClass);
+                    $("#site").css("padding-top", hpNavbarHeight);
+                }
+                // 스크롤 실행
+                $(window)
+                    .off("scroll.navbar fade.navbar")
+                    .on("scroll.navbar hover.navbar", function () {
+                        const scrollTop = $(window).scrollTop();
+                        scrollToggle(scrollTop);
+                    });
+            } else {
+                $(TP.SELECTOR.navBar).addClass("navScroll");
+                $("#site").css("padding-top", "var(--navbar-height)");
+            }
+        };
+        // 최초 실행
+        applyNavbar();
+        // resize 이벤트 추가 (window.addEventListener 방식으로 변경)
+        window.addEventListener("resize", applyNavbar);
+    };
+    /// * TP_FN_changeOnSize: 미디어쿼리 변경 시 새로고침
+    const TP_FN_changeOnSize = (size) => {
+        const mediaQuery = TP.MEDIA[size];
+        let prevMatches = TP.MEDIA[size].matches;
+        mediaQuery.addEventListener("change", (e) => {
+            if (prevMatches !== e.matches) {
+                location.reload();
+                prevMatches = e.matches;
+            }
+        });
+    };
+    /// =========================================
+    /// * TP_INIT_HEAD: 헤드 스크립트 실행
+    const TP_INIT_HEAD = () => {
+        try {
+            TP_FN_resetSubPage(); // 서브 페이지 리셋
+            // TP_FN_browserWarning(); // 하위 버전 브라우저 체크
+            TP_FN_commonSetting(); // 공통 설정
+            $(TP.SELECTOR.mainPage).length && TP_FN_MAIN_boardAppend(); // 메인 게시판 이동
+            $(TP.SELECTOR.boardWrapper).length && TP_FN_SUB_boardArea(), TP_FN_SUB_boardAppend(); // 서브 게시판 이동
+            TP_FN_menuAlert(); // 메뉴 얼럿 설정
+            TP_FN_menuDropdown(); // 메뉴 드롭다운
+            TP_FN_menuPropagation(); // 메뉴 클릭 시 이동 제한
+            TP_FN_menuFirstLink(); // 데스크탑 메뉴 클릭 첫번째 항목 이동
+            TP_FN_mobileMenuToggle(); // 모바일 메뉴 클릭
+            TP_FN_mobileImageResponsive(); // 모바일 이미지 클래스
+            TP_FN_topButton(); // 상단 버튼
+            TP_FN_navScrollFadeLogoTypes(); // 네비게이션 스크롤 타입
+            $('[data-toggle="tooltip"]').tooltip(); // 툴팁
+            // TP_FN_changeOnSize("md");
+            // FOUC 방지
+            document.getElementById("site")?.classList.add("loaded");
+        } catch (err) {
+            console.error("🚨 Head Script Error:", err);
+        }
+    };
+    document.addEventListener("DOMContentLoaded", () => TP_INIT_HEAD(), { once: true });
+</script>		<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/js/slick/slick-theme.css">
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/js/slick/slick.min.js"></script>
+				<link rel="stylesheet" href="/_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/fullcalendar.min.css">
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/lib/moment.min.js"></script>
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/fullcalendar.min.js"></script>
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/gcal.js"></script>
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/fullcalendar-3.10.0/locale/ko.js"></script>
+			<script description="10page Custom Script" version="v.2506.01" defer>
+    /// =========================================
+    /// * pageTop: 상단 이동
+    function pageTop() {
+        if (typeof fullpage_api !== "undefined" && $("#fullpage").length) {
+            fullpage_api.moveTo(1);
+            return;
+        }
+
+        $("html, body").animate({ scrollTop: 0 }, 500, "easeOutCubic");
+    }
+
+    /// =========================================
+    /// * TP_FN_toggleScrollTop: fullpage 섹션 기준 상단 버튼 노출
+    const TP_FN_toggleScrollTop = (sectionIndex) => {
+        const $scrollTop = $("#scrollTop");
+        if (!$scrollTop.length) return;
+
+        const currentIndex =
+            typeof sectionIndex === "number"
+                ? sectionIndex
+                : $("#fullpage .fp-section.active").index();
+
+        $scrollTop.toggleClass("is-visible", currentIndex > 0);
+    };
+
+    /// =========================================
+    /// * TP_FN_mainpageScript: 메인 페이지 스크립트
+    const TP_FN_mainpageScript = () => {
+        $("#fullpage").fullpage({
+            licenseKey: "EB89078A-F094493C-AADA2D4D-D1300A60",
+            autoScrolling: true,
+            scrollHorizontally: true,
+            lockAnchors: true,
+            anchors: ["visual", "about", "service", "contact", "footer"],
+            navigation: true,
+            navigationPosition: "right",
+            responsiveWidth: 767,
+            responsiveHeight: 800,
+
+            onLeave: function(origin, destination, direction) {
+                if (destination.index > 0) {
+                    $("nav").addClass("navScroll");
+                } else {
+                    $("nav").removeClass("navScroll");
+                }
+
+                TP_FN_toggleScrollTop(destination.index);
+            }
+        });
+
+        $("footer").appendTo("#fullpage .main-footer > div");
+        $("#mainCarouselSwiper").appendTo("#fullpage .section.main-visual > div");
+
+        $(document)
+            .off("click.mainFullpageNav")
+            .on("click.mainFullpageNav", 'a[href="#about"], a[href="#service"], a[href="#contact"]', function(e) {
+                const target = $(this).attr("href").replace("#", "");
+                e.preventDefault();
+
+                if (typeof fullpage_api !== "undefined" && typeof fullpage_api.moveTo === "function") {
+                    fullpage_api.moveTo(target);
+                    return;
+                }
+
+                if ($.fn.fullpage && typeof $.fn.fullpage.moveTo === "function") {
+                    $.fn.fullpage.moveTo(target);
+                }
+            });
+
+        TP_FN_toggleScrollTop();
+    };
+
+    /// =========================================
+    /// * TP_FN_subpageScript: 서브 페이지 스크립트
+    const TP_FN_subpageScript = () => {
+        $(`.form-wrap #frm_data_0`).attr("placeholder", "회사명을 입력하세요");
+        $(`.form-wrap #frm_data_1`).attr("placeholder", "연락처를 입력하세요");
+        $(`.form-wrap #frm_data_2`).attr("placeholder", "제목을 입력하세요");
+    };
+
+    /// =========================================
+    /// * TP_INIT_CUSTOM: 커스텀 스크립트 로드
+    const TP_INIT_CUSTOM = () => {
+        try {
+            $(TP.SELECTOR.mainPage).length && TP_FN_mainpageScript();
+            $(TP.SELECTOR.subPage).length && TP_FN_subpageScript();
+            $(`[role="tabpanel"]`).length && TP_FN_tabUrlSync();
+        } catch (err) {
+            console.error("🚨 Custom Script Error:", err);
+        }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => TP_INIT_CUSTOM(), { once: true });
+</script>
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/js/bootstrap.min.js"></script>
+		<script src="/_mirror/a2462129b.10pages.co.kr/assets/js/global.js"></script>
+
+</head>
+<body id="site">
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar .navbar-collapse" aria-expanded="false">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span>
+			</button>
+			<a href="/" class="navbar-brand">
+				<span class="navbar-brand-text">SAMPLE TAX</span>			</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+								<li id="gnb_56"><a href="#about" target="_self">회사 소개</a></li>
+								<li id="gnb_55"><a href="#service" target="_self">서비스 영역</a></li>
+								<li id="gnb_1"><a href="#contact" target="_self">문의하기</a></li>
+				
+															</ul>
+		</div>
+			</div>
+	</nav>
+ 
+
+<main id="main_wrapper">
+															<div id="mainCarouselSwiper" class="main_swiper_widget" >
+				<div class="swiper">
+					<div class="swiper-wrapper">
+																	<div class="swiper-slide slide1"   data-target="_self">
+							<div class="swiper-bg">
+																											<img src="/_mirror/a2462129b.10pages.co.kr/public/img/slide/slide0002.png" alt="slide1">
+																								</div>
+							<div class="swiper-caption container">
+																	<h1>전문성과 기술의 조화로 <br>
+최적의 세무 솔루션을 제시합니다.</h1>
+																									<p>스마트한 관리로 가장 빠르고 정확한 회계 솔루션을 제공합니다.</p>
+																							</div>
+													</div>
+																							<div class="swiper-slide slide2"   data-target="_self">
+							<div class="swiper-bg">
+																											<img src="/_mirror/a2462129b.10pages.co.kr/public/img/slide/slide0001.png" alt="slide2">
+																								</div>
+							<div class="swiper-caption container">
+																	<h1>전문성과 기술의 조화로 <br>
+최적의 세무 솔루션을 제시합니다.</h1>
+																									<p>완벽한 전문성을 추구합니다. <br>
+우리는 끊임없는 혁신과 정교한 기술로 최고의 결과를 만들어냅니다.</p>
+																							</div>
+													</div>
+																																																																																																								</div>
+				</div>
+								<div class="swiper-indicators-wrap">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination-container container">
+						<div class="swiper-pagination"></div>
+					</div>
+                </div>
+							</div>
+			<style>
+							</style>
+			<script>
+				const mainCarouselSwiperInit = new Swiper("#mainCarouselSwiper .swiper", {
+											effect: "slide",
+    			    	slidesPerView: 1,
+    			    	loopedSlides: 2,
+    			    	loop: true,
+						speed: 300,
+						    			    	navigation: {
+    			    	    nextEl: "#mainCarouselSwiper .swiper-button-next",
+    			    	    prevEl: "#mainCarouselSwiper .swiper-button-prev",
+    			    	},
+    			    	pagination: {
+    			    	    el: "#mainCarouselSwiper .swiper-pagination",
+    			    	    clickable: true,
+    			    	},
+					    			});
+			</script>
+																						<div class="mainpage" id="fullpage">
+    <section class="section main-visual">
+    </section>
+    <!-- 소개 -->
+    <section class="section main-intro" id="about">
+        <div class="container">
+            <!-- 정렬 -->
+            <div class="m-about-wrap">
+                <div class="m-title-h3">
+                    <span class="desc">Introduction</span>
+                    <h3>기업의 내일을
+                        <br />
+                        설계합니다.
+                    </h3>
+                    <p>
+                        복잡한 세무 환경에서 사업자가 경영에만 몰입할 수 있도록 돕습니다.
+                        <br />
+                        IT 기술을 활용한 신속한 업무 처리와 투명한 보고 체계를 통해,
+                        <br />
+                        안정적인 성장을 지원하는 파트너가 되겠습니다.
+                    </p>
+                    <a href="#contact" class="btn btn-tp btn-arrow">
+                        Contact us
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="img-box">
+                    <img src="/_mirror/a2462129b.10pages.co.kr/public/img/main/m-intro01.png" alt="Innovation" class="img-responsive bg-intro" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 서비스 분야 -->
+    <section class="section main-innovation" id="service">
+        <div class="container">
+            <div class="m-innovation-wrap">
+                <div class="box box1">
+                    <div class="m-title-h3">
+                        <span>SERVICE AREA</span>
+                        <h3>서비스 분야</h3>
+                        <p>단순한 세무 대리를 넘어, 기업의 재무 건전성을 확보하고
+                            <br />
+                            성장을 뒷받침하는 전략적 동반자를 지향합니다.
+                            <br />
+                            우리는 급변하는 세제 환경 속에서 고객사가 직면한
+                            <br />
+                            복잡한 문제들을 데이터 기반의 스마트한 분석으로 풀어냅니다.
+                        </p>
+                        <a href="#contact" class="btn btn-tp btn-arrow">
+                            Contact us
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box2">
+                    <ul class="tax-service-grid">
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">
+                                database_search
+                            </span>
+                            <h3>기장 대리</h3>
+                            <p>
+                                종이 서류 없는 디지털 워크플로우로
+                                <br />
+                                실시간 손익 현황을 보고합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">
+                                savings
+                            </span>
+                            <h3>절세 컨설팅</h3>
+                            <p>
+                                업종별 맞춤 공제 항목을 분석하여
+                                <br />
+                                세금을 최소화합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">
+                                account_balance
+                            </span>
+                            <h3>법인 전환 & 설립</h3>
+                            <p>
+                                개인사업자의 법인 전환부터 신규
+                                <br />
+                                법인 설립까지 원스톱으로 지원합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">
+                                leaderboard
+                            </span>
+                            <h3>조사 대응 & 불복</h3>
+                            <p>
+                                세무 조사나 과세 처분에 대해
+                                <br />
+                                전문적인 논리를 구축합니다.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 문의하기 -->
+    <section class="section main-contact bg-img color-white" id="contact">
+        <img src="/_mirror/a2462129b.10pages.co.kr/public/img/main/m-contact-bg.png" class="img-responsive bg" alt="Image">
+        <div class="container">
+            <div class="m-contact-wrap">
+                <div class="m-contact-info" data-aos="fade-up">
+                    <div class="m-title-h4 m-contact-title">
+                        <span class="cate">CONTACT US</span>
+                        <h4>문의하기</h4>
+                    </div>
+                    <ul class="m-contact-info-list">
+                        <li class="m-contact-info-item">
+                            <div class="m-contact-info-item__icon">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div class="m-contact-info-item__content">
+                                <strong>Address</strong>
+                                <p>서울특별시 강남구 대치동 테헤란로78길 16 8층</p>
+                            </div>
+                        </li>
+                        <li class="m-contact-info-item">
+                            <div class="m-contact-info-item__icon">
+                                <span class="material-symbols-outlined">call</span>
+                            </div>
+                            <div class="m-contact-info-item__content">
+                                <strong>Tel</strong>
+                                <p>(+82) 1544-9140</p>
+                            </div>
+                        </li>
+                        <li class="m-contact-info-item">
+                            <div class="m-contact-info-item__icon">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <div class="m-contact-info-item__content">
+                                <strong>E-mail</strong>
+                                <p>10page@mailplug.co.kr</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-form-wrap" data-aos="fade-up" data-aos-delay="200"></div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    let formWrap = ".m-form-wrap";
+                    $("#frm_wrapper_contact01").appendTo(formWrap);
+                    $(`${formWrap} #frm_data_0`).attr("placeholder", "이름을 입력하세요");
+                    $(`${formWrap} #frm_data_1`).attr("placeholder", "회사명을 입력하세요");
+                    $(`${formWrap} #frm_data_3`).attr("placeholder", "문의내용을 입력하세요");
+                    $(`${formWrap} #write_btn`).html("문의하기");
+                });
+            </script>
+        </div>
+    </section>
+    <section class="section main-footer fp-auto-height">
+        <div></div>
+    </section>
+</div>
+																	<div class="board_wrapper type_form" id="frm_wrapper_contact01">
+				<div class="page-header">
+					<h4>문의하기</h4>
+				</div>
+						<form method='post' action="/form/submit" enctype="multipart/form-data" id="form_contact01">
+						<input type="hidden" name="mailplug_token" value="7cd3e3f43763cdd622af3d6994835747" />
+<input type="hidden" name="CSRFToken" value="7cd3e3f43763cdd622af3d6994835747" />
+						<fieldset>
+							<table class="table table_responsive board_write_table">
+								<tbody>
+									<tr id="item_name">
+										<th>
+											<span class="required_text">*</span>
+											<span>이름</span>
+										</th>
+										<td>
+											<input type='text' name='wr_name' id='wr_name' class='form-control' placeholder='이름을 입력하세요' value="">
+										</td>
+									</tr>
+									<tr id="item_email">
+										<th>
+											<span class="required_text">*</span>
+											<span>이메일 주소</span>
+										</th>
+										<td>
+											<input type='email' name='wr_email' id='wr_email' class='form-control form-control-big' placeholder='이메일 주소를 입력하세요' value="">
+											<p style="margin-top:5px;margin-bottom:0" class="text-muted"><i class="fas fa-check-circle fa-fw"></i> 접수하신 내용에 대해 별도 안내가 필요한 경우 해당 이메일 주소로 회신을 드립니다.</p>
+										</td>
+									</tr>
+																		<tr id="item_0">
+										<th>
+																					
+										<span>서비스 유형</span>
+																				<input type="hidden" name="frm_idx_0" value="0">
+										<input type="hidden" name="frm_title_0" value="서비스 유형">
+										<input type="hidden" name="frm_type_0" value="radio">
+
+																														</th>	
+										<td>
+											<label class="radio-inline" for="frm_data_0_0" style="margin-top:10px"><input type="radio" class="custom_radio" id="frm_data_0_0" name="frm_data_0" value="서비스 유형1" checked><span>서비스 유형1</span></label><label class="radio-inline" for="frm_data_0_1" style="margin-top:10px"><input type="radio" class="custom_radio" id="frm_data_0_1" name="frm_data_0" value="서비스 유형2"><span>서비스 유형2</span></label><label class="radio-inline" for="frm_data_0_2" style="margin-top:10px"><input type="radio" class="custom_radio" id="frm_data_0_2" name="frm_data_0" value="서비스 유형3"><span>서비스 유형3</span></label><label class="radio-inline" for="frm_data_0_3" style="margin-top:10px"><input type="radio" class="custom_radio" id="frm_data_0_3" name="frm_data_0" value="서비스 유형4"><span>서비스 유형4</span></label>										</td>
+									</tr>
+																		<tr id="item_1">
+										<th>
+																					
+										<span>문의내용</span>
+																				<input type="hidden" name="frm_idx_1" value="1">
+										<input type="hidden" name="frm_title_1" value="문의내용">
+										<input type="hidden" name="frm_type_1" value="textarea">
+
+																														</th>	
+										<td>
+											<div id="frm_data_1_wrap" style="position:relative"><textarea class="form-control" name="frm_data_1" id="frm_data_1" placeholder="" maxlength="" style="width:100%;min-height:200px"></textarea><span class="frm_textarea_cnt">0</span></div>										</td>
+									</tr>
+																		<tr id="item_captcha">
+										<th>
+											<span class="required_text">*</span>
+											<span>자동입력방지 코드</span>
+										</th>
+										<td>
+											<img id="captcha" src="/_mirror/a2462129b.10pages.co.kr/captcha/get_captcha.jpg" alt="보안 문자 이미지" style="border:1px solid #ddd"><br>
+											<input type="text" id="wr_captcha" name="wr_captcha" class="form-control" maxlength="6" placeholder="위 코드를 입력하세요" style="margin-top:5px;vertical-align:0px" autocomplete="off">
+											<!-- <a href="javascript:;" class="btn btn-outline-primary" style="vertical-align:0px" id="captcha_reset_btn">새 코드 발급</a> -->
+										</td>
+									</tr>
+									<tr id="item_agree">
+										<th>
+											<span class="required_text">*</span>
+											<span>개인정보 처리방침</span>
+										</th>
+										<td>
+											<div class="checkbox" style="margin-bottom:0">
+												<label for="wr_agree">
+													<input type="checkbox" class="custom_checkbox" id="wr_agree" name="wr_agree">
+													<span><a href="/member/privacy" target="_blank">개인정보 처리방침</a>에 동의합니다.</span>
+												</label>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="text-center">
+								<input type="hidden" name="frm_idx" value="2">
+								<button type="button" class="btn btn-primary btn-lg " id="write_btn" >접수</button>
+							</div>
+						</fieldset>
+					</form>
+					<script>
+						"use strict";
+
+						$(function() {
+							$('#list_btn').on('click', function() {
+								location.href = "/";
+							})
+
+							$('#captcha').on('click', function() {
+								$(this).attr('src', '/captcha/get_captcha');
+								$('#wr_captcha').focus();
+								return false;
+							})
+
+							$('textarea').on('keyup', function() {
+								var _length = $(this).val().length;
+
+								$(this).siblings('.frm_textarea_cnt').text(_length);
+							})
+
+							$('input[data-type="date"]').datepicker({
+								dateFormat: 'yy-mm-dd',
+								autoSize: true,
+								// maxDate: "now",
+								changeYear: true,
+								// yearRange: "1900:2026"
+							});
+
+							$('#write_btn').on('click', function() {
+								var _wr_name = $.trim($('#wr_name').val());
+								var _wr_email = $.trim($('#wr_email').val());
+								var _wr_captcha = $.trim($('#wr_captcha').val());
+								var chk_each = true;
+
+								if(!_wr_name) {
+									alert('이름을 입력하세요.');
+									$('#wr_name').val('').focus();
+									return false;
+								}
+
+								if(!_wr_email) {
+									alert('이메일 주소를 입력하세요.');
+									$('#wr_email').val('').focus();
+									return false;
+								} else {
+									var _wr_email_pattern = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+									if(_wr_email_pattern.test(_wr_email) !== true) {
+										alert('이메일 형식이 올바르지 않습니다.');
+										$('#wr_email').val('').focus();
+										return false;
+									}
+								}
+								if($(this).hasClass('disabled')) {
+									alert('권한이 없습니다');
+									return false;
+								}
+
+								var targetForm = $("#form_");
+								$.each(targetForm[0], function(index, element) {
+									var id = $(element).attr('id');
+									var required = $(element).attr('required');
+									
+									if(id != undefined && $("#"+id).val().trim() == '' && id.split('_').length > 2 && required != undefined) {
+										alert($('input[name="frm_title_' + id.split('_')[2] + '"]').val() + '은(는) 필수 항목입니다.');
+										$("#"+id).focus();
+										chk_each = false;
+										return false;	
+									}
+
+									if(id == 'wr_captcha' && !_wr_captcha) {
+										alert('자동입력방지 코드를 입력하세요.');
+										$("#"+id).focus();
+										chk_each = false;
+										return false;
+									}
+								});
+
+								if(chk_each == false) {
+									return false;
+								}
+
+								if($('#wr_agree').is(":checked") == false) {
+									alert('접수를 위해 개인정보 처리방침에 동의해주세요.');
+									return false;
+								}
+
+								// 토큰 재발급
+								var mailplug_token = 'mailplug_token';
+								$("[name='mailplug_token']").val(passport().mailplug_token);
+
+								$('form').submit();
+							})
+						})
+					</script>
+				</div>
+					<script>
+	$(function() {
+		$('#mainCarousel .item[data-href]').on('click', function() {
+			var href = $(this).data('href');
+			var target = $(this).data('target') || '_self';
+
+			if(target == '_blank')
+				window.open(href);
+			else
+				location.href = href;
+		}).on('mouseover', function() {
+			$(this).css('cursor', 'pointer');
+		})
+	});
+</script>
+
+<div class="clearfix"></div>
+</main>
+
+ <button id="scrollTop" onclick="pageTop()">
+    <div class="inner"></div>
+</button>          
+
+
+<footer id="footer">
+  <div class="container">
+<div class="footer-wrap">
+            <div class="footer-logo">
+                <img src="/_mirror/a2462129b.10pages.co.kr/public/img/logo/logo_10page.svg" class="img-responsive" alt="Image" />
+            </div>
+            <ul class="footer-info">
+                <li class="corp">
+                  SAMPLE <span> TAX</span>
+				</li>
+              	<li class="copyright">COPYRIGHT ⓒ 10PAGE ALL RIGHTS RESERVED.</li>  
+              	<li class="clearfix"></li>
+                <li><b>Addr</b> 서울 강남구 테헤란로78길 16, 8층/10층(대치동, 노벨빌딩)(06194)</li>
+                <li><b>TEL</b> 1522-1040</li>
+                <li><b>FAX</b> 1522-1040</li>
+                <li><b>E-mail</b> 10page@mailplug.co.kr</li>
+                <li class="clearfix"></li>
+            </ul>
+            <div class="login-btn" id="loginBtn">
+                <a href="/member/logout">로그아웃</a>
+                <a href="/member/login">관리자 로그인</a>
+            </div>
+        </div>
+    </div>
+</footer><script>
+// form 이 존재하는 경우
+if ($('form[id^="form_"').length > 0) {var mailplug_token = 'mailplug_token';
+	// csrf 토큰 hidden 값이 없는 경우 생성
+	if ($("[name='mailplug_token']").length == 0) {$('form[id^="form_"').append('<input type="hidden" name="mailplug_token" value="" />');}
+	// csrf 토큰 재발급
+	$("[name='mailplug_token']").val(passport().mailplug_token);}
+</script>
+</body>
+</html>
