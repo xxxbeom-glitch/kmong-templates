@@ -1,4 +1,9 @@
 
+## 2026-07-09 — wonkangmetal Track C 사이트 복제
+- 트랙: reference-harness · case `wonkangmetal`
+- 원본: http://www.wonkangmetal.co.kr/ (원강금속)
+- 산출: 캡처 1920/390 · 멀티페이지 미러 220p · preview http://127.0.0.1:4210/
+- 잔여 큐 160 (EN/JP 제품 상세 등) — PARTIAL
 ## 2026-07-09 — ptmd868445 working-copy · KV 빠른 전환(플래시) 수정
 - 트랙: reference-harness · case ptmd868445 · `04-working-copy` only
 - 원인: 테마 `initKVSwiper` on.init가 `.kv-page-current/.kv-page-total` 접근 → style-A 마크업에 없어 throw → 200ms 폴링이 `clearInterval` 없이 재실행(=깜빡임). 오버라이드 1.5s destroy 루프도 가중.

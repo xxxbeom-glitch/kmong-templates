@@ -1,0 +1,52 @@
+{
+  "caseId": "wonkangmetal",
+  "label": "원강금속(주)",
+  "displayName": "원강금속(주)",
+  "sourceUrl": "http://www.wonkangmetal.co.kr/",
+  "demoMallUrl": "http://www.wonkangmetal.co.kr/",
+  "productCode": "WONKANGMETAL",
+  "track": "reference-harness",
+  "rightsType": "demo-analysis",
+  "originalCompleteness": "browser-captured",
+  "cafe24Grade": "browser-captured",
+  "viewports": {
+    "desktop": 1920,
+    "mobile": 390
+  },
+  "stages": {
+    "source": {
+      "status": "pass",
+      "updatedAt": "2026-07-09",
+      "note": "license · captures 1920/390"
+    },
+    "originalCapture": {
+      "status": "pass",
+      "updatedAt": "2026-07-09",
+      "note": "220p multipage pristine + 1392 assets"
+    },
+    "originalQa": {
+      "status": "partial",
+      "updatedAt": "2026-07-09",
+      "note": "nav·visual PASS · queue 160 remaining"
+    },
+    "analysis": {
+      "status": "partial",
+      "updatedAt": "2026-07-09",
+      "note": "main IA draft · maps TBD"
+    },
+    "workingCopy": {
+      "status": "skipped",
+      "note": "Track C"
+    },
+    "platformMap": {
+      "status": "skipped",
+      "note": "Track B only"
+    },
+    "release": {
+      "status": "skipped",
+      "note": "Track C"
+    }
+  },
+  "createdAt": "2026-07-09",
+  "updatedAt": "2026-07-09"
+}

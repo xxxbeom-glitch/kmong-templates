@@ -1,5 +1,9 @@
 # QA Log
 
+## 2026-07-09 · [reference-harness] wonkangmetal browser-capture QA
+**범위:** 원강금속 공개 사이트 복제 (Track C)
+**결과:** **PARTIAL** — 220 pages · nav smoke PASS · queue 160
+**미리보기:** http://127.0.0.1:4210/
 ## 2026-07-09 · [reference-harness] ptmd868445 KV flash fix
 **범위:** working-copy KV hero (style-A)
 **결과:** **확인 필요** (코드 수정 완료 · 브라우저 하드 리프레시 후 슬라이드 간격 ~5초인지 확인)
