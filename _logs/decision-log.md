@@ -1,13 +1,26 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 서브 공통 모바일 (@768)
+
+| # | 결정 |
+|---|------|
+| 1 | **공통 (전 서브 page-hero):** 높이 275 · 상하 패딩 · 카피 max 280 · 타이틀 24/lh1.35 · 강제 br 해제 |
+| 2 | **공통 (greeting-intro · service-intro):** 워터마크 키움·lh1 · 타이틀/본문 강제 br 해제 |
+| 3 | **greeting-intro 이미지:** 16:9 (해당 섹션만) |
+| 4 | **전용 유지:** vision 타이포 · history 세로 나열 (about-greeting만) |
+| 5 | about-greeting QA 모드 해제 · 전체 섹션 복귀 |
+
+---
+
+
 ## 2026-07-10 — [static] template-homepage · 회사소개(about-greeting) 모바일 QA
 
 | # | 결정 |
 |---|------|
 | 1 | 폰 검수: `is-qa-review` + `data-qa-show` · **헤더·푸터 유지** |
 | 2 | 순서: hero → intro → vision → history → footer → all |
-| 3 | 현재: **history** 공개 (vision PASS → 다음) · 모바일만 |
+| 3 | **1차 PASS** · 공통 항목은 서브 전체에 반영 · QA 모드 해제 |
 | 4 | QA 섹션 숨김·히어로 조정 = **`@768` 모바일만** · PC는 전체 원본 |
 
 ---

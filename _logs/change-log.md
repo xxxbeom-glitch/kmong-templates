@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 서브 공통 모바일 반영
+
+**범위:** `css/style.css` · 전 HTML (`?v=mo-sub-common`) · about-greeting QA 해제  
+**내용:** page-hero·intro 공통 토큰 정리 · service-intro 동기화 · greeting 전용(vision/history) 유지
+
+---
+
 ## 2026-07-10 — [static] template-homepage 모바일 메뉴 CTA 제거·글자 키움
 
 **범위:** 전 HTML · `css/style.css`  
