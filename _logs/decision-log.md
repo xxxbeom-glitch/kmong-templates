@@ -1,6 +1,17 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 최종 코드 정리
+
+| # | 결정 |
+|---|------|
+| 1 | 죽은 CSS 삭제: `year-label--sm` · `item--no-month` · `@768 .hero__lead-br` |
+| 2 | HTML 유틸 병행 BEM 훅 제거: CTA·pill·title·filter·media img/overlay 별칭 |
+| 3 | body와 동일하던 page-* BG 5규칙 · 미사용 `--header-logo-menu-gap` 삭제 |
+| 4 | JS 훅(`portfolio-filter__tab` · mega · `news-view__list-btn` order)은 유지 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 서브 본문 shell 1600 통일
 
 | # | 결정 |

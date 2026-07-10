@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 최종 코드 정리
+
+**범위:** 전 HTML · `css/style.css`  
+**내용:** 죽은 CSS 3블록 · 유틸과 병행하던 BEM 훅 제거 · 중복 page BG·미사용 토큰 삭제 · JS 훅은 유지
+
+---
+
 ## 2026-07-10 — [static] template-homepage 서브 본문 shell 1600 통일
 
 **범위:** 서브 HTML 전체 · `css/style.css`  

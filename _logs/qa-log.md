@@ -1,5 +1,15 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 최종 코드 정리
+**범위:** 전 HTML · `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 죽은 CSS 3블록 삭제 | PASS | |
+| 2 | CTA/pill/title/filter/media 훅 제거 | PASS | util만 남김 |
+| 3 | page BG · logo-menu-gap 삭제 | PASS | body 배경 동일 |
+| 4 | portfolio-filter · mega · list-btn 유지 | PASS | JS/모바일 |
+
 ## 2026-07-10 · [static] template-homepage 서브 본문 shell 1600 통일
 **범위:** 서브 HTML · `css/style.css`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요
