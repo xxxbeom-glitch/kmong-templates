@@ -1,5 +1,17 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 공통 클래스 정리 (1~5)
+**범위:** 전 HTML · `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | pill accent 호버 (전체글·글목록) | PASS | btn-pill--accent |
+| 2 | CTA header/footer 사이즈 분리 | PASS | btn-cta--* |
+| 3 | media-card img/overlay 공유 | PASS | service·portfolio |
+| 4 | section-title · filter-tab | PASS | |
+| 5 | content-shell vs header shell | PASS | 1440 유지 · 메인 1600 유지 |
+| 6 | 구 클래스 병행 | PASS | 선택자 그룹 |
+
 ## 2026-07-10 · [static] template-homepage 상단으로 가기 (btn-top)
 **범위:** 전 HTML · `css/style.css` · `js/main.js` — 참고 [HDC홀딩스](https://hdc-holdings.com/ko)
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요

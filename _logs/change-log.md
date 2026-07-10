@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 공통 클래스 정리 (1~5)
+
+**범위:** 전 HTML · `css/style.css`  
+**내용:** btn-pill / btn-cta / media-card / section-title / filter-tab / content-shell 도입 · 중복 CSS 통합 · 구 클래스 병행 유지
+
+---
+
 ## 2026-07-10 — [static] template-homepage 상단으로 가기 (btn-top)
 
 **범위:** 전 HTML · `css/style.css` · `js/main.js`  

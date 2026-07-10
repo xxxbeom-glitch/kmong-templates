@@ -1,6 +1,18 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 공통 클래스 정리 (1~5)
+
+| # | 결정 |
+|---|------|
+| 1 | **pill:** `.btn-pill` · `--accent`(채움 호버) · `--muted`(지도 링크) |
+| 2 | **CTA:** `.btn-cta` · `--header` / `--footer` 사이즈 |
+| 3 | **미디어:** `.media-card` + `__img` / `__overlay` (service·portfolio 공유) |
+| 4 | **타이틀·탭:** `.section-title`(--center/--left) · `.filter-tab` |
+| 5 | **shell:** 본문·푸터 → `.content-shell` (1440) · 헤더 bar/mega만 `.site-header__shell` · 메인 gutter는 `.section-shell--gutter`(1600) 유지 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 상단으로 가기 (btn-top)
 
 | # | 결정 |

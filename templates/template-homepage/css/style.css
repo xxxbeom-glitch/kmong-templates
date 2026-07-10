@@ -230,13 +230,6 @@ button.scroll-reveal {
   background: #ffffff;
 }
 
-.site-header__shell {
-  width: 100%;
-  max-width: calc(var(--header-layout-max) + var(--header-layout-pad-x) * 2);
-  margin-inline: auto;
-  padding-inline: var(--header-layout-pad-x);
-}
-
 /* GNB bar · mega — 컨텐츠 max(1440/1600) 해제, 뷰포트 100% */
 .site-header__bar > .site-header__shell,
 .site-header__mega > .site-header__shell {
@@ -311,30 +304,6 @@ button.scroll-reveal {
   flex: 0 0 var(--header-col-w);
   min-width: var(--header-col-w);
   text-align: center;
-}
-
-.site-header__cta {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: clamp(9rem, 9.9479vw, 11.9375rem);
-  min-height: clamp(3rem, 3.4375vw, 4.125rem);
-  padding: 0 clamp(1.25rem, 1.5vw, 1.75rem);
-  border-radius: 999px;
-  background: var(--color-accent-primary);
-  font-size: clamp(0.9375rem, 0.9896vw, 1.1875rem);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--color-text-on-dark);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: opacity 0.2s ease;
-}
-
-.site-header__cta:hover,
-.site-header__cta:focus-visible {
-  opacity: 0.9;
 }
 
 .site-header__menu-btn {
@@ -505,30 +474,7 @@ button.scroll-reveal {
 
 .site-footer__tagline-accent {
   font-weight: 700;
-  color: #525ee3;
-}
-
-.site-footer__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: clamp(9rem, 11.7188vw, 14.0625rem);
-  min-height: clamp(3rem, 3.6458vw, 4.375rem);
-  padding: 0 clamp(1.25rem, 1.5vw, 1.75rem);
-  border-radius: 999px;
-  background: #525ee3;
-  font-size: clamp(0.9375rem, 0.9896vw, 1.1875rem);
-  font-weight: 500;
-  line-height: 1;
-  color: #ffffff;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: opacity 0.2s ease;
-}
-
-.site-footer__cta:hover,
-.site-footer__cta:focus-visible {
-  opacity: 0.9;
+  color: var(--color-accent-primary);
 }
 
 .site-footer__bottom {
@@ -614,6 +560,207 @@ button.scroll-reveal {
 .section-shell--gutter {
   max-width: var(--section-shell-gutter-max);
   padding-inline: var(--layout-pad-x);
+}
+
+/* Content shell — 서브페이지·푸터 (header 1440 정렬과 동일) */
+.content-shell,
+.site-header__shell {
+  width: 100%;
+  max-width: calc(var(--header-layout-max) + var(--header-layout-pad-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--header-layout-pad-x);
+}
+
+/* Shared: outline pill */
+.btn-pill,
+.insight__more-btn,
+.news-view__list-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: clamp(10rem, 12.3958vw, 14.875rem);
+  min-height: clamp(3.25rem, 4.0625vw, 4.875rem);
+  padding: 0 clamp(1.5rem, 2vw, 2rem);
+  border: 1px solid #dbdbdb;
+  border-radius: 999px;
+  background: transparent;
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-pill--accent:hover,
+.btn-pill--accent:focus-visible,
+.insight__more-btn:hover,
+.insight__more-btn:focus-visible,
+.news-view__list-btn:hover,
+.news-view__list-btn:focus-visible {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-on-dark);
+}
+
+.btn-pill--muted,
+.directions__map-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: clamp(10rem, 12.3958vw, 14.875rem);
+  height: clamp(3rem, 4.0625vw, 4.875rem);
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 999px;
+  background: var(--color-surface-base);
+  font-size: clamp(1.125rem, 1.25vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  overflow: visible;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-pill--muted:hover,
+.btn-pill--muted:focus-visible,
+.directions__map-link:hover,
+.directions__map-link:focus-visible {
+  border-color: var(--color-text-primary);
+  background: var(--color-surface-subtle);
+}
+
+/* Shared: solid CTA pill */
+.btn-cta,
+.site-header__cta,
+.site-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(1.25rem, 1.5vw, 1.75rem);
+  border-radius: 999px;
+  background: var(--color-accent-primary);
+  font-size: clamp(0.9375rem, 0.9896vw, 1.1875rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.btn-cta:hover,
+.btn-cta:focus-visible,
+.site-header__cta:hover,
+.site-header__cta:focus-visible,
+.site-footer__cta:hover,
+.site-footer__cta:focus-visible {
+  opacity: 0.9;
+}
+
+.btn-cta--header,
+.site-header__cta {
+  flex: 0 0 auto;
+  min-width: clamp(9rem, 9.9479vw, 11.9375rem);
+  min-height: clamp(3rem, 3.4375vw, 4.125rem);
+}
+
+.btn-cta--footer,
+.site-footer__cta {
+  min-width: clamp(9rem, 11.7188vw, 14.0625rem);
+  min-height: clamp(3rem, 3.6458vw, 4.375rem);
+}
+
+/* Shared: section title */
+.section-title,
+.service-cards__title,
+.business-items__title,
+.process-steps__title,
+.portfolio-grid__title,
+.news__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+}
+
+.section-title--center,
+.service-cards__title,
+.business-items__title,
+.process-steps__title {
+  text-align: center;
+}
+
+.section-title--left,
+.portfolio-grid__title,
+.news__title {
+  text-align: left;
+}
+
+.portfolio-grid__title {
+  flex: 0 1 auto;
+}
+
+/* Shared: filter tab */
+.filter-tab,
+.news-filter__tab,
+.portfolio-filter__tab {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 0.625rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font-family: inherit;
+  font-size: clamp(0.9375rem, 1.0417vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(28, 25, 23, 0.2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-tab.is-active,
+.news-filter__tab.is-active,
+.portfolio-filter__tab.is-active {
+  border-bottom-color: var(--color-accent-primary);
+  font-weight: 600;
+  color: var(--color-accent-primary);
+}
+
+/* Shared: media card image + overlay */
+.media-card__img,
+.service-card__img,
+.portfolio-card__img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.45s ease;
+}
+
+.media-card__overlay,
+.service-card__overlay,
+.portfolio-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
 }
 
 /* S01 Hero */
@@ -1045,16 +1192,6 @@ button.scroll-reveal {
   gap: clamp(1.5rem, 2.5vw, 3rem);
 }
 
-.service-cards__title {
-  margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: var(--color-text-primary);
-  text-align: center;
-}
-
 .service-cards__grid {
   display: flex;
   flex-direction: column;
@@ -1096,27 +1233,6 @@ button.scroll-reveal {
   width: 100%;
 }
 
-.service-card__img {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  transform: scale(1);
-  transform-origin: center center;
-  transition: transform 0.45s ease;
-}
-
-.service-card__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-}
-
 .service-card__content {
   position: relative;
   z-index: 2;
@@ -1153,16 +1269,6 @@ button.scroll-reveal {
   flex-direction: column;
   align-items: center;
   gap: clamp(1.5rem, 2.5vw, 3rem);
-}
-
-.business-items__title {
-  margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: var(--color-text-primary);
-  text-align: center;
 }
 
 .business-items__list {
@@ -1265,16 +1371,6 @@ button.scroll-reveal {
   gap: clamp(1.5rem, 2.5vw, 3rem);
 }
 
-.process-steps__title {
-  margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: var(--color-text-primary);
-  text-align: center;
-}
-
 .process-steps__grid {
   display: flex;
   flex-direction: column;
@@ -1358,17 +1454,6 @@ button.scroll-reveal {
   width: 100%;
 }
 
-.portfolio-grid__title {
-  margin: 0;
-  flex: 0 1 auto;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: var(--color-text-primary);
-  text-align: left;
-}
-
 .portfolio-filter {
   display: flex;
   flex-wrap: wrap;
@@ -1377,28 +1462,6 @@ button.scroll-reveal {
   gap: clamp(1rem, 1.6667vw, 2rem);
   margin: 0;
   padding: 0;
-}
-
-.portfolio-filter__tab {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 0 0.625rem;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  background: transparent;
-  font-family: inherit;
-  font-size: clamp(0.9375rem, 1.0417vw, 1.25rem);
-  font-weight: 500;
-  line-height: 1.6;
-  color: rgba(28, 25, 23, 0.2);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.portfolio-filter__tab.is-active {
-  border-bottom-color: var(--color-accent-primary);
-  font-weight: 600;
-  color: var(--color-accent-primary);
 }
 
 .portfolio-grid__list {
@@ -1429,27 +1492,6 @@ button.scroll-reveal {
   overflow: hidden;
   isolation: isolate;
   gap: 0.625rem;
-}
-
-.portfolio-card__img {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  transform: scale(1);
-  transform-origin: center center;
-  transition: transform 0.45s ease;
-}
-
-.portfolio-card__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
 }
 
 .portfolio-card__content {
@@ -1946,32 +1988,6 @@ button.scroll-reveal {
   gap: clamp(0.75rem, 0.8333vw, 1rem);
 }
 
-.directions__map-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: clamp(10rem, 12.3958vw, 14.875rem);
-  height: clamp(3rem, 4.0625vw, 4.875rem);
-  padding: 0;
-  border: 1px solid #dbdbdb;
-  border-radius: 999px;
-  font-size: clamp(1.125rem, 1.25vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.48;
-  letter-spacing: 0;
-  color: var(--color-text-primary);
-  text-decoration: none;
-  background: var(--color-surface-base);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.directions__map-link:hover,
-.directions__map-link:focus-visible {
-  border-color: var(--color-text-primary);
-  background: var(--color-surface-subtle);
-}
-
 /* About · CEO 메시지 (Figma 796:211) */
 .section--ceo-message {
   padding-block: clamp(3rem, 5.2083vw, 6.25rem);
@@ -2283,32 +2299,6 @@ button.scroll-reveal {
   stroke: var(--color-text-primary);
 }
 
-.news-view__list-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: clamp(10rem, 12.3958vw, 14.875rem);
-  min-height: clamp(3.25rem, 4.0625vw, 4.875rem);
-  padding: 0 clamp(1.5rem, 2vw, 2rem);
-  border: 1px solid #dbdbdb;
-  border-radius: 999px;
-  background: transparent;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--color-text-primary);
-  text-decoration: none;
-  overflow: hidden;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.news-view__list-btn:hover,
-.news-view__list-btn:focus-visible {
-  background: var(--color-accent-primary);
-  border-color: var(--color-accent-primary);
-  color: var(--color-text-on-dark);
-}
-
 .news__inner {
   display: flex;
   flex-direction: column;
@@ -2324,15 +2314,6 @@ button.scroll-reveal {
   width: 100%;
 }
 
-.news__title {
-  margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
-  font-weight: 600;
-  line-height: 1.6087;
-  letter-spacing: 0;
-  color: var(--color-text-primary);
-}
-
 .news-filter {
   display: flex;
   flex-wrap: wrap;
@@ -2340,28 +2321,6 @@ button.scroll-reveal {
   gap: clamp(1rem, 1.6667vw, 2rem);
   margin: 0;
   padding: 0;
-}
-
-.news-filter__tab {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 0 0.625rem;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  background: transparent;
-  font-family: inherit;
-  font-size: clamp(0.9375rem, 1.0417vw, 1.25rem);
-  font-weight: 500;
-  line-height: 1.6;
-  color: rgba(28, 25, 23, 0.2);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.news-filter__tab.is-active {
-  border-bottom-color: var(--color-accent-primary);
-  font-weight: 600;
-  color: var(--color-accent-primary);
 }
 
 .news__list {
@@ -3171,32 +3130,6 @@ button.scroll-reveal {
   text-align: center;
 }
 
-.insight__more-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: clamp(10rem, 12.3958vw, 14.875rem);
-  min-height: clamp(3.25rem, 4.0625vw, 4.875rem);
-  padding: 0 clamp(1.5rem, 2vw, 2rem);
-  border: 1px solid #dbdbdb;
-  border-radius: 999px;
-  background: transparent;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--color-text-primary);
-  text-decoration: none;
-  overflow: hidden;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.insight__more-btn:hover,
-.insight__more-btn:focus-visible {
-  background: var(--color-accent-primary);
-  border-color: var(--color-accent-primary);
-  color: var(--color-text-on-dark);
-}
-
 /* S09 Contact — form fields r12 */
 .section--contact {
   padding-block: clamp(5rem, 5.2083vw, 6.25rem);
@@ -3882,6 +3815,7 @@ button.scroll-reveal {
     transition: none;
   }
 
+  .media-card__img,
   .service-card__img,
   .portfolio-card__img,
   .business-item__img {
@@ -3902,7 +3836,9 @@ button.scroll-reveal {
     transition: none;
   }
 
-  .insight__more-btn {
+  .btn-pill,
+  .insight__more-btn,
+  .news-view__list-btn {
     transition: none;
   }
 
@@ -4046,6 +3982,7 @@ body:has(.quick-consult:not(.is-hidden)) .btn-top {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .media-card:hover .media-card__img,
   .service-card:hover .service-card__img,
   .portfolio-card:hover .portfolio-card__img,
   .business-item:hover .business-item__img {
