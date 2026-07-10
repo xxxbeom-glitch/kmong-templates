@@ -3867,7 +3867,7 @@ button.scroll-reveal {
   }
 
   .greeting-intro__img {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 9;
   }
 
   .greeting-vision__row {
