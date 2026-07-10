@@ -1,5 +1,14 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 코드 정리 (죽은 CSS·선택자)
+**범위:** `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | sub-cta / contact__ 제거 | PASS | HTML 미사용 |
+| 2 | 유틸 선택자만 유지 | PASS | pill·cta·title·tab·media |
+| 3 | 화면 동작 동일 전제 | PASS | 클래스 병행 HTML |
+
 ## 2026-07-10 · [static] template-homepage 토큰 연결 (색·라운드·글자)
 **범위:** `css/style.css`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요

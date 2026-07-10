@@ -1,6 +1,16 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 코드 정리 (죽은 CSS·선택자)
+
+| # | 결정 |
+|---|------|
+| 1 | 미사용 CSS 삭제: `sub-cta*` · 메인 `contact__*` / `section--contact` |
+| 2 | 공유 유틸 선택자에서 구 BEM 별칭 제거 — HTML에 붙은 `btn-pill`/`btn-cta`/`section-title`/`filter-tab`/`media-card`만 사용 |
+| 3 | 레이아웃 전용 규칙(`news-view__list-btn` order 등)은 BEM 유지 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 토큰 연결 (색·라운드·글자)
 
 | # | 결정 |

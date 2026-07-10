@@ -177,17 +177,17 @@ button.scroll-reveal {
 }
 
 .cta__btn.scroll-reveal,
-.insight__more-btn.scroll-reveal {
+.btn-pill.scroll-reveal {
   display: inline-flex;
 }
 
 .services__card.scroll-reveal,
-.faq__item.scroll-reveal,
-.contact__form.scroll-reveal {
+.faq__item.scroll-reveal {
   display: block;
 }
 
-.service-card.scroll-reveal {
+.service-card.scroll-reveal,
+.media-card.scroll-reveal {
   display: flex;
 }
 
@@ -201,10 +201,6 @@ button.scroll-reveal {
 
 .portfolio-card.scroll-reveal {
   display: flex;
-}
-
-.sub-cta__btn.scroll-reveal {
-  display: inline-flex;
 }
 
 .scroll-reveal.is-revealed {
@@ -575,9 +571,7 @@ button.scroll-reveal {
 }
 
 /* Shared: outline pill */
-.btn-pill,
-.insight__more-btn,
-.news-view__list-btn {
+.btn-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -598,18 +592,13 @@ button.scroll-reveal {
 }
 
 .btn-pill--accent:hover,
-.btn-pill--accent:focus-visible,
-.insight__more-btn:hover,
-.insight__more-btn:focus-visible,
-.news-view__list-btn:hover,
-.news-view__list-btn:focus-visible {
+.btn-pill--accent:focus-visible {
   background: var(--color-accent-primary);
   border-color: var(--color-accent-primary);
   color: var(--color-text-on-dark);
 }
 
-.btn-pill--muted,
-.directions__map-link {
+.btn-pill--muted {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -633,17 +622,13 @@ button.scroll-reveal {
 }
 
 .btn-pill--muted:hover,
-.btn-pill--muted:focus-visible,
-.directions__map-link:hover,
-.directions__map-link:focus-visible {
+.btn-pill--muted:focus-visible {
   border-color: var(--color-text-primary);
   background: var(--color-surface-subtle);
 }
 
 /* Shared: solid CTA pill */
-.btn-cta,
-.site-header__cta,
-.site-footer__cta {
+.btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -660,34 +645,23 @@ button.scroll-reveal {
 }
 
 .btn-cta:hover,
-.btn-cta:focus-visible,
-.site-header__cta:hover,
-.site-header__cta:focus-visible,
-.site-footer__cta:hover,
-.site-footer__cta:focus-visible {
+.btn-cta:focus-visible {
   opacity: 0.9;
 }
 
-.btn-cta--header,
-.site-header__cta {
+.btn-cta--header {
   flex: 0 0 auto;
   min-width: clamp(9rem, 9.9479vw, 11.9375rem);
   min-height: clamp(3rem, 3.4375vw, 4.125rem);
 }
 
-.btn-cta--footer,
-.site-footer__cta {
+.btn-cta--footer {
   min-width: clamp(9rem, 11.7188vw, 14.0625rem);
   min-height: clamp(3rem, 3.6458vw, 4.375rem);
 }
 
 /* Shared: section title */
-.section-title,
-.service-cards__title,
-.business-items__title,
-.process-steps__title,
-.portfolio-grid__title,
-.news__title {
+.section-title {
   margin: 0;
   font-size: var(--text-heading-xl-size);
   font-weight: 600;
@@ -696,16 +670,11 @@ button.scroll-reveal {
   color: var(--color-text-primary);
 }
 
-.section-title--center,
-.service-cards__title,
-.business-items__title,
-.process-steps__title {
+.section-title--center {
   text-align: center;
 }
 
-.section-title--left,
-.portfolio-grid__title,
-.news__title {
+.section-title--left {
   text-align: left;
 }
 
@@ -714,9 +683,7 @@ button.scroll-reveal {
 }
 
 /* Shared: filter tab */
-.filter-tab,
-.news-filter__tab,
-.portfolio-filter__tab {
+.filter-tab {
   box-sizing: border-box;
   margin: 0;
   padding: 0 0 0.625rem;
@@ -732,18 +699,14 @@ button.scroll-reveal {
   white-space: nowrap;
 }
 
-.filter-tab.is-active,
-.news-filter__tab.is-active,
-.portfolio-filter__tab.is-active {
+.filter-tab.is-active {
   border-bottom-color: var(--color-accent-primary);
   font-weight: 600;
   color: var(--color-accent-primary);
 }
 
 /* Shared: media card image + overlay */
-.media-card__img,
-.service-card__img,
-.portfolio-card__img {
+.media-card__img {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -756,16 +719,13 @@ button.scroll-reveal {
   transition: transform 0.45s ease;
 }
 
-.media-card__overlay,
-.service-card__overlay,
-.portfolio-card__overlay {
+.media-card__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: rgba(0, 0, 0, 0.4);
   pointer-events: none;
 }
-
 /* S01 Hero */
 .section--hero {
   width: 100%;
@@ -1521,78 +1481,6 @@ button.scroll-reveal {
   font-weight: 700;
   line-height: 1.193359375;
   color: var(--color-text-on-dark);
-}
-
-/* Subpage CTA — Figma 802:1678 */
-.section--sub-cta {
-  position: relative;
-  overflow: hidden;
-  min-height: clamp(12rem, 14.6875vw, 17.625rem);
-}
-
-.sub-cta__media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.sub-cta__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.sub-cta__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  pointer-events: none;
-}
-
-.sub-cta__inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(1.5rem, 2.2917vw, 2.75rem);
-  min-height: clamp(12rem, 14.6875vw, 17.625rem);
-  padding-block: clamp(3rem, 5.2083vw, 6.25rem);
-}
-
-.sub-cta__title {
-  margin: 0;
-  flex: 1 1 auto;
-  font-size: var(--text-heading-xl-size);
-  font-weight: 700;
-  line-height: 1.48;
-  letter-spacing: 0;
-  color: var(--color-text-on-dark);
-}
-
-.sub-cta__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  min-width: clamp(12rem, 16.5625vw, 19.875rem);
-  min-height: clamp(3.5rem, 4.375vw, 5.25rem);
-  padding: 0 clamp(1.5rem, 2vw, 2rem);
-  border: 0;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.15);
-  font-size: clamp(1.125rem, 1.4583vw, 1.75rem);
-  font-weight: 500;
-  line-height: 1.48;
-  color: var(--color-text-on-dark);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.2s ease;
-}
-
-.sub-cta__btn:hover,
-.sub-cta__btn:focus-visible {
-  background: rgba(255, 255, 255, 0.25);
 }
 
 /* About · 인사말 — S02 intro (Figma 770:2121) */
@@ -3133,149 +3021,6 @@ button.scroll-reveal {
   text-align: center;
 }
 
-/* S09 Contact — form fields r12 */
-.section--contact {
-  padding-block: clamp(5rem, 5.2083vw, 6.25rem);
-  background: var(--color-surface-subtle);
-}
-
-.contact__inner {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 2.5vw, 3rem);
-}
-
-.contact__title {
-  margin: 0;
-  font-size: var(--text-heading-xl-size);
-  font-weight: var(--text-heading-xl-weight);
-  line-height: var(--text-heading-xl-lh);
-  letter-spacing: -0.02em;
-  color: var(--color-text-primary);
-}
-
-.contact__form {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.5rem, 0.5208vw, 0.625rem);
-}
-
-.contact__fields {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.5rem, 1.6667vw, 2rem);
-}
-
-.contact__row {
-  display: grid;
-  gap: clamp(1rem, 1.25vw, 1.5rem);
-}
-
-.contact__row--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.contact__field {
-  display: grid;
-  gap: clamp(0.75rem, 0.8333vw, 1rem);
-}
-
-.contact__label {
-  font-size: clamp(1rem, 1.0417vw, 1.25rem);
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--color-text-primary);
-}
-
-.contact__field input,
-.contact__field textarea {
-  width: 100%;
-  box-sizing: border-box;
-  min-height: clamp(3.25rem, 3.3854vw, 4.0625rem);
-  padding: clamp(0.75rem, 0.8333vw, 1rem) clamp(0.875rem, 0.9375vw, 1rem);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-md);
-  background: var(--color-surface-base);
-  font-family: inherit;
-  font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--color-text-primary);
-}
-
-.contact__field textarea {
-  min-height: clamp(10rem, 11.1979vw, 13.4375rem);
-  resize: vertical;
-}
-
-.contact__field input::placeholder,
-.contact__field textarea::placeholder {
-  color: var(--color-text-tertiary);
-}
-
-.contact__privacy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  gap: 0.5rem;
-  min-height: clamp(3rem, 3.125vw, 3.75rem);
-  font-size: clamp(1rem, 1.0417vw, 1.25rem);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--color-text-primary);
-  cursor: pointer;
-}
-
-.contact__privacy input {
-  flex: 0 0 auto;
-  appearance: none;
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  width: 1.625rem;
-  height: 1.625rem;
-  margin: 0;
-  border: 1px solid rgba(28, 25, 23, 0.2);
-  border-radius: 0.375rem;
-  background-color: var(--color-surface-base);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 0.5625rem 0.375rem;
-  cursor: pointer;
-}
-
-.contact__privacy input:checked {
-  border-color: var(--color-accent-primary);
-  background-color: var(--color-accent-primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' fill='none'%3E%3Cpath d='M1 3l2.5 2.5L8 1' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-.contact__submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  min-width: clamp(12rem, 12.3958vw, 14.875rem);
-  min-height: clamp(3.25rem, 4.0625vw, 4.875rem);
-  padding: 0 clamp(1.5rem, 2vw, 2rem);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-pill);
-  background: transparent;
-  font-family: inherit;
-  font-size: var(--text-body-lg-size);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--color-text-primary);
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.contact__submit:hover,
-.contact__submit:focus-visible {
-  background: var(--color-surface-subtle);
-  border-color: var(--color-text-primary);
-}
-
 /* Main only — 빠른 상담 플로팅 (Figma 825:2858) */
 .quick-consult {
   position: fixed;
@@ -3558,11 +3303,6 @@ button.scroll-reveal {
     font-size: clamp(2.25rem, 6vw, 4rem);
   }
 
-  .sub-cta__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
 
   .quick-consult__container {
     gap: 0.75rem;
@@ -3722,9 +3462,6 @@ button.scroll-reveal {
     margin-top: 0.25rem;
   }
 
-  .contact__row--2 {
-    grid-template-columns: 1fr;
-  }
 
   .contact-page__row--2 {
     grid-template-columns: 1fr;
@@ -3819,8 +3556,6 @@ button.scroll-reveal {
   }
 
   .media-card__img,
-  .service-card__img,
-  .portfolio-card__img,
   .business-item__img {
     transform: none;
     transition: none;
@@ -3835,21 +3570,13 @@ button.scroll-reveal {
     transition: none;
   }
 
-  .sub-cta__btn {
+
+  .btn-pill {
     transition: none;
   }
 
-  .btn-pill,
-  .insight__more-btn,
-  .news-view__list-btn {
-    transition: none;
-  }
 
-  .contact__submit {
-    transition: none;
-  }
-
-  .site-header__cta {
+  .btn-cta {
     transition: none;
   }
 
@@ -3871,9 +3598,6 @@ button.scroll-reveal {
     pointer-events: none;
   }
 
-  .site-footer__cta {
-    transition: none;
-  }
 }
 
 /* Back to top — HDC holdings 참고 (우측 하단 원형) */
@@ -3986,8 +3710,6 @@ body:has(.quick-consult:not(.is-hidden)) .btn-top {
 
 @media (hover: hover) and (pointer: fine) {
   .media-card:hover .media-card__img,
-  .service-card:hover .service-card__img,
-  .portfolio-card:hover .portfolio-card__img,
   .business-item:hover .business-item__img {
     transform: scale(1.05);
   }

@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 코드 정리 (죽은 CSS·선택자)
+
+**범위:** `css/style.css`  
+**내용:** sub-cta·메인 contact 폼 CSS 삭제 · 공유 유틸 선택자에서 중복 BEM 별칭 제거
+
+---
+
 ## 2026-07-10 — [static] template-homepage 토큰 연결 (색·라운드·글자)
 
 **범위:** `css/style.css`  
