@@ -1,5 +1,170 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 빠른상담 플로팅 재반영
+**범위:** `index.html` · `css/style.css` — Figma `825:2858`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 상단 제목「빠른 상담 하기」+ 동의 | PASS | SPACE_BETWEEN |
+| 2 | 하단 이름·전화·문의·버튼 gap10 | PASS | |
+| 3 | 버튼「프로젝트 문의하기」흰/#525ee3 | PASS | |
+| 4 | 체크 흰 stroke · 흰 체크 | PASS | BG #525ee3 |
+| 5 | 패널 높이 ~187 · pad26 | PASS | |
+
+## 2026-07-10 · [static] template-homepage privacy (개인정보처리방침)
+**범위:** `privacy.html` · `css/style.css` · 전 HTML 푸터 — Figma `817:2623`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 서브히어로 없음 | PASS | 헤더 아래 바로 본문 |
+| 2 | 제목 46/600 · 인트로 24/600 | PASS | |
+| 3 | 조항 1~5 제목·본문 | PASS | Figma 원고 |
+| 4 | 푸터 링크 privacy.html | PASS | 전 페이지 |
+
+## 2026-07-10 · [static] template-homepage 헤더 컬러·하단 라인
+**범위:** `css/style.css` — Figma `770:2656` / `770:2788`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | bar·mega BG #ffffff | PASS | |
+| 2 | 접힘 시 하단 라인 없음 | PASS | |
+| 3 | 펼침 시 mega 하단 1px #000 | PASS | 상단 라인 제거 |
+
+## 2026-07-10 · [static] template-homepage news-view (글 상세)
+**범위:** `news-view.html` · `css/style.css` · `news.html` · `index.html` — Figma `817:2672`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 히어로 라벨·제목 | PASS | 목록과 동일 |
+| 2 | 글 제목 30/500 · 날짜 · 하단 구분선 | PASS | |
+| 3 | 본문 5문단 · 첨부파일 | PASS | Figma 원고 |
+| 4 | 이전/다음 · 글 목록 보기 pill | PASS | 이전·다음 `#` |
+| 5 | 목록·메인 첫 글 → news-view | PASS | |
+
+## 2026-07-10 · [static] template-homepage 헤더 메가메뉴 높이
+**범위:** `css/style.css` — Figma `770:2788`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 패널 높이 = 콘텐츠 | PASS | absolute 컬럼 제거 |
+| 2 | pad-block 16 · gap10 서브링크 | PASS | |
+| 3 | 서비스 4항 잘림 없음 | PASS | |
+
+## 2026-07-10 · [static] template-homepage S08 전체 글 보기 버튼
+**범위:** `css/style.css` — Figma `763:1083`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | stroke `#dbdbdb` · 배경 투명 | PASS | 기존 15% 채움 제거 |
+| 2 | 238×78 · r999 · 24/500 | PASS | |
+
+## 2026-07-10 · [static] template-homepage contact (프로젝트 문의)
+**범위:** `contact.html` · `css/style.css` — Figma `806:2208`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 히어로 라벨·제목 | PASS | 프로젝트 문의 / 새로운 프로젝트를… |
+| 2 | 섹션 제목 중앙 · pad100 · BG #fff | PASS | page BG #faf9f6 |
+| 3 | 좌 이미지 750×845 r12 · 우 폼 654 · gap36 | PASS | |
+| 4 | 필드 이름·업체명 / 이메일·연락처 / 업종 유형 / 문의내용 | PASS | Figma placeholder 그대로 |
+| 5 | 개인정보 동의 + 문의 보내기 (#525ee3 · r12 · full) | PASS | |
+| 6 | GNB 문의하기 aria-current · 고객지원 active | PASS | |
+| 7 | @1024 1열 · @768 필드 1열 | PASS | |
+
+## 2026-07-10 · [static] template-homepage 회사소개 3페이지 원고 재맞춤
+**범위:** `about-greeting.html` · `about-directions.html` · `about-ceo.html` — Figma `770:2111` · `796:5` · `796:211`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | greeting 히어로·인트로·기준·성장 과정 | PASS | 연혁→성장 과정 |
+| 2 | directions 히어로·주소·교통 | PASS | |
+| 3 | ceo 히어로·인용·본문·서명 | PASS | 대표이사→대표 |
+| 4 | Figma TEXT 키문구 대조 | PASS | |
+
+## 2026-07-10 · [static] template-homepage S03 services 카드 내부 여백
+**범위:** `css/style.css` — Figma `799:641`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 카드 342×348 · pad 50/55 · r12 | PASS | |
+| 2 | 숫자↔라벨 간격 12 | PASS | gap 56→제거 |
+| 3 | 숫자 80/500 · +51 · %/년 26 · gap15 | PASS | align center |
+| 4 | 라벨 20/400 · #1c1917 60% | PASS | |
+| 5 | 상단 정렬 (하단 여백 유지) | PASS | Figma VERTICAL MIN |
+
+## 2026-07-10 · [static] template-homepage news (주요 소식)
+**범위:** `news.html` · `css/style.css` · `js/main.js` — Figma `806:2060`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 히어로 라벨·제목 | PASS | 주요 소식 |
+| 2 | 탭 전체/공지사항/보도자료 | PASS | active #525ee3 + 하단 2px |
+| 3 | 리스트 5건 · 배지·제목·날짜 | PASS | notice #e6efff / press #fff3e6 |
+| 4 | 페이지네이션 UI | PASS | 정적 1페이지 |
+| 5 | 탭 필터 show/hide | PASS | data-news-filter |
+| 6 | GNB 공지사항 → news.html | PASS | 전 페이지 |
+
+## 2026-07-10 · [static] template-homepage about-ceo 사진 슬롯
+**범위:** `about-ceo.html` · `css/style.css` — Figma `796:211`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 사진 625×946 · r12 | PASS | pill 제거 |
+| 2 | 열 비율 625:709 · gap 106 | PASS | |
+| 3 | align-items center | PASS | |
+
+## 2026-07-10 · [static] template-homepage 푸터 개인정보 처리방침
+**범위:** 전 HTML 푸터 · `css/style.css` — Figma `770:2979`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | copyright 좌 · 개인정보 처리방침 우 | PASS | space-between |
+| 2 | 링크 16/600 · #fff | PASS | href `#` placeholder |
+| 3 | 8페이지 공통 반영 | PASS | |
+
+## 2026-07-10 · [static] template-homepage S05 reviews 원고 20건
+**범위:** `index.html` · `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 고유 후기 20건 | PASS | 윗줄 10 · 아랫줄 10 |
+| 2 | 마퀴 복제 그룹 | PASS | 줄당 ×2 |
+| 3 | title · body · author | PASS | category는 카드 UI 미표시 |
+| 4 | 루프 50s | PASS | 10장/줄 속도 보정 |
+
+## 2026-07-10 · [static] template-homepage S05 reviews 마퀴 복원
+**범위:** `index.html` · `css/style.css` — Figma `763:1742`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 레이아웃 infinite-card-marquee (2줄 ←/→) | PASS | 2×2 철회 |
+| 2 | 카드 min-height 422 · r24 | PASS | |
+| 3 | 섹션 padT160 / padB100 | PASS | |
+| 4 | 신규 원고 4장 × 복제 그룹 | PASS | |
+| 5 | hover pause · reduced-motion | PASS | |
+
+## 2026-07-10 · [static] template-homepage 서비스 4페이지 원고 재맞춤
+**범위:** `service-solution.html` · `service-list.html` · `service-process.html` · `service-portfolio.html` — Figma `799:774` · `802:1702` · `802:1826` · `802:1958`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | solution 히어로·인트로·5카드 원고 | PASS | UI·UX 본문 교체 |
+| 2 | list 히어로·인트로·4유형 원고 | PASS | 인트로 본문 교체 |
+| 3 | process 히어로·인트로·STEP 01–07 | PASS | 변경 없음(일치) |
+| 4 | portfolio 히어로·탭·카드 라벨/이름 | PASS | 라벨 순서 맞춤 |
+| 5 | Figma TEXT 노드 JSON 전수 대조 | PASS | `_figma-svc-texts.json` |
+
+## 2026-07-10 · [static] template-homepage 메인 원고·S03/05/06/08
+**범위:** `index.html` · `css/style.css` — Figma `763:209`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 전 섹션 원고 교체 | PASS | hero~contact |
+| 2 | S03 카드 348 · pad 50/55 · 숫자 80/w500 · +/단위 | PASS | 500+/100+/95%/15년 |
+| 3 | S05 2×2 · 708×422 · r24 · 제목30/본문20 | PASS | 마퀴 제거 |
+| 4 | S06 FAQ 5문항 · pad 36/28 · Q26/A20 | PASS | |
+| 5 | S08 주요 소식 · 날짜 · 태그 텍스트 · 버튼 15% | PASS | |
+
 ## 2026-07-10 · [static] template-homepage 빠른상담 플로팅 재맞춤
 **범위:** `index.html` · `css/style.css` — Figma `799:708`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요

@@ -1,4 +1,170 @@
 
+## 2026-07-10 — [static] template-homepage GNB 하위메뉴 네이밍
+
+**범위:** 전 HTML 헤더 — Figma `770:2656`  
+**내용:**  
+- 회사소개: 회사소개 · CEO 메시지 · 오시는 길  
+- 서비스: 서비스 소개 · 진행 프로세스 · 제작 사례 (주요 분야 제거)  
+- 사업영역: 기업 홈페이지 · 브랜드 사이트  
+- 고객지원: 주요 소식 · 문의하기  
+- 상단 순서: 회사소개 → 서비스 → 사업영역 → 고객지원
+
+---
+
+## 2026-07-10 — [static] template-homepage 빠른상담 플로팅 재반영
+
+**범위:** `index.html` · `css/style.css` — Figma `825:2858`  
+**내용:** 2단 레이아웃(제목+동의 / 입력3+버튼) · 높이 187 · 입력 흰 100% · 체크 흰 보더·체크 · 버튼「프로젝트 문의하기」· 플레이스홀더 갱신
+
+---
+
+## 2026-07-10 — [static] template-homepage privacy (개인정보처리방침)
+
+**범위:** `privacy.html`(신규) · `css/style.css` · 전 HTML 푸터 — Figma `817:2623`  
+**내용:** **서브히어로 없음** · 제목+본문(인트로·조항 1~5) · 페이지 BG `#faf9f6` · 섹션 `#fff` pad100 · 푸터 → `privacy.html`
+
+---
+
+## 2026-07-10 — [static] template-homepage 헤더 컬러·하단 라인
+
+**범위:** `css/style.css` — Figma `770:2656`  
+**내용:** bar/mega BG `#fafafa`→`#ffffff` · mega **상단 라인 제거** · **펼침 시에만** 하단 `1px #000` · pad 16 유지
+
+---
+
+## 2026-07-10 — [static] template-homepage news-view (글 상세)
+
+**범위:** `news-view.html`(신규) · `css/style.css` · `news.html` · `index.html` — Figma `817:2672`  
+**내용:** 히어로 · 제목/날짜 · 본문 5문단 · 첨부파일 · 이전/다음 · 「글 목록 보기」pill · 목록·메인 첫 글 → view 연결
+
+---
+
+## 2026-07-10 — [static] template-homepage S08 주요 소식 뱃지
+
+**범위:** `css/style.css` — Figma `806:2581`  
+**내용:** `.insight__tag` — 투명 텍스트 → pill 뱃지 (`#e6efff` · `#4d6899` · pad 4/18 · r999)
+
+---
+
+## 2026-07-10 — [static] template-homepage contact 좌우 높이 동일
+
+**범위:** `css/style.css` — Figma `806:2304`  
+**내용:** 이미지·폼 **min-height 845** · `align-items: stretch` · 문의내용 textarea가 남는 높이 채움
+
+---
+
+## 2026-07-10 — [static] template-homepage 헤더 메가메뉴 높이 수정
+
+**범위:** `css/style.css` — Figma `770:2788`  
+**내용:** 컬럼 `absolute` + 고정 min-height(170) 제거 → **flex 행** · pad 16 · 콘텐츠 높이만큼 패널 확장 (서비스 4항 잘림 해소)
+
+---
+
+## 2026-07-10 — [static] template-homepage S08 전체 글 보기 버튼
+
+**범위:** `css/style.css` — Figma `763:1083`  
+**내용:** 배경 15% 채움 → **투명 + stroke `#dbdbdb`** · 238×78 · r999 · 24/500 (Figma 아웃라인 pill)
+
+---
+
+## 2026-07-10 — [static] template-homepage contact (프로젝트 문의)
+
+**범위:** `contact.html`(신규) · `css/style.css` — Figma `806:2208`  
+**내용:** 히어로 · 좌 이미지(750×845 r12) + 우 폼(654) · 필드 4행 · 개인정보 동의 · 문의 보내기(#525ee3 r12) · GNB 문의하기 active
+
+---
+
+## 2026-07-10 — [static] template-homepage 헤더 BG·텍스트·메가 높이
+
+**범위:** `css/style.css` — Figma `770:2656`  
+**내용:** 헤더/메가 BG `#fafafa` · 서브링크 `#1c1917` 50% · 드롭다운 패널 높이 **170**
+
+---
+
+## 2026-07-10 — [static] template-homepage 성장 과정 원고 교체
+
+**범위:** `about-greeting.html`  
+**내용:** 연혁(성장 과정) 2018–2026 · 연도당 2건 사용자 제공 원고 반영
+
+---
+
+## 2026-07-10 — [static] template-homepage 회사소개 3페이지 원고 재맞춤
+
+**범위:** `about-greeting.html` · `about-directions.html` · `about-ceo.html`  
+**내용:** Figma `770:2111` / `796:5` / `796:211` 텍스트 전면 반영  
+- greeting: 히어로·인트로·기준(구 비전)·성장 과정(구 연혁) 원고  
+- directions: 히어로·주소·교통 안내  
+- ceo: 히어로·인용·본문·서명
+
+---
+
+## 2026-07-10 — [static] template-homepage S03 services 카드 내부 여백
+
+**범위:** `css/style.css` — Figma `799:641`  
+**내용:** 카드 pad **50/55** · 숫자↔라벨 **12** (기존 gap 56 과다 수정) · 숫자/단위 cross center · 라벨 20/400 60% · 제목 46/700
+
+---
+
+## 2026-07-10 — [static] template-homepage news (주요 소식)
+
+**범위:** `news.html`(신규) · `css/style.css` · `js/main.js` · 전 HTML GNB  
+**내용:** Figma `806:2060` — 히어로 · 탭(전체/공지/보도) · 리스트 5건 · 페이지네이션 · 필터 JS · GNB「공지사항」→ `news.html`
+
+---
+
+## 2026-07-10 — [static] template-homepage 메인 contact 섹션 제거
+
+**범위:** `index.html` · 전 HTML 문의 링크  
+**내용:** 메인 최하단 `#contact` 폼 섹션 삭제 · CTA/GNB/푸터/빠른상담 링크 → `contact.html`(예정 페이지)
+
+---
+
+## 2026-07-10 — [static] template-homepage about-ceo 사진 슬롯
+
+**범위:** `about-ceo.html` · `css/style.css` — Figma `796:211`  
+**내용:** 사진 pill→**사각 r12** · **625×946** · 2열 625:709 · gap 106 · 세로 가운데 (원고·히어로는 미변경)
+
+---
+
+## 2026-07-10 — [static] template-homepage 푸터 개인정보 처리방침
+
+**범위:** 전 HTML 푸터 · `css/style.css` — Figma `770:2979`  
+**내용:** 하단 copyright 행에 **개인정보 처리방침** 링크(우·흰·16/600) 추가 · 태그라인·사업자정보 등 미변경
+
+---
+
+## 2026-07-10 — [static] template-homepage S05 reviews 원고 20건
+
+**범위:** `index.html` · `css/style.css`  
+**내용:** 후기 카드 원고 **20개** 반영 · 윗줄 1–10 · 아랫줄 11–20 · 마퀴 복제 유지 · 루프 속도 20s→**50s**(카드 수 증가 보정)
+
+---
+
+## 2026-07-10 — [static] template-homepage S05 reviews 마퀴 복원
+
+**범위:** `index.html` · `css/style.css` — Figma `763:1742`  
+**내용:** 2×2 그리드 철회 · `infinite-card-marquee` 복원 · 카드 높이 **422** · 섹션 여백 **상 160 / 하 100** · 신규 원고 유지
+
+---
+
+## 2026-07-10 — [static] template-homepage 서비스 4페이지 원고 재맞춤
+
+**범위:** `service-solution.html` · `service-list.html` · `service-process.html` · `service-portfolio.html`  
+**내용:** Figma `799:774` / `802:1702` / `802:1826` / `802:1958` 텍스트 대조·반영  
+- solution: UI·UX 카드 본문 →「전달되는 화면과 사용자 경험을 설계합니다.」  
+- list: 인트로 본문 →「기업 소개, 브랜드 경험, 상담과 예약…」  
+- portfolio: 카드 라벨 순서 기업·기관 / 브랜드 / 의료·전문기관 / 기업·기관  
+- process: 기존 원고와 일치(추가 변경 없음)
+
+---
+
+## 2026-07-10 — [static] template-homepage 메인 원고·S03/05/06/08 재맞춤
+
+**범위:** `index.html` · `css/style.css` — Figma `763:209`  
+**내용:** 전 섹션 원고 교체 · S03 통계 카드(342×348·숫자 w500) · S05 리뷰 마퀴→2×2(708×422 r24) · S06 FAQ 5문항·토큰 · S08 주요 소식+날짜·버튼 15%
+
+---
+
 ## 2026-07-10 — [static] template-homepage 빠른상담 플로팅 재맞춤
 
 **범위:** `index.html` · `css/style.css`  

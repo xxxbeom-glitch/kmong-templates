@@ -576,6 +576,36 @@
       },
       { passive: true }
     );
+
+    var form = bar.querySelector(".quick-consult__form");
+    var submit = bar.querySelector(".quick-consult__submit");
+    var fields = bar.querySelectorAll(
+      '.quick-consult__field input[type="text"], .quick-consult__field input[type="tel"]'
+    );
+
+    function syncSubmitState() {
+      if (!submit || !fields.length) {
+        return;
+      }
+
+      var hasContent = false;
+      var i;
+
+      for (i = 0; i < fields.length; i += 1) {
+        if (String(fields[i].value || "").trim()) {
+          hasContent = true;
+          break;
+        }
+      }
+
+      submit.classList.toggle("is-empty", !hasContent);
+    }
+
+    if (form && submit) {
+      form.addEventListener("input", syncSubmitState);
+      form.addEventListener("change", syncSubmitState);
+      syncSubmitState();
+    }
   }
 
   function initYearCarousel() {
@@ -738,6 +768,35 @@
     });
   }
 
+  function initNewsFilter() {
+    var root = document.querySelector("[data-news-filter]");
+
+    if (!root) {
+      return;
+    }
+
+    var tabs = root.querySelectorAll("[data-news-filter-tab]");
+    var items = root.querySelectorAll("[data-news-category]");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var filter = tab.getAttribute("data-news-filter-tab") || "all";
+
+        tabs.forEach(function (item) {
+          var active = item === tab;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        items.forEach(function (item) {
+          var category = item.getAttribute("data-news-category");
+          var show = filter === "all" || category === filter;
+          item.hidden = !show;
+        });
+      });
+    });
+  }
+
   $(function () {
     $("html").addClass("js");
     setViewportHeightUnit();
@@ -750,6 +809,7 @@
     initYearCarousel();
     initQuickConsultBar();
     initPortfolioFilter();
+    initNewsFilter();
   });
 
   window.addEventListener("resize", function () {

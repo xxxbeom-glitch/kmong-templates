@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>서비스 소개 — Template Homepage</title>
+  <title>주요 소식 — Template Homepage</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-service-solution">
+<body class="page-news">
   <header class="site-header" data-header-mega>
     <div class="site-header__bar">
       <div class="site-header__shell site-header__inner">
@@ -18,14 +18,14 @@
               <li class="site-header__item site-header__item--has-mega">
                 <a href="about-greeting.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">회사소개</a>
               </li>
-              <li class="site-header__item site-header__item--has-mega is-active">
-                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">서비스</a>
+              <li class="site-header__item site-header__item--has-mega">
+                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
                 <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">사업영역</a>
               </li>
-              <li class="site-header__item site-header__item--has-mega">
-                <a href="news.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">고객지원</a>
+              <li class="site-header__item site-header__item--has-mega is-active">
+                <a href="news.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">고객지원</a>
               </li>
             </ul>
           </nav>
@@ -48,7 +48,7 @@
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="service-solution.html" aria-current="page">서비스 소개</a></li>
+              <li><a class="site-header__sublink" href="service-solution.html">서비스 소개</a></li>
               <li><a class="site-header__sublink" href="service-process.html">진행 프로세스</a></li>
               <li><a class="site-header__sublink" href="service-portfolio.html">제작 사례</a></li>
             </ul>
@@ -61,7 +61,7 @@
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="news.html">주요 소식</a></li>
+              <li><a class="site-header__sublink" href="news.html" aria-current="page">주요 소식</a></li>
               <li><a class="site-header__sublink" href="contact.html">문의하기</a></li>
             </ul>
           </li>
@@ -87,110 +87,76 @@
       </div>
       <div class="site-header__shell page-hero__inner">
         <div class="page-hero__copy">
-          <p class="page-hero__label">서비스 소개</p>
-          <h1 id="page-hero-title" class="page-hero__title">기획부터 운영까지,<br>필요한 웹 구축 서비스를 제공합니다.</h1>
+          <p class="page-hero__label">주요 소식</p>
+          <h1 id="page-hero-title" class="page-hero__title">텐폴드 스튜디오의 새로운 소식을 전합니다.</h1>
         </div>
       </div>
     </section>
 
-    <section id="service-intro" class="section section--service-intro" aria-labelledby="service-intro-title">
-      <div class="site-header__shell service-intro__inner">
-        <div class="service-intro__watermark-band" aria-hidden="true">
-          <p class="service-intro__watermark">WEB SERVICE</p>
+    <section id="news-list" class="section section--news" aria-labelledby="news-title" data-news-filter>
+      <div class="site-header__shell news__inner">
+        <div class="news__header scroll-reveal">
+          <h2 id="news-title" class="news__title">주요 소식</h2>
+          <div class="news-filter" role="tablist" aria-label="소식 유형">
+            <button type="button" class="news-filter__tab is-active" role="tab" aria-selected="true" data-news-filter-tab="all">전체</button>
+            <button type="button" class="news-filter__tab" role="tab" aria-selected="false" data-news-filter-tab="notice">공지사항</button>
+            <button type="button" class="news-filter__tab" role="tab" aria-selected="false" data-news-filter-tab="press">보도자료</button>
+          </div>
         </div>
-        <div class="service-intro__copy">
-          <h2 id="service-intro-title" class="service-intro__title scroll-reveal">비즈니스의 목적을 이해하고,<br>필요한 웹 환경을 설계합니다.</h2>
-          <p class="service-intro__body scroll-reveal">기업과 브랜드가 전달해야 할 가치, 고객이 원하는 정보, 실제 운영에 필요한 기능을 함께 고려해<br>지속적으로 활용할 수 있는 웹사이트를 구축합니다.</p>
-        </div>
-      </div>
-    </section>
 
-    <section id="service-cards" class="section section--service-cards" aria-labelledby="service-cards-title">
-      <div class="site-header__shell service-cards__inner">
-        <h2 id="service-cards-title" class="service-cards__title scroll-reveal">웹사이트 구축에 필요한 과정을 하나의 흐름으로 연결합니다.</h2>
-        <div class="service-cards__grid">
-          <div class="service-cards__row">
-            <article class="service-card service-card--wide scroll-reveal">
-              <img
-                class="service-card__img"
-                src="assets/images/feature-bg-01.jpg"
-                alt=""
-                width="874"
-                height="446"
-                decoding="async"
-              >
-              <div class="service-card__overlay" aria-hidden="true"></div>
-              <div class="service-card__content">
-                <h3 class="service-card__title">기획·전략</h3>
-                <p class="service-card__body">비즈니스 목표와 사용자 요구를 분석해 사이트의 역할, 메뉴 구조와 콘텐츠 우선순위를 정의합니다.</p>
-              </div>
-            </article>
-            <article class="service-card service-card--narrow scroll-reveal">
-              <img
-                class="service-card__img"
-                src="assets/images/feature-bg-02.jpg"
-                alt=""
-                width="542"
-                height="446"
-                decoding="async"
-              >
-              <div class="service-card__overlay" aria-hidden="true"></div>
-              <div class="service-card__content">
-                <h3 class="service-card__title">UI·UX 디자인</h3>
-                <p class="service-card__body">브랜드의 인상을 유지하면서도 정보가 명확하게<br>전달되는 화면과 사용자 경험을 설계합니다.</p>
-              </div>
-            </article>
-          </div>
-          <div class="service-cards__row">
-            <article class="service-card service-card--narrow scroll-reveal">
-              <img
-                class="service-card__img"
-                src="assets/images/feature-bg-03.jpg"
-                alt=""
-                width="542"
-                height="446"
-                decoding="async"
-              >
-              <div class="service-card__overlay" aria-hidden="true"></div>
-              <div class="service-card__content">
-                <h3 class="service-card__title">반응형 웹 개발</h3>
-                <p class="service-card__body">PC와 모바일 등 다양한 환경에서 안정적으로 작동하는 웹사이트를 구현합니다.</p>
-              </div>
-            </article>
-            <article class="service-card service-card--wide scroll-reveal">
-              <img
-                class="service-card__img"
-                src="assets/images/feature-bg-04.webp"
-                alt=""
-                width="874"
-                height="446"
-                decoding="async"
-              >
-              <div class="service-card__overlay" aria-hidden="true"></div>
-              <div class="service-card__content">
-                <h3 class="service-card__title">관리자·CMS</h3>
-                <p class="service-card__body">공지사항, 이미지, 주요 콘텐츠를 담당자가 직접 수정하고 관리할 수 있는<br>환경을 구축합니다.</p>
-              </div>
-            </article>
-          </div>
-          <div class="service-cards__row">
-            <article class="service-card service-card--full scroll-reveal">
-              <img
-                class="service-card__img"
-                src="assets/images/service-bg-01.jpg"
-                alt=""
-                width="1440"
-                height="446"
-                decoding="async"
-              >
-              <div class="service-card__overlay" aria-hidden="true"></div>
-              <div class="service-card__content">
-                <h3 class="service-card__title">운영·유지관리</h3>
-                <p class="service-card__body">오픈 이후 콘텐츠 수정, 기능 개선, 시스템 점검과 오류 대응을 지원합니다.</p>
-              </div>
-            </article>
-          </div>
+        <div class="news__list" role="list">
+          <a class="news-item" role="listitem" href="news-view.html" data-news-category="notice">
+            <span class="news-item__main">
+              <span class="news-item__badge news-item__badge--notice">공지사항</span>
+              <span class="news-item__title">웹사이트 제작 상담 및 견적 안내</span>
+            </span>
+            <time class="news-item__date" datetime="2026-07-08">2026.07.08</time>
+          </a>
+          <a class="news-item" role="listitem" href="news-view.html" data-news-category="notice">
+            <span class="news-item__main">
+              <span class="news-item__badge news-item__badge--notice">공지사항</span>
+              <span class="news-item__title">여름 휴무 일정 안내</span>
+            </span>
+            <time class="news-item__date" datetime="2026-07-02">2026.07.02</time>
+          </a>
+          <a class="news-item" role="listitem" href="news-view.html" data-news-category="notice">
+            <span class="news-item__main">
+              <span class="news-item__badge news-item__badge--notice">공지사항</span>
+              <span class="news-item__title">프로젝트 진행 절차 및 자료 준비 안내</span>
+            </span>
+            <time class="news-item__date" datetime="2026-06-23">2026.06.23</time>
+          </a>
+          <a class="news-item" role="listitem" href="news-view.html" data-news-category="press">
+            <span class="news-item__main">
+              <span class="news-item__badge news-item__badge--press">보도자료</span>
+              <span class="news-item__title">텐폴드 스튜디오, 기업 맞춤형 웹 구축 서비스 강화</span>
+            </span>
+            <time class="news-item__date" datetime="2026-06-13">2026.06.13</time>
+          </a>
+          <a class="news-item" role="listitem" href="news-view.html" data-news-category="press">
+            <span class="news-item__main">
+              <span class="news-item__badge news-item__badge--press">보도자료</span>
+              <span class="news-item__title">브랜드·의료 분야 웹사이트 프로젝트 확대</span>
+            </span>
+            <time class="news-item__date" datetime="2026-06-03">2026.06.03</time>
+          </a>
         </div>
+
+        <nav class="news-pagination" aria-label="소식 페이지">
+          <button type="button" class="news-pagination__btn" aria-label="이전 페이지" disabled>
+            <span class="news-pagination__icon" aria-hidden="true"></span>
+          </button>
+          <ol class="news-pagination__pages">
+            <li><a class="news-pagination__page is-active" href="#" aria-current="page">1</a></li>
+            <li><a class="news-pagination__page" href="#">2</a></li>
+            <li><a class="news-pagination__page" href="#">3</a></li>
+            <li><a class="news-pagination__page" href="#">4</a></li>
+            <li><a class="news-pagination__page" href="#">5</a></li>
+          </ol>
+          <button type="button" class="news-pagination__btn" aria-label="다음 페이지">
+            <span class="news-pagination__icon news-pagination__icon--next" aria-hidden="true"></span>
+          </button>
+        </nav>
       </div>
     </section>
   </main>
