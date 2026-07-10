@@ -107,7 +107,7 @@
   --header-logo-w: clamp(10rem, 13.2813vw, 15.9375rem);
   --header-col-w: clamp(5rem, 6.25vw, 7.5rem);
   --header-dim-opacity: 0.2;
-  --page-hero-h: clamp(17.1875rem, 24vw, 26rem);
+  --page-hero-h: clamp(14rem, 18.9583vw, 22.75rem);
   --page-hero-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
   --greeting-watermark-opacity: 0.06;
   --hero-overlay: linear-gradient(
@@ -1039,8 +1039,6 @@ button.scroll-reveal {
   align-items: center;
   justify-content: center;
   min-height: var(--page-hero-h);
-  padding-block: clamp(2.5rem, 4vw, 4rem);
-  box-sizing: border-box;
 }
 
 .page-hero__copy {
@@ -1049,8 +1047,6 @@ button.scroll-reveal {
   align-items: center;
   gap: clamp(0.75rem, 0.8333vw, 1rem);
   width: 100%;
-  max-width: clamp(17.5rem, 50vw, 42rem);
-  margin-inline: auto;
   text-align: center;
 }
 
@@ -1064,9 +1060,9 @@ button.scroll-reveal {
 
 .page-hero__title {
   margin: 0;
-  font-size: clamp(1.5rem, 2.0833vw, 2.5rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.6087;
   letter-spacing: -0.02em;
   color: var(--color-text-on-dark);
 }
