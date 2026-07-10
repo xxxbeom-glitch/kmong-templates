@@ -561,8 +561,7 @@ button.scroll-reveal {
   padding-inline: var(--layout-pad-x);
 }
 
-/* Content shell — 서브페이지 본문 (header 1440 정렬과 동일) · 푸터는 section-shell--gutter(1600) */
-.content-shell,
+/* Header shell — GNB 컨텐츠 1440 (bar/mega는 위 override로 full) · 본문·푸터는 section-shell--gutter(1600) */
 .site-header__shell {
   width: 100%;
   max-width: calc(var(--header-layout-max) + var(--header-layout-pad-x) * 2);
@@ -857,7 +856,7 @@ button.scroll-reveal {
   gap: clamp(1.5rem, 1.875vw, 2.25rem);
   align-items: stretch;
   width: 100%;
-  max-width: 90rem;
+  max-width: var(--layout-max);
 }
 
 .contact-page__figure {
@@ -1657,8 +1656,8 @@ button.scroll-reveal {
 
 .greeting-history__shell {
   --history-inset-left: max(
-    var(--header-layout-pad-x),
-    calc((100vw - var(--header-layout-max) - var(--header-layout-pad-x) * 2) / 2 + var(--header-layout-pad-x))
+    var(--layout-pad-x),
+    calc((100vw - var(--section-shell-gutter-max)) / 2 + var(--layout-pad-x))
   );
   display: flex;
   flex-direction: column;
@@ -3389,7 +3388,7 @@ button.scroll-reveal {
   }
 
   .greeting-history__shell {
-    --history-inset-left: var(--header-layout-pad-x);
+    --history-inset-left: var(--layout-pad-x);
   }
 
   .section--greeting-history {

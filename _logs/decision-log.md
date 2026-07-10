@@ -1,12 +1,22 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 서브 본문 shell 1600 통일
+
+| # | 결정 |
+|---|------|
+| 1 | 서브페이지 **본문·서브히어로** → `.section-shell.section-shell--gutter` (**1600**) · 메인·푸터와 동일 |
+| 2 | **헤더**만 1440(`site-header__shell`) 유지 · bar/mega는 full viewport |
+| 3 | `.content-shell` 제거 · 연혁 캐러셀 inset도 layout(1600) 토큰으로 맞춤 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 푸터 shell 1600 복구
 
 | # | 결정 |
 |---|------|
 | 1 | **푸터** 컨텐츠 → `.section-shell.section-shell--gutter` (**1600** · 메인 섹션과 동일) |
-| 2 | 서브페이지 **본문**만 `.content-shell` (**1440**) 유지 · 푸터는 content-shell 사용 안 함 |
+| 2 | ~~서브페이지 본문만 `.content-shell` (1440)~~ → **이후 1600 통일** |
 | 3 | 공통 클래스 정리(1~5) 때 푸터를 1440로 묶은 것 → **회귀**로 정정 |
 
 ---
@@ -41,7 +51,7 @@
 | 2 | **CTA:** `.btn-cta` · `--header` / `--footer` 사이즈 |
 | 3 | **미디어:** `.media-card` + `__img` / `__overlay` (service·portfolio 공유) |
 | 4 | **타이틀·탭:** `.section-title`(--center/--left) · `.filter-tab` |
-| 5 | **shell:** 서브 본문 → `.content-shell` (1440) · 헤더 bar/mega만 `.site-header__shell` · 메인·**푸터** gutter는 `.section-shell--gutter`(1600) — 푸터 1440은 이후 정정 |
+| 5 | **shell:** 서브 본문 → `.content-shell` (1440) · 헤더 bar/mega만 `.site-header__shell` · 메인·**푸터** gutter는 `.section-shell--gutter`(1600) — **이후 서브도 1600 통일** |
 
 ---
 

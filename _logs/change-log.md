@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 서브 본문 shell 1600 통일
+
+**범위:** 서브 HTML 전체 · `css/style.css`  
+**내용:** `content-shell`(1440) → `section-shell--gutter`(1600) · 연혁 inset·contact max를 layout 토큰으로 · 헤더만 1440 유지
+
+---
+
 ## 2026-07-10 — [static] template-homepage 푸터 shell 1600 복구
 
 **범위:** 전 HTML · `css/style.css` 주석  

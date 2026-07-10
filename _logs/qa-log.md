@@ -1,5 +1,15 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 서브 본문 shell 1600 통일
+**범위:** 서브 HTML · `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 서브 본문·히어로 section-shell--gutter | PASS | content-shell 제거 |
+| 2 | 헤더 1440 유지 | PASS | site-header__shell |
+| 3 | 연혁 inset layout 토큰 | PASS | 1600 정렬 |
+| 4 | contact-page max layout-max | PASS | |
+
 ## 2026-07-10 · [static] template-homepage 푸터 shell 1600 복구
 **범위:** 전 HTML 푸터 · `css/style.css`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요
