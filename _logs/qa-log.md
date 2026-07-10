@@ -1,5 +1,18 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 메인 모바일 1차
+**범위:** `index.html` 메인 · `@768` 폰 검수 (헤더~빠른상담)
+**결과:** **PASS** — 사용자 1차 전체 확정
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 헤더 로고+햄버거 | PASS | 메뉴 패널 추후 |
+| 2 | 히어로·intro·features·services | PASS | 2×2 통계 등 |
+| 3 | reviews 1줄 스와이프 | PASS | 마퀴 off · 파란 호버 off |
+| 4 | faq·cta·insight·footer | PASS | |
+| 5 | 빠른상담 타이틀+버튼 | PASS | 폼·동의 숨김 |
+| 6 | 타이포·카드 radius 8 | PASS | page-home @768 |
+| 7 | QA 모드 해제 | PASS | 전체 화면 |
+
 ## 2026-07-10 · [static] template-homepage 최종 코드 정리
 **범위:** 전 HTML · `css/style.css`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요
