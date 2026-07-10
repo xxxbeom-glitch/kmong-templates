@@ -1,5 +1,14 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 푸터 shell 1600 복구
+**범위:** 전 HTML 푸터 · `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 푸터 클래스 section-shell--gutter | PASS | 12 HTML |
+| 2 | 서브 본문 content-shell 유지 | PASS | 1440 미변경 |
+| 3 | 메인 섹션과 푸터 폭 정렬 | PASS | 1600/gutter 160 |
+
 ## 2026-07-10 · [static] template-homepage 코드 정리 (죽은 CSS·선택자)
 **범위:** `css/style.css`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요

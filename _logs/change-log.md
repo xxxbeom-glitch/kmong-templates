@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 푸터 shell 1600 복구
+
+**범위:** 전 HTML · `css/style.css` 주석  
+**내용:** 푸터 `content-shell`(1440) → `section-shell section-shell--gutter`(1600) · 메인 섹션과 좌우 정렬 맞춤
+
+---
+
 ## 2026-07-10 — [static] template-homepage 코드 정리 (죽은 CSS·선택자)
 
 **범위:** `css/style.css`  
