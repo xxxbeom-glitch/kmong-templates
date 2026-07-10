@@ -1,5 +1,154 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 빠른상담 플로팅 재맞춤
+**범위:** `index.html` · `css/style.css` — Figma `799:708`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 바 BG #525ee3 | PASS | |
+| 2 | 입력 흰80% · border 12% · r12 · 260/260/382 | PASS | |
+| 3 | 버튼 흰 BG · #525ee3 글자 | PASS | |
+| 4 | 개인정보 흰80% · 체크 흰+파란 | PASS | |
+| 5 | 전화 placeholder · shell 1440/240 | PASS | |
+
+## 2026-07-10 · [static] template-homepage portfolio 헤더·탭 재맞춤
+**범위:** `service-portfolio.html` · `css/style.css` — Figma `802:2056` · `802:1974`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 헤더 가로 · space-between | PASS | 제목 좌 · 탭 우 |
+| 2 | 활성 탭 #525ee3 · w600 · 하단 2px | PASS | 필 제거 |
+| 3 | 비활성 #1c1917 20% · w500 · 20px | PASS | |
+| 4 | 문구 `기업/관공서` | PASS | |
+| 5 | 탭 gap 32 | PASS | |
+
+## 2026-07-10 · [static] template-homepage service-portfolio
+**범위:** `service-portfolio.html` · `css/style.css` · `js/main.js` — Figma `802:1958` · GNB 포트폴리오 제거
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | Shell 1440/240 · CTA 미포함 | PASS | |
+| 2 | S02 PORTFOLIO · 제목·본문 | PASS | service-intro 재사용 |
+| 3 | S03 BG #f8f8f8 · 제목 46/w600 · 필터 탭 | PASS | active #525ee3 · inactive 20% |
+| 4 | 카드 2×2 · 708×541 · r12 · overlay 40% · 중앙 | PASS | |
+| 5 | GNB 포트폴리오 제거 · 메가 3열 · 제작 사례 링크 | PASS | 전 페이지 |
+| 6 | 푸터 공통 | PASS | |
+
+## 2026-07-10 · [static] template-homepage service-process
+**범위:** `service-process.html` · `css/style.css` — Figma `802:1826`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | Shell 1440/240 · CTA 미포함 | PASS | |
+| 2 | S02 PROCESS · 제목 50/w700 · 본문 26/w500 | PASS | |
+| 3 | S03 BG #f8f8f8 · 제목 46/w600 · gap 24 | PASS | |
+| 4 | STEP 카드 708×341 · r12 · pad 50/55 · 07 풀 | PASS | |
+| 5 | 라벨 16/40% · 제목 30 · 본문 20/80% · gap 6/26 | PASS | |
+| 6 | GNB · 푸터 | PASS | |
+
+## 2026-07-10 · [static] template-homepage service-list
+**범위:** `service-list.html` · `css/style.css` — Figma `802:1702`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | Shell 1440/240 · CTA 미포함 | PASS | 사용자 요청 |
+| 2 | S01 히어로 공통 | PASS | |
+| 3 | S02 OUR BUSINESS · 제목 50/w700 · 본문 26/w500 | PASS | service-intro 재사용 |
+| 4 | S03 BG #f8f8f8 · 제목 46/w600 · 리스트 gap 24 | PASS | |
+| 5 | 카드 708+708 · r12 · 패널 pad 50/55 | PASS | |
+| 6 | 라벨 16/40% · 제목 30/w700 · 본문 20/80% | PASS | space-between |
+| 7 | GNB 링크 · 푸터 | PASS | |
+
+## 2026-07-10 · [static] template-homepage service-solution
+**범위:** `service-solution.html` · `css/style.css` — Figma `799:774`
+**결과:** **PASS (코드 · 재검수)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | Shell 1440/240 | PASS | `site-header__shell` |
+| 2 | S01 히어로 라벨「서비스」·제목 46/w600 · 80% | PASS | page-hero 재사용 |
+| 3 | S02 BG #fff · 워터마크 140/6% · 제목 50/w700 · 본문 26/w500 | PASS | |
+| 4 | S03 BG #f8f8f8 · 제목 46/w600 · 카드 gap 24 · r12 · overlay 40% | PASS | |
+| 5 | 카드 비율 874:542 / 542:874 / full · 텍스트 하단 | PASS | scroll-reveal display:flex 수정 |
+| 6 | 카드 제목 30/w700 · 본문 20/w500 80% · gap 26 | PASS | |
+| 7 | S07 CTA 제거 | PASS (수정) | 사용자 요청 |
+| 8 | 공통 푸터 · GNB 링크 | PASS | |
+
+## 2026-07-10 · [static] template-homepage S03 services · 서브페이지 재검수
+**범위:** Figma `763:209` S03 · 서브 3페이지 토큰 대조
+**결과:** **PASS (코드)** — FAIL 4건 수정 반영
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | S03 카드 설명 제거 · 제목만 | PASS (수정) | Figma `763:901` |
+| 2 | S03 카드 38/w700 · overlay 30% · gap 48 | PASS (수정) | |
+| 3 | 서브 히어로 라벨 opacity 80% | PASS (수정) | 3페이지 공통 |
+| 4 | 서브 히어로 overlay gradient | PASS (수정) | 40→60% |
+| 5 | 연혁 본문 opacity 60% | PASS (수정) | |
+| 6 | 연혁 연도↔리스트 gap 28 | PASS (수정) | |
+| 7 | 오시는길 · CEO 토큰 | PASS | 이전 재검수 유지 |
+| 8 | 비전/주소 행 top border only | PASS | 의도적 (box border 아님) |
+
+## 2026-07-10 · [static] template-homepage about-ceo
+**범위:** `about-ceo.html` · `css/style.css` — Figma `796:211`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | S02 padding 100 · BG #fff | PASS | |
+| 2 | 제목 CEO 메시지 46/w600 | PASS | |
+| 3 | 제목↔본문 gap 48 | PASS | |
+| 4 | 2열 491/843 · gap 106 | PASS | grid fr |
+| 5 | 사진 383×500 · r191.5 pill | PASS | placeholder |
+| 6 | 사진 offset top 137 | PASS | margin-top |
+| 7 | 인용 50/w700 lh74 | PASS | |
+| 8 | 본문 26/w500 lh46 opacity 80% | PASS | |
+| 9 | 텍스트 블록 gap 36 | PASS | quote/body/sign |
+| 10 | 서명 30/w600 | PASS | |
+| 11 | 푸터 · GNB 3페이지 링크 | PASS | |
+
+## 2026-07-10 · [static] template-homepage about-directions (재검수)
+**범위:** `about-directions.html` · `css/style.css` — Figma `796:5` 대조
+**결과:** **PASS (코드)** — 간격·버튼 스펙 수정 반영
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | S02 padding 100 · BG #fff | PASS | |
+| 2 | 제목↔지도↔주소 gap **48px** | PASS (수정) | 기존 64px → 48px |
+| 3 | 지도 1440×771 · r24 · stroke 없음 | PASS | placeholder 이미지 |
+| 4 | 주소 행 top 1px · 442/26/972 · pad 35 | PASS | |
+| 5 | 주소 24/w500 · 교통 20/w400 60% | PASS | |
+| 6 | 주소→교통 gap 26 · 교통→버튼 gap 46 | PASS (수정) | detail gap 중복 제거 |
+| 7 | 버튼 238×78 · r999 · border #dbdbdb | PASS (수정) | 고정 w/h |
+| 8 | 버튼 글자 **24/w500** · 버튼 간격 **16px** | PASS (수정) | 기존 20px·24px |
+| 9 | 서브 히어로 · 푸터 · GNB | PASS | |
+
+## 2026-07-10 · [static] template-homepage about-directions
+**범위:** `about-directions.html` · `css/style.css` — 서브 히어로 · `#directions` 오시는길
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 공통 서브 히어로 | PASS | `770:2339` 동일 카피 |
+| 2 | 제목 오시는 길 46/w600 | PASS | |
+| 3 | 지도 1440×771 radius 24 stroke 없음 | PASS | `feature-bg-03` placeholder |
+| 4 | 주소 행 top 1px · 442/972 grid | PASS | vision 패턴 |
+| 5 | 주소 24/w500 · 교통 20/w400 60% | PASS | |
+| 6 | 지도 버튼 pill 238×78 border #dbdbdb | PASS | 외부 링크 target blank |
+| 7 | 공통 푸터 | PASS | |
+| 8 | GNB 오시는길 링크 | PASS | index · about-greeting |
+
+## 2026-07-10 · [static] template-homepage about-greeting S04 history
+**범위:** `about-greeting.html` · `css/style.css` · `js/main.js` — `#greeting-history` 연혁 · `year-carousel`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | Section BG `#f8f8f8` · padding 100 | PASS | `--color-surface-subtle` · clamp padding |
+| 2 | 제목 연혁 46/w600 | PASS | vision title 토큰 동일 |
+| 3 | 컬럼 600 · gap 46 | PASS | `--history-col-w` · `--history-gap` |
+| 4 | 활성 opacity 100% · 비활성 20% | PASS | `.is-active` |
+| 5 | 연도 클릭 → 1번 슬라이드 | PASS (코드) | `initYearCarousel` · reorderToFront |
+| 6 | 2023 연도 30/w700 | PASS | `--sm` modifier |
+| 7 | 항목 MM. w500 + 본문 w400 gap 16 | PASS | |
+| 8 | 오른쪽 bleed viewport | PASS | features inset 패턴 |
+| 9 | scroll-reveal 타이틀·트랙 | PASS | |
+| 10 | prefers-reduced-motion | PASS | 즉시 reorder |
+
 ## 2026-07-09 · [wordpress] wonkangmetal P2-3 page templates 런타임 QA
 **범위:** `wordpress/wonkangmetal/` COMPANY/FACTORY/CUSTOMER/Legal 페이지·GNB·sub-nav·breadcrumb·footer·홈 CTA · product/news 회귀 (CF7·inquiry form·다국어·GSAP·이미지·01-original·_mirror 제외)
 **결과:** **PASS (런타임)** — Laragon `wonkangmetal.test` curl+HTML 검증

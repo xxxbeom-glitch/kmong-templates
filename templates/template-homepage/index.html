@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-home">
   <header class="site-header" data-header-mega>
     <div class="site-header__bar">
       <div class="site-header__shell site-header__inner">
@@ -19,10 +19,10 @@
                 <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">회사소개</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
-                <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
+                <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">사업영역</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
-                <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">포트폴리오</a>
+                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
                 <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">고객지원</a>
@@ -41,30 +41,28 @@
         <ul class="site-header__mega-list">
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="about-greeting.html">인사말</a></li>
-              <li><a class="site-header__sublink" href="#">연혁</a></li>
-              <li><a class="site-header__sublink" href="#">오시는 길</a></li>
+              <li><a class="site-header__sublink" href="about-greeting.html">회사소개</a></li>
+              <li><a class="site-header__sublink" href="about-directions.html">오시는길</a></li>
+              <li><a class="site-header__sublink" href="about-ceo.html">CEO 메시지</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="#">서비스 소개</a></li>
-              <li><a class="site-header__sublink" href="#">주요 분야</a></li>
-              <li><a class="site-header__sublink" href="#">진행 프로세스</a></li>
-              <li><a class="site-header__sublink" href="#">제작 사례</a></li>
+              <li><a class="site-header__sublink" href="#">제품 · 솔루션</a></li>
+              <li><a class="site-header__sublink" href="#">기술 · 역량</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="#">전체 보기</a></li>
-              <li><a class="site-header__sublink" href="#">기업 홈페이지</a></li>
-              <li><a class="site-header__sublink" href="#">병원·클리닉</a></li>
+              <li><a class="site-header__sublink" href="service-solution.html">서비스 소개</a></li>
+              <li><a class="site-header__sublink" href="service-list.html">주요 분야</a></li>
+              <li><a class="site-header__sublink" href="service-process.html">진행 프로세스</a></li>
+              <li><a class="site-header__sublink" href="service-portfolio.html">제작 사례</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
               <li><a class="site-header__sublink" href="#">공지사항</a></li>
-              <li><a class="site-header__sublink" href="#faq">자주 묻는 질문</a></li>
               <li><a class="site-header__sublink" href="#contact">문의하기</a></li>
             </ul>
           </li>
@@ -137,59 +135,6 @@
             <span class="intro__fill-txt-highlight" aria-hidden="true">브랜드를 판단하는 첫 번째 기준입니다.</span>
           </span>
         </h2>
-      </div>
-    </section>
-
-    <section id="services" class="section section--services" aria-labelledby="services-title">
-      <div class="section-shell section-shell--gutter services__head">
-        <h2 id="services-title" class="services__title scroll-reveal">비즈니스 목적에 맞춘 웹 구축 서비스</h2>
-      </div>
-      <div class="section-shell section-shell--gutter services__grid">
-        <article class="services__card scroll-reveal">
-          <img
-            class="services__card-img"
-            src="assets/images/service-bg-01.jpg"
-            alt=""
-            width="464"
-            height="466"
-            decoding="async"
-          >
-          <div class="services__card-overlay" aria-hidden="true"></div>
-          <div class="services__card-content">
-            <h3 class="services__card-title">기업 홈페이지 구축</h3>
-            <p class="services__card-desc">회사소개, 사업영역, 제품과 서비스, 고객지원까지<br>기업의 핵심 정보를 명확한 구조로 정리합니다.</p>
-          </div>
-        </article>
-        <article class="services__card scroll-reveal">
-          <img
-            class="services__card-img"
-            src="assets/images/service-bg-02.jpg"
-            alt=""
-            width="464"
-            height="466"
-            decoding="async"
-          >
-          <div class="services__card-overlay" aria-hidden="true"></div>
-          <div class="services__card-content">
-            <h3 class="services__card-title">병원 · 전문기관 사이트</h3>
-            <p class="services__card-desc">의료진, 진료과목, 공간, 상담 동선을 체계적으로<br>구성해 신뢰가 필요한 업종에 맞는 화면을<br>설계합니다.</p>
-          </div>
-        </article>
-        <article class="services__card scroll-reveal">
-          <img
-            class="services__card-img"
-            src="assets/images/service-bg-03.jpg"
-            alt=""
-            width="464"
-            height="466"
-            decoding="async"
-          >
-          <div class="services__card-overlay" aria-hidden="true"></div>
-          <div class="services__card-content">
-            <h3 class="services__card-title">브랜드 · 서비스 랜딩</h3>
-            <p class="services__card-desc">서비스의 강점과 전환 포인트를<br>압축적으로 전달해<br>문의와 상담으로 이어지는 흐름을 만듭니다.</p>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -271,6 +216,50 @@
           </div>
         </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section--services" aria-labelledby="services-title">
+      <div class="section-shell section-shell--gutter services__inner">
+        <h2 id="services-title" class="services__title scroll-reveal">성과로 증명하는 비즈니스 파트너십</h2>
+        <div class="services__grid">
+          <article class="services__card scroll-reveal">
+            <div class="services__card-content">
+              <div class="services__stat">
+                <span class="services__stat-value">350</span>
+                <span class="services__stat-unit-wrap"><span class="services__stat-unit">건</span></span>
+              </div>
+              <p class="services__stat-label">누적 프로젝트</p>
+            </div>
+          </article>
+          <article class="services__card scroll-reveal">
+            <div class="services__card-content">
+              <div class="services__stat">
+                <span class="services__stat-value">128</span>
+                <span class="services__stat-unit-wrap"><span class="services__stat-unit">개</span></span>
+              </div>
+              <p class="services__stat-label">파트너 기업</p>
+            </div>
+          </article>
+          <article class="services__card scroll-reveal">
+            <div class="services__card-content">
+              <div class="services__stat">
+                <span class="services__stat-value">98.8</span>
+                <span class="services__stat-unit-wrap"><span class="services__stat-unit">%</span></span>
+              </div>
+              <p class="services__stat-label">고객 만족도</p>
+            </div>
+          </article>
+          <article class="services__card scroll-reveal">
+            <div class="services__card-content">
+              <div class="services__stat">
+                <span class="services__stat-value">10</span>
+                <span class="services__stat-unit-wrap"><span class="services__stat-unit">년</span></span>
+              </div>
+              <p class="services__stat-label">평균 실무 경력</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -542,6 +531,34 @@
       </div>
     </div>
   </footer>
+
+  <aside class="quick-consult" data-quick-consult aria-label="빠른 상담">
+    <form class="quick-consult__form" action="#contact" method="get">
+      <div class="section-shell section-shell--gutter">
+        <div class="quick-consult__container">
+          <div class="quick-consult__fields">
+            <label class="quick-consult__field quick-consult__field--name">
+              <span class="visually-hidden">이름</span>
+              <input type="text" name="name" placeholder="이름을 입력해주세요" autocomplete="name">
+            </label>
+            <label class="quick-consult__field quick-consult__field--phone">
+              <span class="visually-hidden">연락처</span>
+              <input type="tel" name="phone" placeholder="전화번호를 적어주세요" autocomplete="tel">
+            </label>
+            <label class="quick-consult__field quick-consult__field--message">
+              <span class="visually-hidden">상담 내용</span>
+              <input type="text" name="message" placeholder="간단한 상담 내용을 적어주세요">
+            </label>
+          </div>
+          <label class="quick-consult__privacy">
+            <input type="checkbox" name="privacy" checked required>
+            <span>개인정보 수집 및 동의</span>
+          </label>
+          <button type="submit" class="quick-consult__submit">빠른 상담 하기</button>
+        </div>
+      </div>
+    </form>
+  </aside>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

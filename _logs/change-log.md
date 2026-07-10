@@ -1,4 +1,96 @@
 
+## 2026-07-10 — [static] template-homepage 빠른상담 플로팅 재맞춤
+
+**범위:** `index.html` · `css/style.css`  
+**내용:** Figma `799:708` — 바 BG `#525ee3` · 입력 흰80%+border12% · 버튼 흰/파란글자 · 개인정보 흰80% · 전화 플레이스홀더 변경 · shell 1440/240
+
+---
+
+## 2026-07-10 — [static] template-homepage GNB 사업영역 추가
+
+**범위:** 전 HTML 헤더 · `css/style.css`  
+**내용:** GNB「사업영역」추가(회사소개 다음) · 서브 사업영역 / 제품 · 솔루션 / 기술 · 역량 · 메가 4열
+
+---
+
+## 2026-07-10 — [static] template-homepage GNB width 100%
+
+**범위:** `css/style.css`  
+**내용:** 헤더 bar·mega shell — 컨텐츠 max-width 해제 · `width: 100%` · 좌우 끝 패딩만 유지(본문/푸터 `site-header__shell` 유지)
+
+---
+
+## 2026-07-10 — [static] template-homepage GNB wrap 조정
+
+**범위:** `css/style.css`  
+**내용:** 헤더 — 로고 좌 · CTA 우 · 카테고리(nav) shell 중앙 · 메가메뉴도 nav 폭에 맞춰 중앙 정렬
+
+---
+
+## 2026-07-10 — [static] template-homepage portfolio 헤더·탭 재맞춤
+
+**범위:** `service-portfolio.html` · `css/style.css`  
+**내용:** Figma `802:2056`/`802:1974` 수정 반영 — 제목·탭 가로 space-between · 활성 탭 `#525ee3`+하단 2px · 비활성 20% · 20/w500·600 · `기업/관공서` · 필(알약) 제거
+
+---
+
+## 2026-07-10 — [static] template-homepage service-portfolio + GNB 포트폴리오 제거
+
+**범위:** `service-portfolio.html`(신규) · `css/style.css` · `js/main.js` · 전 페이지 헤더  
+**내용:** Figma `802:1958` — 히어로 · PORTFOLIO 인트로 · 필터 탭(기업/관공서 active) · 2×2 카드(708×541 · overlay 40% · 중앙 텍스트) · **CTA 없음** · GNB「포트폴리오」및 메가 컬럼 제거 · 메가 3컬럼 · 「제작 사례」→ `service-portfolio.html`
+
+---
+
+## 2026-07-10 — [static] template-homepage service-process (진행 프로세스)
+
+**범위:** `service-process.html`(신규) · `css/style.css` · GNB「진행 프로세스」링크  
+**내용:** Figma `802:1826` — 히어로 · PROCESS 인트로 · STEP 01–07 흰 카드(2열 · 07 풀와이드) · **CTA 없음** · 공통 푸터 · shell 1440/240
+
+---
+
+## 2026-07-10 — [static] template-homepage service-list (주요 분야)
+
+**범위:** `service-list.html`(신규) · `css/style.css` · GNB「주요 분야」링크  
+**내용:** Figma `802:1702` — 히어로 · OUR BUSINESS 인트로 · 가로 카드 4종(이미지 708 + 흰 패널 708 · gap 24 · r12) · **CTA 없음** · 공통 푸터 · shell 1440/240
+
+---
+
+## 2026-07-10 — [static] template-homepage service-solution (서비스 소개)
+
+**범위:** `service-solution.html`(신규) · `css/style.css` · GNB「서비스 소개」링크  
+**내용:** Figma `799:774` — 서브 히어로(서비스) · S02 BUSINESS SOLUTION 워터마크 · S03 모자이크 카드(874/542 · 542/874 · 풀) overlay 40% · **CTA 제거(사용자)** · 공통 푸터 · shell 1440/240 · 재검수: 카드 scroll-reveal `display:flex` 수정
+
+---
+
+## 2026-07-10 — [static] template-homepage S03 services 재정렬 · 서브페이지 Figma 재검수
+
+**범위:** `index.html` · `css/style.css` (services · page-hero · greeting-history)  
+**S03:** Figma `763:901` — 카드 설명·호버 제거 · 제목만 38/w700 하단 좌측 · overlay 30% · 제목↔카드 gap 48  
+**서브페이지 수정:** 히어로 라벨 opacity 80% · overlay gradient · 연혁 본문 opacity 60% · 연도↔리스트 gap 28
+
+---
+
+## 2026-07-10 — [static] template-homepage about-ceo (CEO 메시지)
+
+**범위:** `about-ceo.html`(신규) · `css/style.css` · GNB 링크(`index` · `about-greeting` · `about-directions`)  
+**내용:** Figma `796:211` — 서브 히어로 · CEO 메시지 46/w600 · 2열(사진 383×500 pill · gap 106) · 인용 50/w700 · 본문 26/w500 80% · 서명 30/w600 · 푸터
+
+---
+
+## 2026-07-10 — [static] template-homepage about-directions (오시는길)
+
+**범위:** `about-directions.html`(신규) · `css/style.css` · `index.html` · `about-greeting.html`(GNB 링크)  
+**내용:** Figma `796:5` — 공통 서브 히어로 · 제목「오시는 길」· 지도 1440×771 radius 24 · 주소 행 top 1px(442/972) · 교통 opacity 60% · 네이버/카카오 지도 pill 버튼 · 공통 푸터 · **재검수:** block gap 48 · detail gap 26/46 · 버튼 24/w500·gap 16
+
+---
+
+## 2026-07-10 — [static] template-homepage about-greeting S04 history · year-carousel
+
+**범위:** `about-greeting.html` · `css/style.css` · `js/main.js`  
+**내용:** S04 연혁 Figma `788:360` — BG `#f8f8f8` · 연도 컬럼 600/gap 46 · 비활성 opacity 20% · **`year-carousel`** (연도 클릭 → 1번 자리 슬라이드) · 케러셀 좌측 inset **header shell 240** 정렬 · **공통 푸터 추가** (`index.html` 동일)
+
+---
+
 ## 2026-07-10 — [static] template-homepage about-greeting S03 vision
 
 **범위:** `about-greeting.html` · `css/style.css`  

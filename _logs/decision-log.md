@@ -1,5 +1,15 @@
 # Decision Log
 
+## 2026-07-10 — [static] template-homepage · GNB 포트폴리오 제거
+
+| # | 결정 |
+|---|------|
+| 1 | 상단 GNB「포트폴리오」메뉴 및 메가메뉴 해당 컬럼(전체 보기·기업 홈페이지·병원·클리닉) **제거** |
+| 2 | GNB = 회사소개 · 서비스 · 고객지원 (3열) · 메가 CSS 3컬럼 |
+| 3 | 제작 사례는 서비스 하위 `service-portfolio.html` (Figma `802:1958`) |
+
+---
+
 ## 2026-07-10 — [active-track] WordPress 기본 · Cafe24·Reference·Static 동결
 
 | # | 결정 |
@@ -33,10 +43,17 @@
 | 12 | **Header interaction:** scroll auto-hide (down hide · up show) |
 | 13 | **S01:** `hero-progress-slider` · **S02:** GSAP text-fill · **S04:** `drag-scroll` |
 | 15 | **about-greeting:** Figma `770:2111` · `about-greeting.html` · shell **1440/240**(header 동일) |
+| 16 | **about-greeting S04:** `year-carousel` — 연도 클릭 시 1번 자리로 슬라이드 · 비활성 opacity 20% |
+| 17 | **about-directions:** Figma `796:5` · `about-directions.html` · shell 1440/240 |
+| 18 | **about-ceo:** Figma `796:211` · `about-ceo.html` · 사진 pill 383×500 · text gap 106 |
+| 19 | **service-solution:** Figma `799:774` · `service-solution.html` · shell 1440/240 · 모자이크 카드 · CTA 제외 |
+| 20 | **service-list:** Figma `802:1702` · `service-list.html` · 가로 카드 4종 · CTA 제외 |
+| 21 | **service-process:** Figma `802:1826` · `service-process.html` · STEP 01–07 · CTA 제외 |
 
 **preset 기록:**
 ```
 [template template-homepage] header: gnb-pattern — gnb-full-expand
+[template template-homepage] greeting-history: preset — year-carousel
 [template template-homepage] header: interaction — scroll auto-hide (down hide · up show)
 [template template-homepage] S01: preset — hero-progress-slider
 [template template-homepage] S04: preset — drag-scroll

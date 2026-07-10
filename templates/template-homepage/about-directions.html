@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오시는길 — Template Homepage</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-about-directions">
+  <header class="site-header" data-header-mega>
+    <div class="site-header__bar">
+      <div class="site-header__shell site-header__inner">
+        <a class="site-header__logo" href="index.html">TENFOLD STUDIO</a>
+        <div class="site-header__menu">
+          <nav class="site-header__nav" aria-label="주요 메뉴">
+            <ul class="site-header__list">
+              <li class="site-header__item site-header__item--has-mega is-active">
+                <a href="about-greeting.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">회사소개</a>
+              </li>
+              <li class="site-header__item site-header__item--has-mega">
+                <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">사업영역</a>
+              </li>
+              <li class="site-header__item site-header__item--has-mega">
+                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
+              </li>
+              <li class="site-header__item site-header__item--has-mega">
+                <a href="index.html#insight" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">고객지원</a>
+              </li>
+            </ul>
+          </nav>
+          <a class="site-header__cta" href="index.html#contact">프로젝트 의뢰하기</a>
+          <button type="button" class="site-header__menu-btn" aria-label="메뉴 열기">
+            <span class="site-header__menu-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="gnb-mega-panel" class="site-header__mega" hidden inert>
+      <div class="site-header__shell site-header__mega-inner">
+        <ul class="site-header__mega-list">
+          <li class="site-header__mega-col">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="about-greeting.html">회사소개</a></li>
+              <li><a class="site-header__sublink" href="about-directions.html" aria-current="page">오시는길</a></li>
+              <li><a class="site-header__sublink" href="about-ceo.html">CEO 메시지</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="#">제품 · 솔루션</a></li>
+              <li><a class="site-header__sublink" href="#">기술 · 역량</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="service-solution.html">서비스 소개</a></li>
+              <li><a class="site-header__sublink" href="service-list.html">주요 분야</a></li>
+              <li><a class="site-header__sublink" href="service-process.html">진행 프로세스</a></li>
+              <li><a class="site-header__sublink" href="service-portfolio.html">제작 사례</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="index.html#insight">공지사항</a></li>
+              <li><a class="site-header__sublink" href="index.html#contact">문의하기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-header__dim" hidden aria-hidden="true"></div>
+  </header>
+
+  <main id="main" class="main main--subpage">
+    <section id="page-hero" class="section section--page-hero" aria-labelledby="page-hero-title">
+      <div class="page-hero__media" aria-hidden="true">
+        <img
+          class="page-hero__img"
+          src="assets/images/hero-bg-02.jpg"
+          alt=""
+          width="1920"
+          height="364"
+          decoding="async"
+          fetchpriority="high"
+        >
+        <div class="page-hero__overlay"></div>
+      </div>
+      <div class="site-header__shell page-hero__inner">
+        <div class="page-hero__copy">
+          <p class="page-hero__label">회사소개</p>
+          <h1 id="page-hero-title" class="page-hero__title">병원의 브랜드와 가치를 입혀드립니다</h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="directions" class="section section--directions" aria-labelledby="directions-title">
+      <div class="site-header__shell directions__inner">
+        <h2 id="directions-title" class="directions__title scroll-reveal">오시는 길</h2>
+        <figure class="directions__figure scroll-reveal">
+          <img
+            class="directions__img"
+            src="assets/images/feature-bg-03.jpg"
+            alt=""
+            width="1440"
+            height="771"
+            decoding="async"
+          >
+        </figure>
+        <article class="directions__row scroll-reveal">
+          <div class="directions__label">
+            <h3 class="directions__label-title">주소</h3>
+          </div>
+          <div class="directions__detail">
+            <p class="directions__street">서울특별시 영등포구 국회대로 66길 3 현대카드빌딩 2관 5층</p>
+            <div class="directions__transit">
+              <p>9호선 국회의사당역 1번 출구에서 도보 약 90m</p>
+              <p>국회의사당역 정류장에서 하차 (1002, 163, 461, 463, 6623, 6713번)</p>
+            </div>
+            <div class="directions__actions">
+              <a
+                class="directions__map-link"
+                href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EA%B5%AD%ED%9A%8C%EB%8C%80%EB%A1%9C%2066%EA%B8%B8%203"
+                target="_blank"
+                rel="noopener noreferrer"
+              >네이버 지도</a>
+              <a
+                class="directions__map-link"
+                href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EA%B5%AD%ED%9A%8C%EB%8C%80%EB%A1%9C%2066%EA%B8%B8%203"
+                target="_blank"
+                rel="noopener noreferrer"
+              >카카오 지도</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="site-footer" aria-labelledby="footer-tagline">
+    <div class="site-header__shell site-footer__inner">
+      <div class="site-footer__top">
+        <p id="footer-tagline" class="site-footer__tagline">
+          혁신으로 미래를 설계하다<br>
+          <span class="site-footer__tagline-line2">미래를 여는 <span class="site-footer__tagline-accent">최적의 기술 솔루션</span></span>
+        </p>
+        <a class="site-footer__cta" href="index.html#contact">프로젝트 의뢰하기</a>
+      </div>
+      <div class="site-footer__bottom">
+        <div class="site-footer__info">
+          <div class="site-footer__info-row">
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">상호명</span>
+              <span class="site-footer__info-value">텐폴드</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">대표자</span>
+              <span class="site-footer__info-value">박성범</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">사업자번호</span>
+              <span class="site-footer__info-value">000-00-00000</span>
+            </div>
+          </div>
+          <div class="site-footer__info-row">
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">주소</span>
+              <span class="site-footer__info-value">서울시 관악구 남부순환로</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">대표전화</span>
+              <span class="site-footer__info-value">070-0000-0000</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">이메일</span>
+              <span class="site-footer__info-value">tenfold@tenfold.kr</span>
+            </div>
+          </div>
+        </div>
+        <p class="site-footer__copy">TENFOLD STUDIO. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/dev-images.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

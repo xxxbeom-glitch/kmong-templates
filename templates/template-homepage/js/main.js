@@ -11,6 +11,10 @@
     if (header) {
       header.classList.remove("is-header-hidden");
     }
+    var quickConsult = document.querySelector("[data-quick-consult]");
+    if (quickConsult) {
+      quickConsult.classList.remove("is-hidden");
+    }
   });
 
   function initHeaderAutoHide() {
@@ -523,6 +527,217 @@
     });
   }
 
+  function initQuickConsultBar() {
+    var bar = document.querySelector("[data-quick-consult]");
+
+    if (!bar) {
+      return;
+    }
+
+    var lastScrollY = window.scrollY || window.pageYOffset;
+    var deltaMin = 4;
+    var isHidden = false;
+    var ticking = false;
+
+    function setHidden(nextHidden) {
+      if (isHidden === nextHidden) {
+        return;
+      }
+
+      isHidden = nextHidden;
+      bar.classList.toggle("is-hidden", nextHidden);
+    }
+
+    function syncFromScrollY(scrollY) {
+      if (scrollY <= 8) {
+        setHidden(false);
+      } else if (scrollY > lastScrollY + deltaMin) {
+        setHidden(true);
+      } else if (scrollY < lastScrollY - deltaMin) {
+        setHidden(false);
+      }
+
+      lastScrollY = scrollY;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (ticking) {
+          return;
+        }
+
+        ticking = true;
+
+        window.requestAnimationFrame(function () {
+          syncFromScrollY(window.scrollY || window.pageYOffset);
+          ticking = false;
+        });
+      },
+      { passive: true }
+    );
+  }
+
+  function initYearCarousel() {
+    var $roots = $("[data-year-carousel]");
+
+    if (!$roots.length) {
+      return;
+    }
+
+    $roots.each(function () {
+      var root = this;
+      var track = root.querySelector("[data-year-carousel-track]");
+
+      if (!track) {
+        return;
+      }
+
+      var isAnimating = false;
+      var durationMs = 500;
+      var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function getItems() {
+        return Array.prototype.slice.call(track.querySelectorAll("[data-year-carousel-item]"));
+      }
+
+      function getStep() {
+        var items = getItems();
+
+        if (!items.length) {
+          return 0;
+        }
+
+        var style = window.getComputedStyle(track);
+        var gap = parseFloat(style.gap || style.columnGap) || 0;
+
+        return items[0].getBoundingClientRect().width + gap;
+      }
+
+      function syncActiveState() {
+        getItems().forEach(function (item, index) {
+          var isActive = index === 0;
+
+          item.classList.toggle("is-active", isActive);
+
+          var btn = item.querySelector(".greeting-history__year-btn");
+
+          if (btn) {
+            btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+          }
+        });
+      }
+
+      function reorderToFront(index) {
+        var items = getItems();
+        var clicked = items[index];
+        var rest = items.filter(function (_, itemIndex) {
+          return itemIndex !== index;
+        });
+
+        [clicked].concat(rest).forEach(function (el) {
+          track.appendChild(el);
+        });
+
+        syncActiveState();
+      }
+
+      function activate(index) {
+        if (index <= 0 || isAnimating) {
+          return;
+        }
+
+        var step = getStep();
+        var distance = step * index;
+
+        if (prefersReducedMotion || distance <= 0) {
+          reorderToFront(index);
+          return;
+        }
+
+        isAnimating = true;
+        track.classList.add("is-animating");
+        track.style.transition = "transform " + durationMs + "ms ease";
+        track.style.transform = "translate3d(" + -distance + "px, 0, 0)";
+
+        function onEnd() {
+          track.removeEventListener("transitionend", onEnd);
+          track.style.transition = "none";
+          track.style.transform = "translate3d(0, 0, 0)";
+          track.offsetHeight;
+          reorderToFront(index);
+          track.classList.remove("is-animating");
+          isAnimating = false;
+        }
+
+        track.addEventListener("transitionend", onEnd);
+      }
+
+      function handleActivate(item) {
+        var index = getItems().indexOf(item);
+
+        if (index < 0) {
+          return;
+        }
+
+        activate(index);
+      }
+
+      root.addEventListener("click", function (e) {
+        var item = e.target.closest("[data-year-carousel-item]");
+
+        if (!item || !root.contains(item) || item.classList.contains("is-active")) {
+          return;
+        }
+
+        handleActivate(item);
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key !== "Enter" && e.key !== " ") {
+          return;
+        }
+
+        var btn = e.target.closest(".greeting-history__year-btn");
+
+        if (!btn) {
+          return;
+        }
+
+        var item = btn.closest("[data-year-carousel-item]");
+
+        if (!item || item.classList.contains("is-active")) {
+          return;
+        }
+
+        e.preventDefault();
+        handleActivate(item);
+      });
+
+      syncActiveState();
+    });
+  }
+
+  function initPortfolioFilter() {
+    var root = document.querySelector(".portfolio-filter");
+
+    if (!root) {
+      return;
+    }
+
+    var tabs = root.querySelectorAll(".portfolio-filter__tab");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (item) {
+          var active = item === tab;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-selected", active ? "true" : "false");
+        });
+      });
+    });
+  }
+
   $(function () {
     $("html").addClass("js");
     setViewportHeightUnit();
@@ -532,6 +747,9 @@
     initIntroFill();
     initScrollReveal();
     initFeaturesDragScroll();
+    initYearCarousel();
+    initQuickConsultBar();
+    initPortfolioFilter();
   });
 
   window.addEventListener("resize", function () {

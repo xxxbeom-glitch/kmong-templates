@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -19,10 +19,10 @@
                 <a href="about-greeting.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">회사소개</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
-                <a href="index.html#services" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
+                <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">사업영역</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
-                <a href="index.html#features" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">포트폴리오</a>
+                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
                 <a href="index.html#insight" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">고객지원</a>
@@ -41,30 +41,28 @@
         <ul class="site-header__mega-list">
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="about-greeting.html" aria-current="page">인사말</a></li>
-              <li><a class="site-header__sublink" href="#">연혁</a></li>
-              <li><a class="site-header__sublink" href="#">오시는 길</a></li>
+              <li><a class="site-header__sublink" href="about-greeting.html" aria-current="page">회사소개</a></li>
+              <li><a class="site-header__sublink" href="about-directions.html">오시는길</a></li>
+              <li><a class="site-header__sublink" href="about-ceo.html">CEO 메시지</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="index.html#services">서비스 소개</a></li>
-              <li><a class="site-header__sublink" href="index.html#services">주요 분야</a></li>
-              <li><a class="site-header__sublink" href="index.html#services">진행 프로세스</a></li>
-              <li><a class="site-header__sublink" href="index.html#features">제작 사례</a></li>
+              <li><a class="site-header__sublink" href="#">제품 · 솔루션</a></li>
+              <li><a class="site-header__sublink" href="#">기술 · 역량</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="index.html#features">전체 보기</a></li>
-              <li><a class="site-header__sublink" href="index.html#features">기업 홈페이지</a></li>
-              <li><a class="site-header__sublink" href="index.html#features">병원·클리닉</a></li>
+              <li><a class="site-header__sublink" href="service-solution.html">서비스 소개</a></li>
+              <li><a class="site-header__sublink" href="service-list.html">주요 분야</a></li>
+              <li><a class="site-header__sublink" href="service-process.html">진행 프로세스</a></li>
+              <li><a class="site-header__sublink" href="service-portfolio.html">제작 사례</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
               <li><a class="site-header__sublink" href="index.html#insight">공지사항</a></li>
-              <li><a class="site-header__sublink" href="index.html#faq">자주 묻는 질문</a></li>
               <li><a class="site-header__sublink" href="index.html#contact">문의하기</a></li>
             </ul>
           </li>
@@ -166,7 +164,146 @@
         </div>
       </div>
     </section>
+
+    <section id="greeting-history" class="section section--greeting-history" aria-labelledby="greeting-history-title" data-year-carousel>
+      <div class="greeting-history__shell">
+        <div class="site-header__shell greeting-history__head">
+          <h2 id="greeting-history-title" class="greeting-history__title scroll-reveal">연혁</h2>
+        </div>
+        <div class="greeting-history__viewport scroll-reveal">
+          <div class="greeting-history__track" data-year-carousel-track>
+            <article class="greeting-history__year is-active" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="true">
+                <span class="greeting-history__year-label">2026</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">03.</span>
+                  <span class="greeting-history__text">KT SAT 위성통신 기반 무인항공기 운용체계 구축 MOU 체결</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">02.</span>
+                  <span class="greeting-history__text">기술특례상장 기술성 평가 통과</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2025</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">12.</span>
+                  <span class="greeting-history__text">NV-050 Electric(VVS-50E) 국내 최초 수직이착륙 무인기 안전성 인증 획득</span>
+                </li>
+                <li class="greeting-history__item greeting-history__item--no-month">
+                  <span class="greeting-history__text">KT SAT 위성통신 기반 무인항공기 운용체계 구축 MOU 체결</span>
+                </li>
+                <li class="greeting-history__item greeting-history__item--no-month">
+                  <span class="greeting-history__text">중국 강소베셀공업유한공사 KLA-100 TC(형식증명) 인증 획득</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">10.</span>
+                  <span class="greeting-history__text">기술특례상장 기술성 평가 통과</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">09.</span>
+                  <span class="greeting-history__text">기술특례상장 기술성 평가 통과</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2024</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">12.</span>
+                  <span class="greeting-history__text">NV-050 Electric(VVS-50E) 국내 최초 수직이착륙 무인기 안전성 인증 획득</span>
+                </li>
+                <li class="greeting-history__item greeting-history__item--no-month">
+                  <span class="greeting-history__text">KT SAT 위성통신 기반 무인항공기 운용체계 구축 MOU 체결</span>
+                </li>
+                <li class="greeting-history__item greeting-history__item--no-month">
+                  <span class="greeting-history__text">중국 강소베셀공업유한공사 KLA-100 TC(형식증명) 인증 획득</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">10.</span>
+                  <span class="greeting-history__text">기술특례상장 기술성 평가 통과</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label greeting-history__year-label--sm">2023</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">12.</span>
+                  <span class="greeting-history__text">NV-050 Electric(VVS-50E) 국내 최초 수직이착륙 무인기 안전성 인증 획득</span>
+                </li>
+                <li class="greeting-history__item greeting-history__item--no-month">
+                  <span class="greeting-history__text">KT SAT 위성통신 기반 무인항공기 운용체계 구축 MOU 체결</span>
+                </li>
+                <li class="greeting-history__item greeting-history__item--no-month">
+                  <span class="greeting-history__text">중국 강소베셀공업유한공사 KLA-100 TC(형식증명) 인증 획득</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">10.</span>
+                  <span class="greeting-history__text">기술특례상장 기술성 평가 통과</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer id="footer" class="site-footer" aria-labelledby="footer-tagline">
+    <div class="site-header__shell site-footer__inner">
+      <div class="site-footer__top">
+        <p id="footer-tagline" class="site-footer__tagline">
+          혁신으로 미래를 설계하다<br>
+          <span class="site-footer__tagline-line2">미래를 여는 <span class="site-footer__tagline-accent">최적의 기술 솔루션</span></span>
+        </p>
+        <a class="site-footer__cta" href="index.html#contact">프로젝트 의뢰하기</a>
+      </div>
+      <div class="site-footer__bottom">
+        <div class="site-footer__info">
+          <div class="site-footer__info-row">
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">상호명</span>
+              <span class="site-footer__info-value">텐폴드</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">대표자</span>
+              <span class="site-footer__info-value">박성범</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">사업자번호</span>
+              <span class="site-footer__info-value">000-00-00000</span>
+            </div>
+          </div>
+          <div class="site-footer__info-row">
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">주소</span>
+              <span class="site-footer__info-value">서울시 관악구 남부순환로</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">대표전화</span>
+              <span class="site-footer__info-value">070-0000-0000</span>
+            </div>
+            <div class="site-footer__info-item">
+              <span class="site-footer__info-label">이메일</span>
+              <span class="site-footer__info-value">tenfold@tenfold.kr</span>
+            </div>
+          </div>
+        </div>
+        <p class="site-footer__copy">TENFOLD STUDIO. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="js/dev-images.js"></script>
