@@ -1,4 +1,15 @@
 
+## 2026-07-10 — [static] template-homepage preset 1~4
+
+**범위:** `index.html` · `news-view.html` · `css/style.css` · `js/main.js`  
+**내용:**  
+- `stats-counter` — 메인 통계 카드 0→목표값  
+- `image-scale-hover` — 서비스 소개·제작 사례·사업영역 카드 이미지  
+- `hover-tone` — 소식 리스트 행 (메인 insight · news)  
+- `button-text-slide-hover` — CTA · 전체 글 보기 · 글 목록 보기
+
+---
+
 ## 2026-07-10 — [static] template-homepage GNB 하위메뉴 네이밍
 
 **범위:** 전 HTML 헤더 — Figma `770:2656`  

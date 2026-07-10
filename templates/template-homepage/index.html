@@ -226,7 +226,11 @@
           <article class="services__card scroll-reveal">
             <div class="services__card-content">
               <div class="services__stat">
-                <span class="services__stat-value">500</span>
+                <span
+                  class="services__stat-value"
+                  data-stats-counter
+                  data-count-value="500"
+                >0</span>
                 <span class="services__stat-unit services__stat-unit--plus">+</span>
               </div>
               <p class="services__stat-label">누적 프로젝트</p>
@@ -235,7 +239,11 @@
           <article class="services__card scroll-reveal">
             <div class="services__card-content">
               <div class="services__stat">
-                <span class="services__stat-value">100</span>
+                <span
+                  class="services__stat-value"
+                  data-stats-counter
+                  data-count-value="100"
+                >0</span>
                 <span class="services__stat-unit services__stat-unit--plus">+</span>
               </div>
               <p class="services__stat-label">파트너 기업</p>
@@ -244,7 +252,11 @@
           <article class="services__card scroll-reveal">
             <div class="services__card-content">
               <div class="services__stat">
-                <span class="services__stat-value">95</span>
+                <span
+                  class="services__stat-value"
+                  data-stats-counter
+                  data-count-value="95"
+                >0</span>
                 <span class="services__stat-unit">%</span>
               </div>
               <p class="services__stat-label">고객 만족도</p>
@@ -253,7 +265,11 @@
           <article class="services__card scroll-reveal">
             <div class="services__card-content">
               <div class="services__stat">
-                <span class="services__stat-value">15</span>
+                <span
+                  class="services__stat-value"
+                  data-stats-counter
+                  data-count-value="15"
+                >0</span>
                 <span class="services__stat-unit">년</span>
               </div>
               <p class="services__stat-label">평균 실무 경력</p>
@@ -538,7 +554,14 @@
         <div class="cta__overlay" aria-hidden="true"></div>
         <div class="section-shell section-shell--gutter cta__inner">
           <h2 id="cta-title" class="cta__title scroll-reveal">웹사이트가 필요하지만 어디서부터 시작할지 막막하다면,<br>방향부터 함께 정리해보세요.</h2>
-          <a class="cta__btn scroll-reveal" href="contact.html">프로젝트 문의하기</a>
+          <a class="cta__btn btn-slide-hover scroll-reveal" href="contact.html">
+            <span class="btn__label">
+              <span class="btn__track">
+                <span class="btn__text">프로젝트 문의하기</span>
+                <span class="btn__text" aria-hidden="true">프로젝트 문의하기</span>
+              </span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -578,7 +601,14 @@
           </ul>
         </div>
         <p class="insight__more">
-          <a class="insight__more-btn scroll-reveal" href="news.html">전체 글 보기</a>
+          <a class="insight__more-btn btn-slide-hover scroll-reveal" href="news.html">
+            <span class="btn__label">
+              <span class="btn__track">
+                <span class="btn__text">전체 글 보기</span>
+                <span class="btn__text" aria-hidden="true">전체 글 보기</span>
+              </span>
+            </span>
+          </a>
         </p>
       </div>
     </section>

@@ -768,6 +768,121 @@
     });
   }
 
+  function formatStatsCounterValue(value, decimals, useGrouping) {
+    if (decimals > 0) {
+      var fixed = value.toFixed(decimals);
+      if (useGrouping) {
+        var parts = fixed.split(".");
+        parts[0] = Number(parts[0]).toLocaleString("en-US");
+        return parts.join(".");
+      }
+      return fixed;
+    }
+
+    if (useGrouping) {
+      return Math.round(value).toLocaleString("en-US");
+    }
+
+    return String(Math.round(value));
+  }
+
+  function renderStatsCounter($el, value) {
+    var decimals = parseInt($el.attr("data-count-decimals") || "0", 10);
+    var suffix = $el.attr("data-count-suffix") || "";
+    var useGrouping = $el.is("[data-count-grouping]");
+    var display = formatStatsCounterValue(value, decimals, useGrouping);
+
+    $el.text(display + suffix);
+  }
+
+  function runStatsCounter($el) {
+    var end = parseFloat($el.attr("data-count-value"), 10);
+    var durationMs = 1600;
+    var startTime = null;
+
+    function frame(timestamp) {
+      if (!startTime) {
+        startTime = timestamp;
+      }
+
+      var progress = Math.min((timestamp - startTime) / durationMs, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = end * eased;
+
+      renderStatsCounter($el, current);
+
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+        return;
+      }
+
+      renderStatsCounter($el, end);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  function initStatsCounter() {
+    var $section = $("#services");
+    var $counters = $section.find("[data-stats-counter]");
+
+    if (!$section.length || !$counters.length) {
+      return;
+    }
+
+    var started = false;
+    var prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    function startCounting() {
+      if (started) {
+        return;
+      }
+
+      started = true;
+
+      $counters.each(function () {
+        var $counter = $(this);
+
+        if (prefersReducedMotion) {
+          renderStatsCounter(
+            $counter,
+            parseFloat($counter.attr("data-count-value"), 10)
+          );
+          return;
+        }
+
+        renderStatsCounter($counter, 0);
+        runStatsCounter($counter);
+      });
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      startCounting();
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          startCounting();
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -10% 0px",
+      }
+    );
+
+    observer.observe($section[0]);
+  }
+
   function initNewsFilter() {
     var root = document.querySelector("[data-news-filter]");
 
@@ -810,6 +925,7 @@
     initQuickConsultBar();
     initPortfolioFilter();
     initNewsFilter();
+    initStatsCounter();
   });
 
   window.addEventListener("resize", function () {

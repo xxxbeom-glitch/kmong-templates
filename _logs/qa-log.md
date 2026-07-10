@@ -1,5 +1,16 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage preset 1~4
+**범위:** `index.html` · `news-view.html` · `css/style.css` · `js/main.js`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `stats-counter` 스크롤 진입 1회 · reduced-motion 즉시 | PASS | `#services` · unit 분리 |
+| 2 | `image-scale-hover` scale 1.05 · overflow clip | PASS | service/portfolio/business |
+| 3 | `hover-tone` insight·news-item opacity 0.85 | PASS | 리뷰는 기존 BG 호버 |
+| 4 | `button-text-slide-hover` CTA·전체글·글목록 | PASS | fine pointer only |
+| 5 | image-scale와 hover-tone 동일 요소 미중복 | PASS | |
+
 ## 2026-07-10 · [static] template-homepage 빠른상담 플로팅 재반영
 **범위:** `index.html` · `css/style.css` — Figma `825:2858`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요

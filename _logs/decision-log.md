@@ -1,6 +1,17 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · preset 1~4 적용
+
+| # | 결정 |
+|---|------|
+| 1 | `stats-counter` — 메인 `#services` 통계 4카드 · duration 1.6s · 접미사(`+` `%` `년`)는 별도 unit 유지 |
+| 2 | `image-scale-hover` — `service-card` · `portfolio-card` · `business-item` 이미지 · scale 1.05 · fine pointer only |
+| 3 | `hover-tone` — 메인 insight 행 · `news.html` 리스트 행 opacity 0.85 · 리뷰는 기존 BG 호버 유지 |
+| 4 | `button-text-slide-hover` — `cta__btn` · `insight__more-btn` · `news-view__list-btn` |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 고객지원 페이지
 
 | # | 결정 |
