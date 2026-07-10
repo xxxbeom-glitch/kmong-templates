@@ -3866,8 +3866,15 @@ button.scroll-reveal {
     display: none;
   }
 
-  .greeting-intro__img {
+  .greeting-intro__figure {
     aspect-ratio: 16 / 9;
+  }
+
+  .greeting-intro__img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
   }
 
   .greeting-vision__row {
