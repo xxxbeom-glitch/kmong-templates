@@ -324,7 +324,7 @@ button.scroll-reveal {
   display: block;
   width: 1.25rem;
   height: 2px;
-  background: var(--color-text-primary);
+  background: #000000;
   border-radius: 1px;
 }
 
@@ -337,6 +337,7 @@ button.scroll-reveal {
   content: "";
   position: absolute;
   left: 0;
+  transition: transform 0.2s ease, top 0.2s ease, background 0.2s ease;
 }
 
 .site-header__menu-icon::before {
@@ -3325,12 +3326,28 @@ button.scroll-reveal {
     justify-content: center;
   }
 
+  /* drawer(z200) 위에 헤더·닫기 버튼 유지 — 햄버거와 동일 자리 */
   .site-header.is-drawer-open {
     transform: none !important;
+    z-index: 220;
+  }
+
+  .site-header.is-drawer-open .site-header__bar {
+    background: #ffffff;
+  }
+
+  .site-header.is-drawer-open .site-header__menu-btn {
+    z-index: 230;
   }
 
   .site-header.is-drawer-open .site-header__menu-icon {
     background: transparent;
+  }
+
+  .site-header.is-drawer-open .site-header__menu-icon::before,
+  .site-header.is-drawer-open .site-header__menu-icon::after {
+    background: #000000;
+    transition: transform 0.2s ease, top 0.2s ease;
   }
 
   .site-header.is-drawer-open .site-header__menu-icon::before {
@@ -3341,12 +3358,6 @@ button.scroll-reveal {
   .site-header.is-drawer-open .site-header__menu-icon::after {
     top: 0;
     transform: rotate(-45deg);
-  }
-
-  .site-header.is-drawer-open .site-header__bar {
-    position: relative;
-    z-index: 210;
-    background: #ffffff;
   }
 
   .hero__inner {

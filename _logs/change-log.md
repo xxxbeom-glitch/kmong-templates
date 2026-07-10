@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 모바일 닫기(X) 버튼
+
+**범위:** `css/style.css`  
+**내용:** 메뉴 열림 시 헤더를 drawer 위로 · X 검정 · 햄버거와 동일 자리
+
+---
+
 ## 2026-07-10 — [static] template-homepage 모바일 햄버거 메뉴
 
 **범위:** 전 HTML · `css/style.css` · `js/main.js`  
