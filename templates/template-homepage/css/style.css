@@ -1049,6 +1049,8 @@ button.scroll-reveal {
   align-items: center;
   gap: clamp(0.75rem, 0.8333vw, 1rem);
   width: 100%;
+  max-width: 17.5rem;
+  margin-inline: auto;
   text-align: center;
 }
 
