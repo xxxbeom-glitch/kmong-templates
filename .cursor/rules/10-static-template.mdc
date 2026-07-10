@@ -16,6 +16,7 @@ globs:
 
 # Static Template Track
 
+> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · 신규 `templates/{slug}/` **진입 금지** (명시 재개 전).  
 > **라우터:** `00-project-router.mdc`  
 > **적용:** `templates/{slug}/` 정적 HTML 템플릿 (`cafe24_shop` **제외**).  
 > **미적용 (강제):** `templates/cafe24_shop/` · `cafe24/{slug}/` · WordPress · reference-harness.  

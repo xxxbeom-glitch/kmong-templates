@@ -1,5 +1,7 @@
 # Reference Harness
 
+> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · 신규 mirror·케이스 추가 **중단**. 기존 case·스크립트는 **보관**.
+
 실험·데모 수집 트랙. 제품 규칙은 `docs/cafe24/CAFE24_RULES_OVERVIEW.md` · `.cursor/rules/80`~`83`.
 
 ## 원칙

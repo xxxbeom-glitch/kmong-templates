@@ -131,6 +131,33 @@ globs:
 - 카드 루트·자식 **둘 다** `scroll-reveal`.
 - philosophy 등 비카드 행을 카드처럼 1덩어리만.
 
+## `infinite-card-marquee` · 무한 카드 마퀴 (참고 카탈로그)
+
+> 스펙·금지: `46-interaction-presets.mdc` · **참고 구현** `templates/template-homepage/#reviews`
+
+**HTML**
+- `{section}__marquee` > `{section}__row--left` · `{section}__row--right` > `{section}__track` > `{section}__group` **×2** (동일 카드 N장 · 2번째 `aria-hidden="true"`).
+
+**CSS**
+- 마퀴 래퍼: `100vw` 풀블리드 · `calc(50% - 50vw)` margin · edge mask **없음**.
+- vars: `--reviews-gap` · `--reviews-card-w: calc((100vw - 3 * gap) / 4)` (PC 4장/줄).
+- track: `display:flex` · **`gap: var(--reviews-gap)`** (그룹 사이 = 카드 사이와 동일).
+- `@keyframes reviews-marquee-left` · `to: translate3d(calc(-50% - gap/2),0,0)` · **20s** linear infinite · `--right` = `reverse`.
+- `@media (hover: hover) and (pointer: fine)` — row hover → `animation-play-state: paused`.
+- `@768` — `--reviews-card-w: calc((100vw - gap) / 1.12)`.
+- `prefers-reduced-motion: reduce` — animation off · `[aria-hidden="true"]` group 숨김 · track wrap.
+
+**JS**
+- 없음.
+
+**scroll-reveal**
+- 섹션 **제목만** · 마퀴 카드·track 자식에 `scroll-reveal` **금지**.
+
+**QA FAIL 예**
+- `drag-scroll`과 같은 트랙에 동시 적용.
+- duplicate group 1벌만 → 루프 끊김.
+- 마퀴 카드에 scroll-reveal → 등장·흐름 중복 motion.
+
 적용 기준:
 - **승인된 preset** 구현·수정 시 · 햄버거·아코디언·슬라이더 등.
 

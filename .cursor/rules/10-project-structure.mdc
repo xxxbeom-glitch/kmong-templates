@@ -19,14 +19,15 @@ kmong-templates/
 
 ## Active workspace
 
+**현재 기본:** WordPress — `wordpress/{slug}/` · `_docs/active-track.md`.  
 트랙별 작업 경로: **`00-project-router.mdc`**.
 
-| 트랙 | 경로 |
-|------|------|
-| Static | `templates/{slug}/` (`cafe24_shop` 제외) |
-| Cafe24 A/B | `cafe24/{slug}/` (working skin) · 배포 `_release/{slug}/` (`84`) |
-| Reference C | `_reference-harness/cases/{slug}/` |
-| WordPress | `wordpress/{slug}/` |
+| 트랙 | 경로 | 상태 (2026-07-10) |
+|------|------|-------------------|
+| **WordPress** | `wordpress/{slug}/` | **활성 (기본)** |
+| Static | `templates/{slug}/` (`cafe24_shop` 제외) | 동결 |
+| Cafe24 A/B | `cafe24/{slug}/` · `_release/{slug}/` | 동결 |
+| Reference C | `_reference-harness/cases/{slug}/` | 동결 |
 
 ### 정적 (`templates/`)
 

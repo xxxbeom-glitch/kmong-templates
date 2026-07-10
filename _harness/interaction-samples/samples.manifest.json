@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-07",
+  "updated": "2026-07-10",
   "interactions": [
     {
       "id": "intro-pin-scrub-hero",
@@ -100,12 +100,27 @@
         "url": "https://hd-hmns.co.kr/kr/main"
       },
       "stack": ["HTML", "CSS"],
-      "summary": "동일 문구 2벌 + CSS translateX(-50%) 로 가로 무한 흐름. JS 없음.",
-      "description": "사업소개 섹션 상단에 'The Future Made with Technology and Quality' 같은 긴 문구가 왼쪽으로 끊김 없이 계속 흐릅니다. 같은 텍스트를 2번 나란히 두고, animation으로 정확히 한 세트 너비(-50%)만 이동시켜 무한 루프를 만듭니다. 섹션 배경 장식용 마키 패턴입니다.",
+      "summary": "동일 문구 2벌 + CSS translateX(-50%) 로 가로 무한 흐름. JS 없음. 텍스트 장식용.",
+      "description": "사업소개 섹션 상단에 'The Future Made with Technology and Quality' 같은 긴 문구가 왼쪽으로 끊김 없이 계속 흐릅니다. 같은 텍스트를 2번 나란히 두고, animation으로 정확히 한 세트 너비(-50%)만 이동시켜 무한 루프를 만듭니다. 섹션 배경 장식용 마키 패턴입니다. 카드·후기 줄은 infinite-card-marquee.",
       "howToTest": "HD 메인 회사소개 다음 사업소개 섹션 · 상단 대형 영문이 가로로 무한 스크롤되는지 확인.",
       "status": "reference",
       "tags": ["marquee", "text", "css", "decorative"],
       "added": "2026-06-08"
+    },
+    {
+      "id": "infinite-card-marquee",
+      "title": "무한 카드 마퀴",
+      "reference": {
+        "label": "template-homepage · #reviews 후기",
+        "url": "templates/template-homepage/index.html#reviews"
+      },
+      "stack": ["HTML", "CSS"],
+      "summary": "카드 그룹 2벌 + CSS translate3d(-50%) · 2줄 반대 방향 · row hover pause. JS 없음.",
+      "description": "후기·카드 리스트가 화면 가로 전체(풀블리드)로 자동 흐릅니다. 윗줄은 왼쪽←, 아랫줄은 오른쪽→(reverse). PC에서 4장 카드가 한 줄을 채우고, 동일 카드 세트를 2벌 두어 -50% keyframes로 끊김 없이 루프합니다. 마우스를 row 위에 올리면 잠시 멈춥니다. prefers-reduced-motion에서는 정적 wrap. 후기 무한 자동 스크롤 요청은 이 ID로 통일.",
+      "howToTest": "template-homepage #reviews · 2줄 반대 방향 흐름 · 4카드/줄 · row hover pause · reduced-motion 정적 배치 확인.",
+      "status": "reference",
+      "tags": ["marquee", "card", "css", "reviews"],
+      "added": "2026-07-10"
     },
     {
       "id": "gnb-full-expand",

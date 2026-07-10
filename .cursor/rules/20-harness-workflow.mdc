@@ -1,14 +1,14 @@
 ---
-description: Figma MCP → 구현 → QA → 로그 (정적 HTML 트랙 기본). 트랙 판별은 라우터
+description: Figma MCP → 승인 → 구현 → QA → 로그. 현재 기본 출력 wordpress/{slug}/. 트랙은 라우터
 alwaysApply: true
 ---
 
-# Harness Workflow (Static Template)
+# Harness Workflow
 
-> **트랙:** 먼저 `00-project-router.mdc`.  
-> **본 파일:** 정적 `templates/{slug}/` Figma→구현→QA.  
-> Cafe24 A/B → `80`~`82` · Reference → `83` · WP → `70`.  
-> 작업 공간(정적): **`templates/{slug}/` 직접** (`10-project-structure` · `10-static-template`).
+> **트랙:** 먼저 `00-project-router.mdc` · **`_docs/active-track.md`**.  
+> **현재 기본:** WordPress — `wordpress/{slug}/` · `70`~`72`.  
+> **본 파일:** Figma→승인→섹션 구현→QA→로그 **절차** (트랙별 작업 경로만 다름).  
+> Static → `templates/{slug}/` (`10-static-template`) · Cafe24 → `80`~`84` · Reference → `83` (**동결 트랙은 명시 재개 전 미적용**).
 
 ## 작업 시작 전 — 컨텍스트 확인
 
@@ -65,7 +65,10 @@ alwaysApply: true
    - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · **Section BG 1줄 (node-id · fills | 부모 상속)** · **Overlays 1줄** · **(2섹션+) 인접 Section BG 표** · 모호한 점
    - **(인터랙션 검토 시)** preset 후보 ID · `46-interaction-presets.mdc` — **사용자 선택·승인 전 구현 금지**
    - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
-3. **구현**: **`templates/{slug}/`에 직접** — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → **승인된 preset만** JS (`45`·`46`) · **사진 슬롯** → `data-placeholder` + `dev-images.js` (`47-placeholder-images.mdc`)
+3. **구현** — **트랙별 작업 경로에 직접**
+   - **WordPress (기본):** `wordpress/{slug}/` — PHP 템플릿 · `@1024` · `@768` · enqueue (`70`)
+   - **Static (동결):** `templates/{slug}/` — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → JS
+   - **공통:** 승인된 preset만 (`45`·`46`) · 사진 슬롯 → `data-placeholder` + `dev-images.js` (`47`, Static/WP 해당 시)
 4. **QA** (필수 — 생략 금지): `_docs/qa-checklist.md` + `50-qa-checklist.mdc` · **결과 `_logs/qa-log.md` 기록**
 5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
 6. **사용자 PASS** 확인 → **다음 섹션 착수**

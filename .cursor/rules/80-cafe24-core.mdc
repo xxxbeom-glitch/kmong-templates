@@ -12,6 +12,7 @@ globs:
 
 # Cafe24 Core
 
+> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · 신규 Cafe24 A/B 작업 **진입 금지**. 규칙·`docs/cafe24/`는 **보관·재개 시 참고**.  
 > **개요:** `docs/cafe24/CAFE24_RULES_OVERVIEW.md` · **팝업:** `docs/cafe24/popup-rules.md` · **인벤토리:** `docs/cafe24/README.md`  
 > **배포:** `84-cafe24-release.mdc` · `docs/cafe24/release.md`  
 > **라우터:** `00-project-router.mdc`

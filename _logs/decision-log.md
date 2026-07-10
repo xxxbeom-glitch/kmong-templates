@@ -1,5 +1,20 @@
 # Decision Log
 
+## 2026-07-10 — [active-track] WordPress 기본 · Cafe24·Reference·Static 동결
+
+| # | 결정 |
+|---|------|
+| 1 | **현재 기본 트랙:** WordPress · 작업 경로 `wordpress/{slug}/` |
+| 2 | **개발 방식:** Figma MCP → 승인 → **WP Classic Theme 직접 구현** (하드코딩 섹션 + `notice` CPT 기본) |
+| 3 | **Harness 절차:** `20-harness-workflow.mdc` 리듬 유지 · 구현 출력만 WP (`70`~`72`) |
+| 4 | **`_harness/`:** WP 패키징·검증 도구함 — `package-delivery-wp.js` · `verify-wordpress-static.js` |
+| 5 | **동결 (삭제 X):** Static 신규 · Cafe24 A/B · Reference C — `_reference-harness/` 신규 mirror·케이스 추가 중단 |
+| 6 | **SoT 1장:** `_docs/active-track.md` · router · context-guide · project-overview 동기화 |
+
+**재개 시:** 본 항목 아래에 `[active-track: …]` 갱신 후 해당 트랙 규칙 적용.
+
+---
+
 ## 2026-07-09 — [static] template-homepage · shell · 진행 방식
 
 | # | 결정 |
@@ -17,7 +32,7 @@
 | 11 | **Footer:** Figma `770:2979` · shell 1440/240 · BG `#181719` |
 | 12 | **Header interaction:** scroll auto-hide (down hide · up show) |
 | 13 | **S01:** `hero-progress-slider` · **S02:** GSAP text-fill · **S04:** `drag-scroll` |
-| 14 | **S03–S09:** preset `scroll-reveal` (hero·intro·header·footer 제외) |
+| 15 | **about-greeting:** Figma `770:2111` · `about-greeting.html` · shell **1440/240**(header 동일) |
 
 **preset 기록:**
 ```
@@ -26,6 +41,7 @@
 [template template-homepage] S01: preset — hero-progress-slider
 [template template-homepage] S04: preset — drag-scroll
 [template template-homepage] S03-S09: preset — scroll-reveal
+[template template-homepage] S05 reviews: catalog — infinite-card-marquee
 ```
 
 ---

@@ -5,7 +5,14 @@ alwaysApply: true
 
 # Project Router
 
-작업 시작 전 **트랙을 판별**한다. 정적 HTML만 전체 저장소의 기본값으로 단정하지 않는다.
+작업 시작 전 **트랙을 판별**한다. **현재 기본 트랙 = WordPress** (`_docs/active-track.md` · `decision-log` 2026-07-10). 명시 없으면 WP로 진행.
+
+## 현재 활성 / 동결
+
+| 상태 | 트랙 |
+|------|------|
+| **활성 (기본)** | **WordPress** — `wordpress/{slug}/` · `70`~`72` |
+| **동결** | Static 신규 · Cafe24 A/B · Reference C — 규칙·폴더 **보관** · 신규 진입·mirror **중단** |
 
 ## 트랙
 

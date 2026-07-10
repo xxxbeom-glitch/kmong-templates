@@ -104,6 +104,9 @@
   --header-logo-w: clamp(10rem, 13.2813vw, 15.9375rem);
   --header-col-w: clamp(5rem, 6.25vw, 7.5rem);
   --header-dim-opacity: 0.2;
+  --page-hero-h: clamp(14rem, 18.9583vw, 22.75rem);
+  --page-hero-overlay: rgba(0, 0, 0, 0.35);
+  --greeting-watermark-opacity: 0.06;
   --hero-overlay: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.5) 0%,
@@ -164,8 +167,12 @@ button.scroll-reveal {
   max-width: 100%;
 }
 
+.cta__btn.scroll-reveal,
+.insight__more-btn.scroll-reveal {
+  display: inline-flex;
+}
+
 .services__card.scroll-reveal,
-.reviews__card.scroll-reveal,
 .faq__item.scroll-reveal,
 .contact__form.scroll-reveal {
   display: block;
@@ -635,6 +642,238 @@ button.scroll-reveal {
   color: var(--color-text-on-dark-sub);
 }
 
+/* About · 인사말 — S01 page hero (Figma 770:2339) */
+.page-about-greeting {
+  background: var(--color-surface-page);
+}
+
+.main--subpage {
+  padding-top: clamp(4.5rem, 6.3542vw, 7.625rem);
+}
+
+.section--page-hero {
+  position: relative;
+  min-height: var(--page-hero-h);
+  overflow: hidden;
+}
+
+.page-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--page-hero-overlay);
+  pointer-events: none;
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--page-hero-h);
+}
+
+.page-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.75rem, 0.8333vw, 1rem);
+  width: 100%;
+  text-align: center;
+}
+
+.page-hero__label {
+  margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-on-dark);
+}
+
+.page-hero__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-weight: 600;
+  line-height: 1.6087;
+  letter-spacing: -0.02em;
+  color: var(--color-text-on-dark);
+}
+
+/* About · 인사말 — S02 intro (Figma 770:2121) */
+.section--greeting-intro {
+  padding-block: clamp(3rem, 5.2083vw, 6.25rem);
+  background: var(--color-surface-base);
+}
+
+.greeting-intro__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 3.3333vw, 4rem);
+}
+
+.greeting-intro__head {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 0.8333vw, 1rem);
+  text-align: center;
+}
+
+.greeting-intro__watermark-band {
+  padding-block: clamp(2rem, 3.2292vw, 3.875rem);
+}
+
+.greeting-intro__watermark {
+  margin: 0;
+  font-size: clamp(3rem, 7.2917vw, 8.75rem);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+  opacity: var(--greeting-watermark-opacity);
+}
+
+.greeting-intro__copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 1.875vw, 2.25rem);
+}
+
+.greeting-intro__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6042vw, 3.125rem);
+  font-weight: 700;
+  line-height: 1.48;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+}
+
+.greeting-intro__body {
+  margin: 0;
+  font-size: clamp(1rem, 1.3542vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.615;
+  color: var(--color-text-primary);
+}
+
+.greeting-intro__figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-base);
+}
+
+.greeting-intro__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1440 / 771;
+  object-fit: cover;
+}
+
+/* About · 인사말 — S03 vision (Figma 770:2219) */
+.section--greeting-vision {
+  padding-block: clamp(3rem, 5.2083vw, 6.25rem);
+  background: var(--color-surface-base);
+}
+
+.greeting-vision__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+.greeting-vision__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-weight: 600;
+  line-height: 1.6087;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+}
+
+.greeting-vision__rows {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 0.8333vw, 1rem);
+}
+
+.greeting-vision__row {
+  display: grid;
+  grid-template-columns: minmax(0, 442fr) minmax(0, 972fr);
+  gap: clamp(1rem, 1.3542vw, 1.625rem);
+  align-items: start;
+  min-height: clamp(10rem, 11.5625vw, 13.875rem);
+  padding-block: clamp(1.5rem, 1.8229vw, 2.1875rem);
+  border-top: 1px solid var(--color-text-primary);
+  box-sizing: border-box;
+}
+
+.greeting-vision__label-title {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+}
+
+.greeting-vision__detail {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 1.25vw, 1.5rem);
+}
+
+.greeting-vision__summary {
+  margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.0167em;
+  color: var(--color-text-primary);
+}
+
+.greeting-vision__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.375rem, 0.4167vw, 0.5rem);
+}
+
+.greeting-vision__list li {
+  position: relative;
+  padding-left: 0.8375rem;
+  font-size: clamp(0.875rem, 1.0417vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.018em;
+  color: var(--color-text-primary);
+  opacity: 0.6;
+}
+
+.greeting-vision__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+}
+
 .hero__progress {
   position: absolute;
   left: 0;
@@ -941,10 +1180,11 @@ button.scroll-reveal {
   color: var(--color-text-primary);
 }
 
-/* S05 Reviews — 2×2 cards r24 + blue hover */
+/* S05 Reviews — infinite marquee (2 rows) */
 .section--reviews {
   padding-block: clamp(5rem, 5.2083vw, 6.25rem);
   background: var(--color-surface-subtle);
+  overflow-x: clip;
 }
 
 .reviews__title {
@@ -956,15 +1196,60 @@ button.scroll-reveal {
   color: var(--color-text-primary);
 }
 
-.reviews__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 1.3542vw, 1.625rem) clamp(1rem, 1.25vw, 1.5rem);
+.reviews__marquee {
+  --reviews-gap: clamp(0.75rem, 1vw, 1rem);
+  --reviews-card-w: calc((100vw - 3 * var(--reviews-gap)) / 4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--reviews-gap);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.reviews__row {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: clamp(14rem, 15.7292vw, 18.875rem);
+}
+
+.reviews__track {
+  display: flex;
+  width: max-content;
+  gap: var(--reviews-gap);
+  will-change: transform;
+}
+
+.reviews__row--left .reviews__track {
+  animation: reviews-marquee-left 20s linear infinite;
+}
+
+.reviews__row--right .reviews__track {
+  animation: reviews-marquee-left 20s linear infinite reverse;
+}
+
+@keyframes reviews-marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-50% - var(--reviews-gap) / 2), 0, 0);
+  }
+}
+
+.reviews__group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--reviews-gap);
 }
 
 .reviews__card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
+  width: var(--reviews-card-w);
   min-height: clamp(14rem, 15.7292vw, 18.875rem);
   padding: clamp(2rem, 2.8646vw, 3.4375rem);
   padding-bottom: clamp(1.75rem, 2.6042vw, 3.125rem);
@@ -1003,6 +1288,12 @@ button.scroll-reveal {
 .reviews__card:hover,
 .reviews__card:focus-within {
   background: var(--color-review-hover);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .reviews__row:hover .reviews__track {
+    animation-play-state: paused;
+  }
 }
 
 .reviews__card:hover .reviews__card-title,
@@ -1451,8 +1742,22 @@ button.scroll-reveal {
     transform: none;
   }
 
-  .reviews__grid {
+  .reviews__marquee {
+    --reviews-card-w: calc((100vw - var(--reviews-gap)) / 1.12);
+  }
+
+  .greeting-intro__watermark-band {
+    padding-block: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .greeting-intro__watermark {
+    font-size: clamp(2.25rem, 12vw, 3rem);
+  }
+
+  .greeting-vision__row {
     grid-template-columns: 1fr;
+    min-height: 0;
+    padding-block: clamp(1.25rem, 4vw, 1.75rem);
   }
 
   .insight__link {
@@ -1504,6 +1809,23 @@ button.scroll-reveal {
   .reviews__card-body,
   .reviews__card-author {
     transition: none;
+  }
+
+  .reviews__track {
+    animation: none !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: clamp(1rem, 1.25vw, 1.5rem);
+  }
+
+  .reviews__group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .reviews__row {
+    padding-inline: 0;
   }
 
   .faq__q::after {

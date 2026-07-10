@@ -9,7 +9,9 @@
 
 ## 작업 전 컨텍스트 확인 순서
 
-0. **프로젝트 트랙** — `00-project-router.mdc`: Static · Cafe24 A/B · Reference C · WordPress. 개요 `docs/cafe24/CAFE24_RULES_OVERVIEW.md`
+0. **현재 기본 트랙** — `_docs/active-track.md` · `decision-log` 최상단 `[active-track]`. **기본 = WordPress** (`wordpress/{slug}/`). 동결: Static · Cafe24 A/B · Reference C.
+
+0b. **트랙 판별** — `00-project-router.mdc` (사용자가 다른 트랙을 명시한 경우만 전환)
 
 1. **현재 사용자 요청**
    - 이번에 작업할 템플릿
@@ -27,8 +29,8 @@
 
 3. **프로젝트 개요**
    - `_docs/project-overview.md`
-   - `templates/{slug}/` 독립 구조
-   - `_delivery/{slug}/` 납품
+   - **WP:** `wordpress/{slug}/` · `_delivery-wp/` · `_docs/wordpress-guide.md`
+   - Static(동결): `templates/{slug}/` · `_delivery/{slug}/`
    - 공유 `_modules` / `_tokens` 금지
 
 4. **로그**
@@ -73,6 +75,7 @@
 - 현재 작업 범위와 무관한 **다른 템플릿** 정보
 - 사용자가 **폐기한** 이전 결정
 - active rules가 아닌 **legacy 문서**의 오래된 규칙
+- **동결 트랙** 규칙·로그 (Cafe24 A/B · Reference C · Static 신규 — `active-track.md` 재개 전)
 - 현재 섹션과 무관한 **과거 QA** 항목
 - **추측성** 해석
 - 사용자가 승인하지 않은 **기능 추가**

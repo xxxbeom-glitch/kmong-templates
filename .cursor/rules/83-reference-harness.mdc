@@ -8,6 +8,7 @@ globs:
 
 # Reference Harness (Track C)
 
+> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · `_reference-harness/` 신규 mirror·케이스 **중단**. 아래는 재개 시 기준.  
 > **기준 문서:** `_reference-harness/shared/rules/workflow.md` · **`site-clone-fidelity.md`** · `source-collection.md` · `cafe24-original.md` · `license.md`  
 > **라우터:** 데모·미구매 = Track C. **working skin / 납품 원본 아님.**
 

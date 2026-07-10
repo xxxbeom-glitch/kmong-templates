@@ -38,6 +38,7 @@ globs:
 |------|--------|-------------|
 | 진입·스크롤 | `scroll-reveal`, `typing-text` | **1개** |
 | 슬라이드·드래그 | `hero-progress-slider`, `drag-scroll` | **1개** |
+| 마키·자동 흐름 | `infinite-text-marquee`, `infinite-card-marquee` | **1개** (같은 섹션·트랙에 **`drag-scroll` 동시 금지**) |
 | hover 계열 | `hover-tone`, `image-scale-hover`, `grayscale-hover-color`, `button-text-slide-hover`, `expand-card-hover` | **합계 2개 이하** |
 | 숫자 | `stats-counter` | **1개** (stats 섹션 등) |
 | **GNB 2depth** | `gnb-full-expand`, `gnb-item-panel` | **템플릿당 1개** (header 전용 · 표준 preset 상한 **미포함**) |
@@ -160,7 +161,7 @@ Figma MCP 분석
 | **사용 위치** | news 카드 줄 · works · 가로 overflow 리스트 (PC) |
 | **동작 설명** | mousedown→mousemove로 scrollLeft 이동 · grab/grabbing cursor · click과 drag 구분 |
 | **권장 옵션** | sensitivity 1~1.5 · 관성 optional(짧게) · scrollbar 숨김 시 키보드 포커스 경로 유지 |
-| **사용 금지** | **hero-progress-slider와 동일 영역** · 세로 스크롤 페이지와 **가로 drag 충돌** · 모바일(별도 정책 전) |
+| **사용 금지** | **hero-progress-slider와 동일 영역** · **`infinite-card-marquee`와 동일 트랙**(자동 vs 수동) · 세로 스크롤 페이지와 **가로 drag 충돌** · 모바일(별도 정책 전) |
 
 ---
 
@@ -273,6 +274,36 @@ Figma MCP 분석
 [template {slug}] header: gnb-pattern — gnb-full-expand
 [template {slug}] header: gnb-pattern — gnb-item-panel
 ```
+
+---
+
+## 참고 카탈로그 (고급 · ID 고정)
+
+> 상세 묘사·참고 URL: `_docs/interaction-presets-guide.md` · `_harness/interaction-samples/samples.manifest.json`  
+> **승인·기록:** `[template {slug}] {section-id}: catalog — {id}`
+
+### `infinite-card-marquee` · 무한 카드 마퀴
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **무한 카드 마퀴** |
+| **목적** | **카드 N장**이 가로로 끊김 없이 자동 흐름 — 후기·포트폴리오 카드 줄 |
+| **사용 위치** | 후기·카드 리스트 섹션 · **풀블리드** 가로 트랙 |
+| **동작 설명** | ① **2줄** — 윗줄 ← / 아랫줄 → (`reverse`) ② 트랙 **`gap` + 그룹 2벌** · 2번째 `aria-hidden="true"` ③ keyframes `calc(-50% - gap/2)` · **20s** linear infinite ④ PC **4카드 = viewport 1줄** ⑤ fine pointer **row hover = pause** ⑥ 섹션 **제목만** `scroll-reveal` |
+| **참고 구현** | `templates/template-homepage/` `#reviews` · `.reviews__marquee` |
+| **@768** | 카드 폭 peek (`/ 1.12`) · 2줄 유지 |
+| **`prefers-reduced-motion`** | animation off · duplicate group 숨김 · wrap 정적 배치 |
+| **사용 금지** | **`drag-scroll` 동시** (같은 섹션·트랙) · **`infinite-text-marquee` 동시** · 마퀴 카드에 `scroll-reveal` · edge fade mask(본 스펙 = 풀블리드 무여백) |
+
+> **텍스트 장식 마키** = `infinite-text-marquee` (별도 ID). **후기 무한 자동 스크롤** 등 카드 줄 요청은 **본 ID로 통일**.
+
+### `infinite-text-marquee` · 무한 가로 텍스트
+
+| 항목 | 내용 |
+|------|------|
+| **한글명** | **무한 가로 텍스트** |
+| **목적** | **긴 텍스트** 2벌 + CSS `-50%` 루프 — 섹션 **장식** |
+| **참고** | [HD현대M&S](https://hd-hmns.co.kr/kr/main) · **카드 줄은 `infinite-card-marquee`** |
 
 ---
 

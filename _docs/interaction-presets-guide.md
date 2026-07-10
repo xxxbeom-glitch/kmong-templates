@@ -6,7 +6,7 @@
 
 ## 한 줄 요약
 
-- **10가지 표준 preset** + **GNB 패턴 2종** + **7가지 참고 카탈로그(고급 패턴)** 를 정리해 두었습니다.
+- **10가지 표준 preset** + **GNB 패턴 2종** + **8가지 참고 카탈로그(고급 패턴)** 를 정리해 두었습니다.
 - **지금은 가이드만** — 템플릿에 **자동으로 붙지 않습니다.**
 - 표준 preset은 **한글명**으로 「story에 **스크롤 등장** 적용해줘」처럼 **연결·승인** 후 구현합니다.
 - 참고 카탈로그는 외부 사이트에서 본 **pin·3D·마키 등 고급 패턴** — ID로 승인 후 이식합니다.
@@ -22,6 +22,7 @@
 | 「header **GNB 항목별 패널** (`gnb-item-panel`) 적용해줘」 |
 | 「PROJECTS에 **3D 링 캐러셀** 참고해서 넣어줘」 (`3d-carousel-ring`) |
 | 「사업소개 위에 **무한 가로 텍스트** 넣어줘」 (`infinite-text-marquee`) |
+| 「후기에 **무한 카드 마퀴** 넣어줘」 (`infinite-card-marquee`) |
 
 - **한글명** 또는 **영문 ID** 둘 다 OK.
 - 로그·QA에는 **영문 ID**로 기록합니다.
@@ -130,7 +131,7 @@
 
 ---
 
-## 참고 카탈로그 (고급 패턴 · 7종)
+## 참고 카탈로그 (고급 패턴 · 8종)
 
 외부 사이트에서 뽑은 **특수 패턴**. GSAP ScrollTrigger·CSS 3D·CSS animation 등이 필요할 수 있습니다.  
 허브에서 PASS 후 이식 · 정본 URL은 `samples.manifest.json`.
@@ -143,7 +144,8 @@
 | **3D 링 캐러셀** | `3d-carousel-ring` | [예손 메인](https://yesoni.kr/main) | 카드 10장이 3D 원둘레 회전 | 포트폴리오가 **3D 회전목마**처럼 배치. 화살표·드래그로 돌리면 **정면 카드**가 바뀌고 제목·미디어 교체. 36° 스냅. 진입 시 카드 펼침. | PROJECTS |
 | **CSS 3D 플립 카드** | `css-3d-flip-card` | [예손 메인](https://yesoni.kr/main) | hover 시 카드 앞뒤 뒤집힘 | 팀 카드 **앞면=요약**, 마우스 올리면 **뒷면=인사말**로 Y축 180° 뒤집힘. JS 없이 CSS만. | OUR TEAM 카드 |
 | **스크롤 고정 카드 확대** | `scroll-pin-scale-card` | [HD현대M&S](https://hd-hmns.co.kr/kr/main) | 작은 카드가 풀화면으로 커짐 | 회사소개에서 **작은 이미지 카드**가 스크롤에 맞춰 **화면 전체**로 커짐. 딤 + **문구 1→2단** 전환 + 하단 라인 reveal. | 히어로 다음 회사소개 |
-| **무한 가로 텍스트** | `infinite-text-marquee` | [HD현대M&S](https://hd-hmns.co.kr/kr/main) | 긴 문구가 가로로 끊김 없이 흐름 | 사업소개 섹션 상단에 **"The Future Made with Technology and Quality"** 같은 긴 영문이 **왼쪽으로 계속 흘러갑니다**. JS 없음 — 같은 문장 2벌 + CSS `translateX(-50%)` 루프. 섹션 배경 장식용. | 회사소개 **다음** 사업소개 상단 |
+| **무한 가로 텍스트** | `infinite-text-marquee` | [HD현대M&S](https://hd-hmns.co.kr/kr/main) | 긴 문구가 가로로 끊김 없이 흐름 | 사업소개 섹션 상단에 **"The Future Made with Technology and Quality"** 같은 긴 영문이 **왼쪽으로 계속 흘러갑니다**. JS 없음 — 같은 문장 2벌 + CSS `translateX(-50%)` 루프. **텍스트 장식용** — 카드·후기 줄은 `infinite-card-marquee`. | 회사소개 **다음** 사업소개 상단 |
+| **무한 카드 마퀴** | `infinite-card-marquee` | **참고 구현** `templates/template-homepage/` `#reviews` | 카드 줄이 2행으로 반대 방향 자동 흐름 | 후기·카드 리스트가 **화면 가로 전체(풀블리드)** 로 흐릅니다. **윗줄 ← 왼쪽** · **아랫줄 → 오른쪽**. JS 없음 — 카드 그룹 2벌 + CSS `translate3d(-50%)` 루프. row hover 시 **일시 정지** · 카드 hover는 섹션 카드 스타일. | `#reviews` 후기 섹션 |
 
 ### `infinite-text-marquee` 구현 요약
 
@@ -157,6 +159,30 @@
 
 **명령 예:** 「사업소개 섹션에 **무한 가로 텍스트** (`infinite-text-marquee`) 적용해줘」
 
+> **카드·후기 줄**은 이 preset이 아니라 **`infinite-card-marquee`**. 루프 원리(`-50%`)는 같지만 DOM·카드 폭·2줄 반대 방향·hover pause가 다름.
+
+### `infinite-card-marquee` 구현 요약
+
+| 항목 | 내용 |
+|------|------|
+| **HTML** | `.reviews__marquee`(또는 `{section}__marquee`) > `.reviews__row--left` · `.reviews__row--right` > `.reviews__track`(**`gap`**) > **`.reviews__group` 2세트** (동일 카드 N장 복제 · 2번째 `aria-hidden="true"`) |
+| **풀블리드** | 마퀴 래퍼 `width: 100vw` · `margin-left/right: calc(50% - 50vw)` · edge mask·group padding **없음** |
+| **카드 폭 (PC)** | `--reviews-gap` · `--reviews-card-w: calc((100vw - 3 * var(--reviews-gap)) / 4)` — **4장 = 화면 1줄** |
+| **CSS animation** | `@keyframes reviews-marquee-left` · track에 **`gap`**(그룹 사이) · `to: translate3d(calc(-50% - gap/2), 0, 0)` · **20s** `linear infinite` (속도는 decision-log에서 조정 가능) |
+| **2줄 방향** | `--left`: 정방향 · `--right`: **same keyframes + `reverse`** |
+| **hover (fine pointer)** | `.reviews__row:hover .reviews__track { animation-play-state: paused }` |
+| **카드 hover** | 섹션 카드 BG·타이포 전환 (preset과 별도 · `hover-tone` 등과 **중복 motion 금지**) |
+| **scroll-reveal** | 섹션 **제목만** · 마퀴 카드에는 `scroll-reveal` **금지** |
+| **@768** | `--reviews-card-w: calc((100vw - var(--reviews-gap)) / 1.12)` (다음 카드 peek) |
+| **`prefers-reduced-motion`** | animation off · duplicate group 숨김 · track wrap · 정적 그리드 |
+| **JS** | 없음 |
+| **사용 금지** | 같은 섹션·트랙에 **`drag-scroll` 동시** (수동 vs 자동) · **`infinite-text-marquee` 동시** (마키 2종) |
+| **참고 클래스** | `templates/template-homepage/` — `.reviews__marquee` · `@keyframes reviews-marquee-left` (`css/style.css`) |
+
+**명령 예:** 「후기 섹션에 **무한 카드 마퀴** (`infinite-card-marquee`) 적용해줘」
+
+> **통합:** 후기·카드 줄 **무한 자동 스크롤** 요청은 본 ID로 통일. (onetenth8 working-copy 등 동일 연출도 이 스펙 기준)
+
 ---
 
 ## 템플릿별 연결은 이 파일에 쓰지 않음
@@ -165,7 +191,7 @@
 - 「skhynix products에 drag-scroll 연결됨」 같은 **연결 현황** → `_logs/decision-log.md` · `_logs/qa-log.md`
 - 기록 형식: `[template {slug}] {section-id}: preset — scroll-reveal`  
   GNB: `[template {slug}] header: gnb-pattern — gnb-full-expand`  
-  참고 카탈로그: `[template {slug}] {section-id}: catalog — infinite-text-marquee`
+  참고 카탈로그: `[template {slug}] {section-id}: catalog — infinite-text-marquee` · `infinite-card-marquee`
 
 ## 전역 규칙
 

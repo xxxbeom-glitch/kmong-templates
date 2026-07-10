@@ -1,4 +1,39 @@
 
+## 2026-07-10 — [static] template-homepage about-greeting S03 vision
+
+**범위:** `about-greeting.html` · `css/style.css`  
+**내용:** S03 Figma 재확인 — 셀 **box border 제거** · row **top 1px 구분선** · list **opacity 60%**
+
+---
+
+## 2026-07-10 — [static] template-homepage about-greeting S02 intro
+
+**범위:** `about-greeting.html` · `css/style.css`  
+**내용:** S02 Figma 재확인 — 워터마크 fill **opacity 6%** · 이미지 stroke hidden(테두리·패딩 제거) · 1440×771 radius 24
+
+---
+
+## 2026-07-10 — [static] template-homepage about-greeting S01 page-hero
+
+**범위:** `templates/template-homepage/about-greeting.html`(신규) · css/style.css · index.html(GNB 인사말 링크)  
+**내용:** 회사소개·인사말 서브 페이지 · Figma `770:2339` 서브 히어로(364px · 1440 shell · 라벨+타이틀 center) · `hero-bg-02` placeholder
+
+---
+
+## 2026-07-10 — [static] template-homepage S05 reviews · infinite-card-marquee
+
+**범위:** `templates/template-homepage/` · index.html · css/style.css  
+**내용:** `#reviews` 2줄 카드 마퀴(←/→) · 풀블리드 4카드/줄 · 20s 루프 · track gap + keyframes `calc(-50% - gap/2)` (루프 seam) · row hover pause · reduced-motion 정적 wrap · 카탈로그 ID `infinite-card-marquee`
+
+---
+
+## 2026-07-10 — [meta] active-track WordPress · harness·규칙 정리
+
+**범위:** `_docs/active-track.md`(신규) · `_harness/README.md` · `00-project-router.mdc` · `20-harness-workflow.mdc` · `context-guide.md` · `project-overview.md` · `10-static-template.mdc` · `80-cafe24-core.mdc` · `83-reference-harness.mdc` · `_reference-harness/README.md` · `decision-log.md`  
+**내용:** 기본 트랙 WordPress 고정 · Cafe24·Reference·Static 동결 표기 · `_harness/_archive/`로 잔재 파일 이동
+
+---
+
 ## 2026-07-09 — [static] template-homepage scroll-reveal
 
 **범위:** `templates/template-homepage/` · index.html · css/style.css · js/main.js  
