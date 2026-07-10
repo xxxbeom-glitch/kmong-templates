@@ -3858,6 +3858,10 @@ button.scroll-reveal {
     line-height: 1;
   }
 
+  .greeting-intro__title br {
+    display: none;
+  }
+
   .greeting-vision__row {
     grid-template-columns: 1fr;
     min-height: 0;
