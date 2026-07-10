@@ -3186,13 +3186,14 @@ button.scroll-reveal {
   color: var(--color-text-primary);
   text-decoration: none;
   overflow: hidden;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .insight__more-btn:hover,
 .insight__more-btn:focus-visible {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: var(--color-text-primary);
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-on-dark);
 }
 
 /* S09 Contact — form fields r12 */
