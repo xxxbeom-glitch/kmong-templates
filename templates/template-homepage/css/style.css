@@ -3862,6 +3862,14 @@ button.scroll-reveal {
     display: none;
   }
 
+  .greeting-intro__body br {
+    display: none;
+  }
+
+  .greeting-intro__img {
+    aspect-ratio: 3 / 2;
+  }
+
   .greeting-vision__row {
     grid-template-columns: 1fr;
     min-height: 0;
