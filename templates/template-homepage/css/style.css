@@ -3942,8 +3942,12 @@ button.scroll-reveal {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(2.25rem, 2.5vw, 3rem);
-  height: clamp(2.25rem, 2.5vw, 3rem);
+  width: calc(48 / 1920 * 100vw);
+  height: calc(48 / 1920 * 100vw);
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  max-width: 4rem;
+  max-height: 4rem;
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -3954,8 +3958,8 @@ button.scroll-reveal {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  right: clamp(1.25rem, 3.125vw, 3.75rem);
-  bottom: clamp(1.875rem, 2.083vw, 2.5rem);
+  right: calc(60 / 1920 * 100vw);
+  bottom: calc(40 / 1920 * 100vw);
 }
 
 .btn-top.is-active {
@@ -3969,28 +3973,43 @@ button.scroll-reveal {
   align-items: center;
   justify-content: center;
   line-height: 0;
+  width: 50%;
+  height: 50%;
 }
 
 .btn-top__icon svg {
   display: block;
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 100%;
+  height: 100%;
 }
 
 body:has(.quick-consult:not(.is-hidden)) .btn-top {
-  bottom: calc(var(--quick-consult-h) + clamp(0.75rem, 1.25vw, 1.5rem));
+  bottom: calc(var(--quick-consult-h) + calc(24 / 1920 * 100vw));
 }
 
 @media (max-width: 1023px) {
   .btn-top {
     width: 2.25rem;
     height: 2.25rem;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    max-width: 2.25rem;
+    max-height: 2.25rem;
     right: clamp(0px, 5.5556vw, 1.25rem);
     bottom: clamp(0px, 8.3333vw, 1.875rem);
   }
 
   body:has(.quick-consult:not(.is-hidden)) .btn-top {
     bottom: calc(var(--quick-consult-h) + 0.75rem);
+  }
+}
+
+@media (min-width: 2561px) {
+  .btn-top {
+    width: 4rem;
+    height: 4rem;
+    right: 5rem;
+    bottom: 3.3333rem;
   }
 }
 
