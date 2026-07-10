@@ -107,7 +107,7 @@
   --header-logo-w: clamp(10rem, 13.2813vw, 15.9375rem);
   --header-col-w: clamp(5rem, 6.25vw, 7.5rem);
   --header-dim-opacity: 0.2;
-  --page-hero-h: clamp(18rem, 24vw, 26rem);
+  --page-hero-h: clamp(17.1875rem, 24vw, 26rem);
   --page-hero-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
   --greeting-watermark-opacity: 0.06;
   --hero-overlay: linear-gradient(
