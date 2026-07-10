@@ -3193,7 +3193,7 @@ button.scroll-reveal {
   .site-header__menu-btn {
     display: inline-flex;
     position: relative;
-    z-index: 110;
+    z-index: 220;
   }
 
   .site-header__mega,
@@ -3201,29 +3201,51 @@ button.scroll-reveal {
     display: none !important;
   }
 
+  /* 풀스크린 모바일 메뉴 — body로 이동 후 뷰포트 전체 */
   .site-header__drawer {
-    display: block;
+    display: none;
     position: fixed;
-    inset: 0;
-    z-index: 105;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    z-index: 200;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     padding-top: clamp(4.5rem, 6.3542vw, 7.625rem);
-    background: var(--color-surface-base);
+    background: #ffffff;
+    overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
 
+  .site-header__drawer.is-open,
+  body.is-mobile-nav-open .site-header__drawer {
+    display: flex !important;
+    flex-direction: column;
+  }
+
   .site-header__drawer[hidden] {
-    display: none;
+    display: none !important;
+  }
+
+  .site-header__drawer.is-open[hidden] {
+    display: flex !important;
   }
 
   .site-header__drawer-inner {
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
     gap: 2rem;
-    min-height: calc(100% - clamp(4.5rem, 6.3542vw, 7.625rem));
-    padding: 1.5rem var(--layout-pad-x) 2rem;
+    width: 100%;
+    min-height: 100%;
+    padding: 1.5rem 1.25rem 2rem;
     box-sizing: border-box;
   }
 
@@ -3233,6 +3255,7 @@ button.scroll-reveal {
     padding: 0;
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .site-header__drawer-item {
@@ -3302,6 +3325,10 @@ button.scroll-reveal {
     justify-content: center;
   }
 
+  .site-header.is-drawer-open {
+    transform: none !important;
+  }
+
   .site-header.is-drawer-open .site-header__menu-icon {
     background: transparent;
   }
@@ -3318,7 +3345,8 @@ button.scroll-reveal {
 
   .site-header.is-drawer-open .site-header__bar {
     position: relative;
-    z-index: 110;
+    z-index: 210;
+    background: #ffffff;
   }
 
   .hero__inner {

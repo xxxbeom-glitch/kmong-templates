@@ -448,10 +448,15 @@
   function initMobileDrawer() {
     var header = document.querySelector(".site-header");
     var btn = header && header.querySelector(".site-header__menu-btn");
-    var drawer = header && header.querySelector("#mobile-nav");
+    var drawer = document.getElementById("mobile-nav");
 
     if (!header || !btn || !drawer) {
       return;
+    }
+
+    /* 헤더 transform 때문에 fixed가 잘림 → body로 옮겨 풀스크린 */
+    if (drawer.parentElement !== document.body) {
+      document.body.appendChild(drawer);
     }
 
     var toggles = drawer.querySelectorAll(".site-header__drawer-toggle");
@@ -469,7 +474,9 @@
 
     function openDrawer() {
       header.classList.add("is-drawer-open");
+      document.body.classList.add("is-mobile-nav-open");
       drawer.hidden = false;
+      drawer.classList.add("is-open");
       drawer.removeAttribute("inert");
       btn.setAttribute("aria-expanded", "true");
       btn.setAttribute("aria-label", "메뉴 닫기");
@@ -479,7 +486,9 @@
 
     function closeDrawer() {
       header.classList.remove("is-drawer-open");
+      document.body.classList.remove("is-mobile-nav-open");
       drawer.hidden = true;
+      drawer.classList.remove("is-open");
       drawer.setAttribute("inert", "");
       btn.setAttribute("aria-expanded", "false");
       btn.setAttribute("aria-label", "메뉴 열기");
@@ -488,7 +497,9 @@
       collapseAll();
     }
 
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       if (header.classList.contains("is-drawer-open")) {
         closeDrawer();
       } else {
