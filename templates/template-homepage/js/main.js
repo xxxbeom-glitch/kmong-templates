@@ -25,7 +25,7 @@
     }
 
     var lastScrollY = window.scrollY || window.pageYOffset;
-    var deltaMin = 4;
+    var deltaMin = window.matchMedia("(max-width: 768px)").matches ? 12 : 4;
     var isHidden = false;
     var ticking = false;
 
@@ -77,6 +77,26 @@
       "--vh-unit",
       window.innerHeight * 0.01 + "px"
     );
+  }
+
+  /** 모바일 주소창 show/hide(높이만 변함) 때는 vh·ScrollTrigger 갱신 생략 — 스크롤 점프 방지 */
+  var lastViewportWidth = window.innerWidth;
+
+  function onViewportResize() {
+    var width = window.innerWidth;
+    var widthChanged = Math.abs(width - lastViewportWidth) >= 1;
+
+    lastViewportWidth = width;
+
+    if (!widthChanged) {
+      return;
+    }
+
+    setViewportHeightUnit();
+
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.refresh();
+    }
   }
 
   function initHeroProgressSlider() {
@@ -588,6 +608,15 @@
         return;
       }
 
+      /* 모바일 메인: 폼 숨김 · 버튼 항상 활성 */
+      if (
+        document.body.classList.contains("page-home") &&
+        window.matchMedia("(max-width: 768px)").matches
+      ) {
+        submit.classList.remove("is-empty");
+        return;
+      }
+
       var hasContent = false;
       var i;
 
@@ -960,15 +989,11 @@
     initBtnTop();
   });
 
-  window.addEventListener("resize", function () {
-    setViewportHeightUnit();
-    if (typeof ScrollTrigger !== "undefined") {
-      ScrollTrigger.refresh();
-    }
-  });
+  window.addEventListener("resize", onViewportResize);
 
   window.addEventListener("load", function () {
     setViewportHeightUnit();
+    lastViewportWidth = window.innerWidth;
     initIntroFill();
     if (typeof ScrollTrigger !== "undefined") {
       ScrollTrigger.refresh();

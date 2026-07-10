@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="page-home">
+<body class="page-home is-qa-review" data-qa-show="quick-consult">
+  <!-- QA: data-qa-show = header → hero → intro → features → services → reviews → faq → cta → insight → footer → quick-consult → all -->
   <header class="site-header" data-header-mega>
     <div class="site-header__bar">
       <div class="site-header__shell site-header__inner">
@@ -655,8 +656,8 @@
           </div>
         </div>
         <div class="site-footer__legal">
-          <p class="site-footer__copy">TENFOLD STUDIO. All Rights Reserved.</p>
           <a class="site-footer__privacy" href="privacy.html">개인정보 처리방침</a>
+          <p class="site-footer__copy">TENFOLD STUDIO. All Rights Reserved.</p>
         </div>
       </div>
     </div>
@@ -669,7 +670,7 @@
           <div class="quick-consult__header">
             <p class="quick-consult__title">빠른 상담 하기</p>
             <label class="quick-consult__privacy">
-              <input type="checkbox" name="privacy" checked required>
+              <input type="checkbox" name="privacy" checked>
               <span>[필수] 개인정보 수집·이용 동의</span>
             </label>
           </div>
@@ -686,7 +687,7 @@
               <span class="visually-hidden">문의 내용</span>
               <input type="text" name="message" placeholder="간단한 문의 내용을 적어주세요">
             </label>
-            <button type="submit" class="quick-consult__submit is-empty">프로젝트 문의하기</button>
+            <button type="submit" class="quick-consult__submit">프로젝트 문의하기</button>
           </div>
         </div>
       </div>

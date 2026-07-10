@@ -1,6 +1,38 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 메인 모바일 타이포
+
+| # | 결정 |
+|---|------|
+| 1 | **범위:** `.page-home` + `@768`만 · 서브페이지 미적용 |
+| 2 | PC→모바일 가독 스케일 (Figma 모바일 없음) · body **floor 16** |
+| 3 | 예: hero 80→32 · section 46→26 · heading 30→18 · intro/cta 28 · stat 36 · lh 역할별 |
+
+---
+
+## 2026-07-10 — [static] template-homepage · 모바일 헤더 (로고+햄버거)
+
+| # | 결정 |
+|---|------|
+| 1 | `@1024` 이하 헤더: **로고 + 햄버거만** · CTA·GNB 숨김 |
+| 2 | 햄버거 메뉴 패널·동작은 **추후** · 지금은 `pointer-events: none` (눌러도 안 열림) |
+
+---
+
+## 2026-07-10 — [static] template-homepage · 메인 모바일 QA (섹션 단위)
+
+| # | 결정 |
+|---|------|
+| 1 | 폰 검수: `body.is-qa-review` + `data-qa-show`로 **한 섹션씩** 공개 |
+| 2 | 순서: header → hero → intro → features → services → reviews → faq → cta → insight → footer → quick-consult → all |
+| 3 | 사용자 PASS마다 다음 `data-qa-show`로 진행 · 전부 PASS 후 QA 모드 제거 |
+| 4 | **header:** 로고+햄버거 · CTA 숨김 · 메뉴 패널 추후 |
+| 5 | **hero:** 텍스트 세로·가로 중앙 · 타임라인 풀폭·바닥 붙임 |
+| 6 | **intro**~**footer** · **services** 2×2 · **reviews** 모바일 1줄 스와이프 → **quick-consult 진행 중** |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 최종 코드 정리
 
 | # | 결정 |

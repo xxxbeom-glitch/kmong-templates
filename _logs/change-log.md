@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 메인 모바일 타이포
+
+**범위:** `css/style.css` `@768` · `.page-home`만  
+**내용:** 히어로·섹션·카드·통계·FAQ·CTA·insight·푸터 font-size/line-height 모바일 스케일
+
+---
+
 ## 2026-07-10 — [static] template-homepage 최종 코드 정리
 
 **범위:** 전 HTML · `css/style.css`  

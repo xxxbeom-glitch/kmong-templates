@@ -3177,8 +3177,14 @@ button.scroll-reveal {
     display: none;
   }
 
+  .site-header .btn-cta--header {
+    display: none;
+  }
+
   .site-header__menu-btn {
     display: inline-flex;
+    /* 모바일 메뉴 패널 — 추후 구성 · 지금은 표시만 */
+    pointer-events: none;
   }
 
   .site-header__mega,
@@ -3187,7 +3193,41 @@ button.scroll-reveal {
   }
 
   .hero__inner {
-    padding-block: clamp(3.5rem, 10vw, 5rem) clamp(4.5rem, 12vw, 6rem);
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* 고정 헤더·바닥 타임라인 제외한 영역에서 텍스트 위·아래 여백 동일 */
+    padding-top: clamp(4.5rem, 6.3542vw, 7.625rem);
+    padding-bottom: 3px;
+  }
+
+  .hero__copy {
+    align-items: center;
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero__progress {
+    bottom: 0;
+    max-width: none;
+    width: 100%;
+    padding-inline: 0;
+  }
+
+  .hero__progress-track {
+    border-radius: 0;
+  }
+
+  /* features 카드 — 가로는 PC 토큰 유지 · 이미지만 641:460 고정 */
+  .features__card-media {
+    aspect-ratio: 641 / 460;
+  }
+
+  .features__card-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
   }
 
   .contact-page__body {
@@ -3314,13 +3354,231 @@ button.scroll-reveal {
     --section-shell-gutter-max: 100%;
   }
 
+  /* 메인 모바일 타이포 — page-home만 · PC 대비 가독 스케일 · body floor 16 */
+  .page-home {
+    --mo-radius-card: 0.5rem; /* 8px · 카드 라운딩 */
+    --mo-fs-hero: 2rem;           /* 32 · PC 80 */
+    --mo-lh-hero: 1.35;
+    --mo-fs-display: 1.75rem;     /* 28 · intro/cta */
+    --mo-lh-display: 1.4;
+    --mo-fs-section: 1.625rem;    /* 26 · PC 46 */
+    --mo-lh-section: 1.45;
+    --mo-fs-heading: 1.125rem;    /* 18 · PC 30 */
+    --mo-lh-heading: 1.4;
+    --mo-fs-subhead: 1.0625rem;   /* 17 · FAQ Q */
+    --mo-lh-subhead: 1.4;
+    --mo-fs-body-lg: 1rem;        /* 16 */
+    --mo-lh-body-lg: 1.55;
+    --mo-fs-body: 1rem;           /* 16 */
+    --mo-lh-body: 1.6;
+    --mo-fs-stat: 2.25rem;        /* 36 · PC 80 */
+    --mo-lh-stat: 1.2;
+    --mo-fs-stat-unit: 1rem;
+    --mo-fs-stat-plus: 1.375rem;  /* 22 */
+    --mo-fs-label: 0.875rem;      /* 14 */
+    --mo-lh-label: 1.5;
+    --mo-fs-caption: 0.8125rem;   /* 13 */
+    --mo-lh-caption: 1.35;
+    --mo-fs-logo: 1.125rem;       /* 18 */
+    --mo-fs-footer-title: 1.375rem; /* 22 */
+    --mo-lh-footer-title: 1.45;
+    --mo-fs-ui: 1rem;             /* 16 */
+  }
+
+  .page-home .site-header__logo {
+    font-size: var(--mo-fs-logo);
+    line-height: 1.2;
+  }
+
+  .page-home .hero__title {
+    font-size: 2.25rem; /* 36 · was 32 */
+    line-height: var(--mo-lh-hero);
+  }
+
+  .page-home .hero__lead {
+    font-size: 1.125rem; /* 18 · 본문보다 한 단계 크게 */
+    line-height: 1.55;
+  }
+
+  .page-home .intro__fill-txt {
+    font-size: 2rem; /* 32 · was 28 */
+    line-height: 1.5; /* was 1.4 */
+  }
+
+  .page-home .features__title,
+  .page-home .services__title,
+  .page-home .reviews__title,
+  .page-home .faq__title,
+  .page-home .insight__title {
+    font-size: var(--mo-fs-section);
+    line-height: var(--mo-lh-section);
+  }
+
+  /* features 타이틀 — PC용 강제 줄바꿈 해제 (자연 줄바꿈) */
+  .page-home .features__title br {
+    display: none;
+  }
+
+  .page-home .features__card-title,
+  .page-home .reviews__card-title {
+    font-size: var(--mo-fs-heading);
+    line-height: var(--mo-lh-heading);
+  }
+
+  .page-home .insight__link-title {
+    font-size: 1.125rem; /* 18 · was 16 */
+    font-weight: 600; /* was 500 */
+    line-height: 1.4;
+  }
+
+  .page-home .features__card-title {
+    font-size: 1.25rem; /* 20 · was 18 */
+    line-height: 1.4;
+  }
+
+  .page-home .features__card-body {
+    gap: 0.5rem; /* 8 · PC~16~20 대비 타이트 */
+  }
+
+  .page-home .features__card-desc,
+  .page-home .reviews__card-body,
+  .page-home .faq__a p,
+  .page-home .insight__date {
+    font-size: var(--mo-fs-body);
+    line-height: var(--mo-lh-body);
+  }
+
+  .page-home .reviews__card-author {
+    font-size: var(--mo-fs-caption);
+    line-height: var(--mo-lh-caption);
+  }
+
+  .page-home .services__stat-value {
+    font-size: 2.75rem; /* 44 · was 36 */
+    font-weight: 700; /* was 500 */
+    line-height: var(--mo-lh-stat);
+  }
+
+  .page-home .services__stat-unit {
+    font-size: var(--mo-fs-stat-unit);
+    line-height: 1;
+  }
+
+  .page-home .services__stat-unit--plus {
+    font-size: var(--mo-fs-stat-plus);
+    line-height: 1;
+  }
+
+  .page-home .services__stat-label {
+    font-size: var(--mo-fs-label);
+    line-height: var(--mo-lh-label);
+  }
+
+  .page-home .faq__q {
+    font-size: var(--mo-fs-subhead);
+    line-height: var(--mo-lh-subhead);
+    padding-block: 1.5rem; /* 24 · 상하 여백 조금 추가 */
+    padding-inline: 1.25rem 1.75rem; /* 좌 20 · 우 28 — 화살표 시각 보정 */
+    gap: 1.5rem; /* 텍스트↔화살표 */
+  }
+
+  .page-home .faq__item[open] .faq__q {
+    padding-bottom: 1rem; /* 16 · Q↔A 간격 */
+  }
+
+  .page-home .faq__a {
+    padding-top: 0.25rem;
+    padding-bottom: 1.5rem;
+    padding-inline: 1.25rem 1.75rem;
+  }
+
+  .page-home .cta__title {
+    font-size: var(--mo-fs-display);
+    line-height: var(--mo-lh-display);
+  }
+
+  .page-home .cta__btn,
+  .page-home .btn-pill {
+    font-size: var(--mo-fs-ui);
+    line-height: 1.2;
+  }
+
+  .page-home .insight__tag {
+    font-size: 0.75rem; /* 12 · was 13 */
+    line-height: 1.35;
+    padding: 0.1875rem 0.75rem;
+  }
+
+  /* 주요 소식 — 칩·제목 위아래 배열 */
+  .page-home .insight__link {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+
+  .page-home .insight__link-main {
+    flex: 1 1 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .page-home .insight__date {
+    margin-left: auto;
+  }
+
+  .page-home .site-footer__tagline {
+    font-size: var(--mo-fs-footer-title);
+    line-height: var(--mo-lh-footer-title);
+  }
+
+  .page-home .site-footer__info-label,
+  .page-home .site-footer__info-value {
+    font-size: var(--mo-fs-label);
+    line-height: var(--mo-lh-label);
+  }
+
+  .page-home .site-footer__copy,
+  .page-home .site-footer__legal-link {
+    font-size: var(--mo-fs-caption);
+    line-height: var(--mo-lh-caption);
+  }
+
+  .page-home .btn-cta--footer {
+    font-size: var(--mo-fs-ui);
+    line-height: 1.2;
+  }
+
+  /* 메인 카드 라운딩 8px */
+  .page-home .services__card,
+  .page-home .features__card-media,
+  .page-home .reviews__card,
+  .page-home .faq__item {
+    border-radius: var(--mo-radius-card);
+  }
+
+  /* 모바일 뷰포트 높이 — JS vh 재계산 대신 svh (주소창 토글 점프 완화) */
+  .page-home {
+    --hero-h: 100svh;
+  }
+
+  .page-home .section--intro {
+    min-height: 60svh;
+  }
+
   .section--intro {
     min-height: 60vh;
     min-height: 60dvh;
   }
 
   .services__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2.5vw, 1rem);
+  }
+
+  .services__card {
+    min-height: 0;
+    padding: clamp(1.25rem, 4vw, 1.75rem) clamp(1rem, 3.5vw, 1.5rem);
   }
 
   .service-intro__watermark {
@@ -3338,6 +3596,83 @@ button.scroll-reveal {
 
   .reviews__marquee {
     --reviews-card-w: calc((100vw - var(--reviews-gap)) / 1.12);
+  }
+
+  /* 메인 후기 — 자동 마퀴 → 1줄 스와이프 캐러셀 */
+  .page-home .reviews__marquee {
+    --reviews-gap: 0.75rem;
+    --reviews-card-w: min(18.75rem, calc(100vw - 3.5rem));
+    gap: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .page-home .reviews__row--right {
+    display: none !important;
+  }
+
+  .page-home .reviews__row--left {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--layout-pad-x);
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding-inline: 0;
+    min-height: 0;
+  }
+
+  .page-home .reviews__row--left::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-home .reviews__row--left .reviews__track {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+    box-sizing: border-box;
+    padding-left: var(--layout-pad-x);
+    padding-right: var(--layout-pad-x);
+  }
+
+  .page-home .reviews__row--left .reviews__group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .page-home .reviews__card {
+    scroll-snap-align: start;
+    min-height: 15rem;
+  }
+
+  .page-home .reviews__card:hover,
+  .page-home .reviews__card:focus-within {
+    background: var(--color-surface-base);
+  }
+
+  .page-home .reviews__card:hover .reviews__card-title,
+  .page-home .reviews__card:hover .reviews__card-body,
+  .page-home .reviews__card:hover .reviews__card-author,
+  .page-home .reviews__card:focus-within .reviews__card-title,
+  .page-home .reviews__card:focus-within .reviews__card-body,
+  .page-home .reviews__card:focus-within .reviews__card-author {
+    color: inherit;
+  }
+
+  .page-home .reviews__card:hover .reviews__card-title,
+  .page-home .reviews__card:focus-within .reviews__card-title {
+    color: var(--color-text-primary);
+  }
+
+  .page-home .reviews__card:hover .reviews__card-body,
+  .page-home .reviews__card:focus-within .reviews__card-body {
+    color: var(--color-text-secondary);
+  }
+
+  .page-home .reviews__card:hover .reviews__card-author,
+  .page-home .reviews__card:focus-within .reviews__card-author {
+    color: var(--color-text-tertiary);
   }
 
   .greeting-intro__watermark-band {
@@ -3463,9 +3798,65 @@ button.scroll-reveal {
     width: 100%;
   }
 
+  /* 메인 빠른상담 — 모바일: 타이틀 + 버튼만 · 활성 */
+  .page-home .quick-consult__privacy,
+  .page-home .quick-consult__field {
+    display: none !important;
+  }
+
+  .page-home .quick-consult__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .page-home .quick-consult__title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .page-home {
+    --quick-consult-h: 6.25rem;
+  }
+
+  .page-home .quick-consult__container {
+    min-height: var(--quick-consult-h);
+    padding-block: 1.25rem;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .page-home .quick-consult__row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+  }
+
+  .page-home .quick-consult__submit,
+  .page-home .quick-consult__submit.is-empty {
+    width: 100%;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .page-home .quick-consult__submit.is-empty:hover,
+  .page-home .quick-consult__submit.is-empty:focus-visible {
+    opacity: 0.9;
+  }
+
   .site-footer__info-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* 푸터 상호명~이메일 — 라인 간격 통일 */
+  .page-home .site-footer__info {
+    gap: 0.75rem;
+  }
+
+  .page-home .site-footer__info-row {
     gap: 0.75rem;
   }
 
@@ -3692,4 +4083,77 @@ body:has(.quick-consult:not(.is-hidden)) .btn-top {
   .btn-slide-hover:hover .btn__track {
     transform: translateY(0);
   }
+}
+
+/* QA section review (phone) — data-qa-show로 하나씩 공개 · 완료 후 is-qa-review 제거 */
+body.is-qa-review[data-qa-show="header"] .main,
+body.is-qa-review[data-qa-show="header"] .site-footer,
+body.is-qa-review[data-qa-show="header"] .quick-consult,
+body.is-qa-review[data-qa-show="header"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="hero"] .main > :not(#hero),
+body.is-qa-review[data-qa-show="hero"] .site-footer,
+body.is-qa-review[data-qa-show="hero"] .quick-consult,
+body.is-qa-review[data-qa-show="hero"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="intro"] .main > :not(#hero):not(#intro),
+body.is-qa-review[data-qa-show="intro"] .site-footer,
+body.is-qa-review[data-qa-show="intro"] .quick-consult,
+body.is-qa-review[data-qa-show="intro"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="features"] .main > :not(#hero):not(#intro):not(#features),
+body.is-qa-review[data-qa-show="features"] .site-footer,
+body.is-qa-review[data-qa-show="features"] .quick-consult,
+body.is-qa-review[data-qa-show="features"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="services"] .main > :not(#hero):not(#intro):not(#features):not(#services),
+body.is-qa-review[data-qa-show="services"] .site-footer,
+body.is-qa-review[data-qa-show="services"] .quick-consult,
+body.is-qa-review[data-qa-show="services"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="reviews"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews),
+body.is-qa-review[data-qa-show="reviews"] .site-footer,
+body.is-qa-review[data-qa-show="reviews"] .quick-consult,
+body.is-qa-review[data-qa-show="reviews"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="faq"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq),
+body.is-qa-review[data-qa-show="faq"] .site-footer,
+body.is-qa-review[data-qa-show="faq"] .quick-consult,
+body.is-qa-review[data-qa-show="faq"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="cta"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq):not(#cta),
+body.is-qa-review[data-qa-show="cta"] .site-footer,
+body.is-qa-review[data-qa-show="cta"] .quick-consult,
+body.is-qa-review[data-qa-show="cta"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="insight"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq):not(#cta):not(#insight),
+body.is-qa-review[data-qa-show="insight"] .site-footer,
+body.is-qa-review[data-qa-show="insight"] .quick-consult,
+body.is-qa-review[data-qa-show="insight"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="footer"] .quick-consult,
+body.is-qa-review[data-qa-show="footer"] .btn-top {
+  display: none !important;
+}
+
+body.is-qa-review[data-qa-show="quick-consult"] .btn-top {
+  display: none !important;
 }
