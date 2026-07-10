@@ -7,7 +7,7 @@
 |---|------|
 | 1 | 폰 검수: `is-qa-review` + `data-qa-show` · **헤더·푸터 유지** |
 | 2 | 순서: hero → intro → vision → history → footer → all |
-| 3 | 현재: **vision** 공개 (intro PASS → 다음) · 모바일만 |
+| 3 | 현재: **history** 공개 (vision PASS → 다음) · 모바일만 |
 | 4 | QA 섹션 숨김·히어로 조정 = **`@768` 모바일만** · PC는 전체 원본 |
 
 ---
