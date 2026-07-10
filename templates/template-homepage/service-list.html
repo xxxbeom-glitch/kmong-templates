@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주요 분야 — Template Homepage</title>
+  <title>사업영역 — Template Homepage</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,11 +18,11 @@
               <li class="site-header__item site-header__item--has-mega">
                 <a href="about-greeting.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">회사소개</a>
               </li>
-              <li class="site-header__item site-header__item--has-mega is-active">
-                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">서비스</a>
-              </li>
               <li class="site-header__item site-header__item--has-mega">
-                <a href="#" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">사업영역</a>
+                <a href="service-solution.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">서비스</a>
+              </li>
+              <li class="site-header__item site-header__item--has-mega is-active">
+                <a href="service-list.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">사업영역</a>
               </li>
               <li class="site-header__item site-header__item--has-mega">
                 <a href="news.html" class="site-header__link site-header__trigger" aria-haspopup="true" aria-expanded="false">고객지원</a>
@@ -55,8 +55,8 @@
           </li>
           <li class="site-header__mega-col">
             <ul class="site-header__mega-sub">
-              <li><a class="site-header__sublink" href="#">기업 홈페이지</a></li>
-              <li><a class="site-header__sublink" href="#">브랜드 사이트</a></li>
+              <li><a class="site-header__sublink" href="service-list.html#business-corporate">기업 홈페이지</a></li>
+              <li><a class="site-header__sublink" href="service-list.html#business-brand">브랜드 사이트</a></li>
             </ul>
           </li>
           <li class="site-header__mega-col">
@@ -109,7 +109,7 @@
       <div class="site-header__shell business-items__inner">
         <h2 id="business-items-title" class="business-items__title scroll-reveal">비즈니스 유형별 웹사이트</h2>
         <div class="business-items__list">
-          <article class="business-item scroll-reveal">
+          <article id="business-corporate" class="business-item scroll-reveal">
             <figure class="business-item__media">
               <img
                 class="business-item__img"
@@ -130,7 +130,7 @@
               </div>
             </div>
           </article>
-          <article class="business-item scroll-reveal">
+          <article id="business-brand" class="business-item scroll-reveal">
             <figure class="business-item__media">
               <img
                 class="business-item__img"

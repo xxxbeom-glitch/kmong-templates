@@ -868,12 +868,25 @@ button.scroll-reveal {
 
 .contact-page__privacy input {
   flex: 0 0 auto;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
   width: 1.625rem;
   height: 1.625rem;
   margin: 0;
+  border: 1px solid rgba(28, 25, 23, 0.2);
   border-radius: 0.375rem;
-  accent-color: var(--color-accent-primary);
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.5625rem 0.375rem;
   cursor: pointer;
+}
+
+.contact-page__privacy input:checked {
+  border-color: var(--color-accent-primary);
+  background-color: var(--color-accent-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' fill='none'%3E%3Cpath d='M1 3l2.5 2.5L8 1' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .contact-page__submit {
@@ -3265,12 +3278,25 @@ button.scroll-reveal {
 
 .contact__privacy input {
   flex: 0 0 auto;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
   width: 1.625rem;
   height: 1.625rem;
   margin: 0;
+  border: 1px solid rgba(28, 25, 23, 0.2);
   border-radius: 0.375rem;
-  accent-color: var(--color-accent-primary);
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.5625rem 0.375rem;
   cursor: pointer;
+}
+
+.contact__privacy input:checked {
+  border-color: var(--color-accent-primary);
+  background-color: var(--color-accent-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' fill='none'%3E%3Cpath d='M1 3l2.5 2.5L8 1' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .contact__submit {
@@ -3411,13 +3437,14 @@ button.scroll-reveal {
 .quick-consult__privacy input {
   flex: 0 0 auto;
   appearance: none;
+  -webkit-appearance: none;
   box-sizing: border-box;
   width: 1.625rem;
   height: 1.625rem;
   margin: 0;
   border: 1px solid #ffffff;
   border-radius: 0.375rem;
-  background-color: var(--color-accent-primary);
+  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 0.5625rem 0.375rem;
@@ -3425,6 +3452,7 @@ button.scroll-reveal {
 }
 
 .quick-consult__privacy input:checked {
+  background-color: var(--color-accent-primary);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' fill='none'%3E%3Cpath d='M1 3l2.5 2.5L8 1' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
