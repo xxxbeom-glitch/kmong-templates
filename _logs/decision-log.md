@@ -1,12 +1,22 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 모바일 햄버거 메뉴
+
+| # | 결정 |
+|---|------|
+| 1 | `@1024` 이하 전체화면 drawer · GNB 2depth 아코디언 · CTA |
+| 2 | 햄버거↔X 토글 · body scroll lock · Escape/리사이즈 닫기 |
+| 3 | Figma 모바일 메뉴 시안 없음 — 기존 mega 링크 구조 재사용 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 메인 모바일 1차 PASS
 
 | # | 결정 |
 |---|------|
 | 1 | **메인 모바일 1차 전체 PASS** (사용자 확정) — 헤더~빠른상담까지 |
-| 2 | 보류: 햄버거 메뉴 패널 · (검수 시) btn-top 별도 |
+| 2 | 보류: (검수 시) btn-top 별도 · ~~햄버거 메뉴 패널~~ → **구현됨** |
 | 3 | QA 모드(`is-qa-review`) 해제 · 전체 화면 복귀 |
 
 ---

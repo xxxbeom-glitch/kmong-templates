@@ -30,12 +30,49 @@
             </ul>
           </nav>
           <a class="btn-cta btn-cta--header" href="contact.html">프로젝트 의뢰하기</a>
-          <button type="button" class="site-header__menu-btn" aria-label="메뉴 열기">
+          <button type="button" class="site-header__menu-btn" aria-label="메뉴 열기" aria-controls="mobile-nav" aria-expanded="false">
             <span class="site-header__menu-icon" aria-hidden="true"></span>
           </button>
         </div>
       </div>
     </div>
+    <nav id="mobile-nav" class="site-header__drawer" hidden inert aria-label="전체 메뉴">
+      <div class="site-header__drawer-inner">
+        <ul class="site-header__drawer-list">
+          <li class="site-header__drawer-item">
+            <button type="button" class="site-header__drawer-toggle" aria-expanded="false" aria-controls="drawer-about">회사소개</button>
+            <ul id="drawer-about" class="site-header__drawer-sub" hidden>
+              <li><a class="site-header__drawer-link" href="about-greeting.html">회사소개</a></li>
+              <li><a class="site-header__drawer-link" href="about-ceo.html">CEO 메시지</a></li>
+              <li><a class="site-header__drawer-link" href="about-directions.html">오시는 길</a></li>
+            </ul>
+          </li>
+          <li class="site-header__drawer-item">
+            <button type="button" class="site-header__drawer-toggle" aria-expanded="false" aria-controls="drawer-service">서비스</button>
+            <ul id="drawer-service" class="site-header__drawer-sub" hidden>
+              <li><a class="site-header__drawer-link" href="service-solution.html">서비스 소개</a></li>
+              <li><a class="site-header__drawer-link" href="service-process.html">진행 프로세스</a></li>
+              <li><a class="site-header__drawer-link" href="service-portfolio.html">제작 사례</a></li>
+            </ul>
+          </li>
+          <li class="site-header__drawer-item">
+            <button type="button" class="site-header__drawer-toggle" aria-expanded="false" aria-controls="drawer-business">사업영역</button>
+            <ul id="drawer-business" class="site-header__drawer-sub" hidden>
+              <li><a class="site-header__drawer-link" href="service-list.html#business-corporate">기업 홈페이지</a></li>
+              <li><a class="site-header__drawer-link" href="service-list.html#business-brand">브랜드 사이트</a></li>
+            </ul>
+          </li>
+          <li class="site-header__drawer-item">
+            <button type="button" class="site-header__drawer-toggle" aria-expanded="false" aria-controls="drawer-support">고객지원</button>
+            <ul id="drawer-support" class="site-header__drawer-sub" hidden>
+              <li><a class="site-header__drawer-link" href="news.html">주요 소식</a></li>
+              <li><a class="site-header__drawer-link" href="contact.html">문의하기</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a class="btn-cta btn-cta--header site-header__drawer-cta" href="contact.html">프로젝트 의뢰하기</a>
+      </div>
+    </nav>
     <div id="gnb-mega-panel" class="site-header__mega" hidden inert>
       <div class="site-header__shell site-header__mega-inner">
                 <ul class="site-header__mega-list">

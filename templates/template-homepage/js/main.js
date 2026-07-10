@@ -445,6 +445,92 @@
     });
   }
 
+  function initMobileDrawer() {
+    var header = document.querySelector(".site-header");
+    var btn = header && header.querySelector(".site-header__menu-btn");
+    var drawer = header && header.querySelector("#mobile-nav");
+
+    if (!header || !btn || !drawer) {
+      return;
+    }
+
+    var toggles = drawer.querySelectorAll(".site-header__drawer-toggle");
+
+    function collapseAll() {
+      toggles.forEach(function (toggle) {
+        var panelId = toggle.getAttribute("aria-controls");
+        var panel = panelId ? document.getElementById(panelId) : null;
+        toggle.setAttribute("aria-expanded", "false");
+        if (panel) {
+          panel.hidden = true;
+        }
+      });
+    }
+
+    function openDrawer() {
+      header.classList.add("is-drawer-open");
+      drawer.hidden = false;
+      drawer.removeAttribute("inert");
+      btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "메뉴 닫기");
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      header.classList.remove("is-drawer-open");
+      drawer.hidden = true;
+      drawer.setAttribute("inert", "");
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "메뉴 열기");
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      collapseAll();
+    }
+
+    btn.addEventListener("click", function () {
+      if (header.classList.contains("is-drawer-open")) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+
+    toggles.forEach(function (toggle) {
+      toggle.addEventListener("click", function () {
+        var panelId = toggle.getAttribute("aria-controls");
+        var panel = panelId ? document.getElementById(panelId) : null;
+        var willOpen = toggle.getAttribute("aria-expanded") !== "true";
+
+        collapseAll();
+
+        if (willOpen && panel) {
+          toggle.setAttribute("aria-expanded", "true");
+          panel.hidden = false;
+        }
+      });
+    });
+
+    drawer.addEventListener("click", function (e) {
+      var link = e.target.closest("a");
+      if (link) {
+        closeDrawer();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && header.classList.contains("is-drawer-open")) {
+        closeDrawer();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1024 && header.classList.contains("is-drawer-open")) {
+        closeDrawer();
+      }
+    });
+  }
+
   function initFeaturesDragScroll() {
     var $scroll = $("[data-features-scroll][data-drag-scroll]");
     var scrollEl = $scroll[0];
@@ -976,6 +1062,7 @@
     $("html").addClass("js");
     setViewportHeightUnit();
     initHeaderAutoHide();
+    initMobileDrawer();
     initHeaderMega();
     initHeroProgressSlider();
     initIntroFill();

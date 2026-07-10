@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 모바일 햄버거 메뉴
+
+**범위:** 전 HTML · `css/style.css` · `js/main.js`  
+**내용:** 전체화면 drawer · 2depth 아코디언 · CTA · 햄버거/X 토글
+
+---
+
 ## 2026-07-10 — [static] template-homepage 메인 모바일 1차 PASS
 
 **범위:** `index.html` · QA 모드 해제 · `_logs`  

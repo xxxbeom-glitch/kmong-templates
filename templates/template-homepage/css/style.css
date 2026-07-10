@@ -347,6 +347,11 @@ button.scroll-reveal {
   top: 6px;
 }
 
+/* Mobile drawer — @1024 이하에서 사용 */
+.site-header__drawer {
+  display: none;
+}
+
 .site-header__mega {
   display: none;
   width: 100%;
@@ -3181,15 +3186,139 @@ button.scroll-reveal {
     display: none;
   }
 
+  .site-header__drawer-cta.btn-cta--header {
+    display: inline-flex;
+  }
+
   .site-header__menu-btn {
     display: inline-flex;
-    /* 모바일 메뉴 패널 — 추후 구성 · 지금은 표시만 */
-    pointer-events: none;
+    position: relative;
+    z-index: 110;
   }
 
   .site-header__mega,
   .site-header__dim {
     display: none !important;
+  }
+
+  .site-header__drawer {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 105;
+    box-sizing: border-box;
+    padding-top: clamp(4.5rem, 6.3542vw, 7.625rem);
+    background: var(--color-surface-base);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-header__drawer[hidden] {
+    display: none;
+  }
+
+  .site-header__drawer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: calc(100% - clamp(4.5rem, 6.3542vw, 7.625rem));
+    padding: 1.5rem var(--layout-pad-x) 2rem;
+    box-sizing: border-box;
+  }
+
+  .site-header__drawer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-header__drawer-item {
+    border-bottom: 1px solid #e7e5e4;
+  }
+
+  .site-header__drawer-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.25rem 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .site-header__drawer-toggle::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 1rem;
+    border-right: 2px solid var(--color-text-primary);
+    border-bottom: 2px solid var(--color-text-primary);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+
+  .site-header__drawer-toggle[aria-expanded="true"]::after {
+    transform: rotate(-135deg);
+  }
+
+  .site-header__drawer-sub {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .site-header__drawer-sub[hidden] {
+    display: none;
+  }
+
+  .site-header__drawer-link {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+
+  .site-header__drawer-cta {
+    display: inline-flex;
+    width: 100%;
+    margin-top: auto;
+    justify-content: center;
+  }
+
+  .site-header.is-drawer-open .site-header__menu-icon {
+    background: transparent;
+  }
+
+  .site-header.is-drawer-open .site-header__menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .site-header.is-drawer-open .site-header__menu-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .site-header.is-drawer-open .site-header__bar {
+    position: relative;
+    z-index: 110;
   }
 
   .hero__inner {
