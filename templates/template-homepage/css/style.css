@@ -1049,7 +1049,7 @@ button.scroll-reveal {
   align-items: center;
   gap: clamp(0.75rem, 0.8333vw, 1rem);
   width: 100%;
-  max-width: 17.5rem;
+  max-width: clamp(17.5rem, 50vw, 42rem);
   margin-inline: auto;
   text-align: center;
 }
