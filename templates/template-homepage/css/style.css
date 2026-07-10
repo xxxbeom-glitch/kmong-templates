@@ -1062,7 +1062,7 @@ button.scroll-reveal {
 
 .page-hero__title {
   margin: 0;
-  font-size: var(--text-heading-xl-size);
+  font-size: clamp(1.5rem, 2.0833vw, 2.5rem);
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.02em;
