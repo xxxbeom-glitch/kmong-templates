@@ -741,6 +741,12 @@
       return;
     }
 
+    var stackMq = window.matchMedia("(max-width: 768px)");
+
+    function isStacked() {
+      return stackMq.matches;
+    }
+
     $roots.each(function () {
       var root = this;
       var track = root.querySelector("[data-year-carousel-track]");
@@ -772,7 +778,7 @@
 
       function syncActiveState() {
         getItems().forEach(function (item, index) {
-          var isActive = index === 0;
+          var isActive = isStacked() ? true : index === 0;
 
           item.classList.toggle("is-active", isActive);
 
@@ -782,6 +788,13 @@
             btn.setAttribute("aria-pressed", isActive ? "true" : "false");
           }
         });
+      }
+
+      function clearMotion() {
+        track.style.transition = "";
+        track.style.transform = "";
+        track.classList.remove("is-animating");
+        isAnimating = false;
       }
 
       function reorderToFront(index) {
@@ -803,7 +816,7 @@
       }
 
       function activate(index) {
-        if (index <= 0 || isAnimating) {
+        if (isStacked() || index <= 0 || isAnimating) {
           return;
         }
 
@@ -834,6 +847,10 @@
       }
 
       function handleActivate(item) {
+        if (isStacked()) {
+          return;
+        }
+
         var index = getItems().indexOf(item);
 
         if (index < 0) {
@@ -873,6 +890,17 @@
         e.preventDefault();
         handleActivate(item);
       });
+
+      function onStackChange() {
+        clearMotion();
+        syncActiveState();
+      }
+
+      if (typeof stackMq.addEventListener === "function") {
+        stackMq.addEventListener("change", onStackChange);
+      } else if (typeof stackMq.addListener === "function") {
+        stackMq.addListener(onStackChange);
+      }
 
       syncActiveState();
     });

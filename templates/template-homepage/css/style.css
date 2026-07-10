@@ -3895,12 +3895,41 @@ button.scroll-reveal {
     --history-inset-left: var(--layout-pad-x);
   }
 
+  /* 성장과정 — 모바일: 캐러셀 대신 세로 나열 */
   .section--greeting-history {
-    --history-col-w: min(37.5rem, calc(100vw - var(--history-inset-left) - var(--history-gap)));
+    --history-col-w: 100%;
   }
 
   .greeting-history__viewport {
-    width: calc(100vw - var(--history-inset-left));
+    width: 100%;
+    margin-left: 0;
+    overflow: visible;
+    padding-inline: var(--layout-pad-x);
+    box-sizing: border-box;
+  }
+
+  .greeting-history__track {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .greeting-history__year {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    opacity: 1;
+    cursor: default;
+  }
+
+  .greeting-history__year-btn {
+    pointer-events: none;
   }
 
   .directions__row {
