@@ -1,6 +1,17 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 회사소개(about-greeting) 모바일 QA
+
+| # | 결정 |
+|---|------|
+| 1 | 폰 검수: `is-qa-review` + `data-qa-show` · **헤더·푸터 유지** |
+| 2 | 순서: hero → intro → vision → history → footer → all |
+| 3 | 현재: **hero만** 공개 (나머지 본문 숨김) |
+
+---
+
+
 ## 2026-07-10 — [static] template-homepage · 모바일 햄버거 메뉴
 
 | # | 결정 |

@@ -4243,74 +4243,99 @@ body:has(.quick-consult:not(.is-hidden)) .btn-top {
 }
 
 /* QA section review (phone) — data-qa-show로 하나씩 공개 · 완료 후 is-qa-review 제거 */
-body.is-qa-review[data-qa-show="header"] .main,
-body.is-qa-review[data-qa-show="header"] .site-footer,
-body.is-qa-review[data-qa-show="header"] .quick-consult,
-body.is-qa-review[data-qa-show="header"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="header"] .main,
+body.page-home.is-qa-review[data-qa-show="header"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="header"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="header"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="hero"] .main > :not(#hero),
-body.is-qa-review[data-qa-show="hero"] .site-footer,
-body.is-qa-review[data-qa-show="hero"] .quick-consult,
-body.is-qa-review[data-qa-show="hero"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="hero"] .main > :not(#hero),
+body.page-home.is-qa-review[data-qa-show="hero"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="hero"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="hero"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="intro"] .main > :not(#hero):not(#intro),
-body.is-qa-review[data-qa-show="intro"] .site-footer,
-body.is-qa-review[data-qa-show="intro"] .quick-consult,
-body.is-qa-review[data-qa-show="intro"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="intro"] .main > :not(#hero):not(#intro),
+body.page-home.is-qa-review[data-qa-show="intro"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="intro"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="intro"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="features"] .main > :not(#hero):not(#intro):not(#features),
-body.is-qa-review[data-qa-show="features"] .site-footer,
-body.is-qa-review[data-qa-show="features"] .quick-consult,
-body.is-qa-review[data-qa-show="features"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="features"] .main > :not(#hero):not(#intro):not(#features),
+body.page-home.is-qa-review[data-qa-show="features"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="features"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="features"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="services"] .main > :not(#hero):not(#intro):not(#features):not(#services),
-body.is-qa-review[data-qa-show="services"] .site-footer,
-body.is-qa-review[data-qa-show="services"] .quick-consult,
-body.is-qa-review[data-qa-show="services"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="services"] .main > :not(#hero):not(#intro):not(#features):not(#services),
+body.page-home.is-qa-review[data-qa-show="services"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="services"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="services"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="reviews"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews),
-body.is-qa-review[data-qa-show="reviews"] .site-footer,
-body.is-qa-review[data-qa-show="reviews"] .quick-consult,
-body.is-qa-review[data-qa-show="reviews"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="reviews"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews),
+body.page-home.is-qa-review[data-qa-show="reviews"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="reviews"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="reviews"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="faq"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq),
-body.is-qa-review[data-qa-show="faq"] .site-footer,
-body.is-qa-review[data-qa-show="faq"] .quick-consult,
-body.is-qa-review[data-qa-show="faq"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="faq"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq),
+body.page-home.is-qa-review[data-qa-show="faq"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="faq"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="faq"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="cta"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq):not(#cta),
-body.is-qa-review[data-qa-show="cta"] .site-footer,
-body.is-qa-review[data-qa-show="cta"] .quick-consult,
-body.is-qa-review[data-qa-show="cta"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="cta"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq):not(#cta),
+body.page-home.is-qa-review[data-qa-show="cta"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="cta"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="cta"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="insight"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq):not(#cta):not(#insight),
-body.is-qa-review[data-qa-show="insight"] .site-footer,
-body.is-qa-review[data-qa-show="insight"] .quick-consult,
-body.is-qa-review[data-qa-show="insight"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="insight"] .main > :not(#hero):not(#intro):not(#features):not(#services):not(#reviews):not(#faq):not(#cta):not(#insight),
+body.page-home.is-qa-review[data-qa-show="insight"] .site-footer,
+body.page-home.is-qa-review[data-qa-show="insight"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="insight"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="footer"] .quick-consult,
-body.is-qa-review[data-qa-show="footer"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="footer"] .quick-consult,
+body.page-home.is-qa-review[data-qa-show="footer"] .btn-top {
   display: none !important;
 }
 
-body.is-qa-review[data-qa-show="quick-consult"] .btn-top {
+body.page-home.is-qa-review[data-qa-show="quick-consult"] .btn-top {
+  display: none !important;
+}
+
+/* about-greeting QA — 헤더·푸터 유지 · 본문만 순차 공개 */
+body.page-about-greeting.is-qa-review[data-qa-show="hero"] .main > :not(#page-hero),
+body.page-about-greeting.is-qa-review[data-qa-show="hero"] .btn-top {
+  display: none !important;
+}
+
+body.page-about-greeting.is-qa-review[data-qa-show="intro"] .main > :not(#page-hero):not(#greeting-intro),
+body.page-about-greeting.is-qa-review[data-qa-show="intro"] .btn-top {
+  display: none !important;
+}
+
+body.page-about-greeting.is-qa-review[data-qa-show="vision"] .main > :not(#page-hero):not(#greeting-intro):not(#greeting-vision),
+body.page-about-greeting.is-qa-review[data-qa-show="vision"] .btn-top {
+  display: none !important;
+}
+
+body.page-about-greeting.is-qa-review[data-qa-show="history"] .main > :not(#page-hero):not(#greeting-intro):not(#greeting-vision):not(#greeting-history),
+body.page-about-greeting.is-qa-review[data-qa-show="history"] .btn-top {
+  display: none !important;
+}
+
+body.page-about-greeting.is-qa-review[data-qa-show="footer"] .btn-top {
   display: none !important;
 }
