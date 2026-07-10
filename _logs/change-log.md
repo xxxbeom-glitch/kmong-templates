@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 메인 모바일 1차 PASS
+
+**범위:** `index.html` · QA 모드 해제 · `_logs`  
+**내용:** 사용자 메인 모바일 1차 전체 PASS 확정 · `is-qa-review` 제거
+
+---
+
 ## 2026-07-10 — [static] template-homepage 메인 모바일 타이포
 
 **범위:** `css/style.css` `@768` · `.page-home`만  

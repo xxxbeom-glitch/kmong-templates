@@ -1,6 +1,16 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 메인 모바일 1차 PASS
+
+| # | 결정 |
+|---|------|
+| 1 | **메인 모바일 1차 전체 PASS** (사용자 확정) — 헤더~빠른상담까지 |
+| 2 | 보류: 햄버거 메뉴 패널 · (검수 시) btn-top 별도 |
+| 3 | QA 모드(`is-qa-review`) 해제 · 전체 화면 복귀 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 메인 모바일 타이포
 
 | # | 결정 |
