@@ -1,6 +1,18 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 토큰 연결 (색·라운드·글자)
+
+| # | 결정 |
+|---|------|
+| 1 | 반복 하드코딩 색 → 기존 color 토큰 연결 (`#fff`·뱃지·보더·본문색) |
+| 2 | pill 보더 `#dbdbdb` → `--color-border-default`(`#d9d9d9`)로 통일 (미세 차이) |
+| 3 | 라운드 추가: `--radius-md` 0.75 · `--radius-pill` 999 · 기존 `--radius-lg` |
+| 4 | 반복 글자: heading-xl / heading-md / body-lg 사이즈만 토큰 연결 |
+| 5 | 리뷰 호버 `#4a6cf7`·레이아웃 1600/1440·섹션 전용 clamp는 유지 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · 공통 클래스 정리 (1~5)
 
 | # | 결정 |

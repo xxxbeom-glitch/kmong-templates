@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 토큰 연결 (색·라운드·글자)
+
+**범위:** `css/style.css`  
+**내용:** 색 하드코딩→토큰 · `--radius-md`/`--radius-pill` 추가·연결 · heading-xl/md·body-lg 반복 사이즈 토큰화
+
+---
+
 ## 2026-07-10 — [static] template-homepage 공통 클래스 정리 (1~5)
 
 **범위:** 전 HTML · `css/style.css`  

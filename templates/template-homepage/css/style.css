@@ -95,7 +95,10 @@
   --vh-unit: 1vh;
   --quick-consult-h: clamp(8.5rem, 9.7396vw, 11.6875rem);
   --hero-h: calc(var(--vh-unit) * 100);
+  /* Radius */
   --radius-lg: 1.5rem;
+  --radius-md: 0.75rem;
+  --radius-pill: 999px;
   --features-card-w: clamp(17.5rem, 33.3854vw, 40.0625rem);
   --color-review-hover: #4a6cf7;
   --header-nav-gap: clamp(2rem, 3.4375vw, 4.125rem);
@@ -227,7 +230,7 @@ button.scroll-reveal {
 }
 
 .site-header__bar {
-  background: #ffffff;
+  background: var(--color-surface-base);
 }
 
 /* GNB bar · mega — 컨텐츠 max(1440/1600) 해제, 뷰포트 100% */
@@ -251,7 +254,7 @@ button.scroll-reveal {
   position: relative;
   z-index: 2;
   width: var(--header-logo-w);
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -352,7 +355,7 @@ button.scroll-reveal {
 .site-header__mega {
   display: none;
   width: 100%;
-  background: #ffffff;
+  background: var(--color-surface-base);
   border-top: 0;
   border-bottom: 0;
 }
@@ -439,7 +442,7 @@ button.scroll-reveal {
 .site-footer {
   width: 100%;
   background: #181719;
-  color: #ffffff;
+  color: var(--color-text-on-dark);
 }
 
 .site-footer__inner {
@@ -463,13 +466,13 @@ button.scroll-reveal {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.05em;
-  color: #ffffff;
+  color: var(--color-text-on-dark);
 }
 
 .site-footer__tagline-line2 {
   white-space: nowrap;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text-on-dark);
 }
 
 .site-footer__tagline-accent {
@@ -513,7 +516,7 @@ button.scroll-reveal {
   font-size: clamp(1rem, 1.0417vw, 1.25rem);
   font-weight: 600;
   line-height: 1.45;
-  color: #ffffff;
+  color: var(--color-text-on-dark);
 }
 
 .site-footer__copy {
@@ -536,7 +539,7 @@ button.scroll-reveal {
   font-size: clamp(0.875rem, 0.8333vw, 1rem);
   font-weight: 600;
   line-height: 1.45;
-  color: #ffffff;
+  color: var(--color-text-on-dark);
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s ease;
@@ -582,10 +585,10 @@ button.scroll-reveal {
   min-width: clamp(10rem, 12.3958vw, 14.875rem);
   min-height: clamp(3.25rem, 4.0625vw, 4.875rem);
   padding: 0 clamp(1.5rem, 2vw, 2rem);
-  border: 1px solid #dbdbdb;
-  border-radius: 999px;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-pill);
   background: transparent;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-size: var(--text-body-lg-size);
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-text-primary);
@@ -616,8 +619,8 @@ button.scroll-reveal {
   min-width: 0;
   min-height: 0;
   padding: 0;
-  border: 1px solid #dbdbdb;
-  border-radius: 999px;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-pill);
   background: var(--color-surface-base);
   font-size: clamp(1.125rem, 1.25vw, 1.5rem);
   font-weight: 500;
@@ -645,7 +648,7 @@ button.scroll-reveal {
   align-items: center;
   justify-content: center;
   padding: 0 clamp(1.25rem, 1.5vw, 1.75rem);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-accent-primary);
   font-size: clamp(0.9375rem, 0.9896vw, 1.1875rem);
   font-weight: 500;
@@ -686,7 +689,7 @@ button.scroll-reveal {
 .portfolio-grid__title,
 .news__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0;
@@ -834,7 +837,7 @@ button.scroll-reveal {
 }
 
 .hero__lead {
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-size: var(--text-body-lg-size);
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-text-on-dark-sub);
@@ -903,7 +906,7 @@ button.scroll-reveal {
   height: 100%;
   min-height: clamp(36rem, 44.0104vw, 52.8125rem);
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: var(--color-surface-subtle);
 }
 
@@ -980,7 +983,7 @@ button.scroll-reveal {
   min-height: clamp(3.25rem, 3.3854vw, 4.0625rem);
   padding: clamp(0.875rem, 1.3542vw, 1.625rem);
   border: 1px solid rgba(28, 25, 23, 0.12);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
@@ -1023,7 +1026,7 @@ button.scroll-reveal {
   margin: 0;
   border: 1px solid rgba(28, 25, 23, 0.2);
   border-radius: 0.375rem;
-  background-color: #ffffff;
+  background-color: var(--color-surface-base);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 0.5625rem 0.375rem;
@@ -1044,7 +1047,7 @@ button.scroll-reveal {
   min-height: clamp(3.75rem, 4.8438vw, 5.8125rem);
   padding: clamp(1rem, 1.3542vw, 1.625rem);
   border: 1px solid var(--color-accent-primary);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: var(--color-accent-primary);
   font-family: inherit;
   font-size: clamp(1.125rem, 1.4583vw, 1.75rem);
@@ -1105,7 +1108,7 @@ button.scroll-reveal {
 
 .page-hero__label {
   margin: 0;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-size: var(--text-body-lg-size);
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-text-on-dark-sub);
@@ -1113,7 +1116,7 @@ button.scroll-reveal {
 
 .page-hero__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6087;
   letter-spacing: -0.02em;
@@ -1213,7 +1216,7 @@ button.scroll-reveal {
   box-sizing: border-box;
   min-height: clamp(16rem, 23.2292vw, 27.875rem);
   padding: clamp(2rem, 2.6042vw, 3.125rem) clamp(2rem, 2.8646vw, 3.4375rem);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   overflow: hidden;
   isolation: isolate;
 }
@@ -1244,7 +1247,7 @@ button.scroll-reveal {
 
 .service-card__title {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.193359375;
   color: var(--color-text-on-dark);
@@ -1289,7 +1292,7 @@ button.scroll-reveal {
   flex: 1 1 0;
   min-width: 0;
   min-height: clamp(16rem, 23.2292vw, 27.875rem);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 
@@ -1344,7 +1347,7 @@ button.scroll-reveal {
 
 .business-item__name {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.193359375;
   color: var(--color-text-primary);
@@ -1392,7 +1395,7 @@ button.scroll-reveal {
   box-sizing: border-box;
   min-height: clamp(14rem, 17.7604vw, 21.3125rem);
   padding: clamp(2rem, 2.6042vw, 3.125rem) clamp(2rem, 2.8646vw, 3.4375rem);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: var(--color-surface-base);
   gap: clamp(1rem, 1.3542vw, 1.625rem);
 }
@@ -1418,7 +1421,7 @@ button.scroll-reveal {
 
 .process-step__name {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.193359375;
   color: var(--color-text-primary);
@@ -1488,7 +1491,7 @@ button.scroll-reveal {
   min-width: 0;
   min-height: clamp(16rem, 28.1771vw, 33.8125rem);
   padding: clamp(2rem, 2.6042vw, 3.125rem) clamp(2rem, 2.8646vw, 3.4375rem);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   overflow: hidden;
   isolation: isolate;
   gap: 0.625rem;
@@ -1514,10 +1517,10 @@ button.scroll-reveal {
 
 .portfolio-card__name {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.193359375;
-  color: #fff;
+  color: var(--color-text-on-dark);
 }
 
 /* Subpage CTA — Figma 802:1678 */
@@ -1560,7 +1563,7 @@ button.scroll-reveal {
 .sub-cta__title {
   margin: 0;
   flex: 1 1 auto;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 700;
   line-height: 1.48;
   letter-spacing: 0;
@@ -1576,7 +1579,7 @@ button.scroll-reveal {
   min-height: clamp(3.5rem, 4.375vw, 5.25rem);
   padding: 0 clamp(1.5rem, 2vw, 2rem);
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.15);
   font-size: clamp(1.125rem, 1.4583vw, 1.75rem);
   font-weight: 500;
@@ -1676,7 +1679,7 @@ button.scroll-reveal {
 
 .greeting-vision__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6087;
   letter-spacing: 0;
@@ -1702,7 +1705,7 @@ button.scroll-reveal {
 
 .greeting-vision__label-title {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
@@ -1717,7 +1720,7 @@ button.scroll-reveal {
 
 .greeting-vision__summary {
   margin: 0;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-size: var(--text-body-lg-size);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.0167em;
@@ -1780,7 +1783,7 @@ button.scroll-reveal {
 
 .greeting-history__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6087;
   letter-spacing: 0;
@@ -1911,7 +1914,7 @@ button.scroll-reveal {
 
 .directions__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6087;
   letter-spacing: 0;
@@ -1944,7 +1947,7 @@ button.scroll-reveal {
 
 .directions__label-title {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
@@ -2002,7 +2005,7 @@ button.scroll-reveal {
 
 .ceo-message__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6087;
   letter-spacing: 0;
@@ -2027,9 +2030,9 @@ button.scroll-reveal {
   max-width: clamp(16rem, 32.5521vw, 39.0625rem);
   aspect-ratio: 625 / 946;
   height: auto;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  background: #d9d9d9;
+  background: var(--color-border-default);
 }
 
 .ceo-message__img {
@@ -2078,7 +2081,7 @@ button.scroll-reveal {
 
 .ceo-message__signature {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0;
@@ -2112,7 +2115,7 @@ button.scroll-reveal {
 
 .privacy__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 600;
   line-height: 1.6087;
   letter-spacing: -0.02em;
@@ -2191,7 +2194,7 @@ button.scroll-reveal {
 
 .news-view__title {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 500;
   line-height: 1.4;
   color: var(--color-text-primary);
@@ -2364,7 +2367,7 @@ button.scroll-reveal {
   align-items: center;
   justify-content: center;
   padding: 0.25rem 1.125rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
   font-weight: 500;
   line-height: 1.4;
@@ -2372,13 +2375,13 @@ button.scroll-reveal {
 }
 
 .news-item__badge--notice {
-  background: #e6efff;
-  color: #4d6899;
+  background: var(--color-surface-tag-blue);
+  color: var(--color-text-accent-blue);
 }
 
 .news-item__badge--press {
-  background: #fff3e6;
-  color: #c37929;
+  background: var(--color-surface-tag-orange);
+  color: var(--color-text-accent-orange);
 }
 
 .news-item__title {
@@ -2426,8 +2429,8 @@ button.scroll-reveal {
   display: block;
   width: 0.5rem;
   height: 0.5rem;
-  border-left: 2px solid #1c1917;
-  border-bottom: 2px solid #1c1917;
+  border-left: 2px solid var(--color-text-primary);
+  border-bottom: 2px solid var(--color-text-primary);
   transform: rotate(45deg);
   margin-left: 0.15rem;
 }
@@ -2474,7 +2477,7 @@ button.scroll-reveal {
   height: 3px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   overflow: hidden;
@@ -2565,7 +2568,7 @@ button.scroll-reveal {
 
 .services__title {
   margin: 0;
-  font-size: clamp(1.75rem, 2.3958vw, 2.875rem);
+  font-size: var(--text-heading-xl-size);
   font-weight: 700;
   line-height: 1.6087;
   letter-spacing: 0;
@@ -2586,7 +2589,7 @@ button.scroll-reveal {
   box-sizing: border-box;
   min-height: clamp(14rem, 18.125vw, 21.75rem);
   padding: clamp(2rem, 2.6042vw, 3.125rem) clamp(2.25rem, 2.8646vw, 3.4375rem);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: var(--color-surface-subtle);
 }
 
@@ -2739,7 +2742,7 @@ button.scroll-reveal {
 
 .features__card-title {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.4;
   color: var(--color-text-primary);
@@ -2826,7 +2829,7 @@ button.scroll-reveal {
   width: var(--reviews-card-w);
   min-height: clamp(16rem, 21.9792vw, 26.375rem);
   padding: clamp(2rem, 2.6042vw, 3.125rem) clamp(2rem, 2.8646vw, 3.4375rem);
-  border-radius: 1.5rem;
+  border-radius: var(--radius-lg);
   background: var(--color-surface-base);
   gap: clamp(1rem, 1.3542vw, 1.625rem);
   transition: background 0.3s ease, color 0.3s ease;
@@ -2834,7 +2837,7 @@ button.scroll-reveal {
 
 .reviews__card-title {
   margin: 0;
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 700;
   line-height: 1.48;
   color: var(--color-text-primary);
@@ -2903,7 +2906,7 @@ button.scroll-reveal {
 }
 
 .faq__item {
-  border-radius: 1.5rem;
+  border-radius: var(--radius-lg);
   background: var(--color-surface-base);
   border: 1px solid #e7e5e4;
   overflow: hidden;
@@ -3019,7 +3022,7 @@ button.scroll-reveal {
   min-height: clamp(3.5rem, 4.375vw, 5.25rem);
   padding: 0 clamp(1.5rem, 2vw, 2rem);
   border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: var(--text-heading-md-size);
   font-weight: 500;
   line-height: 1;
@@ -3099,18 +3102,18 @@ button.scroll-reveal {
   align-items: center;
   justify-content: center;
   padding: 0.25rem 1.125rem;
-  border-radius: 999px;
-  background: #e6efff;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-tag-blue);
   font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
   font-weight: 500;
   line-height: 1.4;
-  color: #4d6899;
+  color: var(--color-text-accent-blue);
   text-align: center;
   white-space: nowrap;
 }
 
 .insight__link-title {
-  font-size: clamp(1.25rem, 1.5625vw, 1.875rem);
+  font-size: var(--text-heading-md-size);
   font-weight: 500;
   line-height: 1.4;
   color: var(--color-text-primary);
@@ -3191,7 +3194,7 @@ button.scroll-reveal {
   min-height: clamp(3.25rem, 3.3854vw, 4.0625rem);
   padding: clamp(0.75rem, 0.8333vw, 1rem) clamp(0.875rem, 0.9375vw, 1rem);
   border: 1px solid var(--color-border-default);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   background: var(--color-surface-base);
   font-family: inherit;
   font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
@@ -3234,7 +3237,7 @@ button.scroll-reveal {
   margin: 0;
   border: 1px solid rgba(28, 25, 23, 0.2);
   border-radius: 0.375rem;
-  background-color: #ffffff;
+  background-color: var(--color-surface-base);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 0.5625rem 0.375rem;
@@ -3256,7 +3259,7 @@ button.scroll-reveal {
   min-height: clamp(3.25rem, 4.0625vw, 4.875rem);
   padding: 0 clamp(1.5rem, 2vw, 2rem);
   border: 1px solid var(--color-border-default);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: transparent;
   font-family: inherit;
   font-size: var(--text-body-lg-size);
@@ -3355,8 +3358,8 @@ button.scroll-reveal {
   min-height: clamp(3.25rem, 3.3854vw, 4.0625rem);
   padding: 0 clamp(1rem, 1.3542vw, 1.625rem);
   border: 1px solid rgba(28, 25, 23, 0.12);
-  border-radius: 0.75rem;
-  background: #ffffff;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-base);
   font-family: inherit;
   font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
   font-weight: 400;
@@ -3390,7 +3393,7 @@ button.scroll-reveal {
   width: 1.625rem;
   height: 1.625rem;
   margin: 0;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--color-surface-base);
   border-radius: 0.375rem;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -3415,8 +3418,8 @@ button.scroll-reveal {
   min-height: clamp(3.25rem, 3.3854vw, 4.0625rem);
   padding: 0 clamp(1.5rem, 2.2917vw, 2.75rem);
   border: 0;
-  border-radius: 0.75rem;
-  background: #ffffff;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-base);
   font-family: inherit;
   font-size: clamp(0.9375rem, 0.9896vw, 1.1875rem);
   font-weight: 500;
@@ -3889,7 +3892,7 @@ button.scroll-reveal {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--color-surface-base);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
   cursor: pointer;
   opacity: 0;

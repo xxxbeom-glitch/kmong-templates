@@ -1,5 +1,16 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 토큰 연결 (색·라운드·글자)
+**범위:** `css/style.css`
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 흰/뱃지/보더/본문색 토큰 연결 | PASS | |
+| 2 | pill 보더 → border-default | PASS | #dbdbdb→#d9d9d9 |
+| 3 | radius-md / pill / lg 연결 | PASS | |
+| 4 | heading-xl·md · body-lg | PASS | 반복분만 |
+| 5 | review-hover·이중 shell 유지 | PASS | |
+
 ## 2026-07-10 · [static] template-homepage 공통 클래스 정리 (1~5)
 **범위:** 전 HTML · `css/style.css`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요
