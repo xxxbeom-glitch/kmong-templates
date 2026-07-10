@@ -3883,6 +3883,14 @@ button.scroll-reveal {
     padding-block: clamp(1.25rem, 4vw, 1.75rem);
   }
 
+  .greeting-vision__label-title {
+    font-size: 1.375rem; /* 22 · 영어 타이틀 */
+  }
+
+  .greeting-vision__list li {
+    font-size: 1rem; /* 16 · 불릿 목록 */
+  }
+
   .greeting-history__shell {
     --history-inset-left: var(--layout-pad-x);
   }
