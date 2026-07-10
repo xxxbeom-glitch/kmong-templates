@@ -660,12 +660,16 @@
 
       function reorderToFront(index) {
         var items = getItems();
-        var clicked = items[index];
-        var rest = items.filter(function (_, itemIndex) {
-          return itemIndex !== index;
-        });
 
-        [clicked].concat(rest).forEach(function (el) {
+        if (index <= 0 || index >= items.length) {
+          syncActiveState();
+          return;
+        }
+
+        // 클릭한 연도부터 뒤를 앞에, 그 앞 연도들은 맨 뒤로 (순서 유지)
+        var rotated = items.slice(index).concat(items.slice(0, index));
+
+        rotated.forEach(function (el) {
           track.appendChild(el);
         });
 
