@@ -1,6 +1,17 @@
 # Decision Log
 
 
+## 2026-07-10 — [static] template-homepage · 상단으로 가기 (btn-top)
+
+| # | 결정 |
+|---|------|
+| 1 | 참고: [HDC홀딩스](https://hdc-holdings.com/ko) `.btn-top` — 우측 하단 흰 원 + 검정 ↑ |
+| 2 | 히어로/서브히어로 지나야 표시 (`is-active`) · 클릭 시 `scrollTo(0,0)` |
+| 3 | 메인 빠른상담 바 위에 자동 올림 (`:has(.quick-consult:not(.is-hidden))`) |
+| 4 | 전 HTML 페이지 공통 |
+
+---
+
 ## 2026-07-10 — [static] template-homepage · preset 1~4 적용
 
 | # | 결정 |

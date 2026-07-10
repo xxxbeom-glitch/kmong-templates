@@ -912,6 +912,33 @@
     });
   }
 
+  function initBtnTop() {
+    var $btn = $(".btn-top");
+
+    if (!$btn.length) {
+      return;
+    }
+
+    var $hero = $("#hero, .page-hero").first();
+
+    function syncVisibility() {
+      var threshold = 240;
+
+      if ($hero.length) {
+        threshold = $hero.offset().top + $hero.outerHeight();
+      }
+
+      $btn.toggleClass("is-active", $(window).scrollTop() > threshold);
+    }
+
+    $(window).on("scroll", syncVisibility);
+    syncVisibility();
+
+    $btn.on("click", function () {
+      window.scrollTo(0, 0);
+    });
+  }
+
   $(function () {
     $("html").addClass("js");
     setViewportHeightUnit();
@@ -926,6 +953,7 @@
     initPortfolioFilter();
     initNewsFilter();
     initStatsCounter();
+    initBtnTop();
   });
 
   window.addEventListener("resize", function () {

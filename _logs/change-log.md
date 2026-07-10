@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 상단으로 가기 (btn-top)
+
+**범위:** 전 HTML · `css/style.css` · `js/main.js`  
+**내용:** HDC holdings 참고 우측 하단 원형 TOP 버튼 · 히어로 이후 표시 · 메인 빠른상담과 겹침 방지
+
+---
+
 ## 2026-07-10 — [static] template-homepage preset 1~4
 
 **범위:** `index.html` · `news-view.html` · `css/style.css` · `js/main.js`  

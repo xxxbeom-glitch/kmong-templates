@@ -1,5 +1,16 @@
 # QA Log
 
+## 2026-07-10 · [static] template-homepage 상단으로 가기 (btn-top)
+**범위:** 전 HTML · `css/style.css` · `js/main.js` — 참고 [HDC홀딩스](https://hdc-holdings.com/ko)
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 흰 원 · 검정 ↑ · fixed 우측 하단 | PASS | |
+| 2 | 히어로 지나야 `is-active` | PASS | |
+| 3 | 클릭 → 최상단 | PASS | scrollTo(0,0) |
+| 4 | 빠른상담 표시 시 위로 올림 | PASS | :has() |
+| 5 | 전 페이지 마크업 | PASS | 12 HTML |
+
 ## 2026-07-10 · [static] template-homepage preset 1~4
 **범위:** `index.html` · `news-view.html` · `css/style.css` · `js/main.js`
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요
