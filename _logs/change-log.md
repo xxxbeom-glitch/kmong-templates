@@ -1,4 +1,11 @@
 
+## 2026-07-10 — [static] template-homepage 모바일 메뉴 CTA 제거·글자 키움
+
+**범위:** 전 HTML · `css/style.css`  
+**내용:** drawer「프로젝트 의뢰하기」제거 · 1depth 22px · 2depth 18px
+
+---
+
 ## 2026-07-10 — [static] template-homepage 모바일 닫기(X) 버튼
 
 **범위:** `css/style.css`  

@@ -3187,10 +3187,6 @@ button.scroll-reveal {
     display: none;
   }
 
-  .site-header__drawer-cta.btn-cta--header {
-    display: inline-flex;
-  }
-
   .site-header__menu-btn {
     display: inline-flex;
     position: relative;
@@ -3272,7 +3268,7 @@ button.scroll-reveal {
     border: 0;
     background: transparent;
     font-family: inherit;
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     font-weight: 700;
     line-height: 1.4;
     color: var(--color-text-primary);
@@ -3312,18 +3308,11 @@ button.scroll-reveal {
   .site-header__drawer-link {
     display: block;
     padding: 0.25rem 0;
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.5;
     color: var(--color-text-secondary);
     text-decoration: none;
-  }
-
-  .site-header__drawer-cta {
-    display: inline-flex;
-    width: 100%;
-    margin-top: auto;
-    justify-content: center;
   }
 
   /* drawer(z200) 위에 헤더·닫기 버튼 유지 — 햄버거와 동일 자리 */
