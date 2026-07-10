@@ -3854,7 +3854,8 @@ button.scroll-reveal {
   }
 
   .greeting-intro__watermark {
-    font-size: clamp(2.25rem, 12vw, 3rem);
+    font-size: clamp(2.5rem, 13vw, 3.25rem);
+    line-height: 1;
   }
 
   .greeting-vision__row {
