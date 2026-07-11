@@ -247,3 +247,121 @@
 - 최종 결과: **PASS**
 - PASS: 21 · FAIL: 0 · WARN: 0
 
+## 2026-07-11T02:25:16.872Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 32 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:26:41.872Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 32 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:26:53.420Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 32 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:38:55.971Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 35 · FAIL: 0 · WARN: 2
+
+### 경고 항목
+- 의심 문자열: token 문자열 — assets/js/admin-content.js:31
+- 의심 문자열: token 문자열 — inc/admin-content.php:153
+
+## 2026-07-11T02:39:15.290Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:39:28.371Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:40:51.638Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:41:04.591Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:41:53.711Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:58:27.823Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T02:58:59.759Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 36 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T03:07:47.590Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T03:08:05.744Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T03:09:51.178Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T03:10:36.257Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T05:55:51.728Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T06:05:55.934Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T06:13:11.443Z
+
+- slug: `template-a-blocks`
+- 최종 결과: **PASS**
+- PASS: 16 · FAIL: 0 · WARN: 0
+
+## 2026-07-11T06:17:27.129Z
+
+- slug: `template-a-blocks`
+- 최종 결과: **PASS**
+- PASS: 16 · FAIL: 0 · WARN: 0
+
