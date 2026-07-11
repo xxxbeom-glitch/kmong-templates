@@ -24,6 +24,7 @@ globs:
 - 섹션 간 간격 확인
 - GNB / 앵커 / 링크 확인
 - **실브라우저 QA 4종** (`35-responsive.mdc` · 아래 「모바일 실브라우저 QA」)
+- **데스크톱 (페이지·납품 시, 해당하면)** — Chrome · Edge(또는 Safari)에서 레이아웃 깨짐·콘솔 치명 오류·주요 클릭 동작 **기본 확인** (모바일 4종을 대체하지 않음)
 - 납품·삽입 기준 확인 (`60-delivery.mdc`)
 - **SEO/AEO 상태** — decision(또는 qa 비고): **완료** / **의도적 생략** / **미실행** 중 하나 (`20` · `73`). 미실행이면 납품 전 **알림 1회**만(자동 실행 금지). 완료면 누락·중복·사실 왜곡 없는지 확인.
 
@@ -103,6 +104,17 @@ globs:
 - [ ] form `input`/`select`/`textarea` — 모바일 **font-size ≥ 16px**
 - [ ] hover 스타일 — **`@media (hover: hover) and (pointer: fine)` 내부만**
 - [ ] 모바일 텍스트 블록 — 고정 height 지양 · `line-height`·`word-break: keep-all` 적절
+
+## 마크업·기본 접근성 (일반 품질 · WCAG 인증 목표 아님)
+
+> 작성 기준: `40-template-code-style.mdc` 「HTML」. 반응형·터치 44px·input 16px 등은 위 HTML/CSS·`35`와 **중복 검수하지 않음**.
+
+- [ ] **Heading** — 해당 페이지/섹션 범위에서 H1 남용·단계 건너뛰기 없음 (페이지 단위 QA 시 H1 **1개**)
+- [ ] **a / button** — 이동은 `a`, 동작은 `button` · 클릭용 `div`/`span`만 없음
+- [ ] **form + label** — 폼이 있으면 각 컨트롤에 label 연결 (placeholder만 아님)
+- [ ] **이미지 alt** — 의미 있는 이미지에 내용 있는 alt · 장식은 `alt=""` (alt 속성 자체 누락 없음)
+- [ ] **키보드** — 해당 섹션/페이지의 GNB·주요 CTA·모달·햄버거를 Tab으로 조작·닫기 가능
+- [ ] **심각한 마크업 오류** — 미닫힘 태그 · 잘못된 중첩 · 깨진 구조 없음 (육안·소스 · 자동 validator 필수는 아님)
 
 ## 모바일 실브라우저 QA (페이지·납품 QA 필수)
 

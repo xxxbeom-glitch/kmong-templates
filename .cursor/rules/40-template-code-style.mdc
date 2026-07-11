@@ -65,10 +65,15 @@ globs:
 
 ## HTML
 
-- 시맨틱 태그 (`section`, `nav`, heading 계층)
+- 시맨틱 태그 (`section`, `nav`, `main`, `header`, `footer` 등) — **div만으로 페이지 뼈대 만들지 않음**
+- **Heading:** 페이지(또는 템플릿 본문) **H1 1개** · H2→H3 순 · **단계 건너뛰기 금지** (디자인용 큰 글씨를 잘못된 레벨로 쓰지 않음)
+- **링크 vs 버튼:** URL·페이지·앵커 이동 = `<a href>` · 제출·토글·모달·탭 등 **동작** = `<button type="button">` (또는 submit). 클릭용 `div`/`span` + JS만 **금지**
+- **Form:** `input`/`select`/`textarea`에 **`<label>` 연결** (`for`+`id` 또는 감싸기). placeholder만으로 label 대체 **금지**
 - GNB current: **HTML에** `is-active` / `aria-current="page"` — JS 동적 처리 금지
-- 이미지: `assets/` + `alt` + `width`/`height` + `decoding="async"`
+- 이미지: `assets/` + `width`/`height` + `decoding="async"` · **의미 있는 이미지는 내용 담은 `alt`** · **장식·중복 이미지는 `alt=""`** (`40`에 이미 있는 alt 원칙 유지 · SEO `73`과 충돌 없음)
 - **로고 `<img>`:** Figma bbox 비율 · `width` 고정 + `height: auto` · `contain`+고정 height **금지** (`30-figma-to-code.mdc` 「Logo · icon」)
+- **키보드 (기본):** GNB·CTA·모달·햄버거·주요 폼 컨트롤은 **Tab으로 도달** · 모달/메뉴는 **Esc 또는 동일 버튼으로 닫기** (해당 UI 있을 때). WCAG 인증 목표 **아님**
+- **마크업 무결성:** 태그 미닫힘 · 잘못된 중첩(`p` 안 `div`/`section` 등) · 의미 없는 다중 wrapper 남발 **금지**
 - 개발용 사진: 테마 `assets/images/`에 직접 (루트 `_dev-images/` 삭제됨)
 - JS 훅: `data-*` 속성 사용
 
@@ -99,4 +104,4 @@ window.addEventListener("pageshow", function () {
 - 와이어 placeholder(`.ph`)와 실제 납품 템플릿 규칙 혼용
 
 완료 기준:
-- 네이밍 규칙 준수, PC·모바일 CSS 동시 반영, 인라인 스타일 없음.
+- 네이밍 규칙 준수, PC·모바일 CSS 동시 반영, 인라인 스타일 없음, 위 HTML 기본 마크업 기준 준수.
