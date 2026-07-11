@@ -1,6 +1,16 @@
 # Decision Log
 
 
+## 2026-07-11 — [static] template-homepage · 오시는길 모바일
+
+| # | 결정 |
+|---|------|
+| 1 | `about-directions.html` 모바일 검수 시작 |
+| 2 | 서브히어로는 공통 토큰 적용됨 · 본문(지도·주소) 검수 대기 |
+
+---
+
+
 ## 2026-07-11 — [static] template-homepage · CEO 메시지 모바일
 
 | # | 결정 |
