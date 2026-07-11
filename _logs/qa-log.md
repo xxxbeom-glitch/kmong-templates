@@ -1902,6 +1902,16 @@ _???�전??검?��???��?�로 ?��?
 - 패키징: `node _harness/package-delivery-wp.js template-a` PASS
 - 비고: 실제 WordPress 관리자 클릭 저장 및 브라우저 렌더링은 이 정적 환경에서 미수행
 
+## 2026-07-11 · [wordpress] template-a ACF 콘텐츠 편집 QA
+
+- 결과: **PASS**
+- `node _harness/verify-wordpress-static.js template-a`: **37/37 PASS · FAIL 0 · WARN 0**
+- PHP 문법: 테마 PHP 27개 전체 PASS
+- `git diff --check -- wordpress/template-a`: 오류 없음
+- 확인: ACF allowlist에 홈 소식·서브페이지 본문·공지 화면 필드 없음, 구 관리자 파일 미로드.
+- 패키징: `node _harness/package-delivery-wp.js template-a` PASS
+- 비고: 실제 WordPress 관리자에서 ACF 저장·렌더링 확인은 정적 환경에서 미수행.
+
 ### mainstream ??scroll-reveal 개별 ?�소 (2026-06-08)
 
 | # | ??�� | 결과 |

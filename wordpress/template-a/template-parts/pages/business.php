@@ -1,9 +1,10 @@
+<?php $template_a_sub_hero = template_a_sub_hero(); ?>
   <main id="main" class="main main--subpage">
     <section id="page-hero" class="section section--page-hero" aria-labelledby="page-hero-title">
       <div class="page-hero__media" aria-hidden="true">
         <img
           class="page-hero__img"
-          src="<?php echo esc_url(template_a_img_url('business.hero.image', 'images/hero-bg-02.jpg')); ?>"
+          src="<?php echo esc_url($template_a_sub_hero['image_url']); ?>"
           alt=""
           width="1920"
           height="364"
@@ -14,8 +15,8 @@
       </div>
       <div class="section-shell section-shell--gutter page-hero__inner">
         <div class="page-hero__copy">
-          <p class="page-hero__label"><?php echo esc_html(template_a_get('business.hero.label')); ?></p>
-          <h1 id="page-hero-title" class="page-hero__title"><?php echo template_a_text_br('business.hero.title'); ?></h1>
+          <p class="page-hero__label"><?php echo esc_html($template_a_sub_hero['label']); ?></p>
+          <h1 id="page-hero-title" class="page-hero__title"><?php echo nl2br(esc_html($template_a_sub_hero['title']), false); ?></h1>
         </div>
       </div>
     </section>

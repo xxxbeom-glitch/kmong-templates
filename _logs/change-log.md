@@ -685,6 +685,16 @@
 - 내용: dot-path 조회, 기본값 병합, 미디어 선택, 중첩 반복 항목, 탭별 저장, 출력 escaping 적용
 - 납품: `_delivery-wp/template-a/`, `_delivery-wp/template-a.zip` 재생성
 - 큐 잔여 0 (전체 수집 PASS)## 2026-07-09 — wonkangmetal Track C 사이트 복제
+
+## 2026-07-11 — Template A ACF 콘텐츠 편집 전환
+
+- 추가: `wordpress/template-a/inc/acf.php` — ACF 무료/PRO 설정 화면, 헤더·푸터/메인/서브히어로 필드 그룹.
+- 수정: `inc/content.php`, `functions.php`, `template-parts/pages/*.php` 중 page-hero 8개.
+- 기존 `template_a_content` 옵션 및 구 관리자 메뉴 로드를 중단하고, 허용 경로만 ACF 값을 사용하도록 변경.
+- 홈 소식·서브페이지 본문·공지 화면은 기본값 전용 유지.
+- 납품: `_delivery-wp/template-a/`, `_delivery-wp/template-a.zip` 재생성.
+
+## 2026-07-09 — wonkangmetal Track C 사이트 복제
 - 트랙: reference-harness · case `wonkangmetal`
 - 원본: http://www.wonkangmetal.co.kr/ (원강금속)
 - 산출: 캡처 1920/390 · 멀티페이지 미러 220p · preview http://127.0.0.1:4210/

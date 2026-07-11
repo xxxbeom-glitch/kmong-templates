@@ -2,11 +2,9 @@
 
 require_once get_template_directory() . '/inc/assets.php';
 require_once get_template_directory() . '/inc/content.php';
+require_once get_template_directory() . '/inc/acf.php';
 require_once get_template_directory() . '/inc/notice.php';
 require_once get_template_directory() . '/inc/pages.php';
-if (is_admin()) {
-  require_once get_template_directory() . '/inc/admin-content.php';
-}
 
 function template_a_setup() {
   add_theme_support('title-tag');
