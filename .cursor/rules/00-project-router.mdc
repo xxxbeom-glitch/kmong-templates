@@ -1,71 +1,30 @@
 ---
-description: 프로젝트 트랙 라우터 — Static / Cafe24 Track A·B / Reference·Demo
+description: 트랙 라우터 — 기본 WordPress. 동결 트랙은 명시 재개 전 미적용
 alwaysApply: true
 ---
 
 # Project Router
 
-작업 시작 전 **트랙을 판별**한다. **현재 기본 트랙 = WordPress** (`_docs/active-track.md` · `decision-log` 2026-07-10). 명시 없으면 WP로 진행.
+**기본 = WordPress.** `_docs/active-track.md` · 명시 없으면 `wordpress/{slug}/` · `70`~`72`.
 
-## 현재 활성 / 동결
+| 상태 | 트랙 | 경로 |
+|------|------|------|
+| **활성** | WordPress | `wordpress/{slug}/` · 납품 `dist/{slug}.zip` |
+| 동결 | Static · Cafe24 A/B · Reference | `_archive/` · rules `archive/80`~`84` · **신규 진입·mirror 금지** |
 
-| 상태 | 트랙 |
-|------|------|
-| **활성 (기본)** | **WordPress** — `wordpress/{slug}/` · `70`~`72` |
-| **동결** | Static 신규 · Cafe24 A/B · Reference C — 규칙·폴더 **보관** · 신규 진입·mirror **중단** |
+동결 트랙은 사용자가 **재개**를 명시한 경우에만 archive 규칙 참고.
 
-## 트랙
+## 승인 (전역)
 
-| 트랙 | 판별 | 활성 규칙 | 작업 경로 |
-|------|------|-----------|-----------|
-| **Static Template** | 크몽 정적 HTML · `templates/{slug}/` (cafe24_shop 제외) | `10-static-template` + `00-core` 중 정적 부분 · `20`~`60` | `templates/{slug}/` |
-| **Cafe24 Track A** | 기존·구매·고객 제공 스킨 (`module=`·`{$}` 존재) | `80` · `82`(Existing) · **`84` release** | `cafe24/{slug}/` · `_release/{slug}/` |
-| **Cafe24 Track B** | 정적/Figma → 카페24 **이식** | `80` · **`81` map** · `82` · **`84`** | map 승인 후 `cafe24/{slug}/` · `_release/` |
-| **Track C / Reference** | 공개 데모·미구매 테마 **통째 복제·분석** | archive `83` (다운로드본 **삭제됨**) | 재개 시만 |
-| **WordPress** | WP 테마 | `70`~`72` | `wordpress/{slug}/` |
+- 소규모(색·여백·문구·이미지): **요청 = 범위 승인**
+- 다지점·구조 변경·대규모: 범위 확인 후 진행
+- Cafe24 map / 대표 디자인 전환: 해당 트랙 재개 시에만 (`84`)
 
-## 라우팅 질문 (불명확할 때만)
+## 충돌
 
-1. 정적 / 기존 카페24 스킨 수정 / 정적→카페24 이식 / 데모 분석 / WordPress?
-2. 원본이 ZIP·고객 스킨인가, 브라우저 데모인가?
-
-## 승인 게이트 (전역 축소)
-
-| 게이트 | 언제 |
-|--------|------|
-| **작업 범위 승인** | 범위 불명확 · 다지점 · 기능 구조 변경 · 대규모 디자인일 때만. 소규모(색·여백·문구·이미지)는 **요청 자체 = 범위 승인** |
-| **Platform Map 승인** | **Track B만** |
-| **최종 QA 승인** | 테스트 디자인 검증 후 (A/B) |
-| **대표 디자인 전환** | production 전환 — **항상 별도** (`84`) |
-
-다음을 **모든 작업에 강제하지 않음**: analysis 승인 · working-copy 승인 · normalized 승인 · Track A의 map · 중복 map 승인 · Track C 배포.
-
-## 충돌 시 우선순위
-
-1. 사용자 명시 지시  
-2. 본 라우터  
-3. 트랙별 규칙 (`70`~`72` · 동결 시 archive `80`~`84` 등)  
-4. `00-core.mdc` 「충돌 시 우선순위」
-
-## 용어 (전역)
-
-| 용어 | 정의 |
-|------|------|
-| **global syntax reference** | `templates/cafe24_shop/` — 문법·구조 **참고만** (프로젝트 원본 아님) |
-| **project original SoT** | 해당 프로젝트 정식 구매·고객 제공 **원본 스킨** (immutable) |
-| **working skin** | 실제 수정하는 작업 사본 (**production 직접 업로드 금지**) |
-| **release candidate / upload package** | 배포 후보 · 업로드용 파일만 (`84`) |
-| **test design / production design** | 검증용 · 대표 운영 디자인 |
-| **design reference** | 판매 데모·스크린샷·공개 사이트 (납품·upload 금지) |
-| **static design source** | 카페24 문법 없는 HTML·Figma·일반 템플릿 |
-
-`baseline` 용어는 사용하지 않는다. 과거 `_baseline` 이전 논의는 archive 참고.
+1. 사용자 지시 → 2. 본 라우터 → 3. 트랙 규칙(`70`~`72` 등) → 4. `00-core` 우선순위
 
 ## 경로 주의
 
-- **금지:** `_delivery/cafe24/` 등 플랫폼별 **납품 하위 폴더** (정적 납품 규칙)
-- **허용 (Track A/B):** 제품 작업 경로 `cafe24/{slug}/` · 배포 산출 `_release/{slug}/` — map 정책은 Track B만
-- `templates/cafe24_shop/` **수정·이동·고객 overwrite 금지**
-- Track C · design reference → upload package **금지**
-
-개요: `_archive/docs/cafe24/CAFE24_RULES_OVERVIEW.md` · 배포: `_archive/docs/cafe24/release.md`
+- 루트 `_delivery*` · `_delivery/cafe24` 등 **금지**
+- 동결 산출물·문법 참고는 `_archive/` (수정·overwrite로 활성 워크플로 만들지 말 것)

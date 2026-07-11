@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-11 — alwaysApply 규칙 다이어트
+
+- `20-harness-workflow` 절차만 (~60줄) · 말투→`00-core` · Figma/QA 상세는 `30`/`50` 위임
+- `00-project-router` WP 기본·동결 한 표로 축소
+
+---
+
 ## 2026-07-11 — 로그 빠른 조회 구조
 
 - `failure-log` 유형 목차(L1…) + 카드

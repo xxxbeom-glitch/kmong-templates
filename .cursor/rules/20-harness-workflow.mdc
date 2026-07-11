@@ -1,205 +1,54 @@
 ---
-description: Figma MCP → 승인 → 구현 → QA → 로그. 현재 기본 출력 wordpress/{slug}/. 트랙은 라우터
+description: Figma→승인→구현→QA→로그 절차 (WP 기본). 상세는 30·50·70·로그 README
 alwaysApply: true
 ---
 
 # Harness Workflow
 
-> **트랙:** 먼저 `00-project-router.mdc` · **`_docs/active-track.md`**.  
-> **현재 기본:** WordPress — `wordpress/{slug}/` · `70`~`72`.  
-> **본 파일:** Figma→승인→섹션 구현→QA→로그 **절차** (트랙별 작업 경로만 다름).  
-> Static → `templates/{slug}/` (`10-static-template`) · Cafe24 → `80`~`84` · Reference → `83` (**동결 트랙은 명시 재개 전 미적용**).
+> **트랙:** `00-project-router.mdc` · `_docs/active-track.md`  
+> **기본:** WordPress `wordpress/{slug}/` · `70`~`72`  
+> **본 파일 = 절차만.** Figma 수치·보고 항목 → `30` · QA 항목 → `50` · 말투 → `00-core`
 
-## 작업 시작 전 — 컨텍스트 확인
+## 시작 전
 
-새 작업 또는 새 섹션 착수 전 `00-core.mdc` 「작업 전 컨텍스트」에 따라 **현재 작업에 필요한 것만** 확인한다.
+1. `00-core` 「작업 전 컨텍스트」
+2. `_logs/` **빠른 조회만** (`_logs/README.md`)  
+   decision 유효 표 → qa slug → failure 유형 카드 → (이어서면) change 최근
+3. 모호하면 질문. legacy/`_archive`는 active 근거 아님.
 
-**기본 순서:**
-현재 사용자 요청 → active rules → 관련 로그 → 템플릿별 확정 기준 → **Figma 댓글·주석** → Figma MCP 분석 → 사용자 선호
-
-- 작업과 무관한 과거 정보는 끌어오지 않는다.
-- legacy · `_archive` 문서는 active 근거로 **사용하지 않는다**.
-- 충돌이 있으면 `00-core.mdc` 「충돌 시 우선순위」를 따른다.
-- 모호하면 구현하지 말고 질문한다.
-
-## 작업 시작 전 — 로그 확인 (필수)
-
-새 작업 또는 새 섹션 착수 전 `_logs/`를 본다. **전체 정독 금지.**
-
-**빠른 조회 순서:**
-1. `decision-log.md` → **「현재 유효 결정」** 표
-2. `qa-log.md` → **「템플릿별 최근 결과」** (이번 slug)
-3. `failure-log.md` → 이번 작업 **유형 카드**만 (L1·T1…)
-4. 이어서 작업이면 `change-log.md` 맨 위 최근 항목
-
-**확인 대상 (상세가 필요할 때만):**
-- `decision-log.md` — slug, 레이아웃, 보류
-- `change-log.md` — 최근 변경·미구현
-- `qa-log.md` — 직전 PASS/FAIL · 다음 주의
-- `failure-log.md` — 오답 유형 · 하지 말 것
-
-기록 방법: `_logs/README.md`  
-읽은 내용 중 이번 작업에 영향 있는 사항은 **범위 확인** 또는 **Figma 분석 보고**에 1줄로 반영한다.
-
-로그·rules·승인 내용이 충돌하면 `00-core.mdc` **충돌 시 우선순위**를 따른다.
-
-**금지:**
-- 로그 미확인 상태에서 이전 보류/FAIL 항목을 무시하고 진행
-- 이전 QA FAIL 항목을 확인하지 않고 같은 유형의 작업 반복
-- 사용자 승인 없이 로그에 없는 해석을 새 기준처럼 적용
-
-## 작업 순서
+## 한 섹션 루프
 
 ```
-컨텍스트 확인
-→ 로그 확인
-→ 범위 확인
-→ Figma 댓글·주석 확인 (`read_comments` + JSON 주석)
-→ Figma MCP 분석 보고
-→ 사용자 승인 대기
-→ 섹션 구현
-→ 섹션 QA
-→ 로그 기록
-→ 사용자 PASS
-→ 다음 섹션
+범위 1줄 → Figma 댓글·주석 → MCP 보고 → 사용자 승인
+→ wordpress/{slug}/ 구현 → 50 QA → qa-log 1건 → 사용자 PASS → 다음
 ```
 
-1. **범위 확인** (코딩 전 필수)
-   - `작업 범위: [파일] / [섹션] / [변경 요약]` 한 줄 제시
-2. **Figma 분석 보고** (MCP 사용 시, 코딩 전 필수)
-   - **Figma 댓글·주석** — 파일 연결 직후 **가장 먼저** (`30-figma-to-code.mdc`) · `read_comments` + JSON에서 Annotations·description·메모 레이어 · 이번 섹션·범위 요약
-   - **`add_figma_file` JSON 파싱** (`30-figma-to-code.mdc` 「MCP JSON 분석」) — `view_node` 썸네일만으로 BG·overlay 확정 **금지**
-   - 섹션 구조 · Auto Layout·gap · width/height/padding · 주요 font-size · **text-align / flex alignment (head·title·body)** · **Shell 1줄** · **Section BG 1줄 (node-id · fills | 부모 상속)** · **Overlays 1줄** · **(2섹션+) 인접 Section BG 표** · 모호한 점
-   - **(인터랙션 검토 시)** preset 후보 ID · `46-interaction-presets.mdc` — **사용자 선택·승인 전 구현 금지**
-   - 사용자 **"확인했어, 진행해"** 전까지 코딩 시작 금지
-3. **구현** — **트랙별 작업 경로에 직접**
-   - **WordPress (기본):** `wordpress/{slug}/` — PHP 템플릿 · `@1024` · `@768` · enqueue (`70`)
-   - **Static (동결):** `templates/{slug}/` — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → JS
-   - **공통:** 승인된 preset만 (`45`·`46`) · 사진은 테마 `assets/images/`에 직접 (`47` 동결)
-4. **QA** (필수 — 생략 금지): `50-qa-checklist.mdc` · **결과 `_logs/qa-log.md` 기록**
-5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
-6. **사용자 PASS** 확인 → **다음 섹션 착수**
+- **승인** (`확인했어, 진행해`) **전 코딩 금지**
+- **기본 섹션 1개.** 일괄 구현해도 **섹션마다** QA + qa-log (통합 QA로 대체 금지)
+- 이전 섹션 qa-log PASS·사용자 PASS 전 다음 섹션 금지 (일괄은 구현 후 섹션 QA 연속)
 
-## 섹션 단위 루프 (기본)
+### 코딩 전 보고 (요지)
 
-템플릿 페이지 구현은 **한 번에 한 섹션**을 기본 단위로 한다.
+상세 체크리스트: `30-figma-to-code.mdc`. 사용자에게는 `00-core` 「디자이너 커뮤니케이션」.
 
-```
-Figma 댓글·주석 확인 (read_comments + JSON)
-→ Figma MCP 분석(해당 섹션)
-→ 사용자 승인
-→ 섹션 구현
-→ 섹션 QA
-→ qa-log 기록
-→ 사용자 PASS 확인
-→ 다음 섹션
-```
+필수 요지: 섹션·파일 / 댓글·주석 / Shell·Section BG·Overlays / 정렬 / 모호한 점만 질문.  
+썸네일만으로 BG 확정 금지 · preset은 승인 전 구현 금지 (`46`).
 
-- **기본:** 요청에 명시된 **섹션 1개**만 구현.
-- **일괄·풀 구현** 시에도 **섹션별 QA + qa-log** 필수 — 구현만 묶음, QA는 섹션마다.
-- **이전 섹션 `qa-log` PASS** 및 **사용자 PASS** 전에는 다음 섹션 구현을 **금지** (일괄 모드는 구현 후 섹션 QA 연속).
-- 사용자가 **「여러 섹션 일괄 구현」** · **「전체 풀」**을 명시한 경우 — **구현**만 한 번에 허용.
-- **일괄·풀 모드에서도 섹션별 QA는 필수** (섹션마다 `50-qa-checklist` + **qa-log 1건**). 생략·통합 QA로 대체 **금지**.
-- 일괄 구현 **완료 후:** 섹션 QA를 **연속 수행** → 전부 PASS 후 **페이지 통합 QA** 1회 (`50-qa-checklist` 페이지·납품) → 사용자 PASS.
-- 페이지 전체 완료 후에는 **납품 전 전체 QA**를 별도로 수행한다 (`50-qa-checklist.mdc` · `60-delivery.mdc`).
+### 구현
 
-## 모바일 프리뷰 → @768 이식 (Figma 모바일 프레임 있을 때)
+- **WP:** `wordpress/{slug}/` · `@1024` · `@768`(MO만) · `70`
+- 사진: 테마 `assets/images/` · 승인 preset만 (`45`·`46`)
 
-> **숫자·구조 확정값** → `decision-log` · 규칙은 **순서·패턴만**.
+### QA · 로그 · 납품
 
-```
-Figma 모바일 MCP (또는 Desktop + @768 설계)
-→ {slug}-mobile.html + css/mobile.css — 섹션별 구현·QA·사용자 PASS
-→ style.css @media (max-width:768px) + main.js 이식
-→ index.html 등 최종 HTML 반영
-→ 섹션/페이지 QA · qa-log
-```
+- QA: `50-qa-checklist.mdc` · Wrap 자식 edge 포함 · 결과 `_logs/qa-log.md` (표도 갱신)
+- 로그: `_logs/README.md` (change / decision / failure 규칙)
+- 납품: `package-delivery-wp.js` → `wordpress/{slug}/dist/{slug}.zip`
+- 모바일 세부: `35-responsive.mdc` (MO만 수정)
 
-| 항목 | 규칙 |
-|------|------|
-| **프리뷰 파일** | `index-mobile.html` · `about-*-mobile.html` — **검수용** · 납품 제외 (`60-delivery`) |
-| **프리뷰 JS** | `js/mobile.js` — F5 시 scroll top (`40-template-code-style.mdc` snippet **필수**) |
-| **최종본** | `index.html` · `css/style.css` · `js/main.js` — **납품 대상** |
-| **gutter·칼럼** | 1차 PASS 값을 `decision-log` 기록 → `@768` 이식 시 **동일 토큰** (`35-responsive.mdc`) |
-| **이식 전** | mobile 프리뷰 **사용자 PASS** 또는 qa-log PASS — 임의 이식 **금지** |
+## 범위 · 금지
 
-- Figma **모바일 프레임 없음** — Desktop + `@768` breakpoint만으로 대응 (프리뷰 파일 **필수 아님**).
+- 요청 1개 = 최소 파일. 범위 밖·에러 확장은 **보고 후 대기**
+- Figma 미승인 코딩 · QA 생략 · workbench 우회 · 요청 밖 섹션/카피/수치 변경 · 무단 일괄 구현
 
-## 납품 패키징
-
-**활성 (WP):**
-
-```
-QA PASS 후
-→ node _harness/package-delivery-wp.js {slug}
-→ wordpress/{slug}/dist/{slug}.zip
-```
-
-**정적 (동결):** 구 `_delivery/` → `_archive/delivery/` · `package-delivery.js` 신규 미사용 · 루트 `_delivery/` 재생성 금지.
-## 섹션 QA 절차 (매 섹션 필수)
-
-```
-구현 완료
-→ 50-qa-checklist 해당 섹션 범위 검수
-→ **Wrap 내 DOM · box-model QA** (동일 shell 안 figure·grid·p 좌우 edge — DevTools 또는 캡처)
-→ qa-log.md 기록 (PASS / FAIL · 비고 · 다음 주의)
-→ FAIL이면 수정 → 재검수 (PASS 전 다음 섹션 금지)
-→ 사용자 PASS
-→ 다음 섹션
-```
-
-**qa-log 1섹션 1항목.** 미기록 = QA 미완료.
-
-## 사용자 커뮤니케이션 (디자이너 · 필수)
-
-사용자는 **비개발 UI 디자이너**. 보고·설명·질문은 **개발 문서가 아니라 디자이너에게 말하듯** 짧고 쉽게.
-
-### 말투·분량
-- **짧게** — 상태·질문·다음 액션 위주. 긴 표·장문 브리핑 **지양**
-- **Figma 말** 우선 — padding, gap, 정렬, 프레임, Auto Layout, 색·폰트
-- **개발 용어** (`flex`, `clamp`, `bbox`, `shell`, `qa-log` 등) 쓸 때 → **한 줄 쉬운 뜻** 병기 또는 Figma 대응어 사용
-- **PASS/FAIL** → **「맞음 / 틀림 / 확인 필요」** 같이 함께 써도 됨
-- 원인·재발방지 **장문**은 사용자 **요청 시**만. 기본은 **뭐가 달랐는지 · 뭐 고쳤는지** 2~3줄
-
-### Figma 분석 보고 (코딩 전)
-- **한 줄:** 이번에 할 섹션·파일
-- **댓글·주석 요약 (필수):** 댓글(`read_comments`) + 주석(JSON·Annotations·description·메모 레이어) — 이번 섹션·범위 관련 지시·카피·보류·확정 (없으면 「댓글 없음」「주석 없음」)
-- **눈으로 보이는 것:** 레이아웃, 여백, 글자 크기·정렬, 이미지 비율
-- **Shell 1줄 (필수):** `guttered | full-bleed | breakout` + bg·content bbox width (CTA·stats 등 **섹션마다**)
-- **Section BG 1줄 (필수):** `#hex` + node-id + fills 또는 부모 상속 근거 · **인접 섹션과 다르면 표로 대조**
-- **Overlays 1줄 (필수):** 카드·패널·band — Section BG와 **분리** 기록
-- **(페이지/2섹션+) 인접 Section BG 표**
-- **Wrap children 1줄+:** content frame 안 **이미지·본문·열** node x/w — shell만 맞고 자식 x/w 다른 경우 표시
-- **Mobile @768 1줄 (모바일 프레임 있을 때):** gutter {px} · columns {1} · header {h}px · QA 390
-- **(인터랙션 검토 시) Preset:** 후보 ID · 승인 여부 — `46-interaction-presets.mdc` (카탈로그에 있어도 **자동 적용 금지**)
-- **모호한 것만** 질문 (번호·선택지)
-- 승인 전 코딩 금지
-
-### 작업 후
-- **바뀐 것** 3~5 bullet · **보면 되는 파일/URL** 1줄 · **확인 부탁** 1줄
-
-### 금지
-- 규칙·로그·코드 구조를 사용자에게 **그대로 길게** 훑어주기
-- 개발 용어만으로 완료 보고
-
-적용: 사용자-facing 메시지 전반. `_logs`·rules 본문은 기술 표기 유지 OK.
-
-## 범위 통제
-
-- 요청 1개 = 변경 파일 최소화. 연관돼 보여도 요청 밖은 건드리지 않는다.
-- 충돌·브라우저 에러로 범위 확장이 필요하면 **먼저 보고 후 대기**.
-
-적용 기준:
-- 모든 구현·수정·Figma 연동 작업 시작 시.
-
-금지:
-- Figma 보고·승인 없이 바로 코딩
-- **댓글·주석 미확인** 상태에서 JSON·썸네일만으로 범위·카피·동작 확정
-- QA 생략 후 완료 처리
-- **`_harness/workbench/`·별도 공간에서 구현 후 templates 반영**
-- 요청 밖 섹션 추가·삭제·클래스명·카피·수치 임의 변경
-- 이전 섹션 QA PASS 없이 다음 섹션 구현
-- 사용자 요청 없이 여러 섹션 일괄 구현
-
-완료 기준:
-- 범위 확인·(해당 시) Figma 승인·구현·QA PASS·로그 기록까지 끝난 상태.
+**완료:** 범위 확인 · (해당 시) Figma 승인 · 구현 · QA PASS · 로그 기록.

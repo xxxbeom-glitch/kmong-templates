@@ -3,22 +3,21 @@
 여기를 보고 순서·금지·QA 방식을 따릅니다.
 
 【자주 쓰는 파일 (쉬운 말)】
-- 00-core … 기본 원칙, 뭐부터 볼지, 충돌나면 뭐가 우선인지
-- 00-project-router … 워드프레스 / 예전 카페24 중 어디로 갈지
+- 20-harness-workflow … Figma→승인→구현→QA **짧은 절차** (자세한 Figma/QA는 30·50)
+- 00-core … 기본 원칙 + 디자이너에게 어떻게 말할지
+- 00-project-router … 워드프레스가 기본인지 / 동결 트랙
 - 10-project-structure … 폴더가 어디에 있는지
-- 20-harness-workflow … Figma 보고 → 승인 → 구현 → QA → 기록 순서
-- 30-figma-to-code … 피그마 숫자 → 화면 코드로 옮기는 법
-- 35-responsive … PC / 태블릿 / 모바일 끊는 기준
-- 40-template-code-style … HTML·CSS 이름 짓는 습관
-- 45 / 46 … 움직임(호버·스크롤 등) 패턴과 미리 정한 프리셋
-- 50-qa-checklist … 맞는지 검수할 때 보는 목록
-- 55-git-workflow … 커밋(저장) 할 때 규칙
-- 60-delivery … 예전에 쓰던 정적 납품 규칙 (지금은 거의 안 씀)
-- 70 / 71 / 72 … 워드프레스 작업·보안·최종 검수·ZIP
+- 30-figma-to-code … 피그마 숫자·보고 상세
+- 35-responsive … PC/태블릿/모바일
+- 40-template-code-style … HTML·CSS 이름 짓기
+- 45 / 46 … 움직임 패턴·프리셋
+- 50-qa-checklist … 검수 목록
+- 55-git-workflow … 커밋
+- 60-delivery … 예전 정적 납품 (거의 안 씀)
+- 70 / 71 / 72 … 워드프레스·보안·최종 검수·ZIP
 
 【archive 안】
-예전에 쓰던 카페24·복제 규칙, 헤스 병원 전용(75) 등.
-지금은 열어보지 않아도 됩니다. 헤스 작업 시에는 테마 폴더 안 docs를 보면 됩니다.
+예전에 쓰던 카페24·복제·헤스 전용 등. 평소 안 열어도 됩니다.
 
 【참고】
 이 파일들은 개발용 규칙이라 문장이 딱딱할 수 있어요.
