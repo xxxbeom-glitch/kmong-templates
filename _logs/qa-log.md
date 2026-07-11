@@ -1,5 +1,34 @@
 # QA Log
 
+## 2026-07-11 · [static] template-homepage 모바일 전체 페이지 검수
+**범위:** 전 12페이지 · `@1024` 헤더 · `@768` 본문 (코드 대조 + 공통 FAIL 수정)
+**결과:** **조건부 PASS** — 공통 FAIL 수정 반영 · 실기기 시각 확인 필요
+
+| # | 페이지 | 결과 | 비고 |
+|---|--------|------|------|
+| 1 | index | PASS | 메인 1차 PASS 유지 |
+| 2 | about-greeting | PASS | intro/vision/history 반영 |
+| 3 | about-ceo | PASS | 사진=텍스트 폭 |
+| 4 | about-directions | PASS | 지도 2:1.85 |
+| 5 | service-solution | PASS | 카드 1:1 |
+| 6 | service-process | PASS | 스텝 풀폭·동일 높이 |
+| 7 | service-portfolio | PASS | 썸네일 1:1 |
+| 8 | service-list | WARN | @768 타이포 추가 여지 |
+| 9 | news | PASS | 리스트=메인 insight |
+| 10 | news-view | PASS | 이전/다음 좌우 |
+| 11 | contact | PASS* | input 16px 수정 |
+| 12 | privacy | WARN | @768 본문 전용 규칙 없음(히어로 없음) |
+
+**공통 수정 (검수 중 반영):**
+- 푸터 타이포·간격 → 메인·서브 공유 (기존 page-home만)
+- CSS/JS 캐시버스트 `?v=mo-qa-pass1` 통일
+- 문의 입력 16px (@768)
+- 로고 18px → `@1024` 햄버거 구간에도 적용
+
+**다음:** 폰에서 전 페이지 훑어보기 · service-list/privacy 타이포는 요청 시
+
+---
+
 ## 2026-07-10 · [static] template-homepage 메인 모바일 1차
 **범위:** `index.html` 메인 · `@768` 폰 검수 (헤더~빠른상담)
 **결과:** **PASS** — 사용자 1차 전체 확정

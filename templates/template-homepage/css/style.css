@@ -3193,6 +3193,14 @@ button.scroll-reveal {
     z-index: 220;
   }
 
+  /* 햄버거 헤더 구간 — 로고 크기 메인·서브 통일 */
+  .site-header__logo {
+    font-size: 1.125rem;
+    line-height: 1.2;
+    width: auto;
+    max-width: none;
+  }
+
   .site-header__mega,
   .site-header__dim {
     display: none !important;
@@ -3525,6 +3533,13 @@ button.scroll-reveal {
     /* 메인·서브 공통 카드/이미지 라운드 */
     --mo-radius-card: 0.5rem; /* 8px */
     --mo-fs-logo: 1.125rem; /* 18 · 헤더 로고 */
+    --mo-fs-footer-title: 1.375rem; /* 22 */
+    --mo-lh-footer-title: 1.45;
+    --mo-fs-label: 0.875rem; /* 14 */
+    --mo-lh-label: 1.5;
+    --mo-fs-caption: 0.8125rem; /* 13 */
+    --mo-lh-caption: 1.35;
+    --mo-fs-ui: 1rem; /* 16 */
   }
 
   /* —— 공통 헤더 로고 (메인·서브 동일) —— */
@@ -3754,26 +3769,31 @@ button.scroll-reveal {
     text-align: left;
   }
 
-  .page-home .site-footer__tagline {
+  /* —— 공통 푸터 (메인·서브 동일) —— */
+  .site-footer__tagline {
     font-size: var(--mo-fs-footer-title);
     line-height: var(--mo-lh-footer-title);
   }
 
-  .page-home .site-footer__info-label,
-  .page-home .site-footer__info-value {
+  .site-footer__info-label,
+  .site-footer__info-value {
     font-size: var(--mo-fs-label);
     line-height: var(--mo-lh-label);
   }
 
-  .page-home .site-footer__copy,
-  .page-home .site-footer__legal-link {
+  .site-footer__copy,
+  .site-footer__privacy {
     font-size: var(--mo-fs-caption);
     line-height: var(--mo-lh-caption);
   }
 
-  .page-home .btn-cta--footer {
+  .btn-cta--footer {
     font-size: var(--mo-fs-ui);
     line-height: 1.2;
+  }
+
+  .site-footer__info {
+    gap: 0.75rem;
   }
 
   /* 메인·서브 공통 — 카드·이미지 라운드 8px */
@@ -4171,6 +4191,12 @@ button.scroll-reveal {
     justify-content: flex-end;
   }
 
+  /* 문의 폼 — iOS 줌 방지 · 본문 16px */
+  .contact-page__field input,
+  .contact-page__field textarea {
+    font-size: 1rem;
+  }
+
   .insight__link {
     flex-wrap: wrap;
   }
@@ -4268,12 +4294,7 @@ button.scroll-reveal {
     gap: 0.75rem;
   }
 
-  /* 푸터 상호명~이메일 — 라인 간격 통일 */
-  .page-home .site-footer__info {
-    gap: 0.75rem;
-  }
-
-  .page-home .site-footer__info-row {
+  .site-footer__info-row {
     gap: 0.75rem;
   }
 
