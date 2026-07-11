@@ -2,7 +2,8 @@
 
 정적(크몽) 트랙 작업물 보관. **삭제 아님.**
 
-활성 작업은 WordPress (`wordpress/{slug}/`) 기준.
-문법 참고용 `templates/cafe24_shop/` 은 아카이브하지 않고 `templates/`에 유지.
+포함: 과거 `templates/{slug}/` · `cafe24_shop` (+ zip) · `_admin-core`
 
-복구 시: 이 폴더 → `templates/{slug}/` 로 다시 옮기면 됨.
+활성 작업은 WordPress (`wordpress/{slug}/`)만. 루트 `templates/` 폴더는 두지 않음.
+
+복구 시: 이 폴더의 slug → 필요하면 다시 `templates/{slug}/`로 옮기면 됨.

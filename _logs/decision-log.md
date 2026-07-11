@@ -1,5 +1,14 @@
 # Decision Log
 
+## 2026-07-11 — 루트 `templates/` 제거
+
+| # | 결정 |
+|---|------|
+| 1 | 아카이브 후 남긴 자리표시자(`index.html` · `README` · `.gitkeep`) **삭제** |
+| 2 | 정적 내용은 `_archive/templates/`만 유지 · 루트 `templates/` 재생성 안 함 |
+
+---
+
 ## 2026-07-11 — WordPress 블록 테마 중심 · 동결 트랙 아카이브
 
 | # | 결정 |
@@ -20,7 +29,7 @@
 | # | 결정 |
 |---|------|
 | 1 | 정적 작업물 → `_archive/templates/` 보관 (삭제 아님) |
-| 2 | `templates/cafe24_shop/` 는 문법 참고용으로 현위치 유지 |
+| 2 | ~~`templates/cafe24_shop/` 현위치 유지~~ → **아카이브로 함께 이동** (후속 결정) |
 | 3 | 활성 개발은 WordPress `wordpress/{slug}/` |
 
 ---

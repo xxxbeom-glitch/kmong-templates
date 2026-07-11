@@ -29,6 +29,7 @@
 | 사이트 복제·데모 분석 | `_archive/reference-harness/` |
 | Cafe24 / Reference 규칙 | `.cursor/rules/archive/80`~`84` |
 
+- 루트 `templates/` **없음** (자리표시자 제거 · 내용은 아카이브만)
 - 레퍼런스 URL **인터랙션 파악만** — 사용자가 **명시한 경우만** (미러·복제 파이프라인 중단)
 - 모바일 작업 시 **MO만** 수정 (PC 스타일 동시 변경 금지)
 

@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-11 — 루트 `templates/` 자리표시자 제거
+
+- 삭제: `templates/.gitkeep` · `index.html` · `README.md` (빈 허브)
+- `_archive/templates/README.md` · `active-track` · decision-log 갱신
+
+---
+
 ## 2026-07-11 — 동결 트랙·복제 하네스 아카이브
 
 - `_reference-harness/` → `_archive/reference-harness/`
