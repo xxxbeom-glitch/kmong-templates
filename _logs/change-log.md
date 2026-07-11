@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-11 — SEO/AEO 레인 (최소)
+
+- `20`에 알림·실행 게이트 · `73-seo-aeo` on-demand 신설
+- `00-core` 우선순위에 확정 콘텐츠 · `50` 납품 QA 상태 항
+- `active-track` · decision 유효 표 반영 · content-seo 파일 필수 아님
+
+---
+
 ## 2026-07-11 — alwaysApply 규칙 다이어트
 
 - `20-harness-workflow` 절차만 (~60줄) · 말투→`00-core` · Figma/QA 상세는 `30`/`50` 위임
