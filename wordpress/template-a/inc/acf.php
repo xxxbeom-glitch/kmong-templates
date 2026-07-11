@@ -205,6 +205,8 @@ function template_a_acf_register_fields() {
 
   template_a_acf_ensure_settings_page();
 
+  $settings_locations = array();
+
   if (function_exists('acf_add_options_page')) {
     acf_add_options_page(
       array(
@@ -213,15 +215,23 @@ function template_a_acf_register_fields() {
         'menu_slug' => 'template-a-settings',
         'capability' => 'edit_theme_options',
         'redirect' => false,
+        'icon_url' => 'dashicons-admin-customizer',
+        'position' => 58,
       )
     );
-    $settings_location = array(array('param' => 'options_page', 'operator' => '==', 'value' => 'template-a-settings'));
-  } else {
-    $settings_id = (int) template_a_acf_settings_id();
-    if (!$settings_id) {
-      return;
-    }
-    $settings_location = array(array('param' => 'page', 'operator' => '==', 'value' => (string) $settings_id));
+    $settings_locations[] = array(array('param' => 'options_page', 'operator' => '==', 'value' => 'template-a-settings'));
+  }
+
+  $settings_id = (int) template_a_acf_settings_id();
+  if ($settings_id > 0) {
+    $settings_locations[] = array(array('param' => 'page', 'operator' => '==', 'value' => (string) $settings_id));
+  }
+
+  // 무료 ACF: 왼쪽 메뉴에서도 편집 (페이지 편집기에 칸이 안 보일 때 대비)
+  // admin_menu는 acf/init 밖에서 등록 — 아래 template_a_acf_register_free_admin_menu 훅 참고
+
+  if (!$settings_locations) {
+    return;
   }
 
   acf_add_local_field_group(
@@ -229,12 +239,13 @@ function template_a_acf_register_fields() {
       'key' => 'group_template_a_header_footer',
       'title' => '헤더·푸터',
       'fields' => template_a_acf_header_footer_fields(),
-      'location' => array($settings_location),
+      'location' => $settings_locations,
       'menu_order' => 0,
       'position' => 'normal',
       'style' => 'default',
       'active' => true,
-      'description' => 'ACF 무료 버전에서는 페이지 > 사이트 설정에서 수정합니다.',
+      'show_in_rest' => 1,
+      'description' => '왼쪽 메뉴 Template A 설정, 또는 페이지 > 사이트 설정에서 수정합니다.',
     )
   );
 
@@ -248,6 +259,7 @@ function template_a_acf_register_fields() {
       'position' => 'normal',
       'style' => 'default',
       'active' => true,
+      'show_in_rest' => 1,
     )
   );
 
@@ -255,9 +267,8 @@ function template_a_acf_register_fields() {
     array('param' => 'post_type', 'operator' => '==', 'value' => 'page'),
     array('param' => 'page_type', 'operator' => '!=', 'value' => 'front_page'),
   );
-  $settings_ref = template_a_acf_settings_id();
-  if (is_numeric($settings_ref) && (int) $settings_ref > 0) {
-    $sub_hero_rules[] = array('param' => 'page', 'operator' => '!=', 'value' => (string) (int) $settings_ref);
+  if ($settings_id > 0) {
+    $sub_hero_rules[] = array('param' => 'page', 'operator' => '!=', 'value' => (string) $settings_id);
   }
 
   acf_add_local_field_group(
@@ -274,10 +285,69 @@ function template_a_acf_register_fields() {
       'position' => 'normal',
       'style' => 'default',
       'active' => true,
+      'show_in_rest' => 1,
     )
   );
 }
 add_action('acf/init', 'template_a_acf_register_fields');
+
+function template_a_acf_register_free_admin_menu() {
+  if (function_exists('acf_add_options_page') || !function_exists('acf_add_local_field_group')) {
+    return;
+  }
+
+  add_menu_page(
+    'Template A 설정',
+    'Template A 설정',
+    'edit_theme_options',
+    'template-a-settings',
+    'template_a_acf_render_free_settings_page',
+    'dashicons-admin-customizer',
+    58
+  );
+}
+add_action('admin_menu', 'template_a_acf_register_free_admin_menu');
+
+function template_a_acf_render_free_settings_page() {
+  if (!function_exists('acf_form')) {
+    echo '<div class="wrap"><h1>Template A 설정</h1><p>ACF 플러그인을 활성화해 주세요.</p></div>';
+    return;
+  }
+
+  $post_id = (int) template_a_acf_settings_id();
+  if ($post_id <= 0) {
+    template_a_acf_ensure_settings_page();
+    $post_id = (int) template_a_acf_settings_id();
+  }
+
+  echo '<div class="wrap">';
+  echo '<h1>Template A 설정</h1>';
+  echo '<p>헤더·푸터 문구와 메뉴 이름을 여기서 수정한 뒤 저장하세요.</p>';
+
+  if ($post_id <= 0) {
+    echo '<div class="notice notice-error"><p>사이트 설정 페이지를 만들 수 없습니다. 페이지 목록에서 「사이트 설정」을 확인해 주세요.</p></div></div>';
+    return;
+  }
+
+  acf_form(
+    array(
+      'post_id' => $post_id,
+      'field_groups' => array('group_template_a_header_footer'),
+      'submit_value' => '저장',
+      'updated_message' => '저장되었습니다.',
+      'html_submit_button' => '<input type="submit" class="button button-primary button-large" value="%s" />',
+    )
+  );
+  echo '</div>';
+}
+
+function template_a_acf_free_form_head() {
+  $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
+  if ($page === 'template-a-settings' && function_exists('acf_form_head')) {
+    acf_form_head();
+  }
+}
+add_action('admin_init', 'template_a_acf_free_form_head');
 
 function template_a_acf_hide_settings_page($query) {
   if (is_admin() || !$query->is_main_query()) {
