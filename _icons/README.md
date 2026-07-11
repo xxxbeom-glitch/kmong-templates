@@ -2,6 +2,23 @@
 
 원본 보관소. 테마에서 쓸 때는 필요한 파일만 `assets/icons/`(또는 `assets/lottie/`)로 복사한다.
 
+## 로컬 미리보기
+
+```bash
+node _icons/build-gallery.js
+```
+
+그다음 `_icons/index.html`을 브라우저로 연다.  
+아이콘 이미지가 안 보이면:
+
+```bash
+npx live-server _icons
+```
+
+- 카테고리: UI / Social / Motion / Line / Fill
+- 검색 · 클릭 시 경로 복사
+- 아이콘 추가 후 `build-gallery.js` 다시 실행
+
 ## 폴더
 
 | 폴더 | 용도 |
@@ -20,12 +37,8 @@
 ## 모션 네이밍 (`motion/`)
 
 - kebab-case · `.json` (Lottie)
-- 예: `download.json` · `chevron-down.json` · `pin-check.json`
+- 예: `download.json` · `chevron-down.json`
 - SVG와 의미가 같으면 **같은 키워드** 사용
-
-## 현재 모션
-
-`chevron-down` · `download` · `exit` · `folder-download` · `pin-check`
 
 ## 타입 표기
 
@@ -34,8 +47,3 @@
 | (없음) | 라인(outline) |
 | `-fill` | 면 채움 |
 | `-2`, `-3`… | 변형 |
-
-## 화살표
-
-- `arrow-right` · `arrow-up-right` · `caret-up` · `chevron-down`
-- 방향은 CSS `rotate` 재사용 가능
