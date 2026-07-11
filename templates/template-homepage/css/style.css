@@ -3938,7 +3938,7 @@ button.scroll-reveal {
   }
 
   .directions__figure {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2 / 1.85;
   }
 
   .directions__img {
