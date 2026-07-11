@@ -3,7 +3,6 @@ description: WordPress Classic Theme 운영 프로젝트 (카페24 뉴아우토�
 alwaysApply: false
 globs:
   - wordpress/**
-  - _delivery-wp/**
   - _harness/package-delivery-wp.js
   - _docs/wordpress-guide.md
 ---
@@ -14,7 +13,7 @@ globs:
 
 ## 범위
 
-- **대상:** 일부 **실제 운영** 사이트만 · 크몽용 정적 `templates/` **유지**
+- **대상:** 일부 **실제 운영** 사이트만 · 크몽용 정적 `templates/` **동결·아카이브**
 - **기존 정적 템플릿 WordPress 변환 금지** · 신규 slug 승인 후 `wordpress/{slug}/`만 생성
 - **개발 방식:** Figma MCP 분석 → 승인 → **`wordpress/{slug}/`에 PHP 테마 직접 구현** (`20-harness-workflow`와 동일 리듬)
 - **정적 HTML 선행 후 이식** — 기본 워크플로 **아님** · 사용자 명시 요청 시만
@@ -33,10 +32,12 @@ wordpress/{slug}/
 ├── index.php              # fallback
 ├── archive-notice.php     # 공지 목록
 ├── single-notice.php      # 공지 상세
-└── assets/
-    ├── css/
-    ├── js/
-    └── images/
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+└── dist/                  # 패키징 ZIP만 (git 무시 · 소스 아님)
+    └── {slug}.zip
 ```
 
 - slug 승인 전 `wordpress/{slug}/` 폴더 생성 **금지**
@@ -56,7 +57,7 @@ wordpress/{slug}/
 | 정적 선행 | **`templates/` HTML 선행 제작·기본 이식 없음** |
 | 개발 중 확인 | **로컬 WordPress 우선** (레이아웃·섹션) |
 | 최종 QA | **카페24 업로드 후** (공지·permalink·테마 활성) |
-| 납품물 | `package-delivery-wp.js` → **`{slug}.zip`** 테마 |
+| 납품물 | `package-delivery-wp.js` → **`wordpress/{slug}/dist/{slug}.zip`** |
 | 업로드·활성화 | **사용자 수행** — AI는 ZIP·안내만 |
 
 ## 킥오프 — 조건부 질문만
@@ -135,14 +136,15 @@ new WP_Query(array(
 node _harness/package-delivery-wp.js {slug}
 ```
 
-- 출력: `_delivery-wp/{slug}/` · `_delivery-wp/{slug}.zip`
-- 업로드: 카페24 `wp-content/themes/{theme-slug}/` (ZIP 또는 폴더)
-- `_delivery-wp/`는 개발 workbench **아님** — QA PASS 후 패키징만
+- 출력: `wordpress/{slug}/dist/{slug}.zip` 만 (풀린 복사본 없음)
+- ZIP에 `dist/` 미포함
+- 업로드: 카페24 `wp-content/themes/{theme-slug}/` (ZIP)
+- 루트 `_delivery/` · `_delivery-wp/` **사용 안 함**
 
 ## 금지
 
 - `templates/{slug}/`에 WP 테마 작성 · 정적 `package-delivery.js`로 WP 납품
-- `_delivery/cafe24/` 등 플랫폼 하위 폴더
+- 루트 `_delivery/` · `_delivery-wp/` · 플랫폼 하위 폴더 재도입
 - 템플릿 간 PHP/CSS/JS 공유 · `_modules` / `_tokens`
 - 공지 외 관리자 기능을 승인 없이 추가
 

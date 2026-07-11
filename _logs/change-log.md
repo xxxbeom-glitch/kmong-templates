@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-11 — 납품을 wordpress/{slug}/dist 로 통합
+
+- `_delivery/` → `_archive/delivery/`
+- `_delivery-wp/` 제거 · ZIP → `wordpress/{slug}/dist/{slug}.zip`
+- `package-delivery-wp.js` 출력 경로 변경 (풀린 복사본 중단 · dist 제외)
+- `.gitignore` · active-track · WP 가이드 · 70 / 10 / 60 규칙 갱신
+
+---
+
 ## 2026-07-11 — 루트 `templates/` 자리표시자 제거
 
 - 삭제: `templates/.gitkeep` · `index.html` · `README.md` (빈 허브)

@@ -5,7 +5,14 @@ Thumbs.db
 *.log
 .env
 .env.*
-_delivery/*/admin/config.php
+
+# WP 납품 ZIP (생성물)
+wordpress/*/dist/
+
+# Archived delivery local secrets (if present)
+_archive/delivery/**/admin/config.php
+_archive/delivery/**/config.local.php
+
 
 # Agent one-off Figma audit scripts (not part of delivery)
 /_tmp*

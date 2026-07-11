@@ -29,8 +29,8 @@
 
 3. **프로젝트 개요**
    - `_docs/project-overview.md`
-   - **WP:** `wordpress/{slug}/` · `_delivery-wp/` · `_docs/wordpress-guide.md`
-   - Static(동결): `templates/{slug}/` · `_delivery/{slug}/`
+   - **WP:** `wordpress/{slug}/` · `dist/{slug}.zip` · `_docs/wordpress-guide.md`
+   - Static(동결): `_archive/templates/` · `_archive/delivery/`
    - 공유 `_modules` / `_tokens` 금지
 
 4. **로그**

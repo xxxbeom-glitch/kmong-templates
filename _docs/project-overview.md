@@ -22,7 +22,7 @@
 | 폴더 | 역할 |
 |------|------|
 | `wordpress/{slug}/` | **개발·구현** — WP 테마 직접 작성 |
-| `_delivery-wp/{slug}/` · `{slug}.zip` | QA PASS 후 패키징 (`package-delivery-wp.js`) |
+| `wordpress/{slug}/dist/{slug}.zip` | QA PASS 후 패키징 (`package-delivery-wp.js`) |
 | `_harness/` | WP 패키징·검증·QA PNG·인터랙션 카탈로그 (**코드 작업실 아님**) |
 | `_logs/` | 결정·변경·실패·QA |
 | `_docs/` | 사람용 가이드 (`active-track.md` · `wordpress-guide.md` 등) |
@@ -31,9 +31,9 @@
 
 | 폴더 | 트랙 |
 |------|------|
-| `templates/{slug}/` | 크몽 정적 HTML |
-| `_delivery/{slug}/` | 정적 납품 |
-| `_reference-harness/` | 데모 사이트 복제·분석 (Track C) |
+| `_archive/templates/` | 크몽 정적 HTML · cafe24_shop |
+| `_archive/delivery/` | 구 정적·아임웹 납품 |
+| `_archive/reference-harness/` | 데모 사이트 복제·분석 |
 | `cafe24/` · `_release/` | Cafe24 A/B (미사용 시) |
 
 ## 워크플로우 (요약 · WP)

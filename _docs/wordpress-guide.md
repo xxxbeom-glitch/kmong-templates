@@ -15,16 +15,16 @@
 ## 폴더 · 납품
 
 ```
-wordpress/{slug}/     ← 개발
-_delivery-wp/{slug}/    ← 패키징 복사본
-_delivery-wp/{slug}.zip ← 카페24 업로드용
+wordpress/{slug}/              ← 테마 소스 (개발)
+wordpress/{slug}/dist/{slug}.zip ← QA PASS 후 패키징 (업로드용)
 ```
 
 ```bash
 node _harness/package-delivery-wp.js {slug}
 ```
 
-카페24 WordPress → `wp-content/themes/{slug}/` 에 업로드 후 테마 활성화.
+카페24 WordPress → `wp-content/themes/{slug}/` 에 업로드 후 테마 활성화.  
+`dist/`는 ZIP 생성물만 · 테마 소스와 섞지 않음 · git 무시.
 
 ## 테마 최소 파일
 

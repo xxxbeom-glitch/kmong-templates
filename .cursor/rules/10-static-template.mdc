@@ -2,46 +2,31 @@
 description: 크몽 정적 HTML 템플릿 전용 — templates/{slug} (cafe24_shop·cafe24 제품 제외)
 alwaysApply: false
 globs:
-  - templates/*/
-  - templates/index.html
-  - _delivery/**
-  - _harness/**
-  - .cursor/rules/20-harness-workflow.mdc
-  - .cursor/rules/30-figma-to-code.mdc
-  - .cursor/rules/35-responsive.mdc
-  - .cursor/rules/40-template-code-style.mdc
-  - .cursor/rules/50-qa-checklist.mdc
+  - _archive/templates/**
+  - _archive/delivery/**
+  - _harness/package-delivery.js
   - .cursor/rules/60-delivery.mdc
 ---
 
 # Static Template Track
 
-> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · 신규 `templates/{slug}/` **진입 금지** (명시 재개 전).  
-> **라우터:** `00-project-router.mdc`  
-> **적용:** `templates/{slug}/` 정적 HTML 템플릿 (`cafe24_shop` **제외**).  
-> **미적용 (강제):** `templates/cafe24_shop/` · `cafe24/{slug}/` · WordPress · reference-harness.  
-> Glob이 cafe24_shop과 겹치면 **본 규칙 본문·라우터가 우선** — 카페24는 `80`~`82`.
+> **상태:** **동결** — `_docs/active-track.md` · 신규 정적 진입 금지.  
+> **보관:** `_archive/templates/` · 구 납품 `_archive/delivery/`  
+> **활성 납품:** WP `wordpress/{slug}/dist/` (`70-wordpress`)
 
 ## 스택 · 공간
 
 - HTML + CSS + jQuery 3.x(CDN). 프레임워크·빌드 도구 없음.
-- 구현은 **`templates/{slug}/`에 직접**. workbench→merge 워크플로 없음.
-- `templates/cafe24_shop/` 은 이 트랙의 작업 공간이 **아님** (global syntax reference).
-
-## Figma · 반응형
-
-- Figma 1920 기준 · `@1024` · `@768` (`35-responsive`).
-- Figma MCP 수치 우선 · 승인 전 코딩 금지 (`20` · `30`).
+- 과거 구현 경로 `templates/{slug}/` → 아카이브됨.
 
 ## 납품
 
-- `node _harness/package-delivery.js {slug}` → `_delivery/{slug}/`
-- **`_delivery/cafe24/` · `_delivery/imweb/` 등 플랫폼 하위 폴더 금지**
+- 정적 `package-delivery.js` — **신규 미사용**
+- 구 `_delivery/` → `_archive/delivery/` · 루트 재생성 금지
 
 ## 금지 (정적 트랙)
 
-- `templates/{slug}/`에 PHP·스마트디자인 `module=` 납품용 혼입
-- 템플릿 간 CSS/JS 공유 import
+- 루트 `templates/` · `_delivery/` 재도입으로 활성 WP 워크플로 혼선
 - 승인·QA 없이 완료 선언
 
 카페24 이식은 **Track B** (`81-cafe24-platform-map`)로 넘긴다. 정적 결과만으로 스킨 코딩하지 않는다.

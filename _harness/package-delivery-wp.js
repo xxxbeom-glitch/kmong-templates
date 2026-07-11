@@ -1,9 +1,13 @@
 /**
- * wordpress/{slug}/ → _delivery-wp/{slug}/ + ZIP
+ * wordpress/{slug}/ → wordpress/{slug}/dist/{slug}.zip
  * 사용: node _harness/package-delivery-wp.js {slug}
+ *
+ * 풀린 복사본(_delivery-wp)은 만들지 않음. ZIP만 생성.
+ * dist/ 는 ZIP에 포함하지 않음.
  */
 var fs = require("fs");
 var path = require("path");
+var os = require("os");
 var childProcess = require("child_process");
 var verifyWordPress = require("./verify-wordpress-static.js");
 
@@ -16,8 +20,8 @@ if (!slug) {
 
 var root = path.resolve(__dirname, "..");
 var srcDir = path.join(root, "wordpress", slug);
-var destDir = path.join(root, "_delivery-wp", slug);
-var zipPath = path.join(root, "_delivery-wp", slug + ".zip");
+var distDir = path.join(srcDir, "dist");
+var zipPath = path.join(distDir, slug + ".zip");
 
 var EXCLUDE_NAMES = {
   ".gitkeep": true,
@@ -25,7 +29,13 @@ var EXCLUDE_NAMES = {
   "config.local.php": true,
   "wp-config.local.php": true,
   "node_modules": true,
+  "dist": true,
 };
+
+if (!fs.existsSync(srcDir)) {
+  console.error("[delivery-wp] source not found: " + srcDir);
+  process.exit(1);
+}
 
 console.log("[delivery-wp] pre-check: static verify for " + slug);
 
@@ -109,21 +119,25 @@ function createZip(sourceDir, destinationZip) {
       stdio: "inherit",
     });
   } catch (error) {
-    console.warn("[delivery-wp] ZIP skipped — create manually from: " + destDir);
+    console.warn("[delivery-wp] ZIP failed — stage left at: " + sourceDir);
   }
 }
 
-removeDir(destDir);
-ensureDir(path.join(root, "_delivery-wp"));
-copyDir(srcDir, destDir);
+ensureDir(distDir);
 
-console.log("[delivery-wp] copied → _delivery-wp/" + slug + "/");
+var stageRoot = fs.mkdtempSync(path.join(os.tmpdir(), "wp-delivery-"));
+var stageDir = path.join(stageRoot, slug);
 
-createZip(destDir, zipPath);
+copyDir(srcDir, stageDir);
+createZip(stageDir, zipPath);
+removeDir(stageRoot);
 
 if (fs.existsSync(zipPath)) {
-  console.log("[delivery-wp] zip → _delivery-wp/" + slug + ".zip");
+  console.log("[delivery-wp] zip → wordpress/" + slug + "/dist/" + slug + ".zip");
+} else {
+  console.error("[delivery-wp] zip not created");
+  process.exit(1);
 }
 
 console.log("[delivery-wp] upload to: wp-content/themes/" + slug + "/");
-console.log("[delivery-wp] excluded: .gitkeep, config.local.php, wp-config.local.php, node_modules");
+console.log("[delivery-wp] excluded: dist, .gitkeep, config.local.php, wp-config.local.php, node_modules");

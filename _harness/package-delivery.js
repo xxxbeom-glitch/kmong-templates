@@ -1,6 +1,8 @@
 /**
- * templates/{slug}/ → _delivery/{slug}/ 패키징
- * 사용: node _harness/package-delivery.js mainstream
+ * [동결·미사용] 정적 templates/{slug}/ → 구 _delivery/{slug}/ 패키징
+ * 정적 트랙은 _archive/templates · 구 납품은 _archive/delivery
+ * WP 납품: node _harness/package-delivery-wp.js {slug}
+ * 사용(레거시): node _harness/package-delivery.js {slug}
  */
 var fs = require("fs");
 var path = require("path");

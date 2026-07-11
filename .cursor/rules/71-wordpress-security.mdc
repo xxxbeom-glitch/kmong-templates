@@ -3,7 +3,6 @@ description: WordPress 운영 트랙 보안 (1단계 — 포트폴리오·공지
 alwaysApply: false
 globs:
   - wordpress/**
-  - _delivery-wp/**
   - _harness/package-delivery-wp.js
 ---
 
@@ -151,7 +150,7 @@ globs:
 - `wp-config.php` · `config.local.php` · `.env` · 백업 SQL
 
 **패키징 (`package-delivery-wp.js`) 전 확인:**
-- 위 파일이 `wordpress/{slug}/`·`_delivery-wp/`에 **없어야** 함
+- 위 파일이 `wordpress/{slug}/`·`dist/`에 **없어야** 함
 - 소스에 `password` · `api_key` · `secret` · `BEGIN PRIVATE` 등 **의심 문자열** — 사람 눈으로 1회 확인
 
 **이유:** ZIP·Git 유출 시 계정·서버가 즉시 위험해진다.

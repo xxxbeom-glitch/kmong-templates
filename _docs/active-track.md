@@ -13,7 +13,7 @@
 | **절차** | `.cursor/rules/20-harness-workflow.mdc` (섹션 단위 · QA · 로그) |
 | **WP 규칙** | `70-wordpress.mdc` · `71` · `72` |
 | **Figma·반응형·인터랙션** | `30` · `35` · `45` · `46` · `47` |
-| **납품** | `node _harness/package-delivery-wp.js {slug}` → `_delivery-wp/{slug}.zip` |
+| **납품** | `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip` |
 | **정적 검사** | `node _harness/verify-wordpress-static.js {slug}` |
 | **로그** | `_logs/decision-log.md` · `change-log.md` · `qa-log.md` |
 
@@ -26,10 +26,12 @@
 | 내용 | 경로 |
 |------|------|
 | 정적 템플릿 + cafe24_shop | `_archive/templates/` |
+| 구 정적·아임웹 납품 | `_archive/delivery/` |
 | 사이트 복제·데모 분석 | `_archive/reference-harness/` |
 | Cafe24 / Reference 규칙 | `.cursor/rules/archive/80`~`84` |
 
-- 루트 `templates/` **없음** (자리표시자 제거 · 내용은 아카이브만)
+- 루트 `templates/` · `_delivery/` · `_delivery-wp/` **없음**
+- WP ZIP은 `wordpress/{slug}/dist/` (커밋 안 함)
 - 레퍼런스 URL **인터랙션 파악만** — 사용자가 **명시한 경우만** (미러·복제 파이프라인 중단)
 - 모바일 작업 시 **MO만** 수정 (PC 스타일 동시 변경 금지)
 

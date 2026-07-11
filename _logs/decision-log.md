@@ -1,5 +1,16 @@
 # Decision Log
 
+## 2026-07-11 — WP 납품을 작업 폴더 dist/ 로
+
+| # | 결정 |
+|---|------|
+| 1 | 루트 `_delivery/` · `_delivery-wp/` **제거** |
+| 2 | 납품 = `wordpress/{slug}/dist/{slug}.zip` 만 (풀린 복사본 없음) |
+| 3 | 구 정적·아임웹 납품 → `_archive/delivery/` |
+| 4 | `wordpress/*/dist/` git 무시 |
+
+---
+
 ## 2026-07-11 — 루트 `templates/` 제거
 
 | # | 결정 |

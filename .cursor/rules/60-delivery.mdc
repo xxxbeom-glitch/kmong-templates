@@ -1,32 +1,21 @@
 ---
-description: 납품·배포 패키징 규칙
+description: 정적 납품 규칙 (동결 — WP는 70-wordpress)
 alwaysApply: false
 globs:
-  - _delivery/**
+  - _archive/delivery/**
   - _docs/delivery-guide.md
   - _harness/package-delivery.js
 ---
 
-# Delivery
+# Delivery (정적 · 동결)
 
-- 납품 경로: `_delivery/{template-slug}/` — QA PASS 후 **복사본**만 (개발·실험 공간 아님)
-- 납품물 = 해당 템플릿의 HTML/CSS/JS/assets **복사본** (독립 실행 가능)
-- 패키징: `node _harness/package-delivery.js {slug}` — dev 전용 파일·preview 코드 제거 · **`templates/index.html` → `_delivery/index.html` 동기화**
-- 템플릿 허브: `templates/index.html` — 텍스트 링크 목록 · **신규 템플릿 승인 시 `<li>` 한 줄 추가** · 패키징마다 `_delivery/index.html` 자동 갱신
-- 호스팅 삽입 시 jQuery가 이미 로드되면 **중복 `<script>` 제거**
-- `$` 그대로 사용 (별도 noConflict 패턴 불필요)
-- 이미지 1MB 이하 권장 · 불필요 CSS/JS 제거
-- 납품 전 `js/dev-images.js` → **`DEV_IMAGES.enabled = false`** · `assets/images/`만 표시 (`47-placeholder-images.mdc`)
-- 납품 전 `50-qa-checklist.mdc` QA PASS 필수
+> **활성 WP 납품:** `70-wordpress.mdc` · `wordpress/{slug}/dist/{slug}.zip`  
+> 본 규칙은 구 정적·아임웹 납품(`_archive/delivery/`) 참고용.
 
-적용 기준:
-- `_delivery/` 정리, 크몽 납품·호스팅 ZIP 패키징, 삽입 검증 시.
+- 구 경로 `_delivery/{slug}/` → 보관: `_archive/delivery/`
+- 정적 패키징 스크립트 `package-delivery.js` — **신규 미사용**
+- 루트 `_delivery/` · `_delivery-wp/` **재생성 금지**
 
 금지:
-- 플랫폼별 하위 폴더 (`imweb`, `cafe24` 등) 생성
-- 템플릿 간 파일 혼합·공통 번들 의존
-- QA PASS 전 납품 폴더에 최종본 반영
-- **`_delivery/`를 개발 workbench·중간 스테이징으로 사용**
-
-완료 기준:
-- `_delivery/{slug}/`에 QA 통과 스냅샷 존재, 오프라인·호스팅 삽입 테스트 통과.
+- 플랫폼별 하위 폴더 (`imweb`, `cafe24` 등) 루트에 재도입
+- 정적 납품을 활성 WP 워크플로로 사용
