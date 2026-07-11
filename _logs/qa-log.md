@@ -1892,6 +1892,16 @@ _???�전??검?��???��?�로 ?��?
 
 **비고:** 브라?��? ?�크롤로 fade-up ?�인 ?�청.
 
+## 2026-07-11 · [wordpress] template-a 관리자 콘텐츠 QA
+
+- 결과: **PASS**
+- `node _harness/verify-wordpress-static.js template-a`: **36/36 PASS · FAIL 0 · WARN 0**
+- PHP 문법: 테마 PHP 26개 전체 PASS
+- `git diff --check -- wordpress/template-a`: 오류 없음
+- 관리자 권한·nonce·입력 정제·출력 escaping·미디어 attachment ID fallback 확인
+- 패키징: `node _harness/package-delivery-wp.js template-a` PASS
+- 비고: 실제 WordPress 관리자 클릭 저장 및 브라우저 렌더링은 이 정적 환경에서 미수행
+
 ### mainstream ??scroll-reveal 개별 ?�소 (2026-06-08)
 
 | # | ??�� | 결과 |

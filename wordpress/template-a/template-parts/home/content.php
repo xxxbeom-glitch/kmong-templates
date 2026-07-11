@@ -2,64 +2,37 @@
     <section id="hero" class="section section--hero" aria-labelledby="hero-title">
       <div class="hero__kv" data-hero-progress-slider>
         <div class="hero__slides" aria-live="polite">
-          <article class="hero__slide is-active">
-            <img
-              class="hero__slide-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/hero-bg-01.jpg')); ?>"
-              alt=""
-              width="1920"
-              height="800"
-              decoding="async"
-              fetchpriority="high"
-            >
-          </article>
-          <article class="hero__slide">
-            <img
-              class="hero__slide-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/hero-bg-02.jpg')); ?>"
-              alt=""
-              width="1920"
-              height="800"
-              decoding="async"
-            >
-          </article>
-          <article class="hero__slide">
-            <img
-              class="hero__slide-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/hero-bg-03.jpg')); ?>"
-              alt=""
-              width="1920"
-              height="800"
-              decoding="async"
-            >
-          </article>
+          <?php $hero_images = array('images/hero-bg-01.jpg', 'images/hero-bg-02.jpg', 'images/hero-bg-03.jpg'); ?>
+          <?php foreach (template_a_get('home.hero.slides', array()) as $index => $slide) : ?>
+            <article class="hero__slide<?php echo $index === 0 ? ' is-active' : ''; ?>">
+              <img class="hero__slide-img" src="<?php echo esc_url(template_a_img_url('home.hero.slides.' . $index . '.image', isset($hero_images[$index]) ? $hero_images[$index] : $hero_images[0])); ?>" alt="" width="1920" height="800" decoding="async"<?php echo $index === 0 ? ' fetchpriority="high"' : ''; ?>>
+            </article>
+          <?php endforeach; ?>
         </div>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="section-shell section-shell--gutter hero__inner">
           <div class="hero__copy">
-            <h1 id="hero-title" class="hero__title">브랜드의 기준을 세우는<br>웹사이트 구축 파트너</h1>
-            <p class="hero__lead">기업의 첫인상부터 고객 문의까지, 목적에 맞는 정보 구조와 디지털 경험을 설계합니다.</p>
+            <h1 id="hero-title" class="hero__title"><?php echo template_a_text_br('home.hero.title'); ?></h1>
+            <p class="hero__lead"><?php echo esc_html(template_a_get('home.hero.lead')); ?></p>
           </div>
         </div>
         <div class="section-shell section-shell--gutter hero__progress">
-          <button type="button" class="hero__progress-track" aria-label="다음 슬라이드">
+          <button type="button" class="hero__progress-track" aria-label="<?php echo esc_attr(template_a_get('home.hero.progress_label')); ?>">
             <span class="hero__progress-fill"></span>
           </button>
         </div>
       </div>
     </section>
 
-    <section id="intro" class="section section--intro" aria-label="소개">
+    <section id="intro" class="section section--intro" aria-label="<?php echo esc_attr(template_a_get('home.intro.aria_label')); ?>">
       <div class="section-shell section-shell--gutter intro__inner">
         <h2 class="intro__fill-txt" data-intro-fill>
-          <span class="intro__fill-line">
-            <span class="intro__fill-txt-base">웹사이트는 회사를 소개하는 화면을 넘어,</span>
-            <span class="intro__fill-txt-highlight" aria-hidden="true">웹사이트는 회사를 소개하는 화면을 넘어,</span>
-          </span>
-          <span class="intro__fill-line">
-            <span class="intro__fill-txt-base">고객이 브랜드를 판단하는 첫 번째 기준입니다.</span>
-            <span class="intro__fill-txt-highlight" aria-hidden="true">고객이 브랜드를 판단하는 첫 번째 기준입니다.</span>
-          </span>
+          <?php foreach (template_a_get('home.intro.lines', array()) as $line) : ?>
+            <span class="intro__fill-line">
+              <span class="intro__fill-txt-base"><?php echo esc_html($line['text']); ?></span>
+              <span class="intro__fill-txt-highlight" aria-hidden="true"><?php echo esc_html($line['text']); ?></span>
+            </span>
+          <?php endforeach; ?>
         </h2>
       </div>
     </section>
@@ -67,80 +40,28 @@
     <section id="features" class="section section--features" aria-labelledby="features-title">
       <div class="features__shell">
         <div class="features__head">
-          <h2 id="features-title" class="features__title scroll-reveal">필요한 정보가 자연스럽게 읽히고,<br>문의로 이어지는 흐름을 설계합니다.</h2>
+          <h2 id="features-title" class="features__title scroll-reveal"><?php echo template_a_text_br('home.features.title'); ?></h2>
         </div>
         <div
           class="features__scroll"
           data-features-scroll
           data-drag-scroll
           tabindex="0"
-          aria-label="특징 카드 목록"
+          aria-label="<?php echo esc_attr(template_a_get('home.features.list_label')); ?>"
         >
           <div class="features__track">
-        <article class="features__card">
-          <figure class="features__card-media">
-            <img
-              class="features__card-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/feature-bg-01.jpg')); ?>"
-              alt=""
-              width="641"
-              height="460"
-              decoding="async"
-            >
-          </figure>
-          <div class="features__card-body">
-            <h3 class="features__card-title">첫 화면에서 전달되는 명확한 인상</h3>
-            <p class="features__card-desc">방문자가 처음 마주하는 화면에서 브랜드의 방향과 핵심 메시지를 분명하게 전달합니다.</p>
-          </div>
-        </article>
-        <article class="features__card">
-          <figure class="features__card-media">
-            <img
-              class="features__card-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/feature-bg-02.jpg')); ?>"
-              alt=""
-              width="641"
-              height="460"
-              decoding="async"
-            >
-          </figure>
-          <div class="features__card-body">
-            <h3 class="features__card-title">목적에 맞게 확장되는 섹션 구조</h3>
-            <p class="features__card-desc">기업, 브랜드, 병원, 전문 서비스 등 업종별로 필요한 콘텐츠를 유연하게 구성합니다.</p>
-          </div>
-        </article>
-        <article class="features__card">
-          <figure class="features__card-media">
-            <img
-              class="features__card-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/feature-bg-03.jpg')); ?>"
-              alt=""
-              width="641"
-              height="460"
-              decoding="async"
-            >
-          </figure>
-          <div class="features__card-body">
-            <h3 class="features__card-title">문의까지 이어지는 사용자 동선</h3>
-            <p class="features__card-desc">소개와 강점, 사례, FAQ, 문의 영역을 자연스럽게 연결해 다음 행동을 쉽게 만듭니다.</p>
-          </div>
-        </article>
-        <article class="features__card">
-          <figure class="features__card-media">
-            <img
-              class="features__card-img"
-              src="<?php echo esc_url(template_a_asset_uri('images/feature-bg-04.webp')); ?>"
-              alt=""
-              width="641"
-              height="460"
-              decoding="async"
-            >
-          </figure>
-          <div class="features__card-body">
-            <h3 class="features__card-title">운영과 확장을 고려한 구축 방식</h3>
-            <p class="features__card-desc">콘텐츠 수정과 페이지 추가, 기능 확장까지 고려해 지속적으로 활용할 수 있는 구조를 만듭니다.</p>
-          </div>
-        </article>
+        <?php $feature_images = array('images/feature-bg-01.jpg', 'images/feature-bg-02.jpg', 'images/feature-bg-03.jpg', 'images/feature-bg-04.webp'); ?>
+        <?php foreach (template_a_get('home.features.items', array()) as $index => $item) : ?>
+          <article class="features__card">
+            <figure class="features__card-media">
+              <img class="features__card-img" src="<?php echo esc_url(template_a_img_url('home.features.items.' . $index . '.image', isset($feature_images[$index]) ? $feature_images[$index] : $feature_images[0])); ?>" alt="" width="641" height="460" decoding="async">
+            </figure>
+            <div class="features__card-body">
+              <h3 class="features__card-title"><?php echo esc_html($item['title']); ?></h3>
+              <p class="features__card-desc"><?php echo esc_html($item['body']); ?></p>
+            </div>
+          </article>
+        <?php endforeach; ?>
           </div>
         </div>
       </div>
@@ -148,68 +69,52 @@
 
     <section id="services" class="section section--services" aria-labelledby="services-title">
       <div class="section-shell section-shell--gutter services__inner">
-        <h2 id="services-title" class="services__title scroll-reveal">쌓아온 경험을 프로젝트의 기준으로</h2>
+        <h2 id="services-title" class="services__title scroll-reveal"><?php echo esc_html(template_a_get('home.services.title')); ?></h2>
         <div class="services__grid">
-          <article class="services__card scroll-reveal">
-            <div class="services__card-content">
-              <div class="services__stat">
-                <span
-                  class="services__stat-value"
-                  data-stats-counter
-                  data-count-value="500"
-                >0</span>
-                <span class="services__stat-unit services__stat-unit--plus">+</span>
+          <?php foreach (template_a_get('home.services.stats', array()) as $stat) : ?>
+            <article class="services__card scroll-reveal">
+              <div class="services__card-content">
+                <div class="services__stat">
+                  <span class="services__stat-value" data-stats-counter data-count-value="<?php echo esc_attr($stat['value']); ?>">0</span>
+                  <span class="services__stat-unit<?php echo $stat['unit'] === '+' ? ' services__stat-unit--plus' : ''; ?>"><?php echo esc_html($stat['unit']); ?></span>
+                </div>
+                <p class="services__stat-label"><?php echo esc_html($stat['label']); ?></p>
               </div>
-              <p class="services__stat-label">누적 프로젝트</p>
-            </div>
-          </article>
-          <article class="services__card scroll-reveal">
-            <div class="services__card-content">
-              <div class="services__stat">
-                <span
-                  class="services__stat-value"
-                  data-stats-counter
-                  data-count-value="100"
-                >0</span>
-                <span class="services__stat-unit services__stat-unit--plus">+</span>
-              </div>
-              <p class="services__stat-label">파트너 기업</p>
-            </div>
-          </article>
-          <article class="services__card scroll-reveal">
-            <div class="services__card-content">
-              <div class="services__stat">
-                <span
-                  class="services__stat-value"
-                  data-stats-counter
-                  data-count-value="95"
-                >0</span>
-                <span class="services__stat-unit">%</span>
-              </div>
-              <p class="services__stat-label">고객 만족도</p>
-            </div>
-          </article>
-          <article class="services__card scroll-reveal">
-            <div class="services__card-content">
-              <div class="services__stat">
-                <span
-                  class="services__stat-value"
-                  data-stats-counter
-                  data-count-value="15"
-                >0</span>
-                <span class="services__stat-unit">년</span>
-              </div>
-              <p class="services__stat-label">평균 실무 경력</p>
-            </div>
-          </article>
+            </article>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
 
     <section id="reviews" class="section section--reviews" aria-labelledby="reviews-title">
       <div class="section-shell section-shell--gutter">
-        <h2 id="reviews-title" class="reviews__title scroll-reveal">프로젝트를 함께한 고객의 이야기</h2>
+        <h2 id="reviews-title" class="reviews__title scroll-reveal"><?php echo esc_html(template_a_get('home.reviews.title')); ?></h2>
       </div>
+      <?php
+      $review_rows = array_chunk(template_a_get('home.reviews.items', array()), 10);
+      ?>
+      <div class="reviews__marquee">
+      <?php
+      foreach ($review_rows as $row_index => $reviews) :
+      ?>
+        <div class="reviews__row reviews__row--<?php echo $row_index === 0 ? 'left' : 'right'; ?>">
+          <div class="reviews__track">
+            <?php for ($copy = 0; $copy < 2; $copy++) : ?>
+              <div class="reviews__group"<?php echo $copy === 0 ? ' role="list" aria-label="' . esc_attr(template_a_get($row_index === 0 ? 'home.reviews.top_label' : 'home.reviews.bottom_label')) . '"' : ' aria-hidden="true"'; ?>>
+                <?php foreach ($reviews as $review) : ?>
+                  <article class="reviews__card"<?php echo $copy === 0 ? ' role="listitem"' : ''; ?>>
+                    <h3 class="reviews__card-title"><?php echo esc_html($review['title']); ?></h3>
+                    <p class="reviews__card-body"><?php echo esc_html($review['body']); ?></p>
+                    <p class="reviews__card-author"><?php echo esc_html($review['author']); ?></p>
+                  </article>
+                <?php endforeach; ?>
+              </div>
+            <?php endfor; ?>
+          </div>
+        </div>
+      <?php endforeach; ?>
+      </div>
+      <?php if (false) : ?>
       <div class="reviews__marquee">
         <div class="reviews__row reviews__row--left">
           <div class="reviews__track">
@@ -428,42 +333,19 @@
           </div>
         </div>
       </div>
+      <?php endif; ?>
     </section>
 
     <section id="faq" class="section section--faq" aria-labelledby="faq-title">
       <div class="section-shell section-shell--gutter">
-        <h2 id="faq-title" class="faq__title scroll-reveal">자주 묻는 질문</h2>
+        <h2 id="faq-title" class="faq__title scroll-reveal"><?php echo esc_html(template_a_get('home.faq.title')); ?></h2>
         <div class="faq__list">
-          <details class="faq__item scroll-reveal" open>
-            <summary class="faq__q">어떤 업종의 홈페이지를 제작할 수 있나요?</summary>
-            <div class="faq__a">
-              <p>기업 홈페이지, 브랜드 사이트, 병원·클리닉, 전문 서비스업, 커머스와 플랫폼 등 다양한 유형의 웹사이트를 제작합니다. 업종보다 사이트의 목적과 필요한 기능을 먼저 확인합니다.</p>
-            </div>
-          </details>
-          <details class="faq__item scroll-reveal">
-            <summary class="faq__q">템플릿을 사용해도 브랜드에 맞게 바꿀 수 있나요?</summary>
-            <div class="faq__a">
-              <p>가능합니다. 기본 구조를 활용하되 컬러, 타이포, 이미지, 원고와 섹션 순서를 조정해 각 기업의 분위기와 목적에 맞게 구성합니다.</p>
-            </div>
-          </details>
-          <details class="faq__item scroll-reveal">
-            <summary class="faq__q">기획이나 원고가 없어도 진행할 수 있나요?</summary>
-            <div class="faq__a">
-              <p>보유한 회사 자료와 상담 내용을 바탕으로 메뉴 구조, 페이지별 핵심 내용과 기본 원고를 함께 정리할 수 있습니다.</p>
-            </div>
-          </details>
-          <details class="faq__item scroll-reveal">
-            <summary class="faq__q">제작 기간은 얼마나 걸리나요?</summary>
-            <div class="faq__a">
-              <p>페이지 수와 기능 범위에 따라 달라지며, 일반적인 기업 홈페이지는 자료 확인 후 상세 일정과 단계별 진행 계획을 안내합니다.</p>
-            </div>
-          </details>
-          <details class="faq__item scroll-reveal">
-            <summary class="faq__q">도메인과 호스팅도 함께 지원하나요?</summary>
-            <div class="faq__a">
-              <p>도메인 연결과 호스팅 설정을 지원하며, 기존에 사용 중인 계정이 있다면 현재 환경을 확인한 후 이전 또는 연동 방식으로 진행합니다.</p>
-            </div>
-          </details>
+          <?php foreach (template_a_get('home.faq.items', array()) as $index => $item) : ?>
+            <details class="faq__item scroll-reveal"<?php echo $index === 0 ? ' open' : ''; ?>>
+              <summary class="faq__q"><?php echo esc_html($item['question']); ?></summary>
+              <div class="faq__a"><p><?php echo esc_html($item['answer']); ?></p></div>
+            </details>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
@@ -472,7 +354,7 @@
       <div class="cta__kv">
         <img
           class="cta__bg"
-          src="<?php echo esc_url(template_a_asset_uri('images/cta-bg.jpg')); ?>"
+          src="<?php echo esc_url(template_a_img_url('home.cta.image', 'images/cta-bg.jpg')); ?>"
           alt=""
           width="1920"
           height="600"
@@ -480,12 +362,12 @@
         >
         <div class="cta__overlay" aria-hidden="true"></div>
         <div class="section-shell section-shell--gutter cta__inner">
-          <h2 id="cta-title" class="cta__title scroll-reveal">웹사이트가 필요하지만 어디서부터 시작할지 막막하다면,<br>방향부터 함께 정리해보세요.</h2>
+          <h2 id="cta-title" class="cta__title scroll-reveal"><?php echo template_a_text_br('home.cta.title'); ?></h2>
           <a class="cta__btn btn-slide-hover scroll-reveal" href="<?php echo esc_url(home_url('/contact/')); ?>">
             <span class="btn__label">
               <span class="btn__track">
-                <span class="btn__text">프로젝트 문의하기</span>
-                <span class="btn__text" aria-hidden="true">프로젝트 문의하기</span>
+                <span class="btn__text"><?php echo esc_html(template_a_get('home.cta.button')); ?></span>
+                <span class="btn__text" aria-hidden="true"><?php echo esc_html(template_a_get('home.cta.button')); ?></span>
               </span>
             </span>
           </a>
@@ -496,7 +378,7 @@
     <section id="insight" class="section section--insight" aria-labelledby="insight-title">
       <div class="section-shell section-shell--gutter insight__inner">
         <div class="insight__body">
-          <h2 id="insight-title" class="insight__title scroll-reveal">주요 소식</h2>
+          <h2 id="insight-title" class="insight__title scroll-reveal"><?php echo esc_html(template_a_get('home.insight.title')); ?></h2>
           <ul class="insight__list">
 <?php
 $template_a_notices = new WP_Query(
@@ -515,7 +397,7 @@ if ($template_a_notices->have_posts()) :
   <li class="insight__item scroll-reveal">
     <a class="insight__link" href="<?php the_permalink(); ?>">
       <span class="insight__link-main">
-        <span class="insight__tag">공지사항</span>
+        <span class="insight__tag"><?php echo esc_html(template_a_get('home.insight.tag')); ?></span>
         <span class="insight__link-title"><?php the_title(); ?></span>
       </span>
       <time class="insight__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time>
@@ -528,8 +410,8 @@ else :
   <li class="insight__item">
     <span class="insight__link">
       <span class="insight__link-main">
-        <span class="insight__tag">공지사항</span>
-        <span class="insight__link-title">등록된 공지사항이 없습니다.</span>
+        <span class="insight__tag"><?php echo esc_html(template_a_get('home.insight.tag')); ?></span>
+        <span class="insight__link-title"><?php echo esc_html(template_a_get('home.insight.empty')); ?></span>
       </span>
     </span>
   </li>
@@ -543,8 +425,8 @@ wp_reset_postdata();
           <a class="btn-pill btn-pill--accent btn-slide-hover scroll-reveal" href="<?php echo esc_url(get_post_type_archive_link('notice')); ?>">
             <span class="btn__label">
               <span class="btn__track">
-                <span class="btn__text">전체 글 보기</span>
-                <span class="btn__text" aria-hidden="true">전체 글 보기</span>
+                <span class="btn__text"><?php echo esc_html(template_a_get('home.insight.more')); ?></span>
+                <span class="btn__text" aria-hidden="true"><?php echo esc_html(template_a_get('home.insight.more')); ?></span>
               </span>
             </span>
           </a>

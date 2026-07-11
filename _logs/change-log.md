@@ -676,6 +676,14 @@
 - `10pages-svc0002` SAMPLE TAX · 4p · preview :4211
 - `10pages-svc0005` SAMPLE HR · 38p · preview :4212
 - `10pages-svc0006` SAMPLE MARKETING · 35p · preview :4213
+
+## 2026-07-11 — Template A no-plugin 관리자 콘텐츠
+
+- 추가: `inc/content.php`, `inc/content-defaults.php`, `inc/content-schema.php`, `inc/admin-content.php`
+- 추가: `assets/js/admin-content.js`, `assets/css/admin-content.css`
+- 수정: `functions.php`, `header.php`, `footer.php`, 홈/전체 서브페이지/공지 템플릿
+- 내용: dot-path 조회, 기본값 병합, 미디어 선택, 중첩 반복 항목, 탭별 저장, 출력 escaping 적용
+- 납품: `_delivery-wp/template-a/`, `_delivery-wp/template-a.zip` 재생성
 - 큐 잔여 0 (전체 수집 PASS)## 2026-07-09 — wonkangmetal Track C 사이트 복제
 - 트랙: reference-harness · case `wonkangmetal`
 - 원본: http://www.wonkangmetal.co.kr/ (원강금속)

@@ -2,13 +2,13 @@
 <main id="main" class="main main--subpage">
   <section id="page-hero" class="section section--page-hero" aria-labelledby="page-hero-title">
     <div class="page-hero__media" aria-hidden="true">
-      <img class="page-hero__img" src="<?php echo esc_url(template_a_asset_uri('images/hero-bg-02.jpg')); ?>" alt="" width="1920" height="364" decoding="async" fetchpriority="high">
+      <img class="page-hero__img" src="<?php echo esc_url(template_a_img_url('notice.hero.image', 'images/hero-bg-02.jpg')); ?>" alt="" width="1920" height="364" decoding="async" fetchpriority="high">
       <div class="page-hero__overlay"></div>
     </div>
     <div class="section-shell section-shell--gutter page-hero__inner">
       <div class="page-hero__copy">
-        <p class="page-hero__label">주요 소식</p>
-        <h1 id="page-hero-title" class="page-hero__title">텐폴드 스튜디오의 새로운 소식을 전합니다.</h1>
+        <p class="page-hero__label"><?php echo esc_html(template_a_get('notice.hero.label')); ?></p>
+        <h1 id="page-hero-title" class="page-hero__title"><?php echo template_a_text_br('notice.hero.title'); ?></h1>
       </div>
     </div>
   </section>
@@ -25,17 +25,17 @@
           </div>
         </article>
         <?php $previous = get_previous_post(); $next = get_next_post(); ?>
-        <nav class="news-view__nav" aria-label="글 이동">
+        <nav class="news-view__nav" aria-label="<?php echo esc_attr(template_a_get('notice.post_nav_label')); ?>">
           <?php if ($previous) : ?>
-            <a class="news-view__nav-link news-view__nav-link--prev" href="<?php echo esc_url(get_permalink($previous)); ?>"><span>이전 글</span></a>
+            <a class="news-view__nav-link news-view__nav-link--prev" href="<?php echo esc_url(get_permalink($previous)); ?>"><span><?php echo esc_html(template_a_get('notice.previous_post')); ?></span></a>
           <?php else : ?>
             <span class="news-view__nav-link news-view__nav-link--prev"></span>
           <?php endif; ?>
           <a class="news-view__list-btn btn-pill btn-pill--accent btn-slide-hover" href="<?php echo esc_url(get_post_type_archive_link('notice')); ?>">
-            <span class="btn__label"><span class="btn__track"><span class="btn__text">글 목록 보기</span><span class="btn__text" aria-hidden="true">글 목록 보기</span></span></span>
+            <span class="btn__label"><span class="btn__track"><span class="btn__text"><?php echo esc_html(template_a_get('notice.list_button')); ?></span><span class="btn__text" aria-hidden="true"><?php echo esc_html(template_a_get('notice.list_button')); ?></span></span></span>
           </a>
           <?php if ($next) : ?>
-            <a class="news-view__nav-link news-view__nav-link--next" href="<?php echo esc_url(get_permalink($next)); ?>"><span>다음 글</span></a>
+            <a class="news-view__nav-link news-view__nav-link--next" href="<?php echo esc_url(get_permalink($next)); ?>"><span><?php echo esc_html(template_a_get('notice.next_post')); ?></span></a>
           <?php else : ?>
             <span class="news-view__nav-link news-view__nav-link--next"></span>
           <?php endif; ?>

@@ -1,0 +1,73 @@
+.template-a-content {
+  max-width: 1180px;
+}
+
+.template-a-content .nav-tab-wrapper {
+  margin-bottom: 20px;
+}
+
+.template-a-content__panel {
+  display: none;
+}
+
+.template-a-content__panel.is-active {
+  display: block;
+}
+
+.template-a-content__group,
+.template-a-repeater {
+  margin: 0 0 18px;
+  padding: 18px;
+  border: 1px solid #c3c4c7;
+  background: #fff;
+}
+
+.template-a-content__group > legend,
+.template-a-repeater > legend {
+  padding: 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.template-a-content__field {
+  margin-bottom: 16px;
+}
+
+.template-a-content__field > label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.template-a-content__field input[type="text"],
+.template-a-content__field textarea {
+  width: 100%;
+  max-width: 760px;
+}
+
+.template-a-repeater__row {
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid #dcdcde;
+  background: #f6f7f7;
+}
+
+.template-a-repeater__row-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.template-a-image-field__preview {
+  width: 220px;
+  min-height: 70px;
+  margin-bottom: 8px;
+  border: 1px dashed #c3c4c7;
+  background: #f6f7f7;
+}
+
+.template-a-image-field__preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
