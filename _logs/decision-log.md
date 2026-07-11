@@ -1,6 +1,18 @@
 # Decision Log
 
 
+## 2026-07-11 — [static] template-homepage · 서비스 3페이지 모바일
+
+| # | 결정 |
+|---|------|
+| 1 | 대상: `service-solution` · `service-process` · `service-portfolio` (`@768`만) |
+| 2 | intro 타이포 정리 · 카드/스텝 `min-height` 해제 후 비율(카드 16:9 · 포트폴리오 4:3) |
+| 3 | 패딩·라운딩·본문 br 해제 · 스택은 기존 `@1024` 유지 |
+| 4 | PC 원본 유지 |
+
+---
+
+
 ## 2026-07-11 — [static] template-homepage · 오시는길 모바일
 
 | # | 결정 |

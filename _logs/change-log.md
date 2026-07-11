@@ -1,4 +1,11 @@
 
+## 2026-07-11 — [static] template-homepage 서비스 3페이지 모바일
+
+**범위:** `css/style.css` · solution/process/portfolio HTML  
+**내용:** @768 카드·스텝·포트폴리오 비율·타이포·패딩 일괄 반영
+
+---
+
 ## 2026-07-10 — [static] template-homepage 서브 공통 모바일 반영
 
 **범위:** `css/style.css` · 전 HTML (`?v=mo-sub-common`) · about-greeting QA 해제  
