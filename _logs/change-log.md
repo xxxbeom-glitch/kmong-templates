@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-11 — rules 잔재 정리 (안전)
+
+- 활성 규칙 glob: `templates/**` → `wordpress/**`
+- `72` · `50` 납품 경로 → `wordpress/{slug}/dist/`
+- archive 중복 `.md` 6개 삭제 (`.mdc`만 유지)
+
+---
+
 ## 2026-07-11 — `_docs` 가이드 → 규칙 SoT · 아카이브
 
 - `_docs/`에 `active-track.md`만 유지

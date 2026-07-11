@@ -2,8 +2,9 @@
 description: 템플릿 HTML/CSS 네이밍·마크업 규칙
 alwaysApply: false
 globs:
-  - templates/**/*.html
-  - templates/**/*.css
+  - wordpress/**/*.php
+  - wordpress/**/*.css
+  - wordpress/**/*.html
 ---
 
 # Template Code Style

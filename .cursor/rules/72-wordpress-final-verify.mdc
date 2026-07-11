@@ -3,7 +3,6 @@ description: WordPress 납품 전 최종 검수·패키징 실행 절차 (사용
 alwaysApply: false
 globs:
   - wordpress/**
-  - _delivery-wp/**
   - _harness/verify-wordpress-static.js
   - _harness/verify-wordpress-links.js
   - _harness/verify-wordpress-runtime.js
@@ -114,7 +113,7 @@ globs:
 
 **FAIL이 하나라도 있으면:**
 
-1. **`package-delivery-wp.js` 실행 금지** (ZIP·`_delivery-wp/` 생성 안 함)
+1. **`package-delivery-wp.js` 실행 금지** (ZIP·`wordpress/{slug}/dist/` 생성 안 함)
 2. **테마 코드 임의 수정 금지** — placeholder(`href="#"`) 포함 · 디자인 진행 중 상태 유지
 3. **먼저 보고** — 항목마다:
    - 파일 경로
@@ -167,8 +166,7 @@ WARN은 아래 **세 가지로 라벨**하여 보고:
 
 성공 시 출력:
 
-- `_delivery-wp/{slug}/`
-- `_delivery-wp/{slug}.zip`
+- `wordpress/{slug}/dist/{slug}.zip`
 
 `package-delivery-wp.js`는 내부에서 ① 정적 검사를 다시 호출할 수 있음 — **이중 FAIL**이면 패키징 중단된 상태로 보고.
 
@@ -216,7 +214,7 @@ WARN은 아래 **세 가지로 라벨**하여 보고:
 
 ### 패키징
 - 실행 여부: 예 / 아니오 (사유)
-- ZIP 경로: `_delivery-wp/{slug}.zip` 또는 「생성 안 함」
+- ZIP 경로: `wordpress/{slug}/dist/{slug}.zip` 또는 「생성 안 함」
 
 ### 카페24 업로드 후 확인
 (§8 bullet 요약)

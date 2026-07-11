@@ -2,7 +2,6 @@
 description: 섹션·페이지 QA 통과 기준
 alwaysApply: false
 globs:
-  - templates/**/*
   - wordpress/**/*
   - _logs/qa-log.md
 ---
@@ -134,7 +133,7 @@ globs:
 ## 납품·삽입
 - [ ] jQuery 중복 선언 없음 · `$` 사용 가능
 - [ ] HTML/CSS 삽입 시 깨짐·overflow 없음
-- [ ] `_delivery/{slug}/` 패키지 오프라인 동작 (`node _harness/package-delivery.js {slug}`)
+- [ ] `wordpress/{slug}/dist/{slug}.zip` 패키징 (`node _harness/package-delivery-wp.js {slug}`)
 
 → **전 항목 PASS** = QA PASS. 하나라도 FAIL이면 완료 처리 금지.
 → 결과를 `_logs/qa-log.md`에 **섹션별 1건** 기록 (미기록 = QA 미완료).

@@ -2,8 +2,6 @@
 description: jQuery 인터랙션·애니메이션 패턴
 alwaysApply: false
 globs:
-  - templates/**/js/**
-  - templates/**/*.html
   - wordpress/**/assets/js/**
   - wordpress/**/*.php
 ---

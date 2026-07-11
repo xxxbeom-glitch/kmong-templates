@@ -2,7 +2,6 @@
 description: PC 인터랙션 프리셋 카탈로그·선택·승인 (구현은 45-interaction-patterns)
 alwaysApply: false
 globs:
-  - templates/**/*
   - wordpress/**/*
   - .cursor/rules/45-interaction-patterns.mdc
   - _logs/decision-log.md
