@@ -1,5 +1,16 @@
 # Decision Log
 
+## 2026-07-11 — [repo] 공용 SVG 아이콘 풀 `_icons/`
+
+| # | 결정 |
+|---|------|
+| 1 | 루트 `_icons/` — `_dev-images`와 같은 공용 자산 풀 |
+| 2 | 하위: `ui/` · `social/` · `brand/` |
+| 3 | 사용 시 각 테마/템플릿 `assets/icons/`로 복사 (직접 `../../` 링크 금지) |
+| 4 | 단순 화살표는 1 SVG + CSS rotate 재사용 |
+
+---
+
 ## 2026-07-11 — [wordpress] Template A Blocks (FSE) 메인 1차
 
 | # | 결정 |
