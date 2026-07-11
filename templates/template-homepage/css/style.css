@@ -3953,14 +3953,14 @@ button.scroll-reveal {
   }
 
   .ceo-message__photo-col {
-    justify-content: center;
+    justify-content: stretch;
     width: 100%;
   }
 
   .ceo-message__figure {
-    margin-inline: 1.5rem; /* 좌우 여백 · 셸 패딩에 추가 */
-    width: calc(100% - 3rem);
-    max-width: none;
+    margin: 0;
+    width: 100%;
+    max-width: none; /* 텍스트 열과 동일 폭 */
   }
 
   .news__header {
