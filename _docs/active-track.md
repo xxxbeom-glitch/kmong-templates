@@ -37,6 +37,7 @@
 | 구 납품 | `_archive/delivery/` |
 | 구 `docs/cafe24` | `_archive/docs/cafe24/` |
 | Cafe24/Reference 규칙 | `.cursor/rules/archive/` |
+| 헤스 병원 전용 규칙(75) | `.cursor/rules/archive/75-hes-womens-clinic.mdc` |
 
 - 루트 `templates/` · `docs/` · `_delivery*` · `_reference-harness` · `_dev-images` · `_review_exports` **없음**
 - 모바일 작업 시 **MO만** 수정 · 레퍼런스 URL은 **명시 요청 시에만** 인터랙션 파악

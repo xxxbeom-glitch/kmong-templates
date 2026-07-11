@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-07-11 — 75-hes 규칙 archive
+
+- `75-hes-womens-clinic.mdc` → `.cursor/rules/archive/` (테마 전용 · 가이드는 테마 docs)
+
+---
+
 ## 2026-07-11 — rules 잔재 정리 (안전)
 
 - 활성 규칙 glob: `templates/**` → `wordpress/**`
