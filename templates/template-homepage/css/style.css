@@ -4131,9 +4131,11 @@ button.scroll-reveal {
   }
 
   .news-item__date {
-    margin-left: auto;
+    margin-left: 0;
+    width: 100%;
     font-size: 1rem;
     line-height: 1.6;
+    text-align: left;
   }
 
   .news-view__nav {
@@ -4148,16 +4150,6 @@ button.scroll-reveal {
   .news-view__list-btn {
     order: -1;
     width: 100%;
-  }
-
-  .news-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .news-item__main {
-    flex-wrap: wrap;
   }
 
   .insight__link {
