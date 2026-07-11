@@ -1,4 +1,11 @@
 
+## 2026-07-11 — [static] template-homepage 사업영역 카드 → 제작사례 스타일(모바일)
+
+**범위:** `css/style.css` · `service-list.html`  
+**내용:** `@1024`부터 `.business-item`을 1:1 오버레이 카드(라벨+이름)로 · 본문 숨김 · PC 유지
+
+---
+
 ## 2026-07-11 — [static] template-homepage 서비스 3페이지 모바일
 
 **범위:** `css/style.css` · solution/process/portfolio HTML  
