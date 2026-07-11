@@ -42,3 +42,5 @@ Fill: `facebook-fill` · `instagram-fill` · `youtube-fill` · `x-fill` · `link
 - 법률: `scale`
 - 커머스: `shopping-bag` · `store` · `truck` · `ticket` · `wallet`
 - IT: `code` · `cpu` · `server` · `ai-brain`
+- 편의시설: `wifi` · `parking` · `shower` · `toilet` · `coffee` · `plug` · `sofa` · `dumbbell` · `treadmill` · `locker` 계열은 `lock`/`hanger`
+- 비전·성과: `lightbulb` · `gem` · `crown` · `chart-*`
