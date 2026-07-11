@@ -1,5 +1,15 @@
 # Decision Log
 
+## 2026-07-11 — [static] templates 아카이브 이동
+
+| # | 결정 |
+|---|------|
+| 1 | 정적 작업물 → `_archive/templates/` 보관 (삭제 아님) |
+| 2 | `templates/cafe24_shop/` 는 문법 참고용으로 현위치 유지 |
+| 3 | 활성 개발은 WordPress `wordpress/{slug}/` |
+
+---
+
 ## 2026-07-11 — [repo] 공용 SVG 아이콘 풀 `_icons/`
 
 | # | 결정 |

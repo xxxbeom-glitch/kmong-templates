@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-11 — templates → `_archive/templates`
+
+- 이동: guyeon-lawfirm, hd-ec, mainstream, skhynix-redesign, smile-clinic, template-homepage, tesla-redesign, _admin-core
+- 유지: `templates/cafe24_shop/` (+ zip)
+- `templates/index.html` · `README.md` 갱신
+
+---
+
 ## 2026-07-11 — repo 임시·잔여 정리 (1차)
 
 - 삭제: _harness Figma 임시 스크립트/JSON 12개
