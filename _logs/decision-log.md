@@ -12,6 +12,18 @@
 
 ---
 
+## 2026-07-11 — Template A WordPress 정적 포팅
+
+- 트랙: WordPress Classic Theme
+- slug / 경로: `template-a` / `wordpress/template-a/`
+- 원본: `templates/template-homepage/` (읽기 전용)
+- CMS 범위: CPT `notice`만 사용하며 히어로·GNB·섹션 카피는 PHP에 고정
+- URL: 페이지 레지스트리로 11개 페이지 자동 생성, 공지 목록은 `/notice/` CPT archive 사용
+- 홈 주요 소식: 최신 공지 3건을 `WP_Query`로 출력
+- 원본 `privacy.html`의 깨진 한글은 동일한 5개 항목 구조를 유지해 정상 문구로 복구
+
+---
+
 ## 2026-07-11 — [static] template-homepage · 모바일 라운드 8px 서브 확장
 
 | # | 결정 |

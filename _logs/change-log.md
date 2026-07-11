@@ -1,4 +1,16 @@
 
+## 2026-07-11 — Template A WordPress Classic Theme 포팅
+
+- 추가: `wordpress/template-a/` 전체 테마 골격 (`style.css`, 공통 header/footer, front/page/index/archive/single)
+- 추가: `inc/assets.php`, `inc/notice.php`, `inc/pages.php`, `inc/page-registry.php`
+- 추가: 홈 1개·페이지 9개 template-part, 페이지 자동 생성 경로 11개(부모 2개 포함)
+- 이식: 정적 CSS/JS와 이미지 11개를 `assets/`로 복사, 내부 URL과 이미지 경로를 WordPress 헬퍼로 변환
+- 동적화: 홈 최신 공지 3건, 공지 archive pagination, 공지 single 본문·이전/다음·목록 링크
+- 정리: CDN jQuery 제거(WP bundled `jquery` dependency), Pretendard·홈 GSAP enqueue 유지, `dev-images.js` 미사용
+- 원본 `templates/template-homepage/` 변경 없음
+
+---
+
 ## 2026-07-11 — [static] template-homepage 모바일 코드·토큰 정리
 
 **범위:** `css/style.css` · 전 HTML  

@@ -1,0 +1,240 @@
+  <main id="main" class="main main--subpage">
+    <section id="page-hero" class="section section--page-hero" aria-labelledby="page-hero-title">
+      <div class="page-hero__media" aria-hidden="true">
+        <img
+          class="page-hero__img"
+          src="<?php echo esc_url(template_a_asset_uri('images/hero-bg-02.jpg')); ?>"
+          alt=""
+          width="1920"
+          height="364"
+          decoding="async"
+          fetchpriority="high"
+        >
+        <div class="page-hero__overlay"></div>
+      </div>
+      <div class="section-shell section-shell--gutter page-hero__inner">
+        <div class="page-hero__copy">
+          <p class="page-hero__label">회사소개</p>
+          <h1 id="page-hero-title" class="page-hero__title">브랜드의 목적을 이해하고,<br>오래 쓰이는 웹사이트를 만듭니다.</h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="greeting-intro" class="section section--greeting-intro" aria-labelledby="greeting-intro-title">
+      <div class="section-shell section-shell--gutter greeting-intro__inner">
+        <div class="greeting-intro__head">
+          <div class="greeting-intro__watermark-band" aria-hidden="true">
+            <p class="greeting-intro__watermark">TENFOLD STUDIO</p>
+          </div>
+          <div class="greeting-intro__copy">
+            <h2 id="greeting-intro-title" class="greeting-intro__title scroll-reveal">기업과 전문기관의 목적을 웹사이트의 구조와 경험으로 연결하는<br>디지털 제작 파트너입니다.</h2>
+            <p class="greeting-intro__body scroll-reveal">텐폴드 스튜디오는 보기 좋은 화면을 만드는 데서 그치지 않습니다.<br>방문자가 브랜드를 이해하는 과정과 필요한 정보를 찾는 흐름, 문의 이후의 운영까지 함께 고려해<br>실제 비즈니스에 활용할 수 있는 웹사이트를 구축합니다.</p>
+          </div>
+        </div>
+        <figure class="greeting-intro__figure scroll-reveal">
+          <img
+            class="greeting-intro__img"
+            src="<?php echo esc_url(template_a_asset_uri('images/feature-bg-01.jpg')); ?>"
+            alt=""
+            width="1440"
+            height="771"
+            decoding="async"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section id="greeting-vision" class="section section--greeting-vision" aria-labelledby="greeting-vision-title">
+      <div class="section-shell section-shell--gutter greeting-vision__inner">
+        <h2 id="greeting-vision-title" class="greeting-vision__title scroll-reveal">우리가 중요하게 생각하는 기준</h2>
+        <div class="greeting-vision__rows">
+          <article class="greeting-vision__row scroll-reveal">
+            <div class="greeting-vision__label">
+              <h3 class="greeting-vision__label-title">Purposeful Structure</h3>
+            </div>
+            <div class="greeting-vision__detail">
+              <p class="greeting-vision__summary">브랜드의 목적에 맞는 정보 구조를 설계합니다.</p>
+              <ul class="greeting-vision__list">
+                <li>핵심 메시지 정리</li>
+                <li>사용자 동선 설계</li>
+                <li>문의 전환 흐름 구성</li>
+              </ul>
+            </div>
+          </article>
+          <article class="greeting-vision__row scroll-reveal">
+            <div class="greeting-vision__label">
+              <h3 class="greeting-vision__label-title">Consistent Experience</h3>
+            </div>
+            <div class="greeting-vision__detail">
+              <p class="greeting-vision__summary">모든 페이지에서 일관된 브랜드 경험을 제공합니다.</p>
+              <ul class="greeting-vision__list">
+                <li>통일된 디자인 시스템</li>
+                <li>명확한 콘텐츠 위계</li>
+                <li>반응형 화면 최적화</li>
+              </ul>
+            </div>
+          </article>
+          <article class="greeting-vision__row scroll-reveal">
+            <div class="greeting-vision__label">
+              <h3 class="greeting-vision__label-title">Scalable Website</h3>
+            </div>
+            <div class="greeting-vision__detail">
+              <p class="greeting-vision__summary">운영과 확장에 유연하게 대응할 수 있는 구조를 만듭니다.</p>
+              <ul class="greeting-vision__list">
+                <li>페이지 확장 용이성</li>
+                <li>콘텐츠 관리 구조</li>
+                <li>기능 추가 대응</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="greeting-history" class="section section--greeting-history" aria-labelledby="greeting-history-title" data-year-carousel>
+      <div class="greeting-history__shell">
+        <div class="section-shell section-shell--gutter greeting-history__head">
+          <h2 id="greeting-history-title" class="greeting-history__title scroll-reveal">성장 과정</h2>
+        </div>
+        <div class="greeting-history__viewport scroll-reveal">
+          <div class="greeting-history__track" data-year-carousel-track>
+            <article class="greeting-history__year is-active" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="true">
+                <span class="greeting-history__year-label">2026</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">03.</span>
+                  <span class="greeting-history__text">기업·브랜드 맞춤형 웹 구축 서비스 체계 고도화</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">01.</span>
+                  <span class="greeting-history__text">워드프레스 기반 통합 운영·유지관리 서비스 확대</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2025</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">09.</span>
+                  <span class="greeting-history__text">의료·전문기관 웹사이트 제작 분야 확대</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">04.</span>
+                  <span class="greeting-history__text">반응형 웹사이트 템플릿 라인업 정식 출시</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2024</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">11.</span>
+                  <span class="greeting-history__text">관리자 CMS 연동형 웹사이트 구축 서비스 도입</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">05.</span>
+                  <span class="greeting-history__text">기업 홈페이지 및 브랜드 사이트 누적 프로젝트 확대</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2023</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">10.</span>
+                  <span class="greeting-history__text">웹사이트 운영·유지관리 전담 프로세스 구축</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">03.</span>
+                  <span class="greeting-history__text">UI·UX 디자인 시스템 기반 제작 방식 도입</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2022</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">08.</span>
+                  <span class="greeting-history__text">브랜드·라이프스타일 분야 웹 프로젝트 확대</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">02.</span>
+                  <span class="greeting-history__text">모바일 중심 반응형 웹 구축 체계 개편</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2021</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">09.</span>
+                  <span class="greeting-history__text">비대면 상담 및 온라인 프로젝트 운영 시스템 도입</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">04.</span>
+                  <span class="greeting-history__text">기업·전문 서비스업 홈페이지 제작 분야 확장</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2020</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">07.</span>
+                  <span class="greeting-history__text">웹사이트 기획·디자인·개발 통합 프로세스 정립</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">01.</span>
+                  <span class="greeting-history__text">콘텐츠 관리형 웹사이트 제작 서비스 시작</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2019</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">06.</span>
+                  <span class="greeting-history__text">중소기업 및 소규모 브랜드 웹사이트 구축 확대</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">02.</span>
+                  <span class="greeting-history__text">웹 기반 브랜드 커뮤니케이션 프로젝트 시작</span>
+                </li>
+              </ul>
+            </article>
+            <article class="greeting-history__year" data-year-carousel-item>
+              <button type="button" class="greeting-history__year-btn" aria-pressed="false">
+                <span class="greeting-history__year-label">2018</span>
+              </button>
+              <ul class="greeting-history__list">
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">09.</span>
+                  <span class="greeting-history__text">TENFOLD STUDIO 설립</span>
+                </li>
+                <li class="greeting-history__item">
+                  <span class="greeting-history__month">04.</span>
+                  <span class="greeting-history__text">기업 홈페이지 및 디지털 디자인 프로젝트 시작</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

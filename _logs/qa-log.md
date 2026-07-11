@@ -1,5 +1,22 @@
 # QA Log
 
+## 2026-07-11 · [wordpress] template-a 정적 포팅 QA
+**범위:** `wordpress/template-a/` 전체 · 정적 원본 링크/자산/CPT/페이지 레지스트리/PHP 문법
+**결과:** **PASS (정적 검사)** — WordPress 설치 후 브라우저 시각·폼 동작 확인 필요
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `_harness/verify-wordpress-static.js template-a` | PASS | 32/32 · FAIL 0 · WARN 0 |
+| 2 | PHP 문법 | PASS | 검증기 PHP CLI로 22개 파일 확인 |
+| 3 | `.html` 내부 링크·상대 이미지 경로·CDN jQuery 잔존 | PASS | 검색 결과 없음 |
+| 4 | Theme Name / CPT `notice` / 홈 최신 3건 | PASS | 코드 대조 |
+| 5 | 페이지 레지스트리 11개 / page.php template-part route | PASS | 코드 대조 |
+| 6 | IDE diagnostics | PASS | 오류 없음 |
+
+**제한:** 실제 WordPress 런타임과 브라우저 렌더링은 이 환경에서 실행하지 않음. 문의폼은 정적 UI만 이식되어 전송 백엔드는 없음.
+
+---
+
 ## 2026-07-11 · [static] template-homepage 모바일 코드·토큰 정리
 **범위:** `css/style.css` `@1024`/`@768` · 전 HTML 캐시버스트 · 화면 수치 유지 전제
 **결과:** **PASS (코드)** — 브라우저 수동 확인 필요
