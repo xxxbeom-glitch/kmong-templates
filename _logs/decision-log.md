@@ -1,5 +1,15 @@
 # Decision Log
 
+## 2026-07-11 — `_dev-images/` 삭제
+
+| # | 결정 |
+|---|------|
+| 1 | 루트 `_dev-images/` **삭제** (재보관 안 함) |
+| 2 | 사진은 테마 `assets/images/`에 직접 배치 |
+| 3 | `47-placeholder-images` 규칙 → archive |
+
+---
+
 ## 2026-07-11 — reference-harness 복제 다운로드본 삭제
 
 | # | 결정 |

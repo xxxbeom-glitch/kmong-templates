@@ -68,7 +68,7 @@ globs:
 - GNB current: **HTML에** `is-active` / `aria-current="page"` — JS 동적 처리 금지
 - 이미지: `assets/` + `alt` + `width`/`height` + `decoding="async"`
 - **로고 `<img>`:** Figma bbox 비율 · `width` 고정 + `height: auto` · `contain`+고정 height **금지** (`30-figma-to-code.mdc` 「Logo · icon」)
-- 개발용 사진: `_dev-images/` raw drop + Figma MCP 시 `47-placeholder-images.mdc`
+- 개발용 사진: 테마 `assets/images/`에 직접 (루트 `_dev-images/` 삭제됨)
 - JS 훅: `data-*` 속성 사용
 
 ## JS (`main.js` · `mobile.js` 기본)

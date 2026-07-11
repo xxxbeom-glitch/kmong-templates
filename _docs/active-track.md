@@ -29,8 +29,9 @@
 | 구 정적·아임웹 납품 | `_archive/delivery/` |
 | Cafe24 / Reference 규칙 | `.cursor/rules/archive/80`~`84` |
 
-- 루트 `templates/` · `_delivery/` · `_delivery-wp/` · `_reference-harness/` **없음**
+- 루트 `templates/` · `_delivery/` · `_delivery-wp/` · `_reference-harness/` · `_dev-images/` **없음**
 - 사이트 복제 다운로드본(`reference-harness`) **삭제** (아카이브에도 없음)
+- 개발용 사진 풀 `_dev-images/` **삭제** — 이미지는 테마 `assets/`에 직접
 - WP ZIP은 `wordpress/{slug}/dist/` (커밋 안 함)
 - 레퍼런스 URL **인터랙션 파악만** — 사용자가 **명시한 경우만**
 - 모바일 작업 시 **MO만** 수정 (PC 스타일 동시 변경 금지)

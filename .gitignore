@@ -1,5 +1,4 @@
 node_modules/
-templates/mainstream/_dev-images/
 .DS_Store
 Thumbs.db
 *.log

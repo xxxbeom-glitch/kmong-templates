@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-11 — `_dev-images/` 삭제
+
+- 루트 개발용 사진 풀·sync 스크립트 삭제
+- `47-placeholder-images.mdc` → `.cursor/rules/archive/`
+
+---
+
 ## 2026-07-11 — reference-harness 복제본 삭제
 
 - `_archive/reference-harness/` 통째 삭제 (~1.2GB · cases·mirror 포함)

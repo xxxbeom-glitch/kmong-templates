@@ -68,7 +68,7 @@ alwaysApply: true
 3. **구현** — **트랙별 작업 경로에 직접**
    - **WordPress (기본):** `wordpress/{slug}/` — PHP 템플릿 · `@1024` · `@768` · enqueue (`70`)
    - **Static (동결):** `templates/{slug}/` — HTML → CSS(PC) → CSS(`@1024`) → CSS(`@768`) → JS
-   - **공통:** 승인된 preset만 (`45`·`46`) · 사진 슬롯 → `data-placeholder` + `dev-images.js` (`47`, Static/WP 해당 시)
+   - **공통:** 승인된 preset만 (`45`·`46`) · 사진은 테마 `assets/images/`에 직접 (`47` 동결)
 4. **QA** (필수 — 생략 금지): `_docs/qa-checklist.md` + `50-qa-checklist.mdc` · **결과 `_logs/qa-log.md` 기록**
 5. **로그**: `_logs/change-log.md`(변경), `_logs/qa-log.md`(QA 결과), 필요 시 `decision-log.md` / `failure-log.md`
 6. **사용자 PASS** 확인 → **다음 섹션 착수**
