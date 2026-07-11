@@ -3524,6 +3524,15 @@ button.scroll-reveal {
     --page-hero-h: 17.1875rem; /* 275px */
     /* 메인·서브 공통 카드/이미지 라운드 */
     --mo-radius-card: 0.5rem; /* 8px */
+    --mo-fs-logo: 1.125rem; /* 18 · 헤더 로고 */
+  }
+
+  /* —— 공통 헤더 로고 (메인·서브 동일) —— */
+  .site-header__logo {
+    font-size: var(--mo-fs-logo);
+    line-height: 1.2;
+    width: auto;
+    max-width: none;
   }
 
   /* —— 서브페이지 공통: page-hero —— */
@@ -3601,15 +3610,9 @@ button.scroll-reveal {
     --mo-lh-label: 1.5;
     --mo-fs-caption: 0.8125rem;   /* 13 */
     --mo-lh-caption: 1.35;
-    --mo-fs-logo: 1.125rem;       /* 18 */
     --mo-fs-footer-title: 1.375rem; /* 22 */
     --mo-lh-footer-title: 1.45;
     --mo-fs-ui: 1rem;             /* 16 */
-  }
-
-  .page-home .site-header__logo {
-    font-size: var(--mo-fs-logo);
-    line-height: 1.2;
   }
 
   .page-home .hero__title {
