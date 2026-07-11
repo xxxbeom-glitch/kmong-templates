@@ -3,8 +3,6 @@ description: 반응형 breakpoint·레이아웃·터치·iOS Safari·QA 뷰포�
 alwaysApply: false
 globs:
   - templates/**/*
-  - _docs/figma-to-code-guide.md
-  - _docs/qa-checklist.md
   - _harness/**/*
 ---
 

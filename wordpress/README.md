@@ -8,4 +8,4 @@
 - Figma부터 여기서 **직접** 테마 구현 (정적 HTML 선행 기본 아님)
 - 공지 CPT: `notice` · 메인 최신 **3건**
 
-자세한 내용: [`_docs/wordpress-guide.md`](../_docs/wordpress-guide.md)
+자세한 내용: [`.cursor/rules/70-wordpress.mdc`](../.cursor/rules/70-wordpress.mdc) · 현황 [`_docs/active-track.md`](../_docs/active-track.md)

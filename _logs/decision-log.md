@@ -1,5 +1,16 @@
 # Decision Log
 
+## 2026-07-11 — `_docs` 축소 (규칙 SoT)
+
+| # | 결정 |
+|---|------|
+| 1 | `_docs/` = **`active-track.md`만** |
+| 2 | 사람용 가이드 → `_archive/docs/guides/` (active 근거 아님) |
+| 3 | 컨텍스트·충돌 우선순위 SoT = `00-core.mdc` |
+| 4 | QA/Figma/WP/인터랙션 SoT = `50` / `30` / `70` / `46` |
+
+---
+
 ## 2026-07-11 — `docs/` 아카이브
 
 | # | 결정 |

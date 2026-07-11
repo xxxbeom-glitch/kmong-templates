@@ -1,6 +1,7 @@
 # Active Track (현재 기본)
 
-> **갱신:** 2026-07-11 · 상세: `_logs/decision-log.md`
+> **갱신:** 2026-07-11 · 결정 상세: `_logs/decision-log.md`  
+> **규칙 SoT:** `.cursor/rules/` · 사람용 장문 가이드는 `_archive/docs/guides/`
 
 ## 지금 쓰는 것
 
@@ -10,33 +11,35 @@
 | **작업 경로** | `wordpress/{slug}/` |
 | **디자인 입력** | Figma MCP → 승인 후 구현 |
 | **컨텐츠 폭 (신규)** | **1600** (구 작업 1440 유지) |
-| **절차** | `.cursor/rules/20-harness-workflow.mdc` (섹션 단위 · QA · 로그) |
-| **WP 규칙** | `70-wordpress.mdc` · `71` · `72` |
-| **Figma·반응형·인터랙션** | `30` · `35` · `45` · `46` · `47` |
-| **납품** | `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip` |
-| **정적 검사** | `node _harness/verify-wordpress-static.js {slug}` |
-| **로그** | `_logs/decision-log.md` · `change-log.md` · `qa-log.md` |
+| **절차** | `20-harness-workflow.mdc` |
+| **컨텍스트·충돌** | `00-core.mdc` |
+| **WP** | `70` · `71` · `72` |
+| **Figma·반응형·인터랙션** | `30` · `35` · `45` · `46` (`47` archive) |
+| **QA** | `50-qa-checklist.mdc` → `_logs/qa-log.md` |
+| **납품** | `package-delivery-wp.js` → `wordpress/{slug}/dist/{slug}.zip` |
+| **정적 검사** | `verify-wordpress-static.js` |
+| **로그** | `_logs/decision-log` · `change-log` · `qa-log` |
 
-## `_harness/` 역할
+## `_docs/` · `_harness/`
 
-**구현 공간 아님.** WP 패키징·검증·(선택) QA PNG·인터랙션 참고만.
+| 폴더 | 역할 |
+|------|------|
+| `_docs/` | **`active-track.md`만** (현황 1장) |
+| `_harness/` | 패키징·검증 스크립트 · 인터랙션 샘플 (**구현 공간 아님**) |
 
-## 아카이브 (사용 안 함 · 삭제 아님)
+## 아카이브
 
 | 내용 | 경로 |
 |------|------|
-| 정적 템플릿 + cafe24_shop | `_archive/templates/` |
-| 구 정적·아임웹 납품 | `_archive/delivery/` |
-| Cafe24 / Reference 규칙 | `.cursor/rules/archive/80`~`84` |
-| 구 `docs/` (cafe24 등) | `_archive/docs/` |
+| 구 사람용 가이드 | `_archive/docs/guides/` |
+| `_docs/legacy` | `_archive/docs/legacy/` |
+| 정적 템플릿 · cafe24_shop | `_archive/templates/` |
+| 구 납품 | `_archive/delivery/` |
+| 구 `docs/cafe24` | `_archive/docs/cafe24/` |
+| Cafe24/Reference 규칙 | `.cursor/rules/archive/` |
 
-- 루트 `templates/` · `docs/` · `_delivery/` · `_delivery-wp/` · `_reference-harness/` · `_dev-images/` · `_review_exports/` **없음**
-- 사이트 복제 다운로드본(`reference-harness`) **삭제** (아카이브에도 없음)
-- 개발용 사진 풀 `_dev-images/` **삭제** — 이미지는 테마 `assets/`에 직접
-- 카페24 규칙 검수 export `_review_exports/` **삭제**
-- WP ZIP은 `wordpress/{slug}/dist/` (커밋 안 함)
-- 레퍼런스 URL **인터랙션 파악만** — 사용자가 **명시한 경우만**
-- 모바일 작업 시 **MO만** 수정 (PC 스타일 동시 변경 금지)
+- 루트 `templates/` · `docs/` · `_delivery*` · `_reference-harness` · `_dev-images` · `_review_exports` **없음**
+- 모바일 작업 시 **MO만** 수정 · 레퍼런스 URL은 **명시 요청 시에만** 인터랙션 파악
 
 ## CMS·호스팅
 

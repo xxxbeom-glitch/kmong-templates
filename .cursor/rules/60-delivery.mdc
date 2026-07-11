@@ -3,7 +3,6 @@ description: 정적 납품 규칙 (동결 — WP는 70-wordpress)
 alwaysApply: false
 globs:
   - _archive/delivery/**
-  - _docs/delivery-guide.md
   - _harness/package-delivery.js
 ---
 

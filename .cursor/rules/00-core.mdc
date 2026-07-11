@@ -1,36 +1,52 @@
 ---
-description: 크몽 판매용 독립형 HTML 템플릿 프로젝트 핵심 원칙
+description: 프로젝트 핵심 원칙 · 컨텍스트 우선순위 (에이전트용)
 alwaysApply: true
 ---
 
 # Core
 
 - 이 저장소는 **멀티 트랙**이다. 작업 경로·규칙은 **`00-project-router.mdc`**로 판별한다.
-- **정적(크몽) 트랙:** HTML/CSS/jQuery **독립 완성형** · 작업 공간 `templates/{slug}/` (`cafe24_shop` 제외).
-- 정적 스택: 순수 HTML + CSS + jQuery 3.x(CDN). 프레임워크·빌드 도구 없음.
-- 정적: Figma **1920px** · `@1024` · `@768` — `35-responsive.mdc` · `10-static-template.mdc`.
+- **현재 기본:** WordPress — `_docs/active-track.md` · `wordpress/{slug}/` · 규칙 `70`~`72`
 - Figma MCP 수치 우선(해당 트랙). 추측으로 간격·폰트·구조를 바꾸지 않는다.
-- **QA PASS 전**에는 섹션·페이지·작업을 완료 처리하지 않는다 (트랙별 QA 문서).
-- 자세한 가이드: `_docs/*.md` · (동결) 카페24 개요 `_archive/docs/cafe24/CAFE24_RULES_OVERVIEW.md`.
-- 작업 로그(`_logs/*.md`)는 다음 작업 전 필수 컨텍스트. 정적은 `20-harness-workflow` 로그 확인.
-- `_docs/context-guide.md`로 **현재 작업에 필요한 정보만** 확인.
-- 작업과 무관한 과거 로그·legacy·다른 트랙 기준을 섞지 않는다.
+- **QA PASS 전**에는 섹션·페이지·작업을 완료 처리하지 않는다 (`50-qa-checklist.mdc`)
+- 작업 로그(`_logs/*.md`)는 다음 작업 전 필수. 절차: `20-harness-workflow.mdc`
+- 사람용 장문 `_docs/*-guide.md`는 **아카이브됨** — SoT는 **rules + active-track + logs**
+- 작업과 무관한 과거 로그·legacy·동결 트랙 기준을 섞지 않는다.
+
+## 작업 전 컨텍스트 (필요한 것만)
+
+0. `_docs/active-track.md` · 라우터 (`00-project-router`)
+1. 현재 사용자 요청 (섹션·파일·승인 여부)
+2. Active rules (`.cursor/rules/*.mdc`)
+3. 관련 `_logs/` (해당 slug·직전 섹션만)
+4. 템플릿별 확정값 (decision-log)
+5. Figma 댓글·주석 → MCP 수치
+6. (해당 시) 승인된 interaction preset만 (`46`)
+7. 사용자 선호: 짧은 한국어·Figma 말 (`20` 「사용자 커뮤니케이션」)
+
+## 충돌 시 우선순위
+
+1. 최신 사용자 명시 승인/지시
+2. Figma 댓글·주석
+3. active rules
+4. `decision-log.md`
+5. 현재 작업 범위
+6. Figma MCP 수치 (JSON)
+7. `qa-log.md` / `failure-log.md`
+8. `change-log.md`
+9. legacy / `_archive` (근거로 쓰지 않음 · 재개 시에만)
+
+모호하면 구현하지 말고 **질문**한다.
 
 적용 기준:
 - 범위·플랫폼·완료 판단이 헷갈릴 때 → **먼저 라우터**.
 
-트랙 판별: `00-project-router.mdc` (정적 / Cafe24 A·B / Reference / WP).  
-정적 전용: `10-static-template.mdc`. 카페24: `80`~`82`.
-
 금지:
-- **정적 납품** 경로에 플랫폼별 하위 폴더 (`_delivery/cafe24/`, `_delivery/imweb/` 등) 생성
+- 루트 `_delivery/` · `_delivery-wp/` · 플랫폼 납품 하위 폴더 재도입
 - `_modules`, `_tokens`, 공통 런타임 모듈 생성
-- 정적 템플릿 간 CSS/JS import·공유 의존
 - 사용자 승인·QA PASS 없이 "완료" 선언
-- git commit (사용자 명시 시만, QA PASS 후 — `55-git-workflow.mdc` 참고)
+- git commit (사용자 명시 시만 — `55-git-workflow.mdc`)
 - Do not push to remote unless the user explicitly requests it.
-
-참고: 제품 작업 경로 `cafe24/{slug}/` 는 Track A/B에서 **허용**(라우터). `_delivery/cafe24/` 와 혼동하지 않는다.
 
 완료 기준:
 - 해당 트랙 규칙에 맞고, 후속 QA·납품으로 넘길 수 있는 상태.

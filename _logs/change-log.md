@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-11 — `_docs` 가이드 → 규칙 SoT · 아카이브
+
+- `_docs/`에 `active-track.md`만 유지
+- `*-guide.md` · `qa-checklist` · `project-overview` → `_archive/docs/guides/`
+- `_docs/legacy/` → `_archive/docs/legacy/`
+- 컨텍스트·충돌 우선순위 → `00-core.mdc` 흡수 · 규칙 참조 갱신
+
+---
+
 ## 2026-07-11 — `docs/` → `_archive/docs/`
 
 - 루트 `docs/` (cafe24 인벤토리·mirror QA 메모) 아카이브 이동

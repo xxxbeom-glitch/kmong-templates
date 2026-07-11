@@ -151,5 +151,5 @@
 ## preset 카탈로그와의 관계
 
 - 이 허브 = **외부 참고 사이트** 인터랙션 (고급·특수 패턴)
-- `_docs/interaction-presets-guide.md` = **템플릿 표준 preset 10종** + **GNB 패턴 2종** (scroll-reveal, gnb-full-expand 등)
+- `46-interaction-presets.mdc` = **템플릿 표준 preset 10종** + **GNB 패턴 2종** (scroll-reveal, gnb-full-expand 등)
 - 허브 ID와 preset ID는 별개. 이식 시 decision-log에 기록

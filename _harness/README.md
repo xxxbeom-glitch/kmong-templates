@@ -9,12 +9,12 @@
 | 구분 | 경로 | 용도 |
 |------|------|------|
 | **개발·구현** | `wordpress/{slug}/` | Classic Theme PHP · CSS · JS **직접 작성** |
-| **WP 납품** | `_delivery-wp/{slug}/` · `{slug}.zip` | `node _harness/package-delivery-wp.js {slug}` |
+| **WP 납품** | `wordpress/{slug}/dist/{slug}.zip` | `node _harness/package-delivery-wp.js {slug}` |
 | **WP 정적 검사** | `wordpress/{slug}/` | `node _harness/verify-wordpress-static.js {slug}` → `_logs/wordpress-verify-log.md` |
 | **비교 캡처** | `_harness/snapshots/{slug}/` | PNG만 (선택) |
 | **인터랙션 카탈로그** | `_harness/interaction-samples/` | 참고 URL [`index.html`](interaction-samples/index.html) · [`samples.manifest.json`](interaction-samples/samples.manifest.json) |
 
-사람용 WP 요약: `_docs/wordpress-guide.md` · 규칙: `.cursor/rules/70-wordpress.mdc`
+규칙: `.cursor/rules/70-wordpress.mdc`
 
 ## 동결 트랙 (참고만)
 
@@ -47,7 +47,7 @@
 - 현재 요청 · **`_docs/active-track.md`** · active rules 우선
 - `_logs/` 해당 slug · 직전 섹션만
 - 동결 트랙(Cafe24·Reference·Static 신규) 규칙은 **명시 재개 전 무시**
-- 충돌: `_docs/context-guide.md`
+- 충돌: `00-core.mdc`
 
 ## 로그
 
@@ -56,7 +56,7 @@
 
 ## Interaction Presets
 
-- `_docs/interaction-presets-guide.md` · `46-interaction-presets.mdc`
+- `46-interaction-presets.mdc` · 샘플 `_harness/interaction-samples/`
 - 승인된 preset만 · 기록은 `decision-log` / `qa-log`
 
 ## 보관

@@ -4,12 +4,11 @@ alwaysApply: false
 globs:
   - wordpress/**
   - _harness/package-delivery-wp.js
-  - _docs/wordpress-guide.md
 ---
 
 # WordPress (운영 트랙)
 
-> **트랙 분기:** `00-project-router.mdc` · **사람용 요약:** `_docs/wordpress-guide.md`
+> **트랙 분기:** `00-project-router.mdc` 
 
 ## 범위
 

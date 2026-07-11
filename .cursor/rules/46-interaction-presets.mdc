@@ -5,14 +5,13 @@ globs:
   - templates/**/*
   - wordpress/**/*
   - .cursor/rules/45-interaction-patterns.mdc
-  - _docs/interaction-presets-guide.md
   - _logs/decision-log.md
 ---
 
 # Interaction Presets (PC)
 
 > **구현 방식:** `.cursor/rules/45-interaction-patterns.mdc` (jQuery·hover/터치·타이밍)  
-> **사람용 요약:** `_docs/interaction-presets-guide.md` (카탈로그·한글명만 — **템플릿별 연결 현황은 `_logs/decision-log.md`**)  
+> **템플릿별 연결 현황:** `_logs/decision-log.md` · 참고 샘플: `_harness/interaction-samples/`
 
 ## 목적 · 범위
 
@@ -30,7 +29,7 @@ globs:
 - **중복 애니메이션** 금지 — 동일 요소에 scroll-reveal + hover-scale 등 겹치지 않음.
 - preset **ID(slug)는 프로젝트 전역 동일** — 아래 표기만 사용, **한글명은 명령·대화용**(decision-log·QA는 ID 기록).
 - 사용자 **한글명** 또는 **ID** 지정 모두 승인으로 인정 — AI는 해당 preset 1개로 매핑.
-- Figma에 motion이 없어도, **사용자가 preset ID를 섹션에 지정·승인**하면 적용 가능 (`decision-log` · `_docs/context-guide.md`).
+- Figma에 motion이 없어도, **사용자가 preset ID를 섹션에 지정·승인**하면 적용 가능 (`decision-log` · `00-core.mdc`).
 
 ## 섹션당 상한 (권장)
 
@@ -109,7 +108,7 @@ Figma MCP 분석
 
 - 카드 루트에 `scroll-reveal`이면 **자식에 `scroll-reveal` 없음** (중첩 금지).
 - JS: 카드 묶음 **band/batch 일괄 재생 금지** — 요소별 observe + 문서순 큐(약 85ms) (`45`).
-- QA: 카드 스크롤 시 **프레임·배경·내용이 동시에** 나타나는지 눈으로 확인 (`50` · `_docs/qa-checklist.md` §4).
+- QA: 카드 스크롤 시 **프레임·배경·내용이 동시에** 나타나는지 눈으로 확인 (`50` · `50-qa-checklist.mdc` §4).
 
 ---
 
@@ -279,7 +278,7 @@ Figma MCP 분석
 
 ## 참고 카탈로그 (고급 · ID 고정)
 
-> 상세 묘사·참고 URL: `_docs/interaction-presets-guide.md` · `_harness/interaction-samples/samples.manifest.json`  
+> 상세 묘사·참고 URL: `46-interaction-presets.mdc` · `_harness/interaction-samples/samples.manifest.json`  
 > **승인·기록:** `[template {slug}] {section-id}: catalog — {id}`
 
 ### `infinite-card-marquee` · 무한 카드 마퀴
