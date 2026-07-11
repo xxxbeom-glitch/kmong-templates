@@ -88,25 +88,26 @@ function createZip(sourceDir, destinationZip) {
     fs.unlinkSync(destinationZip);
   }
 
-  if (process.platform === "win32") {
-    var psSource = sourceDir.replace(/'/g, "''");
-    var psDest = destinationZip.replace(/'/g, "''");
-    var command =
-      "powershell -NoProfile -Command \"Compress-Archive -LiteralPath '" +
-      psSource +
-      "' -DestinationPath '" +
-      psDest +
-      "' -Force\"";
+  // Cafe24(Linux) WP는 entry 경로에 `\`가 있으면 style.css를 못 찾는 경우가 많음.
+  // Windows tar -a 는 forward-slash ZIP을 만듦 (Compress-Archive 대체).
+  var parentDir = path.dirname(sourceDir);
+  var folderName = path.basename(sourceDir);
 
-    childProcess.execSync(command, { stdio: "inherit" });
+  try {
+    childProcess.execSync('tar -a -cf "' + destinationZip + '" "' + folderName + '"', {
+      cwd: parentDir,
+      stdio: "inherit",
+    });
     return;
+  } catch (tarError) {
+    console.warn("[delivery-wp] tar zip failed, trying zip command…");
   }
 
   try {
-    childProcess.execSync(
-      'zip -r "' + destinationZip + '" "' + path.basename(sourceDir) + '"',
-      { cwd: path.dirname(sourceDir), stdio: "inherit" }
-    );
+    childProcess.execSync('zip -r "' + destinationZip + '" "' + folderName + '"', {
+      cwd: parentDir,
+      stdio: "inherit",
+    });
   } catch (error) {
     console.warn("[delivery-wp] ZIP skipped — create manually from: " + destDir);
   }
