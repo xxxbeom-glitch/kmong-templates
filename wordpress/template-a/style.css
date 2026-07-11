@@ -2,7 +2,9 @@
 Theme Name: Template A
 Theme URI: https://example.com/template-a
 Author: TENFOLD STUDIO
-Description: Template Homepage를 WordPress Classic Theme으로 이식한 기업 홈페이지 테마입니다.
-Version: 1.0.0
+Description: Corporate homepage classic theme ported from template-homepage.
+Version: 1.0.1
 Text Domain: template-a
+Requires at least: 6.0
+Requires PHP: 7.4
 */
