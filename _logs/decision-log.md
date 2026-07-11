@@ -1,6 +1,16 @@
 # Decision Log
 
 
+## 2026-07-11 — [static] template-homepage · CEO 메시지 모바일
+
+| # | 결정 |
+|---|------|
+| 1 | `@768` 사진 좌우 여백 추가 (`margin-inline: 1.5rem`) · PC 유지 |
+| 2 | 섹션 단위 검수 진행 중 |
+
+---
+
+
 ## 2026-07-10 — [static] template-homepage · 서브 공통 모바일 (@768)
 
 | # | 결정 |

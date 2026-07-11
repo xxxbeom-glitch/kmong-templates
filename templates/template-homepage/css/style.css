@@ -3952,8 +3952,15 @@ button.scroll-reveal {
     gap: clamp(2rem, 5vw, 3rem);
   }
 
+  .ceo-message__photo-col {
+    justify-content: center;
+    width: 100%;
+  }
+
   .ceo-message__figure {
-    margin: 0 auto;
+    margin-inline: 1.5rem; /* 좌우 여백 · 셸 패딩에 추가 */
+    width: calc(100% - 3rem);
+    max-width: none;
   }
 
   .news__header {
