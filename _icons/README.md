@@ -4,20 +4,18 @@
 
 ## 로컬 미리보기
 
-```bash
-node _icons/build-gallery.js
-```
+**추천:** `_icons/open-gallery.bat` 더블클릭  
+→ 브라우저가 열리고, 아이콘 추가 후 **새로고침(F5)** 만 하면 최신 목록이 반영된다. (매번 빌드 명령 불필요)
 
-그다음 `_icons/index.html`을 브라우저로 연다.  
-아이콘 이미지가 안 보이면:
+또는:
 
 ```bash
-npx live-server _icons
+node _icons/serve-gallery.js
 ```
 
 - 카테고리: UI / Social / Motion / Line / Fill
 - 검색 · 클릭 시 경로 복사
-- 아이콘 추가 후 `build-gallery.js` 다시 실행
+- `index.html`만 직접 열어도 되지만, 그때는 목록이 예전일 수 있음 → bat/서버 권장
 
 ## 폴더
 
