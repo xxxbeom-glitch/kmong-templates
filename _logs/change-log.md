@@ -1,4 +1,11 @@
 
+## 2026-07-11 — [static] template-homepage 모바일 코드·토큰 정리
+
+**범위:** `css/style.css` · 전 HTML  
+**내용:** `@768 :root`에 `--mo-*` PASS 토큰 통합 · 하드코딩→토큰 · 1:1/리스트 선택자 묶음 · QA CSS 삭제 · 캐시 `mo-cleanup1`
+
+---
+
 ## 2026-07-11 — [static] template-homepage 사업영역 카드 → 제작사례 스타일(모바일)
 
 **범위:** `css/style.css` · `service-list.html`  

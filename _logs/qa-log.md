@@ -1,5 +1,20 @@
 # QA Log
 
+## 2026-07-11 · [static] template-homepage 모바일 코드·토큰 정리
+**범위:** `css/style.css` `@1024`/`@768` · 전 HTML 캐시버스트 · 화면 수치 유지 전제
+**결과:** **PASS (코드)** — 브라우저 수동 확인 필요
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `--mo-*` 토큰을 PASS 확정값으로 `:root` 통일 | PASS | page-home 중복 선언 제거 |
+| 2 | 색·오버레이·라운드·카드 패딩 토큰 연결 | PASS | overlay-soft 공용 |
+| 3 | 1:1 카드·insight/news 리스트 선택자 통합 | PASS | |
+| 4 | 죽은 QA(`is-qa-review`) CSS 삭제 | PASS | HTML 미사용 |
+| 5 | 캐시 `?v=mo-cleanup1` 통일 | PASS | |
+
+**다음:** 폰에서 메인·사업영역·제작사례·소식 한 번 훑기
+
+---
+
 ## 2026-07-11 · [static] template-homepage service-list 사업영역 카드 모바일
 **범위:** `service-list.html` · 「비즈니스 유형별 웹사이트」`.business-item` · `@1024`/`@768`
 **결과:** **PASS** (코드) — 제작사례 주요프로젝트와 동일: 1:1 · 이미지 위 라벨+이름 · 본문 숨김 · PC 가로 패널 유지

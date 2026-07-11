@@ -1,5 +1,16 @@
 # Decision Log
 
+## 2026-07-11 — [static] template-homepage · 모바일 코드·토큰 정리
+
+| # | 결정 |
+|---|------|
+| 1 | `@768 :root`에 `--mo-*` 타이포·카드 패딩 토큰을 **PASS 확정값**으로 통합 (`.page-home` 중복 선언 제거) |
+| 2 | `--color-surface-overlay-soft` 추가 · `media-card`·사업영역 오버레이 공용 |
+| 3 | `@1024`에도 로고·카드·drawer용 `--mo-*` 최소 세트 선언 |
+| 4 | 죽은 `is-qa-review` CSS 삭제 (HTML 미사용 · QA PASS 완료) |
+| 5 | 화면 수치 변경 없음 — 정리만 |
+
+---
 
 ## 2026-07-11 — [static] template-homepage · 모바일 라운드 8px 서브 확장
 
