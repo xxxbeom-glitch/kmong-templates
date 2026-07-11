@@ -19,6 +19,3 @@ _archive/delivery/**/config.local.php
 _harness/_tmp*
 _harness/_parse-*
 _harness/_figma-extract.js
-
-# Review export: zip/samples/backup only (no full project dump)
-_review_exports/**/project-files/

@@ -1,5 +1,13 @@
 # Decision Log
 
+## 2026-07-11 — `_review_exports/` 삭제
+
+| # | 결정 |
+|---|------|
+| 1 | 카페24 규칙 검수 export `_review_exports/` **삭제** (재보관 안 함) |
+
+---
+
 ## 2026-07-11 — `_dev-images/` 삭제
 
 | # | 결정 |
