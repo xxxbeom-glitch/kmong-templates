@@ -1,4 +1,15 @@
 
+## 2026-07-11 — [wordpress] template-a-blocks 블록 테마 메인 1차
+
+- 추가: `wordpress/template-a-blocks/` (FSE · Theme Name: Template A Blocks)
+- `theme.json` · `templates/front-page|index|page.html` · `parts/header|footer.html`
+- 패턴: home-hero · home-intro · home-features · home-cta
+- 자산: classic `template-a` CSS/JS/이미지 복사
+- ZIP: `_delivery-wp/template-a-blocks.zip` (정적 verify PASS)
+- 클래식 `template-a` 유지 · 서브페이지는 이후
+
+---
+
 ## 2026-07-11 — Template A WordPress Classic Theme 포팅
 
 - 추가: `wordpress/template-a/` 전체 테마 골격 (`style.css`, 공통 header/footer, front/page/index/archive/single)

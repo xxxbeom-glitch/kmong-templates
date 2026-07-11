@@ -1,5 +1,19 @@
 # QA Log
 
+## 2026-07-11 · [wordpress] template-a-blocks 블록 테마 메인 1차
+**범위:** `wordpress/template-a-blocks/` · 홈 템플릿·헤더/푸터·패턴 4개
+**결과:** **PASS (정적 검사)** — 브라우저·사이트 편집기 수동 확인 필요
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | `verify-wordpress-static.js template-a-blocks` | PASS | 16/16 |
+| 2 | theme.json · front-page · parts · patterns | PASS | 파일 존재 |
+| 3 | ZIP 패키징 | PASS | `_delivery-wp/template-a-blocks.zip` |
+
+**다음:** Cafe24에 업로드 → **Template A Blocks** 활성화 → **모양 → 편집기**에서 홈 수정 확인
+
+---
+
 ## 2026-07-11 · [wordpress] template-a 정적 포팅 QA
 **범위:** `wordpress/template-a/` 전체 · 정적 원본 링크/자산/CPT/페이지 레지스트리/PHP 문법
 **결과:** **PASS (정적 검사)** — WordPress 설치 후 브라우저 시각·폼 동작 확인 필요
