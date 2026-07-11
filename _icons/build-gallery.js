@@ -21,6 +21,43 @@ function isFillName(name) {
   return /(^|-)fill(-|$|\.)/i.test(name) || name.includes('-fill.');
 }
 
+const LABELS = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'labels.ko.json'), 'utf8')
+);
+
+/** home-fill-2 → { key: home, fill: true, variant: 2 } */
+function parseBase(base) {
+  let rest = base;
+  let fill = false;
+  let variant = null;
+  const fillVar = rest.match(/-fill-(\d+)$/);
+  if (fillVar) {
+    fill = true;
+    variant = fillVar[1];
+    rest = rest.slice(0, -fillVar[0].length);
+  } else if (rest.endsWith('-fill')) {
+    fill = true;
+    rest = rest.slice(0, -5);
+  } else {
+    const v = rest.match(/-(\d+)$/);
+    if (v) {
+      variant = v[1];
+      rest = rest.slice(0, -v[0].length);
+    }
+  }
+  return { key: rest, fill, variant };
+}
+
+function labelKo(base) {
+  const { key, fill, variant } = parseBase(base);
+  let name = LABELS[key] || LABELS[base] || key;
+  const bits = [];
+  if (fill) bits.push('채움');
+  if (variant) bits.push(variant);
+  if (bits.length) name = `${name} (${bits.join(' · ')})`;
+  return name;
+}
+
 function guessUiGroup(base) {
   const rules = [
     ['arrow', /^(arrow|chevron|caret|expand|minimize|swap|undo|redo|refresh|navigation)/],
@@ -62,18 +99,23 @@ const uiItems = uiFiles.map((f) => {
   return {
     file: f,
     base,
+    ko: labelKo(base),
     path: `ui/${f}`,
     type: isFillName(f) ? 'fill' : 'line',
     group: guessUiGroup(base.replace(/-fill(-\d+)?$/, '').replace(/-\d+$/, '')),
   };
 });
 
-const socialItems = socialFiles.map((f) => ({
-  file: f,
-  base: f.replace(/\.svg$/i, ''),
-  path: `social/${f}`,
-  type: isFillName(f) ? 'fill' : 'line',
-}));
+const socialItems = socialFiles.map((f) => {
+  const base = f.replace(/\.svg$/i, '');
+  return {
+    file: f,
+    base,
+    ko: labelKo(base),
+    path: `social/${f}`,
+    type: isFillName(f) ? 'fill' : 'line',
+  };
+});
 
 const counts = {
   ui: uiItems.length,
@@ -224,8 +266,16 @@ const html = `<!DOCTYPE html>
     width: 44px;
     height: 44px;
   }
+  .name-ko {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink);
+    word-break: keep-all;
+    line-height: 1.25;
+    margin-bottom: 0.15rem;
+  }
   .name {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     color: var(--muted);
     word-break: break-all;
     line-height: 1.25;
@@ -284,7 +334,7 @@ const html = `<!DOCTYPE html>
       <div class="meta">생성: ${new Date().toISOString().slice(0, 10)} · <code>node _icons/build-gallery.js</code></div>
     </div>
     <div class="controls">
-      <input type="search" id="q" placeholder="이름 검색 (예: home, coffee, fill…)" autocomplete="off" />
+      <input type="search" id="q" placeholder="한글·영문 검색 (예: 홈, 커피, home, fill…)" autocomplete="off" />
       <div class="chips" id="cat-chips">
         <button type="button" class="chip is-active" data-cat="all">전체</button>
         <button type="button" class="chip" data-cat="ui">UI</button>
@@ -323,12 +373,16 @@ const html = `<!DOCTYPE html>
     const DATA = ${JSON.stringify({
       ui: uiItems,
       social: socialItems,
-      motion: motionFiles.map((f) => ({
-        file: f,
-        base: f.replace(/\\.json$/i, ''),
-        path: 'motion/' + f,
-        type: 'motion',
-      })),
+      motion: motionFiles.map((f) => {
+        const base = f.replace(/\.json$/i, '');
+        return {
+          file: f,
+          base,
+          ko: labelKo(base) + ' (모션)',
+          path: 'motion/' + f,
+          type: 'motion',
+        };
+      }),
       lottie: motionData,
     })};
 
@@ -366,11 +420,13 @@ const html = `<!DOCTYPE html>
       el.dataset.cat = catName;
       el.dataset.type = item.type;
       el.dataset.name = item.base;
+      el.dataset.ko = item.ko || '';
       el.dataset.path = item.path;
       el.dataset.group = item.group || '';
-      el.title = item.path + ' (클릭: 경로 복사)';
+      el.title = (item.ko || item.base) + ' · ' + item.path + ' (클릭: 경로 복사)';
       el.innerHTML = \`
         <div class="preview"><img src="\${item.path}" alt="" loading="lazy" /></div>
+        <div class="name-ko">\${item.ko || item.base}</div>
         <div class="name">\${item.base}</div>
         <span class="badge \${item.type}">\${item.type}</span>
       \`;
@@ -385,14 +441,19 @@ const html = `<!DOCTYPE html>
       el.dataset.cat = 'motion';
       el.dataset.type = 'motion';
       el.dataset.name = item.base;
+      el.dataset.ko = item.ko || '';
       el.dataset.path = item.path;
-      el.title = item.path + ' (클릭: 경로 복사)';
+      el.title = (item.ko || item.base) + ' · ' + item.path + ' (클릭: 경로 복사)';
       const box = document.createElement('div');
       box.className = 'preview';
       const host = document.createElement('div');
       host.className = 'lottie';
       box.appendChild(host);
       el.appendChild(box);
+      const ko = document.createElement('div');
+      ko.className = 'name-ko';
+      ko.textContent = item.ko || item.base;
+      el.appendChild(ko);
       const name = document.createElement('div');
       name.className = 'name';
       name.textContent = item.base;
@@ -438,12 +499,18 @@ const html = `<!DOCTYPE html>
 
     function matchCard(card) {
       const name = card.dataset.name || '';
+      const ko = card.dataset.ko || '';
       const type = card.dataset.type || '';
       const c = card.dataset.cat || '';
       const path = card.dataset.path || '';
       if (q) {
         const qq = q.toLowerCase();
-        if (!name.includes(qq) && !path.toLowerCase().includes(qq) && !type.includes(qq)) return false;
+        if (
+          !name.includes(qq) &&
+          !ko.toLowerCase().includes(qq) &&
+          !path.toLowerCase().includes(qq) &&
+          !type.includes(qq)
+        ) return false;
       }
       if (cat === 'all') return true;
       if (cat === 'line' || cat === 'fill') return type === cat;

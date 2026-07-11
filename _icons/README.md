@@ -14,8 +14,9 @@ node _icons/serve-gallery.js
 ```
 
 - 카테고리: UI / Social / Motion / Line / Fill
-- 검색 · 클릭 시 경로 복사
-- `index.html`만 직접 열어도 되지만, 그때는 목록이 예전일 수 있음 → bat/서버 권장
+- 한글명 + 영문 파일명 표시 · 한글/영문 검색
+- 클릭 시 경로 복사
+- 한글 라벨 수정: `_icons/labels.ko.json`
 
 ## 폴더
 
