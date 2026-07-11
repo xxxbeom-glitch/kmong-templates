@@ -3430,8 +3430,11 @@ button.scroll-reveal {
   .service-card--wide,
   .service-card--narrow,
   .service-card--full {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     width: 100%;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1 / 1; /* 정방향 */
   }
 
   .business-item {
@@ -3827,8 +3830,11 @@ button.scroll-reveal {
 
   /* 서비스 소개 · 카드 */
   .service-card {
+    flex: 0 0 auto;
+    width: 100%;
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    height: auto;
+    aspect-ratio: 1 / 1; /* 정방향 */
     padding: 1.5rem 1.25rem;
   }
 
@@ -3891,7 +3897,10 @@ button.scroll-reveal {
   }
 
   .portfolio-card {
+    flex: 0 0 auto;
+    width: 100%;
     min-height: 0;
+    height: auto;
     aspect-ratio: 1 / 1; /* 정방향 */
     padding: 1.5rem 1.25rem;
   }
