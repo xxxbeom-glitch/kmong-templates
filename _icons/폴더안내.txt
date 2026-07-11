@@ -1,0 +1,11 @@
+【이 폴더가 뭐예요】
+여러 사이트에서 같이 쓸 수 있는 아이콘(SVG) 창고예요.
+
+【안에 뭐가 있어요】
+- ui / social / brand / motion … 종류별 아이콘
+- index.html / open-gallery.bat … 아이콘 구경하는 갤러리
+- labels.ko.json … 한글 이름 표기
+
+【참고】
+사이트에 넣을 때는 테마 폴더의 assets/icons 로 복사해서 씁니다.
+여기 파일을 사이트에서 직접 링크하지 않는 편이 안전해요.

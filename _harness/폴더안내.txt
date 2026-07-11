@@ -1,0 +1,18 @@
+【이 폴더가 뭐예요】
+버튼을 누르면 돌아가는 “도구” 모음이에요.
+사이트를 직접 그리는 곳이 아닙니다.
+
+【안에 뭐가 있어요】
+- package-delivery-wp.js
+  → 테마를 ZIP으로 묶는 도구 (카페24에 올릴 파일)
+- verify-wordpress-static.js
+  → 테마에 기본 파일이 있는지 검사
+- package-delivery.js
+  → 예전 정적 HTML용 (지금은 거의 안 씀)
+- interaction-samples/
+  → 움직임 참고용 샘플 화면
+- snapshots/
+  → 비교용 캡처 이미지(있을 때)
+
+【참고】
+실제 디자인·페이지 수정은 wordpress 폴더에서 합니다.

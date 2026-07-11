@@ -1,0 +1,3 @@
+【이 폴더】
+예전 문서·긴 가이드·옛 샘플 보관.
+지금 규칙은 .cursor/rules, 현황은 _docs/active-track 입니다.
