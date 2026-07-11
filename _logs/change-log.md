@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-11 — reference-harness 복제본 삭제
+
+- `_archive/reference-harness/` 통째 삭제 (~1.2GB · cases·mirror 포함)
+- 재보관 안 함 · 규칙 `archive/83`만 문서 참고용으로 유지
+
+---
+
 ## 2026-07-11 — 납품을 wordpress/{slug}/dist 로 통합
 
 - `_delivery/` → `_archive/delivery/`

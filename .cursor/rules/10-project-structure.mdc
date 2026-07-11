@@ -14,7 +14,7 @@ kmong-templates/
 ├── _docs/                  # 가이드
 ├── _dev-images/            # 개발용 사진 드롭 — 납품 제외
 ├── _icons/                 # 공용 SVG
-└── _archive/               # 동결 보관 (templates · delivery · reference-harness)
+└── _archive/               # 동결 보관 (templates · delivery)
 ```
 
 ## Active workspace
@@ -27,7 +27,7 @@ kmong-templates/
 | **WordPress** | `wordpress/{slug}/` · 납품 `dist/{slug}.zip` | **활성 (기본)** |
 | Static | `_archive/templates/` | 동결 |
 | Cafe24 A/B | `cafe24/{slug}/` · `_release/{slug}/` | 동결 |
-| Reference C | `_archive/reference-harness/` | 동결 |
+| Reference C | (다운로드본 **삭제**) · 규칙만 `.cursor/rules/archive/83` | 동결·미사용 |
 
 ### 정적 (동결)
 

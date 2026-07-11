@@ -1,5 +1,15 @@
 # Decision Log
 
+## 2026-07-11 — reference-harness 복제 다운로드본 삭제
+
+| # | 결정 |
+|---|------|
+| 1 | `_archive/reference-harness/` **삭제** (아카이브 유지 안 함) |
+| 2 | 복제·미러 파이프라인 재개 안 함 |
+| 3 | 규칙 `83`은 `.cursor/rules/archive/`에만 보관 |
+
+---
+
 ## 2026-07-11 — WP 납품을 작업 폴더 dist/ 로
 
 | # | 결정 |

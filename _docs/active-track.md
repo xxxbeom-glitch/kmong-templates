@@ -27,12 +27,12 @@
 |------|------|
 | 정적 템플릿 + cafe24_shop | `_archive/templates/` |
 | 구 정적·아임웹 납품 | `_archive/delivery/` |
-| 사이트 복제·데모 분석 | `_archive/reference-harness/` |
 | Cafe24 / Reference 규칙 | `.cursor/rules/archive/80`~`84` |
 
-- 루트 `templates/` · `_delivery/` · `_delivery-wp/` **없음**
+- 루트 `templates/` · `_delivery/` · `_delivery-wp/` · `_reference-harness/` **없음**
+- 사이트 복제 다운로드본(`reference-harness`) **삭제** (아카이브에도 없음)
 - WP ZIP은 `wordpress/{slug}/dist/` (커밋 안 함)
-- 레퍼런스 URL **인터랙션 파악만** — 사용자가 **명시한 경우만** (미러·복제 파이프라인 중단)
+- 레퍼런스 URL **인터랙션 파악만** — 사용자가 **명시한 경우만**
 - 모바일 작업 시 **MO만** 수정 (PC 스타일 동시 변경 금지)
 
 ## CMS·호스팅

@@ -33,7 +33,6 @@
 |------|------|
 | `_archive/templates/` | 크몽 정적 HTML · cafe24_shop |
 | `_archive/delivery/` | 구 정적·아임웹 납품 |
-| `_archive/reference-harness/` | 데모 사이트 복제·분석 |
 | `cafe24/` · `_release/` | Cafe24 A/B (미사용 시) |
 
 ## 워크플로우 (요약 · WP)
