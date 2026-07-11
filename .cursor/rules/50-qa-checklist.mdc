@@ -26,7 +26,7 @@ globs:
 - **실브라우저 QA 4종** (`35-responsive.mdc` · 아래 「모바일 실브라우저 QA」)
 - **데스크톱 (페이지·납품 시, 해당하면)** — Chrome · Edge(또는 Safari)에서 레이아웃 깨짐·콘솔 치명 오류·주요 클릭 동작 **기본 확인** (모바일 4종을 대체하지 않음)
 - 납품·삽입 기준 확인 (`60-delivery.mdc`)
-- **SEO/AEO 상태** — decision(또는 qa 비고): **완료** / **의도적 생략** / **미실행** 중 하나 (`20` · `73`). 미실행이면 납품 전 **알림 1회**만(자동 실행 금지). 완료면 누락·중복·사실 왜곡 없는지 확인.
+- **SEO/AEO/GEO 상태** — decision(또는 qa 비고): **완료** / **의도적 생략** / **미실행** 중 하나 (`20` · `73`). 미실행이면 납품 전 **알림 1회**만(자동 실행 금지). 완료면 누락·중복·사실 왜곡·**엔티티/연락처 일관** 없는지 확인.
 
 ## Figma 대조
 - [ ] **Section shell** = MCP 분류 (`30-figma-to-code.mdc` 「Section shell · full-bleed」) · guttered / full-bleed / breakout
@@ -147,7 +147,7 @@ globs:
 - [ ] jQuery 중복 선언 없음 · `$` 사용 가능
 - [ ] HTML/CSS 삽입 시 깨짐·overflow 없음
 - [ ] `wordpress/{slug}/dist/{slug}.zip` 패키징 (`node _harness/package-delivery-wp.js {slug}`)
-- [ ] **SEO/AEO** — 상태 **완료 | 의도적 생략 | 미실행** 기록됨 · 미실행이면 알림함 · 완료면 Title/Meta/H/Alt/Schema/canonical·sitemap·robots 등 누락·오류 없음 (`73`)
+- [ ] **SEO/AEO/GEO** — 상태 **완료 | 의도적 생략 | 미실행** 기록됨 · 미실행이면 알림함 · 완료면 Title/Meta/H/Alt/Schema/canonical·sitemap·robots 누락·오류 없음 · **상호·연락/위치 일관** · (해당 시) FAQ·직접 답·Schema가 확정 사실과 일치 (`73`)
 
 → **전 항목 PASS** = QA PASS. 하나라도 FAIL이면 완료 처리 금지.
 → 결과를 `_logs/qa-log.md`에 **섹션별 1건** 기록 (미기록 = QA 미완료).

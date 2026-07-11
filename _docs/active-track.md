@@ -14,7 +14,7 @@
 | **절차** | `20-harness-workflow.mdc` |
 | **컨텍스트·충돌** | `00-core.mdc` |
 | **WP** | `70` · `71` · `72` |
-| **SEO/AEO** | **on-demand** `73` · 자동 실행 금지 · 알림만 (`20`) |
+| **SEO/AEO/GEO** | **on-demand** `73` · 한 레인 · 자동 실행 금지 · 알림만 (`20`) |
 | **Figma·반응형·인터랙션** | `30` · `35` · `45` · `46` (`47` archive) |
 | **QA** | `50-qa-checklist.mdc` → `_logs/qa-log.md` |
 | **납품** | `package-delivery-wp.js` → `wordpress/{slug}/dist/{slug}.zip` |
