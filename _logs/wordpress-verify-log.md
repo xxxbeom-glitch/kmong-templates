@@ -365,3 +365,9 @@
 - 최종 결과: **PASS**
 - PASS: 16 · FAIL: 0 · WARN: 0
 
+## 2026-07-11T09:20:39.648Z
+
+- slug: `template-a`
+- 최종 결과: **PASS**
+- PASS: 37 · FAIL: 0 · WARN: 0
+
