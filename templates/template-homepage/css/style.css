@@ -4099,6 +4099,41 @@ button.scroll-reveal {
   .news__header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* 주요 소식 게시판 — 메인 insight 리스트와 동일 모바일 스타일 */
+  .news-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+    min-height: 0;
+    padding-block: 1.25rem;
+  }
+
+  .news-item__main {
+    flex: 1 1 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .news-item__badge {
+    font-size: 0.75rem; /* 12 */
+    line-height: 1.35;
+    padding: 0.1875rem 0.75rem;
+  }
+
+  .news-item__title {
+    font-size: 1.125rem; /* 18 */
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .news-item__date {
+    margin-left: auto;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .news-view__nav {
