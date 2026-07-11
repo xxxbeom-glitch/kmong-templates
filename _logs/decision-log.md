@@ -1,5 +1,35 @@
 # Decision Log
 
+## 현재 유효 결정 (빠른 조회)
+
+> 작업 **시작 전** 여기만 먼저 본다. 아래 날짜순은 히스토리.  
+> **새 결정을 적을 때:** 이 표를 **고치거나 한 줄 추가**한 뒤, 아래에 날짜 섹션도 추가.
+
+| 주제 | 현재 값 | 비고 |
+|------|---------|------|
+| 기본 트랙 | **WordPress (블록 테마 우선)** | `wordpress/{slug}/` · `active-track` |
+| 신규 컨텐츠 폭 | **1600** | 구 작업 1440 유지 |
+| 납품 | `wordpress/{slug}/dist/{slug}.zip` | 루트 `_delivery*` 없음 |
+| 문서 SoT | `.cursor/rules` + `active-track` + `_logs` | `_docs`는 active-track만 |
+| 정적·카페24·복제 | **동결/아카이브** | `_archive/` · rules `archive/` |
+| 모바일 수정 | **MO만** (PC 동시 수정 금지) | |
+| 레퍼런스 URL | **명시 요청 시에만** 인터랙션 파악 | 복제 파이프라인 없음 |
+| 사진 | 테마 `assets/images/` | `_dev-images` 삭제 |
+| 사이트별 규칙 | 테마 `docs/` 또는 decision | `75-hes`는 archive |
+| 로그 조회 | 표·유형 카드 우선 (`_logs/README.md`) | failure=오답 유형 / decision·qa=맨 위 표 |
+
+---
+
+## 2026-07-11 — 로그 빠른 조회 · 기록 방법
+
+| # | 결정 |
+|---|------|
+| 1 | `failure-log` = 유형 목차+카드 + 상세 날짜순 |
+| 2 | `decision-log` / `qa-log` = 맨 위 빠른 조회 표 유지·갱신 |
+| 3 | 기록·조회 SoT = `_logs/README.md` · `20-harness-workflow` |
+
+---
+
 ## 2026-07-11 — `_docs` 축소 (규칙 SoT)
 
 | # | 결정 |

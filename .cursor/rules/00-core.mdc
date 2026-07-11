@@ -18,7 +18,7 @@ alwaysApply: true
 0. `_docs/active-track.md` · 라우터 (`00-project-router`)
 1. 현재 사용자 요청 (섹션·파일·승인 여부)
 2. Active rules (`.cursor/rules/*.mdc`)
-3. 관련 `_logs/` (해당 slug·직전 섹션만)
+3. 관련 `_logs/` — **빠른 조회만** (`decision` 유효 표 · `qa` slug · `failure` 유형 카드). 방법: `_logs/README.md`
 4. 템플릿별 확정값 (decision-log)
 5. Figma 댓글·주석 → MCP 수치
 6. (해당 시) 승인된 interaction preset만 (`46`)

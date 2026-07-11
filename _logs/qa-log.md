@@ -1,5 +1,19 @@
 # QA Log
 
+## 템플릿별 최근 결과 (빠른 조회)
+
+> 작업 **시작 전** 해당 slug 한 줄만 본다. 상세는 아래 날짜순.  
+> **새 QA를 적을 때:** 이 표의 해당 slug 행을 **최신 결과로 고친 뒤**, 아래에 날짜 섹션 추가.
+
+| slug / 트랙 | 최근 결과 | 날짜 | 다음에 주의 |
+|-------------|-----------|------|-------------|
+| `template-a-blocks` (WP) | PASS (정적) · 브라우저·편집기 수동 필요 | 2026-07-11 | Cafe24 업로드·사이트 편집기 확인 · ZIP은 `dist/` |
+| `template-a` (WP) | PASS (정적) · 브라우저 확인 필요 | 2026-07-11 | 설치 후 시각·폼 |
+| `template-homepage` (static·아카이브) | 모바일·shell 등 다수 PASS 이력 | 2026-07-11 | **신규 정적 작업 안 함** · 참고만 |
+| 기타 WP slug | (아래 날짜순에서 검색) | — | 없으면 첫 QA부터 |
+
+---
+
 ## 2026-07-11 · [wordpress] template-a-blocks 블록 테마 메인 1차
 **범위:** `wordpress/template-a-blocks/` · 홈 템플릿·헤더/푸터·패턴 4개
 **결과:** **PASS (정적 검사)** — 브라우저·사이트 편집기 수동 확인 필요
@@ -8,7 +22,7 @@
 |---|------|------|------|
 | 1 | `verify-wordpress-static.js template-a-blocks` | PASS | 16/16 |
 | 2 | theme.json · front-page · parts · patterns | PASS | 파일 존재 |
-| 3 | ZIP 패키징 | PASS | `_delivery-wp/template-a-blocks.zip` |
+| 3 | ZIP 패키징 | PASS | `wordpress/template-a-blocks/dist/` (당시 경로명 기록은 구 `_delivery-wp`) |
 
 **다음:** Cafe24에 업로드 → **Template A Blocks** 활성화 → **모양 → 편집기**에서 홈 수정 확인
 

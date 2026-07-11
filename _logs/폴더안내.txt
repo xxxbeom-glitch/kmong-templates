@@ -1,14 +1,14 @@
 【이 폴더가 뭐예요】
-작업하면서 남긴 “기록장”이에요.
-다음에 이어서 할 때 여기부터 확인합니다.
+작업 기록장이에요. 다음에 이어서 할 때 여기부터 확인합니다.
 
-【안에 뭐가 있어요】
-- decision-log.md … 우리가 정한 것 (폭 1600, 블록 테마 등)
-- change-log.md … 최근에 뭐 바꿨는지
-- qa-log.md … 섹션별로 검수 맞음/틀림
-- failure-log.md … 예전에 틀렸던 것, 다시 안 하게
-- wordpress-verify-log.md … 자동 검사 결과
+【파일 (쉬운 말)】
+- decision-log.md … 우리가 정한 것 → 맨 위 「현재 유효 결정」표만 먼저
+- change-log.md … 최근에 뭐 바꿨는지 (위가 최신)
+- qa-log.md … 검수 맞음/틀림 → 맨 위 「템플릿별 최근」표
+- failure-log.md … 오답노트 → 맨 위 유형(L1, T1…) 카드
+- wordpress-verify-log.md … ZIP 만들기 전 자동 검사 (가끔)
+- README.md … 앞으로 어떻게 적고 볼지 (에이전트용)
 
 【참고】
 디자인 파일이 아니라 메모·이력입니다.
-중요한 결정은 decision-log에 쌓여 있어요.
+자세한 기록 방법: README.md

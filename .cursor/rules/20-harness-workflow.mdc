@@ -24,14 +24,21 @@ alwaysApply: true
 
 ## 작업 시작 전 — 로그 확인 (필수)
 
-새 작업 또는 새 섹션 착수 전 `_logs/`에서 **해당 템플릿 및 직전 섹션** 관련 항목을 확인한다.
+새 작업 또는 새 섹션 착수 전 `_logs/`를 본다. **전체 정독 금지.**
 
-**확인 대상:**
-- `decision-log.md` — 프로젝트/템플릿 확정 결정, slug, 레이아웃, 보류 항목
-- `change-log.md` — 최근 변경 파일, 미구현 항목, 확정 기준
-- `qa-log.md` — 직전 QA PASS/FAIL, 비고, 다음 작업 주의점
-- `failure-log.md` — 미해결 실패, 재발 방지 항목
+**빠른 조회 순서:**
+1. `decision-log.md` → **「현재 유효 결정」** 표
+2. `qa-log.md` → **「템플릿별 최근 결과」** (이번 slug)
+3. `failure-log.md` → 이번 작업 **유형 카드**만 (L1·T1…)
+4. 이어서 작업이면 `change-log.md` 맨 위 최근 항목
 
+**확인 대상 (상세가 필요할 때만):**
+- `decision-log.md` — slug, 레이아웃, 보류
+- `change-log.md` — 최근 변경·미구현
+- `qa-log.md` — 직전 PASS/FAIL · 다음 주의
+- `failure-log.md` — 오답 유형 · 하지 말 것
+
+기록 방법: `_logs/README.md`  
 읽은 내용 중 이번 작업에 영향 있는 사항은 **범위 확인** 또는 **Figma 분석 보고**에 1줄로 반영한다.
 
 로그·rules·승인 내용이 충돌하면 `00-core.mdc` **충돌 시 우선순위**를 따른다.

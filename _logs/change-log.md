@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-11 — 로그 빠른 조회 구조
+
+- `failure-log` 유형 목차(L1…) + 카드
+- `decision-log` 「현재 유효 결정」표
+- `qa-log` 「템플릿별 최근 결과」표
+- `_logs/README.md` 기록·조회 방법 갱신 · `20`/`00-core` 반영
+
+---
+
 ## 2026-07-11 — 75-hes 규칙 archive
 
 - `75-hes-womens-clinic.mdc` → `.cursor/rules/archive/` (테마 전용 · 가이드는 테마 docs)
