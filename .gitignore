@@ -14,26 +14,17 @@ _harness/_tmp*
 _harness/_parse-*
 _harness/_figma-extract.js
 
-# Reference-harness one-off / heavy local artifacts
-_reference-harness/_tmp*
-_reference-harness/**/_tmp*
-_reference-harness/**/_mirror/
-_reference-harness/hub/
-_reference-harness/_pipeline*.log
-_reference-harness/cases/**/01-original/PREVIEW.url*
-
-# Cafe24 release packages (local only)
-_release/
-
-# WP migration / installer leftovers (never commit)
-wordpress/**/tenfold*
-wordpress/**/*.daf
-wordpress/dup-installer*
-wordpress/check.html
-
-# Deprecated reconstruction assets (keep LEGACY.md only)
-_reference-harness/**/legacy/**/assets/
-_reference-harness/**/legacy/**/captures/
+# Archived reference-harness one-off / heavy local artifacts
+_archive/reference-harness/_tmp*
+_archive/reference-harness/**/_tmp*
+_archive/reference-harness/**/_mirror/
+_archive/reference-harness/hub/
+_archive/reference-harness/_pipeline*.log
+_archive/reference-harness/cases/**/01-original/PREVIEW.url*
+_archive/reference-harness/**/legacy/**/assets/
+_archive/reference-harness/**/legacy/**/captures/
+# legacy path (empty stub may remain locked on Windows)
+_reference-harness/
 
 # Review export: zip/samples/backup only (no full project dump)
 _review_exports/**/project-files/

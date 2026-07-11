@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-11 — 동결 트랙·복제 하네스 아카이브
+
+- `_reference-harness/` → `_archive/reference-harness/`
+- `templates/cafe24_shop/` (+ zip) → `_archive/templates/`
+- `.cursor/rules/80`~`84` → `.cursor/rules/archive/`
+- `_docs/active-track.md` 갱신 (WP 블록 · 1600 신규 · archive 경로)
+
+---
+
 ## 2026-07-11 — templates → `_archive/templates`
 
 - 이동: guyeon-lawfirm, hd-ec, mainstream, skhynix-redesign, smile-clinic, template-homepage, tesla-redesign, _admin-core

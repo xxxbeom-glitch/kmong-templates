@@ -1,5 +1,20 @@
 # Decision Log
 
+## 2026-07-11 — WordPress 블록 테마 중심 · 동결 트랙 아카이브
+
+| # | 결정 |
+|---|------|
+| 1 | 기본 납품 = **블록 테마 (FSE)** · Figma → 섹션 구현/QA → WP ZIP |
+| 2 | 컨텐츠 폭 **신규부터 1600** (기존 1440 유지) |
+| 3 | MO 작업 = **모바일만** 독립 수정 |
+| 4 | 레퍼런스 URL 파악 = **명시 요청 시에만** (복제 실험 중단) |
+| 5 | `_reference-harness` → `_archive/reference-harness/` |
+| 6 | 정적 `templates/*` · `cafe24_shop` → `_archive/templates/` |
+| 7 | Cafe24/Reference 규칙 `80`~`84` → `.cursor/rules/archive/` |
+| 8 | 활성 도구 폴더는 `_harness` 유지 (얇게) |
+
+---
+
 ## 2026-07-11 — [static] templates 아카이브 이동
 
 | # | 결정 |
