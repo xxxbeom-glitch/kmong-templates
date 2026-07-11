@@ -3511,6 +3511,8 @@ button.scroll-reveal {
     --section-shell-gutter-max: 100%;
     /* 서브히어로 공통 */
     --page-hero-h: 17.1875rem; /* 275px */
+    /* 메인·서브 공통 카드/이미지 라운드 */
+    --mo-radius-card: 0.5rem; /* 8px */
   }
 
   /* —— 서브페이지 공통: page-hero —— */
@@ -3566,7 +3568,6 @@ button.scroll-reveal {
 
   /* 메인 모바일 타이포 — page-home만 · PC 대비 가독 스케일 · body floor 16 */
   .page-home {
-    --mo-radius-card: 0.5rem; /* 8px · 카드 라운딩 */
     --mo-fs-hero: 2rem;           /* 32 · PC 80 */
     --mo-lh-hero: 1.35;
     --mo-fs-display: 1.75rem;     /* 28 · intro/cta */
@@ -3759,11 +3760,21 @@ button.scroll-reveal {
     line-height: 1.2;
   }
 
-  /* 메인 카드 라운딩 8px */
-  .page-home .services__card,
-  .page-home .features__card-media,
-  .page-home .reviews__card,
-  .page-home .faq__item {
+  /* 메인·서브 공통 — 카드·이미지 라운드 8px */
+  .services__card,
+  .features__card-media,
+  .reviews__card,
+  .faq__item,
+  .service-card,
+  .process-step,
+  .portfolio-card,
+  .business-item__media,
+  .business-item__panel,
+  .greeting-intro__figure,
+  .directions__figure,
+  .ceo-message__figure,
+  .contact-page__figure,
+  .media-card {
     border-radius: var(--mo-radius-card);
   }
 
@@ -3811,7 +3822,6 @@ button.scroll-reveal {
     min-height: 0;
     aspect-ratio: 16 / 9;
     padding: 1.5rem 1.25rem;
-    border-radius: var(--mo-radius-card, 0.5rem);
   }
 
   .service-card__title {

@@ -1,6 +1,15 @@
 # Decision Log
 
 
+## 2026-07-11 — [static] template-homepage · 모바일 라운드 8px 서브 확장
+
+| # | 결정 |
+|---|------|
+| 1 | `--mo-radius-card: 0.5rem` → `@768 :root` (메인·서브 공통) |
+| 2 | 카드·이미지 figure 일괄 적용 (service/process/portfolio/business/intro/directions/ceo/contact 등) |
+
+---
+
 ## 2026-07-11 — [static] template-homepage · 서비스 3페이지 모바일
 
 | # | 결정 |
