@@ -6,7 +6,8 @@
 |------|------|
 | `templates/` | 과거 정적 HTML 템플릿 + cafe24_shop 문법 참고 |
 | `delivery/` | 구 `_delivery/` (imweb · mainstream 등 정적 납품 스냅샷) |
+| `docs/` | 구 루트 `docs/` (cafe24 인벤토리·배포 템플릿 · mirror QA 메모) |
 
-활성 작업: `wordpress/{slug}/` · 납품 ZIP: `wordpress/{slug}/dist/` · 도구: `_harness/`
+활성 작업: `wordpress/{slug}/` · 납품 ZIP: `wordpress/{slug}/dist/` · 사람용 가이드: `_docs/` · 도구: `_harness/`
 
-참고: 사이트 복제(`reference-harness`) 다운로드본은 **삭제됨** (재보관 안 함).
+참고: 사이트 복제(`reference-harness`)·`_review_exports`·`_dev-images`는 **삭제됨**.

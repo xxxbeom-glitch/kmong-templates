@@ -4,7 +4,7 @@ alwaysApply: false
 globs:
   - cafe24/**
   - _release/**
-  - docs/cafe24/**
+  - _archive/docs/cafe24/**
   - .cursor/rules/80-cafe24-core.mdc
   - .cursor/rules/82-cafe24-qa.mdc
 ---
@@ -13,7 +13,7 @@ globs:
 
 > **적용:** Track A · Track B 만. **미적용:** 정적 `templates/{slug}/` · Track C 데모.  
 > **선행:** `80-cafe24-core` · `82-cafe24-qa` · (B) map 승인 (`81`).  
-> **사람용 요약:** `docs/cafe24/CAFE24_RULES_OVERVIEW.md` · 템플릿 `docs/cafe24/release-templates/`.  
+> **사람용 요약:** `_archive/docs/cafe24/CAFE24_RULES_OVERVIEW.md` · 템플릿 `_archive/docs/cafe24/release-templates/`.  
 > **이 규칙은 배포 절차 문서화·패키지 생성을 다룬다.** 운영 자동 업로드·실제 배포 실행은 기본 **금지**.
 
 ## 1. 용어
@@ -175,7 +175,7 @@ module · 인스턴스 `_N` · `{$}` · `{$form.*}` · modifier · `@layout|css|
 ## 9. 보고서 (템플릿)
 
 경로: `_release/{slug}/reports/`  
-골격: `docs/cafe24/release-templates/`
+골격: `_archive/docs/cafe24/release-templates/`
 
 | 파일 | 요지 |
 |------|------|

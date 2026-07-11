@@ -47,7 +47,7 @@ cafe24/{slug}/platform-map/   (또는 harness 승격 시 08-platform-map/)
 |------|------|
 | staticSection | 정적 섹션 id |
 | cafe24Page | 대상 페이지 경로 |
-| cafe24Module | working skin · `docs/cafe24` · global syntax reference에서 **확인된** module |
+| cafe24Module | working skin · `_archive/docs/cafe24` · global syntax reference에서 **확인된** module |
 | variables | 필요 `{$…}` |
 | commerceContract | 유지 form/hidden/옵션 등 |
 | adminDependency | 관리자 데이터·진열·배너 등 |
@@ -55,7 +55,7 @@ cafe24/{slug}/platform-map/   (또는 harness 승격 시 08-platform-map/)
 
 확인되지 않은 module/변수 → **창작 금지** · `unverified` + 사용자 확인.
 
-조회 순서: `80` §6 (working skin → `docs/cafe24` → `cafe24_shop` → 공식 문서).
+조회 순서: `80` §6 (working skin → `_archive/docs/cafe24` → `cafe24_shop` → 공식 문서).
 
 ## 파일럿 UI (이식 시 기본 개편 후보)
 

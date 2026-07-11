@@ -1,7 +1,7 @@
 # Cafe24 Release Guide
 
 실행 규칙: `.cursor/rules/84-cafe24-release.mdc`  
-보고서 골격: `docs/cafe24/release-templates/`
+보고서 골격: `_archive/docs/cafe24/release-templates/`
 
 ## 한 줄 원칙
 

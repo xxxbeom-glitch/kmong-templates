@@ -13,7 +13,7 @@ kmong-templates/
 ├── _logs/                  # decision / change / failure / qa
 ├── _docs/                  # 가이드
 ├── _icons/                 # 공용 SVG
-└── _archive/               # 동결 보관 (templates · delivery)
+└── _archive/               # 동결 보관 (templates · delivery · docs)
 ```
 
 ## Active workspace

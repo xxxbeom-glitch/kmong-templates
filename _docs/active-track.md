@@ -28,8 +28,9 @@
 | 정적 템플릿 + cafe24_shop | `_archive/templates/` |
 | 구 정적·아임웹 납품 | `_archive/delivery/` |
 | Cafe24 / Reference 규칙 | `.cursor/rules/archive/80`~`84` |
+| 구 `docs/` (cafe24 등) | `_archive/docs/` |
 
-- 루트 `templates/` · `_delivery/` · `_delivery-wp/` · `_reference-harness/` · `_dev-images/` · `_review_exports/` **없음**
+- 루트 `templates/` · `docs/` · `_delivery/` · `_delivery-wp/` · `_reference-harness/` · `_dev-images/` · `_review_exports/` **없음**
 - 사이트 복제 다운로드본(`reference-harness`) **삭제** (아카이브에도 없음)
 - 개발용 사진 풀 `_dev-images/` **삭제** — 이미지는 테마 `assets/`에 직접
 - 카페24 규칙 검수 export `_review_exports/` **삭제**

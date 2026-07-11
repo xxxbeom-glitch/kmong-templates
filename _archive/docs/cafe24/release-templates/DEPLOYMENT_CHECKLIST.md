@@ -34,7 +34,7 @@
 - [ ] 쿠폰
 - [ ] 배송지
 - [ ] 게시판
-- [ ] 기능 팝업 / 하루 닫기 (`docs/cafe24/popup-rules.md`)
+- [ ] 기능 팝업 / 하루 닫기 (`_archive/docs/cafe24/popup-rules.md`)
 - [ ] 모바일
 
 ## 운영 전환

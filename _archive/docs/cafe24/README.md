@@ -26,7 +26,7 @@
 ## 조회 우선순위 (`80`)
 
 1. 현재 **working skin**  
-2. **`docs/cafe24/`** 인벤토리  
+2. **`_archive/docs/cafe24/`** 인벤토리  
 3. **`templates/cafe24_shop/`** (global syntax reference)  
 4. 카페24 공식 문서  
 5. 미확인 → 생성 금지 · `unverified`

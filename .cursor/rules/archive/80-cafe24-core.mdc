@@ -3,7 +3,7 @@ description: 카페24 스킨 핵심 — Track A 기존 스킨 · Track B 이식 
 alwaysApply: false
 globs:
   - cafe24/**
-  - docs/cafe24/**
+  - _archive/docs/cafe24/**
   - _release/**
   - .cursor/rules/81-cafe24-platform-map.mdc
   - .cursor/rules/82-cafe24-qa.mdc
@@ -12,9 +12,9 @@ globs:
 
 # Cafe24 Core
 
-> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · 신규 Cafe24 A/B 작업 **진입 금지**. 규칙·`docs/cafe24/`는 **보관·재개 시 참고**.  
-> **개요:** `docs/cafe24/CAFE24_RULES_OVERVIEW.md` · **팝업:** `docs/cafe24/popup-rules.md` · **인벤토리:** `docs/cafe24/README.md`  
-> **배포:** `84-cafe24-release.mdc` · `docs/cafe24/release.md`  
+> **상태 (2026-07-10):** **동결** — `_docs/active-track.md` · 신규 Cafe24 A/B 작업 **진입 금지**. 규칙·`_archive/docs/cafe24/`는 **보관·재개 시 참고**.  
+> **개요:** `_archive/docs/cafe24/CAFE24_RULES_OVERVIEW.md` · **팝업:** `_archive/docs/cafe24/popup-rules.md` · **인벤토리:** `_archive/docs/cafe24/README.md`  
+> **배포:** `84-cafe24-release.mdc` · `_archive/docs/cafe24/release.md`  
 > **라우터:** `00-project-router.mdc`
 
 ## 1. 세 경로
@@ -71,14 +71,14 @@ globs:
 ## 6. 지식 조회 순서 (고정)
 
 1. **현재 working skin**에서 동일 기능 검색  
-2. **`docs/cafe24/` 인벤토리** 검색 (`modules`·`variables`·`forms`·`pages`·`directives`)  
+2. **`_archive/docs/cafe24/` 인벤토리** 검색 (`modules`·`variables`·`forms`·`pages`·`directives`)  
 3. **`templates/cafe24_shop/`** 실제 파일 확인 (global syntax reference)  
 4. 카페24 **공식 문서**  
 5. 확인 안 되면 **생성하지 않고** `unverified` 표시  
 
-`docs/cafe24`는 **검색 색인**이다. `purpose: unknown` 의미를 인벤토리만 보고 **추측하지 않는다.**
+`_archive/docs/cafe24`는 **검색 색인**이다. `purpose: unknown` 의미를 인벤토리만 보고 **추측하지 않는다.**
 
-팝업·레이어: 수정 전 **`docs/cafe24/popup-rules.md` 필수**.
+팝업·레이어: 수정 전 **`_archive/docs/cafe24/popup-rules.md` 필수**.
 
 ## 7. 위험 필드 (페이지/블록)
 
@@ -113,4 +113,4 @@ globs:
 - working skin → production 직업로드
 - 인증 정보 문서·패키지 저장 · 인증 없이 자동 업로드
 
-관련: `81` (B만) · `82` · `84` · `83` · `docs/cafe24/README.md` · `docs/cafe24/release.md`
+관련: `81` (B만) · `82` · `84` · `83` · `_archive/docs/cafe24/README.md` · `_archive/docs/cafe24/release.md`

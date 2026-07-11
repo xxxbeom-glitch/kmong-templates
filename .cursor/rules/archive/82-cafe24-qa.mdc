@@ -3,7 +3,7 @@ description: 카페24 QA — Track A 기존 스킨 / Track B 이식 / Track C �
 alwaysApply: false
 globs:
   - cafe24/**
-  - docs/cafe24/**
+  - _archive/docs/cafe24/**
   - _release/**
   - .cursor/rules/80-cafe24-core.mdc
   - .cursor/rules/81-cafe24-platform-map.mdc
@@ -13,7 +13,7 @@ globs:
 # Cafe24 QA
 
 > **선행:** `80` · (Track B만) map 승인 · 원본 백업  
-> **팝업:** `docs/cafe24/popup-rules.md`  
+> **팝업:** `_archive/docs/cafe24/popup-rules.md`  
 > **배포 단계 QA:** `84-cafe24-release` · `_release/.../reports/QA_RESULT.md` · `DEPLOYMENT_CHECKLIST.md`  
 > Visual만으로 완료 선언 금지 · 한쪽 PASS로 덮지 않음 · 미테스트=`PASS` 금지.
 

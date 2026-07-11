@@ -68,4 +68,4 @@ alwaysApply: true
 - `templates/cafe24_shop/` **수정·이동·고객 overwrite 금지**
 - Track C · design reference → upload package **금지**
 
-개요: `docs/cafe24/CAFE24_RULES_OVERVIEW.md` · 배포: `docs/cafe24/release.md`
+개요: `_archive/docs/cafe24/CAFE24_RULES_OVERVIEW.md` · 배포: `_archive/docs/cafe24/release.md`

@@ -11,7 +11,7 @@ alwaysApply: true
 - 정적: Figma **1920px** · `@1024` · `@768` — `35-responsive.mdc` · `10-static-template.mdc`.
 - Figma MCP 수치 우선(해당 트랙). 추측으로 간격·폰트·구조를 바꾸지 않는다.
 - **QA PASS 전**에는 섹션·페이지·작업을 완료 처리하지 않는다 (트랙별 QA 문서).
-- 자세한 가이드: `_docs/*.md` · 카페24 개요 `docs/cafe24/CAFE24_RULES_OVERVIEW.md`.
+- 자세한 가이드: `_docs/*.md` · (동결) 카페24 개요 `_archive/docs/cafe24/CAFE24_RULES_OVERVIEW.md`.
 - 작업 로그(`_logs/*.md`)는 다음 작업 전 필수 컨텍스트. 정적은 `20-harness-workflow` 로그 확인.
 - `_docs/context-guide.md`로 **현재 작업에 필요한 정보만** 확인.
 - 작업과 무관한 과거 로그·legacy·다른 트랙 기준을 섞지 않는다.

@@ -67,4 +67,4 @@
 | 하루 닫기 | `{$checkbox_today_open}` 등 **실재할 때만** |
 | `/popup/` 부재 | 기능 부재로 해석하지 않음 |
 
-관련 인벤토리: `docs/cafe24/pages.json` (`usesPopupLayout`), `modules.json`, `forms.json`, `variables.json`.
+관련 인벤토리: `_archive/docs/cafe24/pages.json` (`usesPopupLayout`), `modules.json`, `forms.json`, `variables.json`.
