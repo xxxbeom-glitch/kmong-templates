@@ -198,7 +198,7 @@ const html = `<!DOCTYPE html>
     outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
-  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
   .chip {
     border: 1px solid var(--line);
     background: var(--chip);
@@ -212,6 +212,31 @@ const html = `<!DOCTYPE html>
     background: var(--accent);
     border-color: var(--accent);
     color: #fff;
+  }
+  .style-toggle {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--panel);
+  }
+  .style-toggle button {
+    border: 0;
+    background: transparent;
+    padding: 0.4rem 0.9rem;
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--muted);
+  }
+  .style-toggle button.is-active {
+    background: var(--accent);
+    color: #fff;
+  }
+  .ctrl-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-right: 0.15rem;
   }
   main {
     max-width: 1400px;
@@ -340,8 +365,11 @@ const html = `<!DOCTYPE html>
         <button type="button" class="chip" data-cat="ui">UI</button>
         <button type="button" class="chip" data-cat="social">Social</button>
         <button type="button" class="chip" data-cat="motion">Motion</button>
-        <button type="button" class="chip" data-cat="line">Line</button>
-        <button type="button" class="chip" data-cat="fill">Fill</button>
+      </div>
+      <span class="ctrl-label">스타일</span>
+      <div class="style-toggle" id="style-toggle" role="group" aria-label="라인형 또는 채움">
+        <button type="button" class="is-active" data-style="line">라인형</button>
+        <button type="button" data-style="fill">채움</button>
       </div>
     </div>
   </header>
@@ -389,6 +417,7 @@ const html = `<!DOCTYPE html>
     const toastEl = document.getElementById('toast');
     const emptyEl = document.getElementById('empty');
     let cat = 'all';
+    let style = 'line';
     let q = '';
 
     function showToast(msg) {
@@ -512,8 +541,9 @@ const html = `<!DOCTYPE html>
           !type.includes(qq)
         ) return false;
       }
+      // motion은 스타일 토글과 무관하게 카테고리만 맞춤
+      if (type !== 'motion' && type !== style) return false;
       if (cat === 'all') return true;
-      if (cat === 'line' || cat === 'fill') return type === cat;
       return c === cat;
     }
 
@@ -526,11 +556,7 @@ const html = `<!DOCTYPE html>
       });
       document.querySelectorAll('section[data-section]').forEach((sec) => {
         const any = sec.querySelectorAll('.card:not(.hidden)').length > 0;
-        const showSec =
-          cat === 'all' ||
-          cat === 'line' ||
-          cat === 'fill' ||
-          sec.dataset.section === cat;
+        const showSec = cat === 'all' || sec.dataset.section === cat;
         sec.classList.toggle('hidden', !showSec || !any);
       });
       emptyEl.classList.toggle('show', visible === 0);
@@ -546,6 +572,14 @@ const html = `<!DOCTYPE html>
       if (!btn) return;
       cat = btn.dataset.cat;
       document.querySelectorAll('#cat-chips .chip').forEach((c) => c.classList.toggle('is-active', c === btn));
+      applyFilter();
+    });
+
+    document.getElementById('style-toggle').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-style]');
+      if (!btn) return;
+      style = btn.dataset.style;
+      document.querySelectorAll('#style-toggle button').forEach((b) => b.classList.toggle('is-active', b === btn));
       applyFilter();
     });
 
