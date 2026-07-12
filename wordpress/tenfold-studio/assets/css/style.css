@@ -1506,7 +1506,8 @@ h1,
 .section--footer-cta {
   background: var(--color-surface);
   border-top: 1px solid var(--color-line);
-  margin-block: var(--section-y) 0;
+  margin-block: 0;
+  padding-block: var(--section-y);
 }
 
 .footer-cta__title {
