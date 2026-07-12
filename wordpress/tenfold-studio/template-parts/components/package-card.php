@@ -23,7 +23,12 @@ $cta = isset($package['card_cta']) ? $package['card_cta'] : '자세히 보기';
     <p class="package-card__label"><?php echo esc_html($package['card_recommended_label']); ?></p>
     <ul class="package-card__checklist">
       <?php foreach ($recommended as $item) : ?>
-        <li><?php echo esc_html($item); ?></li>
+        <li>
+          <span class="package-card__check" aria-hidden="true">
+            <?php echo tenfold_icon('check', array('class' => 'icon icon--check', 'width' => '16', 'height' => '16')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- trusted theme SVG ?>
+          </span>
+          <span class="package-card__check-text"><?php echo esc_html($item); ?></span>
+        </li>
       <?php endforeach; ?>
     </ul>
   </div>

@@ -70,3 +70,52 @@ function tenfold_kakao_url() {
   $url = 'https://pf.kakao.com/';
   return apply_filters('tenfold_kakao_url', $url);
 }
+
+/**
+ * Inline SVG from theme `assets/icons/{name}.svg` (copied from `_icons/`).
+ *
+ * @param string               $name Icon filename without .svg.
+ * @param array<string, mixed> $args Optional: class, width, height.
+ * @return string
+ */
+function tenfold_icon($name, $args = array()) {
+  $name = preg_replace('/[^a-z0-9\-]/i', '', (string) $name);
+  if ($name === '') {
+    return '';
+  }
+
+  $path = get_template_directory() . '/assets/icons/' . $name . '.svg';
+  if (!file_exists($path)) {
+    return '';
+  }
+
+  $svg = file_get_contents($path);
+  if ($svg === false || $svg === '') {
+    return '';
+  }
+
+  $class = isset($args['class']) ? (string) $args['class'] : 'icon';
+  $width = isset($args['width']) ? (string) $args['width'] : '';
+  $height = isset($args['height']) ? (string) $args['height'] : '';
+
+  $svg = preg_replace('/\s(stroke|fill)="(#000000|#000|black)"/i', ' $1="currentColor"', $svg);
+  $svg = preg_replace('/<svg\b/', '<svg class="' . esc_attr($class) . '" focusable="false" aria-hidden="true"', $svg, 1);
+
+  if ($width !== '') {
+    if (preg_match('/\swidth="[^"]*"/', $svg)) {
+      $svg = preg_replace('/\swidth="[^"]*"/', ' width="' . esc_attr($width) . '"', $svg, 1);
+    } else {
+      $svg = preg_replace('/<svg\b/', '<svg width="' . esc_attr($width) . '"', $svg, 1);
+    }
+  }
+
+  if ($height !== '') {
+    if (preg_match('/\sheight="[^"]*"/', $svg)) {
+      $svg = preg_replace('/\sheight="[^"]*"/', ' height="' . esc_attr($height) . '"', $svg, 1);
+    } else {
+      $svg = preg_replace('/<svg\b/', '<svg height="' . esc_attr($height) . '"', $svg, 1);
+    }
+  }
+
+  return $svg;
+}

@@ -847,22 +847,28 @@ h1,
 }
 
 .package-card__checklist li {
-  position: relative;
-  padding-left: 1.1em;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   color: var(--color-text-muted);
   font-size: var(--text-callout);
   line-height: 1.5;
   word-break: keep-all;
 }
 
-.package-card__checklist li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
+.package-card__check {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 0.15em;
   color: var(--color-accent);
-  font-size: 0.85em;
-  font-weight: var(--fw-semibold);
+}
+
+.package-card__check .icon {
+  display: block;
+}
+
+.package-card__check-text {
+  min-width: 0;
 }
 
 .package-card__included {
@@ -1862,6 +1868,10 @@ h1,
 .float-actions__btn:focus-visible .float-actions__icon {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+.float-actions__icon .icon {
+  display: block;
 }
 
 .float-actions__btn--kakao .float-actions__icon {
