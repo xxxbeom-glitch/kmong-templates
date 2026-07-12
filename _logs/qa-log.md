@@ -7,11 +7,25 @@
 
 | slug / 트랙 | 최근 결과 | 날짜 | 다음에 주의 |
 |-------------|-----------|------|-------------|
-| `tenfold-studio` (WP) | PASS (정적) · 브라우저 수동 필요 | 2026-07-12 | WP 활성화·permalink·390/768/1024/1920 시각 확인 · 문의 연동 TODO |
+| `tenfold-studio` (WP) | PASS (정적) · 홈 Projects 캐러셀 브라우저 확인 필요 | 2026-07-12 | 캐러셀 snap·←/→·카드 동일 크기 · 390/768/1024 |
 | `template-a-blocks` (WP) | PASS (정적) · 브라우저·편집기 수동 필요 | 2026-07-11 | Cafe24 업로드·사이트 편집기 확인 · ZIP은 `dist/` |
 | `template-a` (WP) | PASS (정적) · 브라우저 확인 필요 | 2026-07-11 | 설치 후 시각·폼 |
 | `template-homepage` (static·아카이브) | 모바일·shell 등 다수 PASS 이력 | 2026-07-11 | **신규 정적 작업 안 함** · 참고만 |
 | 기타 WP slug | (아래 날짜순에서 검색) | — | 없으면 첫 QA부터 |
+
+---
+
+## 2026-07-12 · [wordpress] tenfold-studio 홈 Projects 캐러셀
+**범위:** 홈 `#projects` · 가로 캐러셀 · 동일 카드 크기
+**결과:** **PASS (정적)** — 브라우저 스크롤/버튼 수동 확인 필요
+
+| # | 항목 | 결과 | 비고 |
+|---|------|------|------|
+| 1 | 마크업·PHP | PASS | 전체 프로젝트 equal slide |
+| 2 | `verify-wordpress-static.js` | PASS | 43/43 |
+| 3 | 캐러셀 UI·터치 스크롤 | 미확인 | `http://tenfold-studio.test/` 하드 리프레시 |
+
+**다음:** 홈 Projects에서 카드 폭 동일·←/→·스와이프 확인
 
 ---
 

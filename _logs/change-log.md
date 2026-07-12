@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio 홈 Projects 가로 캐러셀
+
+- 비대칭 lead/side 보드 → 동일 폭 카드 가로 스크롤(snap) 캐러셀
+- 프로젝트 전체 노출 · ←/→ 버튼 · 요약 3줄 클램프로 카드 높이 맞춤
+- `template-parts/home/content.php` · `assets/css/style.css` · `assets/js/main.js`
+
+---
+
 ## 2026-07-12 — tenfold-studio 1차 테마
 
 - `wordpress/tenfold-studio/` Classic 테마 신설 (개인 사이트)

@@ -327,6 +327,68 @@
     });
   }
 
+  function initProjectCarousel() {
+    $("[data-project-carousel]").each(function () {
+      var $root = $(this);
+      var $track = $root.find("[data-carousel-track]");
+      var $prev = $root.closest(".home-projects").find("[data-carousel-prev]");
+      var $next = $root.closest(".home-projects").find("[data-carousel-next]");
+      var track = $track.get(0);
+
+      if (!track || !$prev.length || !$next.length) {
+        return;
+      }
+
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function slideStep() {
+        var $slide = $track.children().first();
+        if (!$slide.length) {
+          return 0;
+        }
+        var styles = window.getComputedStyle(track);
+        var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+        return $slide.outerWidth() + gap;
+      }
+
+      function updateControls() {
+        var max = track.scrollWidth - track.clientWidth;
+        var left = track.scrollLeft;
+        $prev.prop("disabled", left <= 2);
+        $next.prop("disabled", left >= max - 2);
+      }
+
+      function scrollByDir(dir) {
+        var step = slideStep();
+        if (!step) {
+          return;
+        }
+        track.scrollBy({
+          left: dir * step,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      }
+
+      $prev.on("click", function () {
+        scrollByDir(-1);
+      });
+
+      $next.on("click", function () {
+        scrollByDir(1);
+      });
+
+      $track.on("scroll", function () {
+        window.requestAnimationFrame(updateControls);
+      });
+
+      $(window).on("resize", function () {
+        window.requestAnimationFrame(updateControls);
+      });
+
+      updateControls();
+    });
+  }
+
   $(function () {
     $("html").addClass("js");
     initHeaderScroll();
@@ -336,5 +398,6 @@
     initPackageQuery();
     initContactForm();
     initSmoothScroll();
+    initProjectCarousel();
   });
 })(jQuery);
