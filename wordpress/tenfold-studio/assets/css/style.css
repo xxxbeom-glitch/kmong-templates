@@ -1538,7 +1538,7 @@ h1,
 /* —— Float actions (우하단) —— */
 .float-actions {
   position: fixed;
-  right: max(16px, var(--side-padding));
+  right: 16px;
   bottom: max(16px, env(safe-area-inset-bottom, 0px));
   z-index: 80;
   display: flex;
@@ -1592,8 +1592,8 @@ h1,
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: 999px;
   box-shadow: var(--shadow-md);
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
