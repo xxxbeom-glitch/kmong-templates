@@ -1535,6 +1535,123 @@ h1,
   color: var(--color-text-muted);
 }
 
+/* —— Float actions (우하단) —— */
+.float-actions {
+  position: fixed;
+  right: max(16px, var(--side-padding));
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.float-actions__btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.float-actions__label {
+  display: inline-flex;
+  align-items: center;
+  max-width: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  border-radius: 999px;
+  background: rgba(29, 29, 31, 0.88);
+  color: #fff;
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  box-shadow: var(--shadow-md);
+  transition:
+    max-width var(--dur) var(--ease),
+    opacity var(--dur) var(--ease),
+    padding var(--dur) var(--ease);
+}
+
+.float-actions__btn:hover .float-actions__label,
+.float-actions__btn:focus-visible .float-actions__label {
+  max-width: 10rem;
+  padding: 10px 12px;
+  opacity: 1;
+}
+
+.float-actions__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.float-actions__btn:hover .float-actions__icon,
+.float-actions__btn:focus-visible .float-actions__icon {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.float-actions__btn--kakao .float-actions__icon {
+  background: #fee500;
+  color: #191919;
+}
+
+.float-actions__btn--contact .float-actions__icon {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.float-actions__btn:focus-visible {
+  outline: none;
+}
+
+.float-actions__btn:focus-visible .float-actions__icon {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+body.is-menu-open .float-actions {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .float-actions {
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+  }
+
+  .float-actions__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .float-actions__label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-actions__label,
+  .float-actions__icon {
+    transition: none;
+  }
+}
+
 .site-footer__grid {
   display: grid;
   grid-template-columns: 1fr;

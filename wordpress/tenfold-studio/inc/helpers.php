@@ -59,3 +59,14 @@ function tenfold_part($slug, $args = array()) {
   extract($args, EXTR_SKIP);
   include $path;
 }
+
+/**
+ * Kakao channel / open chat URL.
+ * 실제 채널 주소가 정해지면 이 값을 바꾸거나 `tenfold_kakao_url` 필터로 덮어쓴다.
+ *
+ * @return string
+ */
+function tenfold_kakao_url() {
+  $url = 'https://pf.kakao.com/';
+  return apply_filters('tenfold_kakao_url', $url);
+}

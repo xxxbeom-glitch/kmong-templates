@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio 우하단 플로팅 버튼
+
+- 카카오톡 상담 · 문의게시판 원형 FAB (`float-actions`)
+- 문의 → `/contact/` · 카카오는 `tenfold_kakao_url()` (채널 URL 교체 필요)
+
+---
+
 ## 2026-07-12 — tenfold-studio 홈 섹션 배경 교차
 
 - 홈 섹션 gray(`#f5f5f7`) / white 교차 밴드로 구분

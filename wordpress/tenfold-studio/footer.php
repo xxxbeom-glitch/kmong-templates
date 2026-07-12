@@ -49,6 +49,7 @@ $nav_items = tenfold_nav_items();
       <p class="site-footer__copy">© 2026 TENFOLD STUDIO. All rights reserved.</p>
     </div>
   </footer>
+<?php tenfold_part('components/float-actions'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
