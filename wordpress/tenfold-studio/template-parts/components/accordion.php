@@ -26,7 +26,14 @@ if (!$items) {
           data-accordion-trigger
         >
           <span><?php echo esc_html($item['question']); ?></span>
-          <span class="accordion__icon" aria-hidden="true"></span>
+          <span class="accordion__icon" aria-hidden="true">
+            <span class="accordion__icon-plus">
+              <?php echo tenfold_icon('plus', array('class' => 'icon icon--accordion', 'width' => '20', 'height' => '20')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- trusted theme SVG ?>
+            </span>
+            <span class="accordion__icon-minus">
+              <?php echo tenfold_icon('minus', array('class' => 'icon icon--accordion', 'width' => '20', 'height' => '20')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- trusted theme SVG ?>
+            </span>
+          </span>
         </button>
       </h3>
       <div

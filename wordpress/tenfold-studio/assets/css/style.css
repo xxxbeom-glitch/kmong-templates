@@ -1155,33 +1155,30 @@ h1,
   flex-shrink: 0;
   width: 20px;
   height: 20px;
+  color: var(--color-text);
 }
 
-.accordion__icon::before,
-.accordion__icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: var(--color-text);
-  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+.accordion__icon-plus,
+.accordion__icon-minus {
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
-.accordion__icon::before {
-  width: 14px;
-  height: 1.5px;
-  transform: translate(-50%, -50%);
+.accordion__icon .icon {
+  display: block;
 }
 
-.accordion__icon::after {
-  width: 1.5px;
-  height: 14px;
-  transform: translate(-50%, -50%);
+.accordion__icon-minus {
+  display: none;
 }
 
-.accordion__trigger[aria-expanded="true"] .accordion__icon::after {
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(90deg);
+.accordion__trigger[aria-expanded="true"] .accordion__icon-plus {
+  display: none;
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__icon-minus {
+  display: block;
 }
 
 .accordion__panel {
