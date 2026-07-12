@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio 홈 Projects 3열 Wrap 그리드
+
+- 캐러셀 제거 → shell 안 동일 카드 3개 가로 그리드 (MO 1열 / 769↑ 3열)
+- 캐러셀 JS·←/→ 컨트롤 삭제
+
+---
+
 ## 2026-07-12 — tenfold-studio 홈 Projects 가로 캐러셀
 
 - 비대칭 lead/side 보드 → 동일 폭 카드 가로 스크롤(snap) 캐러셀

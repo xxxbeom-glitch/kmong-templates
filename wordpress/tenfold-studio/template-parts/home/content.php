@@ -1,4 +1,5 @@
 <?php
+$featured = array_slice(tenfold_projects(), 0, 3);
 $packages = tenfold_packages();
 $why_items = array(
   array(
@@ -94,31 +95,19 @@ $why_items = array(
         )
       );
       ?>
-      <div class="home-projects__toolbar">
-        <div class="home-projects__controls" data-carousel-controls>
-          <button type="button" class="home-projects__nav" data-carousel-prev aria-label="이전 프로젝트" disabled>
-            <span aria-hidden="true">←</span>
-          </button>
-          <button type="button" class="home-projects__nav" data-carousel-next aria-label="다음 프로젝트">
-            <span aria-hidden="true">→</span>
-          </button>
-        </div>
-        <a class="btn btn--secondary home-projects__action--desktop" href="<?php echo esc_url(tenfold_url('projects')); ?>">프로젝트 전체 보기</a>
+      <div class="home-projects__action home-projects__action--desktop">
+        <a class="btn btn--secondary" href="<?php echo esc_url(tenfold_url('projects')); ?>">프로젝트 전체 보기</a>
       </div>
     </div>
-  </div>
 
-  <div class="home-projects__carousel" data-project-carousel>
-    <div class="home-projects__track" data-carousel-track tabindex="0" role="region" aria-label="프로젝트 목록">
-      <?php foreach (tenfold_projects() as $project) : ?>
-        <div class="home-projects__slide">
+    <div class="home-projects__grid">
+      <?php foreach ($featured as $project) : ?>
+        <div class="home-projects__item">
           <?php tenfold_part('components/project-card', array('project' => $project)); ?>
         </div>
       <?php endforeach; ?>
     </div>
-  </div>
 
-  <div class="section-shell section-shell--gutter">
     <div class="section-actions home-projects__action home-projects__action--mobile">
       <a class="btn btn--secondary" href="<?php echo esc_url(tenfold_url('projects')); ?>">프로젝트 전체 보기</a>
     </div>
