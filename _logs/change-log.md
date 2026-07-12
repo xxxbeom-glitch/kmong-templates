@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio 1차 테마
+
+- `wordpress/tenfold-studio/` Classic 테마 신설 (개인 사이트)
+- 페이지: 메인·소개·프로젝트(목록+5상세)·서비스(목록+2패키지)·문의·완료·개인정보·404
+- 공통 Header/모바일 메뉴/Footer · 데이터 분리(`inc/data-*.php`) · 반응형 CSS · jQuery 인터랙션
+- 가벼운 SEO(title/meta/OG/robots/sitemap) · 문의 폼 클라이언트 검증만
+
+---
+
 ## 2026-07-11 — SEO/AEO/GEO 통합 (73 최소)
 
 - `73`에 GEO를 같은 레인으로 명시 · 엔티티 일관·직접 답·1차 사실·Schema 힌트

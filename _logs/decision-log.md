@@ -18,6 +18,22 @@
 | 사이트별 규칙 | 테마 `docs/` 또는 decision | `75-hes`는 archive |
 | 로그 조회 | 표·유형 카드 우선 (`_logs/README.md`) | failure=오답 유형 / decision·qa=맨 위 표 |
 | SEO/AEO/GEO | **on-demand** · 한 레인 · 자동 실행 금지 | `20` 알림(최대 2) · 상세 `73` · GEO 전용 파일 없음 · 상태: 미실행/완료/의도적 생략 |
+| tenfold-studio | **개인 운영 WP 테마** · Classic | Figma 없이 1차 일괄 · 반응형 MO/TB/PC · 가벼운 SEO · 컬러 임시(`#F4F1E9`) · 문의 서버 연동 전 |
+| tenfold SEO | **가벼운 SEO 적용** | title/meta/OG/canonical · robots/sitemap rewrite · AEO/GEO 미실행 |
+
+---
+
+## 2026-07-12 — tenfold-studio 1차 킥오프
+
+| # | 결정 |
+|---|------|
+| 1 | slug `tenfold-studio` · 개인 영업 거점 · **WordPress Classic 테마** (React/Vite 프롬프트 스택 미채택) |
+| 2 | Figma 없이 사이트맵 전체 1차 구현 · 섹션 루프 예외(사용자 승인) |
+| 3 | 반응형: 모바일·태블릿·PC (`35` breakpoint) |
+| 4 | 컬러 토큰 프롬프트 임시값 · 추후 수정 |
+| 5 | 문의 폼: 클라이언트 검증만 · 메일/저장 연동 TODO (`71` 1단계 준수) |
+| 6 | 프로젝트 이미지: CSS 그래픽 placeholder · 외부 스톡 금지 |
+| 7 | SEO: 가벼운 메타만 · AEO/GEO 미실행 |
 
 ---
 

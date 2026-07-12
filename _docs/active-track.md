@@ -1,6 +1,7 @@
 # Active Track (현재 기본)
 
-> **갱신:** 2026-07-11 · 결정 상세: `_logs/decision-log.md`  
+> **갱신:** 2026-07-12 · 결정 상세: `_logs/decision-log.md`  
+> **진행 중 slug:** `tenfold-studio` (개인 운영 · Classic 테마 1차)  
 > **규칙 SoT:** `.cursor/rules/` · 사람용 장문 가이드는 `_archive/docs/guides/`
 
 ## 지금 쓰는 것
