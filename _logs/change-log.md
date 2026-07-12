@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio Wrap 1600
+
+- `--layout-max` 1080 → **1600px**
+- `--side-padding` → `clamp(20px, 8.3333vw, 160px)` (1920에서 좌우 160)
+
+---
+
 ## 2026-07-12 — tenfold-studio 홈 Projects 3열 Wrap 그리드
 
 - 캐러셀 제거 → shell 안 동일 카드 3개 가로 그리드 (MO 1열 / 769↑ 3열)

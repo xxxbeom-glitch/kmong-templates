@@ -42,10 +42,10 @@
   --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.07);
   --header-h: 48px;
-  --side-padding: 20px;
+  --side-padding: clamp(20px, 8.3333vw, 160px);
   --section-y: 88px;
   --section-y-compact: 56px;
-  --layout-max: 1080px;
+  --layout-max: 1600px;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --dur: 280ms;
   --section-label-gap: 10px;
@@ -56,7 +56,6 @@
 
 @media (min-width: 769px) {
   :root {
-    --side-padding: clamp(24px, 4vw, 40px);
     --section-y: 100px;
     --section-y-compact: 64px;
     --section-head-gap: 40px;
@@ -66,7 +65,6 @@
 
 @media (min-width: 1025px) {
   :root {
-    --side-padding: 40px;
     --section-y: 112px;
     --section-y-compact: 72px;
   }
