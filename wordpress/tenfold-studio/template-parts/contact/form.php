@@ -15,8 +15,8 @@ $project_types = array(
 );
 $packages = array(
   'unknown' => '아직 모르겠습니다',
-  'standard' => 'STANDARD PACKAGE',
-  'custom' => 'CUSTOM PACKAGE',
+  'standard' => '템플릿형 제작',
+  'custom' => '커스텀형 제작',
 );
 $budgets = array(
   '50만원 이하',

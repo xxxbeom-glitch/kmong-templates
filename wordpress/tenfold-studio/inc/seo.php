@@ -41,12 +41,12 @@ function tenfold_seo_for_request() {
       'description' => 'STANDARD와 CUSTOM 패키지로 필요한 범위에 맞는 웹사이트 제작 방식을 선택하세요.',
     ),
     'services/standard' => array(
-      'title' => 'STANDARD PACKAGE | TENFOLD STUDIO',
-      'description' => '준비된 구조를 활용해 빠르게, 완성도 있게 구축하는 STANDARD PACKAGE.',
+      'title' => '템플릿형 제작 | TENFOLD STUDIO',
+      'description' => '준비된 구조로 빠르고 효율적으로 시작하는 템플릿형 제작.',
     ),
     'services/custom' => array(
-      'title' => 'CUSTOM PACKAGE | TENFOLD STUDIO',
-      'description' => '기획부터 맞춤 설계하는 CUSTOM PACKAGE.',
+      'title' => '커스텀형 제작 | TENFOLD STUDIO',
+      'description' => '사업 목적부터 프로젝트에 맞게 설계하는 커스텀형 제작.',
     ),
     'contact' => array(
       'title' => '프로젝트 문의 | TENFOLD STUDIO',

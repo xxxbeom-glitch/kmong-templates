@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio 서비스 패키지 카드 원고·구조
+
+- 카드 비주얼 유지 · 정보 구조 통일 (Intro/추천/포함/기간·비용/CTA)
+- 이름: 템플릿형·커스텀형 · STANDARD/CUSTOM 표기 제거
+- 두 카드 영역 높이·CTA 하단 정렬 (subgrid)
+
+---
+
 ## 2026-07-12 — tenfold-studio 우하단 플로팅 버튼
 
 - 카카오톡 상담 · 문의게시판 원형 FAB (`float-actions`)
