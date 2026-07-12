@@ -5,39 +5,34 @@ $nav_items = tenfold_nav_items();
   </main>
 <?php if (!$footer_compact) : ?>
   <section class="section section--footer-cta" aria-labelledby="footer-cta-title">
-    <div class="section-shell section-shell--gutter">
-      <p class="eyebrow">START A PROJECT</p>
-      <h2 id="footer-cta-title" class="footer-cta__title">홈페이지 제작,<br>어디서부터 시작할지<br>정해지지 않아도 괜찮습니다.</h2>
-      <p class="footer-cta__desc">필요한 페이지와 기능, 제작 방식부터<br>현재 상황에 맞게 정리해드립니다.</p>
-      <a class="btn btn--primary" href="<?php echo esc_url(tenfold_url('contact')); ?>">프로젝트 문의하기</a>
+    <div class="section-shell section-shell--gutter footer-cta">
+      <div class="footer-cta__copy">
+        <p class="eyebrow">START A PROJECT</p>
+        <h2 id="footer-cta-title" class="footer-cta__title">홈페이지 제작,<br>어디서부터 시작할지<br>정해지지 않아도 괜찮습니다.</h2>
+        <p class="footer-cta__desc">필요한 페이지와 기능, 제작 방식부터<br>현재 상황에 맞게 정리해드립니다.</p>
+      </div>
+      <div class="footer-cta__action">
+        <a class="btn btn--primary" href="<?php echo esc_url(tenfold_url('contact')); ?>">프로젝트 문의하기</a>
+      </div>
     </div>
   </section>
 <?php endif; ?>
   <footer id="footer" class="site-footer<?php echo $footer_compact ? ' site-footer--compact' : ''; ?>">
     <div class="section-shell section-shell--gutter">
       <?php if (!$footer_compact) : ?>
-        <div class="site-footer__grid">
+        <div class="site-footer__row">
           <div class="site-footer__brand">
             <p class="site-footer__name">TENFOLD STUDIO</p>
-            <p class="site-footer__tagline">기획과 디자인에 강하고,<br>운영까지 완성하는 웹 스튜디오</p>
-            <div class="site-footer__block">
-              <p class="site-footer__label">Email</p>
-              <a href="mailto:tenfold@tenfold.kr">tenfold@tenfold.kr</a>
-            </div>
+            <p class="site-footer__tagline">기획과 디자인에 강하고, 운영까지 완성하는 웹 스튜디오</p>
           </div>
-          <div class="site-footer__nav-group">
-            <p class="site-footer__label">Navigation</p>
-            <ul class="site-footer__nav">
-              <?php foreach ($nav_items as $item) : ?>
-                <li><a href="<?php echo esc_url($item['href']); ?>"><?php echo esc_html($item['label']); ?></a></li>
-              <?php endforeach; ?>
-            </ul>
-          </div>
-          <div class="site-footer__legal-group">
-            <p class="site-footer__label">Legal</p>
-            <ul class="site-footer__nav">
-              <li><a href="<?php echo esc_url(tenfold_url('privacy')); ?>">개인정보처리방침</a></li>
-            </ul>
+          <ul class="site-footer__nav">
+            <?php foreach ($nav_items as $item) : ?>
+              <li><a href="<?php echo esc_url($item['href']); ?>"><?php echo esc_html($item['label']); ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+          <div class="site-footer__aside">
+            <a href="mailto:tenfold@tenfold.kr">tenfold@tenfold.kr</a>
+            <a href="<?php echo esc_url(tenfold_url('privacy')); ?>">개인정보처리방침</a>
           </div>
         </div>
       <?php else : ?>
