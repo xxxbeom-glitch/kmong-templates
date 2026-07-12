@@ -7,7 +7,7 @@ $nav_items = tenfold_nav_items();
   <section class="section section--footer-cta" aria-labelledby="footer-cta-title">
     <div class="section-shell section-shell--gutter footer-cta">
       <div class="footer-cta__copy">
-        <h2 id="footer-cta-title" class="footer-cta__title">홈페이지 제작,<br>어디서부터 시작할지<br>정해지지 않아도 괜찮습니다.</h2>
+        <h2 id="footer-cta-title" class="footer-cta__title">홈페이지 제작, 어디서부터 시작할지 정해지지 않아도 괜찮습니다.</h2>
       </div>
       <div class="footer-cta__action">
         <a class="btn btn--primary footer-cta__btn" href="<?php echo esc_url(tenfold_url('contact')); ?>">프로젝트 문의하기</a>
