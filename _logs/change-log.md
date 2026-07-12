@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-12 — tenfold-studio 홈 섹션 배경 교차
+
+- 홈 섹션 gray(`#f5f5f7`) / white 교차 밴드로 구분
+- Why·Services·FAQ = 흰 배경 · Projects·Process = 페이지 회색
+- 흰 밴드 위 카드는 회색 fill / 라인으로 대비 유지
+
+---
+
 ## 2026-07-12 — tenfold-studio Wrap 1600
 
 - `--layout-max` 1080 → **1600px**
