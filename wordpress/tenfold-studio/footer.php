@@ -23,7 +23,6 @@ $nav_items = tenfold_nav_items();
         <div class="site-footer__row">
           <div class="site-footer__brand">
             <p class="site-footer__name">TENFOLD STUDIO</p>
-            <p class="site-footer__tagline">기획과 디자인에 강하고, 운영까지 완성하는 웹 스튜디오</p>
           </div>
           <ul class="site-footer__nav">
             <?php foreach ($nav_items as $item) : ?>
