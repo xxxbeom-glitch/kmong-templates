@@ -1932,12 +1932,6 @@ body.is-menu-open .float-actions {
     color: var(--color-accent);
   }
 
-  .home-portfolio-stage__action .btn--secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-    color: #fff;
-  }
-
   .site-header__link:hover,
   .text-link:hover,
   .mobile-menu__link:hover,
@@ -2524,10 +2518,6 @@ body.is-menu-open .float-actions {
 
 /* —— Home portfolio stage (Projects carousel) —— */
 .home-portfolio-stage {
-  margin-block: 0;
-  padding-block: 72px 100px;
-  background: linear-gradient(to bottom, #1a0508 0%, #000 28%, #000 100%);
-  color: #fff;
   overflow: hidden;
 }
 
@@ -2546,26 +2536,8 @@ body.is-menu-open .float-actions {
   margin-bottom: 0;
 }
 
-.home-portfolio-stage__head .eyebrow {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.home-portfolio-stage__head .section-head__title {
-  color: #fff;
-}
-
-.home-portfolio-stage__head .section-head__desc {
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .home-portfolio-stage__action {
   margin-top: 0;
-}
-
-.home-portfolio-stage__action .btn--secondary {
-  border-color: rgba(255, 255, 255, 0.45);
-  color: #fff;
-  background: transparent;
 }
 
 .home-portfolio-stage__carousel {
@@ -2581,7 +2553,7 @@ body.is-menu-open .float-actions {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.5s ease, filter 0.5s ease;
-  filter: brightness(0.55);
+  filter: brightness(0.72);
   transform: rotate(-4deg) translateY(30px) scale(0.82);
   transform-origin: bottom center;
 }
@@ -2607,7 +2579,7 @@ body.is-menu-open .float-actions {
   display: block;
   object-fit: cover;
   object-position: top center;
-  background: #111;
+  background: var(--color-surface);
 }
 
 .home-portfolio-stage__copy {
@@ -2619,10 +2591,10 @@ body.is-menu-open .float-actions {
 .home-portfolio-stage__summary {
   margin: 0 auto;
   max-width: 40rem;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.55;
+  color: var(--color-text-muted);
+  font-size: var(--text-lead);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-lead);
   word-break: keep-all;
 }
 
@@ -2635,13 +2607,14 @@ body.is-menu-open .float-actions {
 .home-portfolio-stage__stat + .home-portfolio-stage__stat {
   margin-left: 48px;
   padding-left: 48px;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid var(--color-line);
 }
 
 .home-portfolio-stage__num {
   margin: 0;
+  color: var(--color-text);
   font-size: clamp(1.5rem, 3.2vw, 2.75rem);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   letter-spacing: -0.02em;
   word-break: keep-all;
@@ -2653,24 +2626,20 @@ body.is-menu-open .float-actions {
 
 .home-portfolio-stage__label {
   margin: 10px 0 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 15px;
-  font-weight: 300;
+  color: var(--color-text-muted);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-regular);
 }
 
 .home-portfolio-stage__meta {
   margin: 28px 0 0;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 14px;
-  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-regular);
   letter-spacing: -0.01em;
 }
 
 @media (min-width: 769px) {
-  .home-portfolio-stage {
-    padding-block: 88px 120px;
-  }
-
   .home-portfolio-stage__head {
     grid-template-columns: 1fr auto;
     align-items: end;

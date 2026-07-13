@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-13 — tenfold-studio Projects 스테이지 라이트 테마 복원
+
+- 검정 배경·흰 글자 제거 → 홈 교차 밴드(회색) + 기본 텍스트/버튼 컬러
+- 캐러셀 인터랙션은 유지
+
+---
+
 ## 2026-07-13 — tenfold-studio 홈 Projects를 스테이지 캐러셀로 통합
 
 - 기존 3열 카드 Projects 섹션 제거

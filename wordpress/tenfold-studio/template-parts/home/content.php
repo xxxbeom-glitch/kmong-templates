@@ -91,7 +91,7 @@ $stage_placeholders = array(
 );
 $stage_first = $stage_projects[0];
 ?>
-<section id="projects" class="section section--projects home-portfolio-stage" aria-labelledby="home-projects-title">
+<section id="projects" class="section section--projects home-projects home-portfolio-stage" aria-labelledby="home-projects-title">
   <div class="home-portfolio-stage__inner">
     <div class="home-portfolio-stage__head section-shell section-shell--gutter">
       <?php
