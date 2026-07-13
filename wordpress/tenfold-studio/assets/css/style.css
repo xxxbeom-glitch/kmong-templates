@@ -2536,8 +2536,10 @@ body.is-menu-open .float-actions {
 }
 
 .home-portfolio-stage__head {
+  display: grid;
+  gap: 24px;
   margin-bottom: 48px;
-  text-align: center;
+  text-align: left;
 }
 
 .home-portfolio-stage__head .section-head {
@@ -2557,7 +2559,7 @@ body.is-menu-open .float-actions {
 }
 
 .home-portfolio-stage__action {
-  margin-top: 28px;
+  margin-top: 0;
 }
 
 .home-portfolio-stage__action .btn--secondary {
@@ -2670,6 +2672,9 @@ body.is-menu-open .float-actions {
   }
 
   .home-portfolio-stage__head {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32px;
     margin-bottom: 56px;
   }
 
