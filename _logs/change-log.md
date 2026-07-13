@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-07-13 — tenfold-studio 홈 Projects를 스테이지 캐러셀로 통합
+
+- 기존 3열 카드 Projects 섹션 제거
+- 메드웹형 스테이지 캐러셀에 PROJECTS 타이틀·설명·전체보기 CTA 반영
+- 슬라이드별 프로젝트 정보 연동 유지
+
+---
+
 ## 2026-07-12 — tenfold-studio 서비스 패키지 카드 원고·구조
 
 - 카드 비주얼 유지 · 정보 구조 통일 (Intro/추천/포함/기간·비용/CTA)
