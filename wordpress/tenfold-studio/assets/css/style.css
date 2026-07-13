@@ -487,6 +487,12 @@ h1,
   top: 0;
   z-index: 100;
   height: var(--header-h);
+  transition: transform 280ms var(--ease);
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .site-header__bar {
@@ -2006,11 +2012,7 @@ body.is-menu-open .float-actions {
 
 /* —— Desktop ≥1025 —— */
 @media (min-width: 1025px) {
-  /* medweb PC header: 80px → scroll 70px · nav 17px / 600 · gap 32px */
-  .site-header.is-scrolled {
-    --header-h: 70px;
-  }
-
+  /* medweb PC header: 80px · nav 17px / 600 · gap 32px */
   .site-header__logo {
     font-size: 18px;
     font-weight: 600;

@@ -15,8 +15,23 @@
       return;
     }
 
+    var lastY = 0;
+
     function sync() {
-      $header.toggleClass("is-scrolled", window.scrollY > 8);
+      var y = window.scrollY || 0;
+      var menuOpen = $("body").hasClass("is-menu-open");
+
+      $header.toggleClass("is-scrolled", y > 8);
+
+      if (menuOpen || y <= 8) {
+        $header.removeClass("is-hidden");
+      } else if (y > lastY && y > 64) {
+        $header.addClass("is-hidden");
+      } else if (y < lastY) {
+        $header.removeClass("is-hidden");
+      }
+
+      lastY = y;
     }
 
     sync();
