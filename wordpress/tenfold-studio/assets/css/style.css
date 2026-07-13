@@ -68,6 +68,7 @@
     --section-y: 112px;
     --section-y-compact: 72px;
     --header-h: 80px;
+    --text-nav: 17px;
   }
 }
 
@@ -503,29 +504,6 @@ h1,
 .site-header.is-scrolled .site-header__bar {
   background: rgba(251, 251, 253, 0.92);
   border-bottom-color: var(--color-line);
-}
-
-@media (min-width: 1025px) {
-  /* medweb PC: 80px → scroll 70px · nav 17px / 600 */
-  .site-header.is-scrolled {
-    --header-h: 70px;
-  }
-
-  .site-header__logo {
-    font-size: 1.25rem;
-    font-weight: var(--fw-semibold);
-  }
-
-  .site-header__list {
-    gap: 32px;
-  }
-
-  .site-header__link {
-    min-height: var(--header-h);
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
 }
 
 .site-header__inner {
@@ -2028,12 +2006,37 @@ body.is-menu-open .float-actions {
 
 /* —— Desktop ≥1025 —— */
 @media (min-width: 1025px) {
+  /* medweb PC header: 80px → scroll 70px · nav 17px / 600 · gap 32px */
+  .site-header.is-scrolled {
+    --header-h: 70px;
+  }
+
+  .site-header__logo {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
   .site-header__nav--desktop {
     display: block;
   }
 
   .site-header__menu-btn {
     display: none;
+  }
+
+  .site-header__list {
+    gap: 32px;
+  }
+
+  .site-header__link {
+    min-height: var(--header-h);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .site-header__link.is-active {
+    font-weight: 600;
   }
 
   .hero {
