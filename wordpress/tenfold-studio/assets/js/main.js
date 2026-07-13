@@ -327,6 +327,39 @@
     });
   }
 
+  function initPortfolioStage() {
+    var el = document.querySelector("[data-portfolio-stage]");
+    if (!el || typeof window.Swiper === "undefined") {
+      return;
+    }
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // eslint-disable-next-line no-new
+    new window.Swiper(el, {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      speed: 600,
+      grabCursor: true,
+      autoplay: reduceMotion
+        ? false
+        : {
+            delay: 2800,
+            disableOnInteraction: false,
+          },
+      breakpoints: {
+        0: {
+          spaceBetween: 8,
+        },
+        1281: {
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
+
   $(function () {
     $("html").addClass("js");
     initHeaderScroll();
@@ -336,5 +369,6 @@
     initPackageQuery();
     initContactForm();
     initSmoothScroll();
+    initPortfolioStage();
   });
 })(jQuery);

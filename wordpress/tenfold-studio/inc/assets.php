@@ -28,10 +28,29 @@ function tenfold_enqueue_assets() {
     tenfold_asset_version('css/style.css')
   );
 
+  $main_deps = array('jquery');
+
+  if (is_front_page()) {
+    wp_enqueue_style(
+      'tenfold-swiper',
+      'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+      array(),
+      '11'
+    );
+    wp_enqueue_script(
+      'tenfold-swiper',
+      'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+      array(),
+      '11',
+      true
+    );
+    $main_deps[] = 'tenfold-swiper';
+  }
+
   wp_enqueue_script(
     'tenfold-main',
     tenfold_asset_uri('js/main.js'),
-    array('jquery'),
+    $main_deps,
     tenfold_asset_version('js/main.js'),
     true
   );

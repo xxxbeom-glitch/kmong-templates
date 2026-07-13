@@ -52,6 +52,63 @@ $why_items = array(
   </div>
 </section>
 
+<?php
+$stage_projects = tenfold_projects();
+$stage_placeholders = array(
+  '365-green-dental' => array('bg' => '1f6b4a', 'label' => '365+Dental'),
+  'nock-study-lounge' => array('bg' => '1a1a1a', 'label' => 'Nock+Study'),
+  'you-and-jin-pilates' => array('bg' => '8a4a2b', 'label' => 'Pilates'),
+  'hyundai-redesign' => array('bg' => '3d4654', 'label' => 'Hyundai'),
+  'sk-hynix-redesign' => array('bg' => '1e3a8a', 'label' => 'SK+Hynix'),
+);
+?>
+<section id="portfolio-stage" class="section section--portfolio-stage home-portfolio-stage" aria-labelledby="portfolio-stage-title">
+  <div class="home-portfolio-stage__inner">
+    <p class="home-portfolio-stage__badge">TEST · PORTFOLIO STAGE</p>
+    <h2 id="portfolio-stage-title" class="visually-hidden">포트폴리오 스테이지 테스트</h2>
+
+    <div class="home-portfolio-stage__carousel swiper" data-portfolio-stage>
+      <div class="swiper-wrapper">
+        <?php foreach ($stage_projects as $project) : ?>
+          <?php
+          $slug = $project['slug'];
+          $ph = isset($stage_placeholders[$slug])
+            ? $stage_placeholders[$slug]
+            : array('bg' => '333333', 'label' => rawurlencode($project['title']));
+          $src = 'https://placehold.co/860x484/' . $ph['bg'] . '/ffffff?text=' . $ph['label'] . '&font=pretendard';
+          ?>
+          <div class="swiper-slide home-portfolio-stage__slide">
+            <div class="home-portfolio-stage__frame">
+              <img
+                src="<?php echo esc_url($src); ?>"
+                alt="<?php echo esc_attr($project['title'] . ' 플레이스홀더'); ?>"
+                width="860"
+                height="484"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <div class="home-portfolio-stage__copy">
+      <p>프로젝트 미리보기를 스테이지 형식으로 테스트하는 섹션입니다.</p>
+      <div class="home-portfolio-stage__stats">
+        <div class="home-portfolio-stage__stat">
+          <p class="home-portfolio-stage__num"><span><?php echo esc_html((string) count($stage_projects)); ?></span><b>개</b></p>
+          <p class="home-portfolio-stage__label">테스트 프로젝트</p>
+        </div>
+        <div class="home-portfolio-stage__stat">
+          <p class="home-portfolio-stage__num"><span>2026</span><b>부터</b></p>
+          <p class="home-portfolio-stage__label">스테이지 프로토타입</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="why" class="section section--why home-why" aria-labelledby="why-title">
   <div class="section-shell section-shell--gutter home-why__layout">
     <header class="home-why__head">
