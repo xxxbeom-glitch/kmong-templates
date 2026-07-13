@@ -1,5 +1,4 @@
 <?php
-$featured = array_slice(tenfold_projects(), 0, 3);
 $packages = tenfold_packages();
 $why_items = array(
   array(
@@ -52,76 +51,6 @@ $why_items = array(
   </div>
 </section>
 
-<?php
-$stage_projects = tenfold_projects();
-$stage_placeholders = array(
-  '365-green-dental' => array('bg' => '1f6b4a', 'label' => '365+Dental'),
-  'nock-study-lounge' => array('bg' => '1a1a1a', 'label' => 'Nock+Study'),
-  'you-and-jin-pilates' => array('bg' => '8a4a2b', 'label' => 'Pilates'),
-  'hyundai-redesign' => array('bg' => '3d4654', 'label' => 'Hyundai'),
-  'sk-hynix-redesign' => array('bg' => '1e3a8a', 'label' => 'SK+Hynix'),
-);
-?>
-<section id="portfolio-stage" class="section section--portfolio-stage home-portfolio-stage" aria-labelledby="portfolio-stage-title">
-  <div class="home-portfolio-stage__inner">
-    <p class="home-portfolio-stage__badge">TEST · PORTFOLIO STAGE</p>
-    <h2 id="portfolio-stage-title" class="visually-hidden">포트폴리오 스테이지 테스트</h2>
-
-    <div class="home-portfolio-stage__carousel swiper" data-portfolio-stage>
-      <div class="swiper-wrapper">
-        <?php foreach ($stage_projects as $project) : ?>
-          <?php
-          $slug = $project['slug'];
-          $ph = isset($stage_placeholders[$slug])
-            ? $stage_placeholders[$slug]
-            : array('bg' => '333333', 'label' => rawurlencode($project['title']));
-          $src = 'https://placehold.co/860x484/' . $ph['bg'] . '/ffffff?text=' . $ph['label'] . '&font=pretendard';
-          ?>
-          <div
-            class="swiper-slide home-portfolio-stage__slide"
-            data-stage-title="<?php echo esc_attr($project['title']); ?>"
-            data-stage-summary="<?php echo esc_attr($project['summary']); ?>"
-            data-stage-category="<?php echo esc_attr($project['category']); ?>"
-            data-stage-type="<?php echo esc_attr($project['type']); ?>"
-            data-stage-platform="<?php echo esc_attr($project['platform']); ?>"
-          >
-            <div class="home-portfolio-stage__frame">
-              <img
-                src="<?php echo esc_url($src); ?>"
-                alt="<?php echo esc_attr($project['title'] . ' 플레이스홀더'); ?>"
-                width="860"
-                height="484"
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-
-    <?php $stage_first = $stage_projects[0]; ?>
-    <div class="home-portfolio-stage__copy" data-portfolio-stage-info aria-live="polite">
-      <p class="home-portfolio-stage__summary" data-stage-field="summary"><?php echo esc_html($stage_first['summary']); ?></p>
-      <div class="home-portfolio-stage__stats">
-        <div class="home-portfolio-stage__stat">
-          <p class="home-portfolio-stage__num"><span data-stage-field="category"><?php echo esc_html($stage_first['category']); ?></span></p>
-          <p class="home-portfolio-stage__label">카테고리</p>
-        </div>
-        <div class="home-portfolio-stage__stat">
-          <p class="home-portfolio-stage__num home-portfolio-stage__num--type"><span data-stage-field="type"><?php echo esc_html($stage_first['type']); ?></span></p>
-          <p class="home-portfolio-stage__label">유형</p>
-        </div>
-      </div>
-      <p class="home-portfolio-stage__meta">
-        <span data-stage-field="title"><?php echo esc_html($stage_first['title']); ?></span>
-        ·
-        <span data-stage-field="platform"><?php echo esc_html($stage_first['platform']); ?></span>
-      </p>
-    </div>
-  </div>
-</section>
-
 <section id="why" class="section section--why home-why" aria-labelledby="why-title">
   <div class="section-shell section-shell--gutter home-why__layout">
     <header class="home-why__head">
@@ -151,9 +80,20 @@ $stage_placeholders = array(
   </div>
 </section>
 
-<section id="projects" class="section section--projects home-projects" aria-labelledby="home-projects-title">
-  <div class="section-shell section-shell--gutter">
-    <div class="home-projects__head">
+<?php
+$stage_projects = tenfold_projects();
+$stage_placeholders = array(
+  '365-green-dental' => array('bg' => '1f6b4a', 'label' => '365+Dental'),
+  'nock-study-lounge' => array('bg' => '1a1a1a', 'label' => 'Nock+Study'),
+  'you-and-jin-pilates' => array('bg' => '8a4a2b', 'label' => 'Pilates'),
+  'hyundai-redesign' => array('bg' => '3d4654', 'label' => 'Hyundai'),
+  'sk-hynix-redesign' => array('bg' => '1e3a8a', 'label' => 'SK+Hynix'),
+);
+$stage_first = $stage_projects[0];
+?>
+<section id="projects" class="section section--projects home-portfolio-stage" aria-labelledby="home-projects-title">
+  <div class="home-portfolio-stage__inner">
+    <div class="home-portfolio-stage__head section-shell section-shell--gutter">
       <?php
       tenfold_part(
         'components/section-header',
@@ -165,25 +105,64 @@ $stage_placeholders = array(
         )
       );
       ?>
-      <div class="home-projects__action home-projects__action--desktop">
+      <div class="home-portfolio-stage__action">
         <a class="btn btn--secondary" href="<?php echo esc_url(tenfold_url('projects')); ?>">프로젝트 전체 보기</a>
       </div>
     </div>
 
-    <div class="home-projects__grid">
-      <?php foreach ($featured as $project) : ?>
-        <div class="home-projects__item">
-          <?php tenfold_part('components/project-card', array('project' => $project)); ?>
-        </div>
-      <?php endforeach; ?>
+    <div class="home-portfolio-stage__carousel swiper" data-portfolio-stage>
+      <div class="swiper-wrapper">
+        <?php foreach ($stage_projects as $project) : ?>
+          <?php
+          $slug = $project['slug'];
+          $ph = isset($stage_placeholders[$slug])
+            ? $stage_placeholders[$slug]
+            : array('bg' => '333333', 'label' => rawurlencode($project['title']));
+          $src = 'https://placehold.co/860x484/' . $ph['bg'] . '/ffffff?text=' . $ph['label'] . '&font=pretendard';
+          ?>
+          <div
+            class="swiper-slide home-portfolio-stage__slide"
+            data-stage-title="<?php echo esc_attr($project['title']); ?>"
+            data-stage-summary="<?php echo esc_attr($project['summary']); ?>"
+            data-stage-category="<?php echo esc_attr($project['category']); ?>"
+            data-stage-type="<?php echo esc_attr($project['type']); ?>"
+            data-stage-platform="<?php echo esc_attr($project['platform']); ?>"
+          >
+            <a class="home-portfolio-stage__frame" href="<?php echo esc_url(tenfold_url('projects/' . $slug)); ?>">
+              <img
+                src="<?php echo esc_url($src); ?>"
+                alt="<?php echo esc_attr($project['title']); ?>"
+                width="860"
+                height="484"
+                loading="lazy"
+                decoding="async"
+              >
+            </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
     </div>
 
-    <div class="section-actions home-projects__action home-projects__action--mobile">
-      <a class="btn btn--secondary" href="<?php echo esc_url(tenfold_url('projects')); ?>">프로젝트 전체 보기</a>
+    <div class="home-portfolio-stage__copy" data-portfolio-stage-info aria-live="polite">
+      <p class="home-portfolio-stage__summary" data-stage-field="summary"><?php echo esc_html($stage_first['summary']); ?></p>
+      <div class="home-portfolio-stage__stats">
+        <div class="home-portfolio-stage__stat">
+          <p class="home-portfolio-stage__num"><span data-stage-field="category"><?php echo esc_html($stage_first['category']); ?></span></p>
+          <p class="home-portfolio-stage__label">카테고리</p>
+        </div>
+        <div class="home-portfolio-stage__stat">
+          <p class="home-portfolio-stage__num home-portfolio-stage__num--type"><span data-stage-field="type"><?php echo esc_html($stage_first['type']); ?></span></p>
+          <p class="home-portfolio-stage__label">유형</p>
+        </div>
+      </div>
+      <p class="home-portfolio-stage__meta">
+        <span data-stage-field="title"><?php echo esc_html($stage_first['title']); ?></span>
+        ·
+        <span data-stage-field="platform"><?php echo esc_html($stage_first['platform']); ?></span>
+      </p>
     </div>
   </div>
 </section>
-
 
 <section id="services" class="section section--services home-services" aria-labelledby="home-services-title">
   <div class="section-shell section-shell--gutter">

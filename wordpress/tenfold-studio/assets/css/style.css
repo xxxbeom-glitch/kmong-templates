@@ -1932,6 +1932,12 @@ body.is-menu-open .float-actions {
     color: var(--color-accent);
   }
 
+  .home-portfolio-stage__action .btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    color: #fff;
+  }
+
   .site-header__link:hover,
   .text-link:hover,
   .mobile-menu__link:hover,
@@ -2516,7 +2522,7 @@ body.is-menu-open .float-actions {
   }
 }
 
-/* —— Home portfolio stage (TEST · medweb-like) —— */
+/* —— Home portfolio stage (Projects carousel) —— */
 .home-portfolio-stage {
   margin-block: 0;
   padding-block: 72px 100px;
@@ -2527,20 +2533,42 @@ body.is-menu-open .float-actions {
 
 .home-portfolio-stage__inner {
   width: 100%;
-  padding-inline: 3%;
 }
 
-.home-portfolio-stage__badge {
-  margin: 0 0 36px;
+.home-portfolio-stage__head {
+  margin-bottom: 48px;
   text-align: center;
+}
+
+.home-portfolio-stage__head .section-head {
+  margin-bottom: 0;
+}
+
+.home-portfolio-stage__head .eyebrow {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+}
+
+.home-portfolio-stage__head .section-head__title {
+  color: #fff;
+}
+
+.home-portfolio-stage__head .section-head__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.home-portfolio-stage__action {
+  margin-top: 28px;
+}
+
+.home-portfolio-stage__action .btn--secondary {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+  background: transparent;
 }
 
 .home-portfolio-stage__carousel {
   width: 100%;
+  padding-inline: 3%;
   overflow: visible;
 }
 
@@ -2582,6 +2610,7 @@ body.is-menu-open .float-actions {
 
 .home-portfolio-stage__copy {
   margin-top: 72px;
+  padding-inline: 3%;
   text-align: center;
 }
 
@@ -2638,6 +2667,10 @@ body.is-menu-open .float-actions {
 @media (min-width: 769px) {
   .home-portfolio-stage {
     padding-block: 88px 120px;
+  }
+
+  .home-portfolio-stage__head {
+    margin-bottom: 56px;
   }
 
   .home-portfolio-stage__copy {
