@@ -77,7 +77,14 @@ $stage_placeholders = array(
             : array('bg' => '333333', 'label' => rawurlencode($project['title']));
           $src = 'https://placehold.co/860x484/' . $ph['bg'] . '/ffffff?text=' . $ph['label'] . '&font=pretendard';
           ?>
-          <div class="swiper-slide home-portfolio-stage__slide">
+          <div
+            class="swiper-slide home-portfolio-stage__slide"
+            data-stage-title="<?php echo esc_attr($project['title']); ?>"
+            data-stage-summary="<?php echo esc_attr($project['summary']); ?>"
+            data-stage-category="<?php echo esc_attr($project['category']); ?>"
+            data-stage-type="<?php echo esc_attr($project['type']); ?>"
+            data-stage-platform="<?php echo esc_attr($project['platform']); ?>"
+          >
             <div class="home-portfolio-stage__frame">
               <img
                 src="<?php echo esc_url($src); ?>"
@@ -93,18 +100,24 @@ $stage_placeholders = array(
       </div>
     </div>
 
-    <div class="home-portfolio-stage__copy">
-      <p>프로젝트 미리보기를 스테이지 형식으로 테스트하는 섹션입니다.</p>
+    <?php $stage_first = $stage_projects[0]; ?>
+    <div class="home-portfolio-stage__copy" data-portfolio-stage-info aria-live="polite">
+      <p class="home-portfolio-stage__summary" data-stage-field="summary"><?php echo esc_html($stage_first['summary']); ?></p>
       <div class="home-portfolio-stage__stats">
         <div class="home-portfolio-stage__stat">
-          <p class="home-portfolio-stage__num"><span><?php echo esc_html((string) count($stage_projects)); ?></span><b>개</b></p>
-          <p class="home-portfolio-stage__label">테스트 프로젝트</p>
+          <p class="home-portfolio-stage__num"><span data-stage-field="category"><?php echo esc_html($stage_first['category']); ?></span></p>
+          <p class="home-portfolio-stage__label">카테고리</p>
         </div>
         <div class="home-portfolio-stage__stat">
-          <p class="home-portfolio-stage__num"><span>2026</span><b>부터</b></p>
-          <p class="home-portfolio-stage__label">스테이지 프로토타입</p>
+          <p class="home-portfolio-stage__num home-portfolio-stage__num--type"><span data-stage-field="type"><?php echo esc_html($stage_first['type']); ?></span></p>
+          <p class="home-portfolio-stage__label">유형</p>
         </div>
       </div>
+      <p class="home-portfolio-stage__meta">
+        <span data-stage-field="title"><?php echo esc_html($stage_first['title']); ?></span>
+        ·
+        <span data-stage-field="platform"><?php echo esc_html($stage_first['platform']); ?></span>
+      </p>
     </div>
   </div>
 </section>

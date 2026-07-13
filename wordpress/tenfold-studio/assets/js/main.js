@@ -333,10 +333,28 @@
       return;
     }
 
+    var $info = $("[data-portfolio-stage-info]");
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // eslint-disable-next-line no-new
-    new window.Swiper(el, {
+    function syncInfo(slideEl) {
+      if (!$info.length || !slideEl) {
+        return;
+      }
+
+      var map = {
+        summary: slideEl.getAttribute("data-stage-summary") || "",
+        category: slideEl.getAttribute("data-stage-category") || "",
+        type: slideEl.getAttribute("data-stage-type") || "",
+        title: slideEl.getAttribute("data-stage-title") || "",
+        platform: slideEl.getAttribute("data-stage-platform") || "",
+      };
+
+      Object.keys(map).forEach(function (key) {
+        $info.find('[data-stage-field="' + key + '"]').text(map[key]);
+      });
+    }
+
+    var swiper = new window.Swiper(el, {
       loop: true,
       centeredSlides: true,
       slidesPerView: "auto",
@@ -357,7 +375,17 @@
           spaceBetween: 24,
         },
       },
+      on: {
+        init: function (instance) {
+          syncInfo(instance.slides[instance.activeIndex]);
+        },
+        slideChange: function (instance) {
+          syncInfo(instance.slides[instance.activeIndex]);
+        },
+      },
     });
+
+    return swiper;
   }
 
   $(function () {
