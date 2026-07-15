@@ -1,773 +1,746 @@
 /**
- * Content script (isolated world).
- * - Injects page-hook.js into page context
- * - Observes delete-candidate clicks & page lifecycle
- * - Forwards sanitized events to background
+ * Galalog posting page content script.
+ * - Checkbox / selection UI
+ * - Sequential delete loop (survives popup close)
+ * - Talks to page-hook for dynamic auth tokens
  */
 
 (function () {
   "use strict";
 
-  const PAGE_HOOK_SOURCE = "dcinside-delete-analyzer-page-hook";
-  const MAX_HTML = 50 * 1024;
-  const DELETE_HINT_RE = /삭제|delete|\bdel\b|\bx\b|^x$|close|닫기|remove|erase/i;
-  const CANDIDATE_TAGS = new Set(["BUTTON", "A", "IMG", "SPAN", "INPUT", "I", "EM", "SVG", "PATH"]);
+  const PAGE_HOOK_SOURCE = "dc-delete-tool-page-hook";
+  const CONTENT_SOURCE = "dc-delete-tool-content";
+  const UI_ROOT_ID = "dc-delete-tool-bar";
+  const CB_CLASS = "dc-delete-tool-cb";
+  const LI_MARK = "data-dc-tool-ready";
 
-  let recording = false;
-  let sessionId = null;
-  let hooksInstalled = false;
+  const DELAY = { safe: 2000, normal: 1200 };
 
-  function safe(fn) {
-    return function wrapped() {
-      try {
-        return fn.apply(this, arguments);
-      } catch (err) {
-        logEvent({
-          eventType: "extension_error",
-          source: "content.safe",
-          message: String(err && err.message ? err.message : err)
-        });
-      }
-    };
+  let jobRunning = false;
+  let authRequestSeq = 0;
+  const pendingAuth = new Map();
+
+  function sleep(ms) {
+    return new Promise((r) => setTimeout(r, ms));
   }
 
-  function truncate(str, max) {
-    if (str == null) return str;
-    const s = String(str);
-    const m = max || MAX_HTML;
-    if (s.length <= m) return s;
-    return s.slice(0, m) + `\n<!-- truncated: originalLength=${s.length} -->`;
+  function parseGallog() {
+    const parts = location.pathname.split("/").filter(Boolean);
+    if (parts.length < 2) return null;
+    const gallogId = parts[0];
+    const section = parts[1];
+    if (section !== "posting") return null;
+    return { gallogId, section };
   }
 
-  function stripPasswordInputs(html) {
-    if (!html) return html;
-    return String(html)
-      .replace(/(<input\b[^>]*type\s*=\s*["']?password["']?[^>]*value\s*=\s*["'])[^"']*(["'])/gi, "$1[REDACTED]$2")
-      .replace(/(<input\b[^>]*value\s*=\s*["'])[^"']*(["'][^>]*type\s*=\s*["']?password["']?)/gi, "$1[REDACTED]$2");
+  function buildDeleteUrl(gallogId) {
+    return `${location.origin}/${encodeURIComponent(gallogId)}/ajax/log_list_ajax/delete`;
   }
 
-  function sendToBg(message) {
+  function getListItems() {
+    return Array.from(document.querySelectorAll("ul.cont_listbox > li[data-no]"));
+  }
+
+  function getPageNos() {
+    return getListItems()
+      .map((li) => String(li.getAttribute("data-no") || "").trim())
+      .filter(Boolean);
+  }
+
+  function readTotalCount() {
+    try {
+      const el =
+        document.querySelector(".cont_head .num") ||
+        document.querySelector(".choice_sect .num") ||
+        document.querySelector(".cont_box .num");
+      if (!el) return null;
+      const n = parseInt(String(el.textContent || "").replace(/[^\d]/g, ""), 10);
+      return Number.isFinite(n) ? n : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function getJob() {
     return new Promise((resolve) => {
-      try {
-        chrome.runtime.sendMessage(message, (res) => {
-          if (chrome.runtime.lastError) {
-            resolve({ ok: false, error: chrome.runtime.lastError.message });
-            return;
-          }
-          resolve(res || { ok: false });
-        });
-      } catch (err) {
-        resolve({ ok: false, error: String(err) });
-      }
+      chrome.runtime.sendMessage({ type: "GET_JOB" }, (res) => {
+        if (chrome.runtime.lastError) {
+          resolve(null);
+          return;
+        }
+        resolve(res && res.job ? res.job : null);
+      });
     });
   }
 
-  function pageMeta() {
-    return {
-      pageUrl: location.href,
-      pageTitle: document.title || ""
-    };
-  }
-
-  async function logEvent(event) {
-    if (!recording && event.eventType !== "extension_error") {
-      // Allow lifecycle only while recording; check storage on unsure paths
-      const status = await sendToBg({ type: "GET_STATUS" });
-      recording = !!(status && status.state && status.state.recording);
-      sessionId = status?.sessionId || null;
-      if (!recording) return;
-    }
-    await sendToBg({
-      type: "LOG_EVENT",
-      event: {
-        ...pageMeta(),
-        ...event
-      }
-    });
-  }
-
-  function cssEscapeIdent(ident) {
-    if (window.CSS && CSS.escape) return CSS.escape(ident);
-    return String(ident).replace(/[^a-zA-Z0-9_-]/g, "\\$&");
-  }
-
-  function buildCssSelector(el) {
-    try {
-      if (!el || el.nodeType !== 1) return "";
-      if (el.id) return `#${cssEscapeIdent(el.id)}`;
-      const parts = [];
-      let cur = el;
-      let depth = 0;
-      while (cur && cur.nodeType === 1 && depth < 6 && cur !== document.body) {
-        let part = cur.tagName.toLowerCase();
-        if (cur.id) {
-          parts.unshift(`#${cssEscapeIdent(cur.id)}`);
-          break;
-        }
-        const cls = String(cur.className || "")
-          .split(/\s+/)
-          .filter(Boolean)
-          .slice(0, 2)
-          .map((c) => `.${cssEscapeIdent(c)}`)
-          .join("");
-        part += cls;
-        const parent = cur.parentElement;
-        if (parent) {
-          const siblings = Array.from(parent.children).filter((c) => c.tagName === cur.tagName);
-          if (siblings.length > 1) {
-            part += `:nth-of-type(${siblings.indexOf(cur) + 1})`;
-          }
-        }
-        parts.unshift(part);
-        cur = parent;
-        depth++;
-      }
-      return parts.join(" > ");
-    } catch {
-      return "";
-    }
-  }
-
-  function buildXPath(el) {
-    try {
-      if (!el || el.nodeType !== 1) return "";
-      const parts = [];
-      let cur = el;
-      let depth = 0;
-      while (cur && cur.nodeType === 1 && depth < 8) {
-        let ix = 1;
-        let sib = cur.previousElementSibling;
-        while (sib) {
-          if (sib.tagName === cur.tagName) ix++;
-          sib = sib.previousElementSibling;
-        }
-        parts.unshift(`${cur.tagName.toLowerCase()}[${ix}]`);
-        cur = cur.parentElement;
-        depth++;
-        if (cur && cur.id) {
-          parts.unshift(`//*[@id="${cur.id}"]`);
-          return parts.join("/");
-        }
-      }
-      return "/" + parts.join("/");
-    } catch {
-      return "";
-    }
-  }
-
-  function collectDataAttrs(el) {
-    const out = {};
-    try {
-      if (!el || !el.attributes) return out;
-      for (const attr of Array.from(el.attributes)) {
-        if (attr.name.startsWith("data-")) {
-          const key = attr.name;
-          if (/pass|token|auth|session|cookie/i.test(key)) {
-            out[key] = "[REDACTED]";
-          } else {
-            out[key] = truncate(attr.value, 500);
-          }
-        }
-      }
-    } catch {
-      /* ignore */
-    }
-    return out;
-  }
-
-  function describeElement(el) {
-    if (!el || el.nodeType !== 1) return null;
-    const text = (el.textContent || "").replace(/\s+/g, " ").trim();
-    return {
-      tagName: el.tagName,
-      id: el.id || "",
-      className: String(el.className || ""),
-      textContent: truncate(text, 300),
-      title: el.getAttribute("title") || "",
-      ariaLabel: el.getAttribute("aria-label") || "",
-      alt: el.getAttribute("alt") || "",
-      href: el.getAttribute("href") || "",
-      type: el.getAttribute("type") || "",
-      onclick: el.getAttribute("onclick") || "",
-      dataAttrs: collectDataAttrs(el),
-      cssSelectorCandidate: buildCssSelector(el),
-      xpathCandidate: buildXPath(el),
-      outerHTML: truncate(stripPasswordInputs(el.outerHTML || ""), MAX_HTML)
-    };
-  }
-
-  function elementHintScore(el) {
-    if (!el || el.nodeType !== 1) return 0;
-    let score = 0;
-    const bag = [
-      el.tagName,
-      el.id,
-      String(el.className || ""),
-      el.getAttribute("title") || "",
-      el.getAttribute("aria-label") || "",
-      el.getAttribute("alt") || "",
-      el.getAttribute("onclick") || "",
-      (el.textContent || "").slice(0, 40)
-    ]
-      .join(" ")
-      .toLowerCase();
-
-    if (DELETE_HINT_RE.test(bag)) score += 5;
-    if (/\bx\b|^x$|삭제/.test(bag)) score += 3;
-    if (CANDIDATE_TAGS.has(el.tagName)) score += 1;
-    if (el.tagName === "IMG" && /x|del|close|삭제/i.test(el.getAttribute("src") || "")) score += 4;
-    if (el.tagName === "INPUT" && /button|image|submit/i.test(el.type || "")) score += 1;
-    return score;
-  }
-
-  function findDeleteCandidate(start) {
-    let el = start;
-    for (let i = 0; i < 8 && el; i++) {
-      if (elementHintScore(el) >= 5) return el;
-      el = el.parentElement;
-    }
-    // weaker fallback near click
-    el = start;
-    for (let i = 0; i < 5 && el; i++) {
-      if (elementHintScore(el) >= 3 && CANDIDATE_TAGS.has(el.tagName)) return el;
-      el = el.parentElement;
-    }
-    return null;
-  }
-
-  function findPostRow(el) {
-    let cur = el;
-    for (let i = 0; i < 12 && cur; i++) {
-      const tag = cur.tagName;
-      const cls = String(cur.className || "").toLowerCase();
-      const role = cur.getAttribute("role") || "";
-      if (
-        tag === "TR" ||
-        tag === "LI" ||
-        /gall|list|post|article|item|row|ub-content|usertxt/i.test(cls) ||
-        role === "listitem" ||
-        role === "row"
-      ) {
-        // Prefer rows that contain a link-like child
-        if (cur.querySelector("a[href]")) return cur;
-      }
-      cur = cur.parentElement;
-    }
-    // fallback: nearest tr/li
-    return el.closest("tr, li, article, [role='listitem']");
-  }
-
-  function extractRowMeta(row) {
-    const meta = {
-      title: "",
-      galleryName: "",
-      postedAt: "",
-      linkUrl: ""
-    };
-    if (!row) return meta;
-    try {
-      const links = Array.from(row.querySelectorAll("a[href]"));
-      const postLink =
-        links.find((a) => /\/board\/view|\/\w+\/\d+|article|no=/i.test(a.href)) ||
-        links.find((a) => (a.textContent || "").trim().length > 1) ||
-        links[0];
-      if (postLink) {
-        meta.linkUrl = postLink.href;
-        meta.title = (postLink.textContent || "").replace(/\s+/g, " ").trim().slice(0, 300);
-      }
-      const texts = (row.textContent || "").replace(/\s+/g, " ").trim();
-      const dateMatch = texts.match(/\d{4}[-./]\d{1,2}[-./]\d{1,2}(?:\s+\d{1,2}:\d{2})?|\d{1,2}[-./]\d{1,2}\s+\d{1,2}:\d{2}/);
-      if (dateMatch) meta.postedAt = dateMatch[0];
-
-      // gallery guess: short text nodes / dedicated cells
-      const cells = row.querySelectorAll("td, span, em, a");
-      for (const c of cells) {
-        const t = (c.textContent || "").replace(/\s+/g, " ").trim();
-        if (!t || t === meta.title) continue;
-        if (t.length >= 2 && t.length <= 40 && !/^\d+$/.test(t) && !dateMatch?.[0]?.includes(t)) {
-          if (/갤|gallery|gall/i.test(c.className) || (c.tagName === "A" && /gallery|gall/i.test(c.href || ""))) {
-            meta.galleryName = t;
-            break;
-          }
-        }
-      }
-      if (!meta.galleryName) {
-        for (const c of cells) {
-          const t = (c.textContent || "").replace(/\s+/g, " ").trim();
-          if (t.length >= 2 && t.length <= 20 && t !== meta.title && !/\d{2}:\d{2}/.test(t)) {
-            if (/갤$|갤러리/.test(t) || (c.tagName === "TD" && c !== postLink?.closest("td"))) {
-              meta.galleryName = t;
-              break;
-            }
-          }
-        }
-      }
-    } catch {
-      /* ignore */
-    }
-    return meta;
-  }
-
-  function parentChain(el, max = 5) {
-    const chain = [];
-    let cur = el && el.parentElement;
-    let i = 0;
-    while (cur && i < max) {
-      chain.push({
-        tagName: cur.tagName,
-        id: cur.id || "",
-        className: String(cur.className || ""),
-        cssSelectorCandidate: buildCssSelector(cur),
-        outerHTML: truncate(stripPasswordInputs(cur.outerHTML || ""), 8000)
+  async function setJob(patch) {
+    return new Promise((resolve) => {
+      chrome.runtime.sendMessage({ type: "SET_JOB", patch }, (res) => {
+        resolve(res && res.job ? res.job : null);
       });
-      cur = cur.parentElement;
-      i++;
-    }
-    return chain;
-  }
-
-  function getNavType() {
-    try {
-      const entries = performance.getEntriesByType("navigation");
-      if (entries && entries[0] && entries[0].type) return entries[0].type;
-      if (performance.navigation) {
-        const map = { 0: "navigate", 1: "reload", 2: "back_forward" };
-        return map[performance.navigation.type] || String(performance.navigation.type);
-      }
-    } catch {
-      /* ignore */
-    }
-    return "unknown";
-  }
-
-  function findListRegion() {
-    const candidates = [];
-    const selectors = [
-      "table",
-      "ul",
-      "ol",
-      "[class*='list']",
-      "[class*='gall']",
-      "[id*='list']",
-      "tbody"
-    ];
-    for (const sel of selectors) {
-      document.querySelectorAll(sel).forEach((node) => {
-        const deleteish = countDeleteCandidates(node);
-        const rows = node.querySelectorAll("tr, li, article").length;
-        if (rows >= 3 || deleteish >= 1) {
-          candidates.push({
-            selector: buildCssSelector(node) || sel,
-            tagName: node.tagName,
-            className: String(node.className || ""),
-            id: node.id || "",
-            rowCount: rows,
-            deleteCandidateCount: deleteish,
-            html: truncate(stripPasswordInputs(node.outerHTML || ""), 40000),
-            score: rows + deleteish * 3
-          });
-        }
-      });
-    }
-    candidates.sort((a, b) => b.score - a.score);
-    return candidates.slice(0, 3);
-  }
-
-  function countDeleteCandidates(root) {
-    let n = 0;
-    const scope = root || document;
-    const nodes = scope.querySelectorAll("a, button, img, span, input, i");
-    nodes.forEach((el) => {
-      if (elementHintScore(el) >= 5) n++;
-    });
-    return n;
-  }
-
-  function findPagination() {
-    const out = {
-      html: "",
-      selector: "",
-      pageNumbers: [],
-      pageLinks: [],
-      currentPage: null,
-      nextBundleCandidates: []
-    };
-    try {
-      const all = Array.from(document.querySelectorAll("a, button, span, em, strong"));
-      const pageLike = all.filter((el) => {
-        const t = (el.textContent || "").trim();
-        return /^\d{1,3}$/.test(t) || /다음|이전|next|prev|>|>>|«|»/i.test(t);
-      });
-      if (!pageLike.length) return out;
-
-      // Find common ancestor that looks like pagination
-      let best = null;
-      let bestScore = 0;
-      for (const el of pageLike) {
-        let cur = el.parentElement;
-        for (let d = 0; d < 5 && cur; d++) {
-          const nums = Array.from(cur.querySelectorAll("a, span, em, button")).filter((x) =>
-            /^\d{1,3}$/.test((x.textContent || "").trim())
-          );
-          if (nums.length >= 3) {
-            const score = nums.length;
-            if (score > bestScore) {
-              bestScore = score;
-              best = cur;
-            }
-          }
-          cur = cur.parentElement;
-        }
-      }
-      if (!best) return out;
-      out.selector = buildCssSelector(best);
-      out.html = truncate(stripPasswordInputs(best.outerHTML || ""), 20000);
-      const links = Array.from(best.querySelectorAll("a, span, em, button, strong"));
-      links.forEach((el) => {
-        const t = (el.textContent || "").trim();
-        if (/^\d{1,3}$/.test(t)) {
-          out.pageNumbers.push(t);
-          out.pageLinks.push({
-            text: t,
-            href: el.getAttribute("href") || "",
-            tagName: el.tagName,
-            className: String(el.className || ""),
-            isCurrent: /on|active|current|now/i.test(String(el.className || "") + " " + String(el.parentElement?.className || ""))
-          });
-          if (/on|active|current|now/i.test(String(el.className || "") + " " + String(el.parentElement?.className || ""))) {
-            out.currentPage = t;
-          }
-        }
-        if (/다음|prev|next|>|>>|»|건너/i.test(t) || /next|page_next/i.test(String(el.className || ""))) {
-          out.nextBundleCandidates.push({
-            text: t,
-            href: el.getAttribute("href") || "",
-            tagName: el.tagName,
-            className: String(el.className || ""),
-            cssSelectorCandidate: buildCssSelector(el),
-            outerHTML: truncate(el.outerHTML || "", 2000)
-          });
-        }
-      });
-    } catch {
-      /* ignore */
-    }
-    return out;
-  }
-
-  function sampleRows(listCandidates) {
-    const rows = [];
-    try {
-      const rootSel = listCandidates[0]?.selector;
-      const root = rootSel ? document.querySelector(rootSel) : null;
-      const items = root
-        ? Array.from(root.querySelectorAll("tr, li, article")).slice(0, 5)
-        : Array.from(document.querySelectorAll("tr, li")).slice(0, 5);
-      items.forEach((row, idx) => {
-        const meta = extractRowMeta(row);
-        rows.push({
-          index: idx,
-          tagName: row.tagName,
-          className: String(row.className || ""),
-          cssSelectorCandidate: buildCssSelector(row),
-          meta,
-          html: truncate(stripPasswordInputs(row.outerHTML || ""), 12000),
-          deleteCandidateCount: countDeleteCandidates(row)
-        });
-      });
-    } catch {
-      /* ignore */
-    }
-    return rows;
-  }
-
-  async function takePageSnapshot() {
-    const listCandidates = findListRegion();
-    const pagination = findPagination();
-    await logEvent({
-      eventType: "page_snapshot",
-      url: location.href,
-      title: document.title || "",
-      deleteCandidateCount: countDeleteCandidates(document),
-      listRegionCandidates: listCandidates.map((c) => ({
-        selector: c.selector,
-        tagName: c.tagName,
-        className: c.className,
-        id: c.id,
-        rowCount: c.rowCount,
-        deleteCandidateCount: c.deleteCandidateCount,
-        html: c.html
-      })),
-      pagination,
-      sampleRows: sampleRows(listCandidates),
-      readyState: document.readyState,
-      navigationType: getNavType()
-    });
-  }
-
-  async function onDeleteCandidateClick(ev) {
-    const candidate = findDeleteCandidate(ev.target);
-    if (!candidate) return;
-
-    const interactionId = `delete_${Date.now()}`;
-    await sendToBg({
-      type: "SET_INTERACTION",
-      interactionId,
-      windowMs: 15000
-    });
-
-    const row = findPostRow(candidate);
-    const rowMeta = extractRowMeta(row);
-
-    await logEvent({
-      eventType: "delete_candidate_click",
-      interactionId,
-      target: describeElement(candidate),
-      clickTarget: describeElement(ev.target),
-      parentChain: parentChain(candidate, 5),
-      postRow: row
-        ? {
-            tagName: row.tagName,
-            className: String(row.className || ""),
-            cssSelectorCandidate: buildCssSelector(row),
-            html: truncate(stripPasswordInputs(row.outerHTML || ""), MAX_HTML),
-            ...rowMeta
-          }
-        : null,
-      clientX: ev.clientX,
-      clientY: ev.clientY
     });
   }
 
   function injectPageHook() {
     try {
-      if (document.documentElement.getAttribute("data-dc-analyzer-hook") === "1") return;
-      document.documentElement.setAttribute("data-dc-analyzer-hook", "1");
-      const script = document.createElement("script");
-      script.src = chrome.runtime.getURL("page-hook.js");
-      script.async = false;
-      script.onload = function () {
-        script.remove();
-      };
-      (document.documentElement || document.head || document.documentElement).appendChild(script);
-    } catch (err) {
-      logEvent({
-        eventType: "extension_error",
-        source: "injectPageHook",
-        message: String(err && err.message ? err.message : err)
-      });
+      if (document.documentElement.getAttribute("data-dc-delete-tool-hook") === "1") return;
+      document.documentElement.setAttribute("data-dc-delete-tool-hook", "1");
+      const s = document.createElement("script");
+      s.src = chrome.runtime.getURL("page-hook.js");
+      s.async = false;
+      s.onload = () => s.remove();
+      (document.head || document.documentElement).appendChild(s);
+    } catch (_) {
+      /* ignore */
     }
   }
 
-  function onPageMessage(event) {
+  function requestAuthFromPage(timeoutMs) {
+    return new Promise((resolve) => {
+      const requestId = `auth_${Date.now()}_${++authRequestSeq}`;
+      const timer = setTimeout(() => {
+        pendingAuth.delete(requestId);
+        resolve({ ok: false, missing: ["timeout"], error: "auth_timeout" });
+      }, timeoutMs || 3000);
+
+      pendingAuth.set(requestId, (auth) => {
+        clearTimeout(timer);
+        resolve(auth);
+      });
+
+      window.postMessage(
+        { source: CONTENT_SOURCE, action: "RESOLVE_AUTH", requestId },
+        location.origin
+      );
+    });
+  }
+
+  window.addEventListener("message", (event) => {
     try {
       if (event.source !== window) return;
       const data = event.data;
       if (!data || data.source !== PAGE_HOOK_SOURCE) return;
-      // Only accept same-origin dcinside pages
-      if (!/\.dcinside\.com$|^gall\.dcinside\.com$|^dcinside\.com$/i.test(location.hostname)) return;
+      if (data.action === "RESOLVE_AUTH_RESULT" && data.requestId) {
+        const cb = pendingAuth.get(data.requestId);
+        if (cb) {
+          pendingAuth.delete(data.requestId);
+          cb(data.auth || { ok: false });
+        }
+      }
+    } catch (_) {
+      /* ignore */
+    }
+  });
 
-      if (data.hookType === "confirm_shown") {
-        logEvent({
-          eventType: "confirm_shown",
-          confirmMessage: truncate(data.message, 2000),
-          shownAt: data.shownAt
+  async function resolveAuth() {
+    const auth = await requestAuthFromPage(3500);
+    if (!auth || !auth.ok) {
+      return {
+        ok: false,
+        message:
+          "디시인사이드 인증값을 확인하지 못했습니다.\n페이지를 새로고침한 후 다시 시도하세요."
+      };
+    }
+    // Soft log sources only (not secret values)
+    try {
+      console.info("[DCDeleteTool] auth sources", auth.sources || {});
+    } catch (_) {
+      /* ignore */
+    }
+    return { ok: true, auth };
+  }
+
+  function updateSelectedCount() {
+    const n = document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}:checked`).length;
+    const el = document.getElementById("dc-tool-selected-count");
+    if (el) el.textContent = String(n);
+    return n;
+  }
+
+  function setAllChecks(on) {
+    document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}`).forEach((cb) => {
+      cb.checked = !!on;
+    });
+    updateSelectedCount();
+  }
+
+  function ensureRowCheckbox(li) {
+    if (!li || li.getAttribute(LI_MARK) === "1") return;
+    if (li.querySelector(`input.${CB_CLASS}`)) {
+      li.setAttribute(LI_MARK, "1");
+      return;
+    }
+    const wrap = document.createElement("label");
+    wrap.className = "dc-delete-tool-cb-wrap";
+    wrap.title = "삭제 선택";
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.className = CB_CLASS;
+    cb.addEventListener("click", (e) => e.stopPropagation());
+    cb.addEventListener("change", () => updateSelectedCount());
+    wrap.appendChild(cb);
+    li.insertBefore(wrap, li.firstChild);
+    li.setAttribute(LI_MARK, "1");
+  }
+
+  function injectRowCheckboxes() {
+    getListItems().forEach(ensureRowCheckbox);
+    updateSelectedCount();
+  }
+
+  function ensureToolbar() {
+    if (document.getElementById(UI_ROOT_ID)) return;
+
+    const list = document.querySelector("ul.cont_listbox");
+    if (!list || !list.parentElement) return;
+
+    const bar = document.createElement("div");
+    bar.id = UI_ROOT_ID;
+    bar.innerHTML = `
+      <div class="dc-tool-row">
+        <button type="button" class="dc-tool-btn" data-act="select-all">전체 선택</button>
+        <button type="button" class="dc-tool-btn" data-act="select-none">전체 해제</button>
+        <span class="dc-tool-count">선택됨: <strong id="dc-tool-selected-count">0</strong>개</span>
+        <button type="button" class="dc-tool-btn dc-tool-danger" data-act="delete-selected">선택한 글 삭제</button>
+      </div>
+      <p class="dc-tool-note">확장프로그램 전용 UI · 실제 삭제는 복구가 어려울 수 있습니다.</p>
+    `;
+    list.parentElement.insertBefore(bar, list);
+
+    bar.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-act]");
+      if (!btn) return;
+      const act = btn.getAttribute("data-act");
+      if (act === "select-all") setAllChecks(true);
+      if (act === "select-none") setAllChecks(false);
+      if (act === "delete-selected") {
+        const nos = getSelectedNos();
+        if (!nos.length) {
+          alert("선택된 게시글이 없습니다.");
+          return;
+        }
+        if (!confirm(`선택한 ${nos.length}개의 게시글을 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다.`)) {
+          return;
+        }
+        startJob({ mode: "selected", nos });
+      }
+    });
+  }
+
+  function getSelectedNos() {
+    return Array.from(
+      document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}:checked`)
+    )
+      .map((cb) => {
+        const li = cb.closest("li[data-no]");
+        return li ? String(li.getAttribute("data-no") || "").trim() : "";
+      })
+      .filter(Boolean);
+  }
+
+  function removeRowByNo(no) {
+    const target = String(no);
+    const li = getListItems().find((el) => String(el.getAttribute("data-no") || "") === target);
+    if (li) li.remove();
+    updateSelectedCount();
+    try {
+      const totalEl =
+        document.querySelector(".cont_head .num") ||
+        document.querySelector(".choice_sect span.num");
+      if (totalEl) {
+        const cur = parseInt(String(totalEl.textContent || "").replace(/[^\d]/g, ""), 10);
+        if (Number.isFinite(cur) && cur > 0) {
+          const next = cur - 1;
+          totalEl.textContent = String(totalEl.textContent || "").replace(String(cur), String(next));
+        }
+      }
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function judgeSuccess(status, payload) {
+    if (status === 401 || status === 403 || status === 429) {
+      return { ok: false, fatal: true, status, reason: `http_${status}` };
+    }
+    if (status < 200 || status >= 300) {
+      return { ok: false, fatal: false, status, reason: `http_${status}` };
+    }
+
+    let data = payload;
+    if (typeof payload === "string") {
+      try {
+        data = JSON.parse(payload);
+      } catch (_) {
+        data = { raw: payload };
+      }
+    }
+
+    try {
+      console.info("[DCDeleteTool] delete response", { status, data });
+    } catch (_) {
+      /* ignore */
+    }
+
+    if (data && typeof data === "object") {
+      const result = data.result != null ? String(data.result) : "";
+      const msg = data.msg != null ? String(data.msg) : "";
+      if (result === "success") return { ok: true, status, data };
+      if (result === "captcha") {
+        return { ok: false, fatal: true, status, reason: "captcha", message: msg };
+      }
+      if (result === "fail") {
+        return { ok: false, fatal: /session|login|로그인|권한/i.test(msg), status, reason: msg || "fail" };
+      }
+      // Some endpoints may return boolean-ish
+      if (data.success === true || data === true) return { ok: true, status, data };
+    }
+
+    // Fallback: HTTP 200 without clear signal — provisional success; caller may verify DOM
+    return { ok: true, status, provisional: true, data };
+  }
+
+  async function deleteOne(no, gallogId) {
+    const resolved = await resolveAuth();
+    if (!resolved.ok) {
+      return {
+        ok: false,
+        fatal: true,
+        reason: "auth_missing",
+        message: resolved.message
+      };
+    }
+    const { auth } = resolved;
+    const url = buildDeleteUrl(gallogId);
+    const params = new URLSearchParams();
+    params.set("no", String(no));
+    params.set("c_k_v", auth.c_k_v);
+    params.set("ci_t", auth.ci_t);
+    params.set("service_code", auth.service_code);
+
+    let res;
+    let text;
+    try {
+      res = await fetch(url, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        body: params.toString()
+      });
+      text = await res.text();
+    } catch (err) {
+      return { ok: false, fatal: false, reason: String(err && err.message ? err.message : err) };
+    }
+
+    return judgeSuccess(res.status, text);
+  }
+
+  async function refreshListFromServer() {
+    try {
+      const res = await fetch(location.href, { credentials: "include", cache: "no-store" });
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const newList = doc.querySelector("ul.cont_listbox");
+      const oldList = document.querySelector("ul.cont_listbox");
+      if (newList && oldList) {
+        oldList.innerHTML = newList.innerHTML;
+        oldList.querySelectorAll(`li[${LI_MARK}]`).forEach((li) => li.removeAttribute(LI_MARK));
+        injectRowCheckboxes();
+      }
+      const newNum =
+        doc.querySelector(".cont_head .num") || doc.querySelector(".choice_sect .num");
+      const oldNum =
+        document.querySelector(".cont_head .num") || document.querySelector(".choice_sect .num");
+      if (newNum && oldNum) oldNum.textContent = newNum.textContent;
+      return getPageNos();
+    } catch (err) {
+      console.warn("[DCDeleteTool] list refresh failed", err);
+      return getPageNos();
+    }
+  }
+
+  async function waitIfPausedOrStopped() {
+    while (true) {
+      const job = await getJob();
+      if (!job) return "abort";
+      if (job.stopped || !job.running) return "stop";
+      if (job.paused) {
+        await sleep(400);
+        continue;
+      }
+      return "go";
+    }
+  }
+
+  async function runDeleteLoop(initialNos, options) {
+    if (jobRunning) return;
+    jobRunning = true;
+
+    const gallog = parseGallog();
+    if (!gallog) {
+      await setJob({
+        running: false,
+        status: "error",
+        statusMessage: "갤로그 게시글(posting) 페이지가 아닙니다."
+      });
+      jobRunning = false;
+      return;
+    }
+
+    const mode = options.mode || "selected";
+    const delayMs = options.delayMs || DELAY.safe;
+    let queue = initialNos.slice();
+    let successCount = options.resumeSuccess || 0;
+    let failCount = options.resumeFail || 0;
+    let consecutiveFails = 0;
+    const failedNos = Array.isArray(options.resumeFailedNos)
+      ? options.resumeFailedNos.slice()
+      : [];
+    const totalTarget =
+      mode === "all" ? options.totalTarget || readTotalCount() || queue.length : queue.length;
+
+    await setJob({
+      running: true,
+      paused: false,
+      stopped: false,
+      mode,
+      delayMs,
+      totalTarget,
+      successCount,
+      failCount,
+      failedNos: failedNos.slice(-200),
+      currentNo: null,
+      startedAt: options.resumeStartedAt || new Date().toISOString(),
+      status: "running",
+      statusMessage: options.resuming ? "새로고침 후 이어서 삭제" : "",
+      consecutiveFails: 0,
+      gallogId: gallog.gallogId,
+      isPostingPage: true
+    });
+
+    try {
+      while (true) {
+        const gate = await waitIfPausedOrStopped();
+        if (gate === "stop" || gate === "abort") break;
+
+        if (!queue.length) {
+          if (mode === "all") {
+            await setJob({ statusMessage: "목록 갱신 중…" });
+            const next = await refreshListFromServer();
+            if (!next.length) break;
+            queue = next.slice();
+          } else {
+            break;
+          }
+        }
+
+        const no = queue.shift();
+        await setJob({ currentNo: no, statusMessage: `삭제 중: ${no}` });
+
+        const result = await deleteOne(no, gallog.gallogId);
+
+        if (result.ok) {
+          successCount += 1;
+          consecutiveFails = 0;
+          removeRowByNo(no);
+          await setJob({
+            successCount,
+            consecutiveFails: 0,
+            currentNo: no
+          });
+        } else {
+          failCount += 1;
+          consecutiveFails += 1;
+          failedNos.push(String(no));
+          await setJob({
+            failCount,
+            failedNos: failedNos.slice(-200),
+            consecutiveFails,
+            currentNo: no,
+            statusMessage: result.message || result.reason || "삭제 실패"
+          });
+
+          if (result.fatal || consecutiveFails >= 5) {
+            await setJob({
+              running: false,
+              status: "error",
+              statusMessage:
+                result.message ||
+                "로그인 세션 만료 또는 서버 제한 가능성. 작업을 중지했습니다."
+            });
+            break;
+          }
+        }
+
+        const gate2 = await waitIfPausedOrStopped();
+        if (gate2 === "stop" || gate2 === "abort") break;
+
+        // jittered delay — never aggressive
+        const wait = delayMs + Math.floor(Math.random() * 400);
+        await sleep(wait);
+      }
+
+      const job = await getJob();
+      if (job && job.running && !job.stopped && job.status !== "error") {
+        // Final refresh for consistency
+        if (mode === "all" || mode === "selected" || mode === "test5") {
+          await refreshListFromServer();
+        }
+        await setJob({
+          running: false,
+          paused: false,
+          status: "done",
+          statusMessage: "완료",
+          currentNo: null,
+          pagePostCount: getPageNos().length,
+          totalPostCount: readTotalCount()
         });
-        sendToBg({ type: "EXTEND_INTERACTION", windowMs: 15000 });
-      } else if (data.hookType === "confirm_result") {
-        logEvent({
-          eventType: "confirm_result",
-          confirmMessage: truncate(data.message, 2000),
-          result: !!data.result,
-          shownAt: data.shownAt,
-          resultAt: data.resultAt
-        });
-        sendToBg({ type: "EXTEND_INTERACTION", windowMs: 15000 });
-      } else if (data.hookType === "hook_ready") {
-        logEvent({
-          eventType: "page_hook_ready",
-          at: data.at
+      } else if (job && job.stopped) {
+        await setJob({
+          running: false,
+          status: "ready",
+          statusMessage: "사용자 중지",
+          currentNo: null
         });
       }
     } catch (err) {
-      logEvent({
-        eventType: "extension_error",
-        source: "onPageMessage",
-        message: String(err && err.message ? err.message : err)
+      await setJob({
+        running: false,
+        status: "error",
+        statusMessage: String(err && err.message ? err.message : err)
       });
+    } finally {
+      jobRunning = false;
+      syncPageInfoToJob();
     }
   }
 
-  function installLifecycleHooks() {
-    if (hooksInstalled) return;
-    hooksInstalled = true;
+  async function startJob({ mode, nos }) {
+    const gallog = parseGallog();
+    if (!gallog) {
+      alert("갤로그 게시글(posting) 페이지에서만 사용할 수 있습니다.");
+      return;
+    }
 
-    document.addEventListener(
-      "click",
-      safe((ev) => {
-        if (!recording) return;
-        onDeleteCandidateClick(ev);
-      }),
-      true
-    );
+    const job = await getJob();
+    if (job && job.running) {
+      alert("이미 삭제 작업이 진행 중입니다.");
+      return;
+    }
 
-    window.addEventListener("message", safe(onPageMessage), false);
+    const delayMs = (job && job.delayMs) || DELAY.safe;
+    let list = (nos || []).map(String).filter(Boolean);
 
-    window.addEventListener(
-      "beforeunload",
-      safe(() => {
-        if (!recording) return;
-        // beforeunload에서는 await가 끊길 수 있어 fire-and-forget
-        try {
-          chrome.runtime.sendMessage({
-            type: "LOG_EVENT",
-            event: {
-              ...pageMeta(),
-              eventType: "before_unload",
-              readyState: document.readyState,
-              navigationType: getNavType()
-            }
-          });
-        } catch (_) {
-          /* ignore */
-        }
-      }),
-      true
-    );
+    if (mode === "test5") {
+      list = getPageNos().slice(0, 5);
+      if (!list.length) {
+        alert("삭제할 게시글이 없습니다.");
+        return;
+      }
+      if (
+        !confirm(
+          "게시글 5개를 실제로 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다."
+        )
+      ) {
+        return;
+      }
+    }
 
-    document.addEventListener(
-      "visibilitychange",
-      safe(() => {
-        if (!recording) return;
-        logEvent({
-          eventType: "visibility_change",
-          visibilityState: document.visibilityState,
-          readyState: document.readyState,
-          navigationType: getNavType()
-        });
-      }),
-      true
-    );
+    if (mode === "all") {
+      // confirmations are done in popup; here just collect first page
+      list = getPageNos();
+      if (!list.length) {
+        alert("삭제할 게시글이 없습니다.");
+        return;
+      }
+    }
 
-    window.addEventListener(
-      "pageshow",
-      safe((ev) => {
-        if (!recording) return;
-        logEvent({
-          eventType: "pageshow",
-          persisted: !!ev.persisted,
-          readyState: document.readyState,
-          navigationType: getNavType()
-        });
-      }),
-      true
-    );
+    if (mode === "selected") {
+      if (!list.length) {
+        alert("선택된 게시글이 없습니다.");
+        return;
+      }
+    }
 
-    window.addEventListener(
-      "pagehide",
-      safe((ev) => {
-        if (!recording) return;
-        try {
-          chrome.runtime.sendMessage({
-            type: "LOG_EVENT",
-            event: {
-              ...pageMeta(),
-              eventType: "pagehide",
-              persisted: !!ev.persisted,
-              readyState: document.readyState,
-              navigationType: getNavType()
-            }
-          });
-        } catch (_) {
-          /* ignore */
-        }
-      }),
-      true
-    );
-  }
+    // Preflight auth
+    const auth = await resolveAuth();
+    if (!auth.ok) {
+      alert(auth.message);
+      await setJob({ status: "error", statusMessage: auth.message });
+      return;
+    }
 
-  async function syncRecordingState() {
-    const status = await sendToBg({ type: "GET_STATUS" });
-    recording = !!(status && status.state && status.state.recording);
-    sessionId = status?.sessionId || null;
-    return recording;
-  }
-
-  async function onReady() {
-    injectPageHook();
-    installLifecycleHooks();
-    const isRec = await syncRecordingState();
-    await logEvent({
-      eventType: "content_script_loaded",
-      readyState: document.readyState,
-      navigationType: getNavType(),
-      recording: isRec,
-      sessionId
+    runDeleteLoop(list, {
+      mode,
+      delayMs,
+      totalTarget: mode === "all" ? readTotalCount() || list.length : list.length
     });
+  }
 
-    const markReady = async () => {
-      const still = await syncRecordingState();
-      if (!still) return;
-      await logEvent({
-        eventType: "page_ready",
-        readyState: document.readyState,
-        navigationType: getNavType()
-      });
+  async function syncPageInfoToJob() {
+    const gallog = parseGallog();
+    const pagePostCount = getPageNos().length;
+    const totalPostCount = readTotalCount();
+    await setJob({
+      isPostingPage: !!gallog,
+      gallogId: gallog ? gallog.gallogId : null,
+      pagePostCount,
+      totalPostCount
+    });
+  }
+
+  function getPageInfo() {
+    const gallog = parseGallog();
+    return {
+      ok: true,
+      isPostingPage: !!gallog,
+      gallogId: gallog ? gallog.gallogId : null,
+      pageUrl: location.href,
+      pagePostCount: getPageNos().length,
+      totalPostCount: readTotalCount(),
+      selectedCount: getSelectedNos().length
     };
-
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-      await markReady();
-    } else {
-      document.addEventListener(
-        "DOMContentLoaded",
-        safe(() => {
-          markReady();
-        }),
-        { once: true }
-      );
-    }
   }
 
   chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     (async () => {
       try {
-        if (message?.type === "RECORDING_STARTED") {
-          recording = true;
-          sessionId = message.sessionId || null;
-          injectPageHook();
-          await takePageSnapshot();
-          sendResponse({ ok: true });
-          return;
+        switch (message?.type) {
+          case "GET_PAGE_INFO": {
+            await syncPageInfoToJob();
+            sendResponse(getPageInfo());
+            break;
+          }
+          case "START_TEST5": {
+            await startJob({ mode: "test5" });
+            sendResponse({ ok: true });
+            break;
+          }
+          case "START_SELECTED": {
+            const nos = getSelectedNos();
+            if (!nos.length) {
+              sendResponse({ ok: false, error: "선택된 게시글이 없습니다." });
+              break;
+            }
+            if (
+              !confirm(
+                `선택한 ${nos.length}개의 게시글을 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다.`
+              )
+            ) {
+              sendResponse({ ok: false, error: "cancelled" });
+              break;
+            }
+            await startJob({ mode: "selected", nos });
+            sendResponse({ ok: true });
+            break;
+          }
+          case "START_ALL": {
+            await startJob({ mode: "all" });
+            sendResponse({ ok: true });
+            break;
+          }
+          case "PAUSE": {
+            await setJob({ paused: true, status: "paused", statusMessage: "일시정지" });
+            sendResponse({ ok: true });
+            break;
+          }
+          case "RESUME": {
+            await setJob({ paused: false, status: "running", statusMessage: "재개" });
+            sendResponse({ ok: true });
+            break;
+          }
+          case "STOP": {
+            await setJob({
+              stopped: true,
+              running: false,
+              paused: false,
+              status: "ready",
+              statusMessage: "중지됨"
+            });
+            sendResponse({ ok: true });
+            break;
+          }
+          case "SET_DELAY_MODE": {
+            const delayMs = message.mode === "normal" ? DELAY.normal : DELAY.safe;
+            await setJob({ delayMs });
+            sendResponse({ ok: true, delayMs });
+            break;
+          }
+          default:
+            sendResponse({ ok: false, error: "unknown" });
         }
-        if (message?.type === "TAKE_SNAPSHOT") {
-          await syncRecordingState();
-          if (recording) await takePageSnapshot();
-          sendResponse({ ok: true });
-          return;
-        }
-        sendResponse({ ok: false });
       } catch (err) {
-        sendResponse({ ok: false, error: String(err) });
+        sendResponse({ ok: false, error: String(err && err.message ? err.message : err) });
       }
     })();
     return true;
   });
 
-  chrome.storage.onChanged.addListener(
-    safe((changes, area) => {
-      if (area !== "local" || !changes.analyzerState) return;
-      const next = changes.analyzerState.newValue;
-      const prev = changes.analyzerState.oldValue;
-      const was = !!(prev && prev.recording);
-      const now = !!(next && next.recording);
-      recording = now;
-      sessionId = next?.currentSessionId || null;
-      if (!was && now) {
-        takePageSnapshot();
-      }
-    })
-  );
+  async function maybeResumeJob() {
+    const job = await getJob();
+    if (!job) return;
+    // Explicit stop must never auto-restart
+    if (job.stopped || job.status === "error" || job.status === "done") return;
+    if (!(job.running && !job.paused)) return;
+    if (job.mode !== "all") return;
+    if (!parseGallog()) return;
+    if (jobRunning) return;
 
-  // Boot ASAP (document_start)
-  onReady();
+    const nos = getPageNos();
+    if (!nos.length) {
+      await setJob({
+        running: false,
+        status: "done",
+        statusMessage: "완료 (남은 글 없음)"
+      });
+      return;
+    }
+
+    runDeleteLoop(nos, {
+      mode: "all",
+      delayMs: job.delayMs || DELAY.safe,
+      totalTarget: job.totalTarget || readTotalCount() || nos.length,
+      resumeSuccess: job.successCount || 0,
+      resumeFail: job.failCount || 0,
+      resumeFailedNos: job.failedNos || [],
+      resumeStartedAt: job.startedAt,
+      resuming: true
+    });
+  }
+
+  function bootUi() {
+    if (!parseGallog()) {
+      syncPageInfoToJob();
+      return;
+    }
+    injectPageHook();
+    ensureToolbar();
+    injectRowCheckboxes();
+    syncPageInfoToJob();
+
+    // Observe list mutations (AJAX pagination etc.)
+    const list = document.querySelector("ul.cont_listbox");
+    if (list && !list.__dcObserved) {
+      list.__dcObserved = true;
+      const mo = new MutationObserver(() => {
+        injectRowCheckboxes();
+        syncPageInfoToJob();
+      });
+      mo.observe(list, { childList: true, subtree: true });
+    }
+  }
+
+  injectPageHook();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      bootUi();
+      maybeResumeJob();
+    });
+  } else {
+    bootUi();
+    maybeResumeJob();
+  }
 })();

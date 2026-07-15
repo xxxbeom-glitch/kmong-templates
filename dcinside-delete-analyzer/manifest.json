@@ -1,37 +1,30 @@
 {
   "manifest_version": 3,
-  "name": "디시인사이드 삭제 동작 분석기",
-  "version": "1.1.0",
-  "description": "마이페이지에서 게시글 1개 수동 삭제 시 DOM·confirm·네트워크·새로고침 흐름을 관찰·기록합니다. 자동 삭제는 하지 않습니다.",
+  "name": "DCInside 게시글 삭제 도구",
+  "version": "2.0.0",
+  "description": "갤로그 게시글 페이지에서 본인 게시글을 선택·테스트·전체 순차 삭제합니다. 자동으로 다른 사용자 글은 다루지 않습니다.",
   "permissions": [
     "storage",
-    "downloads",
-    "webRequest"
+    "activeTab"
   ],
   "host_permissions": [
-    "https://gall.dcinside.com/*",
-    "https://gallog.dcinside.com/*",
-    "https://*.dcinside.com/*",
-    "http://gall.dcinside.com/*",
-    "http://gallog.dcinside.com/*",
-    "http://*.dcinside.com/*"
+    "https://gallog.dcinside.com/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "디시인사이드 삭제 동작 분석기",
+    "default_title": "DCInside 게시글 삭제 도구",
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://gall.dcinside.com/*",
-        "https://gallog.dcinside.com/*",
-        "https://*.dcinside.com/*"
+        "https://gallog.dcinside.com/*"
       ],
       "js": ["content.js"],
-      "run_at": "document_start",
+      "css": ["content.css"],
+      "run_at": "document_idle",
       "all_frames": false
     }
   ],
@@ -39,9 +32,7 @@
     {
       "resources": ["page-hook.js"],
       "matches": [
-        "https://gall.dcinside.com/*",
-        "https://gallog.dcinside.com/*",
-        "https://*.dcinside.com/*"
+        "https://gallog.dcinside.com/*"
       ]
     }
   ]

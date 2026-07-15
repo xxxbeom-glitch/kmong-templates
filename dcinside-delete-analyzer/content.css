@@ -1,0 +1,78 @@
+/* Injected on gallog posting pages — keep lightweight, avoid fighting site layout */
+
+#dc-delete-tool-bar {
+  display: block;
+  margin: 8px 0 12px;
+  padding: 10px 12px;
+  background: #f4f7fb;
+  border: 1px solid #d5dee8;
+  border-radius: 8px;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  font-size: 13px;
+  color: #222;
+  box-sizing: border-box;
+}
+
+#dc-delete-tool-bar .dc-tool-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+#dc-delete-tool-bar .dc-tool-btn {
+  appearance: none;
+  border: 1px solid #c9d4e0;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #1f3a5f;
+}
+
+#dc-delete-tool-bar .dc-tool-btn:hover {
+  background: #eef4fb;
+}
+
+#dc-delete-tool-bar .dc-tool-danger {
+  background: #c62828;
+  border-color: #c62828;
+  color: #fff;
+}
+
+#dc-delete-tool-bar .dc-tool-danger:hover {
+  filter: brightness(1.05);
+}
+
+#dc-delete-tool-bar .dc-tool-count {
+  margin-left: 4px;
+  color: #445;
+}
+
+#dc-delete-tool-bar .dc-tool-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #6a7685;
+}
+
+ul.cont_listbox > li[data-no] {
+  position: relative;
+}
+
+.dc-delete-tool-cb-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.dc-delete-tool-cb-wrap input.dc-delete-tool-cb {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  cursor: pointer;
+}

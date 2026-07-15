@@ -3,37 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>디시인사이드 삭제 동작 분석기</title>
+  <title>DCInside 게시글 삭제 도구</title>
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <main class="wrap">
-    <header class="header">
-      <h1>삭제 동작 분석기</h1>
-      <p class="sub">수동 삭제 관찰 · 자동 삭제 없음</p>
+    <header>
+      <h1>DCInside 게시글 삭제 도구</h1>
+      <p class="sub">본인 갤로그 게시글만 · 순차 삭제</p>
     </header>
 
-    <section class="status-box" aria-live="polite">
+    <section class="card">
+      <div class="label">현재 게시글</div>
+      <div id="totalCount" class="big">—</div>
+      <div id="pageMeta" class="muted">페이지 확인 중…</div>
+    </section>
+
+    <section class="card">
       <div class="label">상태</div>
-      <div id="statusText" class="status stopped">기록 중지됨</div>
+      <div id="statusText" class="status">준비됨</div>
+      <div id="statusMessage" class="muted"></div>
     </section>
 
-    <section class="count-box">
-      <span>기록된 이벤트: <strong id="eventCount">0</strong>개</span>
+    <section class="card">
+      <div class="label">진행률</div>
+      <div class="progress-wrap">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <div id="progressText" class="muted">0 / 0</div>
+      <div class="stats">
+        <span>성공 <strong id="successCount">0</strong></span>
+        <span>실패 <strong id="failCount">0</strong></span>
+      </div>
+      <div id="currentNo" class="muted">현재 처리 중: —</div>
     </section>
 
-    <section class="actions">
-      <button type="button" id="btnStart" class="btn primary">기록 시작</button>
-      <button type="button" id="btnStop" class="btn">기록 중지</button>
-      <button type="button" id="btnClear" class="btn danger">로그 초기화</button>
-      <button type="button" id="btnDownload" class="btn accent">JSON 로그 다운로드</button>
+    <section class="card">
+      <div class="label">요청 간격</div>
+      <div class="delay-row">
+        <label><input type="radio" name="delay" value="safe" checked /> 안전 (2초)</label>
+        <label><input type="radio" name="delay" value="normal" /> 보통 (1.2초)</label>
+      </div>
     </section>
 
-    <p id="errorText" class="error" hidden></p>
+    <section class="actions" id="actionsIdle">
+      <button type="button" id="btnTest5" class="btn primary">테스트 5개 삭제</button>
+      <button type="button" id="btnSelected" class="btn">선택 글 삭제</button>
+      <button type="button" id="btnAll" class="btn danger">전체 삭제 시작</button>
+      <button type="button" id="btnRefresh" class="btn ghost">페이지 정보 새로고침</button>
+    </section>
 
+    <section class="actions hidden" id="actionsRunning">
+      <button type="button" id="btnPause" class="btn warn">일시정지</button>
+      <button type="button" id="btnResume" class="btn primary hidden">재개</button>
+      <button type="button" id="btnStop" class="btn danger">중지</button>
+    </section>
+
+    <p id="errorText" class="error hidden"></p>
     <p class="hint">
-      기록 시작 후 디시인사이드 마이페이지에서 게시글 1개를 직접 삭제하세요.
-      삭제 완료 후 기록을 중지하고 JSON 파일을 다운로드하세요.
+      먼저 <strong>테스트 5개 삭제</strong>로 동작을 확인하세요.
+      전체 삭제는 2단계 확인 후 실행됩니다.
     </p>
   </main>
   <script src="popup.js"></script>

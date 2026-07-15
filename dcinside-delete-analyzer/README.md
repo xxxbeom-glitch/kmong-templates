@@ -1,113 +1,103 @@
-# 디시인사이드 삭제 동작 분석기
+# DCInside 게시글 삭제 도구
 
-Chrome Manifest V3 확장프로그램입니다.  
-디시인사이드 마이페이지에서 **사용자가 직접** 게시글 1개를 삭제할 때, 그 과정을 관찰·기록해 JSON으로 저장합니다.
+갤로그 **게시글(posting)** 페이지에서 본인 글을 선택·테스트·전체 순차 삭제하는 Chrome Manifest V3 확장프로그램입니다.
 
-> **자동 삭제는 하지 않습니다.**  
-> X 버튼 클릭과 confirm 확인은 사용자가 직접 수행합니다. 확장프로그램은 기록만 합니다.
-
----
-
-## 설치 방법
-
-1. Chrome에서 `chrome://extensions` 접속
-2. 우측 상단 **개발자 모드** 활성화
-3. **압축해제된 확장 프로그램을 로드합니다** 클릭
-4. 이 폴더(`dcinside-delete-analyzer`) 선택
-5. 디시인사이드 마이페이지 접속
-6. 확장프로그램 아이콘 클릭
-7. **기록 시작**
-8. 게시글 **X** 버튼 클릭
-9. confirm에서 직접 **확인**
-10. 삭제 및 새로고침 완료까지 기다림
-11. **기록 중지**
-12. **JSON 로그 다운로드**
+> 다른 사용자 갤로그를 대상으로 하는 기능이 없습니다.  
+> 현재 열린 `https://gallog.dcinside.com/{본인ID}/posting` 페이지만 처리합니다.  
+> **테스트 5개 삭제**로 먼저 확인한 뒤 전체 삭제를 사용하세요.
 
 ---
 
-## 사용 시 주의
+## 설치
 
-- 기록은 **「기록 시작」 이후**에만 수집됩니다.
-- 기존 페이지 동작을 바꾸지 않도록 설계했습니다 (`window.confirm` 결과를 가로채 자동 확인하지 않음).
-- 이 JSON 파일에는 로그인 비밀번호나 쿠키를 저장하지 않도록 설계되어 있지만, **공유하기 전에 사용자가 직접 내용을 확인**할 것을 권장합니다.
+1. `chrome://extensions` → 개발자 모드 ON
+2. **압축해제된 확장 프로그램을 로드합니다**
+3. 이 폴더(`dcinside-delete-analyzer`) 선택
+4. `https://gallog.dcinside.com/{내아이디}/posting` 접속
+5. 확장프로그램 아이콘 클릭
 
----
-
-## 기록되는 정보 (요약)
-
-| 구분 | eventType 예시 | 내용 |
-|------|----------------|------|
-| 페이지 스냅샷 | `page_snapshot` | 목록/페이지네이션 후보 HTML, 삭제 버튼 후보 수 |
-| 삭제 후보 클릭 | `delete_candidate_click` | DOM, selector/XPath, 게시글 행 메타 |
-| confirm | `confirm_shown`, `confirm_result` | 메시지, true/false |
-| 일반 네트워크 | `network_request`, `network_response`, `network_error` | URL, method, requestBody, status |
-| **삭제 API** | `delete_network_request`, `delete_network_response` | `/ajax/log_list_ajax/delete` 전용 · formData/rawText/parsedBody |
-| 이동/새로고침 | `content_script_loaded`, `page_ready`, `before_unload`, … | URL, readyState, navigation type |
-| 오류 | `extension_error` | 확장프로그램 내부 오류 |
-
-삭제 후보 클릭 후 약 15초 동안의 네트워크 이벤트에는 `relatedDeleteInteraction: true`와 동일한 `interactionId`가 붙습니다.
-
-`requestBody`에는 가능한 경우 다음이 포함됩니다.
-
-- `formData` — Chrome이 파싱한 multipart/form 필드
-- `rawText` — raw body UTF-8 문자열
-- `parsedBody` — `application/x-www-form-urlencoded` 파싱 결과 (`no`, `action` 등)
-- `service_code` — 원문 대신 `{ service_code_present, service_code_length }`
+파일을 수정했다면 확장프로그램 **새로고침** 후 갤로그 탭도 **새로고침**하세요.
 
 ---
 
-## 삭제 POST body 확인 테스트
+## 테스트 5개 삭제 (반드시 먼저)
 
-1. `chrome://extensions`에서 확장프로그램 **새로고침**
-2. **gallog.dcinside.com** 마이페이지(글 목록) 접속
-3. 확장 아이콘 → **기록 시작**
-4. 게시글 **1개**를 직접 삭제 (X → confirm 확인)
-5. 목록 새로고침/갱신이 **완료될 때까지** 대기
-6. **기록 중지**
-7. **JSON 로그 다운로드**
-8. JSON에서 검색:
-   - `delete_network_request`
-   - `log_list_ajax/delete`
-   - `requestBody` / `formData` / `parsedBody` / `rawText`
+1. 갤로그 게시글 페이지를 연다
+2. 팝업 → **테스트 5개 삭제**
+3. 확인 창에서 승인
+4. 현재 페이지 최신 글 5개가 순차 삭제되는지 확인
+5. 성공/실패·진행률이 정상인지 확인
 
-기대 결과:
-
-- `delete_network_request`에 삭제 POST body가 있음
-- `delete_network_response`가 같은 `requestId`로 연결됨
-- `password` / `token` / `session` 등은 `[REDACTED]`
-- `service_code`는 길이만 기록됨
+요청 간격 기본값은 **안전(2초)** 입니다.
 
 ---
 
-## 파일 구조
+## 선택 삭제
 
-```
-dcinside-delete-analyzer/
-├─ manifest.json    # MV3 설정
-├─ background.js    # service worker (storage, webRequest, export)
-├─ content.js       # DOM·lifecycle 관찰, page-hook 주입
-├─ page-hook.js     # 페이지 컨텍스트에서 confirm 래핑
-├─ popup.html
-├─ popup.js
-├─ popup.css
-└─ README.md
-```
+1. 페이지 상단 확장 UI 또는 각 글 왼쪽 체크박스로 선택
+2. **선택한 글 삭제** (페이지) 또는 팝업 **선택 글 삭제**
+3. 확인 후 순차 삭제
+
+---
+
+## 전체 삭제
+
+1. 팝업 **전체 삭제 시작**
+2. 1차 확인: “현재 계정의 게시글 전체를 삭제하려고 합니다.”
+3. 2차 확인: 입력창에 `전체삭제` 정확히 입력
+4. 첫 페이지 글을 순차 삭제 → 목록 갱신 → 남은 글이 없을 때까지 반복
+5. 작업 중 **일시정지 / 중지** 가능 (요청과 요청 사이)
+
+---
+
+## 인증값 (c_k_v / ci_t / service_code)
+
+하드코딩하지 않습니다. 실행 시점에 페이지에서 동적 확보합니다.
+
+| 필드 | 확보 방식 |
+|------|-----------|
+| `service_code` | `input[name="service_code"]` (매번 DOM에서 읽음) |
+| `ci_t` | 캡처된 삭제 요청 → hidden → jQuery.cookie / get_cookie → `document.cookie` |
+| `c_k_v` | 위와 동일 순서 |
+| `no` | `li[data-no]` |
+| 삭제 URL | `/{현재갤로그ID}/ajax/log_list_ajax/delete` (pathname에서 ID 추출) |
+
+`page-hook.js`는 페이지 본래 `fetch` / `XHR` / `$.ajax`를 **관찰만** 하여, 사용자가 직접 X로 삭제할 때 쓰인 파라미터를 캐시할 수 있습니다.  
+값을 얻기 위해 몰래 삭제 요청을 보내지 않습니다.
+
+인증값을 못 찾으면 삭제를 시작하지 않고 안내합니다.
+
+---
+
+## 자동 중지 조건
+
+- HTTP 401 / 403 / 429
+- 연속 5회 실패
+- 인증값 확보 실패
+- 응답 `result === "captcha"` 등 명백한 차단
+- 사용자가 **중지**
 
 ---
 
 ## 권한
 
-- `storage` — 로그 임시 저장
-- `downloads` — JSON 저장
-- `webRequest` — dcinside 요청 관찰 (수정/차단 없음)
-- host: `gall.dcinside.com`, **`gallog.dcinside.com`**, `*.dcinside.com`
+- `storage` — 진행 상태 (팝업을 닫아도 content script에서 작업 유지)
+- `activeTab` — 팝업 → 현재 탭 제어
+- host: `https://gallog.dcinside.com/*` 만
+
+분석용 `webRequest` / 대형 JSON 로그 기능은 제거했습니다.
 
 ---
 
-## Manifest V3 참고 (제한)
+## 파일
 
-- Background는 **service worker**라서 DOM API를 쓰지 않습니다.
-- `webRequest`는 **관찰**용이며, 응답 body 전체를 읽지는 않습니다.
-- **요청 body**는 `onBeforeRequest`에서 **동기적으로 복사**해야 합니다. `await` 이후에 읽으면 body가 비는 경우가 있습니다 (v1.1.0에서 수정).
-- `page-hook.js`는 `web_accessible_resources`로 페이지에 주입해 isolated world의 `window.confirm`과 페이지 쪽 confirm을 맞춥니다.
-- 새로고침 후에도 `chrome.storage.local`의 `recording` / `sessionId`로 같은 세션을 유지합니다.
+```
+dcinside-delete-analyzer/
+├─ manifest.json
+├─ background.js      # 상태 저장 · 메시지 중계
+├─ content.js         # 체크박스 UI · 삭제 루프
+├─ content.css
+├─ page-hook.js       # 인증값 동적 확보 · 네트워크 관찰
+├─ popup.html/js/css
+└─ README.md
+```
