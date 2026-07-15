@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "디시인사이드 삭제 동작 분석기",
+  "version": "1.0.0",
+  "description": "마이페이지에서 게시글 1개 수동 삭제 시 DOM·confirm·네트워크·새로고침 흐름을 관찰·기록합니다. 자동 삭제는 하지 않습니다.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://gall.dcinside.com/*",
+    "https://*.dcinside.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "디시인사이드 삭제 동작 분석기",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gall.dcinside.com/*",
+        "https://*.dcinside.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page-hook.js"],
+      "matches": [
+        "https://gall.dcinside.com/*",
+        "https://*.dcinside.com/*"
+      ]
+    }
+  ]
+}
