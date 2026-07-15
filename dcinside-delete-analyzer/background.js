@@ -1,23 +1,29 @@
 /**
- * Thin service worker: job state mirror + popup↔tab messaging.
- * Delete loop runs in the gallog content script (MV3 SW lifespan).
+ * Thin service worker: job state + popup↔tab messaging.
+ * Delete engine runs in content script across page reloads.
  */
 
 const DEFAULT_JOB = () => ({
+  mode: "idle",
   running: false,
   paused: false,
   stopped: false,
-  mode: "idle",
-  delayMs: 2000,
-  totalTarget: 0,
+  pendingNos: [],
   successCount: 0,
   failCount: 0,
   failedNos: [],
+  initialTotal: 0,
+  totalTarget: 0,
   currentNo: null,
+  clickIssuedForNo: null,
+  deletingCurrentNo: null,
+  awaitingReload: false,
+  awaitingReloadSince: null,
+  consecutiveFails: 0,
+  delayMs: 1500,
   startedAt: null,
   status: "ready",
   statusMessage: "",
-  consecutiveFails: 0,
   pagePostCount: 0,
   totalPostCount: null,
   isPostingPage: false,
@@ -47,12 +53,15 @@ async function sendToActiveGallogTab(message) {
     tab = all.find((t) => t.active) || all[0];
   }
   if (!tab || tab.id == null) {
-    return { ok: false, error: "갤로그 탭을 찾을 수 없습니다. gallog.dcinside.com 게시글 페이지를 열어 주세요." };
+    return {
+      ok: false,
+      error: "갤로그 탭을 찾을 수 없습니다. gallog.dcinside.com 게시글 페이지를 열어 주세요."
+    };
   }
   try {
     const res = await chrome.tabs.sendMessage(tab.id, message);
     return res || { ok: false, error: "페이지 응답 없음. 새로고침 후 다시 시도하세요." };
-  } catch (err) {
+  } catch (_) {
     return {
       ok: false,
       error: "콘텐츠 스크립트와 연결되지 않았습니다. 갤로그 페이지를 새로고침하세요."
@@ -64,22 +73,18 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   (async () => {
     try {
       switch (message?.type) {
-        case "GET_JOB": {
+        case "GET_JOB":
           sendResponse({ ok: true, job: await getJob() });
           break;
-        }
-        case "SET_JOB": {
+        case "SET_JOB":
           sendResponse({ ok: true, job: await setJob(message.patch || {}) });
           break;
-        }
-        case "RESET_JOB": {
+        case "RESET_JOB":
           sendResponse({ ok: true, job: await setJob(DEFAULT_JOB()) });
           break;
-        }
-        case "FORWARD_TO_PAGE": {
+        case "FORWARD_TO_PAGE":
           sendResponse(await sendToActiveGallogTab(message.payload));
           break;
-        }
         default:
           sendResponse({ ok: false, error: "unknown_type" });
       }

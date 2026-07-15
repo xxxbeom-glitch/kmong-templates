@@ -90,7 +90,7 @@ function render(job, page) {
   els.statusMessage.textContent = (job && job.statusMessage) || "";
 
   const done = (job && (job.successCount || 0) + (job.failCount || 0)) || 0;
-  const target = (job && job.totalTarget) || 0;
+  const target = (job && (job.initialTotal || job.totalTarget)) || 0;
   const pct = target > 0 ? Math.min(100, Math.round((done / target) * 100)) : 0;
   els.progressBar.style.width = `${pct}%`;
   els.progressText.textContent = `${done.toLocaleString("ko-KR")} / ${target.toLocaleString("ko-KR")}`;
@@ -110,10 +110,10 @@ function render(job, page) {
     showError("");
   }
 
-  // delay radios
-  const delay = (job && job.delayMs) || 2000;
+  // delay radios — settle time after page load before clicking X
+  const delay = (job && job.delayMs) || 1500;
   document.querySelectorAll('input[name="delay"]').forEach((r) => {
-    r.checked = r.value === "normal" ? delay === 1200 : delay !== 1200;
+    r.checked = r.value === "normal" ? delay === 1000 : delay !== 1000;
     r.disabled = running;
   });
 }

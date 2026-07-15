@@ -50,31 +50,26 @@
 
 ---
 
-## 인증값 (c_k_v / ci_t / service_code)
+## 삭제 방식 (네이티브 X 버튼)
 
-하드코딩하지 않습니다. 실행 시점에 페이지에서 동적 확보합니다.
+직접 `c_k_v` / `ci_t` / `service_code` POST를 **하지 않습니다.**
 
-| 필드 | 확보 방식 |
-|------|-----------|
-| `service_code` | `input[name="service_code"]` (매번 DOM에서 읽음) |
-| `ci_t` | 캡처된 삭제 요청 → hidden → jQuery.cookie / get_cookie → `document.cookie` |
-| `c_k_v` | 위와 동일 순서 |
-| `no` | `li[data-no]` |
-| 삭제 URL | `/{현재갤로그ID}/ajax/log_list_ajax/delete` (pathname에서 ID 추출) |
+1. `li[data-no]` 안의 `button.btn_delete.btn_listdel` 을 `click()`
+2. `page-hook.js`가 **자동화 중일 때만** 삭제 confirm을 `true`로 승인
+3. 디시 원래 JS가 인증·삭제를 처리
+4. 페이지 새로고침
+5. `chrome.storage.local`의 `pendingNos` / 진행 상태로 다음 글 계속
 
-`page-hook.js`는 페이지 본래 `fetch` / `XHR` / `$.ajax`를 **관찰만** 하여, 사용자가 직접 X로 삭제할 때 쓰인 파라미터를 캐시할 수 있습니다.  
-값을 얻기 위해 몰래 삭제 요청을 보내지 않습니다.
-
-인증값을 못 찾으면 삭제를 시작하지 않고 안내합니다.
+모드:
+- **선택 / 테스트 5개** — `pendingNos`를 storage에 저장 후 순서대로 클릭
+- **전체** — 항상 첫 번째 글의 X를 클릭 → 새로고침 반복 → 목록 0개면 완료
 
 ---
 
 ## 자동 중지 조건
 
-- HTTP 401 / 403 / 429
-- 연속 5회 실패
-- 인증값 확보 실패
-- 응답 `result === "captcha"` 등 명백한 차단
+- 삭제 후 10초 내 새로고침 없음
+- 연속 3회 실패
 - 사용자가 **중지**
 
 ---

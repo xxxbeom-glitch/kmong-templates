@@ -1,8 +1,7 @@
 /**
  * Galalog posting page content script.
- * - Checkbox / selection UI
- * - Sequential delete loop (survives popup close)
- * - Talks to page-hook for dynamic auth tokens
+ * Delete engine: click native button.btn_delete.btn_listdel (no direct API).
+ * Job state survives reloads via chrome.storage.local.
  */
 
 (function () {
@@ -13,12 +12,17 @@
   const UI_ROOT_ID = "dc-delete-tool-bar";
   const CB_CLASS = "dc-delete-tool-cb";
   const LI_MARK = "data-dc-tool-ready";
+  const DELETE_BTN_SEL = "button.btn_delete.btn_listdel";
 
-  const DELAY = { safe: 2000, normal: 1200 };
+  const DELAY = { safe: 1500, normal: 1000 };
+  const RELOAD_TIMEOUT_MS = 10000;
+  const MAX_CONSECUTIVE_FAILS = 3;
 
-  let jobRunning = false;
-  let authRequestSeq = 0;
-  const pendingAuth = new Map();
+  let processingLock = false;
+  let reloadWatchTimer = null;
+  let pausedPollTimer = null;
+  /** True only if we already clicked delete on this page instance */
+  let clickedThisPageLoad = false;
 
   function sleep(ms) {
     return new Promise((r) => setTimeout(r, ms));
@@ -27,14 +31,8 @@
   function parseGallog() {
     const parts = location.pathname.split("/").filter(Boolean);
     if (parts.length < 2) return null;
-    const gallogId = parts[0];
-    const section = parts[1];
-    if (section !== "posting") return null;
-    return { gallogId, section };
-  }
-
-  function buildDeleteUrl(gallogId) {
-    return `${location.origin}/${encodeURIComponent(gallogId)}/ajax/log_list_ajax/delete`;
+    if (parts[1] !== "posting") return null;
+    return { gallogId: parts[0], section: "posting" };
   }
 
   function getListItems() {
@@ -45,6 +43,20 @@
     return getListItems()
       .map((li) => String(li.getAttribute("data-no") || "").trim())
       .filter(Boolean);
+  }
+
+  function findRowByNo(no) {
+    const target = String(no);
+    return getListItems().find((li) => String(li.getAttribute("data-no") || "") === target) || null;
+  }
+
+  function findDeleteButton(li) {
+    if (!li) return null;
+    return (
+      li.querySelector(DELETE_BTN_SEL) ||
+      li.querySelector("button.btn_delete") ||
+      li.querySelector("button.btn_listdel")
+    );
   }
 
   function readTotalCount() {
@@ -89,78 +101,461 @@
       s.src = chrome.runtime.getURL("page-hook.js");
       s.async = false;
       s.onload = () => s.remove();
-      (document.head || document.documentElement).appendChild(s);
+      (document.documentElement || document.head).appendChild(s);
     } catch (_) {
       /* ignore */
     }
   }
 
-  function requestAuthFromPage(timeoutMs) {
-    return new Promise((resolve) => {
-      const requestId = `auth_${Date.now()}_${++authRequestSeq}`;
-      const timer = setTimeout(() => {
-        pendingAuth.delete(requestId);
-        resolve({ ok: false, missing: ["timeout"], error: "auth_timeout" });
-      }, timeoutMs || 3000);
-
-      pendingAuth.set(requestId, (auth) => {
-        clearTimeout(timer);
-        resolve(auth);
-      });
-
+  function setAutomation(active) {
+    try {
       window.postMessage(
-        { source: CONTENT_SOURCE, action: "RESOLVE_AUTH", requestId },
+        {
+          source: CONTENT_SOURCE,
+          action: "SET_AUTOMATION",
+          active: !!active,
+          requestId: `auto_${Date.now()}`
+        },
         location.origin
       );
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function clearReloadWatch() {
+    if (reloadWatchTimer) {
+      clearTimeout(reloadWatchTimer);
+      reloadWatchTimer = null;
+    }
+  }
+
+  function startReloadWatch(no) {
+    clearReloadWatch();
+    reloadWatchTimer = setTimeout(async () => {
+      const job = await getJob();
+      if (!job || !job.running || job.paused || job.stopped) return;
+      if (!job.awaitingReload) return;
+      if (String(job.clickIssuedForNo || "") !== String(no)) return;
+
+      await markFailure(
+        no,
+        "삭제 후 페이지 새로고침이 10초 안에 발생하지 않았습니다."
+      );
+      // Stay on page — try continue if not stopped
+      processingLock = false;
+      scheduleProcess("reload-timeout");
+    }, RELOAD_TIMEOUT_MS);
+  }
+
+  async function markSuccess(no) {
+    try {
+      sessionStorage.removeItem(CLICK_SESSION_KEY);
+    } catch (_) {
+      /* ignore */
+    }
+    const job = await getJob();
+    if (!job) return;
+    const pending = Array.isArray(job.pendingNos) ? job.pendingNos.map(String) : [];
+    const nextPending = pending.filter((n) => n !== String(no));
+    const successCount = (job.successCount || 0) + 1;
+    await setJob({
+      pendingNos: nextPending,
+      successCount,
+      consecutiveFails: 0,
+      currentNo: null,
+      clickIssuedForNo: null,
+      deletingCurrentNo: null,
+      awaitingReload: false,
+      awaitingReloadSince: null,
+      statusMessage: `삭제 성공: ${no}`
     });
+    setAutomation(false);
   }
 
-  window.addEventListener("message", (event) => {
+  async function markFailure(no, message) {
     try {
-      if (event.source !== window) return;
-      const data = event.data;
-      if (!data || data.source !== PAGE_HOOK_SOURCE) return;
-      if (data.action === "RESOLVE_AUTH_RESULT" && data.requestId) {
-        const cb = pendingAuth.get(data.requestId);
-        if (cb) {
-          pendingAuth.delete(data.requestId);
-          cb(data.auth || { ok: false });
-        }
+      sessionStorage.removeItem(CLICK_SESSION_KEY);
+    } catch (_) {
+      /* ignore */
+    }
+    const job = await getJob();
+    if (!job) return;
+    const pending = Array.isArray(job.pendingNos) ? job.pendingNos.map(String) : [];
+    const nextPending =
+      job.mode === "all" ? pending : pending.filter((n) => n !== String(no));
+    const failCount = (job.failCount || 0) + 1;
+    const consecutiveFails = (job.consecutiveFails || 0) + 1;
+    const failedNos = Array.isArray(job.failedNos) ? job.failedNos.slice() : [];
+    if (no != null) failedNos.push(String(no));
+
+    const shouldStop = consecutiveFails >= MAX_CONSECUTIVE_FAILS;
+    await setJob({
+      pendingNos: nextPending,
+      failCount,
+      failedNos: failedNos.slice(-200),
+      consecutiveFails,
+      currentNo: null,
+      clickIssuedForNo: null,
+      deletingCurrentNo: null,
+      awaitingReload: false,
+      awaitingReloadSince: null,
+      running: shouldStop ? false : job.running,
+      status: shouldStop ? "error" : job.status,
+      statusMessage: shouldStop
+        ? `연속 ${MAX_CONSECUTIVE_FAILS}회 실패로 중지. ${message || ""}`
+        : message || `삭제 실패: ${no}`
+    });
+    setAutomation(false);
+  }
+
+  const CLICK_SESSION_KEY = "dc_delete_tool_click_pending";
+
+  function writeClickSession(no) {
+    try {
+      sessionStorage.setItem(
+        CLICK_SESSION_KEY,
+        JSON.stringify({ no: String(no), t: Date.now() })
+      );
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function takeClickSession() {
+    try {
+      const raw = sessionStorage.getItem(CLICK_SESSION_KEY);
+      if (!raw) return null;
+      sessionStorage.removeItem(CLICK_SESSION_KEY);
+      return JSON.parse(raw);
+    } catch (_) {
+      try {
+        sessionStorage.removeItem(CLICK_SESSION_KEY);
+      } catch (_) {
+        /* ignore */
       }
-    } catch (_) {
-      /* ignore */
+      return null;
     }
-  });
-
-  async function resolveAuth() {
-    const auth = await requestAuthFromPage(3500);
-    if (!auth || !auth.ok) {
-      return {
-        ok: false,
-        message:
-          "디시인사이드 인증값을 확인하지 못했습니다.\n페이지를 새로고침한 후 다시 시도하세요."
-      };
-    }
-    // Soft log sources only (not secret values)
-    try {
-      console.info("[DCDeleteTool] auth sources", auth.sources || {});
-    } catch (_) {
-      /* ignore */
-    }
-    return { ok: true, auth };
   }
+
+  /**
+   * After reload: resolve previous click result, then continue.
+   */
+  async function reconcileAfterLoad(job) {
+    const sessionClick = takeClickSession();
+    const issued = sessionClick
+      ? String(sessionClick.no)
+      : job.clickIssuedForNo != null
+        ? String(job.clickIssuedForNo)
+        : null;
+
+    if (!issued) {
+      if (job.awaitingReload || job.clickIssuedForNo || job.deletingCurrentNo) {
+        await setJob({
+          awaitingReload: false,
+          clickIssuedForNo: null,
+          deletingCurrentNo: null,
+          currentNo: null
+        });
+        return await getJob();
+      }
+      return job;
+    }
+
+    const stillThere = !!findRowByNo(issued);
+
+    if (!stillThere) {
+      await markSuccess(issued);
+      return await getJob();
+    }
+
+    // Reload happened after click (session key present) but row remains → fail
+    if (sessionClick) {
+      await markFailure(issued, `삭제 후에도 목록에 남아 있음: ${issued}`);
+      return await getJob();
+    }
+
+    // Stale storage without a real navigation click — clear and continue
+    await setJob({
+      awaitingReload: false,
+      clickIssuedForNo: null,
+      deletingCurrentNo: null,
+      currentNo: null
+    });
+    return await getJob();
+  }
+
+  async function finishIfDone(job) {
+    if (!job || !job.running) return true;
+
+    if (job.mode === "all") {
+      if (getListItems().length === 0) {
+        await setJob({
+          running: false,
+          paused: false,
+          status: "done",
+          statusMessage: "전체 삭제 완료",
+          currentNo: null,
+          clickIssuedForNo: null,
+          deletingCurrentNo: null,
+          awaitingReload: false,
+          pagePostCount: 0,
+          totalPostCount: readTotalCount()
+        });
+        setAutomation(false);
+        return true;
+      }
+      return false;
+    }
+
+    const pending = Array.isArray(job.pendingNos) ? job.pendingNos : [];
+    if (pending.length === 0) {
+      await setJob({
+        running: false,
+        paused: false,
+        status: "done",
+        statusMessage: job.mode === "test5" ? "테스트 5개 삭제 완료" : "선택 삭제 완료",
+        currentNo: null,
+        clickIssuedForNo: null,
+        deletingCurrentNo: null,
+        awaitingReload: false,
+        pagePostCount: getPageNos().length,
+        totalPostCount: readTotalCount()
+      });
+      setAutomation(false);
+      return true;
+    }
+    return false;
+  }
+
+  function pickNextTarget(job) {
+    if (job.mode === "all") {
+      const first = getListItems()[0];
+      if (!first) return null;
+      const no = String(first.getAttribute("data-no") || "").trim();
+      const btn = findDeleteButton(first);
+      if (!no || !btn) return null;
+      return { no, li: first, btn };
+    }
+
+    const pending = Array.isArray(job.pendingNos) ? job.pendingNos.map(String) : [];
+    for (const no of pending) {
+      const li = findRowByNo(no);
+      if (!li) {
+        // Not on current page — likely already deleted or moved; treat as success skip
+        return { no, missing: true };
+      }
+      const btn = findDeleteButton(li);
+      if (!btn) return { no, li, missingBtn: true };
+      return { no, li, btn };
+    }
+    return null;
+  }
+
+  async function clickNativeDelete(target) {
+    setAutomation(true);
+    // Small tick so page-hook receives SET_AUTOMATION before confirm
+    await sleep(80);
+    try {
+      target.btn.click();
+    } catch (err) {
+      setAutomation(false);
+      throw err;
+    }
+  }
+
+  async function processQueue(reason) {
+    if (processingLock) return;
+    processingLock = true;
+
+    try {
+      if (!parseGallog()) {
+        processingLock = false;
+        return;
+      }
+
+      let job = await getJob();
+      if (!job) {
+        processingLock = false;
+        return;
+      }
+
+      if (job.stopped || !job.running) {
+        setAutomation(false);
+        processingLock = false;
+        return;
+      }
+
+      if (job.paused) {
+        setAutomation(false);
+        startPausedPoll();
+        processingLock = false;
+        return;
+      }
+
+      // Already clicked on THIS page load — wait for navigation/timeout
+      if (clickedThisPageLoad && job.awaitingReload) {
+        processingLock = false;
+        return;
+      }
+
+      job = (await reconcileAfterLoad(job)) || (await getJob());
+      if (!job || !job.running || job.stopped) {
+        processingLock = false;
+        return;
+      }
+      if (job.paused) {
+        startPausedPoll();
+        processingLock = false;
+        return;
+      }
+
+      if (await finishIfDone(job)) {
+        processingLock = false;
+        return;
+      }
+
+      // Post-load settle time for site JS
+      const waitMs = job.delayMs || DELAY.safe;
+      await setJob({ status: "running", statusMessage: `대기 중… (${reason || "load"})` });
+      await sleep(waitMs);
+
+      job = await getJob();
+      if (!job || !job.running || job.paused || job.stopped) {
+        processingLock = false;
+        return;
+      }
+
+      // Resolve missing pending nos (already gone)
+      if (job.mode !== "all") {
+        let pending = Array.isArray(job.pendingNos) ? job.pendingNos.map(String) : [];
+        while (pending.length) {
+          const head = pending[0];
+          if (findRowByNo(head)) break;
+          await markSuccess(head);
+          job = await getJob();
+          pending = Array.isArray(job.pendingNos) ? job.pendingNos.map(String) : [];
+        }
+        if (await finishIfDone(job)) {
+          processingLock = false;
+          return;
+        }
+        job = await getJob();
+      }
+
+      const target = pickNextTarget(job);
+      if (!target) {
+        if (job.mode === "all") {
+          await finishIfDone(job);
+        } else {
+          await setJob({
+            running: false,
+            status: "error",
+            statusMessage: "다음 삭제 대상 버튼을 찾지 못했습니다."
+          });
+        }
+        processingLock = false;
+        return;
+      }
+
+      if (target.missing) {
+        await markSuccess(target.no);
+        processingLock = false;
+        scheduleProcess("missing-skip");
+        return;
+      }
+
+      if (target.missingBtn) {
+        await markFailure(target.no, `삭제 버튼 없음: ${target.no}`);
+        processingLock = false;
+        scheduleProcess("missing-btn");
+        return;
+      }
+
+      await setJob({
+        currentNo: target.no,
+        deletingCurrentNo: target.no,
+        clickIssuedForNo: target.no,
+        awaitingReload: true,
+        awaitingReloadSince: Date.now(),
+        status: "running",
+        statusMessage: `삭제 클릭: ${target.no}`
+      });
+
+      try {
+        clickedThisPageLoad = true;
+        writeClickSession(target.no);
+        await clickNativeDelete(target);
+        startReloadWatch(target.no);
+      } catch (err) {
+        clickedThisPageLoad = false;
+        try {
+          sessionStorage.removeItem(CLICK_SESSION_KEY);
+        } catch (_) {
+          /* ignore */
+        }
+        await markFailure(
+          target.no,
+          String(err && err.message ? err.message : err)
+        );
+        processingLock = false;
+        scheduleProcess("click-error");
+        return;
+      }
+
+      // Wait for navigation; lock stays until unload/timeout continues
+    } catch (err) {
+      await setJob({
+        running: false,
+        status: "error",
+        statusMessage: String(err && err.message ? err.message : err)
+      });
+      setAutomation(false);
+      processingLock = false;
+    }
+  }
+
+  function scheduleProcess(reason) {
+    setTimeout(() => {
+      processQueue(reason);
+    }, 50);
+  }
+
+  function startPausedPoll() {
+    if (pausedPollTimer) return;
+    pausedPollTimer = setInterval(async () => {
+      const job = await getJob();
+      if (!job) return;
+      if (!job.running || job.stopped) {
+        clearInterval(pausedPollTimer);
+        pausedPollTimer = null;
+        return;
+      }
+      if (!job.paused) {
+        clearInterval(pausedPollTimer);
+        pausedPollTimer = null;
+        scheduleProcess("resume");
+      }
+    }, 500);
+  }
+
+  // --- UI (unchanged behavior) ---
 
   function updateSelectedCount() {
-    const n = document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}:checked`).length;
+    const n = document.querySelectorAll(
+      `ul.cont_listbox > li[data-no] input.${CB_CLASS}:checked`
+    ).length;
     const el = document.getElementById("dc-tool-selected-count");
     if (el) el.textContent = String(n);
     return n;
   }
 
   function setAllChecks(on) {
-    document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}`).forEach((cb) => {
-      cb.checked = !!on;
-    });
+    document
+      .querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}`)
+      .forEach((cb) => {
+        cb.checked = !!on;
+      });
     updateSelectedCount();
   }
 
@@ -188,9 +583,19 @@
     updateSelectedCount();
   }
 
+  function getSelectedNos() {
+    return Array.from(
+      document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}:checked`)
+    )
+      .map((cb) => {
+        const li = cb.closest("li[data-no]");
+        return li ? String(li.getAttribute("data-no") || "").trim() : "";
+      })
+      .filter(Boolean);
+  }
+
   function ensureToolbar() {
     if (document.getElementById(UI_ROOT_ID)) return;
-
     const list = document.querySelector("ul.cont_listbox");
     if (!list || !list.parentElement) return;
 
@@ -203,7 +608,7 @@
         <span class="dc-tool-count">선택됨: <strong id="dc-tool-selected-count">0</strong>개</span>
         <button type="button" class="dc-tool-btn dc-tool-danger" data-act="delete-selected">선택한 글 삭제</button>
       </div>
-      <p class="dc-tool-note">확장프로그램 전용 UI · 실제 삭제는 복구가 어려울 수 있습니다.</p>
+      <p class="dc-tool-note">원래 삭제(X) 버튼을 순서대로 클릭합니다 · 복구가 어려울 수 있습니다.</p>
     `;
     list.parentElement.insertBefore(bar, list);
 
@@ -219,376 +624,25 @@
           alert("선택된 게시글이 없습니다.");
           return;
         }
-        if (!confirm(`선택한 ${nos.length}개의 게시글을 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다.`)) {
+        if (
+          !confirm(
+            `선택한 ${nos.length}개의 게시글을 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다.`
+          )
+        ) {
           return;
         }
-        startJob({ mode: "selected", nos });
+        beginJob({ mode: "selected", nos });
       }
-    });
-  }
-
-  function getSelectedNos() {
-    return Array.from(
-      document.querySelectorAll(`ul.cont_listbox > li[data-no] input.${CB_CLASS}:checked`)
-    )
-      .map((cb) => {
-        const li = cb.closest("li[data-no]");
-        return li ? String(li.getAttribute("data-no") || "").trim() : "";
-      })
-      .filter(Boolean);
-  }
-
-  function removeRowByNo(no) {
-    const target = String(no);
-    const li = getListItems().find((el) => String(el.getAttribute("data-no") || "") === target);
-    if (li) li.remove();
-    updateSelectedCount();
-    try {
-      const totalEl =
-        document.querySelector(".cont_head .num") ||
-        document.querySelector(".choice_sect span.num");
-      if (totalEl) {
-        const cur = parseInt(String(totalEl.textContent || "").replace(/[^\d]/g, ""), 10);
-        if (Number.isFinite(cur) && cur > 0) {
-          const next = cur - 1;
-          totalEl.textContent = String(totalEl.textContent || "").replace(String(cur), String(next));
-        }
-      }
-    } catch (_) {
-      /* ignore */
-    }
-  }
-
-  function judgeSuccess(status, payload) {
-    if (status === 401 || status === 403 || status === 429) {
-      return { ok: false, fatal: true, status, reason: `http_${status}` };
-    }
-    if (status < 200 || status >= 300) {
-      return { ok: false, fatal: false, status, reason: `http_${status}` };
-    }
-
-    let data = payload;
-    if (typeof payload === "string") {
-      try {
-        data = JSON.parse(payload);
-      } catch (_) {
-        data = { raw: payload };
-      }
-    }
-
-    try {
-      console.info("[DCDeleteTool] delete response", { status, data });
-    } catch (_) {
-      /* ignore */
-    }
-
-    if (data && typeof data === "object") {
-      const result = data.result != null ? String(data.result) : "";
-      const msg = data.msg != null ? String(data.msg) : "";
-      if (result === "success") return { ok: true, status, data };
-      if (result === "captcha") {
-        return { ok: false, fatal: true, status, reason: "captcha", message: msg };
-      }
-      if (result === "fail") {
-        return { ok: false, fatal: /session|login|로그인|권한/i.test(msg), status, reason: msg || "fail" };
-      }
-      // Some endpoints may return boolean-ish
-      if (data.success === true || data === true) return { ok: true, status, data };
-    }
-
-    // Fallback: HTTP 200 without clear signal — provisional success; caller may verify DOM
-    return { ok: true, status, provisional: true, data };
-  }
-
-  async function deleteOne(no, gallogId) {
-    const resolved = await resolveAuth();
-    if (!resolved.ok) {
-      return {
-        ok: false,
-        fatal: true,
-        reason: "auth_missing",
-        message: resolved.message
-      };
-    }
-    const { auth } = resolved;
-    const url = buildDeleteUrl(gallogId);
-    const params = new URLSearchParams();
-    params.set("no", String(no));
-    params.set("c_k_v", auth.c_k_v);
-    params.set("ci_t", auth.ci_t);
-    params.set("service_code", auth.service_code);
-
-    let res;
-    let text;
-    try {
-      res = await fetch(url, {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-          "X-Requested-With": "XMLHttpRequest"
-        },
-        body: params.toString()
-      });
-      text = await res.text();
-    } catch (err) {
-      return { ok: false, fatal: false, reason: String(err && err.message ? err.message : err) };
-    }
-
-    return judgeSuccess(res.status, text);
-  }
-
-  async function refreshListFromServer() {
-    try {
-      const res = await fetch(location.href, { credentials: "include", cache: "no-store" });
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      const newList = doc.querySelector("ul.cont_listbox");
-      const oldList = document.querySelector("ul.cont_listbox");
-      if (newList && oldList) {
-        oldList.innerHTML = newList.innerHTML;
-        oldList.querySelectorAll(`li[${LI_MARK}]`).forEach((li) => li.removeAttribute(LI_MARK));
-        injectRowCheckboxes();
-      }
-      const newNum =
-        doc.querySelector(".cont_head .num") || doc.querySelector(".choice_sect .num");
-      const oldNum =
-        document.querySelector(".cont_head .num") || document.querySelector(".choice_sect .num");
-      if (newNum && oldNum) oldNum.textContent = newNum.textContent;
-      return getPageNos();
-    } catch (err) {
-      console.warn("[DCDeleteTool] list refresh failed", err);
-      return getPageNos();
-    }
-  }
-
-  async function waitIfPausedOrStopped() {
-    while (true) {
-      const job = await getJob();
-      if (!job) return "abort";
-      if (job.stopped || !job.running) return "stop";
-      if (job.paused) {
-        await sleep(400);
-        continue;
-      }
-      return "go";
-    }
-  }
-
-  async function runDeleteLoop(initialNos, options) {
-    if (jobRunning) return;
-    jobRunning = true;
-
-    const gallog = parseGallog();
-    if (!gallog) {
-      await setJob({
-        running: false,
-        status: "error",
-        statusMessage: "갤로그 게시글(posting) 페이지가 아닙니다."
-      });
-      jobRunning = false;
-      return;
-    }
-
-    const mode = options.mode || "selected";
-    const delayMs = options.delayMs || DELAY.safe;
-    let queue = initialNos.slice();
-    let successCount = options.resumeSuccess || 0;
-    let failCount = options.resumeFail || 0;
-    let consecutiveFails = 0;
-    const failedNos = Array.isArray(options.resumeFailedNos)
-      ? options.resumeFailedNos.slice()
-      : [];
-    const totalTarget =
-      mode === "all" ? options.totalTarget || readTotalCount() || queue.length : queue.length;
-
-    await setJob({
-      running: true,
-      paused: false,
-      stopped: false,
-      mode,
-      delayMs,
-      totalTarget,
-      successCount,
-      failCount,
-      failedNos: failedNos.slice(-200),
-      currentNo: null,
-      startedAt: options.resumeStartedAt || new Date().toISOString(),
-      status: "running",
-      statusMessage: options.resuming ? "새로고침 후 이어서 삭제" : "",
-      consecutiveFails: 0,
-      gallogId: gallog.gallogId,
-      isPostingPage: true
-    });
-
-    try {
-      while (true) {
-        const gate = await waitIfPausedOrStopped();
-        if (gate === "stop" || gate === "abort") break;
-
-        if (!queue.length) {
-          if (mode === "all") {
-            await setJob({ statusMessage: "목록 갱신 중…" });
-            const next = await refreshListFromServer();
-            if (!next.length) break;
-            queue = next.slice();
-          } else {
-            break;
-          }
-        }
-
-        const no = queue.shift();
-        await setJob({ currentNo: no, statusMessage: `삭제 중: ${no}` });
-
-        const result = await deleteOne(no, gallog.gallogId);
-
-        if (result.ok) {
-          successCount += 1;
-          consecutiveFails = 0;
-          removeRowByNo(no);
-          await setJob({
-            successCount,
-            consecutiveFails: 0,
-            currentNo: no
-          });
-        } else {
-          failCount += 1;
-          consecutiveFails += 1;
-          failedNos.push(String(no));
-          await setJob({
-            failCount,
-            failedNos: failedNos.slice(-200),
-            consecutiveFails,
-            currentNo: no,
-            statusMessage: result.message || result.reason || "삭제 실패"
-          });
-
-          if (result.fatal || consecutiveFails >= 5) {
-            await setJob({
-              running: false,
-              status: "error",
-              statusMessage:
-                result.message ||
-                "로그인 세션 만료 또는 서버 제한 가능성. 작업을 중지했습니다."
-            });
-            break;
-          }
-        }
-
-        const gate2 = await waitIfPausedOrStopped();
-        if (gate2 === "stop" || gate2 === "abort") break;
-
-        // jittered delay — never aggressive
-        const wait = delayMs + Math.floor(Math.random() * 400);
-        await sleep(wait);
-      }
-
-      const job = await getJob();
-      if (job && job.running && !job.stopped && job.status !== "error") {
-        // Final refresh for consistency
-        if (mode === "all" || mode === "selected" || mode === "test5") {
-          await refreshListFromServer();
-        }
-        await setJob({
-          running: false,
-          paused: false,
-          status: "done",
-          statusMessage: "완료",
-          currentNo: null,
-          pagePostCount: getPageNos().length,
-          totalPostCount: readTotalCount()
-        });
-      } else if (job && job.stopped) {
-        await setJob({
-          running: false,
-          status: "ready",
-          statusMessage: "사용자 중지",
-          currentNo: null
-        });
-      }
-    } catch (err) {
-      await setJob({
-        running: false,
-        status: "error",
-        statusMessage: String(err && err.message ? err.message : err)
-      });
-    } finally {
-      jobRunning = false;
-      syncPageInfoToJob();
-    }
-  }
-
-  async function startJob({ mode, nos }) {
-    const gallog = parseGallog();
-    if (!gallog) {
-      alert("갤로그 게시글(posting) 페이지에서만 사용할 수 있습니다.");
-      return;
-    }
-
-    const job = await getJob();
-    if (job && job.running) {
-      alert("이미 삭제 작업이 진행 중입니다.");
-      return;
-    }
-
-    const delayMs = (job && job.delayMs) || DELAY.safe;
-    let list = (nos || []).map(String).filter(Boolean);
-
-    if (mode === "test5") {
-      list = getPageNos().slice(0, 5);
-      if (!list.length) {
-        alert("삭제할 게시글이 없습니다.");
-        return;
-      }
-      if (
-        !confirm(
-          "게시글 5개를 실제로 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다."
-        )
-      ) {
-        return;
-      }
-    }
-
-    if (mode === "all") {
-      // confirmations are done in popup; here just collect first page
-      list = getPageNos();
-      if (!list.length) {
-        alert("삭제할 게시글이 없습니다.");
-        return;
-      }
-    }
-
-    if (mode === "selected") {
-      if (!list.length) {
-        alert("선택된 게시글이 없습니다.");
-        return;
-      }
-    }
-
-    // Preflight auth
-    const auth = await resolveAuth();
-    if (!auth.ok) {
-      alert(auth.message);
-      await setJob({ status: "error", statusMessage: auth.message });
-      return;
-    }
-
-    runDeleteLoop(list, {
-      mode,
-      delayMs,
-      totalTarget: mode === "all" ? readTotalCount() || list.length : list.length
     });
   }
 
   async function syncPageInfoToJob() {
     const gallog = parseGallog();
-    const pagePostCount = getPageNos().length;
-    const totalPostCount = readTotalCount();
     await setJob({
       isPostingPage: !!gallog,
       gallogId: gallog ? gallog.gallogId : null,
-      pagePostCount,
-      totalPostCount
+      pagePostCount: getPageNos().length,
+      totalPostCount: readTotalCount()
     });
   }
 
@@ -605,6 +659,78 @@
     };
   }
 
+  async function beginJob({ mode, nos }) {
+    const gallog = parseGallog();
+    if (!gallog) {
+      alert("갤로그 게시글(posting) 페이지에서만 사용할 수 있습니다.");
+      return { ok: false, error: "not_posting_page" };
+    }
+
+    const existing = await getJob();
+    if (existing && existing.running) {
+      alert("이미 삭제 작업이 진행 중입니다.");
+      return { ok: false, error: "already_running" };
+    }
+
+    let pendingNos = [];
+    let initialTotal = 0;
+
+    if (mode === "test5") {
+      pendingNos = getPageNos().slice(0, 5);
+      initialTotal = pendingNos.length;
+      if (!pendingNos.length) {
+        alert("삭제할 게시글이 없습니다.");
+        return { ok: false, error: "empty" };
+      }
+    } else if (mode === "selected") {
+      pendingNos = (nos || []).map(String).filter(Boolean);
+      initialTotal = pendingNos.length;
+      if (!pendingNos.length) {
+        alert("선택된 게시글이 없습니다.");
+        return { ok: false, error: "empty" };
+      }
+    } else if (mode === "all") {
+      pendingNos = [];
+      initialTotal = readTotalCount() || getPageNos().length;
+      if (!getPageNos().length) {
+        alert("삭제할 게시글이 없습니다.");
+        return { ok: false, error: "empty" };
+      }
+    }
+
+    const delayMs = (existing && existing.delayMs) || DELAY.safe;
+
+    await setJob({
+      mode,
+      running: true,
+      paused: false,
+      stopped: false,
+      pendingNos,
+      successCount: 0,
+      failCount: 0,
+      failedNos: [],
+      initialTotal,
+      totalTarget: initialTotal,
+      currentNo: null,
+      clickIssuedForNo: null,
+      deletingCurrentNo: null,
+      awaitingReload: false,
+      awaitingReloadSince: null,
+      consecutiveFails: 0,
+      delayMs,
+      startedAt: new Date().toISOString(),
+      status: "running",
+      statusMessage: "삭제 시작",
+      gallogId: gallog.gallogId,
+      isPostingPage: true,
+      pagePostCount: getPageNos().length,
+      totalPostCount: readTotalCount()
+    });
+
+    scheduleProcess("start");
+    return { ok: true };
+  }
+
   chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     (async () => {
       try {
@@ -615,8 +741,15 @@
             break;
           }
           case "START_TEST5": {
-            await startJob({ mode: "test5" });
-            sendResponse({ ok: true });
+            if (
+              !confirm(
+                "게시글 5개를 실제로 삭제합니다.\n삭제된 게시글은 복구하기 어려울 수 있습니다."
+              )
+            ) {
+              sendResponse({ ok: false, error: "cancelled" });
+              break;
+            }
+            sendResponse(await beginJob({ mode: "test5" }));
             break;
           }
           case "START_SELECTED": {
@@ -633,32 +766,52 @@
               sendResponse({ ok: false, error: "cancelled" });
               break;
             }
-            await startJob({ mode: "selected", nos });
-            sendResponse({ ok: true });
+            sendResponse(await beginJob({ mode: "selected", nos }));
             break;
           }
           case "START_ALL": {
-            await startJob({ mode: "all" });
-            sendResponse({ ok: true });
+            sendResponse(await beginJob({ mode: "all" }));
             break;
           }
           case "PAUSE": {
-            await setJob({ paused: true, status: "paused", statusMessage: "일시정지" });
+            clearReloadWatch();
+            setAutomation(false);
+            await setJob({
+              paused: true,
+              status: "paused",
+              statusMessage: "일시정지",
+              awaitingReload: false,
+              deletingCurrentNo: null
+            });
+            startPausedPoll();
             sendResponse({ ok: true });
             break;
           }
           case "RESUME": {
-            await setJob({ paused: false, status: "running", statusMessage: "재개" });
+            await setJob({
+              paused: false,
+              stopped: false,
+              running: true,
+              status: "running",
+              statusMessage: "재개"
+            });
+            scheduleProcess("resume-msg");
             sendResponse({ ok: true });
             break;
           }
           case "STOP": {
+            clearReloadWatch();
+            setAutomation(false);
             await setJob({
               stopped: true,
               running: false,
               paused: false,
               status: "ready",
-              statusMessage: "중지됨"
+              statusMessage: "중지됨",
+              currentNo: null,
+              clickIssuedForNo: null,
+              deletingCurrentNo: null,
+              awaitingReload: false
             });
             sendResponse({ ok: true });
             break;
@@ -679,49 +832,15 @@
     return true;
   });
 
-  async function maybeResumeJob() {
-    const job = await getJob();
-    if (!job) return;
-    // Explicit stop must never auto-restart
-    if (job.stopped || job.status === "error" || job.status === "done") return;
-    if (!(job.running && !job.paused)) return;
-    if (job.mode !== "all") return;
-    if (!parseGallog()) return;
-    if (jobRunning) return;
-
-    const nos = getPageNos();
-    if (!nos.length) {
-      await setJob({
-        running: false,
-        status: "done",
-        statusMessage: "완료 (남은 글 없음)"
-      });
-      return;
-    }
-
-    runDeleteLoop(nos, {
-      mode: "all",
-      delayMs: job.delayMs || DELAY.safe,
-      totalTarget: job.totalTarget || readTotalCount() || nos.length,
-      resumeSuccess: job.successCount || 0,
-      resumeFail: job.failCount || 0,
-      resumeFailedNos: job.failedNos || [],
-      resumeStartedAt: job.startedAt,
-      resuming: true
-    });
-  }
-
   function bootUi() {
     if (!parseGallog()) {
       syncPageInfoToJob();
       return;
     }
-    injectPageHook();
     ensureToolbar();
     injectRowCheckboxes();
     syncPageInfoToJob();
 
-    // Observe list mutations (AJAX pagination etc.)
     const list = document.querySelector("ul.cont_listbox");
     if (list && !list.__dcObserved) {
       list.__dcObserved = true;
@@ -733,14 +852,34 @@
     }
   }
 
-  injectPageHook();
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-      bootUi();
-      maybeResumeJob();
-    });
-  } else {
-    bootUi();
-    maybeResumeJob();
+  async function bootAutomation() {
+    const job = await getJob();
+    if (!job) return;
+    if (job.stopped) return;
+    if (job.running && !job.paused && parseGallog()) {
+      scheduleProcess("boot");
+    } else if (job.running && job.paused) {
+      startPausedPoll();
+    }
   }
+
+  // Hook early so confirm wrap is ready before clicks
+  injectPageHook();
+
+  function onReady() {
+    bootUi();
+    bootAutomation();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", onReady, { once: true });
+  } else {
+    onReady();
+  }
+
+  // Also after full load (images/scripts) — re-trigger settle if still running
+  window.addEventListener("load", () => {
+    bootUi();
+    bootAutomation();
+  });
 })();
