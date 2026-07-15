@@ -94,30 +94,59 @@ async function onClear() {
 }
 
 function clientSanitizeJsonText(text) {
-  // Extra pass before download: scrub obvious secrets in serialized form
+  // Extra pass before download: redact secrets only.
+  // Do NOT delete requestBody / formData / parsedBody / rawText — needed for delete API analysis.
   try {
     const data = JSON.parse(text);
     const sensitiveKey =
-      /^(password|passwd|pwd|cookie|set-cookie|authorization|session|sessionid|token|access_token|refresh_token|auth|csrf|csrf_token|_csrf)$/i;
+      /^(password|passwd|pwd|pw|cookie|set-cookie|authorization|session|sessionid|token|access_token|refresh_token)$/i;
+    const preserveBodyKeys = /^(requestBody|formData|parsedBody|rawText|hasFormData|hasRaw|byteLength|rawBodyUnavailable|reason|parseError)$/i;
 
-    function walk(node) {
-      if (Array.isArray(node)) return node.map(walk);
+    function walk(node, parentKey) {
+      if (Array.isArray(node)) return node.map((item) => walk(item, parentKey));
       if (node && typeof node === "object") {
         const out = {};
         for (const [k, v] of Object.entries(node)) {
-          if (sensitiveKey.test(k)) out[k] = "[REDACTED]";
-          else if (/^(headers|requestHeaders|responseHeaders)$/i.test(k)) out[k] = "[OMITTED]";
-          else out[k] = walk(v);
+          // Keep body analysis containers; only mask nested sensitive field values
+          if (preserveBodyKeys.test(k)) {
+            out[k] = walk(v, k);
+            continue;
+          }
+          if (sensitiveKey.test(k)) {
+            out[k] = "[REDACTED]";
+            continue;
+          }
+          if (/^service_code$/i.test(k) && (typeof v === "string" || typeof v === "number")) {
+            const raw = String(v);
+            out[k] = {
+              service_code_present: raw.length > 0,
+              service_code_length: raw.length
+            };
+            continue;
+          }
+          if (/^(headers|requestHeaders|responseHeaders)$/i.test(k)) {
+            out[k] = "[OMITTED]";
+            continue;
+          }
+          out[k] = walk(v, k);
         }
         return out;
       }
-      if (typeof node === "string" && /password|authorization|bearer\s+/i.test(node)) {
+      // Do not wipe entire rawText / form values just because they contain the word "token" as a key name in URL
+      if (
+        typeof node === "string" &&
+        parentKey &&
+        sensitiveKey.test(parentKey)
+      ) {
+        return "[REDACTED]";
+      }
+      if (typeof node === "string" && /^(?:Bearer\s+\S+)$/i.test(node.trim())) {
         return "[REDACTED]";
       }
       return node;
     }
 
-    return JSON.stringify(walk(data), null, 2);
+    return JSON.stringify(walk(data, ""), null, 2);
   } catch {
     return text;
   }

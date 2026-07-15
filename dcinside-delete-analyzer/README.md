@@ -40,11 +40,42 @@ Chrome Manifest V3 확장프로그램입니다.
 | 페이지 스냅샷 | `page_snapshot` | 목록/페이지네이션 후보 HTML, 삭제 버튼 후보 수 |
 | 삭제 후보 클릭 | `delete_candidate_click` | DOM, selector/XPath, 게시글 행 메타 |
 | confirm | `confirm_shown`, `confirm_result` | 메시지, true/false |
-| 네트워크 | `network_request`, `network_response`, `network_error` | URL, method, formData(마스킹), status |
-| 이동/새로고침 | `content_script_loaded`, `page_ready`, `before_unload`, `visibility_change`, `pageshow`, `pagehide` | URL, readyState, navigation type |
-| 오류 | `extension_error` | 확장프로그램 내부 오류 (페이지는 깨지지 않도록 처리) |
+| 일반 네트워크 | `network_request`, `network_response`, `network_error` | URL, method, requestBody, status |
+| **삭제 API** | `delete_network_request`, `delete_network_response` | `/ajax/log_list_ajax/delete` 전용 · formData/rawText/parsedBody |
+| 이동/새로고침 | `content_script_loaded`, `page_ready`, `before_unload`, … | URL, readyState, navigation type |
+| 오류 | `extension_error` | 확장프로그램 내부 오류 |
 
 삭제 후보 클릭 후 약 15초 동안의 네트워크 이벤트에는 `relatedDeleteInteraction: true`와 동일한 `interactionId`가 붙습니다.
+
+`requestBody`에는 가능한 경우 다음이 포함됩니다.
+
+- `formData` — Chrome이 파싱한 multipart/form 필드
+- `rawText` — raw body UTF-8 문자열
+- `parsedBody` — `application/x-www-form-urlencoded` 파싱 결과 (`no`, `action` 등)
+- `service_code` — 원문 대신 `{ service_code_present, service_code_length }`
+
+---
+
+## 삭제 POST body 확인 테스트
+
+1. `chrome://extensions`에서 확장프로그램 **새로고침**
+2. **gallog.dcinside.com** 마이페이지(글 목록) 접속
+3. 확장 아이콘 → **기록 시작**
+4. 게시글 **1개**를 직접 삭제 (X → confirm 확인)
+5. 목록 새로고침/갱신이 **완료될 때까지** 대기
+6. **기록 중지**
+7. **JSON 로그 다운로드**
+8. JSON에서 검색:
+   - `delete_network_request`
+   - `log_list_ajax/delete`
+   - `requestBody` / `formData` / `parsedBody` / `rawText`
+
+기대 결과:
+
+- `delete_network_request`에 삭제 POST body가 있음
+- `delete_network_response`가 같은 `requestId`로 연결됨
+- `password` / `token` / `session` 등은 `[REDACTED]`
+- `service_code`는 길이만 기록됨
 
 ---
 
@@ -69,7 +100,7 @@ dcinside-delete-analyzer/
 - `storage` — 로그 임시 저장
 - `downloads` — JSON 저장
 - `webRequest` — dcinside 요청 관찰 (수정/차단 없음)
-- host: `https://gall.dcinside.com/*`, `https://*.dcinside.com/*`
+- host: `gall.dcinside.com`, **`gallog.dcinside.com`**, `*.dcinside.com`
 
 ---
 
@@ -77,5 +108,6 @@ dcinside-delete-analyzer/
 
 - Background는 **service worker**라서 DOM API를 쓰지 않습니다.
 - `webRequest`는 **관찰**용이며, 응답 body 전체를 읽지는 않습니다.
+- **요청 body**는 `onBeforeRequest`에서 **동기적으로 복사**해야 합니다. `await` 이후에 읽으면 body가 비는 경우가 있습니다 (v1.1.0에서 수정).
 - `page-hook.js`는 `web_accessible_resources`로 페이지에 주입해 isolated world의 `window.confirm`과 페이지 쪽 confirm을 맞춥니다.
 - 새로고침 후에도 `chrome.storage.local`의 `recording` / `sessionId`로 같은 세션을 유지합니다.

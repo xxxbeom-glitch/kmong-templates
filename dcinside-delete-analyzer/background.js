@@ -1,18 +1,26 @@
 /**
  * Service worker: recording session, storage, webRequest observation, export.
  * DOM APIs are not used here.
+ *
+ * IMPORTANT: chrome.webRequest requestBody must be copied synchronously in the
+ * listener callback. Any await before reading details.requestBody can lose the body.
  */
 
-const EXTENSION_VERSION = "1.0.0";
+const EXTENSION_VERSION = "1.1.0";
 const INTERACTION_WINDOW_MS = 15000;
 const MAX_HTML_CHARS = 50 * 1024;
 const MAX_EVENTS = 2000;
+const MAX_BODY_CHARS = 32 * 1024;
 
-const SENSITIVE_KEY_RE =
-  /^(password|passwd|pwd|pass|cookie|set-cookie|authorization|session|sessionid|session_id|token|access_token|refresh_token|auth|csrf|csrf_token|_csrf|xsrf|xsrf_token|si_token|ci_t|PHPSESSID|remember|secret|api[_-]?key)$/i;
+/** Keys whose values must always be redacted in form/body params */
+const FORM_REDACT_KEY_RE =
+  /^(password|passwd|pwd|pw|cookie|set-cookie|authorization|token|access_token|refresh_token|session|sessionid|session_id)$/i;
+
+/** Header-like fields never stored */
+const OMIT_KEY_RE = /^(headers|requestHeaders|responseHeaders|setCookie)$/i;
 
 const SENSITIVE_VALUE_HINT_RE =
-  /password|passwd|authorization|bearer\s+[a-z0-9._\-]+|sessionid|access_token|refresh_token/i;
+  /^(?:Bearer\s+\S+|password|passwd)$/i;
 
 function nowIso() {
   return new Date().toISOString();
@@ -30,9 +38,36 @@ function makeEventId() {
   return `evt_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
 }
 
-function isSensitiveKey(key) {
+function isFormRedactKey(key) {
   if (!key || typeof key !== "string") return false;
-  return SENSITIVE_KEY_RE.test(key.trim());
+  return FORM_REDACT_KEY_RE.test(key.trim());
+}
+
+function isServiceCodeKey(key) {
+  return /^service_code$/i.test(String(key || "").trim());
+}
+
+function isServiceCodeMeta(value) {
+  return (
+    value &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    ("service_code_present" in value || "service_code_length" in value)
+  );
+}
+
+function toServiceCodeMeta(value) {
+  if (isServiceCodeMeta(value)) {
+    return {
+      service_code_present: !!value.service_code_present,
+      service_code_length: Number(value.service_code_length) || 0
+    };
+  }
+  const raw = value == null ? "" : String(value);
+  return {
+    service_code_present: raw.length > 0,
+    service_code_length: raw.length
+  };
 }
 
 function truncateHtml(html) {
@@ -42,46 +77,329 @@ function truncateHtml(html) {
   return s.slice(0, MAX_HTML_CHARS) + `\n<!-- truncated: originalLength=${s.length} -->`;
 }
 
-function sanitizeValue(key, value) {
-  if (value == null) return value;
-  if (isSensitiveKey(key)) return "[REDACTED]";
-  if (typeof value === "string") {
-    if (SENSITIVE_VALUE_HINT_RE.test(value)) return "[REDACTED]";
-    if (value.length > MAX_HTML_CHARS) {
-      return value.slice(0, MAX_HTML_CHARS) + `…[truncated len=${value.length}]`;
-    }
-    return value;
-  }
-  if (Array.isArray(value)) {
-    return value.map((v) => sanitizeValue(key, v));
-  }
-  if (typeof value === "object") {
-    return sanitizeObject(value);
-  }
-  return value;
+function truncateText(text, max) {
+  if (text == null) return text;
+  const s = String(text);
+  const m = max || MAX_BODY_CHARS;
+  if (s.length <= m) return s;
+  return s.slice(0, m) + `…[truncated len=${s.length}]`;
 }
 
+/**
+ * Sanitize a single form/body field value.
+ * Preserves analysis keys (no, gall_id, action, …).
+ * service_code → presence/length only.
+ */
+function sanitizeParamValue(key, value) {
+  if (isServiceCodeKey(key)) {
+    return toServiceCodeMeta(value);
+  }
+  if (isFormRedactKey(key)) return "[REDACTED]";
+  if (value == null) return value;
+  if (typeof value === "string") {
+    if (SENSITIVE_VALUE_HINT_RE.test(value)) return "[REDACTED]";
+    return truncateText(value, 8000);
+  }
+  if (typeof value === "number" || typeof value === "boolean") return value;
+  return truncateText(String(value), 8000);
+}
+
+function sanitizeFormData(formData) {
+  if (!formData || typeof formData !== "object") return formData;
+  const out = {};
+  for (const [key, values] of Object.entries(formData)) {
+    if (isServiceCodeKey(key)) {
+      if (isServiceCodeMeta(values)) {
+        out[key] = toServiceCodeMeta(values);
+      } else {
+        const arr = Array.isArray(values) ? values : [values];
+        const joined = arr
+          .map((v) => (isServiceCodeMeta(v) ? "" : v == null ? "" : String(v)))
+          .join("");
+        // If nested meta already present, prefer first meta
+        const metaItem = arr.find(isServiceCodeMeta);
+        out[key] = metaItem
+          ? toServiceCodeMeta(metaItem)
+          : toServiceCodeMeta(joined);
+      }
+      continue;
+    }
+    const arr = Array.isArray(values) ? values : [values];
+    out[key] = arr.map((v) => sanitizeParamValue(key, v));
+  }
+  return out;
+}
+
+function sanitizeParsedBody(parsed) {
+  if (!parsed || typeof parsed !== "object") return parsed;
+  const out = {};
+  for (const [key, value] of Object.entries(parsed)) {
+    if (isServiceCodeKey(key)) {
+      out[key] = toServiceCodeMeta(value);
+      continue;
+    }
+    out[key] = sanitizeParamValue(key, value);
+  }
+  return out;
+}
+
+/**
+ * Deep sanitize for storage/export.
+ * Does NOT strip requestBody / formData / parsedBody / rawText — only masks secrets.
+ */
 function sanitizeObject(obj) {
   if (obj == null || typeof obj !== "object") return obj;
   if (Array.isArray(obj)) return obj.map((item) => sanitizeObject(item));
+
+  // Special-case known body containers so nested keys use form rules
+  if (obj.__isRequestBodyRecord) {
+    return sanitizeRequestBodyRecord(obj);
+  }
+
   const out = {};
   for (const [k, v] of Object.entries(obj)) {
-    if (isSensitiveKey(k)) {
-      out[k] = "[REDACTED]";
-      continue;
-    }
-    // Never keep raw header maps
-    if (/^(headers|requestHeaders|responseHeaders|cookie|setCookie)$/i.test(k)) {
+    if (OMIT_KEY_RE.test(k) || /^cookie$/i.test(k)) {
       out[k] = "[OMITTED]";
       continue;
     }
-    if (typeof v === "string" && /(html|outerHTML|innerHTML)$/i.test(k)) {
-      out[k] = truncateHtml(sanitizeValue(k, v));
+    if (isFormRedactKey(k) && typeof v !== "object") {
+      out[k] = "[REDACTED]";
       continue;
     }
-    out[k] = sanitizeValue(k, v);
+    if (k === "requestBody" && v && typeof v === "object") {
+      out[k] = sanitizeRequestBodyRecord(v);
+      continue;
+    }
+    if (k === "formData" && v && typeof v === "object") {
+      out[k] = sanitizeFormData(v);
+      continue;
+    }
+    if (k === "parsedBody" && v && typeof v === "object") {
+      out[k] = sanitizeParsedBody(v);
+      continue;
+    }
+    if (typeof v === "string" && /(html|outerHTML|innerHTML)$/i.test(k)) {
+      out[k] = truncateHtml(v);
+      continue;
+    }
+    if (v && typeof v === "object") {
+      out[k] = sanitizeObject(v);
+      continue;
+    }
+    if (typeof v === "string" && SENSITIVE_VALUE_HINT_RE.test(v)) {
+      out[k] = "[REDACTED]";
+      continue;
+    }
+    out[k] = v;
   }
   return out;
+}
+
+function sanitizeRequestBodyRecord(body) {
+  if (!body || typeof body !== "object") return body;
+  const out = {};
+  if (body.error) out.error = String(body.error);
+  if (body.rawBodyUnavailable) out.rawBodyUnavailable = true;
+  if (body.reason) out.reason = body.reason;
+  if (body.byteLength != null) out.byteLength = body.byteLength;
+  if (body.hasFormData != null) out.hasFormData = !!body.hasFormData;
+  if (body.hasRaw != null) out.hasRaw = !!body.hasRaw;
+  if (body.formData) out.formData = sanitizeFormData(body.formData);
+  if (body.rawText != null) out.rawText = truncateText(body.rawText, MAX_BODY_CHARS);
+  if (body.parsedBody) out.parsedBody = sanitizeParsedBody(body.parsedBody);
+  if (body.parseError) out.parseError = String(body.parseError);
+  return out;
+}
+
+/**
+ * MUST run synchronously inside onBeforeRequest — copy buffers before any await.
+ */
+function snapshotRequestBodySync(requestBody) {
+  if (!requestBody) return null;
+  const snap = {
+    hasFormData: false,
+    hasRaw: false
+  };
+
+  if (requestBody.error) {
+    snap.error = String(requestBody.error);
+  }
+
+  if (requestBody.formData) {
+    snap.hasFormData = true;
+    snap.formData = {};
+    try {
+      for (const [key, values] of Object.entries(requestBody.formData)) {
+        const arr = Array.isArray(values) ? values : [values];
+        snap.formData[key] = arr.map((v) => (v == null ? "" : String(v)));
+      }
+    } catch (err) {
+      snap.formDataError = String(err && err.message ? err.message : err);
+    }
+  }
+
+  if (requestBody.raw && requestBody.raw.length) {
+    snap.hasRaw = true;
+    try {
+      let total = 0;
+      const chunks = [];
+      for (const part of requestBody.raw) {
+        if (part && part.file) {
+          snap.rawFile = String(part.file);
+          continue;
+        }
+        if (!part || part.bytes == null) {
+          snap.rawBodyUnavailable = true;
+          snap.reason = "missing_bytes";
+          continue;
+        }
+        const src =
+          part.bytes instanceof ArrayBuffer
+            ? new Uint8Array(part.bytes)
+            : new Uint8Array(part.bytes);
+        total += src.byteLength;
+        if (total > 64 * 1024) {
+          snap.rawBodyUnavailable = true;
+          snap.reason = "too_large";
+          snap.byteLength = total;
+          return snap;
+        }
+        const copy = new Uint8Array(src.byteLength);
+        copy.set(src);
+        chunks.push(copy);
+      }
+      if (chunks.length) {
+        const merged = new Uint8Array(total);
+        let offset = 0;
+        for (const c of chunks) {
+          merged.set(c, offset);
+          offset += c.byteLength;
+        }
+        snap._rawBytes = merged; // consumed next by buildRequestBodyRecord
+        snap.byteLength = merged.byteLength;
+      }
+    } catch (err) {
+      snap.rawBodyUnavailable = true;
+      snap.reason = String(err && err.message ? err.message : err);
+    }
+  }
+
+  if (!snap.hasFormData && !snap.hasRaw && !snap.error) {
+    snap.rawBodyUnavailable = true;
+    snap.reason = "empty_requestBody";
+  }
+
+  return snap;
+}
+
+function looksLikeFormUrlEncoded(text) {
+  if (!text || typeof text !== "string") return false;
+  if (text.indexOf("=") === -1) return false;
+  // Avoid treating JSON as form
+  const t = text.trim();
+  if (t.startsWith("{") || t.startsWith("[")) return false;
+  return /[^=&\s]+=/.test(t) || t.indexOf("&") !== -1;
+}
+
+function parseUrlEncoded(text) {
+  const parsed = {};
+  try {
+    const params = new URLSearchParams(text);
+    for (const key of params.keys()) {
+      const all = params.getAll(key);
+      parsed[key] = all.length <= 1 ? all[0] : all;
+    }
+    return parsed;
+  } catch (err) {
+    return { __parseError: String(err && err.message ? err.message : err) };
+  }
+}
+
+/**
+ * Convert sync snapshot (possibly with _rawBytes) into a JSON-safe requestBody record.
+ */
+function buildRequestBodyRecord(snap) {
+  if (!snap) {
+    return { rawBodyUnavailable: true, reason: "no_requestBody" };
+  }
+
+  const record = {
+    hasFormData: !!snap.hasFormData,
+    hasRaw: !!snap.hasRaw
+  };
+
+  if (snap.error) record.error = snap.error;
+  if (snap.formDataError) record.formDataError = snap.formDataError;
+  if (snap.rawFile) record.rawFile = snap.rawFile;
+  if (snap.byteLength != null) record.byteLength = snap.byteLength;
+
+  if (snap.formData) {
+    record.formData = sanitizeFormData(snap.formData);
+  }
+
+  if (snap._rawBytes) {
+    try {
+      let suspicious = 0;
+      const bytes = snap._rawBytes;
+      for (let i = 0; i < Math.min(bytes.byteLength, 512); i++) {
+        if (bytes[i] === 0) suspicious++;
+      }
+      if (suspicious > 2) {
+        record.rawBodyUnavailable = true;
+        record.reason = "binary_null_bytes";
+      } else {
+        const decoder = new TextDecoder("utf-8");
+        const bodyText = decoder.decode(bytes);
+        record.rawText = truncateText(bodyText, MAX_BODY_CHARS);
+
+        if (looksLikeFormUrlEncoded(bodyText)) {
+          const parsed = parseUrlEncoded(bodyText);
+          if (parsed.__parseError) {
+            record.parseError = parsed.__parseError;
+          } else {
+            record.parsedBody = sanitizeParsedBody(parsed);
+          }
+        }
+      }
+    } catch (err) {
+      record.rawBodyUnavailable = true;
+      record.reason = String(err && err.message ? err.message : err);
+    }
+  } else if (snap.rawBodyUnavailable) {
+    record.rawBodyUnavailable = true;
+    if (snap.reason) record.reason = snap.reason;
+  } else if (snap.hasRaw && !snap.formData) {
+    record.rawBodyUnavailable = true;
+    record.reason = snap.reason || "raw_not_decodable";
+  }
+
+  // If only formData exists, still fine — no raw needed
+  if (!record.formData && !record.rawText && !record.parsedBody && !record.rawBodyUnavailable && !record.error) {
+    if (!snap.hasFormData && !snap.hasRaw) {
+      record.rawBodyUnavailable = true;
+      record.reason = snap.reason || "empty_requestBody";
+    }
+  }
+
+  return record;
+}
+
+function isDeleteApiUrl(url) {
+  try {
+    const u = String(url || "");
+    return /\/ajax\/log_list_ajax\/delete/i.test(u);
+  } catch {
+    return false;
+  }
+}
+
+function isDeleteRelatedUrl(url) {
+  try {
+    const u = String(url || "").toLowerCase();
+    return isDeleteApiUrl(u) || /delete/i.test(u);
+  } catch {
+    return false;
+  }
 }
 
 function defaultState() {
@@ -149,10 +467,11 @@ async function appendEvent(partial) {
         undefined
     });
 
-    // relatedDeleteInteraction for network within window
+    const isNet =
+      /^(network_|delete_network_)/.test(event.eventType || "");
     if (
       interactionActive &&
-      /^network_/.test(event.eventType) &&
+      isNet &&
       event.relatedDeleteInteraction == null
     ) {
       event.relatedDeleteInteraction = true;
@@ -161,7 +480,6 @@ async function appendEvent(partial) {
 
     session.events.push(event);
 
-    // Cap events to avoid storage blow-up
     if (session.events.length > MAX_EVENTS) {
       session.events = session.events.slice(-MAX_EVENTS);
       session.eventsTruncated = true;
@@ -206,7 +524,6 @@ async function startRecording() {
     events: []
   });
   await setState(state);
-  // Content scripts watch chrome.storage.onChanged and take page_snapshot.
   return { ok: true, state: publicStatus(await getState()) };
 }
 
@@ -254,7 +571,7 @@ function buildExportPayload(state) {
     exportedAt: nowIso(),
     extensionVersion: EXTENSION_VERSION,
     userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "service-worker",
-    note: "Sensitive fields (password, cookie, authorization, tokens, etc.) are redacted or omitted.",
+    note: "Sensitive fields (password, cookie, authorization, tokens, etc.) are redacted. requestBody/formData/parsedBody are preserved for delete-API analysis. service_code stores only presence/length.",
     sessions
   });
 }
@@ -272,6 +589,14 @@ async function exportJson() {
 // --- webRequest observation ---
 
 const pendingRequests = new Map(); // requestId -> meta
+const WEBREQUEST_URL_FILTER = [
+  "https://gall.dcinside.com/*",
+  "https://gallog.dcinside.com/*",
+  "https://*.dcinside.com/*",
+  "http://gall.dcinside.com/*",
+  "http://gallog.dcinside.com/*",
+  "http://*.dcinside.com/*"
+];
 
 function isDcinsideUrl(url) {
   try {
@@ -282,111 +607,87 @@ function isDcinsideUrl(url) {
   }
 }
 
-function decodeRawBody(rawChunks) {
-  if (!rawChunks || !rawChunks.length) {
-    return { rawBodyUnavailable: true, reason: "empty_raw" };
-  }
-  try {
-    let total = 0;
-    const parts = [];
-    for (const chunk of rawChunks) {
-      if (!chunk || !chunk.bytes) {
-        return { rawBodyUnavailable: true, reason: "binary_or_missing_bytes" };
-      }
-      const bytes = chunk.bytes instanceof ArrayBuffer ? new Uint8Array(chunk.bytes) : new Uint8Array(chunk.bytes);
-      total += bytes.length;
-      if (total > 64 * 1024) {
-        return { rawBodyUnavailable: true, reason: "too_large", byteLength: total };
-      }
-      parts.push(bytes);
-    }
-    const merged = new Uint8Array(total);
-    let offset = 0;
-    for (const p of parts) {
-      merged.set(p, offset);
-      offset += p.length;
-    }
-    // Reject obvious binary
-    let suspicious = 0;
-    for (let i = 0; i < Math.min(merged.length, 512); i++) {
-      const b = merged[i];
-      if (b === 0) suspicious++;
-    }
-    if (suspicious > 2) {
-      return { rawBodyUnavailable: true, reason: "binary_null_bytes", byteLength: merged.length };
-    }
-    const text = new TextDecoder("utf-8", { fatal: false }).decode(merged);
-    return { rawTextPreview: text.slice(0, 8000), byteLength: merged.length };
-  } catch (err) {
-    return { rawBodyUnavailable: true, reason: String(err && err.message ? err.message : err) };
-  }
-}
-
-function sanitizeFormData(formData) {
-  if (!formData || typeof formData !== "object") return formData;
-  const out = {};
-  for (const [key, values] of Object.entries(formData)) {
-    const arr = Array.isArray(values) ? values : [values];
-    out[key] = isSensitiveKey(key)
-      ? arr.map(() => "[REDACTED]")
-      : arr.map((v) => {
-          if (typeof v === "string" && SENSITIVE_VALUE_HINT_RE.test(v)) return "[REDACTED]";
-          return typeof v === "string" && v.length > 4000 ? v.slice(0, 4000) + "…[truncated]" : v;
-        });
-  }
-  return out;
-}
-
-async function onBeforeRequest(details) {
+/**
+ * Sync entry: copy requestBody immediately, then async persist.
+ */
+function onBeforeRequestSync(details) {
   try {
     if (!isDcinsideUrl(details.url)) return;
-    const state = await getState();
-    if (!state.recording) return;
 
-    const bodyInfo = {};
-    if (details.requestBody) {
-      if (details.requestBody.formData) {
-        bodyInfo.formData = sanitizeFormData(details.requestBody.formData);
-      } else if (details.requestBody.raw) {
-        Object.assign(bodyInfo, decodeRawBody(details.requestBody.raw));
-      } else {
-        bodyInfo.rawBodyUnavailable = true;
-        bodyInfo.reason = "no_formData_or_raw";
-      }
-    }
+    // CRITICAL: clone body before any async work
+    const bodySnap = snapshotRequestBodySync(details.requestBody);
+    const capture = {
+      requestId: details.requestId,
+      url: details.url,
+      method: details.method,
+      type: details.type,
+      initiator: details.initiator || "",
+      tabId: details.tabId,
+      timeStamp: details.timeStamp,
+      capturedAt: nowIso(),
+      bodySnap
+    };
 
     pendingRequests.set(details.requestId, {
       url: details.url,
       method: details.method,
       type: details.type,
       initiator: details.initiator || "",
-      startedAt: nowIso(),
+      tabId: details.tabId,
+      isDeleteApi: isDeleteApiUrl(details.url),
+      isDeleteRelated: isDeleteRelatedUrl(details.url),
+      startedAt: capture.capturedAt,
       startedMs: Date.now()
     });
 
+    persistBeforeRequest(capture);
+  } catch (err) {
+    appendEvent({
+      eventType: "extension_error",
+      pageUrl: details?.url || "",
+      pageTitle: "",
+      source: "background.onBeforeRequestSync",
+      message: String(err && err.message ? err.message : err)
+    }).catch(() => {});
+  }
+}
+
+async function persistBeforeRequest(capture) {
+  try {
+    const state = await getState();
+    if (!state.recording) return;
+
+    const requestBody = buildRequestBodyRecord(capture.bodySnap);
     const interactionActive =
       state.activeInteractionId && Date.now() <= (state.interactionUntil || 0);
+    const deleteApi = isDeleteApiUrl(capture.url);
+    const eventType = deleteApi ? "delete_network_request" : "network_request";
 
     await appendEvent({
-      eventType: "network_request",
-      pageUrl: details.initiator || details.url,
+      eventType,
+      pageUrl: capture.initiator || capture.url,
       pageTitle: "",
-      requestId: details.requestId,
-      url: details.url,
-      method: details.method,
-      resourceType: details.type,
-      initiator: details.initiator || "",
-      startedAt: nowIso(),
-      requestBody: Object.keys(bodyInfo).length ? bodyInfo : undefined,
-      relatedDeleteInteraction: !!interactionActive,
+      requestId: capture.requestId,
+      url: capture.url,
+      method: capture.method,
+      type: capture.type,
+      resourceType: capture.type,
+      initiator: capture.initiator,
+      tabId: capture.tabId,
+      webRequestTimeStamp: capture.timeStamp,
+      timestamp: capture.capturedAt,
+      requestBody,
+      isDeleteApi: deleteApi,
+      isDeleteRelated: isDeleteRelatedUrl(capture.url),
+      relatedDeleteInteraction: !!(interactionActive || deleteApi),
       interactionId: interactionActive ? state.activeInteractionId : undefined
     });
   } catch (err) {
     await appendEvent({
       eventType: "extension_error",
-      pageUrl: details?.url || "",
+      pageUrl: capture?.url || "",
       pageTitle: "",
-      source: "background.onBeforeRequest",
+      source: "background.persistBeforeRequest",
       message: String(err && err.message ? err.message : err)
     }).catch(() => {});
   }
@@ -403,21 +704,27 @@ async function onCompleted(details) {
 
     const interactionActive =
       state.activeInteractionId && Date.now() <= (state.interactionUntil || 0);
+    const deleteApi = meta.isDeleteApi || isDeleteApiUrl(details.url);
+    const eventType = deleteApi ? "delete_network_response" : "network_response";
 
     await appendEvent({
-      eventType: "network_response",
+      eventType,
       pageUrl: details.initiator || details.url,
       pageTitle: "",
       requestId: details.requestId,
       url: details.url,
       method: details.method,
+      type: details.type,
       resourceType: details.type,
+      tabId: details.tabId,
       statusCode: details.statusCode,
       fromCache: details.fromCache,
+      timestamp: nowIso(),
       completedAt: nowIso(),
       startedAt: meta.startedAt || undefined,
       durationMs: meta.startedMs ? Date.now() - meta.startedMs : undefined,
-      relatedDeleteInteraction: !!interactionActive,
+      isDeleteApi: deleteApi,
+      relatedDeleteInteraction: !!(interactionActive || deleteApi),
       interactionId: interactionActive ? state.activeInteractionId : undefined
     });
   } catch (err) {
@@ -437,21 +744,27 @@ async function onErrorOccurred(details) {
     const state = await getState();
     if (!state.recording) return;
 
+    const meta = pendingRequests.get(details.requestId) || {};
     pendingRequests.delete(details.requestId);
     const interactionActive =
       state.activeInteractionId && Date.now() <= (state.interactionUntil || 0);
+    const deleteApi = meta.isDeleteApi || isDeleteApiUrl(details.url);
 
     await appendEvent({
-      eventType: "network_error",
+      eventType: deleteApi ? "delete_network_error" : "network_error",
       pageUrl: details.initiator || details.url,
       pageTitle: "",
       requestId: details.requestId,
       url: details.url,
       method: details.method,
+      type: details.type,
       resourceType: details.type,
+      tabId: details.tabId,
       error: details.error,
+      timestamp: nowIso(),
       failedAt: nowIso(),
-      relatedDeleteInteraction: !!interactionActive,
+      isDeleteApi: deleteApi,
+      relatedDeleteInteraction: !!(interactionActive || deleteApi),
       interactionId: interactionActive ? state.activeInteractionId : undefined
     });
   } catch (_) {
@@ -460,10 +773,8 @@ async function onErrorOccurred(details) {
 }
 
 chrome.webRequest.onBeforeRequest.addListener(
-  (details) => {
-    onBeforeRequest(details);
-  },
-  { urls: ["https://gall.dcinside.com/*", "https://*.dcinside.com/*"] },
+  onBeforeRequestSync,
+  { urls: WEBREQUEST_URL_FILTER },
   ["requestBody"]
 );
 
@@ -471,14 +782,14 @@ chrome.webRequest.onCompleted.addListener(
   (details) => {
     onCompleted(details);
   },
-  { urls: ["https://gall.dcinside.com/*", "https://*.dcinside.com/*"] }
+  { urls: WEBREQUEST_URL_FILTER }
 );
 
 chrome.webRequest.onErrorOccurred.addListener(
   (details) => {
     onErrorOccurred(details);
   },
-  { urls: ["https://gall.dcinside.com/*", "https://*.dcinside.com/*"] }
+  { urls: WEBREQUEST_URL_FILTER }
 );
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -487,7 +798,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       switch (message?.type) {
         case "GET_STATUS": {
           const state = await getState();
-          sendResponse({ ok: true, state: publicStatus(state), recording: state.recording, sessionId: state.currentSessionId });
+          sendResponse({
+            ok: true,
+            state: publicStatus(state),
+            recording: state.recording,
+            sessionId: state.currentSessionId
+          });
           break;
         }
         case "START_RECORDING": {
@@ -552,5 +868,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ ok: false, error: String(err && err.message ? err.message : err) });
     }
   })();
-  return true; // async
+  return true;
 });

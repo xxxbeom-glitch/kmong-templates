@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "디시인사이드 삭제 동작 분석기",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "마이페이지에서 게시글 1개 수동 삭제 시 DOM·confirm·네트워크·새로고침 흐름을 관찰·기록합니다. 자동 삭제는 하지 않습니다.",
   "permissions": [
     "storage",
@@ -10,7 +10,11 @@
   ],
   "host_permissions": [
     "https://gall.dcinside.com/*",
-    "https://*.dcinside.com/*"
+    "https://gallog.dcinside.com/*",
+    "https://*.dcinside.com/*",
+    "http://gall.dcinside.com/*",
+    "http://gallog.dcinside.com/*",
+    "http://*.dcinside.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -23,6 +27,7 @@
     {
       "matches": [
         "https://gall.dcinside.com/*",
+        "https://gallog.dcinside.com/*",
         "https://*.dcinside.com/*"
       ],
       "js": ["content.js"],
@@ -35,6 +40,7 @@
       "resources": ["page-hook.js"],
       "matches": [
         "https://gall.dcinside.com/*",
+        "https://gallog.dcinside.com/*",
         "https://*.dcinside.com/*"
       ]
     }
