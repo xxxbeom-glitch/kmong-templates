@@ -150,9 +150,9 @@ function render(job, page) {
     showError("");
   }
 
-  const delay = (job && job.delayMs) || 1500;
+  const delayMode = (job && job.delayMode) || "safe";
   document.querySelectorAll('input[name="delay"]').forEach((r) => {
-    r.checked = r.value === "normal" ? delay === 1000 : delay !== 1000;
+    r.checked = r.value === delayMode;
     r.disabled = running;
   });
 }

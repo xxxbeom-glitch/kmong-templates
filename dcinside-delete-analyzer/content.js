@@ -13,7 +13,12 @@
   const ROW_ID_ATTR = "data-dc-tool-id";
   const CLICK_SESSION_KEY = "dc_delete_tool_click_pending";
 
-  const DELAY = { safe: 1500, normal: 1000 };
+  const DELAY_RANGES = {
+    safe: { min: 8000, max: 12000 }, // 평균 ~10초
+    slow: { min: 12000, max: 18000 }
+  };
+  const BATCH_REST_EVERY = 25;
+  const BATCH_REST_MS = { min: 30000, max: 60000 };
   const RELOAD_TIMEOUT_MS = 15000;
   const MAX_CONSECUTIVE_FAILS = 3;
   const MAX_SAME_TARGET_STREAK = 3;
@@ -26,6 +31,20 @@
 
   function sleep(ms) {
     return new Promise((r) => setTimeout(r, ms));
+  }
+
+  function randomBetween(min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+  }
+
+  function getRandomDelayMs(delayMode) {
+    const mode = delayMode === "slow" ? "slow" : "safe";
+    const r = DELAY_RANGES[mode];
+    return randomBetween(r.min, r.max);
+  }
+
+  function getBatchRestMs() {
+    return randomBetween(BATCH_REST_MS.min, BATCH_REST_MS.max);
   }
 
   function simpleHash(str) {
@@ -754,8 +773,23 @@
         return;
       }
 
-      const waitMs = job.delayMs || DELAY.safe;
-      await setJob({ status: "running", statusMessage: `대기 중… (${reason || "load"})` });
+      const delayMode = job.delayMode || "safe";
+      let waitMs = getRandomDelayMs(delayMode);
+      let statusMessage = `대기 ${(waitMs / 1000).toFixed(1)}초… (${reason || "load"})`;
+
+      const sc = job.successCount || 0;
+      if (
+        sc > 0 &&
+        sc % BATCH_REST_EVERY === 0 &&
+        job.lastRestAtSuccess !== sc
+      ) {
+        const restMs = getBatchRestMs();
+        waitMs += restMs;
+        statusMessage = `${BATCH_REST_EVERY}개 처리 후 휴식 ${(restMs / 1000).toFixed(0)}초 + 대기…`;
+        await setJob({ lastRestAtSuccess: sc });
+      }
+
+      await setJob({ status: "running", statusMessage });
       await sleep(waitMs);
 
       job = await getJob();
@@ -1094,7 +1128,7 @@
       }
     }
 
-    const delayMs = (existing && existing.delayMs) || DELAY.safe;
+    const delayMode = (existing && existing.delayMode) || "safe";
 
     await setJob({
       contentType: page.contentType,
@@ -1118,7 +1152,8 @@
       consecutiveFails: 0,
       lastAttemptId: null,
       sameTargetStreak: 0,
-      delayMs,
+      lastRestAtSuccess: null,
+      delayMode,
       startedAt: new Date().toISOString(),
       status: "running",
       statusMessage: `${kind} 삭제 시작`,
@@ -1225,9 +1260,9 @@
             break;
           }
           case "SET_DELAY_MODE": {
-            const delayMs = message.mode === "normal" ? DELAY.normal : DELAY.safe;
-            await setJob({ delayMs });
-            sendResponse({ ok: true, delayMs });
+            const delayMode = message.mode === "slow" ? "slow" : "safe";
+            await setJob({ delayMode });
+            sendResponse({ ok: true, delayMode });
             break;
           }
           case "NAVIGATE_CONTENT_TYPE": {
