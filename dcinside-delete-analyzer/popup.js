@@ -150,7 +150,7 @@ function render(job, page) {
     showError("");
   }
 
-  const delayMode = (job && job.delayMode) || "safe";
+  const delayMode = (job && job.delayMode) || "burst";
   document.querySelectorAll('input[name="delay"]').forEach((r) => {
     r.checked = r.value === delayMode;
     r.disabled = running;

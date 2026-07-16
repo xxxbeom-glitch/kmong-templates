@@ -44,12 +44,13 @@
     </section>
 
     <section class="card">
-      <div class="label">삭제 간격 (페이지 로드 후, 랜덤)</div>
+      <div class="label">삭제 속도</div>
       <div class="delay-row">
-        <label><input type="radio" name="delay" value="safe" checked /> 기본 (8~12초)</label>
+        <label><input type="radio" name="delay" value="burst" checked /> 버스트 (3~4초 × 8~12개 → 휴식)</label>
+        <label><input type="radio" name="delay" value="steady" /> 일정 (8~12초)</label>
         <label><input type="radio" name="delay" value="slow" /> 더 느리게 (12~18초)</label>
       </div>
-      <p class="delay-note">25개마다 30~60초 추가 휴식 · 캡차 완화용</p>
+      <p class="delay-note">버스트: 짧게 진행 후 45~90초 휴식을 반복합니다.</p>
     </section>
 
     <section class="actions" id="actionsIdle">

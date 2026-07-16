@@ -13,12 +13,20 @@
   const ROW_ID_ATTR = "data-dc-tool-id";
   const CLICK_SESSION_KEY = "dc_delete_tool_click_pending";
 
-  const DELAY_RANGES = {
-    safe: { min: 8000, max: 12000 }, // 평균 ~10초
-    slow: { min: 12000, max: 18000 }
+  /** burst: 3~4초 간격으로 N개 후 휴식 | steady: 매번 8~12초 | slow: 12~18초 */
+  const PACE = {
+    burst: {
+      step: { min: 3000, max: 4000 },
+      burstSize: { min: 8, max: 12 },
+      rest: { min: 45000, max: 90000 }
+    },
+    steady: {
+      step: { min: 8000, max: 12000 }
+    },
+    slow: {
+      step: { min: 12000, max: 18000 }
+    }
   };
-  const BATCH_REST_EVERY = 25;
-  const BATCH_REST_MS = { min: 30000, max: 60000 };
   const RELOAD_TIMEOUT_MS = 15000;
   const MAX_CONSECUTIVE_FAILS = 3;
   const MAX_SAME_TARGET_STREAK = 3;
@@ -37,14 +45,47 @@
     return min + Math.floor(Math.random() * (max - min + 1));
   }
 
-  function getRandomDelayMs(delayMode) {
-    const mode = delayMode === "slow" ? "slow" : "safe";
-    const r = DELAY_RANGES[mode];
-    return randomBetween(r.min, r.max);
+  function randomBurstSize() {
+    const b = PACE.burst.burstSize;
+    return randomBetween(b.min, b.max);
   }
 
-  function getBatchRestMs() {
-    return randomBetween(BATCH_REST_MS.min, BATCH_REST_MS.max);
+  function computePaceWait(job) {
+    const mode = job.delayMode || "burst";
+    const sc = job.successCount || 0;
+
+    if (mode === "steady" || mode === "slow") {
+      const p = PACE[mode];
+      const waitMs = randomBetween(p.step.min, p.step.max);
+      return {
+        waitMs,
+        statusMessage: `대기 ${(waitMs / 1000).toFixed(1)}초…`,
+        patch: null
+      };
+    }
+
+    // burst: 3~4초 × N회 → 휴식 → 반복
+    const burstSize = job.burstSize || randomBurstSize();
+    const lastRest = job.lastRestAtSuccess || 0;
+    const sinceRest = sc - lastRest;
+    const nextInBurst = sinceRest + 1;
+
+    if (sinceRest > 0 && sinceRest % burstSize === 0) {
+      const restMs = randomBetween(PACE.burst.rest.min, PACE.burst.rest.max);
+      const nextBurst = randomBurstSize();
+      return {
+        waitMs: restMs,
+        statusMessage: `${burstSize}개 처리 완료 · 휴식 ${(restMs / 1000).toFixed(0)}초…`,
+        patch: { lastRestAtSuccess: sc, burstSize: nextBurst }
+      };
+    }
+
+    const waitMs = randomBetween(PACE.burst.step.min, PACE.burst.step.max);
+    return {
+      waitMs,
+      statusMessage: `대기 ${(waitMs / 1000).toFixed(1)}초… (버스트 ${nextInBurst}/${burstSize})`,
+      patch: job.burstSize ? null : { burstSize }
+    };
   }
 
   function simpleHash(str) {
@@ -773,24 +814,10 @@
         return;
       }
 
-      const delayMode = job.delayMode || "safe";
-      let waitMs = getRandomDelayMs(delayMode);
-      let statusMessage = `대기 ${(waitMs / 1000).toFixed(1)}초… (${reason || "load"})`;
-
-      const sc = job.successCount || 0;
-      if (
-        sc > 0 &&
-        sc % BATCH_REST_EVERY === 0 &&
-        job.lastRestAtSuccess !== sc
-      ) {
-        const restMs = getBatchRestMs();
-        waitMs += restMs;
-        statusMessage = `${BATCH_REST_EVERY}개 처리 후 휴식 ${(restMs / 1000).toFixed(0)}초 + 대기…`;
-        await setJob({ lastRestAtSuccess: sc });
-      }
-
-      await setJob({ status: "running", statusMessage });
-      await sleep(waitMs);
+      const pace = computePaceWait(job);
+      if (pace.patch) await setJob(pace.patch);
+      await setJob({ status: "running", statusMessage: pace.statusMessage });
+      await sleep(pace.waitMs);
 
       job = await getJob();
       if (!job || !job.running || job.paused || job.stopped) {
@@ -1128,7 +1155,7 @@
       }
     }
 
-    const delayMode = (existing && existing.delayMode) || "safe";
+    const delayMode = (existing && existing.delayMode) || "burst";
 
     await setJob({
       contentType: page.contentType,
@@ -1153,6 +1180,7 @@
       lastAttemptId: null,
       sameTargetStreak: 0,
       lastRestAtSuccess: null,
+      burstSize: randomBurstSize(),
       delayMode,
       startedAt: new Date().toISOString(),
       status: "running",
@@ -1260,8 +1288,12 @@
             break;
           }
           case "SET_DELAY_MODE": {
-            const delayMode = message.mode === "slow" ? "slow" : "safe";
-            await setJob({ delayMode });
+            let delayMode = "burst";
+            if (message.mode === "steady") delayMode = "steady";
+            else if (message.mode === "slow") delayMode = "slow";
+            const patch = { delayMode };
+            if (delayMode === "burst") patch.burstSize = randomBurstSize();
+            await setJob(patch);
             sendResponse({ ok: true, delayMode });
             break;
           }
