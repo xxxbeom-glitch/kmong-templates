@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "DCInside 게시글 삭제 도구",
-  "version": "2.1.0",
-  "description": "갤로그 게시글 페이지에서 본인 게시글을 선택·테스트·전체 순차 삭제합니다. 자동으로 다른 사용자 글은 다루지 않습니다.",
+  "name": "DCInside 게시글·댓글 삭제 도구",
+  "version": "2.2.0",
+  "description": "갤로그 게시글/댓글 페이지에서 본인 항목을 선택·테스트·전체 순차 삭제합니다. 사이트의 원래 X 버튼을 사용합니다.",
   "permissions": [
     "storage",
     "activeTab"
@@ -14,7 +14,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "DCInside 게시글 삭제 도구",
+    "default_title": "DCInside 게시글·댓글 삭제 도구",
     "default_popup": "popup.html"
   },
   "content_scripts": [

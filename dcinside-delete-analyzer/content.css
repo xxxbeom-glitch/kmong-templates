@@ -57,7 +57,8 @@
   color: #6a7685;
 }
 
-ul.cont_listbox > li[data-no] {
+ul.cont_listbox > li[data-no],
+ul.cont_listbox > li[data-dc-tool-id] {
   position: relative;
 }
 

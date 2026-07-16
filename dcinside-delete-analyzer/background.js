@@ -4,30 +4,44 @@
  */
 
 const DEFAULT_JOB = () => ({
+  contentType: null,
   mode: "idle",
   running: false,
   paused: false,
   stopped: false,
-  pendingNos: [],
+  pendingTargets: [],
+  selectedTargets: [],
+  failedTargets: [],
   successCount: 0,
   failCount: 0,
-  failedNos: [],
   initialTotal: 0,
   totalTarget: 0,
-  currentNo: null,
-  clickIssuedForNo: null,
-  deletingCurrentNo: null,
+  currentTargetId: null,
+  currentPreview: "",
+  clickIssuedForId: null,
+  deletingCurrentId: null,
   awaitingReload: false,
   awaitingReloadSince: null,
   consecutiveFails: 0,
+  lastAttemptId: null,
+  sameTargetStreak: 0,
   delayMs: 1500,
   startedAt: null,
   status: "ready",
   statusMessage: "",
+  pageItemCount: 0,
+  totalCount: null,
+  isSupportedPage: false,
+  gallogId: null,
+  // legacy aliases kept in sync for older popup reads
+  pendingNos: [],
+  failedNos: [],
+  currentNo: null,
+  clickIssuedForNo: null,
+  deletingCurrentNo: null,
   pagePostCount: 0,
   totalPostCount: null,
-  isPostingPage: false,
-  gallogId: null
+  isPostingPage: false
 });
 
 async function getJob() {
@@ -37,6 +51,19 @@ async function getJob() {
 
 async function setJob(patch) {
   const job = { ...(await getJob()), ...patch };
+  // Keep legacy mirrors in sync
+  if (Array.isArray(job.pendingTargets)) {
+    job.pendingNos = job.pendingTargets.map((t) => (typeof t === "string" ? t : t.id));
+  }
+  if (Array.isArray(job.failedTargets)) {
+    job.failedNos = job.failedTargets.map((t) => (typeof t === "string" ? t : t.id || t));
+  }
+  if (job.currentTargetId != null) job.currentNo = job.currentTargetId;
+  if (job.clickIssuedForId != null) job.clickIssuedForNo = job.clickIssuedForId;
+  if (job.deletingCurrentId != null) job.deletingCurrentNo = job.deletingCurrentId;
+  if (job.pageItemCount != null) job.pagePostCount = job.pageItemCount;
+  if (job.totalCount != null) job.totalPostCount = job.totalCount;
+  job.isPostingPage = job.contentType === "posting" || job.isSupportedPage;
   await chrome.storage.local.set({ job });
   return job;
 }
@@ -55,7 +82,7 @@ async function sendToActiveGallogTab(message) {
   if (!tab || tab.id == null) {
     return {
       ok: false,
-      error: "갤로그 탭을 찾을 수 없습니다. gallog.dcinside.com 게시글 페이지를 열어 주세요."
+      error: "갤로그 탭을 찾을 수 없습니다. gallog.dcinside.com 페이지를 열어 주세요."
     };
   }
   try {

@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DCInside 게시글 삭제 도구</title>
+  <title>DCInside 삭제 도구</title>
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <main class="wrap">
     <header>
-      <h1>DCInside 게시글 삭제 도구</h1>
-      <p class="sub">본인 갤로그 게시글만 · 순차 삭제</p>
+      <h1 id="appTitle">DCInside 게시글 삭제 도구</h1>
+      <p class="sub" id="appSub">본인 갤로그만 · 순차 삭제</p>
     </header>
 
+    <nav class="tabs" aria-label="관리 대상">
+      <button type="button" class="tab" id="tabPosting" data-type="posting">게시글</button>
+      <button type="button" class="tab" id="tabComment" data-type="comment">댓글</button>
+    </nav>
+
     <section class="card">
-      <div class="label">현재 게시글</div>
+      <div class="label" id="countLabel">현재 게시글</div>
       <div id="totalCount" class="big">—</div>
       <div id="pageMeta" class="muted">페이지 확인 중…</div>
     </section>
@@ -60,7 +65,7 @@
     </section>
 
     <p id="errorText" class="error hidden"></p>
-    <p class="hint">
+    <p class="hint" id="hintText">
       먼저 <strong>테스트 5개 삭제</strong>로 동작을 확인하세요.
       전체 삭제는 2단계 확인 후 실행됩니다.
     </p>

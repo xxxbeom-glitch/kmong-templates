@@ -1,6 +1,5 @@
 /**
  * Page context: auto-approve delete confirm only while automation is active.
- * Does NOT craft API tokens or POST delete requests.
  */
 (function () {
   "use strict";
@@ -27,8 +26,10 @@
     return (
       /삭제하시겠습니까/i.test(s) ||
       /게시물에서 동시에 삭제/i.test(s) ||
+      /댓글을\s*삭제/i.test(s) ||
+      /댓글.*삭제/i.test(s) ||
       /삭제\s*하(시|겠)/i.test(s) ||
-      (/삭제/.test(s) && /게시|글|로그/.test(s))
+      (/삭제/.test(s) && /게시|글|로그|댓글/.test(s))
     );
   }
 
@@ -42,7 +43,7 @@
         return true;
       }
     } catch (_) {
-      /* fall through to original */
+      /* fall through */
     }
     return originalConfirm(message);
   };
@@ -52,7 +53,6 @@
       if (event.source !== window) return;
       const data = event.data;
       if (!data || data.source !== CONTENT_SOURCE) return;
-
       if (data.action === "SET_AUTOMATION") {
         automationDeleteActive = !!data.active;
         post({
