@@ -5,8 +5,8 @@ alwaysApply: true
 
 # Core
 
-- **기본 트랙:** WordPress — `_docs/active-track.md` · `wordpress/{slug}/` · `70`~`72`
-- 트랙 판별: `00-project-router.mdc` (명시 없으면 WP)
+- **기본 트랙:** 개인 정적 — `_docs/active-track.md` · `site/` · Vercel · CMS 없음
+- 트랙 판별: `00-project-router.mdc` (명시 없으면 `site/`) · WP(`70`~`72`)는 **동결**
 - Figma MCP 수치 우선. 추측으로 간격·폰트·구조 변경 금지
 - **QA PASS 전** 완료 선언 금지 (`50`)
 - SoT: **rules + active-track + `_logs`** (`_docs`는 active-track만)
@@ -57,4 +57,4 @@ SEO/AEO/GEO 상세(`73`)는 **사용자 진행 요청 시에만**. 평소 컨텍
 - 승인·QA 없이 완료  
 - git commit은 사용자 명시 시 (`55`) · 무단 push 금지
 
-완료: 해당 트랙 규칙에 맞고 QA·납품으로 넘길 수 있는 상태.
+완료: 해당 트랙 규칙에 맞고 QA·(해당 시) Vercel 배포로 넘길 수 있는 상태.

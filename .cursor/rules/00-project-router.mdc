@@ -1,30 +1,31 @@
 ---
-description: 트랙 라우터 — 기본 WordPress. 동결 트랙은 명시 재개 전 미적용
+description: 트랙 라우터 — 기본 개인 정적(site/). WP·크몽정적·Cafe24는 동결
 alwaysApply: true
 ---
 
 # Project Router
 
-**기본 = WordPress.** `_docs/active-track.md` · 명시 없으면 `wordpress/{slug}/` · `70`~`72`.
+**기본 = 개인 정적 사이트.** `_docs/active-track.md` · 명시 없으면 `site/` · CMS/관리자 없음 · 호스팅 Vercel.
 
 | 상태 | 트랙 | 경로 |
 |------|------|------|
-| **활성** | WordPress | `wordpress/{slug}/` · 납품 `dist/{slug}.zip` |
-| 동결 | Static · Cafe24 A/B · Reference | `_archive/` · rules `archive/80`~`84` · **신규 진입·mirror 금지** |
+| **활성** | 개인 정적 | `site/` · Vercel 배포 |
+| 동결 | WordPress | `wordpress/` · 규칙 `70`~`72` · **폴더 유지 · 신규·수정 금지** (명시 재개 시만) |
+| 동결 | 크몽 정적 · Cafe24 · Reference | `_archive/` · rules `archive/80`~`84` · **신규 진입 금지** |
 
-동결 트랙은 사용자가 **재개**를 명시한 경우에만 archive 규칙 참고.
+동결 트랙은 사용자가 **재개**를 명시한 경우에만 해당 규칙 참고.
 
 ## 승인 (전역)
 
 - 소규모(색·여백·문구·이미지): **요청 = 범위 승인**
 - 다지점·구조 변경·대규모: 범위 확인 후 진행
-- Cafe24 map / 대표 디자인 전환: 해당 트랙 재개 시에만 (`84`)
 
 ## 충돌
 
-1. 사용자 지시 → 2. 본 라우터 → 3. 트랙 규칙(`70`~`72` 등) → 4. `00-core` 우선순위
+1. 사용자 지시 → 2. 본 라우터 → 3. 활성 트랙 규칙 → 4. `00-core` 우선순위
 
 ## 경로 주의
 
 - 루트 `_delivery*` · `_delivery/cafe24` 등 **금지**
-- 동결 산출물·문법 참고는 `_archive/` (수정·overwrite로 활성 워크플로 만들지 말 것)
+- `wordpress/`는 **보관만** — 활성 작업 경로로 쓰지 않음
+- 동결 산출물·문법 참고는 `_archive/` / `wordpress/` (overwrite로 활성 워크플로 만들지 말 것)

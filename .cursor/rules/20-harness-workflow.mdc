@@ -1,12 +1,13 @@
 ---
-description: Figma→승인→구현→QA→로그 절차 (WP 기본). 상세는 30·50·70·로그 README
+description: Figma→승인→구현→QA→로그 절차 (개인 정적 site/ 기본). 상세는 30·50·로그 README
 alwaysApply: true
 ---
 
 # Harness Workflow
 
 > **트랙:** `00-project-router.mdc` · `_docs/active-track.md`  
-> **기본:** WordPress `wordpress/{slug}/` · `70`~`72`  
+> **기본:** 개인 정적 `site/` · Vercel · CMS 없음  
+> **WP:** 동결 (`wordpress/` · `70`~`72` · 명시 재개 시만)  
 > **본 파일 = 절차만.** Figma 수치·보고 항목 → `30` · QA 항목 → `50` · 말투 → `00-core`
 
 ## 시작 전
@@ -20,7 +21,7 @@ alwaysApply: true
 
 ```
 범위 1줄 → Figma 댓글·주석 → MCP 보고 → 사용자 승인
-→ wordpress/{slug}/ 구현 → 50 QA → qa-log 1건 → 사용자 PASS → 다음
+→ site/ 구현 → 50 QA → qa-log 1건 → 사용자 PASS → 다음
 ```
 
 - **승인** (`확인했어, 진행해`) **전 코딩 금지**
@@ -36,14 +37,15 @@ alwaysApply: true
 
 ### 구현
 
-- **WP:** `wordpress/{slug}/` · `@1024` · `@768`(MO만) · `70`
-- 사진: 테마 `assets/images/` · 승인 preset만 (`45`·`46`)
+- **개인 정적:** `site/` · `@1024` · `@768`(MO만)
+- 사진: `site/` 자산 폴더 · 승인 preset만 (`45`·`46`)
+- **WP 재개 시에만:** `wordpress/{slug}/` · `70`
 
-### QA · 로그 · 납품
+### QA · 로그 · 배포
 
 - QA: `50-qa-checklist.mdc` · Wrap 자식 edge 포함 · 결과 `_logs/qa-log.md` (표도 갱신)
 - 로그: `_logs/README.md` (change / decision / failure 규칙)
-- 납품: `package-delivery-wp.js` → `wordpress/{slug}/dist/{slug}.zip`
+- **배포:** Vercel (`site/`) · WP ZIP 납품은 동결 트랙 재개 시에만
 - 모바일 세부: `35-responsive.mdc` (MO만 수정)
 
 ## SEO / AEO / GEO (별도 레인 · 자동 실행 금지)

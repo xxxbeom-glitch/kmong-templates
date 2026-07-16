@@ -6,17 +6,19 @@ globs:
   - _harness/package-delivery-wp.js
 ---
 
-# WordPress (운영 트랙)
+# WordPress (동결)
 
-> **트랙 분기:** `00-project-router.mdc` 
+> **상태:** **동결** — `00-project-router.mdc` · `_docs/active-track.md`  
+> **폴더 `wordpress/`는 유지** · 테마 판매 계획 철회 · **사용자 명시 재개 전 신규·수정 금지**  
+> **활성 기본:** 개인 정적 `site/` · Vercel
 
-## 범위
+## 범위 (재개 시에만)
 
 - **대상:** 일부 **실제 운영** 사이트만 · 크몽용 정적 `templates/` **동결·아카이브**
 - **기존 정적 템플릿 WordPress 변환 금지** · 신규 slug 승인 후 `wordpress/{slug}/`만 생성
 - **개발 방식:** Figma MCP 분석 → 승인 → **`wordpress/{slug}/`에 PHP 테마 직접 구현** (`20-harness-workflow`와 동일 리듬)
 - **정적 HTML 선행 후 이식** — 기본 워크플로 **아님** · 사용자 명시 요청 시만
-- **호스팅:** 카페24 **뉴아우토반 WordPress**
+- **호스팅:** 카페24 **뉴아우토반 WordPress** (재개 시)
 - **스택:** WordPress **Classic Custom Theme** · PHP 템플릿 · CSS · jQuery 3.x (`wp_enqueue_script`) · React/Next **금지**
 
 ## 작업 공간

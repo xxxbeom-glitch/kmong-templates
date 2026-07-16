@@ -7,19 +7,30 @@
 
 | 주제 | 현재 값 | 비고 |
 |------|---------|------|
-| 기본 트랙 | **WordPress (블록 테마 우선)** | `wordpress/{slug}/` · `active-track` |
-| 신규 컨텐츠 폭 | **1600** | 구 작업 1440 유지 |
-| 납품 | `wordpress/{slug}/dist/{slug}.zip` | 루트 `_delivery*` 없음 |
+| 기본 트랙 | **개인 정적** (`site/` · Vercel) | CMS/관리자 없음 · 레포명 유지 |
+| WordPress | **동결** · 폴더 유지 | `70`~`72` · 테마 판매 철회 · 명시 재개 전 미적용 |
+| 신규 컨텐츠 폭 | **1600** | 구 작업 1440 유지 (참고) |
+| 배포 | **Vercel** (`site/`) | WP ZIP 납품은 동결 |
 | 문서 SoT | `.cursor/rules` + `active-track` + `_logs` | `_docs`는 active-track만 |
-| 정적·카페24·복제 | **동결/아카이브** | `_archive/` · rules `archive/` |
+| 크몽 정적·카페24·복제 | **동결/아카이브** | `_archive/` · rules `archive/` |
 | 모바일 수정 | **MO만** (PC 동시 수정 금지) | |
 | 레퍼런스 URL | **명시 요청 시에만** 인터랙션 파악 | 복제 파이프라인 없음 |
-| 사진 | 테마 `assets/images/` | `_dev-images` 삭제 |
-| 사이트별 규칙 | 테마 `docs/` 또는 decision | `75-hes`는 archive |
 | 로그 조회 | 표·유형 카드 우선 (`_logs/README.md`) | failure=오답 유형 / decision·qa=맨 위 표 |
-| SEO/AEO/GEO | **on-demand** · 한 레인 · 자동 실행 금지 | `20` 알림(최대 2) · 상세 `73` · GEO 전용 파일 없음 · 상태: 미실행/완료/의도적 생략 |
-| tenfold-studio | **개인 운영 WP 테마** · Classic | Figma 없이 1차 일괄 · 반응형 MO/TB/PC · 가벼운 SEO · 컬러 임시(`#F4F1E9`) · 문의 서버 연동 전 |
-| tenfold SEO | **가벼운 SEO 적용** | title/meta/OG/canonical · robots/sitemap rewrite · AEO/GEO 미실행 |
+| SEO/AEO/GEO | **on-demand** · 한 레인 · 자동 실행 금지 | `20` 알림(최대 2) · 상세 `73` |
+| tenfold-studio | **WP 보관** (동결) | 과거 개인 WP 테마 · 활성 작업 아님 |
+
+---
+
+## 2026-07-16 — 개인 정적 사이트로 기본 트랙 전환
+
+| # | 결정 |
+|---|------|
+| 1 | WP 테마 **판매 계획 철회** · 기본 트랙 = **개인 하드코딩 사이트** |
+| 2 | 작업 경로 `site/` · 포트폴리오도 하드코딩 · **관리자/CMS 없음** |
+| 3 | 호스팅 **Vercel** |
+| 4 | 레포 이름 `kmong-templates` **변경 안 함** |
+| 5 | `wordpress/` **삭제하지 않고 동결 보관** · 명시 재개 전 신규 WP 작업 금지 |
+| 6 | 라우터·active-track·구조·core·harness 기본 경로를 `site/`로 갱신 |
 
 ---
 

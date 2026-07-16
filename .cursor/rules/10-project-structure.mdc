@@ -1,5 +1,5 @@
 ---
-description: 저장소·템플릿 폴더 구조 규칙
+description: 저장소·폴더 구조 규칙
 alwaysApply: true
 ---
 
@@ -8,8 +8,9 @@ alwaysApply: true
 ```
 kmong-templates/
 ├── .cursor/rules/          # Cursor 규칙
-├── wordpress/{slug}/       # 활성 작업 (WP 테마) · dist/{slug}.zip 납품
-├── _harness/               # 패키징·검증·QA PNG — 코드 작업 공간 아님
+├── site/                   # 활성 작업 (개인 정적 사이트 · Vercel)
+├── wordpress/              # 동결 보관 (삭제 금지 · 신규 WP 작업 금지)
+├── _harness/               # 구 패키징·검증·QA PNG — 코드 작업 공간 아님
 ├── _logs/                  # decision / change / failure / qa
 ├── _docs/                  # active-track.md 만 (현황 1장)
 ├── _icons/                 # 공용 SVG
@@ -18,40 +19,47 @@ kmong-templates/
 
 ## Active workspace
 
-**현재 기본:** WordPress — `wordpress/{slug}/` · `_docs/active-track.md`.  
+**현재 기본:** 개인 정적 — `site/` · `_docs/active-track.md`.  
 트랙별 작업 경로: **`00-project-router.mdc`**.
 
 | 트랙 | 경로 | 상태 |
 |------|------|------|
-| **WordPress** | `wordpress/{slug}/` · 납품 `dist/{slug}.zip` | **활성 (기본)** |
-| Static | `_archive/templates/` | 동결 |
+| **개인 정적** | `site/` · Vercel | **활성 (기본)** |
+| WordPress | `wordpress/{slug}/` | **동결** (폴더 유지) |
+| 크몽 Static | `_archive/templates/` | 동결 |
 | Cafe24 A/B | `cafe24/{slug}/` · `_release/{slug}/` | 동결 |
-| Reference C | (다운로드본 **삭제**) · 규칙만 `.cursor/rules/archive/83` | 동결·미사용 |
+| Reference C | 규칙만 `.cursor/rules/archive/83` | 동결·미사용 |
 
-### 정적 (동결)
+### WordPress (동결 · 보관)
+
+- `wordpress/` **삭제하지 않음**
+- 테마 판매 계획 철회 · **명시 재개 전** 신규 slug·테마 수정 금지
+- 납품 ZIP·WP harness는 재개 시에만
+
+### 구 정적 (크몽 · 동결)
 
 - 과거 `templates/{slug}/` → `_archive/templates/`
 - 구 납품 `_delivery/` → `_archive/delivery/`
 - 루트 `templates/` · `_delivery/` · `_delivery-wp/` **두지 않음**
+- **개인 `site/`와 혼동 금지** (크몽 판매용 아카이브 ≠ 개인 사이트)
 
-## `_harness/` · 납품
+## `_harness/`
 
 | 경로 | 역할 | 비고 |
 |------|------|------|
-| `_harness/snapshots/{slug}/` | QA·비교용 **PNG** | 선택. 런타임 코드 금지 |
-| `wordpress/{slug}/dist/{slug}.zip` | QA PASS 후 **WP 납품 ZIP** | `package-delivery-wp.js` · git 무시 |
-| `_archive/delivery/` | 구 정적·아임웹 납품 | 삭제 아님 |
+| `_harness/snapshots/` | QA·비교용 PNG (선택) | 런타임 코드 금지 |
+| WP/정적 package 스크립트 | 구 납품용 | 개인 `site/` + Vercel에는 **필수 아님** |
 
 **미사용·생성 금지:** `_harness/workbench/`, `review/`, `reports/`, 루트 `_delivery/`, `_delivery-wp/`
 
 적용 기준:
-- 새 테마 추가, 파일 생성 위치 결정, 납품물 정리 시.
+- 파일 생성 위치 결정 · 폴더 정리 시.
 
 금지:
-- 루트·플랫폼별 납품 폴더 재도입 (`_delivery/cafe24/` 등)
+- 루트·플랫폼별 납품 폴더 재도입
 - `_modules`, `_tokens`, `_common` 재생성
-- 루트·`_harness`에 테마 런타임 코드 배치
-- **`_harness/workbench/`** 등 별도 개발 공간
+- `_harness`에 사이트 런타임 코드 배치
+- 동결 `wordpress/`를 활성 작업 공간으로 사용
 
 완료 기준:
-- 변경 파일이 올바른 `wordpress/{slug}/` 안에만 존재하고, 독립 실행 가능한 구조.
+- 변경 파일이 올바른 `site/` 안에만 존재하고, Vercel로 배포 가능한 정적 구조.

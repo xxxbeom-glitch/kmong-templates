@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-07-16 — site/ 뼈대 생성
+
+- `site/index.html` · `site/portfolio/` · assets CSS/JS · `vercel.json`
+- 홈 + 포트폴리오 목록 플레이스홀더 (관리자 없음 · 하드코딩)
+
+---
+
+## 2026-07-16 — 기본 트랙: 개인 정적(site/) · WP 동결
+
+- active-track · 라우터 · 구조 · core · harness: 기본 = `site/` + Vercel
+- `wordpress/` 폴더 유지 · WP 규칙 동결 표기
+- 레포명 변경 없음 · 테마 판매 계획 철회 반영 (decision-log)
+
+---
+
 ## 2026-07-13 — tenfold-studio Projects 스테이지 라이트 테마 복원
 
 - 검정 배경·흰 글자 제거 → 홈 교차 밴드(회색) + 기본 텍스트/버튼 컬러

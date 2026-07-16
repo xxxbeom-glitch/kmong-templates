@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio · Works</title>
+    <meta name="description" content="Selected works" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-logo" href="/">Portfolio</a>
+      <nav class="site-nav" aria-label="주 메뉴">
+        <a href="/">Home</a>
+        <a href="/portfolio/" aria-current="page">Portfolio</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-head">
+        <h1>Portfolio</h1>
+        <p>작품을 하드코딩으로 나열하는 페이지입니다. 항목을 추가·교체하면 됩니다.</p>
+      </section>
+
+      <section class="work-list" aria-label="작품 목록">
+        <!-- 작품 추가 시: 아래 article을 복제하거나 /portfolio/{slug}/ 페이지로 링크 -->
+        <article class="work-item">
+          <h2 class="work-item__title">
+            <a href="#">Project One</a>
+          </h2>
+          <p class="work-item__meta">Category · Year</p>
+          <p class="work-item__desc">짧은 설명 자리.</p>
+        </article>
+
+        <article class="work-item">
+          <h2 class="work-item__title">
+            <a href="#">Project Two</a>
+          </h2>
+          <p class="work-item__meta">Category · Year</p>
+          <p class="work-item__desc">짧은 설명 자리.</p>
+        </article>
+
+        <article class="work-item">
+          <h2 class="work-item__title">
+            <a href="#">Project Three</a>
+          </h2>
+          <p class="work-item__meta">Category · Year</p>
+          <p class="work-item__desc">짧은 설명 자리.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year></span></p>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>
