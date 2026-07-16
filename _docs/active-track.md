@@ -16,8 +16,8 @@
 | **디자인 입력** | Figma MCP → 승인 후 구현 (해당 시) |
 | **절차** | `20-harness-workflow.mdc` (경로만 `site/`) |
 | **컨텍스트·충돌** | `00-core.mdc` |
-| **Figma·반응형·인터랙션** | `30` · `35` · `45` · `46` (`47` archive) |
-| **QA** | `50-qa-checklist.mdc` → `_logs/qa-log.md` (개인 사이트용으로 가볍게) |
+| **Figma·반응형·인터랙션** | `30` · `35` · `40` · `45` · `46` — glob **`site/**`** 포함 |
+| **QA** | `50` → `_logs/qa-log.md` · 배포 = Vercel (`site/`) |
 | **로그** | `_logs/decision-log` · `change-log` · `qa-log` |
 | **SEO/AEO/GEO** | **on-demand** `73` · 자동 실행 금지 |
 

@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-16 — Figma·QA 규칙 site/ glob·경로 정리
+
+- `30`·`35`·`40`·`45`·`46`·`50`·`73`에 `site/**` 연결 · 기본 경로 site/ + Vercel
+- `60`·`10-static` 활성 배포 문구 갱신 · `45` site 바닐라 JS 허용
+
+---
+
 ## 2026-07-16 — site/ 뼈대 생성
 
 - `site/index.html` · `site/portfolio/` · assets CSS/JS · `vercel.json`

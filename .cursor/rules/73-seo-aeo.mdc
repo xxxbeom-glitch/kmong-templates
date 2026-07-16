@@ -2,6 +2,7 @@
 description: SEO/AEO/GEO 상세 — 사용자 「SEO 진행」요청 시에만 읽음. 자동 실행 금지
 alwaysApply: false
 globs:
+  - site/**/*
   - wordpress/**/*
   - _logs/decision-log.md
   - _logs/qa-log.md
@@ -12,7 +13,8 @@ globs:
 > **평소 섹션·디자인 작업에서는 이 파일을 읽지 않는다.**  
 > 사용자가 SEO·AEO·GEO(**검색·AI 이해**) **진행을 요청한 턴**에만 따른다.  
 > 게이트·알림: `20-harness-workflow.mdc`  
-> **GEO** = 생성형 검색·답변이 사이트 사실을 이해·인용하기 쉽게 하는 것. **별도 워크플로·파일 없음** — 본 레인과 동일.
+> **GEO** = 생성형 검색·답변이 사이트 사실을 이해·인용하기 쉽게 하는 것. **별도 워크플로·파일 없음** — 본 레인과 동일.  
+> **반영 경로:** 기본 **`site/`** · WP는 동결(재개 시만).
 
 ## 목적
 
@@ -49,7 +51,7 @@ globs:
 
 1. decision 「SEO 상태」·설계서·확정 카피 확인  
 2. 페이지별 제안(Title/Meta/H/Alt·엔티티·해당 시 FAQ/Schema) — **짧은 표** · 사용자 확인  
-3. 승인 후 `wordpress/{slug}/`에 반영  
+3. 승인 후 **`site/`**에 반영 (WP 재개 시에만 `wordpress/{slug}/`)  
 4. decision SEO 상태 → **완료** (또는 이슈 메모) · change-log · 필요 시 qa-log
 
 ## 상태 값 (decision / 납품 QA)

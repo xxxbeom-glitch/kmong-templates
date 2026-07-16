@@ -2,11 +2,14 @@
 description: 반응형 breakpoint·레이아웃·터치·iOS Safari·QA 뷰포트 기준
 alwaysApply: false
 globs:
+  - site/**/*
   - wordpress/**/*
   - _harness/**/*
 ---
 
 # Responsive
+
+> **적용 경로:** 기본 `site/` · WP는 동결(`wordpress/` 재개 시만).
 
 ## 기준
 

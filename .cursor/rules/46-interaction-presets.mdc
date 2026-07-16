@@ -2,6 +2,7 @@
 description: PC 인터랙션 프리셋 카탈로그·선택·승인 (구현은 45-interaction-patterns)
 alwaysApply: false
 globs:
+  - site/**/*
   - wordpress/**/*
   - .cursor/rules/45-interaction-patterns.mdc
   - _logs/decision-log.md
@@ -9,12 +10,13 @@ globs:
 
 # Interaction Presets (PC)
 
-> **구현 방식:** `.cursor/rules/45-interaction-patterns.mdc` (jQuery·hover/터치·타이밍)  
-> **템플릿별 연결 현황:** `_logs/decision-log.md` · 참고 샘플: `_harness/interaction-samples/`
+> **구현 방식:** `.cursor/rules/45-interaction-patterns.mdc` (hover/터치·타이밍)  
+> **연결 현황:** `_logs/decision-log.md` · 참고 샘플: `_harness/interaction-samples/`  
+> **활성 경로:** `site/` · WP는 동결(재개 시만)
 
 ## 목적 · 범위
 
-- 템플릿 제작 시 **반복 인터랙션**을 preset ID로 표준화한다.
+- 사이트·섹션 **반복 인터랙션**을 preset ID로 표준화한다.
 - **카탈로그 10종 전부 등록** — 템플릿·섹션에 **연결(적용)은 사용자가 선택·승인**할 때만 한다.
 - **현재 범위: PC (@1920 desktop)** — 모바일·터치 대체는 `35-responsive.mdc` + `45-interaction-patterns.mdc`.
 - **GNB 2depth 패턴 2종** (`gnb-full-expand` · `gnb-item-panel`) — header 전용 · 표준 preset 10종과 **별도** · 아래 「GNB 패턴」.
@@ -49,16 +51,16 @@ globs:
 Figma MCP 분석
 → (인터랙션 검토 시) preset 후보 ID 제안 · 섹션당 상한 확인
 → 사용자 preset ID 선택·승인  ← 카탈로그에 있어도 자동 적용 금지
-→ HTML/CSS(PC) → @1024 → @768
+→ site/ HTML/CSS(PC) → @1024 → @768
 → 승인된 preset만 JS/CSS (45 규칙)
 → 섹션 QA — preset ID·과다 적용·중복 확인
-→ qa-log · decision-log(템플릿별 매핑 확정 시)
+→ qa-log · decision-log(매핑 확정 시)
 ```
 
 **기록 형식 (decision-log / change-log):**
 
 ```
-[template {slug}] {section-id}: preset — scroll-reveal, hover-tone
+[site] {section-id}: preset — scroll-reveal, hover-tone
 ```
 
 ## 한글명 (명령용)

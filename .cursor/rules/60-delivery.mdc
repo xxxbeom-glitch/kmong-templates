@@ -1,5 +1,5 @@
 ---
-description: 정적 납품 규칙 (동결 — WP는 70-wordpress)
+description: 구 정적 납품 규칙 (동결) — 활성은 site/ + Vercel
 alwaysApply: false
 globs:
   - _archive/delivery/**
@@ -8,7 +8,8 @@ globs:
 
 # Delivery (정적 · 동결)
 
-> **활성 WP 납품:** `70-wordpress.mdc` · `wordpress/{slug}/dist/{slug}.zip`  
+> **활성 배포:** `site/` → **Vercel** (`00-project-router` · `active-track`)  
+> **WP ZIP:** `70-wordpress.mdc` — **동결** · 명시 재개 시에만  
 > 본 규칙은 구 정적·아임웹 납품(`_archive/delivery/`) 참고용.
 
 - 구 경로 `_delivery/{slug}/` → 보관: `_archive/delivery/`
@@ -17,4 +18,5 @@ globs:
 
 금지:
 - 플랫폼별 하위 폴더 (`imweb`, `cafe24` 등) 루트에 재도입
-- 정적 납품을 활성 WP 워크플로로 사용
+- 구 정적 납품을 활성 `site/` 워크플로로 혼동
+- 활성 작업에서 WP ZIP을 기본 배포로 취급

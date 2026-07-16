@@ -1,7 +1,9 @@
 ---
-description: jQuery 인터랙션·애니메이션 패턴
+description: 인터랙션·애니메이션 구현 패턴 (활성 site/ · WP 동결)
 alwaysApply: false
 globs:
+  - site/**/*.js
+  - site/**/*.html
   - wordpress/**/assets/js/**
   - wordpress/**/*.php
 ---
@@ -9,10 +11,11 @@ globs:
 # Interaction Patterns
 
 > **어떤 motion을 쓸지:** `.cursor/rules/46-interaction-presets.mdc` (preset ID · 사용자 승인)  
-> **이 파일 = 구현 방식만** (jQuery·hover/터치·타이밍)
+> **이 파일 = 구현 방식만** (hover/터치·타이밍)  
+> **활성 경로:** `site/` · WP는 동결(재개 시만)
 
-- JS는 **jQuery 3.x** only. 바닐라 DOM 조작 추가 금지.
-- 진입점: `js/main.js` — `$(function(){ ... })` 패턴
+- **`site/` (개인 정적):** 바닐라 JS 또는 jQuery **둘 다 가능** · 진입점 `assets/js/main.js` (또는 합의된 경로)
+- **`wordpress/` (재개 시):** JS는 **jQuery 3.x** only · 바닐라 DOM 조작 추가 금지 · 진입점 `js/main.js` — `$(function(){ ... })` 패턴
 - **새로고침 scroll top:** `history.scrollRestoration = "manual"` + `pageshow` → `scrollTo(0,0)` (`40-template-code-style.mdc` JS 기본)
 - GNB 모바일: `.menu-toggle` + `.header__nav.is-open`
 - FAQ: `slideToggle` 단일 duration, 단일 열림, `is-open`은 애니메이션 콜백과 동기

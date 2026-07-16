@@ -1,16 +1,20 @@
 ---
-description: Figma 1920 → CSS 수치 변환 규칙
+description: Figma 1920 → CSS 수치 변환 규칙 (활성 site/ · WP 동결)
 alwaysApply: false
 globs:
+  - site/**/*
   - wordpress/**/*
 ---
 
 # Figma to Code
 
+> **출력 경로:** 기본 **`site/`** (개인 포트폴리오 · Vercel).  
+> `wordpress/{slug}/` · 구 `templates/` 는 **동결** — 사용자 **명시 재개** 시에만.
+
 ## MCP 시작 시 보고 (코딩·폴더 생성 전)
 
 0. **Figma 댓글·주석** — `read_comments` + JSON 주석 스캔 · 아래 「Figma 댓글·주석」절차
-1. **최상위 프레임명** (원본) + 정규화 **Proposed slug** + `templates/{slug}/` 또는 `wordpress/{slug}/` (신규 시)
+1. **최상위 프레임명** (원본) + 작업 경로 **`site/`** (기본) · WP 재개 시에만 `wordpress/{slug}/`
 2. **섹션 구조:** 하위 레이어 이름·개수
 3. 이후 레이아웃·수치 분석 (`20-harness-workflow.mdc` 참고)
 4. 사용자 승인 전 — 폴더 생성·코딩 **금지**
