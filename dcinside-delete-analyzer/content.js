@@ -512,12 +512,13 @@
     setAutomation(false);
   }
 
-  async function markFailure(target, message) {
+  async function markFailure(target, message, options) {
     try {
       sessionStorage.removeItem(CLICK_SESSION_KEY);
     } catch (_) {
       /* ignore */
     }
+    const opts = options || {};
     const job = await getJob();
     if (!job) return;
     const id = target == null ? null : typeof target === "string" ? target : target.id;
@@ -525,8 +526,18 @@
       job.mode === "all"
         ? normalizePending(job)
         : normalizePending(job).filter((t) => String(t.id) !== String(id));
+
+    const skippedIds = Array.isArray(job.skippedIds) ? job.skippedIds.map(String) : [];
+    // 전체 삭제: 삭제 안 되는 글은 건너뛰기 목록에 넣어 같은 글만 반복하지 않음
+    if (job.mode === "all" && id != null && opts.skipStuck !== false) {
+      if (!skippedIds.includes(String(id))) skippedIds.push(String(id));
+    }
+
     const failCount = (job.failCount || 0) + 1;
-    const consecutiveFails = (job.consecutiveFails || 0) + 1;
+    // stuck skip은 연속 실패 카운트에 넣지 않음 (지울 수 없는 글 몇 개 때문에 전체가 멈추지 않게)
+    const consecutiveFails = opts.softFail
+      ? job.consecutiveFails || 0
+      : (job.consecutiveFails || 0) + 1;
     const failedTargets = Array.isArray(job.failedTargets) ? job.failedTargets.slice() : [];
     if (id != null) {
       failedTargets.push(
@@ -538,13 +549,16 @@
     const page = getPageType();
     const rows = findListRows();
     const detail = `${message || ""} | url=${location.href} | rows=${rows.length}`;
-    const shouldStop = consecutiveFails >= MAX_CONSECUTIVE_FAILS;
+    const shouldStop = !opts.softFail && consecutiveFails >= MAX_CONSECUTIVE_FAILS;
     await setJob({
       pendingTargets: pending,
       selectedTargets: pending,
+      skippedIds: skippedIds.slice(-500),
       failCount,
       failedTargets: failedTargets.slice(-200),
       consecutiveFails,
+      sameTargetStreak: 0,
+      lastAttemptId: null,
       currentTargetId: null,
       currentPreview: "",
       clickIssuedForId: null,
@@ -552,13 +566,23 @@
       awaitingReload: false,
       awaitingReloadSince: null,
       running: shouldStop ? false : job.running,
-      status: shouldStop ? "error" : job.status,
+      status: shouldStop ? "error" : job.status === "error" ? "running" : job.status,
       statusMessage: shouldStop
         ? `연속 ${MAX_CONSECUTIVE_FAILS}회 실패로 중지. ${detail}`
-        : detail,
+        : opts.softFail
+          ? `건너뜀: ${detail}`
+          : detail,
       contentType: (page && page.contentType) || job.contentType
     });
     setAutomation(false);
+  }
+
+  /** 같은 글만 반복될 때: 실패로 기록하고 건너뛴 뒤 다음으로 */
+  async function skipStuckTarget(target, reason) {
+    await markFailure(target, reason || "동일 대상 반복으로 건너뜀", {
+      softFail: true,
+      skipStuck: true
+    });
   }
 
   async function reconcileAfterLoad(job) {
@@ -598,8 +622,11 @@
     }
 
     if (sessionClick) {
-      // If fingerprint link+text both gone somehow but row with same id remains — fail
-      await markFailure(target, `삭제 후에도 목록에 남아 있음: ${issuedId}`);
+      // 삭제 후에도 남아 있으면: 실패 + (전체 모드) 건너뛰기 목록에 추가
+      await markFailure(target, `삭제 후에도 목록에 남아 있음: ${issuedId}`, {
+        softFail: job.mode === "all",
+        skipStuck: true
+      });
       return await getJob();
     }
 
@@ -684,23 +711,31 @@
 
   function pickNextTarget(job) {
     const rows = findListRows();
+    const skipped = new Set(
+      (Array.isArray(job.skippedIds) ? job.skippedIds : []).map(String)
+    );
+
     if (job.mode === "all") {
-      const first = rows[0];
-      if (!first) return null;
-      const meta = extractRowMeta(first, 0);
-      ensureRowId(first, 0);
-      const btn = findNativeDeleteButton(first);
-      if (!btn) return { target: meta, missingBtn: true };
-      return { target: meta, row: first, btn };
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        const meta = extractRowMeta(row, i);
+        ensureRowId(row, i);
+        if (skipped.has(String(meta.id))) continue;
+        if (meta.dataNo && skipped.has(String(meta.dataNo))) continue;
+        const btn = findNativeDeleteButton(row);
+        if (!btn) return { target: meta, missingBtn: true };
+        return { target: meta, row, btn };
+      }
+      // 현재 페이지의 모든 행이 건너뛰기됨
+      return { allSkippedOnPage: true, rowCount: rows.length };
     }
 
     const pending = normalizePending(job);
     for (const t of pending) {
+      if (skipped.has(String(t.id))) continue;
       const row = findRowByTarget(t);
       if (!row) {
-        // Cannot find — for selected, do not auto-success unless we can verify gone
         if (t.link || t.textPreview) {
-          // still searchable? already tried findRowByTarget
           return { target: t, missingUnverified: true };
         }
         return { target: t, missing: true };
@@ -861,6 +896,27 @@
         return;
       }
 
+      if (picked.allSkippedOnPage) {
+        const next = findNextPageControl();
+        if (next && next.href) {
+          await setJob({
+            statusMessage: `현재 페이지 항목을 모두 건너뜀 · 다음 페이지로 이동…`,
+            sameTargetStreak: 0,
+            lastAttemptId: null
+          });
+          location.assign(next.href);
+          processingLock = false;
+          return;
+        }
+        await setJob({
+          running: false,
+          status: "error",
+          statusMessage: `현재 페이지의 삭제 가능 항목이 모두 건너뛰기됨 (skipped=${(job.skippedIds || []).length}) | url=${location.href} | rows=${picked.rowCount}`
+        });
+        processingLock = false;
+        return;
+      }
+
       if (picked.missing) {
         await markSuccess(picked.target);
         processingLock = false;
@@ -876,7 +932,8 @@
       if (picked.missingBtn) {
         await markFailure(
           picked.target,
-          `삭제 버튼 없음 | url=${location.href} | rows=${findListRows().length}`
+          `삭제 버튼 없음 | url=${location.href} | rows=${findListRows().length}`,
+          { softFail: job.mode === "all", skipStuck: true }
         );
         processingLock = false;
         scheduleProcess("missing-btn");
@@ -891,12 +948,13 @@
         sameTargetStreak = 1;
       }
       if (sameTargetStreak >= MAX_SAME_TARGET_STREAK) {
-        await setJob({
-          running: false,
-          status: "error",
-          statusMessage: `동일 대상 반복 처리 감지(${tid}) | url=${location.href} | rows=${findListRows().length}`
-        });
+        // 전체 중지하지 않고 건너뛴 뒤 다음 글 진행
+        await skipStuckTarget(
+          picked.target,
+          `동일 대상 ${MAX_SAME_TARGET_STREAK}회 반복 → 건너뜀(${tid})`
+        );
         processingLock = false;
+        scheduleProcess("skip-stuck");
         return;
       }
 
@@ -926,7 +984,11 @@
         } catch (_) {
           /* ignore */
         }
-        await markFailure(picked.target, String(err && err.message ? err.message : err));
+        await markFailure(
+          picked.target,
+          String(err && err.message ? err.message : err),
+          { softFail: job.mode === "all", skipStuck: true }
+        );
         processingLock = false;
         scheduleProcess("click-error");
       }
@@ -1179,6 +1241,7 @@
       consecutiveFails: 0,
       lastAttemptId: null,
       sameTargetStreak: 0,
+      skippedIds: [],
       lastRestAtSuccess: null,
       burstSize: randomBurstSize(),
       delayMode,

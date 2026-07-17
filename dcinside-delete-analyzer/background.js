@@ -25,6 +25,7 @@ const DEFAULT_JOB = () => ({
   consecutiveFails: 0,
   lastAttemptId: null,
   sameTargetStreak: 0,
+  skippedIds: [],
   lastRestAtSuccess: null,
   burstSize: 10,
   delayMode: "burst",
