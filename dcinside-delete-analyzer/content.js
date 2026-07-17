@@ -767,7 +767,8 @@
       if (String(job.clickIssuedForId || "") !== String(id)) return;
       await markFailure(
         { id, textPreview: job.currentPreview || "" },
-        `삭제 후 ${RELOAD_TIMEOUT_MS / 1000}초 안에 새로고침되지 않음`
+        `삭제 후 ${RELOAD_TIMEOUT_MS / 1000}초 안에 새로고침되지 않음`,
+        { softFail: job.mode === "all", skipStuck: true }
       );
       processingLock = false;
       scheduleProcess("reload-timeout");
