@@ -80,6 +80,14 @@
   white-space: nowrap;
 }
 
+.home-iss__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
 /* PC: stacked fade steps · taller than default section, not full-viewport */
 @media (min-width: 768px) {
   .home-iss__frame {
