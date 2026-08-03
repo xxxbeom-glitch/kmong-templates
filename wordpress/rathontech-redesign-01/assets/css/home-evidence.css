@@ -3,7 +3,7 @@
 
 .home-evidence {
   padding: var(--section-pad-y) 0;
-  background: var(--color-bg-base);
+  background: var(--color-bg-muted);
   color: var(--color-text-primary);
 }
 
@@ -122,12 +122,12 @@
 
 .home-evidence__page:hover {
   color: var(--color-text-primary);
-  background: var(--color-bg-muted);
+  background: var(--color-bg-base);
 }
 
 .home-evidence__page.is-active {
   color: var(--color-text-primary);
-  background: var(--color-bg-muted);
+  background: var(--color-bg-base);
 }
 
 .home-evidence__page:focus-visible {
