@@ -11,6 +11,7 @@ define('RATHON_THEME_VERSION', '0.2.0-gate2');
 
 require_once get_template_directory() . '/inc/assets.php';
 require_once get_template_directory() . '/inc/helpers.php';
+require_once get_template_directory() . '/inc/menus.php';
 
 function rathon_setup() {
   add_theme_support('title-tag');

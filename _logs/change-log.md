@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech-redesign-01 GNB `gnb-full-expand`
+
+- `inc/menus.php` · `template-parts/site-header.php` — IA + 메가패널·딤·모바일 아코디언
+- `assets/css/header.css` · `assets/js/nav.js` — 기본 닫힘 · syncMegaAlignment · close 220ms
+- `preview/home-hero.html` · `preview/product-iam.html` — 동일 마크업 동기화
+
+---
+
 ## 2026-08-03 — SoT를 `.cursor/sot`·`business`로 이동·개명
 
 - 루트 md → `.cursor/sot/01`~`06` · `.cursor/business/01`~`02`

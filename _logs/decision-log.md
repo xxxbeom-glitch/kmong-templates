@@ -32,6 +32,21 @@
 | Design Director | `.cursor/rules/25-uiux-design-director.mdc` | SoT 하위 · always 아님 |
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
+| rathontech GNB | **`gnb-full-expand`** | 딤 20% · 닫기 220ms · `@1024` 아코디언 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech-redesign-01 GNB · `gnb-full-expand`
+
+| # | 결정 |
+|---|------|
+| 1 | **패턴:** `gnb-full-expand` (`46` / `45`) — 헤더 공용 메가패널 1개 |
+| 2 | **IA:** planning §4-1 (`inc/menus.php`) |
+| 3 | **딤:** 헤더 아래만 · `rgb(0 0 0 / 0.2)` |
+| 4 | **닫기 지연:** 220ms · Escape · 딤/외부 클릭 |
+| 5 | **모바일 `@1024`:** 햄버거 drawer + 2depth 아코디언 |
+
+[template rathontech-redesign-01] header: gnb-pattern — gnb-full-expand
 
 ---
 

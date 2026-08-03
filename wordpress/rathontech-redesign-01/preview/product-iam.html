@@ -12,16 +12,26 @@
   <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 <body class="page-product-iam gate2-product-iam">
-  <header class="site-header" data-site-header>
+  <header class="site-header" data-site-header data-header-mega>
     <div class="site-header__inner u-container">
       <a class="site-header__logo" href="./home-hero.html">RATHON<span>TECH</span></a>
       <nav class="site-header__nav" aria-label="주요 메뉴">
         <ul class="site-header__list">
-          <li><a class="site-header__link" href="#">솔루션</a></li>
-          <li><a class="site-header__link is-active" href="./product-iam.html">제품</a></li>
-          <li><a class="site-header__link" href="#">도입사례</a></li>
-          <li><a class="site-header__link" href="#">고객지원</a></li>
-          <li><a class="site-header__link" href="#">회사</a></li>
+          <li class="site-header__item site-header__item--has-mega">
+            <a class="site-header__link site-header__trigger" href="#" aria-haspopup="true" aria-expanded="false">솔루션</a>
+          </li>
+          <li class="site-header__item site-header__item--has-mega">
+            <a class="site-header__link site-header__trigger is-active" href="./product-iam.html" aria-haspopup="true" aria-expanded="false" aria-current="page">제품</a>
+          </li>
+          <li class="site-header__item site-header__item--has-mega">
+            <a class="site-header__link site-header__trigger" href="#" aria-haspopup="true" aria-expanded="false">도입사례</a>
+          </li>
+          <li class="site-header__item site-header__item--has-mega">
+            <a class="site-header__link site-header__trigger" href="#" aria-haspopup="true" aria-expanded="false">고객지원</a>
+          </li>
+          <li class="site-header__item site-header__item--has-mega">
+            <a class="site-header__link site-header__trigger" href="#" aria-haspopup="true" aria-expanded="false">회사</a>
+          </li>
         </ul>
       </nav>
       <div class="site-header__actions">
@@ -31,6 +41,64 @@
         </button>
       </div>
     </div>
+
+    <div id="gnb-mega-panel" class="site-header__mega" hidden inert>
+      <div class="site-header__mega-inner u-container">
+        <ul class="site-header__mega-list">
+          <li class="site-header__mega-col" data-mega-col="solutions">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="#">전체 솔루션</a></li>
+              <li><a class="site-header__sublink" href="#">통합계정·권한관리</a></li>
+              <li><a class="site-header__sublink" href="#">인증</a></li>
+              <li><a class="site-header__sublink" href="#">디렉토리</a></li>
+              <li><a class="site-header__sublink" href="#">암호모듈</a></li>
+              <li><a class="site-header__sublink" href="#">Zero Trust</a></li>
+              <li><a class="site-header__sublink" href="#">컨설팅</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col" data-mega-col="products">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="#">전체 제품</a></li>
+              <li><a class="site-header__sublink" href="./product-iam.html">Rathon-IAM</a></li>
+              <li><a class="site-header__sublink" href="#">Rathon-SSO</a></li>
+              <li><a class="site-header__sublink" href="#">Rathon-LDAP</a></li>
+              <li><a class="site-header__sublink" href="#">Rathon-AM</a></li>
+              <li><a class="site-header__sublink" href="#">RTJCrypto</a></li>
+              <li><a class="site-header__sublink" href="#">WinLogin</a></li>
+              <li><a class="site-header__sublink" href="#">MFA</a></li>
+              <li><a class="site-header__sublink" href="#">Symantec SiteMinder</a></li>
+              <li><a class="site-header__sublink" href="#">IBM-SAM</a></li>
+              <li><a class="site-header__sublink" href="#">IBM-SDS</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col" data-mega-col="case-studies">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="#">전체 사례</a></li>
+              <li><a class="site-header__sublink" href="#">솔루션별</a></li>
+              <li><a class="site-header__sublink" href="#">산업별</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col" data-mega-col="support">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="#">기술지원 안내</a></li>
+              <li><a class="site-header__sublink" href="#">문의하기</a></li>
+            </ul>
+          </li>
+          <li class="site-header__mega-col" data-mega-col="company">
+            <ul class="site-header__mega-sub">
+              <li><a class="site-header__sublink" href="#">회사소개</a></li>
+              <li><a class="site-header__sublink" href="#">고객사</a></li>
+              <li><a class="site-header__sublink" href="#">인증현황</a></li>
+              <li><a class="site-header__sublink" href="#">ESG 경영</a></li>
+              <li><a class="site-header__sublink" href="#">인재영입</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-header__dim" hidden aria-hidden="true"></div>
+
     <div id="mobile-menu" class="mobile-menu" data-mobile-menu hidden inert role="dialog" aria-modal="true" aria-label="전체 메뉴">
       <div class="u-container">
         <div class="mobile-menu__top">
@@ -39,11 +107,59 @@
         </div>
         <nav aria-label="모바일 메뉴">
           <ul class="mobile-menu__list">
-            <li><a class="mobile-menu__link" href="#">솔루션</a></li>
-            <li><a class="mobile-menu__link" href="./product-iam.html">제품</a></li>
-            <li><a class="mobile-menu__link" href="#">도입사례</a></li>
-            <li><a class="mobile-menu__link" href="#">고객지원</a></li>
-            <li><a class="mobile-menu__link" href="#">회사</a></li>
+            <li class="mobile-menu__item mobile-menu__item--has-sub">
+              <button type="button" class="mobile-menu__toggle" aria-expanded="false" aria-controls="mobile-sub-solutions">솔루션</button>
+              <ul id="mobile-sub-solutions" class="mobile-menu__sub" hidden>
+                <li><a class="mobile-menu__sublink" href="#">전체 솔루션</a></li>
+                <li><a class="mobile-menu__sublink" href="#">통합계정·권한관리</a></li>
+                <li><a class="mobile-menu__sublink" href="#">인증</a></li>
+                <li><a class="mobile-menu__sublink" href="#">디렉토리</a></li>
+                <li><a class="mobile-menu__sublink" href="#">암호모듈</a></li>
+                <li><a class="mobile-menu__sublink" href="#">Zero Trust</a></li>
+                <li><a class="mobile-menu__sublink" href="#">컨설팅</a></li>
+              </ul>
+            </li>
+            <li class="mobile-menu__item mobile-menu__item--has-sub">
+              <button type="button" class="mobile-menu__toggle" aria-expanded="false" aria-controls="mobile-sub-products">제품</button>
+              <ul id="mobile-sub-products" class="mobile-menu__sub" hidden>
+                <li><a class="mobile-menu__sublink" href="#">전체 제품</a></li>
+                <li><a class="mobile-menu__sublink" href="./product-iam.html">Rathon-IAM</a></li>
+                <li><a class="mobile-menu__sublink" href="#">Rathon-SSO</a></li>
+                <li><a class="mobile-menu__sublink" href="#">Rathon-LDAP</a></li>
+                <li><a class="mobile-menu__sublink" href="#">Rathon-AM</a></li>
+                <li><a class="mobile-menu__sublink" href="#">RTJCrypto</a></li>
+                <li><a class="mobile-menu__sublink" href="#">WinLogin</a></li>
+                <li><a class="mobile-menu__sublink" href="#">MFA</a></li>
+                <li><a class="mobile-menu__sublink" href="#">Symantec SiteMinder</a></li>
+                <li><a class="mobile-menu__sublink" href="#">IBM-SAM</a></li>
+                <li><a class="mobile-menu__sublink" href="#">IBM-SDS</a></li>
+              </ul>
+            </li>
+            <li class="mobile-menu__item mobile-menu__item--has-sub">
+              <button type="button" class="mobile-menu__toggle" aria-expanded="false" aria-controls="mobile-sub-case">도입사례</button>
+              <ul id="mobile-sub-case" class="mobile-menu__sub" hidden>
+                <li><a class="mobile-menu__sublink" href="#">전체 사례</a></li>
+                <li><a class="mobile-menu__sublink" href="#">솔루션별</a></li>
+                <li><a class="mobile-menu__sublink" href="#">산업별</a></li>
+              </ul>
+            </li>
+            <li class="mobile-menu__item mobile-menu__item--has-sub">
+              <button type="button" class="mobile-menu__toggle" aria-expanded="false" aria-controls="mobile-sub-support">고객지원</button>
+              <ul id="mobile-sub-support" class="mobile-menu__sub" hidden>
+                <li><a class="mobile-menu__sublink" href="#">기술지원 안내</a></li>
+                <li><a class="mobile-menu__sublink" href="#">문의하기</a></li>
+              </ul>
+            </li>
+            <li class="mobile-menu__item mobile-menu__item--has-sub">
+              <button type="button" class="mobile-menu__toggle" aria-expanded="false" aria-controls="mobile-sub-company">회사</button>
+              <ul id="mobile-sub-company" class="mobile-menu__sub" hidden>
+                <li><a class="mobile-menu__sublink" href="#">회사소개</a></li>
+                <li><a class="mobile-menu__sublink" href="#">고객사</a></li>
+                <li><a class="mobile-menu__sublink" href="#">인증현황</a></li>
+                <li><a class="mobile-menu__sublink" href="#">ESG 경영</a></li>
+                <li><a class="mobile-menu__sublink" href="#">인재영입</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <a class="btn btn--primary mobile-menu__cta" href="#">보안 환경 상담하기</a>
