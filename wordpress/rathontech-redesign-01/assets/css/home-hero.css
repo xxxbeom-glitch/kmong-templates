@@ -46,7 +46,7 @@
 }
 
 .home-hero__copy {
-  max-width: 36em;
+  max-width: 20em;
   text-align: left;
 }
 
@@ -57,13 +57,19 @@
   font-weight: var(--text-h1-weight);
   letter-spacing: var(--text-h1-letter);
   color: var(--color-text-inverse);
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
 }
 
 .home-hero__lead {
   margin: 0 0 var(--space-8);
+  max-width: 34em;
   font-size: var(--text-body1-size);
   line-height: var(--text-body1-line);
   color: rgb(245 245 245 / 0.9);
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .home-hero__actions {
