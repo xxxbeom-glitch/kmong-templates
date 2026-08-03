@@ -8,6 +8,7 @@ get_header();
   <?php get_template_part('template-parts/gate2/home-hero'); ?>
   <?php get_template_part('template-parts/home/section-iss'); ?>
   <?php get_template_part('template-parts/home/section-ecosystem'); ?>
+  <?php get_template_part('template-parts/home/section-evidence'); ?>
 </main>
 <?php
 get_footer();
