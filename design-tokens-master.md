@@ -456,6 +456,10 @@
   /* 용도별 단축키 */
   --radius-button:  var(--radius-md);   /* 기본 버튼 */
   --radius-card:    var(--radius-xl);   /* 카드 */
+
+  /* 카드 기본 간격 — 내부 vs 외부 대소 관계 강제 없음 (decision 2026-08-03) */
+  --card-padding:   var(--space-6);   /* PC 기본 24px */
+  --card-gap:       var(--space-6);   /* PC 기본 카드 간 24px */
   --radius-input:   var(--radius-md);   /* 인풋 */
   --radius-badge:   var(--radius-full); /* 뱃지/태그 */
   --radius-modal:   var(--radius-2xl);  /* 모달 */
@@ -470,8 +474,8 @@
 ```css
 :root {
 
-  /* 주조색 기반 컬러 그림자 (검정 그림자 사용 금지) */
-  /* 실제 프로젝트에서 primary 색상에 맞게 조정 */
+  /* 기본 = 중립색(검정/그레이) alpha. 컬러 그림자는 제한적 사용 */
+  /* 실제 프로젝트에서 primary에 맞춘 --shadow-color-* 는 포인트용 */
 
   --shadow-xs:  0 1px 2px rgba(0,0,0,0.04);
   --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
@@ -480,12 +484,12 @@
   --shadow-xl:  0 16px 48px rgba(0,0,0,0.12);
   --shadow-2xl: 0 24px 64px rgba(0,0,0,0.16);
 
-  /* 컬러 그림자 예시 (primary가 blue일 때) */
+  /* 컬러 그림자 — CTA·브랜드 포인트 등 제한적 (전역 기본 아님) */
   --shadow-color-sm:  0 2px 8px rgba(37,99,235,0.12);
   --shadow-color-md:  0 4px 16px rgba(37,99,235,0.16);
   --shadow-color-lg:  0 8px 32px rgba(37,99,235,0.20);
 
-  /* 용도별 단축키 */
+  /* 용도별 단축키 (기본은 중립 스케일) */
   --shadow-card:    var(--shadow-sm);
   --shadow-hover:   var(--shadow-md);
   --shadow-dropdown: var(--shadow-md);
