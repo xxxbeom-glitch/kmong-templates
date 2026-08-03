@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech ISS 드래그 슬라이더 복원
+
+- 좌측 목차 제거 · freeMode 가로 드래그로 복원
+- 카드 4개 유지 · `section-iss` · `home-iss.css` · `iss-slider.js` · preview
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech ISS 카드 4개 + 좌측 타이틀 목차
 
 - 기획 § 문제 축 4개만 유지 · 좌측 목차=카드 타이틀 · 클릭 시 해당 카드로 이동

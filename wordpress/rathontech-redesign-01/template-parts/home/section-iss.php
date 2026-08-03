@@ -1,7 +1,7 @@
 <?php
 /**
  * Home Section 2 — Identity Security System.
- * Planning §: 4 problem axes · left title TOC + right cards (~1.9).
+ * Horizontal card drag slider (4 problem axes).
  */
 
 $iss_items = array(
@@ -42,13 +42,6 @@ $iss_items = array(
     'href'   => rathon_url('solutions/zero-trust'),
   ),
 );
-
-$iss_labels = array_map(
-  static function ($item) {
-    return $item['title'];
-  },
-  $iss_items
-);
 ?>
 <section class="home-iss" aria-labelledby="home-iss-title">
   <div class="u-container">
@@ -60,45 +53,29 @@ $iss_labels = array_map(
         <?php echo esc_html__('계정·인증·디렉토리·접근 통제 중 맞는 솔루션으로 이어집니다.', 'rathontech-redesign-01'); ?>
       </p>
     </header>
+  </div>
 
-    <div class="home-iss__layout">
-      <nav class="home-iss__nav" aria-label="<?php echo esc_attr__('문제별 솔루션', 'rathontech-redesign-01'); ?>">
-        <p class="home-iss__nav-label" aria-hidden="true"><?php echo esc_html__('문제 선택', 'rathontech-redesign-01'); ?></p>
-        <div
-          class="home-iss__pagination"
-          data-iss-pagination
-          role="tablist"
-          aria-orientation="vertical"
-        ></div>
-      </nav>
-
-      <div class="home-iss__slider-shell">
-        <div
-          class="swiper home-iss-swiper"
-          data-iss-swiper
-          data-iss-labels="<?php echo esc_attr(wp_json_encode(array_values($iss_labels), JSON_UNESCAPED_UNICODE)); ?>"
-        >
-          <div class="swiper-wrapper">
-            <?php foreach ($iss_items as $i => $item) : ?>
-              <div class="swiper-slide" role="group" aria-label="<?php echo esc_attr($item['title']); ?>">
-                <article class="home-iss__card">
-                  <p class="home-iss__index" aria-hidden="true"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></p>
-                  <h3 class="home-iss__card-title">
-                    <a href="<?php echo esc_url($item['href']); ?>"><?php echo esc_html($item['title']); ?></a>
-                  </h3>
-                  <ul class="home-iss__points">
-                    <?php foreach ($item['points'] as $point) : ?>
-                      <li><?php echo esc_html($point); ?></li>
-                    <?php endforeach; ?>
-                  </ul>
-                </article>
-              </div>
-            <?php endforeach; ?>
+  <div class="home-iss__slider-shell">
+    <div class="swiper home-iss-swiper" data-iss-swiper>
+      <div class="swiper-wrapper">
+        <?php foreach ($iss_items as $i => $item) : ?>
+          <div class="swiper-slide">
+            <article class="home-iss__card">
+              <p class="home-iss__index" aria-hidden="true"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></p>
+              <h3 class="home-iss__card-title">
+                <a href="<?php echo esc_url($item['href']); ?>"><?php echo esc_html($item['title']); ?></a>
+              </h3>
+              <ul class="home-iss__points">
+                <?php foreach ($item['points'] as $point) : ?>
+                  <li><?php echo esc_html($point); ?></li>
+                <?php endforeach; ?>
+              </ul>
+            </article>
           </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
 </section>
 <?php
-unset($iss_items, $iss_labels, $i, $item, $point);
+unset($iss_items, $i, $item, $point);
