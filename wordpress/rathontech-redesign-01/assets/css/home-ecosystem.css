@@ -77,7 +77,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgb(17 17 17 / 0.15) 0%, rgb(17 17 17 / 0.62) 100%);
+  background: linear-gradient(180deg, rgb(17 17 17 / 0.55) 0%, rgb(17 17 17 / 0.72) 45%, rgb(17 17 17 / 0.88) 100%);
   transition: background 0.3s ease;
   pointer-events: none;
 }
@@ -117,7 +117,7 @@
 
 .home-eco__card-link:hover .home-eco__card-veil,
 .home-eco__card-link:focus-visible .home-eco__card-veil {
-  background: linear-gradient(180deg, rgb(17 17 17 / 0.22) 0%, rgb(17 17 17 / 0.78) 100%);
+  background: linear-gradient(180deg, rgb(17 17 17 / 0.62) 0%, rgb(17 17 17 / 0.78) 45%, rgb(17 17 17 / 0.92) 100%);
 }
 
 .home-eco__card-link:focus-visible {
