@@ -19,16 +19,28 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-color: var(--color-bg-inverse);
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Original pixel size · center crop (no fit/stretch to box) */
+.home-company__cta-media-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  display: block;
 }
 
 .home-company__cta-veil {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgb(32 41 54 / 0.72) 0%, rgb(32 41 54 / 0.82) 100%);
+  background: rgb(0 0 0 / 0.88);
   pointer-events: none;
 }
 
