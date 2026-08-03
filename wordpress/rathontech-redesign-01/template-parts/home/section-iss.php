@@ -66,8 +66,7 @@ $iss_items = array(
     <header class="home-iss__head">
       <p class="home-iss__eyebrow"><?php echo esc_html__('Identity Security System', 'rathontech-redesign-01'); ?></p>
       <h2 id="home-iss-title" class="home-iss__title">
-        <?php echo esc_html__('제품명보다 먼저, 우리 조직의 문제를', 'rathontech-redesign-01'); ?><br>
-        <?php echo esc_html__('기준으로 보안 솔루션을 고릅니다', 'rathontech-redesign-01'); ?>
+        <?php echo esc_html__('제품명보다 먼저, 우리 조직의 문제를 기준으로 보안 솔루션을 고릅니다', 'rathontech-redesign-01'); ?>
       </h2>
       <p class="home-iss__lead">
         <?php echo esc_html__('계정·인증·디렉토리·접근 통제 중 어디에 구멍이 있는지 확인한 뒤, 맞는 솔루션으로 이어집니다.', 'rathontech-redesign-01'); ?>

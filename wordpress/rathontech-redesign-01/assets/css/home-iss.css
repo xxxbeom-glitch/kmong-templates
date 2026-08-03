@@ -9,7 +9,8 @@
 
 .home-iss__head {
   margin-bottom: var(--space-12);
-  max-width: 40em;
+  max-width: none;
+  width: 100%;
 }
 
 .home-iss__eyebrow {
@@ -24,12 +25,15 @@
 
 .home-iss__title {
   margin: 0 0 var(--space-5);
+  max-width: none;
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
   letter-spacing: -0.015em;
   color: var(--color-text-inverse);
   word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
 }
 
 .home-iss__lead {
