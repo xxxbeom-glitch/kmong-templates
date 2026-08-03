@@ -9,7 +9,6 @@ get_header();
   <?php get_template_part('template-parts/home/section-iss'); ?>
   <?php get_template_part('template-parts/home/section-ecosystem'); ?>
   <?php get_template_part('template-parts/home/section-media'); ?>
-  <?php get_template_part('template-parts/home/section-evidence'); ?>
   <?php get_template_part('template-parts/home/section-company'); ?>
 </main>
 <?php
