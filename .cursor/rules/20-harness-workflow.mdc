@@ -8,7 +8,7 @@ alwaysApply: true
 > **트랙:** `00-project-router.mdc` · `_docs/active-track.md`  
 > **기본:** WordPress `wordpress/{slug}/` · `70`~`72` · `WORDPRESS_TRANSITION_CHANGES.md`  
 > **정적 templates:** 동결  
-> **본 파일 = 절차만.** 디자인 판단 → PROJECT_CONTEXT / UIUX 디렉터 · WP CMS → TRANSITION · QA → `50`+`72`
+> **본 파일 = 절차만.** 디자인 판단 → PROJECT_CONTEXT / `25-uiux-design-director`(SoT 하위) · WP CMS → TRANSITION · QA → `50`+`72`
 
 ## 시작 전
 

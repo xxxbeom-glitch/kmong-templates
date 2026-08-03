@@ -15,7 +15,7 @@
 | **WP 구현 델타** | `WORDPRESS_TRANSITION_CHANGES.md` |
 | **서브페이지 UI/UX** | `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` (유형·맵·CPT·관리자) |
 | **토큰** | `design-tokens-master.md` · SUIT · **1600** · `_icons/`원본→테마 `assets/icons/` · 타이포 최소 · 카드 24/24 · 그림자=중립 alpha |
-| **디자인** | 기획서·바이브 · do-dont · 피그마는 줄 때만 · **A~F 확정**(decision-log) |
+| **디자인** | 기획서·바이브 · do-dont · **`25-uiux-design-director`**(SoT 하위) · 피그마는 줄 때만 · A~F 확정 |
 | **모션** | 필요 시 **GSAP+ScrollTrigger** · 슬라이더 필요 시 **Swiper** (전 테마 의무 아님) · `46`=승인 시만 |
 | **절차** | `20-harness-workflow.mdc` · `70`~`72` |
 | **플러그인 표준** | 델타 문서 표 (후보) · §6 재확인 |

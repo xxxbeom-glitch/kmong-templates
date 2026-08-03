@@ -27,6 +27,18 @@
 | 섹션 구분 | 배경색 강제 아님 · 여백·타이포·배경·이미지 | |
 | 모바일 수정 | **MO만** · BP 767/1023/1024 | |
 | SEO/AEO/GEO | **on-demand** `73` | |
+| Design Director | `.cursor/rules/25-uiux-design-director.mdc` | SoT 하위 · always 아님 · WP glob |
+
+---
+
+## 2026-08-03 — Design Director rules 연결
+
+| # | 결정 |
+|---|------|
+| 1 | 루트 `CURSOR_UIUX_DESIGN_DIRECTOR(1).mdc` → `.cursor/rules/25-uiux-design-director.mdc` |
+| 2 | `alwaysApply: false` · wordpress/templates·디자인 SoT glob |
+| 3 | 충돌 시 CONTEXT·토큰·do-dont·70이 Director보다 우선 |
+| 4 | 루트 파일은 이동 안내 stub만 유지 |
 
 ---
 

@@ -42,7 +42,7 @@ kmong-templates/
 ### WordPress (활성)
 
 - Classic 커스텀 테마 기본 · Elementor 등은 **명시 요청 시만**
-- 디자인·토큰·UIUX 디렉터 원칙은 테마 CSS/JS 안에서 적용
+- 디자인·토큰·`25-uiux-design-director`(보조) 원칙은 테마 CSS/JS 안에서 적용
 - 납품: `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip`
 - **전환·CMS 규칙:** `WORDPRESS_TRANSITION_CHANGES.md`  
 - **서브페이지:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`  

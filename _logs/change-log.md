@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-08-03 — Design Director rules 연결
+
+- `.cursor/rules/25-uiux-design-director.mdc` 추가 (SoT 하위 · always 아님)
+- 루트 Director 파일은 이동 stub
+- core · active-track · harness · structure 연결
+
+---
+
 ## 2026-08-03 — 문서 정리 (모션·아이콘·공지 미결정 · 리뷰 이동)
 
 - GSAP/Swiper = 필요 시 승인 표준 (전 테마 의무 아님)
