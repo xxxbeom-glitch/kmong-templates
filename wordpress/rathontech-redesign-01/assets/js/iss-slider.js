@@ -67,9 +67,10 @@
       pinSpacing: true,
       start: 'top top',
       end: function () {
-        return '+=' + window.innerHeight * stepCount;
+        /* 2 steps ≈ 1.1vh total → 2nd copy ~0.55vh (was 2vh / 1vh) */
+        return '+=' + window.innerHeight * Math.max(1, stepCount * 0.55);
       },
-      scrub: 0.35,
+      scrub: 0.25,
       anticipatePin: 1,
       invalidateOnRefresh: true,
       snap: {
@@ -77,7 +78,7 @@
           if (stepCount <= 1) return 0;
           return Math.round(value * (stepCount - 1)) / (stepCount - 1);
         },
-        duration: { min: 0.12, max: 0.28 },
+        duration: { min: 0.1, max: 0.22 },
         ease: 'power1.inOut',
       },
       onUpdate: function (self) {
