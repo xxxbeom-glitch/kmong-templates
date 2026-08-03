@@ -1,30 +1,33 @@
 <?php
 /**
  * Home Section 3 — Product Ecosystem.
- * Bento cards: title + subtext only.
+ * Bento cards: title + sub always visible · product names reinforce on hover/focus.
  */
 
 $eco_cards = array(
   array(
-    'id'    => 'core',
-    'label' => __('핵심 제품', 'rathontech-redesign-01'),
-    'desc'  => __('계정·인증·디렉토리·접근의 중심', 'rathontech-redesign-01'),
-    'href'  => rathon_url('products') . '#core',
-    'image' => rathon_asset('images/thumb/dynamic-wang-KZuZAaEojq4-unsplash.jpg'),
+    'id'       => 'core',
+    'label'    => __('핵심 제품', 'rathontech-redesign-01'),
+    'desc'     => __('계정·인증·디렉토리·접근의 중심', 'rathontech-redesign-01'),
+    'products' => 'Rathon-IAM · Rathon-SSO',
+    'href'     => rathon_url('products') . '#core',
+    'image'    => rathon_asset('images/thumb/dynamic-wang-KZuZAaEojq4-unsplash.jpg'),
   ),
   array(
-    'id'    => 'extend',
-    'label' => __('확장 제품', 'rathontech-redesign-01'),
-    'desc'  => __('암호·Windows 로그인·다중인증', 'rathontech-redesign-01'),
-    'href'  => rathon_url('products') . '#extend',
-    'image' => rathon_asset('images/thumb/shubham-dhage-8HaKRwazMrQ-unsplash.jpg'),
+    'id'       => 'extend',
+    'label'    => __('확장 제품', 'rathontech-redesign-01'),
+    'desc'     => __('암호·Windows 로그인·다중인증', 'rathontech-redesign-01'),
+    'products' => 'RTJCrypto · WinLogin',
+    'href'     => rathon_url('products') . '#extend',
+    'image'    => rathon_asset('images/thumb/shubham-dhage-8HaKRwazMrQ-unsplash.jpg'),
   ),
   array(
-    'id'    => 'partner',
-    'label' => __('파트너 제품', 'rathontech-redesign-01'),
-    'desc'  => __('구축·연동은 라톤테크가 수행', 'rathontech-redesign-01'),
-    'href'  => rathon_url('products') . '#partner',
-    'image' => rathon_asset('images/thumb/ela-de-pure-h7lfy7HoIE8-unsplash.jpg'),
+    'id'       => 'partner',
+    'label'    => __('파트너 제품', 'rathontech-redesign-01'),
+    'desc'     => __('구축·연동은 라톤테크가 수행', 'rathontech-redesign-01'),
+    'products' => 'SiteMinder · IBM-SAM',
+    'href'     => rathon_url('products') . '#partner',
+    'image'    => rathon_asset('images/thumb/ela-de-pure-h7lfy7HoIE8-unsplash.jpg'),
   ),
 );
 ?>
@@ -53,6 +56,10 @@ $eco_cards = array(
               <span class="home-eco__card-copy">
                 <span class="home-eco__card-label"><?php echo esc_html($card['label']); ?></span>
                 <span class="home-eco__card-desc"><?php echo esc_html($card['desc']); ?></span>
+                <span class="home-eco__card-extras">
+                  <span class="home-eco__card-products"><?php echo esc_html($card['products']); ?></span>
+                  <span class="home-eco__card-more"><?php echo esc_html__('자세히 보기', 'rathontech-redesign-01'); ?></span>
+                </span>
               </span>
               <span class="home-eco__card-arrow" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
