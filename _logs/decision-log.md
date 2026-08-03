@@ -84,7 +84,7 @@
 | 2 | 사이즈 3단: sm 40/16/14 · md 48/24/16(기본) · lg 56/32/16 |
 | 3 | Primary weight=semibold · Secondary/Ghost=medium · radius=`--radius-md` |
 | 4 | on-dark Primary도 **동일 블루 채움**(흰 박스 제거) · Secondary=흰 outline |
-| 5 | 사용: 헤더 sm · 모바일메뉴 md · 히어로/CTA밴드 lg · 제품 md |
+| 5 | 사용: 헤더 sm · 모바일메뉴 md · 히어로/ISS/CTA밴드 lg · 제품 md |
 
 ---
 

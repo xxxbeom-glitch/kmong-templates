@@ -50,7 +50,7 @@
   position: relative;
   width: 100%;
   max-width: min(90vw, 72rem);
-  min-height: 6rem;
+  min-height: 0;
   margin-inline: 0;
 }
 
@@ -80,23 +80,28 @@
   white-space: nowrap;
 }
 
+/* Lead → CTA = hero와 동일 space-10 (frame gap) */
 .home-iss__actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-4);
-  margin-top: var(--space-2);
 }
 
-/* PC: stacked fade steps · taller than default section, not full-viewport */
+/* PC: stacked fade steps · normal section height (not full-viewport) */
 @media (min-width: 768px) {
   .home-iss__frame {
     min-height: 560px;
     padding-block: var(--section-pad-y-lg);
   }
 
+  /* Title + lead stack height only — no extra empty band above CTA */
   .home-iss__copy {
-    min-height: 12rem;
+    min-height: calc(
+      (var(--text-h2-size) * var(--text-h2-line) * 2)
+      + var(--space-4)
+      + (var(--text-body1-size) * var(--text-body1-line))
+    );
   }
 
   .home-iss__step {
@@ -105,7 +110,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
