@@ -111,3 +111,37 @@
     padding: calc(var(--header-h) + var(--space-24)) 0 var(--section-pad-y);
   }
 }
+
+/* Load stagger: title → lead → actions (no scroll hijack) */
+@keyframes home-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero__title,
+  .home-hero__lead,
+  .home-hero__actions {
+    opacity: 0;
+    animation: home-hero-enter 0.55s ease forwards;
+  }
+
+  .home-hero__title {
+    animation-delay: 0.06s;
+  }
+
+  .home-hero__lead {
+    animation-delay: 0.18s;
+  }
+
+  .home-hero__actions {
+    animation-delay: 0.32s;
+  }
+}
+
