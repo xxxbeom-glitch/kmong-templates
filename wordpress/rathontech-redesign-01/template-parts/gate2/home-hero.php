@@ -18,8 +18,7 @@
     <div class="home-hero__copy">
       <h1 id="home-hero-title" class="home-hero__title">
         <?php echo esc_html__('계정과 권한, 인증을', 'rathontech-redesign-01'); ?><br>
-        <?php echo esc_html__('하나의 보안 체계로', 'rathontech-redesign-01'); ?><br>
-        <?php echo esc_html__('연결합니다', 'rathontech-redesign-01'); ?>
+        <?php echo esc_html__('하나의 보안 체계로 연결합니다', 'rathontech-redesign-01'); ?>
       </h1>
       <p class="home-hero__lead">
         <?php echo esc_html__('IAM·SSO·MFA부터 Zero Trust까지, 기업의 사용자와 시스템 접근을 안전하고 효율적으로 관리합니다.', 'rathontech-redesign-01'); ?>

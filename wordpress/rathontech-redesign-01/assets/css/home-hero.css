@@ -46,13 +46,14 @@
 }
 
 .home-hero__copy {
-  max-width: 40em;
+  width: 100%;
+  max-width: none;
   text-align: left;
 }
 
 .home-hero__title {
   margin: 0 0 var(--space-6);
-  max-width: 12.5em;
+  max-width: none;
   font-size: var(--text-h1-size);
   line-height: var(--text-h1-line);
   font-weight: var(--text-h1-weight);
