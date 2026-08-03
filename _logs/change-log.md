@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-08-03 — 루트 다운로드 md/mdc 아카이브
+
+- `_archive/downloaded-docs/` 신설
+- Director stub · wordpress-subpage-system · 폴더안내 → archive
+- 루트 SoT 8종 유지 · structure·TRANSITION 링크 갱신
+
+---
+
 ## 2026-08-03 — Design Director rules 연결
 
 - `.cursor/rules/25-uiux-design-director.mdc` 추가 (SoT 하위 · always 아님)

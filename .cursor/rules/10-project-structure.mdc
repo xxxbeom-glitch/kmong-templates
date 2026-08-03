@@ -15,7 +15,7 @@ kmong-templates/
 ├── _logs/                  # decision / change / failure / qa
 ├── _docs/                  # active-track · reviews/ · status/
 ├── _icons/                 # 아이콘 원본 저장소 (테마 assets/icons/로 복사)
-├── _archive/               # 동결 보관
+├── _archive/               # 동결 보관 · downloaded-docs(흡수 완료 원본)
 ├── PROJECT_CONTEXT.md
 ├── PROJECT_CONTEXT_wordpress_delta.md
 ├── WORDPRESS_TRANSITION_CHANGES.md
@@ -27,7 +27,9 @@ kmong-templates/
 ```
 
 - `_docs/reviews/` · `_docs/status/` = **참고·현황** (실행 규칙·SoT 아님)  
-- `_icons/`: 원본만. 납품 ZIP에는 테마 `assets/icons/` 복사본이 들어간다.
+- `_icons/`: 원본만. 납품 ZIP에는 테마 `assets/icons/` 복사본이 들어간다.  
+- `_archive/downloaded-docs/`: 이미 rules/SoT로 흡수한 다운로드 원본 · 근거로 쓰지 않음  
+- Design Director 활성: `.cursor/rules/25-uiux-design-director.mdc`
 ## Active workspace
 
 **현재 기본:** WordPress — `wordpress/{slug}/` · `_docs/active-track.md`.

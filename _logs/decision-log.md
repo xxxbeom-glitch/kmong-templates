@@ -31,14 +31,24 @@
 
 ---
 
+## 2026-08-03 — 루트 다운로드 문서 아카이브
+
+| # | 결정 |
+|---|------|
+| 1 | 흡수 완료 파일 → `_archive/downloaded-docs/` |
+| 2 | 포함: Director stub · `wordpress-subpage-system` · 구 `폴더안내.txt` |
+| 3 | 루트 유지(활성 SoT): CONTEXT·델타·TRANSITION·SUBPAGE·tokens·do-dont·VIBE·KMONG context |
+
+---
+
 ## 2026-08-03 — Design Director rules 연결
 
 | # | 결정 |
 |---|------|
-| 1 | 루트 `CURSOR_UIUX_DESIGN_DIRECTOR(1).mdc` → `.cursor/rules/25-uiux-design-director.mdc` |
+| 1 | 루트 Director → `.cursor/rules/25-uiux-design-director.mdc` · stub는 `_archive/downloaded-docs/` |
 | 2 | `alwaysApply: false` · wordpress/templates·디자인 SoT glob |
 | 3 | 충돌 시 CONTEXT·토큰·do-dont·70이 Director보다 우선 |
-| 4 | 루트 파일은 이동 안내 stub만 유지 |
+| 4 | 루트 stub → 이후 `_archive/downloaded-docs/`로 이동 |
 
 ---
 
