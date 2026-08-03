@@ -40,7 +40,7 @@
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg · slide hover** | fill hover `#0062d6` · `button-text-slide-hover` |
 | rathontech 히어로 | **비율 min(72/88vh)** · 휠 스냅 없음 | 100svh·반자동 스냅 제거 |
 | rathontech ISS→다음 | **자연 스크롤** (스냅 없음) | 마지막 카피 후 hold 해제 |
-| rathontech ISS 카피 | **중앙 정렬 · CTA 없음** · pad=`section-pad-y` | eco/media와 동일 상하 · title→lead 16 |
+| rathontech ISS 카피 | **중앙 정렬 · CTA 없음** · pad=`section-pad-y` | eco/media·하단 컨택과 동일 상하 |
 
 ---
 
