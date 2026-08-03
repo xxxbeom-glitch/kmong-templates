@@ -164,8 +164,7 @@
   color: var(--color-text-secondary);
   text-decoration: none;
   text-align: left;
-  white-space: normal;
-  word-break: keep-all;
+  white-space: nowrap;
 }
 
 .site-header__sublink:hover,

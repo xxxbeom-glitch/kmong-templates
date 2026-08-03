@@ -83,26 +83,48 @@
       dim.style.top = header.getBoundingClientRect().bottom + 'px';
     }
 
+    function measureColContentWidth(col) {
+      var maxW = 0;
+      col.querySelectorAll('.site-header__sublink').forEach(function (link) {
+        maxW = Math.max(maxW, Math.ceil(link.scrollWidth));
+      });
+      return Math.max(maxW, 80);
+    }
+
     function syncMegaAlignment() {
       var listRect = megaList.getBoundingClientRect();
+      var colGap = 28;
       var maxBottom = 0;
+      var cursor = 0;
+      var metrics = [];
 
+      /* 1) 라벨 기준 이상적 left + 콘텐츠 실제 너비 측정 */
       items.forEach(function (item, i) {
         var trigger = item.querySelector('.site-header__trigger, .site-header__link');
         var col = cols[i];
-        if (!trigger || !col) return;
+        if (!trigger || !col) {
+          metrics.push(null);
+          return;
+        }
 
-        var triggerRect = trigger.getBoundingClientRect();
-        var nextTrigger = items[i + 1]
-          ? items[i + 1].querySelector('.site-header__trigger, .site-header__link')
-          : null;
-        var width = nextTrigger
-          ? nextTrigger.getBoundingClientRect().left - triggerRect.left
-          : Math.max(item.getBoundingClientRect().width, 140);
+        col.style.width = 'max-content';
+        col.style.left = '0';
 
-        col.style.left = triggerRect.left - listRect.left + 'px';
-        col.style.width = Math.max(width, 120) + 'px';
-        maxBottom = Math.max(maxBottom, col.offsetHeight);
+        metrics.push({
+          col: col,
+          idealLeft: trigger.getBoundingClientRect().left - listRect.left,
+          contentW: measureColContentWidth(col),
+        });
+      });
+
+      /* 2) 겹치지 않도록: max(라벨 left, 이전 열 끝+gap), 너비=콘텐츠 */
+      metrics.forEach(function (m) {
+        if (!m) return;
+        var left = Math.max(m.idealLeft, cursor);
+        m.col.style.left = left + 'px';
+        m.col.style.width = m.contentW + 'px';
+        cursor = left + m.contentW + colGap;
+        maxBottom = Math.max(maxBottom, m.col.offsetHeight);
       });
 
       if (maxBottom > 0) {
