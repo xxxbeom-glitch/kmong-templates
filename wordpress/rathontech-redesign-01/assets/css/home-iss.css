@@ -80,15 +80,15 @@
   white-space: nowrap;
 }
 
-/* PC: stacked fade steps (wheel-driven; no ScrollTrigger pin) */
+/* PC: stacked fade steps · normal section height (not full-viewport) */
 @media (min-width: 768px) {
   .home-iss__frame {
-    min-height: 100svh;
-    padding-block: calc(var(--header-h) + var(--space-12)) var(--space-16);
+    min-height: auto;
+    padding-block: var(--section-pad-y);
   }
 
   .home-iss__copy {
-    min-height: 8rem;
+    min-height: 12rem;
   }
 
   .home-iss__step {
