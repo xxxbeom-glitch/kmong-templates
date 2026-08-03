@@ -36,20 +36,25 @@
 
 .site-footer__meta {
   margin: 0;
+  width: 100%;
   max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
   font-size: var(--text-caption2-size);
   line-height: var(--text-caption2-line);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-inverse-faint);
-  word-break: keep-all;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
-.site-footer__token {
+.site-footer__token,
+.site-footer__sep {
   white-space: nowrap;
 }
 
 .site-footer__sep {
-  margin: 0 0.35em;
+  margin: 0 0.4em;
   color: var(--color-text-inverse-faint);
 }
 
@@ -74,10 +79,6 @@
 @media (max-width: 767px) {
   .site-footer {
     padding: var(--space-8) 0;
-  }
-
-  .site-footer__token {
-    white-space: normal;
   }
 }
 
