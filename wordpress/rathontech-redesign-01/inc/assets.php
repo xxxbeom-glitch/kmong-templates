@@ -47,9 +47,17 @@ function rathon_enqueue_assets() {
   );
 
   wp_enqueue_script(
+    'rathon-main',
+    rathon_asset_uri('js/main.js'),
+    array(),
+    rathon_asset_ver('js/main.js'),
+    true
+  );
+
+  wp_enqueue_script(
     'rathon-nav',
     rathon_asset_uri('js/nav.js'),
-    array(),
+    array('rathon-main'),
     rathon_asset_ver('js/nav.js'),
     true
   );
