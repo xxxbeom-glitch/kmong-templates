@@ -9,16 +9,35 @@
 
 .home-iss__head {
   margin-bottom: var(--space-12);
+  max-width: 40em;
+}
+
+.home-iss__eyebrow {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-caption1-size);
+  line-height: var(--text-caption1-line);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-300);
 }
 
 .home-iss__title {
-  margin: 0;
-  max-width: 18em;
+  margin: 0 0 var(--space-5);
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
   letter-spacing: -0.015em;
   color: var(--color-text-inverse);
+  word-break: keep-all;
+}
+
+.home-iss__lead {
+  margin: 0;
+  max-width: 36em;
+  font-size: var(--text-body3-size);
+  line-height: var(--text-body3-line);
+  color: rgb(245 245 245 / 0.72);
   word-break: keep-all;
 }
 
