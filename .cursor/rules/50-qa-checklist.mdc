@@ -1,25 +1,28 @@
 ---
-description: 섹션·페이지 QA 통과 기준 (활성 templates/ · WP 동결)
+description: 섹션·페이지 QA 통과 기준 (활성 wordpress/ · templates 동결)
 alwaysApply: false
 globs:
-  - templates/**/*
   - wordpress/**/*
+  - templates/**/*
   - _logs/qa-log.md
 ---
 
 # QA Checklist
 
-> **활성:** `templates/{slug}/` · 납품 `_delivery/{slug}/`. WP ZIP QA는 **동결 재개 시만**.
+> **활성:** `wordpress/{slug}/` · 납품 `package-delivery-wp.js` → `dist/{slug}.zip`.  
+> **동결 재개:** `templates/` · `_delivery/`.  
+> 아래 **Figma 대조** 항목은 **피그마를 준 작업에만** · 없으면 토큰·기획서·실화면 기준.
 
 ## 섹션 단위 QA
 
-- 해당 섹션만 Figma 대조
+- (피그마 있으면) 해당 섹션 Figma 대조 · 없으면 토큰·기획 대조
 - PC / 1024 / 768 반응형 확인 (`35-responsive.mdc` · QA 뷰포트 1920·1440·1024·768·390)
 - 해당 섹션 인터랙션 확인 (해당 시)
 - hero·GNB·form·하단 고정 UI 해당 섹션 — **모바일 높이·safe-area·input 16px** (`35-responsive.mdc`)
+- WP면: 관리자 수정→공개 반영 (`WORDPRESS_TRANSITION` §10 · `70`)
 - **PASS 후에만** 다음 섹션 착수 (`20-harness-workflow.mdc`)
 
-아래 Figma·HTML/CSS·기능 항목은 **섹션 구현 중 해당 섹션 범위**로 적용한다.
+아래 HTML/CSS·기능 항목은 **섹션 구현 중 해당 섹션 범위**로 적용한다. Figma 전용 체크는 피그마 작업에만.
 
 ## 페이지·납품 QA
 
@@ -28,7 +31,7 @@ globs:
 - GNB / 앵커 / 링크 확인
 - **실브라우저 QA 4종** (`35-responsive.mdc` · 아래 「모바일 실브라우저 QA」)
 - **데스크톱 (페이지·납품 시, 해당하면)** — Chrome · Edge(또는 Safari)에서 레이아웃 깨짐·콘솔 치명 오류·주요 클릭 동작 **기본 확인** (모바일 4종을 대체하지 않음)
-- **활성 납품:** `60-delivery.mdc` · `package-delivery.js` → `_delivery/{slug}/`
+- **활성 납품:** `60-delivery.mdc` · `package-delivery-wp.js` → `wordpress/{slug}/dist/{slug}.zip`
 - **SEO/AEO/GEO 상태** — decision(또는 qa 비고): **완료** / **의도적 생략** / **미실행** 중 하나 (`20` · `73`). 미실행이면 납품 전 **알림 1회**만(자동 실행 금지). 완료면 누락·중복·사실 왜곡·**엔티티/연락처 일관** 없는지 확인.
 
 ## Figma 대조

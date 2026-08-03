@@ -39,8 +39,9 @@
 - **도메인**: 카페24 또는 가비아 (고객 명의)
 - **코딩 방식**: **워드프레스 커스텀 테마** (PHP + HTML/CSS/JS)
 - **테마 구조**: `functions.php`, `page.php`, `header.php`, `footer.php` 등 표준 파일
-- **애니메이션**: GSAP + ScrollTrigger 단일 라이브러리로 통일
+- **애니메이션**: GSAP + ScrollTrigger (**신규 WP 기본** · `45`)
 - **슬라이더**: Swiper.js
+- **jQuery**: WP 번들만(필요 시) · `46` jQuery preset은 WP 신규 **기본 금지**(명시 승인 시만)
 - **폰트**: SUIT (기본값 · `design-tokens-master.md`)
 - **컨텐츠 폭**: 1600px (`--container-max`)
 - **아이콘 크기**: 토큰 마스터 `--icon-xs`~`--icon-2xl`

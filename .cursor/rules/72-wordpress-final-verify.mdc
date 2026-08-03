@@ -31,7 +31,7 @@ globs:
 
 ### 실행 금지 (트리거 아님)
 
-- 섹션 구현·Figma 맞춤·CSS·인터랙션·`href="#"` placeholder 유지 중인 **일반 디자인 작업**
+- 섹션 구현·디자인 맞춤·CSS·인터랙션·`href="#"` placeholder 유지 중인 **일반 디자인 작업**
 - `package-delivery-wp.js`를 사용자 요청 없이 선제 실행
 - FAIL을 이유로 **사용자 승인 없이** 테마 코드·링크·placeholder 수정
 - 정적 크몽 트랙 (`templates/`) — 본 규칙 **비적용** (`60-delivery.mdc`)

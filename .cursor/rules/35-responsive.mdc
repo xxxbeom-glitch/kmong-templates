@@ -9,7 +9,7 @@ globs:
 
 # Responsive
 
-> **적용 경로:** 기본 `templates/{slug}/` · WP는 동결(`wordpress/` 재개 시만).  
+> **적용 경로:** 기본 `wordpress/{slug}/` · 동결 `templates/`는 명시 재개 시.  
 > **BP SoT:** `design-tokens-master.md` — **767 / 1023 / 1024 / wide 1600** · 컨테이너 **1600**
 
 ## 기준

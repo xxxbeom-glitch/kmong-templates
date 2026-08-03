@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-08-03 — 규칙 잔여 정리 (필수)
+
+- `30`·`35`·`40`·`45`·`46`·`50`·`73` 활성 경로 → wordpress (templates 동결)
+- 피그마 규칙은 피그마를 준 작업에만
+- 신규 WP 모션 = GSAP+ScrollTrigger · Swiper · 46 jQuery preset 기본 금지
+
+---
+
 ## 2026-08-03 — 서브페이지 UI/UX 지침 SoT 연결
 
 - `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` → active-track · core · 70 · harness · router

@@ -1,18 +1,19 @@
 ---
-description: HTML/CSS 네이밍·마크업 규칙 (활성 templates/ · WP 동결)
+description: HTML/CSS 네이밍·마크업 규칙 (활성 wordpress/ · templates 동결)
 alwaysApply: false
 globs:
-  - templates/**/*.html
-  - templates/**/*.css
-  - templates/**/*.js
   - wordpress/**/*.php
   - wordpress/**/*.css
   - wordpress/**/*.html
+  - wordpress/**/*.js
+  - templates/**/*.html
+  - templates/**/*.css
+  - templates/**/*.js
 ---
 
 # Template Code Style
 
-> **활성:** `templates/{slug}/` (크몽 정적). WP PHP 규칙은 `wordpress/` 재개 시에만.
+> **활성:** `wordpress/{slug}/`. **동결:** `templates/` — 명시 재개 시만.
 
 ## 섹션·레이아웃
 

@@ -1,30 +1,37 @@
 ---
-description: 인터랙션·애니메이션 구현 패턴 (활성 templates/ · WP 동결)
+description: 인터랙션·애니메이션 구현 패턴 (활성 wordpress=GSAP · templates 동결)
 alwaysApply: false
 globs:
-  - templates/**/*.js
-  - templates/**/*.html
   - wordpress/**/assets/js/**
   - wordpress/**/*.php
+  - templates/**/*.js
+  - templates/**/*.html
 ---
 
 # Interaction Patterns
 
-> **어떤 motion을 쓸지:** `.cursor/rules/46-interaction-presets.mdc` (preset ID · 사용자 승인)  
+> **어떤 motion을 쓸지:** 신규 WP는 **GSAP** (아래) · `.cursor/rules/46-interaction-presets.mdc`는 **정적 동결·명시 승인**용  
 > **이 파일 = 구현 방식만** (hover/터치·타이밍)  
-> **활성 경로:** `templates/{slug}/` · WP는 동결(재개 시만)
+> **활성 경로:** `wordpress/{slug}/` · `templates/`는 동결(재개 시만)
 
-- **`templates/` (크몽 정적):** jQuery 3.x(CDN) **권장** · 바닐라는 승인 시 · 진입점 `assets/js/main.js` (또는 `js/main.js`)
-- **`wordpress/` (재개 시):** JS는 **jQuery 3.x** only · 바닐라 DOM 조작 추가 금지 · 진입점 `js/main.js` — `$(function(){ ... })` 패턴
+## 스택 (필수 구분)
+
+- **`wordpress/` (활성·신규):**  
+  - **모션:** GSAP + ScrollTrigger (`wp_enqueue`) · AOS·임의 CDN 모션 라이브러리 **추가 금지**  
+  - **슬라이더:** Swiper.js  
+  - **jQuery:** WP 번들만 · CDN 중복 금지 · UI 토글(햄버거·아코디언) 등 **필요할 때만**  
+  - **46 jQuery preset:** WP 신규에 **기본 적용 금지** — 사용자가 ID를 **명시 승인**한 경우만  
+  - 진입점: `assets/js/main.js` (enqueue)
+- **`templates/` (동결 재개 시):** jQuery 3.x + `46` preset · 진입점 `assets/js/main.js`
+
 - **새로고침 scroll top:** `history.scrollRestoration = "manual"` + `pageshow` → `scrollTo(0,0)` (`40-template-code-style.mdc` JS 기본)
 - GNB 모바일: `.menu-toggle` + `.header__nav.is-open`
-- FAQ: `slideToggle` 단일 duration, 단일 열림, `is-open`은 애니메이션 콜백과 동기
-- AOS: `data-aos-anchor`로 트리거 고정, `prefers-reduced-motion` 존중
+- FAQ: 단일 열림 · `is-open` 동기 (WP는 GSAP/CSS 또는 필요 시 jQuery `slideToggle`)
 - CTA hover: CSS only (`.btn__label` / `.btn__track` 패턴) — **fine pointer만** (`35-responsive.mdc`)
 - hover-only UI는 768px 이하·터치 환경에서 **대체 UI** 또는 비활성화
-- CSS `transition`과 jQuery `slideToggle` 타이밍 충돌 금지
-- **슬라이더 방향 버튼** (`prev` / `next`): **첫 슬라이드**에서 `prev` **`disabled`**, **마지막**에서 `next` **`disabled`** — JS에서 인덱스마다 `prop("disabled")` 동기화 · HTML 초기값(첫 화면 `prev` disabled) · CSS `:disabled` 시각 비활성(opacity 등) 필수
-- **46에 없는 preset·GNB 패턴 이름·승인 없는 motion 구현 금지**
+- CSS `transition`과 JS 애니메이션 타이밍 충돌 금지
+- **슬라이더 방향 버튼** (`prev` / `next`): **첫 슬라이드**에서 `prev` **`disabled`**, **마지막**에서 `next` **`disabled`** — 인덱스마다 동기화 · CSS `:disabled` 필수
+- **승인 없는 motion·46에 없는 preset(정적)·임의 GNB 패턴 구현 금지**
 
 ## GNB 2depth 패턴 (공통)
 

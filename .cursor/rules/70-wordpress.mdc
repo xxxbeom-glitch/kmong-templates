@@ -65,8 +65,9 @@ wordpress/{slug}/
 
 ## functions.php · enqueue
 
-- CSS/JS는 `wp_enqueue_*`만 · jQuery는 WP 번들 우선 · CDN 중복 금지  
-- 토큰 CSS·SUIT·GSAP/Swiper는 테마에서 enqueue (프로젝트 스택)
+- CSS/JS는 `wp_enqueue_*`만 · CDN jQuery **중복 금지** (필요 시 WP 번들)
+- **모션:** GSAP + ScrollTrigger · **슬라이더:** Swiper · 토큰 CSS·SUIT enqueue
+- **46 jQuery preset:** 신규 테마 **기본 금지** (`45` · 명시 승인 시만)
 
 ## 플러그인 표준
 

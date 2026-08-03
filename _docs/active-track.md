@@ -16,6 +16,7 @@
 | **서브페이지 UI/UX** | `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` (유형·맵·CPT·관리자) |
 | **토큰** | `design-tokens-master.md` · SUIT · **1600** · `_icons/` · 타이포 최소 |
 | **디자인** | 기획서·바이브 · UIUX 디렉터 원칙 유지 · 피그마는 줄 때만 |
+| **모션** | **GSAP+ScrollTrigger** · Swiper · `46` jQuery preset=승인 시에만 |
 | **절차** | `20-harness-workflow.mdc` · `70`~`72` |
 | **플러그인 표준** | 델타 문서 표 (Yoast, Wordfence, UpdraftPlus, CF7, W3TC, Smush) |
 | **QA** | `50` + WP 전용 QA (`TRANSITION` §10) · `_logs/qa-log.md` |
