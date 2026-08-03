@@ -11,7 +11,7 @@
   // eslint-disable-next-line no-new
   new Swiper(el, {
     slidesPerView: 'auto',
-    spaceBetween: 24,
+    spaceBetween: 28,
     grabCursor: !reduce,
     freeMode: {
       enabled: true,

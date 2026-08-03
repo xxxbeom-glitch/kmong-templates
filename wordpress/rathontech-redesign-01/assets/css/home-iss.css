@@ -58,14 +58,14 @@
 }
 
 .home-iss-swiper .swiper-slide {
-  width: min(320px, 78vw);
+  width: min(380px, 85vw);
   height: auto;
 }
 
 .home-iss__card {
   height: 100%;
-  min-height: 280px;
-  padding: var(--card-padding);
+  min-height: 320px;
+  padding: var(--space-8);
   border-radius: var(--radius-lg);
   background: rgb(255 255 255 / 0.06);
   box-shadow: var(--shadow-sm);
@@ -81,9 +81,9 @@
 
 .home-iss__card-title {
   margin: 0 0 var(--space-5);
-  font-size: var(--text-body1-size);
+  font-size: var(--text-h3-size);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: var(--text-h3-line);
   color: var(--color-text-inverse);
 }
 
@@ -107,8 +107,8 @@
 .home-iss__points li {
   position: relative;
   padding-left: 0.9em;
-  font-size: var(--text-body4-size);
-  line-height: var(--text-body4-line);
+  font-size: var(--text-body3-size);
+  line-height: var(--text-body3-line);
   color: rgb(245 245 245 / 0.72);
   word-break: keep-all;
 }
@@ -130,11 +130,12 @@
   }
 
   .home-iss-swiper .swiper-slide {
-    width: 340px;
+    width: 420px;
   }
 
   .home-iss__card {
-    min-height: 300px;
+    min-height: 360px;
+    padding: var(--space-10);
   }
 }
 
