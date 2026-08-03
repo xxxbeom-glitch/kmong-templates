@@ -38,13 +38,11 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  /* h2 스택: title→lead space-4 · lead→CTA space-8 */
-  gap: var(--space-8);
   min-height: auto;
-  padding-block: var(--section-pad-y-lg);
-  text-align: left;
+  padding-block: var(--section-pad-y);
+  text-align: center;
 }
 
 .home-iss__copy {
@@ -52,7 +50,7 @@
   width: 100%;
   max-width: min(90vw, 72rem);
   min-height: 0;
-  margin-inline: 0;
+  margin-inline: auto;
 }
 
 .home-iss__step {
@@ -66,7 +64,7 @@
   font-weight: var(--text-h2-weight);
   letter-spacing: var(--text-h2-letter);
   color: var(--color-text-inverse);
-  text-align: left;
+  text-align: center;
   word-break: keep-all;
 }
 
@@ -77,24 +75,12 @@
   line-height: var(--text-body1-line);
   font-weight: var(--text-body1-weight);
   color: var(--color-text-inverse-soft);
-  text-align: left;
+  text-align: center;
   white-space: nowrap;
 }
 
-.home-iss__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-/* PC: grid stack = tallest step height only (no reserved empty band) */
+/* PC: grid stack = tallest step height only */
 @media (min-width: 768px) {
-  .home-iss__frame {
-    min-height: 560px;
-    padding-block: var(--section-pad-y-lg);
-  }
-
   .home-iss__copy {
     display: grid;
   }
@@ -103,7 +89,7 @@
     grid-area: 1 / 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
@@ -137,6 +123,10 @@
     visibility: visible;
     transform: none;
     pointer-events: auto;
+  }
+
+  .home-iss__lead {
+    white-space: normal;
   }
 }
 

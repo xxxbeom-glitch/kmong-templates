@@ -40,17 +40,18 @@
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg · slide hover** | fill hover `#0062d6` · `button-text-slide-hover` |
 | rathontech 히어로 | **비율 min(72/88vh)** · 휠 스냅 없음 | 100svh·반자동 스냅 제거 |
 | rathontech ISS→다음 | **자연 스크롤** (스냅 없음) | 마지막 카피 후 hold 해제 |
-| rathontech 카피 스택 | **h2: title→lead 16 · lead→CTA 32** | 히어로(h1)는 32→40 · ISS는 h2라 더 타이트 |
+| rathontech ISS 카피 | **중앙 정렬 · CTA 없음** · pad=`section-pad-y` | eco/media와 동일 상하 · title→lead 16 |
 
 ---
 
-## 2026-08-03 — [wordpress] rathontech ISS 리드↔CTA 간격
+## 2026-08-03 — [wordpress] rathontech ISS 카피 중앙 · CTA 제거
 
 | # | 결정 |
 |---|------|
-| 1 | ISS(h2): title→lead=`space-4`(16) · lead→CTA=`space-8`(32) |
-| 2 | 히어로(h1) PC lead→CTA=`space-10`(40) 유지 · ISS에 그대로 복사하지 않음 |
-| 3 | 스텝 카피 높이 = CSS grid 스택(가장 긴 스텝) · 2줄 예약 min-height 금지 |
+| 1 | ISS CTA(회사비전 보기) **삭제** |
+| 2 | 타이틀·리드 **중앙 정렬** |
+| 3 | 상하 pad = `--section-pad-y` (eco/media와 동일) · `section-pad-y-lg`·고정 min-height 560 제거 |
+| 4 | title→lead=`space-4`(16) · grid 스택 유지 |
 
 ---
 
@@ -95,7 +96,7 @@
 | 2 | 사이즈 3단: sm 40/16/14 · md 48/24/16(기본) · lg 56/32/16 |
 | 3 | Primary weight=semibold · Secondary/Ghost=medium · radius=`--radius-md` |
 | 4 | on-dark Primary도 **동일 블루 채움**(흰 박스 제거) · Secondary=흰 outline |
-| 5 | 사용: 헤더 sm · 모바일메뉴 md · 히어로/ISS/CTA밴드 lg · 제품 md |
+| 5 | 사용: 헤더 sm · 모바일메뉴 md · 히어로/CTA밴드 lg · 제품 md |
 
 ---
 

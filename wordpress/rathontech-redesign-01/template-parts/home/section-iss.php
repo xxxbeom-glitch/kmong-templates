@@ -56,11 +56,6 @@ $iss_video = rathon_asset_uri('videos/12421435_960_540_30fps.mp4');
           </article>
         <?php endforeach; ?>
       </div>
-      <div class="home-iss__actions">
-        <a class="btn btn--lg btn--primary-on-dark btn-slide-hover" href="<?php echo esc_url(rathon_url('company')); ?>">
-          <?php echo rathon_btn_slide_label(__('회사비전 보기', 'rathontech-redesign-01')); ?>
-        </a>
-      </div>
     </div>
   </div>
 </section>
