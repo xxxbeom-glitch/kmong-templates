@@ -2,8 +2,8 @@
 
 .home-iss {
   padding: var(--section-pad-y) 0;
-  background: var(--color-bg-inverse);
-  color: var(--color-text-inverse);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-primary);
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
   font-weight: var(--text-eyebrow-weight);
   letter-spacing: var(--text-eyebrow-letter);
   text-transform: none;
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 .home-iss__title {
@@ -30,7 +30,7 @@
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
   letter-spacing: var(--text-h2-letter);
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
   word-break: keep-all;
   overflow-wrap: normal;
   line-break: strict;
@@ -41,7 +41,7 @@
   max-width: none;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
   word-break: keep-all;
   overflow-wrap: normal;
   line-break: strict;
@@ -91,8 +91,9 @@
   height: 100%;
   min-height: 340px;
   padding: var(--card-padding);
-  border-radius: var(--radius-lg);
-  background: rgb(255 255 255 / 0.06);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-light);
   box-shadow: var(--shadow-sm);
 }
 
@@ -110,7 +111,7 @@
   font-weight: var(--text-h3-weight);
   line-height: var(--text-h3-line);
   letter-spacing: var(--text-h3-letter);
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 .home-iss__card-title a {
@@ -135,7 +136,7 @@
   padding-left: 0.9em;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
   word-break: keep-all;
 }
 
@@ -143,7 +144,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--color-text-inverse-faint);
+  color: var(--color-text-muted);
 }
 
 @media (min-width: 1024px) {

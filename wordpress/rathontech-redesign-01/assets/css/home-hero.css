@@ -8,7 +8,7 @@
   padding: calc(var(--header-h) + var(--space-16)) 0 var(--space-20);
   overflow: hidden;
   color: var(--color-text-inverse);
-  background: var(--gray-900);
+  background: var(--color-bg-inverse);
 }
 
 .home-hero__media {
@@ -20,7 +20,7 @@
 .home-hero__media-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(115deg, var(--gray-900) 0%, var(--blue-900) 55%, var(--gray-800) 100%);
+  background: linear-gradient(115deg, var(--color-bg-inverse) 0%, var(--blue-800) 55%, var(--gray-800) 100%);
 }
 
 .home-hero__media img,
@@ -34,7 +34,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgb(12 29 75 / 0.45);
+  background: rgb(32 41 54 / 0.55);
   pointer-events: none;
 }
 
@@ -82,9 +82,9 @@
   gap: var(--space-4);
 }
 
-/* Secondary on dark media: outline stays readable, not pill/ghost clone */
+/* Secondary on dark media */
 .btn--secondary-on-dark {
-  border-color: rgb(255 255 255 / 0.7);
+  border-color: rgb(255 255 255 / 0.9);
   color: var(--color-text-inverse);
   background: transparent;
 }
@@ -93,6 +93,20 @@
   border-color: #fff;
   color: #fff;
   background: rgb(255 255 255 / 0.08);
+}
+
+/* Hero primary uses NW on-dark CTA */
+.home-hero .btn--primary {
+  background: var(--color-text-inverse);
+  color: var(--color-primary);
+  border-color: var(--color-text-inverse);
+  font-weight: 700;
+}
+
+.home-hero .btn--primary:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
 }
 
 @media (max-width: 767px) {

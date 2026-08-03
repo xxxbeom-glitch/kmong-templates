@@ -3,8 +3,8 @@
 
 .home-evidence {
   padding: var(--section-pad-y) 0;
-  background: var(--color-bg-inverse);
-  color: var(--color-text-inverse);
+  background: var(--color-bg-muted);
+  color: var(--color-text-primary);
 }
 
 .home-evidence__head {
@@ -17,7 +17,7 @@
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
   letter-spacing: var(--text-h2-letter);
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 .home-evidence__grid {
@@ -53,15 +53,15 @@
 
 /* Image placeholders — replace with real case photos when rights cleared */
 .home-evidence__thumb--tone-a {
-  background-image: linear-gradient(145deg, var(--blue-800) 0%, var(--gray-800) 100%);
+  background-image: linear-gradient(145deg, var(--blue-700) 0%, var(--color-btn-fill) 100%);
 }
 
 .home-evidence__thumb--tone-b {
-  background-image: linear-gradient(145deg, var(--gray-800) 0%, var(--blue-900) 100%);
+  background-image: linear-gradient(145deg, var(--color-btn-fill) 0%, var(--blue-800) 100%);
 }
 
 .home-evidence__thumb--tone-c {
-  background-image: linear-gradient(145deg, var(--gray-900) 0%, var(--blue-900) 100%);
+  background-image: linear-gradient(145deg, var(--gray-800) 0%, var(--blue-700) 100%);
 }
 
 .home-evidence__card:hover .home-evidence__thumb {
@@ -75,7 +75,7 @@
   font-weight: var(--text-body2-weight);
   line-height: var(--text-body2-line);
   letter-spacing: -0.02em;
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 .home-evidence__sub {
@@ -84,7 +84,7 @@
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
   font-weight: 400;
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -112,7 +112,7 @@
   border: 0;
   border-radius: var(--radius-md);
   background: transparent;
-  color: var(--color-text-inverse-faint);
+  color: var(--color-text-muted);
   font-family: inherit;
   font-size: var(--text-body3-size);
   font-weight: 600;
@@ -122,13 +122,13 @@
 }
 
 .home-evidence__page:hover {
-  color: var(--color-text-inverse);
-  background: rgb(255 255 255 / 0.08);
+  color: var(--color-text-primary);
+  background: var(--color-bg-base);
 }
 
 .home-evidence__page.is-active {
-  color: var(--color-text-inverse);
-  background: rgb(255 255 255 / 0.14);
+  color: var(--color-text-primary);
+  background: var(--color-bg-base);
 }
 
 .home-evidence__page:focus-visible {

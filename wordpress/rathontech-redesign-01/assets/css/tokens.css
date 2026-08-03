@@ -1,45 +1,53 @@
 :root {
-  /* Palette — KEOC layout-ref colors (main pass). Accent sparingly. */
-  --blue-100: #E8F3FE;
-  --blue-200: #C9E3FC;
-  --blue-300: #7EB8F5;
-  --blue-500: #0981F1;
-  --blue-600: #0981F1;
-  --blue-700: #0769C7;
-  --blue-800: #0A4F96;
-  --blue-900: #0C1D4B;
+  /* Palette — Naver Works */
+  --blue-100: #E5F4FF;
+  --blue-200: #B8E0FF;
+  --blue-300: #5CB8FF;
+  --blue-500: #008CFF;
+  --blue-600: #008CFF;
+  --blue-700: #007BFF;
+  --blue-800: #0066D6;
+  --blue-900: #202936;
 
-  --indigo-800: #0A4F96;
-  --indigo-900: #0C1D4B;
+  --green-500: #00C85F;
+  --green-100: #EAFCF2;
 
   --white: #FFFFFF;
-  --gray-50: #F2F2F2;
-  --gray-100: #EFEFEF;
-  --gray-200: #E0E3E8;
-  --gray-300: #DADDE2;
-  --gray-400: #A7A7A7;
-  --gray-500: #7D7D7D;
-  --gray-600: #555555;
-  --gray-700: #333333;
-  --gray-800: #303030;
-  --gray-900: #111111;
+  --gray-50: #F9FAFC;
+  --gray-100: #F1F3F9;
+  --gray-200: #E6E8EB;
+  --gray-300: #D4D8DC;
+  --gray-400: #B0B4B8;
+  --gray-500: #95999C;
+  --gray-600: #71767A;
+  --gray-700: #4A4E52;
+  --gray-800: #2C3034;
+  --gray-900: #202124;
 
-  /* Semantic */
-  --color-primary: var(--blue-600);
-  --color-primary-light: var(--blue-100);
-  --color-primary-dark: var(--blue-700);
-  /* Typo colors — Naver Works */
+  /* Semantic — NW surfaces / typo / CTA */
+  --color-primary: #008CFF;
+  --color-primary-light: #E5F4FF;
+  --color-primary-dark: #007BFF;
+  --color-accent: #008CFF;
+  --color-accent-soft: #E5F4FF;
+  --color-success: #00C85F;
+  --color-success-soft: #EAFCF2;
+
+  /* CTA fill (NW Primary dark button) */
+  --color-btn-fill: #202936;
+  --color-btn-fill-hover: #161B24;
+
   --color-text-primary: #202124;
   --color-text-secondary: #71767A;
   --color-text-muted: #95999C;
   --color-text-inverse: #FFFFFF;
-  --color-bg-base: var(--white);
-  --color-bg-subtle: var(--gray-50);
-  --color-bg-muted: var(--gray-100);
-  --color-bg-cool: var(--gray-300);
-  --color-bg-inverse: var(--gray-900);
-  --color-border-light: var(--gray-200);
-  --color-border-default: var(--gray-300);
+  --color-bg-base: #FFFFFF;
+  --color-bg-subtle: #F9FAFC;
+  --color-bg-muted: #F1F3F9;
+  --color-bg-cool: #E5F4FF;
+  --color-bg-inverse: #202936;
+  --color-border-light: #E6E8EB;
+  --color-border-default: #D4D8DC;
 
   /* Typo — Naver Works scale (Pretendard · PC) */
   --font-primary: "Pretendard Variable", Pretendard, "Noto Sans KR", system-ui, "Malgun Gothic", sans-serif;
@@ -99,12 +107,12 @@
   /* CTA label ≈ NW 16/400 (band uses 20/700 separately) */
   --text-cta3-size: 16px;
 
-  /* Inverse text opacities (KEOC) */
+  /* Inverse text opacities */
   --color-text-inverse-soft: rgb(255 255 255 / 0.9);
-  --color-text-inverse-muted: rgb(255 255 255 / 0.6);
+  --color-text-inverse-muted: rgb(255 255 255 / 0.65);
   --color-text-inverse-faint: rgb(255 255 255 / 0.5);
-  --color-text-link: var(--gray-500);
-  --color-text-link-hover: var(--gray-700);
+  --color-text-link: var(--color-primary);
+  --color-text-link-hover: var(--color-primary-dark);
 
   /* Space scale — NW mid steps: 10 · 16 · 20 · 36 · 40 */
   --space-1: 4px;

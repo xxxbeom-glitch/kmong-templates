@@ -94,7 +94,7 @@
   margin: 0;
   font-size: var(--text-caption2-size);
   line-height: 1.5;
-  color: rgb(255 255 255 / 0.55);
+  color: var(--color-text-muted);
   text-align: right;
 }
 
