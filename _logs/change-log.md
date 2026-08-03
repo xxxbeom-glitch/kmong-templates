@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech ISS 카드 4개 + 좌측 타이틀 목차
+
+- 기획 § 문제 축 4개만 유지 · 좌측 목차=카드 타이틀 · 클릭 시 해당 카드로 이동
+- 암호/컨설팅 2장 제외 (선택 이동 위주)
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech 타이포 웨이트 3종 (M/SB/B)
 
 - Regular(400) 제거 · Medium 500 / Semibold 600 / Bold 700만 사용

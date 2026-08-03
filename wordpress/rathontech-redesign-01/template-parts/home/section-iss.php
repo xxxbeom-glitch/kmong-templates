@@ -1,7 +1,7 @@
 <?php
 /**
  * Home Section 2 — Identity Security System.
- * Layout: left title list (Swiper pagination) + right cards slidesPerView ~1.9.
+ * Planning §: 4 problem axes · left title TOC + right cards (~1.9).
  */
 
 $iss_items = array(
@@ -41,24 +41,6 @@ $iss_items = array(
     ),
     'href'   => rathon_url('solutions/zero-trust'),
   ),
-  array(
-    'title'  => __('암호와 데이터 보호', 'rathontech-redesign-01'),
-    'points' => array(
-      __('국가·공공 환경에 맞는 암호모듈', 'rathontech-redesign-01'),
-      __('키 관리와 검증필 기준 대응', 'rathontech-redesign-01'),
-      __('암호모듈 솔루션으로 연결', 'rathontech-redesign-01'),
-    ),
-    'href'   => rathon_url('solutions/cryptography'),
-  ),
-  array(
-    'title'  => __('보안 로드맵 설계', 'rathontech-redesign-01'),
-    'points' => array(
-      __('현황 분석과 권한·인증 구조 설계', 'rathontech-redesign-01'),
-      __('투자 효율과 운영 최적화 검토', 'rathontech-redesign-01'),
-      __('컨설팅 솔루션으로 연결', 'rathontech-redesign-01'),
-    ),
-    'href'   => rathon_url('solutions/consulting'),
-  ),
 );
 
 $iss_labels = array_map(
@@ -81,6 +63,7 @@ $iss_labels = array_map(
 
     <div class="home-iss__layout">
       <nav class="home-iss__nav" aria-label="<?php echo esc_attr__('문제별 솔루션', 'rathontech-redesign-01'); ?>">
+        <p class="home-iss__nav-label" aria-hidden="true"><?php echo esc_html__('문제 선택', 'rathontech-redesign-01'); ?></p>
         <div
           class="home-iss__pagination"
           data-iss-pagination
