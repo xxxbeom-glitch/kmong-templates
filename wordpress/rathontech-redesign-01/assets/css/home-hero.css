@@ -69,7 +69,7 @@
   max-width: 34em;
   font-size: var(--text-body1-size);
   line-height: var(--text-body1-line);
-  color: rgb(255 255 255 / 0.9);
+  color: var(--color-text-inverse-soft);
   word-break: keep-all;
   overflow-wrap: normal;
 }

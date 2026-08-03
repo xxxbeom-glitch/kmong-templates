@@ -71,8 +71,8 @@
 
 .home-evidence__label {
   display: block;
-  font-size: var(--text-body1-size);
-  font-weight: 700;
+  font-size: var(--text-body2-size);
+  font-weight: 600;
   line-height: 1.4;
   color: var(--color-text-inverse);
 }
@@ -83,7 +83,7 @@
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
   font-weight: 400;
-  color: rgb(255 255 255 / 0.72);
+  color: var(--color-text-inverse-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -111,7 +111,7 @@
   border: 0;
   border-radius: var(--radius-md);
   background: transparent;
-  color: rgb(255 255 255 / 0.55);
+  color: var(--color-text-inverse-faint);
   font-family: inherit;
   font-size: var(--text-body3-size);
   font-weight: 600;

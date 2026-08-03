@@ -13,11 +13,12 @@
 
 .home-company__eyebrow {
   margin: 0 0 var(--space-4);
-  font-size: var(--text-caption1-size);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-primary);
+  font-size: var(--text-eyebrow-size);
+  line-height: var(--text-eyebrow-line);
+  font-weight: var(--text-eyebrow-weight);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-text-primary);
 }
 
 .home-company__title {
@@ -131,7 +132,7 @@
 
 .home-company__contact dt {
   margin: 0 0 2px;
-  font-size: var(--text-caption1-size);
+  font-size: var(--text-caption2-size);
   font-weight: 600;
   color: var(--color-text-muted);
 }

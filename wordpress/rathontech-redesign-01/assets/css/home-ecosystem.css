@@ -13,11 +13,12 @@
 
 .home-eco__eyebrow {
   margin: 0 0 var(--space-4);
-  font-size: var(--text-caption1-size);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-primary);
+  font-size: var(--text-eyebrow-size);
+  line-height: var(--text-eyebrow-line);
+  font-weight: var(--text-eyebrow-weight);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-text-primary);
 }
 
 .home-eco__title {
@@ -116,7 +117,7 @@
   margin-bottom: var(--space-3);
   font-size: var(--text-h3-size);
   line-height: var(--text-h3-line);
-  font-weight: 700;
+  font-weight: var(--text-h3-weight);
   color: var(--color-text-inverse);
   word-break: keep-all;
 }
@@ -124,7 +125,7 @@
 .home-eco__card-desc {
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: rgb(255 255 255 / 0.88);
+  color: var(--color-text-inverse-soft);
   word-break: keep-all;
 }
 

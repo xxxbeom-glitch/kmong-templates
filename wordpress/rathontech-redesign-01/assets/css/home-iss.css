@@ -15,12 +15,12 @@
 
 .home-iss__eyebrow {
   margin: 0 0 var(--space-4);
-  font-size: var(--text-caption1-size);
-  line-height: var(--text-caption1-line);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--blue-300);
+  font-size: var(--text-eyebrow-size);
+  line-height: var(--text-eyebrow-line);
+  font-weight: var(--text-eyebrow-weight);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-text-inverse);
 }
 
 .home-iss__title {
@@ -41,7 +41,7 @@
   max-width: none;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: rgb(255 255 255 / 0.72);
+  color: var(--color-text-inverse-muted);
   word-break: keep-all;
   overflow-wrap: normal;
   line-break: strict;
@@ -107,7 +107,7 @@
 .home-iss__card-title {
   margin: 0 0 var(--space-5);
   font-size: var(--text-h3-size);
-  font-weight: 700;
+  font-weight: var(--text-h3-weight);
   line-height: var(--text-h3-line);
   color: var(--color-text-inverse);
 }
@@ -118,7 +118,7 @@
 }
 
 .home-iss__card-title a:hover {
-  color: var(--blue-300);
+  color: var(--color-primary);
 }
 
 .home-iss__points {
@@ -134,7 +134,7 @@
   padding-left: 0.9em;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: rgb(255 255 255 / 0.72);
+  color: var(--color-text-inverse-muted);
   word-break: keep-all;
 }
 
@@ -142,7 +142,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: rgb(255 255 255 / 0.45);
+  color: var(--color-text-inverse-faint);
 }
 
 @media (min-width: 1024px) {

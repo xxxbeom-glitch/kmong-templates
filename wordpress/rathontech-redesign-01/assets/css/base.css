@@ -12,9 +12,10 @@ html {
 body {
   margin: 0;
   font-family: var(--font-primary);
-  font-size: var(--text-body3-size);
-  line-height: var(--text-body3-line);
-  color: var(--color-text-primary);
+  font-size: var(--text-body4-size);
+  line-height: var(--text-body4-line);
+  font-weight: 400;
+  color: var(--color-text-secondary);
   background: var(--color-bg-base);
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
@@ -28,13 +29,12 @@ svg {
 }
 
 a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  color: var(--color-text-link);
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--color-text-link-hover);
 }
 
 button {
@@ -83,7 +83,7 @@ button {
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   font-size: var(--text-cta3-size);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;

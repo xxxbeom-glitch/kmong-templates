@@ -19,8 +19,8 @@ function rathon_asset_ver($relative) {
 
 function rathon_enqueue_assets() {
   wp_enqueue_style(
-    'rathon-suit',
-    'https://cdn.jsdelivr.net/gh/orioncactus/suit@v1.0.0/packages/suit/fonts.css',
+    'rathon-fonts',
+    'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
     array(),
     null
   );
@@ -28,7 +28,7 @@ function rathon_enqueue_assets() {
   wp_enqueue_style(
     'rathon-tokens',
     rathon_asset_uri('css/tokens.css'),
-    array('rathon-suit'),
+    array('rathon-fonts'),
     rathon_asset_ver('css/tokens.css')
   );
 
