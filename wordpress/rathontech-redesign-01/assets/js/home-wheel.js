@@ -1,7 +1,7 @@
 /**
  * Home wheel (PC):
  * - Hero → ISS: semi-auto snap only
- * - ISS: one gesture flips copy; last copy releases to natural scroll (no snap)
+ * - ISS: one gesture = one copy; next gesture after idle = natural scroll (no snap)
  * MO / reduced-motion: no hijack
  */
 (function () {
@@ -20,10 +20,9 @@
 
   var activeIndex = 0;
   var animating = false;
-  var gestureLock = false;
-  var gestureTimer = null;
+  var holdUntil = 0;
   var SNAP_MS = 0.55;
-  var GESTURE_IDLE_MS = 160;
+  var STEP_HOLD_MS = 480;
 
   function setActive(index) {
     if (index < 0 || index >= stepCount) return;
@@ -62,18 +61,23 @@
     return 'free';
   }
 
+  function isHeld() {
+    return Date.now() < holdUntil;
+  }
+
+  function hold(ms) {
+    holdUntil = Date.now() + (ms || STEP_HOLD_MS);
+  }
+
   function snapTo(y, done) {
     if (animating) return;
     animating = true;
-    gestureLock = true;
+    hold(Math.round(SNAP_MS * 1000) + 80);
 
     var start = window.scrollY;
     var end = Math.max(0, Math.round(y));
     if (Math.abs(end - start) < 2) {
       animating = false;
-      window.setTimeout(function () {
-        gestureLock = false;
-      }, GESTURE_IDLE_MS);
       if (done) done();
       return;
     }
@@ -81,9 +85,7 @@
     var finish = function () {
       window.scrollTo(0, end);
       animating = false;
-      window.setTimeout(function () {
-        gestureLock = false;
-      }, GESTURE_IDLE_MS);
+      hold(120);
       if (done) done();
     };
 
@@ -106,14 +108,6 @@
     window.setTimeout(finish, 500);
   }
 
-  function armGesture() {
-    gestureLock = true;
-    if (gestureTimer) window.clearTimeout(gestureTimer);
-    gestureTimer = window.setTimeout(function () {
-      gestureLock = false;
-    }, GESTURE_IDLE_MS);
-  }
-
   function onWheel(e) {
     if (!desktop.matches || animating) return;
 
@@ -123,39 +117,41 @@
     if (dy === 0) return;
 
     var p = phase();
-
-    /* Below ISS: natural scroll only */
     if (p === 'free') return;
 
     if (dy > 0) {
-      /* Hero → ISS: only place with semi-auto snap */
       if (p === 'hero') {
         e.preventDefault();
-        if (gestureLock) return;
-        armGesture();
+        if (isHeld()) return;
         setActive(0);
         snapTo(issY());
         return;
       }
 
-      /* ISS: flip copy; last copy releases (no snap to next) */
+      /* ISS — always catch while stepping; release only after hold ends on last copy */
       if (activeIndex < stepCount - 1) {
         e.preventDefault();
-        if (gestureLock) return;
-        armGesture();
+        if (isHeld()) return;
         setActive(activeIndex + 1);
+        hold(STEP_HOLD_MS);
+        return;
+      }
+
+      /* Last copy: same swipe still held → block scroll; new gesture → natural */
+      if (isHeld()) {
+        e.preventDefault();
+        hold(STEP_HOLD_MS);
         return;
       }
 
       return;
     }
 
-    /* Wheel up inside ISS: previous copy only (no snap back to hero) */
     if (p === 'iss' && activeIndex > 0) {
       e.preventDefault();
-      if (gestureLock) return;
-      armGesture();
+      if (isHeld()) return;
       setActive(activeIndex - 1);
+      hold(STEP_HOLD_MS);
     }
   }
 
