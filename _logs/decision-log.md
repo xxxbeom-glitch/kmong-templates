@@ -38,6 +38,17 @@
 | rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg** | fill=`--color-primary` · on-dark도 동일 블루 |
+| rathontech 히어로 휠 | **반자동 스냅 → ISS** | PC · reduced-motion 제외 · `hero-snap.js` |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech 히어로 휠 반자동 스냅
+
+| # | 결정 |
+|---|------|
+| 1 | 히어로에서 휠 다운 → ISS 상단으로 power3 스냅 (~0.62s) |
+| 2 | ISS 진입 직대에서 휠 업 → 히어로 top으로 복귀 |
+| 3 | PC(≥768)만 · prefers-reduced-motion 시 미적용 · ISS pin 중반 스크롤은 가로채지 않음 |
 
 ---
 

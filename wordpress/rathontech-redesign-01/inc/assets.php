@@ -104,6 +104,13 @@ function rathon_enqueue_assets() {
       rathon_asset_ver('js/iss-slider.js'),
       true
     );
+    wp_enqueue_script(
+      'rathon-hero-snap',
+      rathon_asset_uri('js/hero-snap.js'),
+      array('rathon-gsap', 'rathon-iss-slider'),
+      rathon_asset_ver('js/hero-snap.js'),
+      true
+    );
     wp_enqueue_style(
       'rathon-home-eco',
       rathon_asset_uri('css/home-ecosystem.css'),
