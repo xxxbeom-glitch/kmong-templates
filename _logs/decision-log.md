@@ -39,7 +39,7 @@
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg** | fill=`--color-primary` · on-dark도 동일 블루 |
 | rathontech 히어로 휠 | **반자동 스냅 → ISS** | PC · reduced-motion 제외 · `hero-snap.js` |
-| rathontech ISS pin | **휠 스텝** (1회=카피 · 1회=다음 섹션) | scrub pin 제거 · `iss-slider.js` |
+| rathontech ISS pin | **home-wheel 1제스처=1스텝** | hero→ISS카피→eco · `home-wheel.js` |
 
 ---
 

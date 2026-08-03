@@ -100,15 +100,15 @@ function rathon_enqueue_assets() {
     wp_enqueue_script(
       'rathon-iss-slider',
       rathon_asset_uri('js/iss-slider.js'),
-      array('rathon-gsap'),
+      array(),
       rathon_asset_ver('js/iss-slider.js'),
       true
     );
     wp_enqueue_script(
-      'rathon-hero-snap',
-      rathon_asset_uri('js/hero-snap.js'),
-      array('rathon-gsap', 'rathon-iss-slider'),
-      rathon_asset_ver('js/hero-snap.js'),
+      'rathon-home-wheel',
+      rathon_asset_uri('js/home-wheel.js'),
+      array('rathon-gsap'),
+      rathon_asset_ver('js/home-wheel.js'),
       true
     );
     wp_enqueue_style(
