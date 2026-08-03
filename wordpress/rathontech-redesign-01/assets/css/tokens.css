@@ -48,29 +48,31 @@
   --text-min-heading: 20px;
 
   --text-h1-size: 56px;
-  --text-h1-line: 1.15;
+  --text-h1-line: 1.28;
   --text-h1-weight: 700;
   --text-h1-letter: -0.02em;
 
   --text-h2-size: 36px;
-  --text-h2-line: 1.25;
+  --text-h2-line: 1.35;
   --text-h2-weight: 700;
 
   --text-h3-size: 28px;
-  --text-h3-line: 1.3;
+  --text-h3-line: 1.4;
   --text-h3-weight: 600;
 
   --text-body1-size: 20px;
-  --text-body1-line: 1.65;
+  --text-body1-line: 1.75;
   --text-body2-size: 18px;
-  --text-body2-line: 1.65;
+  --text-body2-line: 1.75;
   --text-body3-size: 16px;
-  --text-body3-line: 1.65;
+  --text-body3-line: 1.75;
   --text-body4-size: 14px;
-  --text-body4-line: 1.5;
+  --text-body4-line: 1.65;
 
   --text-caption1-size: 13px;
+  --text-caption1-line: 1.55;
   --text-caption2-size: 12px;
+  --text-caption2-line: 1.55;
   --text-cta3-size: 16px;
 
   --space-1: 4px;
