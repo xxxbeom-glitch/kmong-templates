@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech ISS 타이틀 페이지 네비
+
+- 카드 제거 · 메인/서브 타이틀 4상태 + 01–04 네비
+- Swiper enqueue 제거 · `section-iss` · `home-iss.css` · `iss-slider.js` · preview
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech ISS 드래그 슬라이더 복원
 
 - 좌측 목차 제거 · freeMode 가로 드래그로 복원

@@ -1,21 +1,30 @@
-/* Home Section 2 — ISS horizontal card drag slider */
+/* Home Section 2 — ISS title page-nav (main 1줄 + sub 1줄 × 4) */
 
 .home-iss {
   padding: var(--section-pad-y) 0;
   background: var(--color-bg-subtle);
   color: var(--color-text-primary);
-  overflow: hidden;
 }
 
-.home-iss__head {
-  margin-bottom: var(--section-head-gap);
-  max-width: none;
+.home-iss__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-10);
+  min-height: 220px;
+}
+
+.home-iss__panel {
   width: 100%;
+  max-width: 52rem;
+}
+
+.home-iss__panel[hidden] {
+  display: none;
 }
 
 .home-iss__title {
   margin: 0 0 var(--space-4);
-  max-width: none;
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
@@ -26,9 +35,18 @@
   line-break: strict;
 }
 
+.home-iss__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-iss__title-link:hover {
+  color: var(--color-primary);
+}
+
 .home-iss__lead {
   margin: 0;
-  max-width: none;
+  max-width: 40rem;
   font-size: var(--text-body1-size);
   line-height: var(--text-body1-line);
   font-weight: var(--text-body1-weight);
@@ -38,104 +56,47 @@
   line-break: strict;
 }
 
-.home-iss__slider-shell {
-  padding-left: max(
-    var(--container-px-mobile),
-    calc((100vw - min(100vw, var(--container-max))) / 2 + var(--container-px-mobile))
-  );
+.home-iss__nav {
+  margin-top: auto;
 }
 
-@media (min-width: 768px) {
-  .home-iss__slider-shell {
-    padding-left: max(
-      var(--container-px-tablet),
-      calc((100vw - min(100vw, var(--container-max))) / 2 + var(--container-px-tablet))
-    );
-  }
-}
-
-@media (min-width: 1024px) {
-  .home-iss__slider-shell {
-    padding-left: max(
-      var(--container-px-desktop),
-      calc((100vw - min(100vw, var(--container-max))) / 2 + var(--container-px-desktop))
-    );
-  }
-}
-
-.home-iss-swiper {
-  overflow: visible;
-  cursor: grab;
-}
-
-.home-iss-swiper:active {
-  cursor: grabbing;
-}
-
-.home-iss-swiper .swiper-slide {
-  width: min(440px, 88vw);
-  height: auto;
-}
-
-.home-iss__card {
-  height: 100%;
-  min-height: 340px;
-  padding: var(--card-padding);
-  border-radius: var(--radius-md);
-  background: var(--color-bg-base);
-  border: 1px solid var(--color-border-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.home-iss__index {
-  margin: 0 0 var(--space-5);
-  font-size: var(--text-body3-size);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.04em;
-  color: var(--color-primary);
-}
-
-.home-iss__card-title {
-  margin: 0 0 var(--space-5);
-  font-size: var(--text-h3-size);
-  font-weight: var(--text-h3-weight);
-  line-height: var(--text-h3-line);
-  letter-spacing: var(--text-h3-letter);
-  color: var(--color-text-primary);
-  word-break: keep-all;
-}
-
-.home-iss__card-title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.home-iss__card-title a:hover {
-  color: var(--color-primary);
-}
-
-.home-iss__points {
+.home-iss__pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: var(--space-3);
 }
 
-.home-iss__points li {
-  position: relative;
-  padding-left: 0.9em;
+.home-iss__page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  font-family: inherit;
   font-size: var(--text-body3-size);
-  line-height: var(--text-body3-line);
-  color: var(--color-text-secondary);
-  word-break: keep-all;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.home-iss__points li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--color-text-muted);
+.home-iss__page:hover {
+  color: var(--color-primary);
+}
+
+.home-iss__page.is-active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  background: rgb(0 140 255 / 0.08);
 }
 
 @media (min-width: 1024px) {
@@ -143,17 +104,14 @@
     padding: var(--section-pad-y-lg) 0 var(--section-pad-y);
   }
 
-  .home-iss-swiper .swiper-slide {
-    width: 520px;
-  }
-
-  .home-iss__card {
-    min-height: 380px;
+  .home-iss__stage {
+    min-height: 280px;
+    gap: var(--space-12);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-iss-swiper {
-    cursor: default;
+  .home-iss__page {
+    transition: none;
   }
 }

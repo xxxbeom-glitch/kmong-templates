@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/home-hero.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="../assets/css/home-iss.css">
   <link rel="stylesheet" href="../assets/css/home-ecosystem.css">
   <link rel="stylesheet" href="../assets/css/home-evidence.css">
@@ -190,61 +189,42 @@
       </div>
     </section>
 
-    <section class="home-iss" aria-labelledby="home-iss-title">
+    <section class="home-iss" aria-labelledby="home-iss-title" data-iss-pager>
       <div class="u-container">
-        <header class="home-iss__head">
-          <h2 id="home-iss-title" class="home-iss__title">조직의 문제로 보안 솔루션을 고릅니다</h2>
-          <p class="home-iss__lead">계정·인증·디렉토리·접근 통제 중 맞는 솔루션으로 이어집니다.</p>
-        </header>
-      </div>
-      <div class="home-iss__slider-shell">
-        <div class="swiper home-iss-swiper" data-iss-swiper>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <article class="home-iss__card">
-                <p class="home-iss__index" aria-hidden="true">01</p>
-                <h3 class="home-iss__card-title"><a href="#">흩어진 계정과 권한</a></h3>
-                <ul class="home-iss__points">
-                  <li>입사·이동·퇴사에 맞춘 계정·권한 자동 관리</li>
-                  <li>역할 기반 권한으로 운영 표준화</li>
-                  <li>통합계정·권한관리 솔루션으로 연결</li>
-                </ul>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="home-iss__card">
-                <p class="home-iss__index" aria-hidden="true">02</p>
-                <h3 class="home-iss__card-title"><a href="#">반복되고 복잡한 로그인</a></h3>
-                <ul class="home-iss__points">
-                  <li>한 번의 인증으로 여러 시스템 접근</li>
-                  <li>필요한 순간에만 추가 인증 적용</li>
-                  <li>인증 솔루션으로 연결</li>
-                </ul>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="home-iss__card">
-                <p class="home-iss__index" aria-hidden="true">03</p>
-                <h3 class="home-iss__card-title"><a href="#">분산된 사용자·자원 정보</a></h3>
-                <ul class="home-iss__points">
-                  <li>디렉토리 중심의 사용자·시스템 정보 통합</li>
-                  <li>빠른 검색과 일관된 접근 통제</li>
-                  <li>디렉토리 솔루션으로 연결</li>
-                </ul>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="home-iss__card">
-                <p class="home-iss__index" aria-hidden="true">04</p>
-                <h3 class="home-iss__card-title"><a href="#">클라우드·원격 환경의 위험</a></h3>
-                <ul class="home-iss__points">
-                  <li>사용자·기기·행동의 지속 검증</li>
-                  <li>이상 접근을 탐지하고 통제</li>
-                  <li>Zero Trust 솔루션으로 연결</li>
-                </ul>
-              </article>
-            </div>
-          </div>
+        <div class="home-iss__stage">
+          <article class="home-iss__panel is-active" id="home-iss-panel-1" data-iss-panel="0">
+            <h2 id="home-iss-title" class="home-iss__title">
+              <a class="home-iss__title-link" href="#">흩어진 계정과 권한</a>
+            </h2>
+            <p class="home-iss__lead">입사·이동·퇴사에 맞춘 계정·권한 자동 관리로 이어집니다.</p>
+          </article>
+          <article class="home-iss__panel" id="home-iss-panel-2" data-iss-panel="1" hidden>
+            <h2 class="home-iss__title">
+              <a class="home-iss__title-link" href="#">반복되고 복잡한 로그인</a>
+            </h2>
+            <p class="home-iss__lead">한 번의 인증과 필요한 추가 인증으로 접근을 단순화합니다.</p>
+          </article>
+          <article class="home-iss__panel" id="home-iss-panel-3" data-iss-panel="2" hidden>
+            <h2 class="home-iss__title">
+              <a class="home-iss__title-link" href="#">분산된 사용자·자원 정보</a>
+            </h2>
+            <p class="home-iss__lead">디렉토리를 중심으로 사용자와 시스템 정보를 통합합니다.</p>
+          </article>
+          <article class="home-iss__panel" id="home-iss-panel-4" data-iss-panel="3" hidden>
+            <h2 class="home-iss__title">
+              <a class="home-iss__title-link" href="#">클라우드·원격 환경의 위험</a>
+            </h2>
+            <p class="home-iss__lead">사용자·기기·행동을 계속 검증하고 이상 접근을 통제합니다.</p>
+          </article>
+
+          <nav class="home-iss__nav" aria-label="문제별 솔루션 페이지">
+            <ol class="home-iss__pages">
+              <li><button type="button" class="home-iss__page is-active" data-iss-page="0" aria-controls="home-iss-panel-1" aria-current="true" aria-label="문제 1페이지">01</button></li>
+              <li><button type="button" class="home-iss__page" data-iss-page="1" aria-controls="home-iss-panel-2" aria-current="false" aria-label="문제 2페이지">02</button></li>
+              <li><button type="button" class="home-iss__page" data-iss-page="2" aria-controls="home-iss-panel-3" aria-current="false" aria-label="문제 3페이지">03</button></li>
+              <li><button type="button" class="home-iss__page" data-iss-page="3" aria-controls="home-iss-panel-4" aria-current="false" aria-label="문제 4페이지">04</button></li>
+            </ol>
+          </nav>
         </div>
       </div>
     </section>
@@ -392,7 +372,6 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/nav.js"></script>
   <script src="../assets/js/iss-slider.js"></script>
