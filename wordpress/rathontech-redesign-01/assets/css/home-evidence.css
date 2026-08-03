@@ -79,11 +79,14 @@
 
 .home-evidence__sub {
   display: block;
-  max-width: 28em;
+  max-width: 100%;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
   font-weight: 400;
   color: rgb(245 245 245 / 0.72);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .home-evidence__pager {
