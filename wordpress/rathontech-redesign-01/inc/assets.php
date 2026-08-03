@@ -117,9 +117,15 @@ function rathon_enqueue_assets() {
       rathon_asset_ver('css/home-media.css')
     );
     wp_enqueue_style(
+      'rathon-home-trust',
+      rathon_asset_uri('css/home-trust.css'),
+      array('rathon-home-media'),
+      rathon_asset_ver('css/home-trust.css')
+    );
+    wp_enqueue_style(
       'rathon-home-company',
       rathon_asset_uri('css/home-company.css'),
-      array('rathon-home-media'),
+      array('rathon-home-trust'),
       rathon_asset_ver('css/home-company.css')
     );
   }

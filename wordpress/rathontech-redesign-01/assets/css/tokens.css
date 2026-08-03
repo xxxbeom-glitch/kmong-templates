@@ -151,8 +151,20 @@
   --section-pad-y-end: 100px;
   --section-head-gap: 40px;
 
+  /* Home surface rhythm: inverse → base → muted → base → CTA */
+  --color-veil-soft: rgb(32 41 54 / 0.55);
+  --color-veil-media: rgb(0 0 0 / 0.8);
+  --color-veil-strong: rgb(0 0 0 / 0.88);
+
   --card-padding: 40px;
   --card-gap: 20px;
+  --btn-px: 24px;
+
+  /* Product card title on media (eco bento) */
+  --text-card-lg-size: 34px;
+  --text-card-lg-line: 1.21;
+  --text-card-lg-weight: var(--font-weight-bold);
+  --text-card-lg-letter: -0.01em;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -190,6 +202,7 @@
     --section-head-gap: 32px;
     --card-padding: 28px;
     --card-gap: 16px;
+    --text-card-lg-size: 28px;
     --header-h: 72px;
   }
 }
@@ -210,6 +223,7 @@
     --section-head-gap: 24px;
     --card-padding: 20px;
     --card-gap: 12px;
+    --text-card-lg-size: 26px;
     --header-h: 64px;
     --header-logo-size: 20px;
     --header-nav-size: 16px;

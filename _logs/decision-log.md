@@ -35,6 +35,19 @@
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
 | rathontech ISS | **`scroll-pin-multi-step` · 카피 2세트** | pin+scrub · MO 스택 |
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
+| rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
+| rathontech 증거 대체 | **신뢰 Quiet Zone(인증 사실)** | 도입증거 카드 삭제 · 가짜 로고 없음 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech 홈 스타일 규칙화
+
+| # | 결정 |
+|---|------|
+| 1 | veil 토큰: soft(히어로) / media(ISS) / strong(CTA) |
+| 2 | on-dark 버튼은 `btn--primary-on-dark` · `btn--secondary-on-dark` 공용 |
+| 3 | 도입증거 카드 삭제 후 Quiet Zone = 인증·창립 사실 4항 (로고 없음) |
+| 4 | 히어로 Trust Snapshot = 기획 확인 사실 4줄 |
 
 ---
 

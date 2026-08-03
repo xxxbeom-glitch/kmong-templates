@@ -30,7 +30,7 @@
 .home-iss__veil {
   position: absolute;
   inset: 0;
-  background: rgb(0 0 0 / 0.8);
+  background: var(--color-veil-media);
 }
 
 .home-iss__frame {
