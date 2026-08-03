@@ -1,18 +1,8 @@
 <?php
 /**
- * Home — Media Hub (board) section.
- * Layout: title+tabs top · 4-up card grid below.
+ * Home — Media Hub (board list, no thumbnails).
+ * Layout: title+tabs top · list rows below.
  */
-
-$media_thumbs = array(
-  rathon_asset('images/thumb/anastasiia-rozumna-hUEs9AFpdQg-unsplash.jpg'),
-  rathon_asset('images/thumb/d-koi-_3yUyAOg_ZY-unsplash.jpg'),
-  rathon_asset('images/thumb/soheb-zaidi-7Czm0mjIaWs-unsplash.jpg'),
-  rathon_asset('images/thumb/shubham-dhage-bhiQQm1urPI-unsplash.jpg'),
-  rathon_asset('images/thumb/dynamic-wang-KZuZAaEojq4-unsplash.jpg'),
-  rathon_asset('images/thumb/ela-de-pure-h7lfy7HoIE8-unsplash.jpg'),
-  rathon_asset('images/thumb/shubham-dhage-8HaKRwazMrQ-unsplash.jpg'),
-);
 
 $media_raw = array(
   array(
@@ -77,16 +67,14 @@ $media_raw = array(
   ),
 );
 
-$thumb_count = count($media_thumbs);
 $media_items = array();
-foreach ($media_raw as $i => $row) {
-  $row['href']  = rathon_url('news');
-  $row['image'] = $media_thumbs[ $i % $thumb_count ];
+foreach ($media_raw as $row) {
+  $row['href']   = rathon_url('news');
   $media_items[] = $row;
 }
 
-/* Home section shows latest 3 only */
-$media_items = array_slice($media_items, 0, 3);
+/* Home section shows latest 5 rows */
+$media_items = array_slice($media_items, 0, 5);
 
 $tabs = array(
   array('id' => 'all', 'label' => __('전체', 'rathontech-redesign-01')),
@@ -127,23 +115,15 @@ $tabs = array(
       </p>
     </header>
 
-    <ul class="home-media__grid" data-media-grid>
+    <ul class="home-media__list" data-media-grid>
       <?php foreach ($media_items as $item) : ?>
         <li class="home-media__item" data-media-cat="<?php echo esc_attr($item['filter']); ?>">
-          <a class="home-media__card" href="<?php echo esc_url($item['href']); ?>">
-            <span
-              class="home-media__thumb"
-              style="background-image: url('<?php echo esc_url($item['image']); ?>');"
-              aria-hidden="true"
-            ></span>
-            <span class="home-media__meta">
-              <span class="home-media__cat"><?php echo esc_html($item['category']); ?></span>
-              <span class="home-media__sep" aria-hidden="true">|</span>
-              <time class="home-media__date" datetime="<?php echo esc_attr(str_replace('.', '-', $item['date'])); ?>">
-                <?php echo esc_html($item['date']); ?>
-              </time>
-            </span>
-            <span class="home-media__card-title"><?php echo esc_html($item['title']); ?></span>
+          <a class="home-media__row" href="<?php echo esc_url($item['href']); ?>">
+            <span class="home-media__cat"><?php echo esc_html($item['category']); ?></span>
+            <span class="home-media__row-title"><?php echo esc_html($item['title']); ?></span>
+            <time class="home-media__date" datetime="<?php echo esc_attr(str_replace('.', '-', $item['date'])); ?>">
+              <?php echo esc_html($item['date']); ?>
+            </time>
           </a>
         </li>
       <?php endforeach; ?>
@@ -151,4 +131,4 @@ $tabs = array(
   </div>
 </section>
 <?php
-unset($media_thumbs, $media_raw, $media_items, $tabs, $item, $tab, $i, $row, $thumb_count);
+unset($media_raw, $media_items, $tabs, $item, $tab, $i, $row);
