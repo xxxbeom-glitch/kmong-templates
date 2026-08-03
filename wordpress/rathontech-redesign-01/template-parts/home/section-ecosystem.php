@@ -10,22 +10,21 @@ $eco_cards = array(
     'label' => __('핵심 제품', 'rathontech-redesign-01'),
     'desc'  => __('계정·인증·디렉토리·접근의 중심', 'rathontech-redesign-01'),
     'href'  => rathon_url('products') . '#core',
-    /* Placeholder until approved photography is supplied */
-    'tone'  => 'tone-a',
+    'image' => rathon_asset('images/thumb/dynamic-wang-KZuZAaEojq4-unsplash.jpg'),
   ),
   array(
     'id'    => 'extend',
     'label' => __('확장 제품', 'rathontech-redesign-01'),
     'desc'  => __('암호·Windows 로그인·다중인증', 'rathontech-redesign-01'),
     'href'  => rathon_url('products') . '#extend',
-    'tone'  => 'tone-b',
+    'image' => rathon_asset('images/thumb/shubham-dhage-8HaKRwazMrQ-unsplash.jpg'),
   ),
   array(
     'id'    => 'partner',
     'label' => __('파트너 제품', 'rathontech-redesign-01'),
     'desc'  => __('구축·연동은 라톤테크가 수행', 'rathontech-redesign-01'),
     'href'  => rathon_url('products') . '#partner',
-    'tone'  => 'tone-c',
+    'image' => rathon_asset('images/thumb/ela-de-pure-h7lfy7HoIE8-unsplash.jpg'),
   ),
 );
 ?>
@@ -44,11 +43,12 @@ $eco_cards = array(
     <ul class="home-eco__cards">
       <?php foreach ($eco_cards as $card) : ?>
         <li class="home-eco__card">
-          <a
-            class="home-eco__card-link home-eco__card-link--<?php echo esc_attr($card['tone']); ?>"
-            href="<?php echo esc_url($card['href']); ?>"
-          >
-            <span class="home-eco__card-media" aria-hidden="true"></span>
+          <a class="home-eco__card-link" href="<?php echo esc_url($card['href']); ?>">
+            <span
+              class="home-eco__card-media"
+              style="background-image: url('<?php echo esc_url($card['image']); ?>');"
+              aria-hidden="true"
+            ></span>
             <span class="home-eco__card-veil" aria-hidden="true"></span>
             <span class="home-eco__card-body">
               <span class="home-eco__card-label"><?php echo esc_html($card['label']); ?></span>

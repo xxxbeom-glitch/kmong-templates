@@ -32,9 +32,9 @@
           '<a class="home-evidence__card" href="' +
           escapeHtml(item.href || '#') +
           '">' +
-          '<span class="home-evidence__thumb home-evidence__thumb--' +
-          escapeHtml(item.tone || 'tone-a') +
-          '" aria-hidden="true"></span>' +
+          '<span class="home-evidence__thumb" style="background-image:url(\'' +
+          escapeHtml(item.image || '') +
+          '\')" aria-hidden="true"></span>' +
           '<span class="home-evidence__label">' +
           escapeHtml(item.client || '') +
           '</span>' +

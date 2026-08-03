@@ -2,15 +2,19 @@
 /**
  * Gate 2 — Main hero: full-bleed media layout, project tokens for UI.
  */
+$hero_image = rathon_asset('images/hero/milad-fakurian-eRbgsJ0Ec0o-unsplash.jpg');
 ?>
 <section class="home-hero" aria-labelledby="home-hero-title">
   <div class="home-hero__media" aria-hidden="true">
-    <?php
-    /**
-     * Placeholder only. Replace with approved image or <video> later.
-     */
-    ?>
-    <div class="home-hero__media-placeholder"></div>
+    <img
+      class="home-hero__media-img"
+      src="<?php echo $hero_image; ?>"
+      alt=""
+      width="1920"
+      height="1080"
+      decoding="async"
+      fetchpriority="high"
+    >
   </div>
   <div class="home-hero__veil" aria-hidden="true"></div>
 
@@ -34,3 +38,5 @@
     </div>
   </div>
 </section>
+<?php
+unset($hero_image);

@@ -3,10 +3,15 @@
  * Home — Contact CTA band only (Company intro removed from main).
  * Full-bleed band (no card / no section margin).
  */
+$cta_image = rathon_asset('images/hero/dynamic-wang-irn9H9-Kfq4-unsplash.jpg');
 ?>
 <section class="home-cta" aria-labelledby="home-cta-title">
   <aside class="home-company__cta" aria-labelledby="home-cta-title">
-    <span class="home-company__cta-media" aria-hidden="true"></span>
+    <span
+      class="home-company__cta-media"
+      style="background-image: url('<?php echo esc_url($cta_image); ?>');"
+      aria-hidden="true"
+    ></span>
     <span class="home-company__cta-veil" aria-hidden="true"></span>
     <div class="u-container home-company__cta-inner">
       <div class="home-company__cta-copy">
@@ -29,3 +34,5 @@
     </div>
   </aside>
 </section>
+<?php
+unset($cta_image);

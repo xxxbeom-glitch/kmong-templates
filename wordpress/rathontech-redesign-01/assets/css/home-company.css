@@ -19,8 +19,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background:
-    linear-gradient(115deg, var(--color-bg-inverse) 0%, var(--blue-800) 45%, var(--gray-800) 100%);
+  background-color: var(--color-bg-inverse);
   background-size: cover;
   background-position: center;
 }
