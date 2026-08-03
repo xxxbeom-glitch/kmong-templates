@@ -63,28 +63,39 @@ $history = array(
     </div>
 
     <aside class="home-company__cta" aria-labelledby="home-cta-title">
-      <div class="home-company__cta-copy">
-        <h3 id="home-cta-title" class="home-company__cta-title">
-          <?php echo esc_html__('우리 조직의 계정·권한·인증 환경을 점검해보세요', 'rathontech-redesign-01'); ?>
-        </h3>
-        <p class="home-company__cta-lead">
-          <?php echo esc_html__('현재 시스템과 보안 요구사항을 확인한 뒤 적합한 방향을 안내합니다.', 'rathontech-redesign-01'); ?>
-        </p>
-        <dl class="home-company__contact">
-          <div>
-            <dt><?php echo esc_html__('대표전화', 'rathontech-redesign-01'); ?></dt>
-            <dd><a href="tel:028577730">02-857-7730</a></dd>
-          </div>
-          <div>
-            <dt><?php echo esc_html__('주소', 'rathontech-redesign-01'); ?></dt>
-            <dd><?php echo esc_html__('서울시 금천구 디지털로 178, A동 619~622호 (가산동, 가산퍼블릭)', 'rathontech-redesign-01'); ?></dd>
-          </div>
-        </dl>
+      <span class="home-company__cta-media" aria-hidden="true"></span>
+      <span class="home-company__cta-veil" aria-hidden="true"></span>
+      <div class="home-company__cta-inner">
+        <div class="home-company__cta-copy">
+          <p class="home-company__cta-eyebrow"><?php echo esc_html__('Online Inquiry', 'rathontech-redesign-01'); ?></p>
+          <h3 id="home-cta-title" class="home-company__cta-title">
+            <?php echo esc_html__('우리 조직의 계정·권한·인증 환경을 점검해보세요', 'rathontech-redesign-01'); ?>
+          </h3>
+          <p class="home-company__cta-lead">
+            <?php echo esc_html__('현재 시스템과 보안 요구사항을 확인한 뒤 적합한 방향을 안내합니다.', 'rathontech-redesign-01'); ?>
+          </p>
+        </div>
+        <div class="home-company__cta-actions">
+          <a class="home-company__cta-btn home-company__cta-btn--primary" href="<?php echo esc_url(rathon_url('contact')); ?>">
+            <?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?>
+          </a>
+          <a class="home-company__cta-btn home-company__cta-btn--ghost" href="tel:028577730">
+            <?php echo esc_html__('전화 상담 02-857-7730', 'rathontech-redesign-01'); ?>
+          </a>
+        </div>
       </div>
-      <a class="btn btn--primary home-company__cta-btn" href="<?php echo esc_url(rathon_url('contact')); ?>">
-        <?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?>
-      </a>
     </aside>
+
+    <dl class="home-company__contact">
+      <div>
+        <dt><?php echo esc_html__('대표전화', 'rathontech-redesign-01'); ?></dt>
+        <dd><a href="tel:028577730">02-857-7730</a></dd>
+      </div>
+      <div>
+        <dt><?php echo esc_html__('주소', 'rathontech-redesign-01'); ?></dt>
+        <dd><?php echo esc_html__('서울시 금천구 디지털로 178, A동 619~622호 (가산동, 가산퍼블릭)', 'rathontech-redesign-01'); ?></dd>
+      </div>
+    </dl>
   </div>
 </section>
 <?php
