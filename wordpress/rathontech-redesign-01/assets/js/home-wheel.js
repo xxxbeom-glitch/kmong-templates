@@ -1,6 +1,8 @@
 /**
- * Home wheel chain (PC): hero → ISS steps → next section.
- * One wheel gesture = one step. MO / reduced-motion: no hijack.
+ * Home wheel (PC):
+ * - Hero → ISS: semi-auto snap only
+ * - ISS: one gesture flips copy; last copy releases to natural scroll (no snap)
+ * MO / reduced-motion: no hijack
  */
 (function () {
   var hero = document.querySelector('[data-hero-snap]');
@@ -39,10 +41,6 @@
 
   function yOf(el) {
     return Math.round(el.getBoundingClientRect().top + window.scrollY);
-  }
-
-  function heroY() {
-    return 0;
   }
 
   function issY() {
@@ -126,51 +124,39 @@
 
     var p = phase();
 
-    /* Free scroll below ISS — do not hijack */
-    if (p === 'free' && dy > 0) return;
-    if (p === 'free' && dy < 0) {
-      /* Re-enter ISS from below on first up-gesture */
-      var issBottom = issY() + iss.offsetHeight;
-      if (window.scrollY > issBottom - window.innerHeight * 0.85) {
+    /* Below ISS: natural scroll only */
+    if (p === 'free') return;
+
+    if (dy > 0) {
+      /* Hero → ISS: only place with semi-auto snap */
+      if (p === 'hero') {
         e.preventDefault();
         if (gestureLock) return;
         armGesture();
-        setActive(stepCount - 1);
-        snapTo(issY());
-      }
-      return;
-    }
-
-    e.preventDefault();
-    if (gestureLock) return;
-    armGesture();
-
-    if (dy > 0) {
-      if (p === 'hero') {
         setActive(0);
         snapTo(issY());
         return;
       }
-      /* iss */
+
+      /* ISS: flip copy; last copy releases (no snap to next) */
       if (activeIndex < stepCount - 1) {
+        e.preventDefault();
+        if (gestureLock) return;
+        armGesture();
         setActive(activeIndex + 1);
-        snapTo(issY());
         return;
       }
-      snapTo(nextY(), function () {
-        setActive(0);
-      });
+
       return;
     }
 
-    /* dy < 0 */
-    if (p === 'hero') return;
-    if (activeIndex > 0) {
+    /* Wheel up inside ISS: previous copy only (no snap back to hero) */
+    if (p === 'iss' && activeIndex > 0) {
+      e.preventDefault();
+      if (gestureLock) return;
+      armGesture();
       setActive(activeIndex - 1);
-      snapTo(issY());
-      return;
     }
-    snapTo(heroY());
   }
 
   window.addEventListener('wheel', onWheel, { passive: false });
