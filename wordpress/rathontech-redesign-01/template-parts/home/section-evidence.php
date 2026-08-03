@@ -1,7 +1,7 @@
 <?php
 /**
  * Home Section 4 — Evidence.
- * Thumb → label → subtext × 3, with page nav 1–3.
+ * Thumb → label → subtext × 4 per page, pager 1–3.
  */
 
 $evidence_pages = array(
@@ -24,14 +24,14 @@ $evidence_pages = array(
       'href'   => rathon_url('case-studies/sk-hynix-am'),
       'tone'   => 'tone-c',
     ),
-  ),
-  array(
     array(
       'client' => __('신한투자증권', 'rathontech-redesign-01'),
       'sub'    => __('차세대 인증·권한관리 · Rathon-SSO, Rathon-IAM', 'rathontech-redesign-01'),
       'href'   => rathon_url('case-studies/shinhan-investment'),
       'tone'   => 'tone-a',
     ),
+  ),
+  array(
     array(
       'client' => __('전남대학교', 'rathontech-redesign-01'),
       'sub'    => __('인증·계정관리 고도화 · Rathon-SSO 기반 통합 로그인', 'rathontech-redesign-01'),
@@ -44,8 +44,6 @@ $evidence_pages = array(
       'href'   => rathon_url('case-studies/kinfa'),
       'tone'   => 'tone-c',
     ),
-  ),
-  array(
     array(
       'client' => __('호텔신라', 'rathontech-redesign-01'),
       'sub'    => __('통합계정관리 재구축 · Rathon-IAM으로 감사 대응·효율 향상', 'rathontech-redesign-01'),
@@ -58,10 +56,30 @@ $evidence_pages = array(
       'href'   => rathon_url('case-studies/mcst'),
       'tone'   => 'tone-b',
     ),
+  ),
+  array(
     array(
       'client' => __('인천국제공항공사', 'rathontech-redesign-01'),
       'sub'    => __('계정관리 업그레이드 · 전자결재 환경의 관리 안정성', 'rathontech-redesign-01'),
       'href'   => rathon_url('case-studies/iiac'),
+      'tone'   => 'tone-c',
+    ),
+    array(
+      'client' => __('신한금융투자', 'rathontech-redesign-01'),
+      'sub'    => __('통합인증 고도화 · Rathon-SSO, Rathon-IAM 표준화', 'rathontech-redesign-01'),
+      'href'   => rathon_url('case-studies/shinhan-fi'),
+      'tone'   => 'tone-a',
+    ),
+    array(
+      'client' => __('LG전자', 'rathontech-redesign-01'),
+      'sub'    => __('통합인증 시스템 업그레이드 · 인증 서비스 연속성 확보', 'rathontech-redesign-01'),
+      'href'   => rathon_url('case-studies/lge'),
+      'tone'   => 'tone-b',
+    ),
+    array(
+      'client' => __('인천국제공항공사', 'rathontech-redesign-01'),
+      'sub'    => __('LDAP 업그레이드 · 전자결재 시스템 안정성 강화', 'rathontech-redesign-01'),
+      'href'   => rathon_url('case-studies/iiac-ldap'),
       'tone'   => 'tone-c',
     ),
   ),
