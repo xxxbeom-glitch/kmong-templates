@@ -1,7 +1,7 @@
 <?php
 /**
  * Home Section 3 — Product Ecosystem.
- * Three category cards (image bg) · hover reveals more · full list on products page.
+ * Bento cards: title + subtext only.
  */
 
 $eco_cards = array(
@@ -9,7 +9,6 @@ $eco_cards = array(
     'id'    => 'core',
     'label' => __('핵심 제품', 'rathontech-redesign-01'),
     'desc'  => __('계정·인증·디렉토리·접근의 중심', 'rathontech-redesign-01'),
-    'count' => __('4종', 'rathontech-redesign-01'),
     'href'  => rathon_url('products') . '#core',
     /* Placeholder until approved photography is supplied */
     'tone'  => 'tone-a',
@@ -18,7 +17,6 @@ $eco_cards = array(
     'id'    => 'extend',
     'label' => __('확장 제품', 'rathontech-redesign-01'),
     'desc'  => __('암호·Windows 로그인·다중인증', 'rathontech-redesign-01'),
-    'count' => __('3종', 'rathontech-redesign-01'),
     'href'  => rathon_url('products') . '#extend',
     'tone'  => 'tone-b',
   ),
@@ -26,7 +24,6 @@ $eco_cards = array(
     'id'    => 'partner',
     'label' => __('파트너 제품', 'rathontech-redesign-01'),
     'desc'  => __('구축·연동은 라톤테크가 수행', 'rathontech-redesign-01'),
-    'count' => __('3종', 'rathontech-redesign-01'),
     'href'  => rathon_url('products') . '#partner',
     'tone'  => 'tone-c',
   ),
@@ -54,13 +51,8 @@ $eco_cards = array(
             <span class="home-eco__card-media" aria-hidden="true"></span>
             <span class="home-eco__card-veil" aria-hidden="true"></span>
             <span class="home-eco__card-body">
-              <span class="home-eco__card-count"><?php echo esc_html($card['count']); ?></span>
               <span class="home-eco__card-label"><?php echo esc_html($card['label']); ?></span>
               <span class="home-eco__card-desc"><?php echo esc_html($card['desc']); ?></span>
-              <span class="home-eco__card-more">
-                <?php echo esc_html__('더보기', 'rathontech-redesign-01'); ?>
-                <span aria-hidden="true">→</span>
-              </span>
             </span>
           </a>
         </li>
