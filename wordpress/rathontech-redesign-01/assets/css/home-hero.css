@@ -101,7 +101,7 @@
   background: var(--color-text-inverse);
   color: var(--color-primary);
   border-color: var(--color-text-inverse);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .home-hero .btn--primary:hover {

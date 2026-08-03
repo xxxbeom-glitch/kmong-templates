@@ -67,7 +67,7 @@
   margin: 0 0 var(--space-4);
   font-size: clamp(28px, 2.8vw, 44px);
   line-height: 1.41;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: -0.01em;
   color: var(--color-text-inverse);
   word-break: keep-all;
@@ -98,7 +98,7 @@
   padding: 0 24px;
   border-radius: var(--radius-md);
   font-size: var(--text-cta3-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
   text-align: center;
   white-space: nowrap;
@@ -110,7 +110,7 @@
   background: var(--color-text-inverse);
   color: var(--color-primary);
   border: 1px solid var(--color-text-inverse);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .home-company__cta-btn--primary:hover {

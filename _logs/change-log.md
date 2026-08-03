@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech 타이포 웨이트 3종 (M/SB/B)
+
+- Regular(400) 제거 · Medium 500 / Semibold 600 / Bold 700만 사용
+- `tokens.css` 웨이트 토큰 + 본문·리드를 medium으로 · CSS 하드코드 정리
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech GNB thePAY 로직 (활성 1depth만)
 
 - 메가 패널 배경은 전체 폭 유지 · 2depth는 `.is-active` 열만 표시

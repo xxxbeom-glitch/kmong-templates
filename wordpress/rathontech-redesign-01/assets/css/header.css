@@ -21,7 +21,7 @@
 
 .site-header__logo {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--color-text-primary);
@@ -57,7 +57,7 @@
 .site-header__link {
   display: inline-block;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0;
   color: var(--color-text-primary);
   text-decoration: none;
@@ -70,7 +70,7 @@
 .site-header__item.is-active .site-header__link,
 .site-header__item.is-active .site-header__trigger {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .site-header__actions {
@@ -167,7 +167,7 @@
   padding-left: 0;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  font-weight: 400;
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   text-decoration: none;
   text-align: left;
@@ -219,7 +219,7 @@
   border: 0;
   background: transparent;
   font-size: var(--text-body3-size);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
 }
 
@@ -237,7 +237,7 @@
   width: 100%;
   padding: var(--space-4) 0;
   font-size: var(--text-h3-size);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   text-align: left;
   text-decoration: none;
   color: var(--color-text-primary);
@@ -262,7 +262,7 @@
   display: block;
   padding: var(--space-3) 0 var(--space-3) var(--space-2);
   font-size: var(--text-body3-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   text-decoration: none;
   border-bottom: 1px solid var(--color-border-light);

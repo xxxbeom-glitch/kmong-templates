@@ -34,6 +34,17 @@
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
 | rathontech ISS | **좌 pagination 텍스트 + 우 1.9 카드** | onetenth `#2` 패턴 · 카피/토큰 유지 |
+| rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech 타이포 웨이트 3종
+
+| # | 결정 |
+|---|------|
+| 1 | 웨이트 = **Medium(500) · Semibold(600) · Bold(700)** 만 |
+| 2 | 본문·리드·GNB 기본 = Medium (구 Regular 400 대체) |
+| 3 | 제목·강조 = Bold · UI 보조 강조 = Semibold |
 
 ---
 

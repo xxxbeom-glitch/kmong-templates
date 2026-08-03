@@ -81,7 +81,7 @@
   opacity: 1;
   font-family: inherit;
   font-size: var(--text-body3-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-medium);
   line-height: var(--text-body3-line);
   letter-spacing: 0;
   color: var(--color-text-secondary);
@@ -97,7 +97,7 @@
 
 .home-iss__pagination .swiper-pagination-bullet-active {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   background: rgb(0 140 255 / 0.08);
 }
 
@@ -135,7 +135,7 @@
 .home-iss__index {
   margin: 0 0 var(--space-5);
   font-size: var(--text-body3-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: 0.04em;
   color: var(--color-primary);
 }
@@ -234,7 +234,7 @@
 
   .home-iss__pagination .swiper-pagination-bullet-active {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     background: transparent;
   }
 

@@ -59,59 +59,64 @@
   /* Typo — Naver Works scale (Pretendard · PC) */
   --font-primary: "Pretendard Variable", Pretendard, "Noto Sans KR", system-ui, "Malgun Gothic", sans-serif;
 
+  /* Weight scale — Medium / Semibold / Bold only (no Regular 400) */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
   --text-min-body: 14px;
   --text-min-body-sm: 14px;
   --text-min-caption: 14px;
   --text-min-cta: 16px;
   --text-min-heading: 20px;
 
-  /* H1 Hero ≈ 66/700/1.24 · -0.8px */
+  /* H1 Hero ≈ 66/bold/1.24 · -0.8px */
   --text-h1-size: 66px;
   --text-h1-line: 1.24;
-  --text-h1-weight: 700;
+  --text-h1-weight: var(--font-weight-bold);
   --text-h1-letter: -0.012em;
 
-  /* H2 Section ≈ 48/700/1.33 · -0.5px */
+  /* H2 Section ≈ 48/bold/1.33 · -0.5px */
   --text-h2-size: 48px;
   --text-h2-line: 1.33;
-  --text-h2-weight: 700;
+  --text-h2-weight: var(--font-weight-bold);
   --text-h2-letter: -0.01em;
 
-  /* H3 / card title ≈ 20/700/1.5 · -0.5px */
+  /* H3 / card title ≈ 20/bold/1.5 · -0.5px */
   --text-h3-size: 20px;
   --text-h3-line: 1.5;
-  --text-h3-weight: 700;
+  --text-h3-weight: var(--font-weight-bold);
   --text-h3-letter: -0.025em;
 
-  /* Lead ≈ 18/400/1.56 */
+  /* Lead ≈ 18/medium/1.56 */
   --text-body1-size: 18px;
   --text-body1-line: 1.56;
-  --text-body1-weight: 400;
+  --text-body1-weight: var(--font-weight-medium);
 
-  /* Emphasized / product-ish ≈ 34→ use body2 as 20 title alt; keep 20/700 for list titles */
+  /* Emphasized / product-ish ≈ 20/bold */
   --text-body2-size: 20px;
   --text-body2-line: 1.5;
-  --text-body2-weight: 700;
+  --text-body2-weight: var(--font-weight-bold);
 
-  /* Body ≈ 16/400/1.75 */
+  /* Body ≈ 16/medium/1.75 */
   --text-body3-size: 16px;
   --text-body3-line: 1.75;
-  --text-body3-weight: 400;
+  --text-body3-weight: var(--font-weight-medium);
   --text-body4-size: 14px;
   --text-body4-line: 1.5;
-  --text-body4-weight: 400;
+  --text-body4-weight: var(--font-weight-medium);
 
-  /* Section sub ≈ 24/700/1.42 */
+  /* Section sub ≈ 24/bold/1.42 */
   --text-eyebrow-size: 24px;
   --text-eyebrow-line: 1.42;
-  --text-eyebrow-weight: 700;
+  --text-eyebrow-weight: var(--font-weight-bold);
   --text-eyebrow-letter: -0.01em;
 
   --text-caption1-size: 16px;
   --text-caption1-line: 1.75;
   --text-caption2-size: 14px;
   --text-caption2-line: 1.5;
-  /* CTA label ≈ NW 16/400 (band uses 20/700 separately) */
+  /* CTA label ≈ NW 16/medium (band uses 20/bold separately) */
   --text-cta3-size: 16px;
 
   /* Inverse text opacities */
