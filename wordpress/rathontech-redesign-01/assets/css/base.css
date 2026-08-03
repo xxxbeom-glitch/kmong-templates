@@ -83,7 +83,7 @@ button {
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   font-size: var(--text-cta3-size);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
