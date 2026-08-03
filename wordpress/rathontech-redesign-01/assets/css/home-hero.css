@@ -1,12 +1,11 @@
-/* Main hero — layout: full-bleed media + copy inside .u-container (1600).
-   Style: project tokens (not reference-site chrome). */
+/* Main hero — layout: full-bleed media + copy inside .u-container (1600). */
 
 .home-hero {
   position: relative;
   display: flex;
   align-items: center;
   min-height: min(72vh, 720px);
-  padding: var(--space-16) 0 var(--space-20);
+  padding: calc(var(--header-h) + var(--space-16)) 0 var(--space-20);
   overflow: hidden;
   color: var(--color-text-inverse);
   background: var(--gray-900);
@@ -52,7 +51,7 @@
 }
 
 .home-hero__title {
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--space-8);
   max-width: none;
   font-size: var(--text-h1-size);
   line-height: var(--text-h1-line);
@@ -65,7 +64,7 @@
 }
 
 .home-hero__lead {
-  margin: 0 0 var(--space-8);
+  margin: 0 0 var(--space-10);
   max-width: 34em;
   font-size: var(--text-body1-size);
   line-height: var(--text-body1-line);
@@ -97,7 +96,15 @@
 @media (max-width: 767px) {
   .home-hero {
     min-height: min(64vh, 560px);
-    padding: var(--space-12) 0 var(--space-16);
+    padding: calc(var(--header-h) + var(--space-8)) 0 var(--space-16);
+  }
+
+  .home-hero__title {
+    margin-bottom: var(--space-6);
+  }
+
+  .home-hero__lead {
+    margin-bottom: var(--space-8);
   }
 
   .home-hero__actions {
@@ -112,7 +119,7 @@
 
 @media (min-width: 1024px) {
   .home-hero {
-    min-height: min(78vh, 800px);
-    padding: var(--space-20) 0 var(--space-24);
+    min-height: min(88vh, 900px);
+    padding: calc(var(--header-h) + var(--space-24)) 0 var(--section-pad-y);
   }
 }

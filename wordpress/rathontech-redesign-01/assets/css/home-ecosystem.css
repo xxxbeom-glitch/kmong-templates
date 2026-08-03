@@ -1,12 +1,12 @@
 /* Home Section 3 — Product Ecosystem bento (layout only; tokens kept) */
 
 .home-eco {
-  padding: var(--space-20) 0;
+  padding: var(--section-pad-y) 0;
   background: var(--color-bg-base);
 }
 
 .home-eco__head {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--section-head-gap);
   max-width: none;
   width: 100%;
 }
@@ -175,23 +175,19 @@
 
 @media (min-width: 1024px) {
   .home-eco {
-    padding: var(--space-24) 0;
-  }
-
-  .home-eco__head {
-    margin-bottom: var(--space-12);
+    padding: var(--section-pad-y) 0;
   }
 
   .home-eco__cards {
-    min-height: 520px;
+    min-height: 560px;
   }
 
   .home-eco__card-body {
-    padding: var(--space-10);
+    padding: var(--card-padding);
   }
 
   .home-eco__card:first-child .home-eco__card-body {
-    padding: var(--space-12);
+    padding: var(--card-padding);
   }
 }
 

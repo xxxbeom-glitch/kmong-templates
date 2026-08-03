@@ -1,14 +1,14 @@
 /* Home Section 2 — ISS card slider (layout/interaction only; tokens kept) */
 
 .home-iss {
-  padding: var(--space-20) 0 var(--space-24);
+  padding: var(--section-pad-y) 0;
   background: var(--color-bg-inverse);
   color: var(--color-text-inverse);
   overflow: hidden;
 }
 
 .home-iss__head {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--section-head-gap);
   max-width: none;
   width: 100%;
 }
@@ -90,7 +90,7 @@
 .home-iss__card {
   height: 100%;
   min-height: 340px;
-  padding: var(--space-10);
+  padding: var(--card-padding);
   border-radius: var(--radius-lg);
   background: rgb(255 255 255 / 0.06);
   box-shadow: var(--shadow-sm);
@@ -147,11 +147,7 @@
 
 @media (min-width: 1024px) {
   .home-iss {
-    padding: var(--space-24) 0;
-  }
-
-  .home-iss__head {
-    margin-bottom: var(--space-16);
+    padding: var(--section-pad-y-lg) 0 var(--section-pad-y);
   }
 
   .home-iss-swiper .swiper-slide {
@@ -160,7 +156,7 @@
 
   .home-iss__card {
     min-height: 380px;
-    padding: var(--space-12);
+    padding: var(--card-padding);
   }
 }
 

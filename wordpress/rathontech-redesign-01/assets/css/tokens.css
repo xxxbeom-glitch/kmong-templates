@@ -101,9 +101,20 @@
   --space-16: 64px;
   --space-20: 80px;
   --space-24: 96px;
+  --space-28: 120px;
+  --space-32: 160px;
+  --space-40: 200px;
+  --space-48: 230px;
+  --space-52: 260px;
 
-  --card-padding: var(--space-6);
-  --card-gap: var(--space-6);
+  /* Section rhythm — KEOC PC (~215–260 top, generous bottom) */
+  --section-pad-y: var(--space-48);
+  --section-pad-y-lg: var(--space-52);
+  --section-pad-y-end: var(--space-32);
+  --section-head-gap: 60px;
+
+  --card-padding: 45px;
+  --card-gap: 30px;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -114,10 +125,11 @@
 
   --container-max: 1600px;
   --container-px-mobile: 16px;
-  --container-px-tablet: 24px;
-  --container-px-desktop: 40px;
+  --container-px-tablet: 32px;
+  /* ~4% gutter at 1440 ≈ 57px */
+  --container-px-desktop: 57px;
 
-  --header-h: 72px;
+  --header-h: 110px;
   --bp-mo: 767px;
   --bp-tab: 1023px;
   --bp-pc: 1024px;
@@ -130,6 +142,13 @@
     --text-h3-size: 28px;
     --text-body1-size: 22px;
     --text-eyebrow-size: 22px;
+    --section-pad-y: var(--space-24);
+    --section-pad-y-lg: var(--space-28);
+    --section-pad-y-end: var(--space-20);
+    --section-head-gap: var(--space-12);
+    --card-padding: var(--space-8);
+    --card-gap: var(--space-6);
+    --header-h: 80px;
   }
 }
 
@@ -141,6 +160,12 @@
     --text-body1-size: 19px;
     --text-body3-size: 16px;
     --text-eyebrow-size: 18px;
+    --section-pad-y: var(--space-16);
+    --section-pad-y-lg: var(--space-20);
+    --section-pad-y-end: var(--space-16);
+    --section-head-gap: var(--space-10);
+    --card-padding: var(--space-6);
+    --card-gap: var(--space-5);
     --header-h: 64px;
   }
 }
