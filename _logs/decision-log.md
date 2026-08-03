@@ -62,8 +62,7 @@
 | 1 | PC: 휠 1제스처 → 다음 카피 · 마지막 카피 이후는 **자연 스크롤** |
 | 2 | 카피 전환 직후 같은 스와이프 잔여는 hold로 차단 |
 | 3 | scrub/ScrollTrigger pin 없음 · MO·reduced-motion은 스택 |
-| 2 | 휠 업: 카피 되돌리기 → 1번에서 히어로 복귀 |
-| 3 | scrub/ScrollTrigger pin 제거 · MO·reduced-motion은 기존 스택 |
+| 4 | 휠 업: 카피만 되돌림 (히어로 스냅 복귀 없음) |
 
 ---
 
@@ -71,9 +70,9 @@
 
 | # | 결정 |
 |---|------|
-| 1 | 히어로에서 휠 다운 → ISS 상단으로 power3 스냅 (~0.62s) |
+| 1 | 히어로에서 휠 다운 → ISS 상단으로 power3 스냅 (~0.55s) · `home-wheel.js` |
 | 2 | ISS 진입 직대에서 휠 업 → 히어로 top으로 복귀 |
-| 3 | PC(≥768)만 · prefers-reduced-motion 시 미적용 · ISS pin 중반 스크롤은 가로채지 않음 |
+| 3 | PC(≥768)만 · prefers-reduced-motion 시 미적용 |
 
 ---
 
