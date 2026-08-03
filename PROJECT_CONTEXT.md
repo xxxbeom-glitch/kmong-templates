@@ -39,13 +39,14 @@
 - **도메인**: 카페24 또는 가비아 (고객 명의)
 - **코딩 방식**: **워드프레스 커스텀 테마** (PHP + HTML/CSS/JS)
 - **테마 구조**: `functions.php`, `page.php`, `header.php`, `footer.php` 등 표준 파일
-- **애니메이션**: GSAP + ScrollTrigger (**신규 WP 기본** · `45`)
-- **슬라이더**: Swiper.js
+- **애니메이션**: 모션이 필요할 때 **승인 표준** = GSAP + ScrollTrigger (`45`) — 전 테마 의무 아님
+- **슬라이더**: 슬라이더가 필요할 때 **승인 표준** = Swiper.js — 전 테마 의무 아님
 - **jQuery**: WP 번들만(필요 시) · `46` jQuery preset은 WP 신규 **기본 금지**(명시 승인 시만)
 - **폰트**: SUIT (기본값 · `design-tokens-master.md`)
 - **컨텐츠 폭**: 1600px (`--container-max`)
 - **아이콘 크기**: 토큰 마스터 `--icon-xs`~`--icon-2xl`
-- **아이콘 소스**: 레포 **`_icons/`** 공용 SVG 우선 · CDN(Lucide/Heroicons) 기본 금지
+- **아이콘**: 레포 **`_icons/`** = 원본 저장소 · 납품 테마는 사용분만 **`assets/icons/`로 복사** · CDN(Lucide/Heroicons) 기본 금지
+- **소식/공지 CMS:** WP 기본 글 vs `notice` CPT vs 동반 플러그인 = **미결정** · 확정 전 테마에 임의 구현 금지
 - **디자인 토큰·컴포넌트·UIUX 원칙**: 테마 자산 안에서 동일 적용
 - **상세 델타:** `PROJECT_CONTEXT_wordpress_delta.md` · `WORDPRESS_TRANSITION_CHANGES.md`  
 - **서브페이지:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`
@@ -100,7 +101,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 - 기획 문서가 들어오면 design-principles 기준으로 먼저 판단
 - 지정된 토큰 파일 외 임의 색상 사용 금지
 - **설계:** PC·모바일을 함께 본다 · **CSS 구현:** 모바일 퍼스트(`min-width`로 확장)
-- 모션은 GSAP만 사용, 다른 애니메이션 라이브러리 혼용 금지
+- 모션이 필요하면 **GSAP만** 사용(다른 모션 라이브러리 혼용 금지) · 불필요하면 넣지 않음
 
 ### 3-2. 디자인 원칙
 
@@ -240,7 +241,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 
 ### 4-0. 토큰 SoT
 - 마스터: 루트 `design-tokens-master.md`
-- 확정: 폰트 SUIT · 컨테이너 1600 · BP 767/1023/1024/wide1600 · 아이콘 크기 마스터 · 소스 `_icons/`
+- 확정: 폰트 SUIT · 컨테이너 1600 · BP 767/1023/1024/wide1600 · 아이콘 크기 마스터 · `_icons/` 원본 → 테마 `assets/icons/` 복사
 
 ### 4-1. 토큰 버전 (시멘틱 primary 조합)
 - **v1 (블루 계열)**: 신뢰감, 전문성 → 제조업, IT, 컨설팅
@@ -282,21 +283,23 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 > SoT: `design-tokens-master.md` §6~7
 
 ### 4-7. 아이콘
-- **소스 우선순위:** 레포 루트 **`_icons/`** 공용 SVG → (없을 때만) 템플릿 `assets/icons/`
+- **원본 저장소:** 레포 루트 **`_icons/`** (공용 SVG 풀)
+- **납품 테마:** 사용 아이콘만 **`assets/icons/`로 복사** 후 참조 · `_icons/` 런타임 직접 링크 금지
 - Lucide / Heroicons CDN **기본 사용 금지** (혼용·외부 의존 방지)
 - 크기: 토큰 마스터 `--icon-xs`(14) / sm(16) / md(20) / lg(24) / xl(32) / 2xl(40)
 - 라인 아이콘과 필드 아이콘 혼용 금지
-- 같은 화면에서는 `_icons/` 한 패밀리 스타일 유지
+- 같은 화면에서는 한 패밀리 스타일 유지
 
 ---
 
 ## 5. 모션 라이브러리
 
-### 5-1. 스택
-- 애니메이션: GSAP + ScrollTrigger (단일 라이브러리, 혼용 금지)
-- 슬라이더: Swiper.js
+### 5-1. 스택 (필요할 때만)
+- **모션이 필요할 때** 승인 표준: GSAP + ScrollTrigger (다른 모션 라이브러리 혼용 금지)
+- **슬라이더가 필요할 때** 승인 표준: Swiper.js
+- 모션·슬라이더가 없으면 GSAP/Swiper를 **의무로 넣지 않는다**
 
-### 5-2. 기본 사용 기준
+### 5-2. 기본 사용 기준 (모션을 쓰는 경우)
 ```
 스크롤 진입: fade-up, duration 0.6s
 카드 stagger: 0.1s 간격
@@ -480,13 +483,18 @@ motion/
 - 포트폴리오 활용 동의 여부 확인
 
 ### 7-5. 게시판·소식
-- 공지/소식: WP 기본 **글** 또는 CPT
+- 공지/소식 구현 방식(**미결정**): WP 기본 **글** vs CPT(`notice` 등) vs **동반 플러그인**  
+  → 확정·승인 전 테마에 임의 구현하지 않는다
 - Q&A·문의: Contact Form 7 등 (델타·TRANSITION)
 - 방문자 자유게시판·회원 기능은 **기본 범위 제외**
 
 ---
 
 ## 8. 아직 논의 필요한 사항
+
+### 8-0. 소식/공지 CMS 구현 (미정)
+- 기본 글 / `notice` CPT / 동반 플러그인 분리 중 선택
+- 선택 전 테마·functions에 CPT 임의 등록 금지
 
 ### 8-1. 가격 책정 (미정)
 - 제작 기본 단가

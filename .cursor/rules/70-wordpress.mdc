@@ -12,7 +12,7 @@ globs:
 > **사업 델타:** `PROJECT_CONTEXT_wordpress_delta.md`  
 > **구현·CMS·보안·QA:** `WORDPRESS_TRANSITION_CHANGES.md`  
 > **서브페이지 유형·IA:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`  
-> **토큰:** `design-tokens-master.md` · 아이콘 `_icons/`  
+> **토큰:** `design-tokens-master.md` · 아이콘 원본 `_icons/` → 테마 `assets/icons/` 복사  
 > **보안 상세:** `71-wordpress-security.mdc` · **최종 검수:** `72-wordpress-final-verify.mdc`
 
 ## 범위
@@ -37,7 +37,7 @@ wordpress/{slug}/
 ```
 
 - slug 승인 전 폴더 생성 **금지**  
-- 아이콘: `_icons/` → `assets/icons/` 복사  
+- 아이콘: 레포 **`_icons/`(원본)** 에서 사용분만 테마 **`assets/icons/`로 복사** · `_icons/` 런타임 링크 금지  
 - 납품: `node _harness/package-delivery-wp.js {slug}`
 
 ## 시작 시 확정 (코딩 전)
@@ -51,22 +51,23 @@ wordpress/{slug}/
 - 메인 히어로 축소판으로 모든 서브 복제 **금지** (`SUBPAGE` §6~7)  
 - Page / Post / CPT / taxonomy 매핑은 `SUBPAGE` §20 · CPT는 테마 종속 금지 (`TRANSITION` §3)  
 - 목록·상세·빈 상태·관리자 입력은 `SUBPAGE` 완료 조건(§29) 참고
-### 킥오프 기본값 (재질문 금지 · 달리 지시 없으면)
+### 킥오프 기본값 (달리 지시 없으면)
 
 | 항목 | 기본값 |
 |------|--------|
-| 관리자 수정 | **공지(`notice`)만** — hero·GNB·섹션 카피는 코드 고정 |
-| 공지 CPT | **`notice`** · 메인 최신 **3건** |
+| 관리자 수정 | 합의된 **소식/공지 콘텐츠만** — hero·GNB·섹션 카피는 코드 고정 |
+| 소식/공지 구현 | **미결정** — WP 기본 글 / CPT(`notice`) / 동반 플러그인 중 선택 · **확정 전 테마에 임의 구현 금지** |
 | 호스팅 | 카페24 WordPress |
 | 디자인 입력 | 기획서·바이브 · 피그마는 **줄 때만** |
 | 납품 | ZIP → 사용자 업로드·활성화 |
 
-공지 외 CPT·필드·빌더는 **승인 후**.
+소식 외 CPT·필드·빌더는 **승인 후**. 모션·슬라이더는 **필요할 때만** 아래 enqueue.
 
 ## functions.php · enqueue
 
 - CSS/JS는 `wp_enqueue_*`만 · CDN jQuery **중복 금지** (필요 시 WP 번들)
-- **모션:** GSAP + ScrollTrigger · **슬라이더:** Swiper · 토큰 CSS·SUIT enqueue
+- 토큰 CSS·SUIT enqueue
+- **모션 필요 시** 승인 표준: GSAP + ScrollTrigger · **슬라이더 필요 시** 승인 표준: Swiper · **없으면 넣지 않음**
 - **46 jQuery preset:** 신규 테마 **기본 금지** (`45` · 명시 승인 시만)
 
 ## 플러그인 표준
@@ -89,7 +90,7 @@ wordpress/{slug}/
 ## QA (최소)
 
 - [ ] 테마 활성 · PHP 치명 오류 없음  
-- [ ] 공지 CRUD · `/notice/` · 메인 3건 (notice 사용 시)  
+- [ ] 소식/공지 CRUD·목록·메인 노출 (구현 방식이 **확정된 뒤에만**)  
 - [ ] 고유주소 저장 후 permalink  
 - [ ] 767 / 1024 레이아웃 · 타이포 최소  
 - [ ] `TRANSITION` §10 (관리자에서 수정→공개 반영)  
@@ -107,6 +108,6 @@ node _harness/package-delivery-wp.js {slug}
 ## 금지
 
 - `templates/`에 WP 테마 작성 · 정적 패키징으로 WP 납품  
-- 승인 없이 공지 외 CMS·빌더 추가  
+- 승인 없이 소식 외 CMS·빌더 추가 · **미결정인 공지 CPT를 테마에 임의 등록**  
 - 비밀키를 테마/JS에 하드코딩  
 - QA·관리자 검증 없이 CMS 연동 완료 선언

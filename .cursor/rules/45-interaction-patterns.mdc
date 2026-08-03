@@ -1,5 +1,5 @@
 ---
-description: 인터랙션·애니메이션 구현 패턴 (활성 wordpress=GSAP · templates 동결)
+description: 인터랙션·애니메이션 구현 패턴 (활성 wordpress · templates 동결)
 alwaysApply: false
 globs:
   - wordpress/**/assets/js/**
@@ -10,16 +10,17 @@ globs:
 
 # Interaction Patterns
 
-> **어떤 motion을 쓸지:** 신규 WP는 **GSAP** (아래) · `.cursor/rules/46-interaction-presets.mdc`는 **정적 동결·명시 승인**용  
+> **모션/슬라이더가 필요할 때:** 승인 표준은 아래 GSAP·Swiper · `.cursor/rules/46-interaction-presets.mdc`는 **정적 동결·명시 승인**용  
 > **이 파일 = 구현 방식만** (hover/터치·타이밍)  
 > **활성 경로:** `wordpress/{slug}/` · `templates/`는 동결(재개 시만)
 
 ## 스택 (필수 구분)
 
 - **`wordpress/` (활성·신규):**  
-  - **모션:** GSAP + ScrollTrigger (`wp_enqueue`) · AOS·임의 CDN 모션 라이브러리 **추가 금지**  
-  - **슬라이더:** Swiper.js  
-  - **jQuery:** WP 번들만 · CDN 중복 금지 · UI 토글(햄버거·아코디언) 등 **필요할 때만**  
+  - **모션이 필요할 때:** GSAP + ScrollTrigger (`wp_enqueue`) · AOS·임의 CDN 모션 라이브러리 **추가 금지**  
+  - **슬라이더가 필요할 때:** Swiper.js  
+  - 모션·슬라이더가 없으면 GSAP/Swiper를 **테마에 의무로 넣지 않음**  
+  - **jQuery:** WP 번들만 · CDN 중복 금지 · UI 토글 등 **필요할 때만**  
   - **46 jQuery preset:** WP 신규에 **기본 적용 금지** — 사용자가 ID를 **명시 승인**한 경우만  
   - 진입점: `assets/js/main.js` (enqueue)
 - **`templates/` (동결 재개 시):** jQuery 3.x + `46` preset · 진입점 `assets/js/main.js`

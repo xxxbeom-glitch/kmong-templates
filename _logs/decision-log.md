@@ -12,12 +12,13 @@
 | 하드코딩 정적 | **동결** `templates/` | 기본 상품 제외 |
 | 사업 SoT | PROJECT_CONTEXT + **wordpress_delta** | |
 | WP 구현 | **TRANSITION** + **SUBPAGE** | 서브 유형·IA |
-| 토큰 | SUIT · **1600** · `_icons/` · 타이포 최소 | `design-tokens-master` |
+| 토큰 | SUIT · **1600** · `_icons/`원본→`assets/icons/` 복사 · 타이포 최소 | `design-tokens-master` |
 | 플러그인 표준 | 델타 표 = **후보** · §6 재확인 | 맹목 고정 금지 |
 | 카톡 플로팅 | **메인·문의 등 핵심만** | 전 페이지 강제 아님 |
 | 개인 site | **동결** `_archive/site/` | |
 | 카페24·복제 | **동결/아카이브** | |
-| 모션 스택 | **GSAP+ScrollTrigger** · Swiper · 46 jQuery preset=WP신규 기본금지 | `45` |
+| 모션 스택 | 필요 시 **GSAP+ST** · 슬라이더 필요 시 **Swiper** (의무 아님) · 46=승인시만 | `45` |
+| 소식/공지 CMS | **미결정** (기본 글 / CPT / 동반 플러그인) | 확정 전 테마 임의 구현 금지 |
 | 카드 간격 | 내외부 대소 **강제 없음** · PC padding/gap **24** | `--card-padding` / `--card-gap` |
 | 브레드크럼 | 계층 깊을 때·상위 이동 필요할 때만 | SUBPAGE · do-dont |
 | 반응형 작업 | 설계=PC·MO 함께 · CSS=**모바일 퍼스트** | |
@@ -26,6 +27,18 @@
 | 섹션 구분 | 배경색 강제 아님 · 여백·타이포·배경·이미지 | |
 | 모바일 수정 | **MO만** · BP 767/1023/1024 | |
 | SEO/AEO/GEO | **on-demand** `73` | |
+
+---
+
+## 2026-08-03 — 모션·아이콘·공지 CMS 문구 정리
+
+| # | 결정 |
+|---|------|
+| 1 | GSAP·Swiper = **필요할 때** 쓰는 승인 표준 · 전 테마 의무 아님 |
+| 2 | `_icons/` = 원본 저장소 · 납품은 테마 `assets/icons/` 복사본만 사용 |
+| 3 | 소식/공지 = 기본 글 vs CPT vs 동반 플러그인 **미결정** · 확정 전 테마 임의 구현 금지 |
+| 4 | 사업 검증 기준본 = `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md` 유지 (축약 FINAL로 교체 안 함) |
+| 5 | `DESIGN_DEV_GAPS` · `PROJECT_STATUS_SNAPSHOT` = SoT 아님 → `_docs/reviews/` · `_docs/status/` |
 
 ---
 
@@ -50,7 +63,7 @@
 |---|------|
 | 1 | `30`·`35`·`40`·`45`·`46`·`50`·`73` 활성 경로 문구 → **wordpress/** (templates=동결) |
 | 2 | 피그마 규칙(`30`·QA Figma항목)은 **피그마를 준 작업에만** |
-| 3 | 신규 WP 모션 = **GSAP+ScrollTrigger** · 슬라이더 = Swiper |
+| 3 | 모션 필요 시 **GSAP+ScrollTrigger** · 슬라이더 필요 시 **Swiper** (전 테마 의무 아님) |
 | 4 | `46` jQuery preset = WP 신규 **기본 적용 금지** (명시 승인 시만) |
 
 ---

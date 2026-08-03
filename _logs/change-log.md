@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-08-03 — 문서 정리 (모션·아이콘·공지 미결정 · 리뷰 이동)
+
+- GSAP/Swiper = 필요 시 승인 표준 (전 테마 의무 아님)
+- `_icons/` 원본 → 테마 `assets/icons/` 복사 명시
+- 소식/공지 CMS = 미결정 (기본글/CPT/플러그인) · 임의 구현 금지
+- GAPS → `_docs/reviews/` · STATUS → `_docs/status/` (SoT 아님)
+- VIBE 사업 검증 기준본 유지 · do-dont (1) 중복 삭제
+
+---
+
 ## 2026-08-03 — 디자인 충돌 A~F 확정 반영
 
 - 카드: 내외부 대소 강제 해제 · PC padding/gap 24 토큰

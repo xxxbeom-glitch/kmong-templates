@@ -684,9 +684,9 @@
   C. Heroicons (CDN)
      직접 SVG 복사 방식 사용
 
-  → **우선:** 레포 루트 `_icons/` 공용 SVG (확정)
-  → 없을 때만 템플릿 `assets/icons/`에 추가 · CDN(Lucide/Heroicons) **기본 금지**
-  현재 선택: **자체 SVG · `_icons/` 우선**
+  → **원본:** 레포 루트 `_icons/` 공용 SVG  
+  → **납품 테마:** 사용 아이콘만 `assets/icons/`로 **복사** 후 참조 · `_icons/` 런타임 링크 금지 · CDN(Lucide/Heroicons) **기본 금지**  
+  현재 선택: **자체 SVG · `_icons/` 원본 + 테마 복사**
 */
 ```
 

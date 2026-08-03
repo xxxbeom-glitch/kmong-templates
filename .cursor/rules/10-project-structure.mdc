@@ -13,16 +13,21 @@ kmong-templates/
 ├── _delivery/              # 동결 (구 정적 납품 산출)
 ├── _harness/               # 패키징·검증·QA PNG — 구현 공간 아님
 ├── _logs/                  # decision / change / failure / qa
-├── _docs/                  # active-track.md 만
-├── _icons/                 # 공용 SVG (테마 assets로 복사해 사용)
+├── _docs/                  # active-track · reviews/ · status/
+├── _icons/                 # 아이콘 원본 저장소 (테마 assets/icons/로 복사)
 ├── _archive/               # 동결 보관
 ├── PROJECT_CONTEXT.md
 ├── PROJECT_CONTEXT_wordpress_delta.md
 ├── WORDPRESS_TRANSITION_CHANGES.md
 ├── WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md
-└── design-tokens-master.md
+├── design-tokens-master.md
+├── design-do-dont.md
+├── VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md
+└── KMONG_WP_BUSINESS_VALIDATION_CONTEXT.md
 ```
 
+- `_docs/reviews/` · `_docs/status/` = **참고·현황** (실행 규칙·SoT 아님)  
+- `_icons/`: 원본만. 납품 ZIP에는 테마 `assets/icons/` 복사본이 들어간다.
 ## Active workspace
 
 **현재 기본:** WordPress — `wordpress/{slug}/` · `_docs/active-track.md`.
