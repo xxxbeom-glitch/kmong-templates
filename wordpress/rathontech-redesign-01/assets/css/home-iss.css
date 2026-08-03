@@ -42,7 +42,7 @@
   justify-content: center;
   gap: var(--space-10);
   min-height: auto;
-  padding-block: var(--section-pad-y);
+  padding-block: var(--section-pad-y-lg);
   text-align: center;
 }
 
@@ -80,11 +80,11 @@
   white-space: nowrap;
 }
 
-/* PC: stacked fade steps · normal section height (not full-viewport) */
+/* PC: stacked fade steps · taller than default section, not full-viewport */
 @media (min-width: 768px) {
   .home-iss__frame {
-    min-height: auto;
-    padding-block: var(--section-pad-y);
+    min-height: 560px;
+    padding-block: var(--section-pad-y-lg);
   }
 
   .home-iss__copy {
