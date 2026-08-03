@@ -14,6 +14,8 @@ $iss_steps = array(
     'lead'  => __('인증부터 권한 관리까지, 기업의 모든 디지털 접점을 보호하는 통합 보안 기술을 만들어갑니다.', 'rathontech-redesign-01'),
   ),
 );
+
+$iss_video = rathon_asset_uri('videos/12421435_960_540_30fps.mp4');
 ?>
 <section
   class="home-iss"
@@ -22,6 +24,20 @@ $iss_steps = array(
   data-iss-steps="<?php echo esc_attr((string) count($iss_steps)); ?>"
 >
   <div class="home-iss__pin">
+    <div class="home-iss__media" aria-hidden="true">
+      <video
+        class="home-iss__video"
+        data-iss-video
+        src="<?php echo esc_url($iss_video); ?>"
+        muted
+        loop
+        playsinline
+        autoplay
+        preload="metadata"
+      ></video>
+      <div class="home-iss__veil"></div>
+    </div>
+
     <div class="u-container home-iss__frame">
       <div class="home-iss__copy" aria-live="polite">
         <?php foreach ($iss_steps as $i => $step) :
@@ -39,17 +55,8 @@ $iss_steps = array(
           </article>
         <?php endforeach; ?>
       </div>
-
-      <ol class="home-iss__progress" aria-hidden="true">
-        <?php foreach ($iss_steps as $i => $step) : ?>
-          <li
-            class="home-iss__progress-item<?php echo $i === 0 ? ' is-active' : ''; ?>"
-            data-iss-progress="<?php echo esc_attr((string) $i); ?>"
-          ><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></li>
-        <?php endforeach; ?>
-      </ol>
     </div>
   </div>
 </section>
 <?php
-unset($iss_steps, $i, $step, $is_first);
+unset($iss_steps, $iss_video, $i, $step, $is_first);

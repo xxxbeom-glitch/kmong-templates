@@ -1,19 +1,26 @@
 /**
- * ISS — scroll-pin-multi-step (catalog).
- * PC: pin section · scrub/wheel advances copy sets · then release to next section.
- * MO (≤767) / reduced-motion: no pin, stacked copy.
+ * ISS — scroll-pin-multi-step + background video @ 0.5x.
  */
 (function () {
   var section = document.querySelector('[data-iss-pin]');
   if (!section) return;
 
   var steps = section.querySelectorAll('[data-iss-step]');
-  var progressItems = section.querySelectorAll('[data-iss-progress]');
   var stepCount = steps.length;
   if (!stepCount) return;
 
+  var video = section.querySelector('[data-iss-video]');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var activeIndex = 0;
+
+  function initVideo() {
+    if (!video || reduce) return;
+    video.playbackRate = 0.5;
+    var play = video.play();
+    if (play && typeof play.catch === 'function') {
+      play.catch(function () {});
+    }
+  }
 
   function setActive(index) {
     if (index === activeIndex) return;
@@ -28,16 +35,19 @@
       if (on) title.id = 'home-iss-title';
       else if (title.id === 'home-iss-title') title.removeAttribute('id');
     });
-
-    progressItems.forEach(function (item, i) {
-      item.classList.toggle('is-active', i === index);
-    });
   }
 
   function indexFromProgress(progress) {
     if (stepCount <= 1) return 0;
     if (progress >= 0.999) return stepCount - 1;
     return Math.min(stepCount - 1, Math.floor(progress * stepCount));
+  }
+
+  initVideo();
+  if (video) {
+    video.addEventListener('loadedmetadata', function () {
+      video.playbackRate = 0.5;
+    });
   }
 
   if (reduce || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
