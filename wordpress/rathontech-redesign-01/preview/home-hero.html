@@ -278,12 +278,9 @@
 
     <section class="home-media" aria-labelledby="home-media-title" data-media>
       <div class="u-container">
-        <div class="home-media__layout">
-          <div class="home-media__aside">
-            <header class="home-media__head">
-              <h2 id="home-media-title" class="home-media__title">미디어허브</h2>
-              <p class="home-media__lead">기업의 최신 소식과 다양한 콘텐츠를 한 곳에서 만나보세요.</p>
-            </header>
+        <header class="home-media__head">
+          <div class="home-media__head-row">
+            <h2 id="home-media-title" class="home-media__title">미디어허브</h2>
             <nav class="home-media__tabs" aria-label="미디어 카테고리">
               <ul class="home-media__tab-list" role="tablist">
                 <li role="presentation">
@@ -304,53 +301,54 @@
               </ul>
             </nav>
           </div>
-          <ul class="home-media__grid" data-media-grid>
-            <li class="home-media__item" data-media-cat="notice">
-              <a class="home-media__card" href="#">
-                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/anastasiia-rozumna-hUEs9AFpdQg-unsplash.jpg');" aria-hidden="true"></span>
-                <span class="home-media__meta">
-                  <span class="home-media__cat">공지</span>
-                  <span class="home-media__sep" aria-hidden="true">|</span>
-                  <time class="home-media__date" datetime="2026-08-01">2026.08.01</time>
-                </span>
-                <span class="home-media__card-title">라톤테크 공식 홈페이지 개편 안내</span>
-              </a>
-            </li>
-            <li class="home-media__item" data-media-cat="notice">
-              <a class="home-media__card" href="#">
-                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/d-koi-_3yUyAOg_ZY-unsplash.jpg');" aria-hidden="true"></span>
-                <span class="home-media__meta">
-                  <span class="home-media__cat">공지</span>
-                  <span class="home-media__sep" aria-hidden="true">|</span>
-                  <time class="home-media__date" datetime="2026-07-24">2026.07.24</time>
-                </span>
-                <span class="home-media__card-title">고객 문의 및 기술지원 접수 방법 안내</span>
-              </a>
-            </li>
-            <li class="home-media__item" data-media-cat="product">
-              <a class="home-media__card" href="#">
-                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/soheb-zaidi-7Czm0mjIaWs-unsplash.jpg');" aria-hidden="true"></span>
-                <span class="home-media__meta">
-                  <span class="home-media__cat">제품소식</span>
-                  <span class="home-media__sep" aria-hidden="true">|</span>
-                  <time class="home-media__date" datetime="2026-07-15">2026.07.15</time>
-                </span>
-                <span class="home-media__card-title">Rathon-IAM 주요 기능 업데이트 안내</span>
-              </a>
-            </li>
-            <li class="home-media__item" data-media-cat="tech">
-              <a class="home-media__card" href="#">
-                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/shubham-dhage-bhiQQm1urPI-unsplash.jpg');" aria-hidden="true"></span>
-                <span class="home-media__meta">
-                  <span class="home-media__cat">기술소식</span>
-                  <span class="home-media__sep" aria-hidden="true">|</span>
-                  <time class="home-media__date" datetime="2026-07-03">2026.07.03</time>
-                </span>
-                <span class="home-media__card-title">통합 계정관리로 시작하는 접근 보안 체계</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <p class="home-media__lead">기업의 최신 소식과 다양한 콘텐츠를 한 곳에서 만나보세요.</p>
+        </header>
+        <ul class="home-media__grid" data-media-grid>
+          <li class="home-media__item" data-media-cat="notice">
+            <a class="home-media__card" href="#">
+              <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/anastasiia-rozumna-hUEs9AFpdQg-unsplash.jpg');" aria-hidden="true"></span>
+              <span class="home-media__meta">
+                <span class="home-media__cat">공지</span>
+                <span class="home-media__sep" aria-hidden="true">|</span>
+                <time class="home-media__date" datetime="2026-08-01">2026.08.01</time>
+              </span>
+              <span class="home-media__card-title">라톤테크 공식 홈페이지 개편 안내</span>
+            </a>
+          </li>
+          <li class="home-media__item" data-media-cat="notice">
+            <a class="home-media__card" href="#">
+              <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/d-koi-_3yUyAOg_ZY-unsplash.jpg');" aria-hidden="true"></span>
+              <span class="home-media__meta">
+                <span class="home-media__cat">공지</span>
+                <span class="home-media__sep" aria-hidden="true">|</span>
+                <time class="home-media__date" datetime="2026-07-24">2026.07.24</time>
+              </span>
+              <span class="home-media__card-title">고객 문의 및 기술지원 접수 방법 안내</span>
+            </a>
+          </li>
+          <li class="home-media__item" data-media-cat="product">
+            <a class="home-media__card" href="#">
+              <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/soheb-zaidi-7Czm0mjIaWs-unsplash.jpg');" aria-hidden="true"></span>
+              <span class="home-media__meta">
+                <span class="home-media__cat">제품소식</span>
+                <span class="home-media__sep" aria-hidden="true">|</span>
+                <time class="home-media__date" datetime="2026-07-15">2026.07.15</time>
+              </span>
+              <span class="home-media__card-title">Rathon-IAM 주요 기능 업데이트 안내</span>
+            </a>
+          </li>
+          <li class="home-media__item" data-media-cat="tech">
+            <a class="home-media__card" href="#">
+              <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/shubham-dhage-bhiQQm1urPI-unsplash.jpg');" aria-hidden="true"></span>
+              <span class="home-media__meta">
+                <span class="home-media__cat">기술소식</span>
+                <span class="home-media__sep" aria-hidden="true">|</span>
+                <time class="home-media__date" datetime="2026-07-03">2026.07.03</time>
+              </span>
+              <span class="home-media__card-title">통합 계정관리로 시작하는 접근 보안 체계</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 

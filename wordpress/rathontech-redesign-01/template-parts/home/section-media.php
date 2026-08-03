@@ -1,7 +1,7 @@
 <?php
 /**
  * Home — Media Hub (board) section.
- * Layout: left title/tabs + right card grid.
+ * Layout: title+tabs top · 4-up card grid below.
  */
 
 $media_thumbs = array(
@@ -98,17 +98,11 @@ $tabs = array(
 ?>
 <section class="home-media" aria-labelledby="home-media-title" data-media>
   <div class="u-container">
-    <div class="home-media__layout">
-      <div class="home-media__aside">
-        <header class="home-media__head">
-          <h2 id="home-media-title" class="home-media__title">
-            <?php echo esc_html__('미디어허브', 'rathontech-redesign-01'); ?>
-          </h2>
-          <p class="home-media__lead">
-            <?php echo esc_html__('기업의 최신 소식과 다양한 콘텐츠를 한 곳에서 만나보세요.', 'rathontech-redesign-01'); ?>
-          </p>
-        </header>
-
+    <header class="home-media__head">
+      <div class="home-media__head-row">
+        <h2 id="home-media-title" class="home-media__title">
+          <?php echo esc_html__('미디어허브', 'rathontech-redesign-01'); ?>
+        </h2>
         <nav class="home-media__tabs" aria-label="<?php echo esc_attr__('미디어 카테고리', 'rathontech-redesign-01'); ?>">
           <ul class="home-media__tab-list" role="tablist">
             <?php foreach ($tabs as $i => $tab) : ?>
@@ -128,29 +122,32 @@ $tabs = array(
           </ul>
         </nav>
       </div>
+      <p class="home-media__lead">
+        <?php echo esc_html__('기업의 최신 소식과 다양한 콘텐츠를 한 곳에서 만나보세요.', 'rathontech-redesign-01'); ?>
+      </p>
+    </header>
 
-      <ul class="home-media__grid" data-media-grid>
-        <?php foreach ($media_items as $item) : ?>
-          <li class="home-media__item" data-media-cat="<?php echo esc_attr($item['filter']); ?>">
-            <a class="home-media__card" href="<?php echo esc_url($item['href']); ?>">
-              <span
-                class="home-media__thumb"
-                style="background-image: url('<?php echo esc_url($item['image']); ?>');"
-                aria-hidden="true"
-              ></span>
-              <span class="home-media__meta">
-                <span class="home-media__cat"><?php echo esc_html($item['category']); ?></span>
-                <span class="home-media__sep" aria-hidden="true">|</span>
-                <time class="home-media__date" datetime="<?php echo esc_attr(str_replace('.', '-', $item['date'])); ?>">
-                  <?php echo esc_html($item['date']); ?>
-                </time>
-              </span>
-              <span class="home-media__card-title"><?php echo esc_html($item['title']); ?></span>
-            </a>
-          </li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
+    <ul class="home-media__grid" data-media-grid>
+      <?php foreach ($media_items as $item) : ?>
+        <li class="home-media__item" data-media-cat="<?php echo esc_attr($item['filter']); ?>">
+          <a class="home-media__card" href="<?php echo esc_url($item['href']); ?>">
+            <span
+              class="home-media__thumb"
+              style="background-image: url('<?php echo esc_url($item['image']); ?>');"
+              aria-hidden="true"
+            ></span>
+            <span class="home-media__meta">
+              <span class="home-media__cat"><?php echo esc_html($item['category']); ?></span>
+              <span class="home-media__sep" aria-hidden="true">|</span>
+              <time class="home-media__date" datetime="<?php echo esc_attr(str_replace('.', '-', $item['date'])); ?>">
+                <?php echo esc_html($item['date']); ?>
+              </time>
+            </span>
+            <span class="home-media__card-title"><?php echo esc_html($item['title']); ?></span>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
   </div>
 </section>
 <?php

@@ -1,4 +1,4 @@
-/* Home — Media Hub (left head/tabs + right card grid) */
+/* Home — Media Hub: title+tabs top · 4-up cards below */
 
 .home-media {
   padding: var(--section-pad-y) 0;
@@ -6,21 +6,20 @@
   color: var(--color-text-primary);
 }
 
-.home-media__layout {
-  display: flex;
-  flex-direction: column;
-  gap: var(--section-head-gap);
+.home-media__head {
+  margin-bottom: var(--section-head-gap);
 }
 
-.home-media__aside {
+.home-media__head-row {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
-  max-width: 22rem;
+  align-items: flex-start;
+  gap: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 .home-media__title {
-  margin: 0 0 var(--space-4);
+  margin: 0;
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
@@ -31,11 +30,16 @@
 
 .home-media__lead {
   margin: 0;
+  max-width: 36em;
   font-size: var(--text-body1-size);
   line-height: var(--text-body1-line);
   font-weight: var(--text-body1-weight);
   color: var(--color-text-secondary);
   word-break: keep-all;
+}
+
+.home-media__tabs {
+  flex-shrink: 0;
 }
 
 .home-media__tab-list {
@@ -165,12 +169,19 @@
 }
 
 @media (min-width: 768px) {
-  .home-media__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .home-media__head-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-8);
   }
 
-  .home-media__aside {
-    gap: var(--space-16);
+  .home-media__tabs {
+    margin-left: auto;
+  }
+
+  .home-media__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .home-media__meta {
@@ -183,20 +194,12 @@
     padding: var(--section-pad-y-lg) 0 var(--section-pad-y);
   }
 
-  .home-media__layout {
-    display: grid;
-    grid-template-columns: minmax(240px, 28%) minmax(0, 1fr);
-    column-gap: var(--space-16);
-    row-gap: var(--section-head-gap);
-    align-items: start;
+  .home-media__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .home-media__aside {
-    position: sticky;
-    top: calc(var(--header-h) + var(--space-6));
-    max-width: none;
-    gap: var(--space-16);
-    padding-top: 0;
+  .home-media__card-title {
+    font-size: clamp(16px, 1.15vw, var(--text-h3-size));
   }
 }
 
