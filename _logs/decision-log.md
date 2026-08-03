@@ -33,8 +33,18 @@
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
-| rathontech ISS | **좌 타이틀 목차 + 카드 4장 · 1.9** | 기획 문제 축 4 · 클릭 이동 |
+| rathontech ISS | **가로 드래그 카드 4장** | 좌 목차 철회 · freeMode |
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech ISS 드래그 슬라이더 복원
+
+| # | 결정 |
+|---|------|
+| 1 | 좌측 타이틀 목차 **철회** |
+| 2 | **가로 드래그** freeMode 슬라이더로 복원 |
+| 3 | 카드 수 **4개** 유지 (기획 문제 축) |
 
 ---
 
