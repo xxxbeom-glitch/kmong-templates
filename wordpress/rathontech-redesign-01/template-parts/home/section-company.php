@@ -20,7 +20,7 @@ $cta_image = rathon_asset('images/hero/mike-kononov-lFv0V3_2H6s-unsplash.jpg');
     </span>
     <span class="home-company__cta-veil" aria-hidden="true"></span>
     <div class="u-container home-company__cta-inner">
-      <div class="home-company__cta-copy">
+      <div class="home-company__cta-copy" data-reveal>
         <h2 id="home-cta-title" class="home-company__cta-title">
           <?php echo esc_html__('우리 조직의 계정·권한·인증 환경을 점검해보세요', 'rathontech-redesign-01'); ?>
         </h2>
@@ -28,7 +28,7 @@ $cta_image = rathon_asset('images/hero/mike-kononov-lFv0V3_2H6s-unsplash.jpg');
           <?php echo esc_html__('현재 시스템과 보안 요구사항을 확인한 뒤 적합한 방향을 안내합니다.', 'rathontech-redesign-01'); ?>
         </p>
       </div>
-      <div class="home-company__cta-actions">
+      <div class="home-company__cta-actions" data-reveal style="--reveal-delay: 0.14s">
         <a class="btn btn--primary-on-dark" href="<?php echo esc_url(rathon_url('contact')); ?>">
           <?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?>
         </a>

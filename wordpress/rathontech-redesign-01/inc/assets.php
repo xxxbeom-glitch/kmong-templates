@@ -122,6 +122,19 @@ function rathon_enqueue_assets() {
       array('rathon-home-media'),
       rathon_asset_ver('css/home-company.css')
     );
+    wp_enqueue_style(
+      'rathon-reveal',
+      rathon_asset_uri('css/reveal.css'),
+      array('rathon-home-company'),
+      rathon_asset_ver('css/reveal.css')
+    );
+    wp_enqueue_script(
+      'rathon-reveal',
+      rathon_asset_uri('js/reveal.js'),
+      array(),
+      rathon_asset_ver('js/reveal.js'),
+      true
+    );
   }
 
   if (is_page_template('page-templates/product-rathon-iam.php') || is_page('rathon-iam')) {

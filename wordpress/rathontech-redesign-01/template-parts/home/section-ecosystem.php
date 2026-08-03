@@ -30,7 +30,7 @@ $eco_cards = array(
 ?>
 <section class="home-eco" aria-labelledby="home-eco-title">
   <div class="u-container">
-    <header class="home-eco__head">
+    <header class="home-eco__head" data-reveal>
       <h2 id="home-eco-title" class="home-eco__title">
         <?php echo esc_html__('솔루션을 실제로 만드는 제품군', 'rathontech-redesign-01'); ?>
       </h2>
@@ -40,8 +40,8 @@ $eco_cards = array(
     </header>
 
     <ul class="home-eco__cards">
-      <?php foreach ($eco_cards as $card) : ?>
-        <li class="home-eco__card">
+      <?php foreach ($eco_cards as $i => $card) : ?>
+        <li class="home-eco__card" data-reveal style="--reveal-delay: <?php echo esc_attr(number_format(0.1 * ($i + 1), 2, '.', '')); ?>s">
           <a class="home-eco__card-link" href="<?php echo esc_url($card['href']); ?>">
             <span
               class="home-eco__card-media"
@@ -67,4 +67,4 @@ $eco_cards = array(
   </div>
 </section>
 <?php
-unset($eco_cards, $card);
+unset($eco_cards, $card, $i);

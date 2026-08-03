@@ -1,0 +1,17 @@
+/* Scroll-enter reveal — home sections (not hero · not ISS pin) */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
+    transition-delay: var(--reveal-delay, 0s);
+  }
+
+  [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+}

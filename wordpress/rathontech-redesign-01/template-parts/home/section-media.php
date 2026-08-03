@@ -68,7 +68,7 @@ $media_items = array_slice($media_items, 0, 5);
 ?>
 <section class="home-media" aria-labelledby="home-media-title">
   <div class="u-container">
-    <header class="home-media__head">
+    <header class="home-media__head" data-reveal>
       <h2 id="home-media-title" class="home-media__title">
         <?php echo esc_html__('미디어허브', 'rathontech-redesign-01'); ?>
       </h2>
@@ -78,8 +78,8 @@ $media_items = array_slice($media_items, 0, 5);
     </header>
 
     <ul class="home-media__list">
-      <?php foreach ($media_items as $item) : ?>
-        <li class="home-media__item">
+      <?php foreach ($media_items as $i => $item) : ?>
+        <li class="home-media__item" data-reveal style="--reveal-delay: <?php echo esc_attr(number_format(0.06 * ($i + 1), 2, '.', '')); ?>s">
           <a class="home-media__row" href="<?php echo esc_url($item['href']); ?>">
             <span class="home-media__cat"><?php echo esc_html($item['category']); ?></span>
             <span class="home-media__row-title"><?php echo esc_html($item['title']); ?></span>
@@ -93,4 +93,4 @@ $media_items = array_slice($media_items, 0, 5);
   </div>
 </section>
 <?php
-unset($media_raw, $media_items, $item, $row);
+unset($media_raw, $media_items, $item, $row, $i);
