@@ -46,6 +46,13 @@ function rathon_enqueue_assets() {
     rathon_asset_ver('css/header.css')
   );
 
+  wp_enqueue_style(
+    'rathon-footer',
+    rathon_asset_uri('css/footer.css'),
+    array('rathon-base'),
+    rathon_asset_ver('css/footer.css')
+  );
+
   wp_enqueue_script(
     'rathon-main',
     rathon_asset_uri('js/main.js'),
