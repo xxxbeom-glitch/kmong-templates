@@ -85,8 +85,8 @@ foreach ($media_raw as $i => $row) {
   $media_items[] = $row;
 }
 
-/* Home section shows latest 4 only */
-$media_items = array_slice($media_items, 0, 4);
+/* Home section shows latest 3 only */
+$media_items = array_slice($media_items, 0, 3);
 
 $tabs = array(
   array('id' => 'all', 'label' => __('전체', 'rathontech-redesign-01')),

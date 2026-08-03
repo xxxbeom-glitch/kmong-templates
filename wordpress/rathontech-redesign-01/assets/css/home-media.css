@@ -121,7 +121,7 @@
 .home-media__thumb {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   margin-bottom: var(--space-3);
   border-radius: var(--radius-lg);
   background-color: var(--color-bg-subtle);
@@ -195,7 +195,12 @@
   }
 
   .home-media__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+
+  .home-media__thumb {
+    aspect-ratio: 3 / 2;
   }
 
   .home-media__card-title {
