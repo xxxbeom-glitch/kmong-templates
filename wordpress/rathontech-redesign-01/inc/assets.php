@@ -111,9 +111,22 @@ function rathon_enqueue_assets() {
       rathon_asset_ver('css/home-ecosystem.css')
     );
     wp_enqueue_style(
+      'rathon-home-media',
+      rathon_asset_uri('css/home-media.css'),
+      array('rathon-home-eco'),
+      rathon_asset_ver('css/home-media.css')
+    );
+    wp_enqueue_script(
+      'rathon-media-filter',
+      rathon_asset_uri('js/media-filter.js'),
+      array(),
+      rathon_asset_ver('js/media-filter.js'),
+      true
+    );
+    wp_enqueue_style(
       'rathon-home-evidence',
       rathon_asset_uri('css/home-evidence.css'),
-      array('rathon-home-eco'),
+      array('rathon-home-media'),
       rathon_asset_ver('css/home-evidence.css')
     );
     wp_enqueue_script(

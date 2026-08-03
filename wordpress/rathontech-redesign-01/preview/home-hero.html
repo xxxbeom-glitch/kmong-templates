@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../assets/css/home-hero.css">
   <link rel="stylesheet" href="../assets/css/home-iss.css">
   <link rel="stylesheet" href="../assets/css/home-ecosystem.css">
+  <link rel="stylesheet" href="../assets/css/home-media.css">
   <link rel="stylesheet" href="../assets/css/home-evidence.css">
   <link rel="stylesheet" href="../assets/css/home-company.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
@@ -275,6 +276,78 @@
       </div>
     </section>
 
+    <section class="home-media" aria-labelledby="home-media-title" data-media>
+      <div class="u-container">
+        <div class="home-media__layout">
+          <div class="home-media__aside">
+            <header class="home-media__head">
+              <h2 id="home-media-title" class="home-media__title">미디어허브</h2>
+              <p class="home-media__lead">기업의 최신 소식과 다양한 콘텐츠를 한 곳에서 만나보세요.</p>
+            </header>
+            <nav class="home-media__tabs" aria-label="미디어 카테고리">
+              <ul class="home-media__tab-list" role="tablist">
+                <li role="presentation">
+                  <button type="button" class="home-media__tab is-active" role="tab" aria-selected="true" data-media-filter="all">전체</button>
+                </li>
+                <li role="presentation">
+                  <button type="button" class="home-media__tab" role="tab" aria-selected="false" data-media-filter="news">뉴스</button>
+                </li>
+                <li role="presentation">
+                  <button type="button" class="home-media__tab" role="tab" aria-selected="false" data-media-filter="social">소셜미디어</button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <ul class="home-media__grid" data-media-grid>
+            <li class="home-media__item" data-media-cat="news">
+              <a class="home-media__card" href="#">
+                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/anastasiia-rozumna-hUEs9AFpdQg-unsplash.jpg');" aria-hidden="true"></span>
+                <span class="home-media__meta">
+                  <span class="home-media__cat">뉴스</span>
+                  <span class="home-media__sep" aria-hidden="true">|</span>
+                  <time class="home-media__date" datetime="2025-07-20">2025.07.20</time>
+                </span>
+                <span class="home-media__card-title">라톤테크, Zero Trust 기반 통합 인증 플랫폼 고도화 추진</span>
+              </a>
+            </li>
+            <li class="home-media__item" data-media-cat="news">
+              <a class="home-media__card" href="#">
+                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/d-koi-_3yUyAOg_ZY-unsplash.jpg');" aria-hidden="true"></span>
+                <span class="home-media__meta">
+                  <span class="home-media__cat">뉴스</span>
+                  <span class="home-media__sep" aria-hidden="true">|</span>
+                  <time class="home-media__date" datetime="2025-07-20">2025.07.20</time>
+                </span>
+                <span class="home-media__card-title">공공·금융 고객사 대상 IAM·SSO 도입 사례 확대</span>
+              </a>
+            </li>
+            <li class="home-media__item" data-media-cat="social">
+              <a class="home-media__card" href="#">
+                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/soheb-zaidi-7Czm0mjIaWs-unsplash.jpg');" aria-hidden="true"></span>
+                <span class="home-media__meta">
+                  <span class="home-media__cat">인스타그램</span>
+                  <span class="home-media__sep" aria-hidden="true">|</span>
+                  <time class="home-media__date" datetime="2025-07-20">2025.07.20</time>
+                </span>
+                <span class="home-media__card-title">보안 인식 캠페인 — 계정과 권한, 일상에서 지키는 방법</span>
+              </a>
+            </li>
+            <li class="home-media__item" data-media-cat="news">
+              <a class="home-media__card" href="#">
+                <span class="home-media__thumb" style="background-image: url('../assets/images/thumb/shubham-dhage-bhiQQm1urPI-unsplash.jpg');" aria-hidden="true"></span>
+                <span class="home-media__meta">
+                  <span class="home-media__cat">뉴스</span>
+                  <span class="home-media__sep" aria-hidden="true">|</span>
+                  <time class="home-media__date" datetime="2025-07-18">2025.07.18</time>
+                </span>
+                <span class="home-media__card-title">Rathon-IAM, 다중인증·권한 관리 기능 업데이트 공개</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="home-evidence" aria-labelledby="home-evidence-title" data-evidence>
       <div class="u-container">
         <header class="home-evidence__head">
@@ -367,6 +440,7 @@
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/nav.js"></script>
   <script src="../assets/js/iss-slider.js"></script>
+  <script src="../assets/js/media-filter.js"></script>
   <script src="../assets/js/evidence-pager.js"></script>
 </body>
 </html>
