@@ -34,6 +34,7 @@
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
 | rathontech ISS | **`scroll-pin-multi-step` · 카피 2세트** | pin+scrub · MO 스택 |
+| rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
 
 ---
 
