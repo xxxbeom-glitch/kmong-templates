@@ -41,7 +41,7 @@
   max-width: none;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: rgb(245 245 245 / 0.72);
+  color: rgb(255 255 255 / 0.72);
   word-break: keep-all;
   overflow-wrap: normal;
   line-break: strict;
@@ -134,7 +134,7 @@
   padding-left: 0.9em;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: rgb(245 245 245 / 0.72);
+  color: rgb(255 255 255 / 0.72);
   word-break: keep-all;
 }
 
@@ -142,7 +142,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: rgb(245 245 245 / 0.45);
+  color: rgb(255 255 255 / 0.45);
 }
 
 @media (min-width: 1024px) {

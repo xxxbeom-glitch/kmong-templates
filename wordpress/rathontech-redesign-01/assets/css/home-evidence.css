@@ -53,15 +53,15 @@
 
 /* Image placeholders — replace with real case photos when rights cleared */
 .home-evidence__thumb--tone-a {
-  background-image: linear-gradient(145deg, var(--blue-800) 0%, var(--gray-700) 100%);
+  background-image: linear-gradient(145deg, var(--blue-800) 0%, var(--gray-800) 100%);
 }
 
 .home-evidence__thumb--tone-b {
-  background-image: linear-gradient(145deg, var(--gray-700) 0%, var(--blue-900) 100%);
+  background-image: linear-gradient(145deg, var(--gray-800) 0%, var(--blue-900) 100%);
 }
 
 .home-evidence__thumb--tone-c {
-  background-image: linear-gradient(145deg, var(--gray-800) 0%, var(--indigo-900) 100%);
+  background-image: linear-gradient(145deg, var(--gray-900) 0%, var(--blue-900) 100%);
 }
 
 .home-evidence__card:hover .home-evidence__thumb {
@@ -83,7 +83,7 @@
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
   font-weight: 400;
-  color: rgb(245 245 245 / 0.72);
+  color: rgb(255 255 255 / 0.72);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -111,7 +111,7 @@
   border: 0;
   border-radius: var(--radius-md);
   background: transparent;
-  color: rgb(245 245 245 / 0.55);
+  color: rgb(255 255 255 / 0.55);
   font-family: inherit;
   font-size: var(--text-body3-size);
   font-weight: 600;
