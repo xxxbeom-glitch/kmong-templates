@@ -37,6 +37,19 @@
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
 | rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
+| rathontech CTA 버튼 | **블루 Primary · sm/md/lg** | fill=`--color-primary` · on-dark도 동일 블루 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech CTA 버튼 정의
+
+| # | 결정 |
+|---|------|
+| 1 | Primary 채움 = 브랜드 블루 (`--color-primary`) · hover=`--color-primary-dark` |
+| 2 | 사이즈 3단: sm 40/16/14 · md 48/24/16(기본) · lg 56/32/16 |
+| 3 | Primary weight=semibold · Secondary/Ghost=medium · radius=`--radius-md` |
+| 4 | on-dark Primary도 **동일 블루 채움**(흰 박스 제거) · Secondary=흰 outline |
+| 5 | 사용: 헤더 sm · 모바일메뉴 md · 히어로/CTA밴드 lg · 제품 md |
 
 ---
 
@@ -45,7 +58,7 @@
 | # | 결정 |
 |---|------|
 | 1 | veil 토큰: soft(히어로) / media(ISS) / strong(CTA) |
-| 2 | on-dark 버튼은 `btn--primary-on-dark` · `btn--secondary-on-dark` 공용 |
+| 2 | on-dark 버튼은 `btn--primary-on-dark` · `btn--secondary-on-dark` 공용 (**채움색은 2026-08-03 CTA 정의로 블루 통일**) |
 | 3 | Quiet Zone(신뢰의 근거) **삭제** |
 | 4 | 히어로 Trust Snapshot도 **삭제** |
 

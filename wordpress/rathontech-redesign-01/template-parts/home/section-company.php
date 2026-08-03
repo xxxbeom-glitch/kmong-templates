@@ -26,10 +26,10 @@ $cta_image = rathon_asset('images/hero/mike-kononov-lFv0V3_2H6s-unsplash.jpg');
         </h2>
       </div>
       <div class="home-company__cta-actions" data-reveal style="--reveal-delay: 0.14s">
-        <a class="btn btn--primary-on-dark" href="<?php echo esc_url(rathon_url('contact')); ?>">
+        <a class="btn btn--lg btn--primary-on-dark" href="<?php echo esc_url(rathon_url('contact')); ?>">
           <?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?>
         </a>
-        <a class="btn btn--secondary btn--secondary-on-dark" href="tel:028577730">
+        <a class="btn btn--lg btn--secondary btn--secondary-on-dark" href="tel:028577730">
           <?php echo esc_html__('전화 상담 02-857-7730', 'rathontech-redesign-01'); ?>
         </a>
       </div>

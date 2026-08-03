@@ -28,10 +28,10 @@ $hero_image = rathon_asset('images/hero/milad-fakurian-eRbgsJ0Ec0o-unsplash.jpg'
         <?php echo esc_html__('IAM·SSO·MFA부터 Zero Trust까지, 기업의 사용자와 시스템 접근을 안전하고 효율적으로 관리합니다.', 'rathontech-redesign-01'); ?>
       </p>
       <div class="home-hero__actions">
-        <a class="btn btn--primary-on-dark" href="<?php echo esc_url(rathon_url('contact')); ?>">
+        <a class="btn btn--lg btn--primary-on-dark" href="<?php echo esc_url(rathon_url('contact')); ?>">
           <?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?>
         </a>
-        <a class="btn btn--secondary btn--secondary-on-dark" href="<?php echo esc_url(rathon_url('case-studies')); ?>">
+        <a class="btn btn--lg btn--secondary btn--secondary-on-dark" href="<?php echo esc_url(rathon_url('case-studies')); ?>">
           <?php echo esc_html__('도입사례 확인하기', 'rathontech-redesign-01'); ?>
         </a>
       </div>

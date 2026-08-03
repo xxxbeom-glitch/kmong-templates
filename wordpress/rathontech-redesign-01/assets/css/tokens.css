@@ -38,9 +38,9 @@
   --color-success: #00C85F;
   --color-success-soft: #EAFCF2;
 
-  /* CTA fill (NW Primary dark button) */
-  --color-btn-fill: #202936;
-  --color-btn-fill-hover: #161B24;
+  /* CTA fill — brand blue Primary */
+  --color-btn-fill: var(--color-primary);
+  --color-btn-fill-hover: var(--color-primary-dark);
 
   --color-text-primary: #202124;
   --color-text-secondary: #71767A;
@@ -158,7 +158,18 @@
 
   --card-padding: 40px;
   --card-gap: 20px;
-  --btn-px: 24px;
+
+  /* Button scale — sm / md (default) / lg */
+  --btn-height-sm: 40px;
+  --btn-height-md: 48px;
+  --btn-height-lg: 56px;
+  --btn-px-sm: 16px;
+  --btn-px-md: 24px;
+  --btn-px-lg: 32px;
+  --btn-font-sm: 14px;
+  --btn-font-md: 16px;
+  --btn-font-lg: 16px;
+  --btn-px: var(--btn-px-md);
 
   /* Product card title on media (eco bento) */
   --text-card-lg-size: 34px;

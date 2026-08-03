@@ -22,8 +22,8 @@
       <?php echo esc_html__('계정 생성부터 권한 회수까지, 기업 계정과 접근 권한을 중앙에서 관리하는 ID 거버넌스 제품입니다.', 'rathontech-redesign-01'); ?>
     </p>
     <div class="product-hero__actions">
-      <a class="btn btn--primary" href="<?php echo esc_url(rathon_url('contact')); ?>"><?php echo esc_html__('문의하기', 'rathontech-redesign-01'); ?></a>
-      <a class="btn btn--ghost" href="<?php echo esc_url(rathon_url('case-studies')); ?>"><?php echo esc_html__('관련 도입사례 보기', 'rathontech-redesign-01'); ?></a>
+      <a class="btn btn--md btn--primary" href="<?php echo esc_url(rathon_url('contact')); ?>"><?php echo esc_html__('문의하기', 'rathontech-redesign-01'); ?></a>
+      <a class="btn btn--md btn--ghost" href="<?php echo esc_url(rathon_url('case-studies')); ?>"><?php echo esc_html__('관련 도입사례 보기', 'rathontech-redesign-01'); ?></a>
     </div>
 
     <div class="lifecycle" aria-label="<?php echo esc_attr__('계정 생애주기 흐름', 'rathontech-redesign-01'); ?>">

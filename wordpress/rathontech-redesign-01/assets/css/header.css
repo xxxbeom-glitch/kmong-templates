@@ -82,9 +82,6 @@
 
 .site-header__cta {
   display: none;
-  min-height: 48px;
-  padding-inline: var(--space-5);
-  font-size: var(--header-cta-size);
 }
 
 .site-header__menu-btn {

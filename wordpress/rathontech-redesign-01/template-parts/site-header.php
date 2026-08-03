@@ -44,7 +44,7 @@ $is_iam   = is_page_template('page-templates/product-rathon-iam.php') || is_page
     </nav>
 
     <div class="site-header__actions">
-      <a class="btn btn--primary site-header__cta" href="<?php echo esc_url($contact); ?>"><?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?></a>
+      <a class="btn btn--sm btn--primary site-header__cta" href="<?php echo esc_url($contact); ?>"><?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?></a>
       <button
         type="button"
         class="site-header__menu-btn"
@@ -126,7 +126,7 @@ $is_iam   = is_page_template('page-templates/product-rathon-iam.php') || is_page
           <?php endforeach; ?>
         </ul>
       </nav>
-      <a class="btn btn--primary mobile-menu__cta" href="<?php echo esc_url($contact); ?>"><?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?></a>
+      <a class="btn btn--md btn--primary mobile-menu__cta" href="<?php echo esc_url($contact); ?>"><?php echo esc_html__('보안 환경 상담하기', 'rathontech-redesign-01'); ?></a>
     </div>
   </div>
 </header>
