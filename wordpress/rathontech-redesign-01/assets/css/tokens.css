@@ -13,9 +13,9 @@
   --green-100: #EAFCF2;
 
   --white: #FFFFFF;
-  --gray-50: #F9FAFC;
-  --gray-100: #F1F3F9;
-  --gray-200: #E6E8EB;
+  --gray-50: #FAFBFC;
+  --gray-100: #F5F6F8;
+  --gray-200: #E8EAED;
   --gray-300: #D4D8DC;
   --gray-400: #B0B4B8;
   --gray-500: #95999C;
@@ -24,7 +24,7 @@
   --gray-800: #2C3034;
   --gray-900: #202124;
 
-  /* Semantic — NW surfaces / typo / CTA */
+  /* Semantic — White theme surfaces · NW accent/typo/CTA */
   --color-primary: #008CFF;
   --color-primary-light: #E5F4FF;
   --color-primary-dark: #007BFF;
@@ -41,12 +41,14 @@
   --color-text-secondary: #71767A;
   --color-text-muted: #95999C;
   --color-text-inverse: #FFFFFF;
+
+  /* Surfaces — white theme (near-white only; dark = hero/CTA/footer) */
   --color-bg-base: #FFFFFF;
-  --color-bg-subtle: #F9FAFC;
-  --color-bg-muted: #F1F3F9;
+  --color-bg-subtle: #FAFBFC;
+  --color-bg-muted: #F5F6F8;
   --color-bg-cool: #E5F4FF;
   --color-bg-inverse: #202936;
-  --color-border-light: #E6E8EB;
+  --color-border-light: #E8EAED;
   --color-border-default: #D4D8DC;
 
   /* Typo — Naver Works scale (Pretendard · PC) */
