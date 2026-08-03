@@ -33,8 +33,19 @@
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
-| rathontech ISS | **가로 드래그 카드 4장** | 좌 목차 철회 · freeMode |
+| rathontech ISS | **타이틀 페이지네비 4상태** | 메인1·서브1 · 카드 철회 |
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech ISS 타이틀 페이지 네비
+
+| # | 결정 |
+|---|------|
+| 1 | 카드 슬라이더 **철회** |
+| 2 | 섹션 = **메인 타이틀 1줄 + 서브 1줄** × 4 (구 카드 내용 배리) |
+| 3 | 하단 **01–04** 페이지 네비로 전환 |
+| 4 | Swiper 의존 제거 (ISS) |
 
 ---
 
