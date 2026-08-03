@@ -16,7 +16,7 @@ kmong-templates/
 ├── _delivery/              # 동결 (구 정적 납품)
 ├── _harness/               # 패키징·검증
 ├── _logs/                  # decision / change / qa / failure
-├── _docs/                  # active-track · reviews/ · status/
+├── _docs/                  # active-track · briefs/ · reviews/ · status/
 ├── _icons/                 # 아이콘 원본 → 테마 assets/icons/ 복사
 ├── _archive/               # 동결 · downloaded-docs
 ├── README.md

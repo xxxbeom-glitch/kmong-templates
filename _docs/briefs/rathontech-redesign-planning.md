@@ -14,7 +14,7 @@
 
 적용 우선순위는 다음과 같다.
 
-1. 현재 레포의 최신 `PROJECT_CONTEXT`, `active-track`, WordPress 규칙과 디자인 토큰
+1. 현재 레포의 최신 `.cursor/sot/01-project-context`, `_docs/active-track`, WordPress 규칙(`.cursor/rules/70`)과 `.cursor/sot/05-design-tokens`
 2. 이 문서의 실제 콘텐츠, IA, 페이지 목적과 기능 요구
 3. Design Director와 DO/DON'T 가드레일
 4. Cursor의 자율적 시각 판단
@@ -1070,7 +1070,7 @@ PC·모바일에서 실제 콘텐츠 길이로 확인한다.
 ```text
 RATHONTECH_REDESIGN_PLANNING.md를 이번 테스트의 콘텐츠·IA·페이지 요구사항 기준으로 사용해줘.
 
-현재 레포의 최신 PROJECT_CONTEXT, active-track, WordPress 규칙, 디자인 토큰과 Design Director가 더 높은 우선순위다. 이 문서 때문에 정적 트랙을 다시 활성화하거나 기존 SoT를 수정하지 마라.
+현재 레포의 최신 `.cursor/sot/01-project-context`, active-track, WordPress 규칙, `.cursor/sot/05-design-tokens`와 Design Director(`25`)가 더 높은 우선순위다. 이 문서 때문에 정적 트랙을 다시 활성화하거나 기존 SoT를 수정하지 마라.
 
 지금은 전체 테마를 한 번에 만들지 말고 Gate 1만 수행해줘.
 
