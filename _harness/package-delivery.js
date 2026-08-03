@@ -1,8 +1,8 @@
 /**
- * [동결·미사용] 정적 templates/{slug}/ → 구 _delivery/{slug}/ 패키징
- * 정적 트랙은 _archive/templates · 구 납품은 _archive/delivery
- * WP 납품: node _harness/package-delivery-wp.js {slug}
- * 사용(레거시): node _harness/package-delivery.js {slug}
+ * 정적 templates/{slug}/ → _delivery/{slug}/ 패키징 (크몽 납품 · 활성)
+ * 사용: node _harness/package-delivery.js {slug}
+ * WP ZIP: node _harness/package-delivery-wp.js {slug} (동결 재개 시)
+ * 구 템플릿 참고: _archive/templates/
  */
 var fs = require("fs");
 var path = require("path");

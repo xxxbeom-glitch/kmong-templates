@@ -1,5 +1,5 @@
 ---
-description: 저장소·폴더 구조 규칙
+description: 저장소·폴더 구조 규칙 (WordPress 테마 기본)
 alwaysApply: true
 ---
 
@@ -8,58 +8,54 @@ alwaysApply: true
 ```
 kmong-templates/
 ├── .cursor/rules/          # Cursor 규칙
-├── site/                   # 활성 작업 (개인 정적 사이트 · Vercel)
-├── wordpress/              # 동결 보관 (삭제 금지 · 신규 WP 작업 금지)
-├── _harness/               # 구 패키징·검증·QA PNG — 코드 작업 공간 아님
+├── wordpress/{slug}/       # 활성 작업 (WP 커스텀 테마) · dist/{slug}.zip
+├── templates/              # 동결 (구 하드코딩 실험 · 신규 금지)
+├── _delivery/              # 동결 (구 정적 납품 산출)
+├── _harness/               # 패키징·검증·QA PNG — 구현 공간 아님
 ├── _logs/                  # decision / change / failure / qa
-├── _docs/                  # active-track.md 만 (현황 1장)
-├── _icons/                 # 공용 SVG
-└── _archive/               # 동결 보관 (templates · delivery · docs)
+├── _docs/                  # active-track.md 만
+├── _icons/                 # 공용 SVG (테마 assets로 복사해 사용)
+├── _archive/               # 동결 보관
+├── PROJECT_CONTEXT.md
+├── PROJECT_CONTEXT_wordpress_delta.md
+├── WORDPRESS_TRANSITION_CHANGES.md
+├── WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md
+└── design-tokens-master.md
 ```
 
 ## Active workspace
 
-**현재 기본:** 개인 정적 — `site/` · `_docs/active-track.md`.  
-트랙별 작업 경로: **`00-project-router.mdc`**.
+**현재 기본:** WordPress — `wordpress/{slug}/` · `_docs/active-track.md`.
 
 | 트랙 | 경로 | 상태 |
 |------|------|------|
-| **개인 정적** | `site/` · Vercel | **활성 (기본)** |
-| WordPress | `wordpress/{slug}/` | **동결** (폴더 유지) |
-| 크몽 Static | `_archive/templates/` | 동결 |
-| Cafe24 A/B | `cafe24/{slug}/` · `_release/{slug}/` | 동결 |
-| Reference C | 규칙만 `.cursor/rules/archive/83` | 동결·미사용 |
+| **WordPress** | `wordpress/{slug}/` · `dist/{slug}.zip` | **활성 (기본)** |
+| 크몽 정적 | `templates/{slug}/` | **동결** |
+| 개인 site | `_archive/site/` | 동결 |
+| Cafe24 / Reference | `_archive/` · `archive/80`~`84` | 동결 |
 
-### WordPress (동결 · 보관)
+### WordPress (활성)
 
-- `wordpress/` **삭제하지 않음**
-- 테마 판매 계획 철회 · **명시 재개 전** 신규 slug·테마 수정 금지
-- 납품 ZIP·WP harness는 재개 시에만
+- Classic 커스텀 테마 기본 · Elementor 등은 **명시 요청 시만**
+- 디자인·토큰·UIUX 디렉터 원칙은 테마 CSS/JS 안에서 적용
+- 납품: `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip`
+- **전환·CMS 규칙:** `WORDPRESS_TRANSITION_CHANGES.md`  
+- **서브페이지:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`  
+- **사업 델타:** `PROJECT_CONTEXT_wordpress_delta.md`
 
-### 구 정적 (크몽 · 동결)
+### 정적 하드코딩 (동결)
 
-- 과거 `templates/{slug}/` → `_archive/templates/`
-- 구 납품 `_delivery/` → `_archive/delivery/`
-- 루트 `templates/` · `_delivery/` · `_delivery-wp/` **두지 않음**
-- **개인 `site/`와 혼동 금지** (크몽 판매용 아카이브 ≠ 개인 사이트)
+- `templates/` · `_delivery/` **신규 작업 금지** (명시 재개 시만)
+- 구 참고: `_archive/templates/`
 
-## `_harness/`
+## `_harness/` · 납품
 
-| 경로 | 역할 | 비고 |
-|------|------|------|
-| `_harness/snapshots/` | QA·비교용 PNG (선택) | 런타임 코드 금지 |
-| WP/정적 package 스크립트 | 구 납품용 | 개인 `site/` + Vercel에는 **필수 아님** |
+| 경로 | 역할 |
+|------|------|
+| `package-delivery-wp.js` | **활성** WP ZIP |
+| `package-delivery.js` | 정적 · 동결 |
+| `snapshots/` | QA PNG (선택) |
 
-**미사용·생성 금지:** `_harness/workbench/`, `review/`, `reports/`, 루트 `_delivery/`, `_delivery-wp/`
+**금지:** `_harness/workbench/`, `_delivery-wp/`, `_modules`, `_tokens`
 
-적용 기준:
-- 파일 생성 위치 결정 · 폴더 정리 시.
-
-금지:
-- 루트·플랫폼별 납품 폴더 재도입
-- `_modules`, `_tokens`, `_common` 재생성
-- `_harness`에 사이트 런타임 코드 배치
-- 동결 `wordpress/`를 활성 작업 공간으로 사용
-
-완료 기준:
-- 변경 파일이 올바른 `site/` 안에만 존재하고, Vercel로 배포 가능한 정적 구조.
+완료 기준: 변경이 `wordpress/{slug}/` 안에 있고 ZIP 납품 가능한 테마 구조.

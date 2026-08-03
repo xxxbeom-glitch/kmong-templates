@@ -1,5 +1,50 @@
 # Change Log
 
+## 2026-08-03 — 서브페이지 UI/UX 지침 SoT 연결
+
+- `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` → active-track · core · 70 · harness · router
+- 플러그인 표=후보 · 카톡 플로팅 전페이지 강제 해제 (PROJECT_CONTEXT)
+
+---
+
+## 2026-08-03 — 기본 트랙 WordPress 재전환
+
+- 라우터·active-track·core·structure·harness·70 활성
+- templates/delivery 동결 · PROJECT_CONTEXT에 WP 델타 병합
+- TRANSITION·delta 문서를 SoT로 연결 · 토큰/아이콘 규칙은 유지
+
+---
+
+## 2026-08-03 — 타이포 PC/MO 최소 크기 확정
+
+- 본문 16 · 보조 14 · 캡션 12 · CTA 14 · 제목 20 · input 16
+- tokens master §2-0 + 모바일 스케일·media 반영 · PROJECT_CONTEXT 동기화
+
+---
+
+## 2026-08-03 — 아이콘 소스 `_icons/` 우선 확정
+
+- Lucide/Heroicons CDN 기본 금지 · 공용 `_icons/` SVG 우선
+- tokens master · PROJECT_CONTEXT · decision · structure 반영
+
+---
+
+## 2026-08-03 — 토큰 확정 (SUIT · 1600 · BP · 아이콘 크기)
+
+- `design-tokens-master` / `PROJECT_CONTEXT` / decision·active-track 동기화
+- 컨테이너 기본 1600 · wide BP 1600 · 폰트 SUIT
+
+---
+
+## 2026-08-03 — 크몽 정적 트랙 재개 · 폴더 구조 정리
+
+- 활성: `templates/{slug}/` · 납품 `_delivery/{slug}/`
+- `site/` → `_archive/site/` · WP 동결 유지
+- 라우터·구조·Figma/QA glob·delivery 규칙을 크몽 하드코딩에 맞춤
+- markdown 라이브러리는 후행 동기화 대상(지금은 구 site 스냅샷)
+
+---
+
 ## 2026-07-16 — Figma·QA 규칙 site/ glob·경로 정리
 
 - `30`·`35`·`40`·`45`·`46`·`50`·`73`에 `site/**` 연결 · 기본 경로 site/ + Vercel

@@ -7,17 +7,88 @@
 
 | 주제 | 현재 값 | 비고 |
 |------|---------|------|
-| 기본 트랙 | **개인 정적** (`site/` · Vercel) | CMS/관리자 없음 · 레포명 유지 |
-| WordPress | **동결** · 폴더 유지 | `70`~`72` · 테마 판매 철회 · 명시 재개 전 미적용 |
-| 신규 컨텐츠 폭 | **1600** | 구 작업 1440 유지 (참고) |
-| 배포 | **Vercel** (`site/`) | WP ZIP 납품은 동결 |
-| 문서 SoT | `.cursor/rules` + `active-track` + `_logs` | `_docs`는 active-track만 |
-| 크몽 정적·카페24·복제 | **동결/아카이브** | `_archive/` · rules `archive/` |
-| 모바일 수정 | **MO만** (PC 동시 수정 금지) | |
-| 레퍼런스 URL | **명시 요청 시에만** 인터랙션 파악 | 복제 파이프라인 없음 |
-| 로그 조회 | 표·유형 카드 우선 (`_logs/README.md`) | failure=오답 유형 / decision·qa=맨 위 표 |
-| SEO/AEO/GEO | **on-demand** · 한 레인 · 자동 실행 금지 | `20` 알림(최대 2) · 상세 `73` |
-| tenfold-studio | **WP 보관** (동결) | 과거 개인 WP 테마 · 활성 작업 아님 |
+| 기본 트랙 | **WordPress** (`wordpress/{slug}/`) | 커스텀 테마 · 관리자 = 고객 도구 |
+| 납품 | `wordpress/{slug}/dist/{slug}.zip` | `package-delivery-wp.js` |
+| 하드코딩 정적 | **동결** `templates/` | 기본 상품 제외 |
+| 사업 SoT | PROJECT_CONTEXT + **wordpress_delta** | |
+| WP 구현 | **TRANSITION** + **SUBPAGE** | 서브 유형·IA |
+| 토큰 | SUIT · **1600** · `_icons/` · 타이포 최소 | `design-tokens-master` |
+| 플러그인 표준 | 델타 표 = **후보** · §6 재확인 | 맹목 고정 금지 |
+| 카톡 플로팅 | **메인·문의 등 핵심만** | 전 페이지 강제 아님 |
+| 개인 site | **동결** `_archive/site/` | |
+| 카페24·복제 | **동결/아카이브** | |
+| 모바일 수정 | **MO만** · BP 767/1023/1024 | |
+| SEO/AEO/GEO | **on-demand** `73` | |
+
+---
+
+## 2026-08-03 — 서브페이지 UI/UX 지침 채택
+
+| # | 결정 |
+|---|------|
+| 1 | `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` SoT 연결 (active-track · core · 70 · harness) |
+| 2 | 서브는 페이지 패밀리·과업 기준 · 메인 히어로 복제 금지 |
+| 3 | 플러그인 표준 표는 후보 · TRANSITION §6으로 재확인 |
+| 4 | 카톡 플로팅은 전 페이지 강제 아님 |
+
+---
+
+## 2026-08-03 — 기본 트랙 WordPress 재전환
+
+| # | 결정 |
+|---|------|
+| 1 | 하드코딩 기본 **철회** · **WP 커스텀 테마**가 기본 |
+| 2 | `PROJECT_CONTEXT_wordpress_delta` · `WORDPRESS_TRANSITION_CHANGES` **채택** |
+| 3 | 관리자 없는 정적 납품 = 기본 옵션 **삭제** |
+| 4 | `templates/` · `_delivery/` **동결** |
+| 5 | 토큰·SUIT·1600·`_icons/`·타이포 최소는 테마 안에서도 **유지** |
+| 6 | 라우터·active-track·70 활성 |
+
+---
+
+## 2026-08-03 — 토큰 마스터 확정값
+
+| # | 결정 |
+|---|------|
+| 1 | 폰트 **SUIT** |
+| 2 | 컨테이너 **1600** (1440은 좁다고 판단) |
+| 3 | BP **767 / 1023 / 1024 / wide 1600** (요즘 관례) |
+| 4 | 아이콘 **크기 = 마스터** · **소스 = `_icons/` 우선** (CDN 기본 금지) |
+| 5 | SoT 문서: `design-tokens-master.md` · `PROJECT_CONTEXT` 동기화 |
+
+---
+
+## 2026-08-03 — 타이포 최소 크기 (PC·모바일)
+
+| # | 결정 |
+|---|------|
+| 1 | 본문 **16px** (PC·MO) · PC에서도 본문 축소로 “고급” 연출 금지 |
+| 2 | 보조 14 · 캡션 12 · CTA 14 · 제목 20 · input 16 |
+| 3 | caption3 11→12 · 모바일 body3/CTA3 15→16 등 스케일 하한 맞춤 |
+| 4 | SoT: `design-tokens-master.md` §2-0 |
+
+---
+
+## 2026-08-03 — 아이콘 소스 `_icons/` 우선
+
+| # | 결정 |
+|---|------|
+| 1 | 아이콘은 레포 **`_icons/`** 공용 SVG를 **우선** 사용 |
+| 2 | Lucide/Heroicons CDN은 기본 사용 안 함 |
+| 3 | 없을 때만 템플릿 `assets/icons/`에 추가 |
+
+---
+
+## 2026-08-03 — 크몽 정적(하드코딩) 트랙 재개 · 폴더 정리
+
+| # | 결정 |
+|---|------|
+| 1 | 기본 = **크몽 정적** · WP 아님 · 개인 site 아님 |
+| 2 | 활성 경로 **`templates/{slug}/`** · 납품 **`_delivery/{slug}/`** |
+| 3 | 구 `site/` → **`_archive/site/`** 동결 |
+| 4 | `wordpress/` 폴더 유지 · 동결 |
+| 5 | Figma·QA glob을 `templates/**`로 전환 |
+| 6 | `D:\project\markdown`의 static-html 시드는 **구 site 스냅샷** → 이 레포를 먼저 맞춘 뒤 라이브러리 갱신 |
 
 ---
 

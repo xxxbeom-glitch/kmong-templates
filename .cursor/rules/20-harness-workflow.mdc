@@ -1,67 +1,56 @@
 ---
-description: Figma→승인→구현→QA→로그 절차 (개인 정적 site/ 기본). 상세는 30·50·로그 README
+description: 기획→승인→구현→QA→로그 (WordPress 테마 기본)
 alwaysApply: true
 ---
 
 # Harness Workflow
 
 > **트랙:** `00-project-router.mdc` · `_docs/active-track.md`  
-> **기본:** 개인 정적 `site/` · Vercel · CMS 없음  
-> **WP:** 동결 (`wordpress/` · `70`~`72` · 명시 재개 시만)  
-> **본 파일 = 절차만.** Figma 수치·보고 항목 → `30` · QA 항목 → `50` · 말투 → `00-core`
+> **기본:** WordPress `wordpress/{slug}/` · `70`~`72` · `WORDPRESS_TRANSITION_CHANGES.md`  
+> **정적 templates:** 동결  
+> **본 파일 = 절차만.** 디자인 판단 → PROJECT_CONTEXT / UIUX 디렉터 · WP CMS → TRANSITION · QA → `50`+`72`
 
 ## 시작 전
 
-1. `00-core` 「작업 전 컨텍스트」
-2. `_logs/` **빠른 조회만** (`_logs/README.md`)  
-   decision 유효 표 → qa slug → failure 유형 카드 → (이어서면) change 최근
-3. 모호하면 질문. legacy/`_archive`는 active 근거 아님.
+1. `00-core` 컨텍스트  
+2. `_logs/` 빠른 조회  
+3. WP면: 고객이 관리자에서 **고칠 항목 / 고정할 구조** 확정 (`WORDPRESS_TRANSITION` §2)  
+4. 서브·메뉴 페이지면: **페이지 패밀리 맵** (`WORDPRESS_SUBPAGE_UIUX_INSTRUCTION` §4~5)  
+5. 모호하면 질문
 
-## 한 섹션 루프
+## 한 섹션·범위 루프
 
 ```
-범위 1줄 → Figma 댓글·주석 → MCP 보고 → 사용자 승인
-→ site/ 구현 → 50 QA → qa-log 1건 → 사용자 PASS → 다음
+기획/지시 → (서브면) 패밀리·과업 판별 → 디자인 방향·대표 구간 보고 → 승인
+→ wordpress/{slug}/ 구현 → QA → qa-log → 사용자 PASS → 다음
 ```
 
-- **승인** (`확인했어, 진행해`) **전 코딩 금지**
-- **기본 섹션 1개.** 일괄 구현해도 **섹션마다** QA + qa-log (통합 QA로 대체 금지)
-- 이전 섹션 qa-log PASS·사용자 PASS 전 다음 섹션 금지 (일괄은 구현 후 섹션 QA 연속)
-
-### 코딩 전 보고 (요지)
-
-상세 체크리스트: `30-figma-to-code.mdc`. 사용자에게는 `00-core` 「디자이너 커뮤니케이션」.
-
-필수 요지: 섹션·파일 / 댓글·주석 / Shell·Section BG·Overlays / 정렬 / 모호한 점만 질문.  
-썸네일만으로 BG 확정 금지 · preset은 승인 전 구현 금지 (`46`).
+- **승인 전 코딩 금지** (소규모 문구·색은 요청=승인 가능)  
+- 일괄이어도 **범위마다** QA·로그  
+- 피그마를 **준 경우만** `30` MCP 보고 추가
 
 ### 구현
 
-- **개인 정적:** `site/` · `@1024` · `@768`(MO만)
-- 사진: `site/` 자산 폴더 · 승인 preset만 (`45`·`46`)
-- **WP 재개 시에만:** `wordpress/{slug}/` · `70`
+- **WP:** `wordpress/{slug}/` · enqueue · 토큰 CSS · `_icons/` 복사  
+- 반응형: `35` (767 / 1023 / 1024 / 1600)  
+- 사진: 테마 `assets/` · 미디어 라이브러리 연동 시 WP 이미지 API  
+- **정적 templates:** 재개 명시 시에만
 
-### QA · 로그 · 배포
+### QA · 로그 · 납품
 
-- QA: `50-qa-checklist.mdc` · Wrap 자식 edge 포함 · 결과 `_logs/qa-log.md` (표도 갱신)
-- 로그: `_logs/README.md` (change / decision / failure 규칙)
-- **배포:** Vercel (`site/`) · WP ZIP 납품은 동결 트랙 재개 시에만
-- 모바일 세부: `35-responsive.mdc` (MO만 수정)
+- QA: `50` + `WORDPRESS_TRANSITION` §10 + (해당 시) `72`  
+- 납품: `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip`  
+- 관리자에서 콘텐츠 수정·반영을 확인해보지 않았으면 **CMS 연동 완료라고 말하지 않음**
 
-## SEO / AEO / GEO (별도 레인 · 자동 실행 금지)
+## SEO / AEO / GEO
 
-- **실행 금지** — 사용자가 검색·AI 이해(SEO/AEO/GEO) **진행을 요청**하기 전에는 `73-seo-aeo.mdc`를 읽거나 Title/Meta/Schema 등을 만들지 않는다.
-- **알림만 (최대 2회, 실행 아님)**  
-  1) 핵심 페이지 콘텐츠가 **거의 확정**으로 보일 때 **1회**  
-  2) 아직 미실행·생략 아님인데 **납품 직전**이면 **다시 1회**  
-  문장 예: 「콘텐츠가 거의 굳었어요. **SEO/AEO/GEO 작업 시점**입니다. 지금은 안 하고, 진행할 때만 말해 주세요.」
-- **실행 시:** `73` + 설계서·확정 콘텐츠·decision (별도 content-seo 파일 **필수 아님** · GEO 전용 파일 **없음**)
-- **상태:** decision에 `미실행` / `완료` / `의도적 생략` · 납품 QA에서 확인 (`50`)
+- 자동 실행 금지 · 요청 시에만 `73`  
+- WP SEO 플러그인(Yoast 등)과 **메타 중복 생성 주의** (`WORDPRESS_TRANSITION` §9)
 
-## 범위 · 금지
+## 금지
 
-- 요청 1개 = 최소 파일. 범위 밖·에러 확장은 **보고 후 대기**
-- Figma 미승인 코딩 · QA 생략 · workbench 우회 · 요청 밖 섹션/카피/수치 변경 · 무단 일괄 구현
-- SEO/AEO/GEO **무단 자동 실행** · 없는 사업 정보 임의 생성
+- 고객 수정 범위 미확정 상태로 전 페이지 하드코딩 고정  
+- 빌더·대형 플러그인 임의 추가  
+- 가짜 실적·후기 생성
 
-**완료:** 범위 확인 · (해당 시) Figma 승인 · 구현 · QA PASS · 로그 기록.
+**완료:** 승인 · 구현 · QA PASS · 로그 · (납품 시) ZIP + 인수 안내.

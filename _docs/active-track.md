@@ -1,46 +1,36 @@
 # Active Track (현재 기본)
 
-> **갱신:** 2026-07-16 · 결정 상세: `_logs/decision-log.md`  
-> **진행 중:** 개인 사이트 (하드코딩 · 관리자 없음)  
-> **규칙 SoT:** `.cursor/rules/` · 사람용 장문 가이드는 `_archive/docs/guides/`
+> **갱신:** 2026-08-03 · 결정: `_logs/decision-log.md`  
+> **진행 중:** WordPress 커스텀 테마 (크몽 납품)  
+> **규칙 SoT:** `.cursor/rules/` · `PROJECT_CONTEXT.md` · WP 델타·전환 문서
 
 ## 지금 쓰는 것
 
 | 항목 | 값 |
 |------|-----|
-| **기본 트랙** | **개인 정적 사이트** (HTML/CSS/JS · CMS 없음) |
-| **작업 경로** | `site/` (없으면 생성 후 작업) |
-| **포트폴리오** | `site/` 안 하드코딩 페이지·목록 |
-| **호스팅** | **Vercel** |
-| **레포 이름** | `kmong-templates` **유지** (변경 없음) |
-| **디자인 입력** | Figma MCP → 승인 후 구현 (해당 시) |
-| **절차** | `20-harness-workflow.mdc` (경로만 `site/`) |
-| **컨텍스트·충돌** | `00-core.mdc` |
-| **Figma·반응형·인터랙션** | `30` · `35` · `40` · `45` · `46` — glob **`site/**`** 포함 |
-| **QA** | `50` → `_logs/qa-log.md` · 배포 = Vercel (`site/`) |
-| **로그** | `_logs/decision-log` · `change-log` · `qa-log` |
-| **SEO/AEO/GEO** | **on-demand** `73` · 자동 실행 금지 |
+| **기본 트랙** | **WordPress** (Classic 커스텀 테마) |
+| **작업 경로** | `wordpress/{slug}/` |
+| **납품** | `package-delivery-wp.js` → `wordpress/{slug}/dist/{slug}.zip` |
+| **사업 SoT** | `PROJECT_CONTEXT.md` + `PROJECT_CONTEXT_wordpress_delta.md` |
+| **WP 구현 델타** | `WORDPRESS_TRANSITION_CHANGES.md` |
+| **서브페이지 UI/UX** | `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` (유형·맵·CPT·관리자) |
+| **토큰** | `design-tokens-master.md` · SUIT · **1600** · `_icons/` · 타이포 최소 |
+| **디자인** | 기획서·바이브 · UIUX 디렉터 원칙 유지 · 피그마는 줄 때만 |
+| **절차** | `20-harness-workflow.mdc` · `70`~`72` |
+| **플러그인 표준** | 델타 문서 표 (Yoast, Wordfence, UpdraftPlus, CF7, W3TC, Smush) |
+| **QA** | `50` + WP 전용 QA (`TRANSITION` §10) · `_logs/qa-log.md` |
+| **SEO/AEO/GEO** | on-demand `73` |
 
-## `_docs/` · `_harness/`
+## 동결
 
-| 폴더 | 역할 |
+| 내용 | 경로 |
 |------|------|
-| `_docs/` | **`active-track.md`만** (현황 1장) |
-| `_harness/` | 구 패키징·검증·샘플 (**구현 공간 아님** · 신규 개인 사이트에 필수 아님) |
-
-## 동결 (폴더는 유지 · 신규 작업 금지)
-
-| 내용 | 경로 | 비고 |
-|------|------|------|
-| **WordPress** | `wordpress/` · 규칙 `70`~`72` | **삭제 안 함** · 명시 재개 전 미적용 |
-| 구 정적 템플릿(크몽) | `_archive/templates/` | 판매용 정적과 별개 |
-| Cafe24 / Reference | `_archive/` · rules `archive/80`~`84` | 동결 |
-
-- 루트 `templates/` · `docs/` · `_delivery*` **없음**
-- 모바일 작업 시 **MO만** 수정
+| 하드코딩 정적 | `templates/` · `_delivery/` |
+| 개인 site | `_archive/site/` |
+| 구 정적·Cafe24 | `_archive/` · `archive/80`~`84` |
 
 ## CMS·호스팅
 
-- **CMS / 관리자:** 없음 (하드코딩만)
-- **호스팅:** Vercel
-- **WP 테마 판매 계획:** 철회 · `wordpress/`는 보관만
+- **CMS:** WordPress 관리자 = 고객 콘텐츠 수정 도구  
+- **호스팅:** 카페24 WordPress (고객 명의)  
+- **관리자 없는 정적 납품:** 기본 옵션에서 **제외** (델타 2-5)

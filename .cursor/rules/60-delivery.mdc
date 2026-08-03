@@ -1,22 +1,16 @@
 ---
-description: 구 정적 납품 규칙 (동결) — 활성은 site/ + Vercel
+description: 납품 — 활성은 WP ZIP · 정적 _delivery는 동결
 alwaysApply: false
 globs:
-  - _archive/delivery/**
-  - _harness/package-delivery.js
+  - wordpress/**/dist/**
+  - _delivery/**
+  - _harness/package-delivery*.js
 ---
 
-# Delivery (정적 · 동결)
+# Delivery
 
-> **활성 배포:** `site/` → **Vercel** (`00-project-router` · `active-track`)  
-> **WP ZIP:** `70-wordpress.mdc` — **동결** · 명시 재개 시에만  
-> 본 규칙은 구 정적·아임웹 납품(`_archive/delivery/`) 참고용.
+> **활성:** `node _harness/package-delivery-wp.js {slug}` → **`wordpress/{slug}/dist/{slug}.zip`**  
+> **동결:** 정적 `package-delivery.js` → `_delivery/{slug}/`  
+> 인수·교육: `PROJECT_CONTEXT_wordpress_delta` 7-4 · `WORDPRESS_TRANSITION` §11
 
-- 구 경로 `_delivery/{slug}/` → 보관: `_archive/delivery/`
-- 정적 패키징 스크립트 `package-delivery.js` — **신규 미사용**
-- 루트 `_delivery/` · `_delivery-wp/` **재생성 금지**
-
-금지:
-- 플랫폼별 하위 폴더 (`imweb`, `cafe24` 등) 루트에 재도입
-- 구 정적 납품을 활성 `site/` 워크플로로 혼동
-- 활성 작업에서 WP ZIP을 기본 배포로 취급
+금지: `_delivery-wp/` · 플랫폼별 하위 납품 폴더 · QA 없이 납품 완료 선언
