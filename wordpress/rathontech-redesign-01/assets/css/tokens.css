@@ -13,14 +13,14 @@
   --green-100: #EAFCF2;
 
   --white: #FFFFFF;
-  /* Warm beige / cream scale (white theme with section rhythm) */
-  --cream-50: #FFFDF9;
-  --cream-100: #F7F4EF;
-  --cream-200: #EFEAE3;
-  --cream-300: #E4DDD3;
-  --gray-50: #F7F4EF;
-  --gray-100: #EFEAE3;
-  --gray-200: #E4DDD3;
+  /* Warm beige — lighter (subtle section rhythm) */
+  --cream-50: #FFFEFC;
+  --cream-100: #FBFAF7;
+  --cream-200: #F6F4F0;
+  --cream-300: #EDEAE4;
+  --gray-50: #FBFAF7;
+  --gray-100: #F6F4F0;
+  --gray-200: #EDEAE4;
   --gray-300: #D4D8DC;
   --gray-400: #B0B4B8;
   --gray-500: #95999C;
@@ -47,14 +47,14 @@
   --color-text-muted: #95999C;
   --color-text-inverse: #FFFFFF;
 
-  /* Surfaces — warm white / beige (alt sections for rhythm) */
-  --color-bg-base: #FFFDF9;
-  --color-bg-subtle: #F7F4EF;
-  --color-bg-muted: #EFEAE3;
+  /* Surfaces — light warm white (barely-beige alt) */
+  --color-bg-base: #FFFEFC;
+  --color-bg-subtle: #FBFAF7;
+  --color-bg-muted: #F6F4F0;
   --color-bg-cool: #E5F4FF;
   --color-bg-inverse: #202936;
-  --color-border-light: #E4DDD3;
-  --color-border-default: #D4CDC3;
+  --color-border-light: #EDEAE4;
+  --color-border-default: #E0DCD5;
 
   /* Typo — Naver Works scale (Pretendard · PC) */
   --font-primary: "Pretendard Variable", Pretendard, "Noto Sans KR", system-ui, "Malgun Gothic", sans-serif;
