@@ -1,5 +1,6 @@
 /**
- * ISS — scroll-pin-multi-step + background video @ 0.5x.
+ * ISS — wheel-step: 1 wheel = next copy, next wheel = leave to following section.
+ * PC only · MO stacks both copies · prefers-reduced-motion skips hijack.
  */
 (function () {
   var section = document.querySelector('[data-iss-pin]');
@@ -11,7 +12,16 @@
 
   var video = section.querySelector('[data-iss-video]');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var desktop = window.matchMedia('(min-width: 768px)');
+  var nextSel = section.getAttribute('data-iss-next') || '.home-eco';
+  var next = document.querySelector(nextSel);
   var activeIndex = 0;
+  var animating = false;
+  var deltaAcc = 0;
+  var lastTs = 0;
+  var ACC_THRESHOLD = 40;
+  var COOLDOWN_MS = 520;
+  var SNAP_DURATION = 0.58;
 
   function initVideo() {
     if (!video || reduce) return;
@@ -23,6 +33,7 @@
   }
 
   function setActive(index) {
+    if (index < 0 || index >= stepCount) return;
     if (index === activeIndex) return;
     activeIndex = index;
 
@@ -37,10 +48,100 @@
     });
   }
 
-  function indexFromProgress(progress) {
-    if (stepCount <= 1) return 0;
-    if (progress >= 0.999) return stepCount - 1;
-    return Math.min(stepCount - 1, Math.floor(progress * stepCount));
+  function sectionTop() {
+    return Math.round(section.getBoundingClientRect().top + window.scrollY);
+  }
+
+  function nextTop() {
+    if (!next) return sectionTop() + section.offsetHeight;
+    return Math.round(next.getBoundingClientRect().top + window.scrollY);
+  }
+
+  function isIssCurrent() {
+    var top = section.getBoundingClientRect().top;
+    return top > -48 && top < 72;
+  }
+
+  function snapTo(y, onDone) {
+    if (animating) return;
+    animating = true;
+    deltaAcc = 0;
+    lastTs = Date.now();
+
+    var start = window.scrollY;
+    var end = Math.max(0, y);
+    if (Math.abs(end - start) < 2) {
+      animating = false;
+      if (onDone) onDone();
+      return;
+    }
+
+    if (typeof gsap !== 'undefined') {
+      var proxy = { y: start };
+      gsap.to(proxy, {
+        y: end,
+        duration: SNAP_DURATION,
+        ease: 'power3.inOut',
+        overwrite: true,
+        onUpdate: function () {
+          window.scrollTo(0, proxy.y);
+        },
+        onComplete: function () {
+          window.scrollTo(0, end);
+          animating = false;
+          if (onDone) onDone();
+        },
+      });
+      return;
+    }
+
+    window.scrollTo({ top: end, behavior: 'smooth' });
+    window.setTimeout(function () {
+      animating = false;
+      if (onDone) onDone();
+    }, COOLDOWN_MS);
+  }
+
+  function onWheel(e) {
+    if (!desktop.matches || reduce || animating) return;
+    if (!isIssCurrent()) {
+      deltaAcc = 0;
+      return;
+    }
+    if (Date.now() - lastTs < COOLDOWN_MS) {
+      e.preventDefault();
+      return;
+    }
+
+    var dy = e.deltaY;
+    if (e.deltaMode === 1) dy *= 16;
+    if (e.deltaMode === 2) dy *= window.innerHeight;
+
+    e.preventDefault();
+    deltaAcc += dy;
+
+    if (deltaAcc >= ACC_THRESHOLD) {
+      deltaAcc = 0;
+      lastTs = Date.now();
+      if (activeIndex < stepCount - 1) {
+        setActive(activeIndex + 1);
+      } else {
+        snapTo(nextTop(), function () {
+          setActive(0);
+        });
+      }
+      return;
+    }
+
+    if (deltaAcc <= -ACC_THRESHOLD) {
+      deltaAcc = 0;
+      lastTs = Date.now();
+      if (activeIndex > 0) {
+        setActive(activeIndex - 1);
+      } else {
+        snapTo(0);
+      }
+    }
   }
 
   initVideo();
@@ -50,45 +151,7 @@
     });
   }
 
-  if (reduce || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    return;
+  if (!reduce) {
+    window.addEventListener('wheel', onWheel, { passive: false });
   }
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  var mm = gsap.matchMedia();
-
-  mm.add('(min-width: 768px)', function () {
-    var pinTarget = section.querySelector('.home-iss__pin') || section;
-
-    var st = ScrollTrigger.create({
-      trigger: section,
-      pin: pinTarget,
-      pinSpacing: true,
-      start: 'top top',
-      end: function () {
-        /* 2 steps ≈ 1.1vh total → 2nd copy ~0.55vh (was 2vh / 1vh) */
-        return '+=' + window.innerHeight * Math.max(1, stepCount * 0.55);
-      },
-      scrub: 0.25,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      snap: {
-        snapTo: function (value) {
-          if (stepCount <= 1) return 0;
-          return Math.round(value * (stepCount - 1)) / (stepCount - 1);
-        },
-        duration: { min: 0.1, max: 0.22 },
-        ease: 'power1.inOut',
-      },
-      onUpdate: function (self) {
-        setActive(indexFromProgress(self.progress));
-      },
-    });
-
-    return function () {
-      if (st) st.kill();
-      setActive(0);
-    };
-  });
 })();

@@ -100,7 +100,7 @@ function rathon_enqueue_assets() {
     wp_enqueue_script(
       'rathon-iss-slider',
       rathon_asset_uri('js/iss-slider.js'),
-      array('rathon-scrolltrigger'),
+      array('rathon-gsap'),
       rathon_asset_ver('js/iss-slider.js'),
       true
     );

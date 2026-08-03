@@ -1,7 +1,7 @@
 <?php
 /**
  * Home Section 2 — Identity Security System.
- * Catalog: scroll-pin-multi-step — pin + scrub, main/sub × 2 (vision · company).
+ * Wheel-step on PC: 1 wheel = next copy, next wheel = leave to eco.
  */
 
 $iss_steps = array(
@@ -21,6 +21,7 @@ $iss_video = rathon_asset_uri('videos/12421435_960_540_30fps.mp4');
   class="home-iss"
   aria-labelledby="home-iss-title"
   data-iss-pin
+  data-iss-next=".home-eco"
   data-iss-steps="<?php echo esc_attr((string) count($iss_steps)); ?>"
 >
   <div class="home-iss__pin">

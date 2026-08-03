@@ -1,6 +1,6 @@
 /**
- * Hero → next section: one wheel intent snaps (semi-auto).
- * PC only · respects prefers-reduced-motion · does not fight ISS pin mid-scroll.
+ * Hero → ISS: one wheel intent snaps (semi-auto).
+ * Wheel-up from ISS is owned by iss-slider (step back → hero).
  */
 (function () {
   var hero = document.querySelector('[data-hero-snap]');
@@ -29,12 +29,6 @@
     return window.scrollY < heroBottom * 0.72;
   }
 
-  function inNextEntryZone() {
-    var top = nextTop();
-    var y = window.scrollY;
-    return y >= top - 24 && y < top + window.innerHeight * 0.35;
-  }
-
   function snapTo(y) {
     if (animating) return;
     animating = true;
@@ -61,9 +55,6 @@
         onComplete: function () {
           window.scrollTo(0, end);
           animating = false;
-          if (typeof ScrollTrigger !== 'undefined') {
-            ScrollTrigger.refresh();
-          }
         },
       });
       return;
@@ -83,20 +74,12 @@
     if (e.deltaMode === 1) dy *= 16;
     if (e.deltaMode === 2) dy *= window.innerHeight;
 
+    /* Only hero → ISS. ISS owns wheel while docked. */
     if (dy > 0 && inHeroExitZone()) {
       e.preventDefault();
       deltaAcc += dy;
       if (deltaAcc >= ACC_THRESHOLD) {
         snapTo(nextTop());
-      }
-      return;
-    }
-
-    if (dy < 0 && inNextEntryZone()) {
-      e.preventDefault();
-      deltaAcc += dy;
-      if (deltaAcc <= -ACC_THRESHOLD) {
-        snapTo(0);
       }
       return;
     }

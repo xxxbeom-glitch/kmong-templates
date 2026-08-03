@@ -39,7 +39,17 @@
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg** | fill=`--color-primary` · on-dark도 동일 블루 |
 | rathontech 히어로 휠 | **반자동 스냅 → ISS** | PC · reduced-motion 제외 · `hero-snap.js` |
-| rathontech ISS pin | **step × 0.55vh** (2세트≈1.1vh) | 2번째 카피 ~0.55vh |
+| rathontech ISS pin | **휠 스텝** (1회=카피 · 1회=다음 섹션) | scrub pin 제거 · `iss-slider.js` |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech ISS 휠 스텝
+
+| # | 결정 |
+|---|------|
+| 1 | PC: 휠 1회 → 2번째 카피 · 다시 1회 → 에코 섹션 스냅 |
+| 2 | 휠 업: 카피 되돌리기 → 1번에서 히어로 복귀 |
+| 3 | scrub/ScrollTrigger pin 제거 · MO·reduced-motion은 기존 스택 |
 
 ---
 
