@@ -84,13 +84,6 @@ function rathon_enqueue_assets() {
       rathon_asset_ver('css/home-iss.css')
     );
     wp_enqueue_script(
-      'rathon-gsap',
-      'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
-      array(),
-      '3.12.5',
-      true
-    );
-    wp_enqueue_script(
       'rathon-iss-video',
       rathon_asset_uri('js/iss-video.js'),
       array(),
@@ -100,7 +93,7 @@ function rathon_enqueue_assets() {
     wp_enqueue_script(
       'rathon-home-wheel',
       rathon_asset_uri('js/home-wheel.js'),
-      array('rathon-gsap'),
+      array(),
       rathon_asset_ver('js/home-wheel.js'),
       true
     );

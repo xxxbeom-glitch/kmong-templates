@@ -38,7 +38,7 @@
 | rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg · slide hover** | fill hover `#0062d6` · `button-text-slide-hover` |
-| rathontech 히어로 휠 | **반자동 스냅 → ISS만** | PC · `home-wheel.js` · reduced-motion 제외 |
+| rathontech 히어로 | **비율 min(72/88vh)** · 휠 스냅 없음 | 100svh·반자동 스냅 제거 |
 | rathontech ISS→다음 | **자연 스크롤** (스냅 없음) | 마지막 카피 후 hold 해제 |
 
 ---
