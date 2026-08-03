@@ -40,7 +40,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--space-10);
+  /* h2 스택: title→lead space-4 · lead→CTA space-8 */
+  gap: var(--space-8);
   min-height: auto;
   padding-block: var(--section-pad-y-lg);
   text-align: left;
@@ -80,7 +81,6 @@
   white-space: nowrap;
 }
 
-/* Lead → CTA = hero와 동일 space-10 (frame gap) */
 .home-iss__actions {
   display: flex;
   flex-wrap: wrap;
@@ -88,29 +88,22 @@
   gap: var(--space-4);
 }
 
-/* PC: stacked fade steps · normal section height (not full-viewport) */
+/* PC: grid stack = tallest step height only (no reserved empty band) */
 @media (min-width: 768px) {
   .home-iss__frame {
     min-height: 560px;
     padding-block: var(--section-pad-y-lg);
   }
 
-  /* Title + lead stack height only — no extra empty band above CTA */
   .home-iss__copy {
-    min-height: calc(
-      (var(--text-h2-size) * var(--text-h2-line) * 2)
-      + var(--space-4)
-      + (var(--text-body1-size) * var(--text-body1-line))
-    );
+    display: grid;
   }
 
   .home-iss__step {
-    position: absolute;
-    inset: 0;
+    grid-area: 1 / 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
@@ -133,7 +126,7 @@
 @media (max-width: 767px) {
   .home-iss__copy {
     display: grid;
-    gap: var(--space-10);
+    gap: var(--space-8);
     min-height: 0;
     overflow-x: auto;
   }
@@ -159,12 +152,11 @@
   @media (min-width: 768px) {
     .home-iss__copy {
       display: grid;
-      gap: var(--space-10);
-      min-height: 0;
+      gap: var(--space-8);
     }
 
     .home-iss__step {
-      position: static;
+      grid-area: auto;
       opacity: 1;
       visibility: visible;
       transform: none;

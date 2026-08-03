@@ -40,6 +40,17 @@
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg · slide hover** | fill hover `#0062d6` · `button-text-slide-hover` |
 | rathontech 히어로 | **비율 min(72/88vh)** · 휠 스냅 없음 | 100svh·반자동 스냅 제거 |
 | rathontech ISS→다음 | **자연 스크롤** (스냅 없음) | 마지막 카피 후 hold 해제 |
+| rathontech 카피 스택 | **h2: title→lead 16 · lead→CTA 32** | 히어로(h1)는 32→40 · ISS는 h2라 더 타이트 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech ISS 리드↔CTA 간격
+
+| # | 결정 |
+|---|------|
+| 1 | ISS(h2): title→lead=`space-4`(16) · lead→CTA=`space-8`(32) |
+| 2 | 히어로(h1) PC lead→CTA=`space-10`(40) 유지 · ISS에 그대로 복사하지 않음 |
+| 3 | 스텝 카피 높이 = CSS grid 스택(가장 긴 스텝) · 2줄 예약 min-height 금지 |
 
 ---
 
