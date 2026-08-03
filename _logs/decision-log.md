@@ -33,8 +33,21 @@
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
-| rathontech ISS | **타이틀 페이지네비 4상태** | 메인1·서브1 · 카드 철회 |
-| rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
+| rathontech ISS | **`scroll-pin-multi-step` · 카피 2세트** | pin+scrub · MO 스택 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech ISS scroll-pin-multi-step
+
+| # | 결정 |
+|---|------|
+| 1 | 카탈로그 **`scroll-pin-multi-step`** 채택 |
+| 2 | 카피 **2세트** (메인 1줄 + 서브 1줄) |
+| 3 | PC: 섹션 pin · 휠/스크롤로 01→02 · 끝나면 다음 섹션 |
+| 4 | MO(≤767)·reduced-motion: pin 없음 · 2세트 세로 스택 |
+| 5 | GSAP + ScrollTrigger enqueue (front only) |
+
+[template rathontech-redesign-01] home-iss: catalog — scroll-pin-multi-step
 
 ---
 

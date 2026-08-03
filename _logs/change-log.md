@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech ISS scroll-pin-multi-step
+
+- 메인+서브 2세트 · PC pin 스크롤 전환 · MO 스택
+- GSAP/ScrollTrigger · `section-iss` · `home-iss.css` · `iss-slider.js` · preview · assets
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech ISS 타이틀 페이지 네비
 
 - 카드 제거 · 메인/서브 타이틀 4상태 + 01–04 네비

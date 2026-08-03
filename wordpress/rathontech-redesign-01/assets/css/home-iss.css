@@ -1,26 +1,32 @@
-/* Home Section 2 — ISS title page-nav (main 1줄 + sub 1줄 × 4) */
+/* Home Section 2 — scroll-pin-multi-step (main + sub × 2) */
 
 .home-iss {
-  padding: var(--section-pad-y) 0;
   background: var(--color-bg-subtle);
   color: var(--color-text-primary);
 }
 
-.home-iss__stage {
+.home-iss__pin {
+  position: relative;
+}
+
+.home-iss__frame {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
   gap: var(--space-10);
-  min-height: 220px;
+  min-height: auto;
+  padding-block: var(--section-pad-y);
 }
 
-.home-iss__panel {
+.home-iss__copy {
+  position: relative;
   width: 100%;
   max-width: 52rem;
+  min-height: 8.5rem;
 }
 
-.home-iss__panel[hidden] {
-  display: none;
+.home-iss__step {
+  width: 100%;
 }
 
 .home-iss__title {
@@ -56,62 +62,103 @@
   line-break: strict;
 }
 
-.home-iss__nav {
-  margin-top: auto;
-}
-
-.home-iss__pages {
+.home-iss__progress {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.home-iss__page {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 48px;
-  min-height: 48px;
-  padding: 0 var(--space-3);
-  border: 0;
-  border-radius: var(--radius-md);
-  background: transparent;
-  font-family: inherit;
+.home-iss__progress-item {
   font-size: var(--text-body3-size);
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
   color: var(--color-text-muted);
-  cursor: pointer;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.25s ease, font-weight 0.25s ease;
 }
 
-.home-iss__page:hover {
-  color: var(--color-primary);
-}
-
-.home-iss__page.is-active {
+.home-iss__progress-item.is-active {
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
-  background: rgb(0 140 255 / 0.08);
 }
 
-@media (min-width: 1024px) {
-  .home-iss {
-    padding: var(--section-pad-y-lg) 0 var(--section-pad-y);
+/* PC pin: stacked fade steps */
+@media (min-width: 768px) {
+  .home-iss__frame {
+    min-height: 100svh;
+    padding-block: calc(var(--header-h) + var(--space-12)) var(--space-16);
   }
 
-  .home-iss__stage {
-    min-height: 280px;
-    gap: var(--space-12);
+  .home-iss__copy {
+    min-height: 10rem;
+  }
+
+  .home-iss__step {
+    position: absolute;
+    inset: 0 auto auto 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+  .home-iss__step.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* MO: no pin — stack both sets */
+@media (max-width: 767px) {
+  .home-iss__copy {
+    display: grid;
+    gap: var(--space-10);
+    min-height: 0;
+  }
+
+  .home-iss__step {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .home-iss__progress {
+    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-iss__page {
+  .home-iss__step {
     transition: none;
+  }
+
+  @media (min-width: 768px) {
+    .home-iss__copy {
+      display: grid;
+      gap: var(--space-10);
+      min-height: 0;
+    }
+
+    .home-iss__step {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .home-iss__progress {
+      display: none;
+    }
   }
 }

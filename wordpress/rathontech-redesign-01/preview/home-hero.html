@@ -189,42 +189,27 @@
       </div>
     </section>
 
-    <section class="home-iss" aria-labelledby="home-iss-title" data-iss-pager>
-      <div class="u-container">
-        <div class="home-iss__stage">
-          <article class="home-iss__panel is-active" id="home-iss-panel-1" data-iss-panel="0">
-            <h2 id="home-iss-title" class="home-iss__title">
-              <a class="home-iss__title-link" href="#">흩어진 계정과 권한</a>
-            </h2>
-            <p class="home-iss__lead">입사·이동·퇴사에 맞춘 계정·권한 자동 관리로 이어집니다.</p>
-          </article>
-          <article class="home-iss__panel" id="home-iss-panel-2" data-iss-panel="1" hidden>
-            <h2 class="home-iss__title">
-              <a class="home-iss__title-link" href="#">반복되고 복잡한 로그인</a>
-            </h2>
-            <p class="home-iss__lead">한 번의 인증과 필요한 추가 인증으로 접근을 단순화합니다.</p>
-          </article>
-          <article class="home-iss__panel" id="home-iss-panel-3" data-iss-panel="2" hidden>
-            <h2 class="home-iss__title">
-              <a class="home-iss__title-link" href="#">분산된 사용자·자원 정보</a>
-            </h2>
-            <p class="home-iss__lead">디렉토리를 중심으로 사용자와 시스템 정보를 통합합니다.</p>
-          </article>
-          <article class="home-iss__panel" id="home-iss-panel-4" data-iss-panel="3" hidden>
-            <h2 class="home-iss__title">
-              <a class="home-iss__title-link" href="#">클라우드·원격 환경의 위험</a>
-            </h2>
-            <p class="home-iss__lead">사용자·기기·행동을 계속 검증하고 이상 접근을 통제합니다.</p>
-          </article>
-
-          <nav class="home-iss__nav" aria-label="문제별 솔루션 페이지">
-            <ol class="home-iss__pages">
-              <li><button type="button" class="home-iss__page is-active" data-iss-page="0" aria-controls="home-iss-panel-1" aria-current="true" aria-label="문제 1페이지">01</button></li>
-              <li><button type="button" class="home-iss__page" data-iss-page="1" aria-controls="home-iss-panel-2" aria-current="false" aria-label="문제 2페이지">02</button></li>
-              <li><button type="button" class="home-iss__page" data-iss-page="2" aria-controls="home-iss-panel-3" aria-current="false" aria-label="문제 3페이지">03</button></li>
-              <li><button type="button" class="home-iss__page" data-iss-page="3" aria-controls="home-iss-panel-4" aria-current="false" aria-label="문제 4페이지">04</button></li>
-            </ol>
-          </nav>
+    <section class="home-iss" aria-labelledby="home-iss-title" data-iss-pin data-iss-steps="2">
+      <div class="home-iss__pin">
+        <div class="u-container home-iss__frame">
+          <div class="home-iss__copy" aria-live="polite">
+            <article class="home-iss__step is-active" data-iss-step="0">
+              <h2 id="home-iss-title" class="home-iss__title">
+                <a class="home-iss__title-link" href="#">흩어진 계정과 권한</a>
+              </h2>
+              <p class="home-iss__lead">입사·이동·퇴사에 맞춘 계정·권한 자동 관리로 이어집니다.</p>
+            </article>
+            <article class="home-iss__step" data-iss-step="1" aria-hidden="true">
+              <h2 class="home-iss__title">
+                <a class="home-iss__title-link" href="#">반복되고 복잡한 로그인</a>
+              </h2>
+              <p class="home-iss__lead">한 번의 인증과 필요한 추가 인증으로 접근을 단순화합니다.</p>
+            </article>
+          </div>
+          <ol class="home-iss__progress" aria-hidden="true">
+            <li class="home-iss__progress-item is-active" data-iss-progress="0">01</li>
+            <li class="home-iss__progress-item" data-iss-progress="1">02</li>
+          </ol>
         </div>
       </div>
     </section>
@@ -372,6 +357,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/nav.js"></script>
   <script src="../assets/js/iss-slider.js"></script>

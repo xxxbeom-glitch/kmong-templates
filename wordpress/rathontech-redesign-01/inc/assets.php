@@ -84,9 +84,23 @@ function rathon_enqueue_assets() {
       rathon_asset_ver('css/home-iss.css')
     );
     wp_enqueue_script(
+      'rathon-gsap',
+      'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
+      array(),
+      '3.12.5',
+      true
+    );
+    wp_enqueue_script(
+      'rathon-scrolltrigger',
+      'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',
+      array('rathon-gsap'),
+      '3.12.5',
+      true
+    );
+    wp_enqueue_script(
       'rathon-iss-slider',
       rathon_asset_uri('js/iss-slider.js'),
-      array(),
+      array('rathon-scrolltrigger'),
       rathon_asset_ver('js/iss-slider.js'),
       true
     );
