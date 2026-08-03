@@ -167,7 +167,10 @@
   /* NW desktop gutter */
   --container-px-desktop: 70px;
 
-  --header-h: 65px;
+  --header-h: 80px;
+  --header-logo-size: 22px;
+  --header-nav-size: 18px;
+  --header-cta-size: 16px;
   --bp-mo: 767px;
   --bp-tab: 1023px;
   --bp-pc: 1024px;
@@ -187,7 +190,7 @@
     --section-head-gap: 32px;
     --card-padding: 28px;
     --card-gap: 16px;
-    --header-h: 60px;
+    --header-h: 72px;
   }
 }
 
@@ -207,6 +210,8 @@
     --section-head-gap: 24px;
     --card-padding: 20px;
     --card-gap: 12px;
-    --header-h: 56px;
+    --header-h: 64px;
+    --header-logo-size: 20px;
+    --header-nav-size: 16px;
   }
 }
