@@ -1,4 +1,4 @@
-/* Home Section 3 — Product Ecosystem (grouped lists, not 10 equal cards) */
+/* Home Section 3 — 3 category cards (image bg) · hover “더보기” */
 
 .home-eco {
   padding: var(--space-20) 0;
@@ -6,10 +6,8 @@
 }
 
 .home-eco__head {
-  display: grid;
-  gap: var(--space-6);
-  margin-bottom: var(--space-12);
-  align-items: end;
+  margin-bottom: var(--space-10);
+  max-width: 36em;
 }
 
 .home-eco__eyebrow {
@@ -32,115 +30,137 @@
 
 .home-eco__lead {
   margin: 0;
-  max-width: 40em;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
   color: var(--color-text-secondary);
 }
 
-.home-eco__cta {
-  justify-self: start;
-}
-
-.home-eco__groups {
+.home-eco__cards {
   display: grid;
-  gap: var(--space-10);
-}
-
-.home-eco__group-head {
-  margin-bottom: var(--space-4);
-}
-
-.home-eco__group-title {
-  margin: 0 0 var(--space-2);
-  font-size: var(--text-h3-size);
-  line-height: var(--text-h3-line);
-  font-weight: var(--text-h3-weight);
-  color: var(--color-text-primary);
-}
-
-.home-eco__group-note {
-  margin: 0;
-  font-size: var(--text-body4-size);
-  line-height: var(--text-body4-line);
-  color: var(--color-text-muted);
-}
-
-.home-eco__list {
+  gap: var(--card-gap);
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: var(--space-3);
-  background: var(--color-bg-subtle);
+}
+
+.home-eco__card-link {
+  position: relative;
+  display: block;
+  min-height: 280px;
+  overflow: hidden;
   border-radius: var(--radius-lg);
-  padding: var(--space-3);
-}
-
-.home-eco__row-link {
-  display: grid;
-  grid-template-columns: minmax(8rem, 12rem) 1fr auto;
-  gap: var(--space-4);
-  align-items: center;
-  padding: var(--space-4) var(--space-5);
-  border-radius: var(--radius-md);
-  background: var(--color-bg-base);
   text-decoration: none;
-  color: inherit;
+  color: var(--color-text-inverse);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  isolation: isolate;
 }
 
-.home-eco__row-link:hover {
-  color: inherit;
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+.home-eco__card-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 0.45s ease;
 }
 
-.home-eco__name {
-  font-size: var(--text-body3-size);
+/* Image placeholders until real assets — replace with background-image / <img> */
+.home-eco__card-link--tone-a .home-eco__card-media {
+  background-image: linear-gradient(145deg, #1e3a8a 0%, #1e40af 45%, #334155 100%);
+}
+
+.home-eco__card-link--tone-b .home-eco__card-media {
+  background-image: linear-gradient(145deg, #0f766e 0%, #155e75 50%, #1e293b 100%);
+}
+
+.home-eco__card-link--tone-c .home-eco__card-media {
+  background-image: linear-gradient(145deg, #334155 0%, #1e293b 55%, #0f172a 100%);
+}
+
+.home-eco__card-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgb(17 24 39 / 0.15) 0%, rgb(17 24 39 / 0.72) 100%);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.home-eco__card-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 280px;
+  padding: var(--card-padding);
+}
+
+.home-eco__card-count {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-caption1-size);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgb(245 245 245 / 0.75);
+}
+
+.home-eco__card-label {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse);
 }
 
-.home-eco__role {
+.home-eco__card-desc {
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
-  color: var(--color-text-secondary);
+  color: rgb(245 245 245 / 0.88);
 }
 
-.home-eco__go {
-  font-size: var(--text-body3-size);
+.home-eco__card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  font-size: var(--text-body4-size);
   font-weight: 600;
-  color: var(--color-primary);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-@media (max-width: 767px) {
-  .home-eco {
-    padding: var(--space-16) 0;
+.home-eco__card-link:hover .home-eco__card-media,
+.home-eco__card-link:focus-visible .home-eco__card-media {
+  transform: scale(1.04);
+}
+
+.home-eco__card-link:hover .home-eco__card-veil,
+.home-eco__card-link:focus-visible .home-eco__card-veil {
+  background: linear-gradient(180deg, rgb(17 24 39 / 0.25) 0%, rgb(17 24 39 / 0.82) 100%);
+}
+
+.home-eco__card-link:hover .home-eco__card-more,
+.home-eco__card-link:focus-visible .home-eco__card-more {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-eco__card-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .home-eco__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .home-eco__row-link {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-  }
-
-  .home-eco__name {
-    grid-column: 1;
-  }
-
-  .home-eco__go {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    align-self: center;
-  }
-
-  .home-eco__role {
-    grid-column: 1;
-  }
-
-  .home-eco__cta {
-    width: 100%;
+  .home-eco__card-link,
+  .home-eco__card-body {
+    min-height: 320px;
   }
 }
 
@@ -150,22 +170,31 @@
   }
 
   .home-eco__head {
-    grid-template-columns: 1fr auto;
-    gap: var(--space-8);
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-12);
   }
 
-  .home-eco__groups {
-    gap: var(--space-12);
+  .home-eco__card-link,
+  .home-eco__card-body {
+    min-height: 360px;
+  }
+}
+
+@media (hover: none) {
+  /* Touch: always show more cue */
+  .home-eco__card-more {
+    opacity: 1;
+    transform: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-eco__row-link {
+  .home-eco__card-media,
+  .home-eco__card-more,
+  .home-eco__card-veil {
     transition: none;
   }
 
-  .home-eco__row-link:hover {
+  .home-eco__card-link:hover .home-eco__card-media {
     transform: none;
   }
 }
