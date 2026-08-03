@@ -180,6 +180,52 @@ button {
   background: rgb(255 255 255 / 0.08);
 }
 
+/* Preset: button-text-slide-hover — CTA label slide (PC fine pointer) */
+.btn-slide-hover {
+  overflow: hidden;
+}
+
+.btn-slide-hover .btn__label {
+  display: block;
+  overflow: hidden;
+  height: 1em;
+  line-height: 1;
+}
+
+.btn-slide-hover .btn__track {
+  display: block;
+  transform: translateY(0);
+}
+
+.btn-slide-hover .btn__text {
+  display: block;
+  height: 1em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-slide-hover .btn__track {
+    transition: transform 0.35s ease;
+  }
+
+  .btn-slide-hover:hover .btn__track,
+  .btn-slide-hover:focus-visible .btn__track {
+    transform: translateY(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-slide-hover .btn__track {
+    transition: none;
+  }
+
+  .btn-slide-hover:hover .btn__track,
+  .btn-slide-hover:focus-visible .btn__track {
+    transform: none;
+  }
+}
+
 /* Deprecated preview stub — real footer uses footer.css */
 .gate2-note {
   display: none;

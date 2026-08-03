@@ -37,7 +37,7 @@
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
 | rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
-| rathontech CTA 버튼 | **블루 Primary · sm/md/lg** | fill=`--color-primary` · on-dark도 동일 블루 |
+| rathontech CTA 버튼 | **블루 Primary · sm/md/lg · slide hover** | fill hover `#0062d6` · `button-text-slide-hover` |
 | rathontech 히어로 휠 | **반자동 스냅 → ISS** | PC · reduced-motion 제외 · `hero-snap.js` |
 | rathontech ISS pin | **home-wheel** · 반자동은 히어로→ISS만 | ISS→다음=자연 스크롤 |
 
