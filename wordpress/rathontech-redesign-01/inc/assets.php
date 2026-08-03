@@ -1,0 +1,82 @@
+<?php
+
+if (!defined('ABSPATH')) {
+  exit;
+}
+
+function rathon_asset_path($relative) {
+  return get_template_directory() . '/assets/' . ltrim($relative, '/');
+}
+
+function rathon_asset_uri($relative) {
+  return trailingslashit(get_template_directory_uri()) . 'assets/' . ltrim($relative, '/');
+}
+
+function rathon_asset_ver($relative) {
+  $file = rathon_asset_path($relative);
+  return file_exists($file) ? (string) filemtime($file) : RATHON_THEME_VERSION;
+}
+
+function rathon_enqueue_assets() {
+  wp_enqueue_style(
+    'rathon-suit',
+    'https://cdn.jsdelivr.net/gh/orioncactus/suit@v1.0.0/packages/suit/fonts.css',
+    array(),
+    null
+  );
+
+  wp_enqueue_style(
+    'rathon-tokens',
+    rathon_asset_uri('css/tokens.css'),
+    array('rathon-suit'),
+    rathon_asset_ver('css/tokens.css')
+  );
+
+  wp_enqueue_style(
+    'rathon-base',
+    rathon_asset_uri('css/base.css'),
+    array('rathon-tokens'),
+    rathon_asset_ver('css/base.css')
+  );
+
+  wp_enqueue_style(
+    'rathon-header',
+    rathon_asset_uri('css/header.css'),
+    array('rathon-base'),
+    rathon_asset_ver('css/header.css')
+  );
+
+  wp_enqueue_script(
+    'rathon-nav',
+    rathon_asset_uri('js/nav.js'),
+    array(),
+    rathon_asset_ver('js/nav.js'),
+    true
+  );
+
+  if (is_front_page()) {
+    wp_enqueue_style(
+      'rathon-home-hero',
+      rathon_asset_uri('css/home-hero.css'),
+      array('rathon-header'),
+      rathon_asset_ver('css/home-hero.css')
+    );
+    wp_enqueue_script(
+      'rathon-hero-graph',
+      rathon_asset_uri('js/hero-graph.js'),
+      array(),
+      rathon_asset_ver('js/hero-graph.js'),
+      true
+    );
+  }
+
+  if (is_page_template('page-templates/product-rathon-iam.php') || is_page('rathon-iam')) {
+    wp_enqueue_style(
+      'rathon-product-iam',
+      rathon_asset_uri('css/product-iam.css'),
+      array('rathon-header'),
+      rathon_asset_ver('css/product-iam.css')
+    );
+  }
+}
+add_action('wp_enqueue_scripts', 'rathon_enqueue_assets');

@@ -1,9 +1,9 @@
 # 라톤테크 리디자인 — Gate 1 보고
 
-> **상태:** 승인 대기 · **코딩·테마 폴더·Gate 2 미진행**  
+> **상태:** Gate 1 **승인** (2026-08-03) · slug `rathontech-redesign-01` 확정  
 > **기준 기획서:** `_docs/briefs/rathontech-redesign-planning.md`  
 > **적용 SoT:** `.cursor/sot/01`~`06` · `04-wordpress-subpage` · rules `70`/`25`/`06-do-dont`  
-> **권장 slug (미잠금):** `rathontech-redesign-01`  
+> **후속:** Gate 2 → `wordpress/rathontech-redesign-01/`  
 > **작성:** 2026-08-03
 
 ---

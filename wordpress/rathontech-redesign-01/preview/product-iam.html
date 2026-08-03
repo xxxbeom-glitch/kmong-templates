@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gate 2 Preview — Rathon-IAM | Rathontech Redesign 01</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/suit@v1.0.0/packages/suit/fonts.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/product-iam.css">
+</head>
+<body class="page-product-iam gate2-product-iam">
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner u-container">
+      <a class="site-header__logo" href="./home-hero.html">RATHON<span>TECH</span></a>
+      <nav class="site-header__nav" aria-label="주요 메뉴">
+        <ul class="site-header__list">
+          <li><a class="site-header__link" href="#">솔루션</a></li>
+          <li><a class="site-header__link is-active" href="./product-iam.html">제품</a></li>
+          <li><a class="site-header__link" href="#">도입사례</a></li>
+          <li><a class="site-header__link" href="#">고객지원</a></li>
+          <li><a class="site-header__link" href="#">회사</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cta" href="#">보안 환경 상담하기</a>
+        <button type="button" class="site-header__menu-btn" data-menu-toggle aria-label="메뉴 열기" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="site-header__menu-btn-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" data-mobile-menu hidden inert role="dialog" aria-modal="true" aria-label="전체 메뉴">
+      <div class="u-container">
+        <div class="mobile-menu__top">
+          <p class="site-header__logo">RATHON<span>TECH</span></p>
+          <button type="button" class="mobile-menu__close" data-menu-close>닫기</button>
+        </div>
+        <nav aria-label="모바일 메뉴">
+          <ul class="mobile-menu__list">
+            <li><a class="mobile-menu__link" href="#">솔루션</a></li>
+            <li><a class="mobile-menu__link" href="./product-iam.html">제품</a></li>
+            <li><a class="mobile-menu__link" href="#">도입사례</a></li>
+            <li><a class="mobile-menu__link" href="#">고객지원</a></li>
+            <li><a class="mobile-menu__link" href="#">회사</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--primary mobile-menu__cta" href="#">보안 환경 상담하기</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <nav class="product-crumb u-container" aria-label="브레드크럼">
+      <ol class="product-crumb__list">
+        <li><a href="./home-hero.html">홈</a></li>
+        <li><a href="#">제품</a></li>
+        <li aria-current="page">Rathon-IAM</li>
+      </ol>
+    </nav>
+
+    <section class="product-hero" aria-labelledby="iam-title">
+      <div class="u-container">
+        <div class="product-hero__meta">
+          <span class="product-hero__chip">계정·권한</span>
+          <span class="product-hero__chip product-hero__chip--own">자사 제품</span>
+        </div>
+        <h1 id="iam-title" class="product-hero__title">Rathon-IAM</h1>
+        <p class="product-hero__value">계정 생성부터 권한 회수까지, 기업 계정과 접근 권한을 중앙에서 관리하는 ID 거버넌스 제품입니다.</p>
+        <div class="product-hero__actions">
+          <a class="btn btn--primary" href="#">문의하기</a>
+          <a class="btn btn--ghost" href="#">관련 도입사례 보기</a>
+        </div>
+        <div class="lifecycle" aria-label="계정 생애주기 흐름">
+          <p class="lifecycle__label">이 제품의 핵심 표현 — 계정 생애주기·권한 거버넌스</p>
+          <ol class="lifecycle__steps">
+            <li class="lifecycle__step"><p class="lifecycle__name">생성</p><p class="lifecycle__desc">입사·계약에 맞춘 계정 발급</p></li>
+            <li class="lifecycle__step"><p class="lifecycle__name">권한 부여</p><p class="lifecycle__desc">역할·정책 기반 접근 설정</p></li>
+            <li class="lifecycle__step"><p class="lifecycle__name">변경·검토</p><p class="lifecycle__desc">이동·직무 변경 시 재조정</p></li>
+            <li class="lifecycle__step"><p class="lifecycle__name">회수</p><p class="lifecycle__desc">퇴사·종료 시 권한 회수</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-overview" aria-labelledby="iam-overview-title">
+      <div class="u-container">
+        <header class="product-overview__head">
+          <p class="product-overview__eyebrow">Product Overview</p>
+          <h2 id="iam-overview-title" class="product-overview__title">무엇을 해결하는 제품인가</h2>
+        </header>
+        <div class="product-overview__grid">
+          <article class="overview-block">
+            <h3 class="overview-block__title">해결 문제</h3>
+            <p class="overview-block__body">입사·이동·퇴사에 따라 흩어지는 계정과 권한을 중앙에서 관리하지 못하면 미회수 권한과 운영 부담이 커집니다. Rathon-IAM은 계정 생애주기와 권한을 하나의 거버넌스 흐름으로 정리합니다.</p>
+          </article>
+          <article class="overview-block">
+            <h3 class="overview-block__title">적용 환경</h3>
+            <ul class="overview-block__list">
+              <li>기업·금융·공공·교육·제조</li>
+              <li>클라우드·온프레미스 혼재 환경</li>
+              <li>통합계정·권한관리 솔루션 영역</li>
+            </ul>
+          </article>
+          <article class="overview-block">
+            <h3 class="overview-block__title">제품 설명</h3>
+            <p class="overview-block__body">기업 계정과 접근 권한을 중앙에서 관리하는 ID 거버넌스 제품입니다. 계정 생성부터 권한 회수까지 운영 표준을 맞추고, 관련 솔루션·사례와 연결해 도입 근거를 확인합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer u-container">
+    <p class="gate2-note">Gate 2 범위: Product Hero + Overview 첫 블록만. Key Capabilities 이하는 Gate 3. · <a href="./home-hero.html">히어로 미리보기</a></p>
+  </footer>
+
+  <script src="../assets/js/nav.js"></script>
+</body>
+</html>
