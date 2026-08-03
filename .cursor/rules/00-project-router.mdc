@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Project Router
 
-**기본 = WordPress 커스텀 테마.** `_docs/active-track.md` · 명시 없으면 `wordpress/{slug}/` · `70`~`72` · `WORDPRESS_TRANSITION_CHANGES.md`.
+**기본 = WordPress 커스텀 테마.** `_docs/active-track.md` · 명시 없으면 `wordpress/{slug}/` · `70`~`72` · `.cursor/sot/03-wordpress-transition.md`.
 
 | 상태 | 트랙 | 경로 |
 |------|------|------|
@@ -24,10 +24,11 @@ alwaysApply: true
 
 ## 충돌
 
-1. 사용자 지시 → 2. 본 라우터 → 3. `PROJECT_CONTEXT` + WP 델타 → 4. `WORDPRESS_TRANSITION_CHANGES` → 5. `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION` (서브) → 6. `70`~`72` → 7. `00-core`
+1. 사용자 지시 → 2. 본 라우터 → 3. `.cursor/sot/01-project-context` + `.cursor/sot/02-wordpress-delta` → 4. `.cursor/sot/03-wordpress-transition` → 5. `.cursor/sot/04-wordpress-subpage` (서브) → 6. `70`~`72` → 7. `00-core`
 
 ## 경로 주의
 
 - 활성 구현은 **`wordpress/{slug}/`만**
+- 제작 SoT는 **`.cursor/sot/`** · 사업 검증은 **`.cursor/business/`**
 - `templates/` · `_archive/` 는 보관·참고 — 활성 워크플로로 overwrite 금지
 - 루트 `_delivery-wp/` · `_delivery/cafe24` 등 **금지**

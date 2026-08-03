@@ -13,4 +13,4 @@ globs:
 > **폴더 `templates/` · `_delivery/` 유지** · 사용자 **명시 재개** 전 신규·납품 금지  
 > 참고: `_archive/templates/`
 
-하드코딩 정적 납품은 기본 상품에서 제외 (`PROJECT_CONTEXT_wordpress_delta` 2-5).
+하드코딩 정적 납품은 기본 상품에서 제외 (`.cursor/sot/02-wordpress-delta` 2-5).

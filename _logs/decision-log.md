@@ -10,9 +10,11 @@
 | 기본 트랙 | **WordPress** (`wordpress/{slug}/`) | 커스텀 테마 · 관리자 = 고객 도구 |
 | 납품 | `wordpress/{slug}/dist/{slug}.zip` | `package-delivery-wp.js` |
 | 하드코딩 정적 | **동결** `templates/` | 기본 상품 제외 |
-| 사업 SoT | PROJECT_CONTEXT + **wordpress_delta** | |
-| WP 구현 | **TRANSITION** + **SUBPAGE** | 서브 유형·IA |
-| 토큰 | SUIT · **1600** · `_icons/`원본→`assets/icons/` 복사 · 타이포 최소 | `design-tokens-master` |
+| 사업 SoT | `.cursor/sot/01-project-context` + `02-wordpress-delta` | |
+| WP 구현 | `.cursor/sot/03-transition` + `04-subpage` | |
+| 토큰 | SUIT · **1600** · `_icons/`원본→`assets/icons/` 복사 · 타이포 최소 | `.cursor/sot/05-design-tokens` |
+| 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
+| 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | 플러그인 표준 | 델타 표 = **후보** · §6 재확인 | 맹목 고정 금지 |
 | 카톡 플로팅 | **메인·문의 등 핵심만** | 전 페이지 강제 아님 |
 | 개인 site | **동결** `_archive/site/` | |
@@ -27,7 +29,20 @@
 | 섹션 구분 | 배경색 강제 아님 · 여백·타이포·배경·이미지 | |
 | 모바일 수정 | **MO만** · BP 767/1023/1024 | |
 | SEO/AEO/GEO | **on-demand** `73` | |
-| Design Director | `.cursor/rules/25-uiux-design-director.mdc` | SoT 하위 · always 아님 · WP glob |
+| Design Director | `.cursor/rules/25-uiux-design-director.mdc` | SoT 하위 · always 아님 |
+| 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
+| 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
+
+---
+
+## 2026-08-03 — SoT 경로·파일명 정리
+
+| # | 결정 |
+|---|------|
+| 1 | 제작 SoT → `.cursor/sot/` (`01-project-context` … `06-design-do-dont`) |
+| 2 | 사업 검증 → `.cursor/business/` (`01-vibe-validation` · `02-kmong-wp-context`) |
+| 3 | 루트에는 package·gitignore·README만 |
+| 4 | 규칙·active-track 등 참조 경로 전면 갱신 |
 
 ---
 
@@ -37,7 +52,7 @@
 |---|------|
 | 1 | 흡수 완료 파일 → `_archive/downloaded-docs/` |
 | 2 | 포함: Director stub · `wordpress-subpage-system` · 구 `폴더안내.txt` |
-| 3 | 루트 유지(활성 SoT): CONTEXT·델타·TRANSITION·SUBPAGE·tokens·do-dont·VIBE·KMONG context |
+| 3 | (이후) 활성 SoT는 루트가 아니라 `.cursor/sot`·`business`로 이전됨 |
 
 ---
 
@@ -59,7 +74,7 @@
 | 1 | GSAP·Swiper = **필요할 때** 쓰는 승인 표준 · 전 테마 의무 아님 |
 | 2 | `_icons/` = 원본 저장소 · 납품은 테마 `assets/icons/` 복사본만 사용 |
 | 3 | 소식/공지 = 기본 글 vs CPT vs 동반 플러그인 **미결정** · 확정 전 테마 임의 구현 금지 |
-| 4 | 사업 검증 기준본 = `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md` 유지 (축약 FINAL로 교체 안 함) |
+| 4 | 사업 검증 기준본 = `.cursor/business/01-vibe-validation.md` 유지 (축약 FINAL로 교체 안 함) |
 | 5 | `DESIGN_DEV_GAPS` · `PROJECT_STATUS_SNAPSHOT` = SoT 아님 → `_docs/reviews/` · `_docs/status/` |
 
 ---
@@ -75,7 +90,7 @@
 | E | 중립색 alpha 그림자 기본 허용 · 컬러 그림자는 제한적 |
 | F | 섹션 배경색 변경 강제 없음 · 여백·타이포·배경·이미지 중 선택 |
 
-반영: `PROJECT_CONTEXT` · `design-do-dont` · `design-tokens-master` · (브레드) `WORDPRESS_SUBPAGE` 유지
+반영: `.cursor/sot/01-project-context` · `.cursor/sot/06-design-do-dont` · `.cursor/sot/05-design-tokens` · (브레드) `.cursor/sot/04-wordpress-subpage` 유지
 
 ---
 
@@ -94,7 +109,7 @@
 
 | # | 결정 |
 |---|------|
-| 1 | `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` SoT 연결 (active-track · core · 70 · harness) |
+| 1 | `.cursor/sot/04-wordpress-subpage.md` SoT 연결 (active-track · core · 70 · harness) |
 | 2 | 서브는 페이지 패밀리·과업 기준 · 메인 히어로 복제 금지 |
 | 3 | 플러그인 표준 표는 후보 · TRANSITION §6으로 재확인 |
 | 4 | 카톡 플로팅은 전 페이지 강제 아님 |
@@ -106,7 +121,7 @@
 | # | 결정 |
 |---|------|
 | 1 | 하드코딩 기본 **철회** · **WP 커스텀 테마**가 기본 |
-| 2 | `PROJECT_CONTEXT_wordpress_delta` · `WORDPRESS_TRANSITION_CHANGES` **채택** |
+| 2 | `.cursor/sot/02-wordpress-delta` · `.cursor/sot/03-wordpress-transition` **채택** |
 | 3 | 관리자 없는 정적 납품 = 기본 옵션 **삭제** |
 | 4 | `templates/` · `_delivery/` **동결** |
 | 5 | 토큰·SUIT·1600·`_icons/`·타이포 최소는 테마 안에서도 **유지** |
@@ -122,7 +137,7 @@
 | 2 | 컨테이너 **1600** (1440은 좁다고 판단) |
 | 3 | BP **767 / 1023 / 1024 / wide 1600** (요즘 관례) |
 | 4 | 아이콘 **크기 = 마스터** · **소스 = `_icons/` 우선** (CDN 기본 금지) |
-| 5 | SoT 문서: `design-tokens-master.md` · `PROJECT_CONTEXT` 동기화 |
+| 5 | SoT 문서: `.cursor/sot/05-design-tokens.md` · `.cursor/sot/01-project-context` 동기화 |
 
 ---
 
@@ -133,7 +148,7 @@
 | 1 | 본문 **16px** (PC·MO) · PC에서도 본문 축소로 “고급” 연출 금지 |
 | 2 | 보조 14 · 캡션 12 · CTA 14 · 제목 20 · input 16 |
 | 3 | caption3 11→12 · 모바일 body3/CTA3 15→16 등 스케일 하한 맞춤 |
-| 4 | SoT: `design-tokens-master.md` §2-0 |
+| 4 | SoT: `.cursor/sot/05-design-tokens.md` §2-0 |
 
 ---
 

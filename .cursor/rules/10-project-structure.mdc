@@ -7,29 +7,29 @@ alwaysApply: true
 
 ```
 kmong-templates/
-├── .cursor/rules/          # Cursor 규칙
-├── wordpress/{slug}/       # 활성 작업 (WP 커스텀 테마) · dist/{slug}.zip
-├── templates/              # 동결 (구 하드코딩 실험 · 신규 금지)
-├── _delivery/              # 동결 (구 정적 납품 산출)
-├── _harness/               # 패키징·검증·QA PNG — 구현 공간 아님
-├── _logs/                  # decision / change / failure / qa
+├── .cursor/
+│   ├── rules/              # Cursor 규칙 (.mdc)
+│   ├── sot/                # 제작 SoT (01~06)
+│   └── business/           # 사업 검증 (01~02)
+├── wordpress/{slug}/       # 활성 테마 · dist/{slug}.zip
+├── templates/              # 동결 (하드코딩)
+├── _delivery/              # 동결 (구 정적 납품)
+├── _harness/               # 패키징·검증
+├── _logs/                  # decision / change / qa / failure
 ├── _docs/                  # active-track · reviews/ · status/
-├── _icons/                 # 아이콘 원본 저장소 (테마 assets/icons/로 복사)
-├── _archive/               # 동결 보관 · downloaded-docs(흡수 완료 원본)
-├── PROJECT_CONTEXT.md
-├── PROJECT_CONTEXT_wordpress_delta.md
-├── WORDPRESS_TRANSITION_CHANGES.md
-├── WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md
-├── design-tokens-master.md
-├── design-do-dont.md
-├── VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md
-└── KMONG_WP_BUSINESS_VALIDATION_CONTEXT.md
+├── _icons/                 # 아이콘 원본 → 테마 assets/icons/ 복사
+├── _archive/               # 동결 · downloaded-docs
+├── README.md
+├── package.json
+└── .gitignore
 ```
 
-- `_docs/reviews/` · `_docs/status/` = **참고·현황** (실행 규칙·SoT 아님)  
-- `_icons/`: 원본만. 납품 ZIP에는 테마 `assets/icons/` 복사본이 들어간다.  
-- `_archive/downloaded-docs/`: 이미 rules/SoT로 흡수한 다운로드 원본 · 근거로 쓰지 않음  
-- Design Director 활성: `.cursor/rules/25-uiux-design-director.mdc`
+- **제작 SoT:** `.cursor/sot/01`~`06` (CONTEXT·델타·TRANSITION·SUBPAGE·토큰·do-dont)  
+- **사업 검증:** `.cursor/business/01-vibe-validation` · `02-kmong-wp-context`  
+- `_docs/reviews/` · `_docs/status/` = 참고만 (SoT 아님)  
+- `_archive/downloaded-docs/`: 흡수 완료 원본 · 근거 금지  
+- Design Director: `.cursor/rules/25-uiux-design-director.mdc` (SoT 하위)
+
 ## Active workspace
 
 **현재 기본:** WordPress — `wordpress/{slug}/` · `_docs/active-track.md`.
@@ -46,23 +46,20 @@ kmong-templates/
 - Classic 커스텀 테마 기본 · Elementor 등은 **명시 요청 시만**
 - 디자인·토큰·`25-uiux-design-director`(보조) 원칙은 테마 CSS/JS 안에서 적용
 - 납품: `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip`
-- **전환·CMS 규칙:** `WORDPRESS_TRANSITION_CHANGES.md`  
-- **서브페이지:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`  
-- **사업 델타:** `PROJECT_CONTEXT_wordpress_delta.md`
+- **전환·CMS:** `.cursor/sot/03-wordpress-transition.md`  
+- **서브페이지:** `.cursor/sot/04-wordpress-subpage.md`  
+- **사업 델타:** `.cursor/sot/02-wordpress-delta.md`
 
 ### 정적 하드코딩 (동결)
 
 - `templates/` · `_delivery/` **신규 작업 금지** (명시 재개 시만)
-- 구 참고: `_archive/templates/`
+- 재개 시: `10-static-template.mdc` · `60-delivery.mdc`
 
-## `_harness/` · 납품
+## 금지
 
-| 경로 | 역할 |
-|------|------|
-| `package-delivery-wp.js` | **활성** WP ZIP |
-| `package-delivery.js` | 정적 · 동결 |
-| `snapshots/` | QA PNG (선택) |
+- 루트에 SoT md 재배치 (`.cursor/sot`·`business`만)  
+- `_modules` / `_tokens` / 루트 `_delivery*` 재도입  
+- `_harness`에 테마 런타임 코드  
+- **`_harness/workbench/`** 등 별도 개발 공간
 
-**금지:** `_harness/workbench/`, `_delivery-wp/`, `_modules`, `_tokens`
-
-완료 기준: 변경이 `wordpress/{slug}/` 안에 있고 ZIP 납품 가능한 테마 구조.
+완료 기준: 변경 파일이 `wordpress/{slug}/` 안에만 있고 독립 실행 가능.

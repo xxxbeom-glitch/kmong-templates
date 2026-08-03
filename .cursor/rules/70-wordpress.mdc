@@ -9,10 +9,10 @@ globs:
 # WordPress (활성)
 
 > **상태:** **활성** — `00-project-router.mdc` · `_docs/active-track.md`  
-> **사업 델타:** `PROJECT_CONTEXT_wordpress_delta.md`  
-> **구현·CMS·보안·QA:** `WORDPRESS_TRANSITION_CHANGES.md`  
-> **서브페이지 유형·IA:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`  
-> **토큰:** `design-tokens-master.md` · 아이콘 원본 `_icons/` → 테마 `assets/icons/` 복사  
+> **사업 델타:** `.cursor/sot/02-wordpress-delta.md`  
+> **구현·CMS·보안·QA:** `.cursor/sot/03-wordpress-transition.md`  
+> **서브페이지 유형·IA:** `.cursor/sot/04-wordpress-subpage.md`  
+> **토큰:** `.cursor/sot/05-design-tokens.md` · 아이콘 원본 `_icons/` → 테마 `assets/icons/` 복사  
 > **보안 상세:** `71-wordpress-security.mdc` · **최종 검수:** `72-wordpress-final-verify.mdc`
 
 ## 범위
@@ -42,8 +42,8 @@ wordpress/{slug}/
 
 ## 시작 시 확정 (코딩 전)
 
-`WORDPRESS_TRANSITION` §2 — 고객 수정 항목 · 고정 구조 · CPT · 플러그인 · 폼 등.  
-서브·메뉴 페이지가 있으면 `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION` §3~5로 **페이지 패밀리 맵**을 먼저 잡는다.  
+`.cursor/sot/03-wordpress-transition` §2 — 고객 수정 항목 · 고정 구조 · CPT · 플러그인 · 폼 등.  
+서브·메뉴 페이지가 있으면 `.cursor/sot/04-wordpress-subpage` §3~5로 **페이지 패밀리 맵**을 먼저 잡는다.  
 미확정이면 전 페이지를 정적처럼 굳히지 말고 **질문**.
 
 ### 서브페이지
@@ -77,7 +77,7 @@ wordpress/{slug}/
 기본 기능으로 충분하면 추가하지 않음.
 ## 초기 제공 범위
 
-`WORDPRESS_TRANSITION` §13 — 소개 홈 + 소식/포트폴리오 1종 + 문의 + 편집자 안내.  
+`.cursor/sot/03-wordpress-transition` §13 — 소개 홈 + 소식/포트폴리오 1종 + 문의 + 편집자 안내.  
 회원·결제·방문 게시판·자유 빌더는 **기본 제외**.
 
 ## 워크플로

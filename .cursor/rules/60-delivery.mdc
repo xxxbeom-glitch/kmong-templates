@@ -11,6 +11,6 @@ globs:
 
 > **활성:** `node _harness/package-delivery-wp.js {slug}` → **`wordpress/{slug}/dist/{slug}.zip`**  
 > **동결:** 정적 `package-delivery.js` → `_delivery/{slug}/`  
-> 인수·교육: `PROJECT_CONTEXT_wordpress_delta` 7-4 · `WORDPRESS_TRANSITION` §11
+> 인수·교육: `.cursor/sot/02-wordpress-delta` 7-4 · `.cursor/sot/03-wordpress-transition` §11
 
 금지: `_delivery-wp/` · 플랫폼별 하위 납품 폴더 · QA 없이 납품 완료 선언

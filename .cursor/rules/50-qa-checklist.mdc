@@ -19,7 +19,7 @@ globs:
 - PC / 1024 / 768 반응형 확인 (`35-responsive.mdc` · QA 뷰포트 1920·1440·1024·768·390)
 - 해당 섹션 인터랙션 확인 (해당 시)
 - hero·GNB·form·하단 고정 UI 해당 섹션 — **모바일 높이·safe-area·input 16px** (`35-responsive.mdc`)
-- WP면: 관리자 수정→공개 반영 (`WORDPRESS_TRANSITION` §10 · `70`)
+- WP면: 관리자 수정→공개 반영 (`.cursor/sot/03-wordpress-transition` §10 · `70`)
 - **PASS 후에만** 다음 섹션 착수 (`20-harness-workflow.mdc`)
 
 아래 HTML/CSS·기능 항목은 **섹션 구현 중 해당 섹션 범위**로 적용한다. Figma 전용 체크는 피그마 작업에만.

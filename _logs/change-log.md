@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-08-03 — SoT를 `.cursor/sot`·`business`로 이동·개명
+
+- 루트 md → `.cursor/sot/01`~`06` · `.cursor/business/01`~`02`
+- 규칙·active-track·logs·harness 경로 일괄 갱신
+- 루트 `README.md` 추가
+
+---
+
 ## 2026-08-03 — 루트 다운로드 md/mdc 아카이브
 
 - `_archive/downloaded-docs/` 신설
@@ -47,7 +55,7 @@
 
 ## 2026-08-03 — 서브페이지 UI/UX 지침 SoT 연결
 
-- `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` → active-track · core · 70 · harness · router
+- `.cursor/sot/04-wordpress-subpage.md` → active-track · core · 70 · harness · router
 - 플러그인 표=후보 · 카톡 플로팅 전페이지 강제 해제 (PROJECT_CONTEXT)
 
 ---
@@ -76,7 +84,7 @@
 
 ## 2026-08-03 — 토큰 확정 (SUIT · 1600 · BP · 아이콘 크기)
 
-- `design-tokens-master` / `PROJECT_CONTEXT` / decision·active-track 동기화
+- `.cursor/sot/05-design-tokens` / `.cursor/sot/01-project-context` / decision·active-track 동기화
 - 컨테이너 기본 1600 · wide BP 1600 · 폰트 SUIT
 
 ---

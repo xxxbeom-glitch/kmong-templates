@@ -1,16 +1,16 @@
 # 크몽 WP 납품 — 사업 검증용 프로젝트 컨텍스트
 
-> **역할:** `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md`(범용 사업 검증 지침)와 **함께** 쓰는 프로젝트 전용 전제.  
+> **역할:** `.cursor/business/01-vibe-validation.md`(범용 사업 검증 지침)와 **함께** 쓰는 프로젝트 전용 전제.  
 > **넣지 않는 것:** 범용 지침 본문 수정·부록 삽입, 디자인/개발 갭 상세, 테마 구현 규칙.  
-> **갱신:** 2026-08-03 · 기술·상품 확정은 `PROJECT_CONTEXT.md`가 더 최신이면 그쪽을 따름.
+> **갱신:** 2026-08-03 · 기술·상품 확정은 `.cursor/sot/01-project-context.md`가 더 최신이면 그쪽을 따름.
 
 ---
 
 ## 1. 이 파일을 쓰는 방법
 
-1. AI에게 **범용 지침**(`VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md`)을 적용한다.
+1. AI에게 **범용 지침**(`.cursor/business/01-vibe-validation.md`)을 적용한다.
 2. **이 파일**을 같은 대화에 넘겨, 아래 전제를 잠근 상태로 검증하게 한다.
-3. 디자인·개발 문서 충돌·모자람은 여기서 다루지 않는다 → `DESIGN_DEV_GAPS_FOR_REVIEW.md`.
+3. 디자인·개발 문서 충돌·모자람은 여기서 다루지 않는다 → `_docs/reviews/DESIGN_DEV_GAPS_FOR_REVIEW.md`.
 
 범용 지침의「사용자 기본 조건」절(1인·UI/UX·바이브·작은 검증 등)은 그대로 유효하다.  
 이 파일이 말하는 것은 **이미 잠근 크몽 WP 사업**에만 해당하는 추가 전제다.
@@ -28,7 +28,7 @@
 - 관리자 없는 정적 HTML 납품: **기본 상품에서 제외**(동결)
 - 디자인 입력: 기획서·바이브 우선 · 피그마는 줄 때만
 - 확정 토큰 요지: SUIT · 컨테이너 1600 · BP 767/1023/1024/wide 1600 · `_icons/`→테마 복사 · 모션/슬라이더는 필요 시 GSAP/Swiper (의무 아님)  
-  (수치·세부 SoT는 `design-tokens-master.md` / `PROJECT_CONTEXT.md`)
+  (수치·세부 SoT는 `.cursor/sot/05-design-tokens.md` / `.cursor/sot/01-project-context.md`)
 
 ---
 
@@ -64,7 +64,7 @@
 
 - **첫 고객 채널:** **크몽을 우선** 검증한다. (검색·상품 상세·견적·포트폴리오 등)  
   다른 채널은 크몽에서 막히거나 비교가 필요할 때만.
-- **초기 대상에서 제외:** **병원·의원** (의료광고 등 규제 위험 — `PROJECT_CONTEXT`와 동일)
+- **초기 대상에서 제외:** **병원·의원** (의료광고 등 규제 위험 — `.cursor/sot/01-project-context`와 동일)
 
 ---
 
@@ -73,14 +73,14 @@
 규칙이 충돌하면:
 
 1. 사용자가 **지금 대화**에서 명확히 말한 목표·제한  
-2. **`PROJECT_CONTEXT.md`의 최신 확정** (+ WP 델타·`_docs/active-track.md` / decision-log 유효 표)  
-3. 이 파일(`KMONG_WP_BUSINESS_VALIDATION_CONTEXT.md`)  
-4. 범용 지침 `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md`  
+2. **`.cursor/sot/01-project-context.md`의 최신 확정** (+ WP 델타·`_docs/active-track.md` / decision-log 유효 표)  
+3. 이 파일(`.cursor/business/02-kmong-wp-context.md`)  
+4. 범용 지침 `.cursor/business/01-vibe-validation.md`  
 5. 일반 사업 상식·AI 추론  
 
 디자인·개발 구현·토큰·QA·규칙 갭은:
 
-- **`DESIGN_DEV_GAPS_FOR_REVIEW.md`** 및 `.cursor/rules` · 토큰 · TRANSITION / SUBPAGE  
+- **`_docs/reviews/DESIGN_DEV_GAPS_FOR_REVIEW.md`** 및 `.cursor/rules` · `.cursor/sot/`  
 - 사업 검증 답변에 **구현 규칙 개편을 섞지 않는다.** 필요하면 “디자인·개발 문서로 이관”만 표시한다.
 
 ---

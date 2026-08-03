@@ -8,7 +8,7 @@ globs:
 
 # Figma to Code
 
-> **적용:** 사용자가 **피그마를 준 턴에만**. 바이브·기획서만이면 본 규칙 생략 (`design-tokens-master` · PROJECT_CONTEXT).  
+> **적용:** 사용자가 **피그마를 준 턴에만**. 바이브·기획서만이면 본 규칙 생략 (`.cursor/sot/05-design-tokens` · PROJECT_CONTEXT).  
 > **출력 경로:** 기본 **`wordpress/{slug}/`**.  
 > **동결:** `templates/{slug}/` — 정적 트랙 **명시 재개** 시에만.
 

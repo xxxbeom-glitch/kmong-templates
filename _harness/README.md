@@ -13,7 +13,7 @@
 | 검사 | `verify-wordpress-static.js` | (해당 시) |
 | 샘플 | `interaction-samples/` | 참고 |
 
-규칙: `70`~`72` · `WORDPRESS_TRANSITION_CHANGES.md`
+규칙: `70`~`72` · `.cursor/sot/03-wordpress-transition.md`
 
 ## 동결
 

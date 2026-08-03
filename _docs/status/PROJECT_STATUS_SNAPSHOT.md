@@ -1,12 +1,9 @@
 # 프로젝트 현황 스냅샷 — 구조 · 된 것 · 안 된 것 · 확인 필요
 
-> **⚠️ 실행 규칙·SoT 아님.** 현황 참고용. Cursor alwaysApply 대상 아님.  
-> **위치:** `_docs/status/PROJECT_STATUS_SNAPSHOT.md`  
-> **작성:** 2026-08-03 (문서 정리 후 갱신)  
-> **목적:** 레포·지침·작업 상태를 한곳에서 확인  
-> **갱신 기준:** `_docs/active-track.md` · `_logs/decision-log.md` 유효 표 · git  
-> **사업 검증 기준본:** `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md` (축약 FINAL로 교체하지 않음)  
-> **크몽 전제:** `KMONG_WP_BUSINESS_VALIDATION_CONTEXT.md`  
+> **제작 SoT:** `.cursor/sot/` · **사업:** `.cursor/business/` · **규칙:** `.cursor/rules/`  
+> **위치:** `_docs/status/PROJECT_STATUS_SNAPSHOT.md` (SoT 아님)  
+> **사업 검증 기준본:** `.cursor/business/01-vibe-validation.md`  
+> **크몽 전제:** `.cursor/business/02-kmong-wp-context.md`  
 > **갭 참고:** `_docs/reviews/DESIGN_DEV_GAPS_FOR_REVIEW.md`
 
 ---
@@ -37,15 +34,15 @@ kmong-templates/
 ├── _logs/                  # decision / change / qa / failure
 ├── _docs/active-track.md   # 현재 트랙 1장
 │
-├── PROJECT_CONTEXT.md                    # 사업·디자인 SoT
-├── PROJECT_CONTEXT_wordpress_delta.md
-├── WORDPRESS_TRANSITION_CHANGES.md       # WP CMS·보안·QA
-├── WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md # 서브페이지
-├── design-tokens-master.md               # 토큰 수치 SoT
-├── design-do-dont.md                     # UI Do/Don't · ★취향
+├── .cursor/sot/01-project-context.md                    # 사업·디자인 SoT
+├── .cursor/sot/02-wordpress-delta.md
+├── .cursor/sot/03-wordpress-transition.md       # WP CMS·보안·QA
+├── .cursor/sot/04-wordpress-subpage.md # 서브페이지
+├── .cursor/sot/05-design-tokens.md               # 토큰 수치 SoT
+├── .cursor/sot/06-design-do-dont.md                     # UI Do/Don't · ★취향
 ├── CURSOR_UIUX_DESIGN_DIRECTOR(1).mdc    # 디렉터(루트, rules 미정리)
-├── KMONG_WP_BUSINESS_VALIDATION_CONTEXT.md
-├── VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md  # (미커밋 가능)
+├── .cursor/business/02-kmong-wp-context.md
+├── .cursor/business/01-vibe-validation.md  # (미커밋 가능)
 ├── DESIGN_DEV_GAPS_FOR_REVIEW.md                   # (미커밋 가능)
 └── (본 파일) PROJECT_STATUS_SNAPSHOT.md
 ```
@@ -64,11 +61,11 @@ kmong-templates/
 | 문서 | 역할 |
 |------|------|
 | `active-track` + `00-project-router` | 지금 어디 작업하는지 |
-| `PROJECT_CONTEXT` (+ delta) | 사업·디자인 원칙 |
-| `design-tokens-master` | 색·타이포·간격·그림자 수치 |
-| `design-do-dont` | Do/Don't · ★개인 취향 |
-| `WORDPRESS_TRANSITION` | CMS·플러그인·보안·WP QA |
-| `WORDPRESS_SUBPAGE` | 서브 IA·목록/상세·관리자 UX |
+| `.cursor/sot/01-project-context` (+ delta) | 사업·디자인 원칙 |
+| `.cursor/sot/05-design-tokens` | 색·타이포·간격·그림자 수치 |
+| `.cursor/sot/06-design-do-dont` | Do/Don't · ★개인 취향 |
+| `.cursor/sot/03-wordpress-transition` | CMS·플러그인·보안·WP QA |
+| `.cursor/sot/04-wordpress-subpage` | 서브 IA·목록/상세·관리자 UX |
 | `.cursor/rules/70`~`72` | WP 구현·보안·최종 검수 |
 | `VIBE` + `KMONG_WP_…CONTEXT` | 사업 아이디어/가격·업종 검증 (코딩 규칙 아님) |
 | `DESIGN_DEV_GAPS` | 디자인·개발 모자람·과함(조언·갭) |
@@ -108,12 +105,12 @@ kmong-templates/
 | E | 그림자 기본 = 중립 alpha · 컬러 제한적 |
 | F | 섹션 배경색 강제 아님 |
 
-반영 파일(워킹트리 수정): `PROJECT_CONTEXT` · `design-do-dont` · `design-tokens-master` · `WORDPRESS_SUBPAGE` · `active-track` · decision/change-log
+반영 파일(워킹트리 수정): `.cursor/sot/01-project-context` · `.cursor/sot/06-design-do-dont` · `.cursor/sot/05-design-tokens` · `.cursor/sot/04-wordpress-subpage` · `active-track` · decision/change-log
 
 ### 2-4. 규칙 잔여 정리 (일부 커밋됨)
 
 - [x] `30`/`35`/`40`/`45`/`46`/`50`/`73` 활성 경로 문구 → wordpress (커밋 `3f50c3a`)
-- [x] 사업 검증 컨텍스트 분리 `KMONG_WP_BUSINESS_VALIDATION_CONTEXT.md` (커밋됨)
+- [x] 사업 검증 컨텍스트 분리 `.cursor/business/02-kmong-wp-context.md` (커밋됨)
 
 ### 2-5. 사업 상품 성격 (잠김)
 
@@ -130,7 +127,7 @@ kmong-templates/
 |------|------|
 | A~F 반영 7파일 **커밋** | ❌ 미커밋 |
 | `DESIGN_DEV_GAPS_FOR_REVIEW.md` 커밋 | ❌ untracked |
-| `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md` 커밋 | ❌ untracked |
+| `.cursor/business/01-vibe-validation.md` 커밋 | ❌ untracked |
 | `design-do-dont (1).md` 삭제 (중복·옛 문구) | ❌ 잔존 — **쓰지 말 것** |
 | `_icons/*.tmp` 등 임시 파일 | ❌ 정리 필요 가능 |
 | `PROJECT_STATUS_SNAPSHOT.md`(본 문서) 커밋 | ❌ 작성 직후 |
@@ -208,10 +205,10 @@ kmong-templates/
 - `23f723e` — WP 트랙 복구 · CONTEXT·토큰 SoT  
 
 **워킹트리 (미커밋 수정)**  
-`PROJECT_CONTEXT.md` · `design-do-dont.md` · `design-tokens-master.md` · `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` · `_docs/active-track.md` · `_logs/decision-log.md` · `_logs/change-log.md`
+`.cursor/sot/01-project-context.md` · `.cursor/sot/06-design-do-dont.md` · `.cursor/sot/05-design-tokens.md` · `.cursor/sot/04-wordpress-subpage.md` · `_docs/active-track.md` · `_logs/decision-log.md` · `_logs/change-log.md`
 
 **Untracked**  
-`DESIGN_DEV_GAPS_FOR_REVIEW.md` · `VIBE_BUSINESS_VALIDATION_INSTRUCTION_IMPROVED.md` · `design-do-dont (1).md` · (임시) `_icons/*.tmp` · 본 스냅샷 파일
+`DESIGN_DEV_GAPS_FOR_REVIEW.md` · `.cursor/business/01-vibe-validation.md` · `design-do-dont (1).md` · (임시) `_icons/*.tmp` · 본 스냅샷 파일
 
 ---
 

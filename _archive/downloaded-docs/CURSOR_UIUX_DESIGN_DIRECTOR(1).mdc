@@ -3,6 +3,6 @@
 이 파일은 **더 이상 사용하지 않습니다.**
 
 → **활성 규칙:** `.cursor/rules/25-uiux-design-director.mdc`  
-→ `alwaysApply: false` · `wordpress/**` 등 glob · SoT(`PROJECT_CONTEXT`·토큰·do-dont·`70`) **하위**
+→ `alwaysApply: false` · `wordpress/**` 등 glob · SoT(`.cursor/sot/01-project-context`·토큰·do-dont·`70`) **하위**
 
 루트에 남은 본 문서는 경로 안내용입니다. 내용은 rules 쪽만 수정하세요.

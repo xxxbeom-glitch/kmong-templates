@@ -42,14 +42,14 @@
 - **애니메이션**: 모션이 필요할 때 **승인 표준** = GSAP + ScrollTrigger (`45`) — 전 테마 의무 아님
 - **슬라이더**: 슬라이더가 필요할 때 **승인 표준** = Swiper.js — 전 테마 의무 아님
 - **jQuery**: WP 번들만(필요 시) · `46` jQuery preset은 WP 신규 **기본 금지**(명시 승인 시만)
-- **폰트**: SUIT (기본값 · `design-tokens-master.md`)
+- **폰트**: SUIT (기본값 · `.cursor/sot/05-design-tokens.md`)
 - **컨텐츠 폭**: 1600px (`--container-max`)
 - **아이콘 크기**: 토큰 마스터 `--icon-xs`~`--icon-2xl`
 - **아이콘**: 레포 **`_icons/`** = 원본 저장소 · 납품 테마는 사용분만 **`assets/icons/`로 복사** · CDN(Lucide/Heroicons) 기본 금지
 - **소식/공지 CMS:** WP 기본 글 vs `notice` CPT vs 동반 플러그인 = **미결정** · 확정 전 테마에 임의 구현 금지
 - **디자인 토큰·컴포넌트·UIUX 원칙**: 테마 자산 안에서 동일 적용
-- **상세 델타:** `PROJECT_CONTEXT_wordpress_delta.md` · `WORDPRESS_TRANSITION_CHANGES.md`  
-- **서브페이지:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`
+- **상세 델타:** `.cursor/sot/02-wordpress-delta.md` · `.cursor/sot/03-wordpress-transition.md`  
+- **서브페이지:** `.cursor/sot/04-wordpress-subpage.md`
 
 ### 2-4. 계정 및 납품 구조
 - 호스팅, 도메인 모두 **고객 명의**로 생성
@@ -61,7 +61,7 @@
 - **워드프레스 관리자 = 고객 관리 도구**
 - 고객이 직접 텍스트·이미지·게시글 수정 가능
 - **관리자 없이 납품하는 옵션은 기본에서 삭제**
-- 레이아웃·구조 전체 편집(빌더)과 콘텐츠 수정은 구분 (`WORDPRESS_TRANSITION`)
+- 레이아웃·구조 전체 편집(빌더)과 콘텐츠 수정은 구분 (`.cursor/sot/03-wordpress-transition`)
 
 ### 2-6. 템플릿 전략
 - 베이스 테마를 하나 만들고 업종별로 디자인 변형
@@ -124,7 +124,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 - 한 페이지 폰트 굵기: 2~3가지만
 - 본문 색상: 순수 검정(#000) 사용 금지 → #1A1A1A~#333
 - 기본 폰트: SUIT
-- **최소 크기 (SoT: `design-tokens-master` §2-0)**
+- **최소 크기 (SoT: `.cursor/sot/05-design-tokens` §2-0)**
   - 본문 PC/MO **16px** · 보조 14px · 캡션 12px · CTA 14px · 제목 20px · input 16px
   - PC에서 본문을 16 미만으로 줄이지 않음
 
@@ -132,7 +132,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 - 60-30-10 법칙: 배경(60%) : 보조색(30%) : 강조색(10%)
 - CTA 버튼은 페이지에서 가장 눈에 띄는 색 하나만
 - 채도 높은 색 한 페이지에 2개 이상 금지
-- **그림자:** 중립색(검정/그레이) alpha 기본 허용 · 컬러 그림자는 CTA·브랜드 포인트 등 **제한적** 사용 (`design-tokens-master` §5)
+- **그림자:** 중립색(검정/그레이) alpha 기본 허용 · 컬러 그림자는 CTA·브랜드 포인트 등 **제한적** 사용 (`.cursor/sot/05-design-tokens` §5)
 
 ### 3-3. 컴포넌트 규칙
 
@@ -149,7 +149,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 
 **네비게이션**
 - 메뉴 개수 **하드 한도 없음** · **6개 이상**이면 그룹핑·우선순위 검토
-- 브레드크럼: 계층이 깊거나 상위 이동이 필요할 때만 (`WORDPRESS_SUBPAGE`)
+- 브레드크럼: 계층이 깊거나 상위 이동이 필요할 때만 (`.cursor/sot/04-wordpress-subpage`)
 - 스크롤 시 헤더: blur() + 반투명
 - 모바일 햄버거: 오른쪽에서 슬라이드인
 
@@ -211,7 +211,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 
 ### 3-5. 한국 중소기업 특화 규칙
 - 대표 전화번호는 항상 헤더에 노출
-- **카카오톡 상담 버튼:** 우하단 플로팅 — **기본은 메인·문의 등 전환 핵심 페이지만**. 전 페이지 강제는 아님 (`WORDPRESS_SUBPAGE` §15 · 방해·safe-area 검토)
+- **카카오톡 상담 버튼:** 우하단 플로팅 — **기본은 메인·문의 등 전환 핵심 페이지만**. 전 페이지 강제는 아님 (`.cursor/sot/04-wordpress-subpage` §15 · 방해·safe-area 검토)
 - 지도/오시는길 섹션 거의 필수
 - 네이버 지도 연동 우선 (구글 지도보다 친숙)
 - 공신력 로고(인증, 수상, 협회)는 히어로 바로 아래 띠 형태로
@@ -240,7 +240,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 ## 4. 디자인 시스템
 
 ### 4-0. 토큰 SoT
-- 마스터: 루트 `design-tokens-master.md`
+- 마스터: `.cursor/sot/05-design-tokens.md`
 - 확정: 폰트 SUIT · 컨테이너 1600 · BP 767/1023/1024/wide1600 · 아이콘 크기 마스터 · `_icons/` 원본 → 테마 `assets/icons/` 복사
 
 ### 4-1. 토큰 버전 (시멘틱 primary 조합)
@@ -280,7 +280,7 @@ Claude (기획) → 커서 (테마 제작) → 카페24 WordPress (납품)
 와이드:      min-width 1600px
 최대 너비:   1600px (--container-max)
 ```
-> SoT: `design-tokens-master.md` §6~7
+> SoT: `.cursor/sot/05-design-tokens.md` §6~7
 
 ### 4-7. 아이콘
 - **원본 저장소:** 레포 루트 **`_icons/`** (공용 SVG 풀)
@@ -401,7 +401,7 @@ motion/
     handover.md
 ```
 
-> 레포 실제 SoT: `.cursor/rules/70`~`72` · `WORDPRESS_TRANSITION_CHANGES.md` · `design-tokens-master.md`  
+> 레포 실제 SoT: `.cursor/rules/70`~`72` · `.cursor/sot/03-wordpress-transition.md` · `.cursor/sot/05-design-tokens.md`  
 > 위 `/cursor-rules/` 트리 중 미생성 md는 **필요 시** 추가 (자동 대량 생성 금지)
 
 ---

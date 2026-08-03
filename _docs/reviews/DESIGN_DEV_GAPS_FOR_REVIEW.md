@@ -40,11 +40,11 @@
 
 | 문서 | 역할 |
 |------|------|
-| `PROJECT_CONTEXT.md` | 사업·디자인 원칙·컴포넌트 취향 요약 |
-| `design-tokens-master.md` | 색·타이포·간격·그림자 등 **수치 SoT** |
-| `design-do-dont.md` | UI Do/Don't · ★ 개인 취향 (카드 보더 금지 등) |
-| `WORDPRESS_TRANSITION_CHANGES.md` | 정적→WP 시 CMS·보안·QA·플러그인 |
-| `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md` | 서브페이지 유형·IA·목록/상세·관리자 UX |
+| `.cursor/sot/01-project-context.md` | 사업·디자인 원칙·컴포넌트 취향 요약 |
+| `.cursor/sot/05-design-tokens.md` | 색·타이포·간격·그림자 등 **수치 SoT** |
+| `.cursor/sot/06-design-do-dont.md` | UI Do/Don't · ★ 개인 취향 (카드 보더 금지 등) |
+| `.cursor/sot/03-wordpress-transition.md` | 정적→WP 시 CMS·보안·QA·플러그인 |
+| `.cursor/sot/04-wordpress-subpage.md` | 서브페이지 유형·IA·목록/상세·관리자 UX |
 | `.cursor/rules/70`~`72` | WP 구현·보안·최종 검수 |
 | `CURSOR_UIUX_DESIGN_DIRECTOR(1).mdc` | Figma 없이 기획→코드용 **대형** 디렉터 규칙 (루트, rules 미정리) |
 
@@ -66,7 +66,7 @@
 3. **SoT 과다·중복**  
    CONTEXT §3 ≈ do-dont ≈ Director 일부.  
    `wordpress-subpage-system.md` ≈ SUBPAGE.  
-   `design-do-dont (1).md` = `design-do-dont.md` **완전 동일 파일**(정리만 하면 됨).  
+   `design-do-dont (1).md` = `.cursor/sot/06-design-do-dont.md` **완전 동일 파일**(정리만 하면 됨).  
    → “무엇을 읽고 무엇을 무시해도 되는지” **단일 인덱스**가 약함.
 
 4. **decision-log 히스토리 혼선**  
@@ -179,4 +179,4 @@ ChatGPT에게 그대로 붙여 넣어도 됨. **충돌 A~F는 확정됐으므로
 
 ---
 
-*이 파일은 조언용 스냅샷이다. 확정되면 `decision-log` / `PROJECT_CONTEXT` / `design-do-dont`에 반영하고, 본 문서는 archive하거나 “해결됨”으로 갱신하면 된다.*
+*이 파일은 조언용 스냅샷이다. 확정되면 `decision-log` / `.cursor/sot/01-project-context` / `.cursor/sot/06-design-do-dont`에 반영하고, 본 문서는 archive하거나 “해결됨”으로 갱신하면 된다.*

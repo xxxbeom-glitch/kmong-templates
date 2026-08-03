@@ -6,16 +6,16 @@ alwaysApply: true
 # Harness Workflow
 
 > **트랙:** `00-project-router.mdc` · `_docs/active-track.md`  
-> **기본:** WordPress `wordpress/{slug}/` · `70`~`72` · `WORDPRESS_TRANSITION_CHANGES.md`  
+> **기본:** WordPress `wordpress/{slug}/` · `70`~`72` · `.cursor/sot/03-wordpress-transition.md`  
 > **정적 templates:** 동결  
-> **본 파일 = 절차만.** 디자인 판단 → PROJECT_CONTEXT / `25-uiux-design-director`(SoT 하위) · WP CMS → TRANSITION · QA → `50`+`72`
+> **본 파일 = 절차만.** 디자인 판단 → `.cursor/sot/01-project-context` / `25-uiux-design-director`(SoT 하위) · WP CMS → `.cursor/sot/03-wordpress-transition` · QA → `50`+`72`
 
 ## 시작 전
 
 1. `00-core` 컨텍스트  
 2. `_logs/` 빠른 조회  
-3. WP면: 고객이 관리자에서 **고칠 항목 / 고정할 구조** 확정 (`WORDPRESS_TRANSITION` §2)  
-4. 서브·메뉴 페이지면: **페이지 패밀리 맵** (`WORDPRESS_SUBPAGE_UIUX_INSTRUCTION` §4~5)  
+3. WP면: 고객이 관리자에서 **고칠 항목 / 고정할 구조** 확정 (`.cursor/sot/03-wordpress-transition` §2)  
+4. 서브·메뉴 페이지면: **페이지 패밀리 맵** (`.cursor/sot/04-wordpress-subpage` §4~5)  
 5. 모호하면 질문
 
 ## 한 섹션·범위 루프
@@ -38,14 +38,14 @@ alwaysApply: true
 
 ### QA · 로그 · 납품
 
-- QA: `50` + `WORDPRESS_TRANSITION` §10 + (해당 시) `72`  
+- QA: `50` + `.cursor/sot/03-wordpress-transition` §10 + (해당 시) `72`  
 - 납품: `node _harness/package-delivery-wp.js {slug}` → `wordpress/{slug}/dist/{slug}.zip`  
 - 관리자에서 콘텐츠 수정·반영을 확인해보지 않았으면 **CMS 연동 완료라고 말하지 않음**
 
 ## SEO / AEO / GEO
 
 - 자동 실행 금지 · 요청 시에만 `73`  
-- WP SEO 플러그인(Yoast 등)과 **메타 중복 생성 주의** (`WORDPRESS_TRANSITION` §9)
+- WP SEO 플러그인(Yoast 등)과 **메타 중복 생성 주의** (`.cursor/sot/03-wordpress-transition` §9)
 
 ## 금지
 

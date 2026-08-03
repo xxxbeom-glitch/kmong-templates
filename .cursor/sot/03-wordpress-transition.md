@@ -1,7 +1,7 @@
 # 워드프레스 전환 시 변경 지침
 
 > **채택:** 2026-08-03 · 기본 트랙 = WordPress (`_docs/active-track.md`)  
-> UI·UX·반응형·접근성·콘텐츠 디자인·비주얼 QA는 `.cursor/rules/25-uiux-design-director.mdc` / `PROJECT_CONTEXT` 원칙을 **유지**하고, 아래는 CMS·테마 구현에서 **우선 적용**한다.  
+> UI·UX·반응형·접근성·콘텐츠 디자인·비주얼 QA는 `.cursor/rules/25-uiux-design-director.mdc` / `.cursor/sot/01-project-context` 원칙을 **유지**하고, 아래는 CMS·테마 구현에서 **우선 적용**한다.  
 > (디렉터 SoT 우선순위: CONTEXT·토큰·do-dont·본 문서·`70`이 Director보다 위)
 
 이 문서는 Design Director 전체 내용을 대체하지 않는다. 하드코딩 사이트에서 워드프레스 기반 사이트로 바뀌면서 달라지는 항목만 우선 적용한다.

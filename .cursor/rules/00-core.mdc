@@ -7,21 +7,21 @@ alwaysApply: true
 
 - **기본 트랙:** WordPress — `_docs/active-track.md` · `wordpress/{slug}/` · `70`~`72`
 - 트랙 판별: `00-project-router.mdc` (명시 없으면 WP)
-- **사업 SoT:** `PROJECT_CONTEXT.md` + `PROJECT_CONTEXT_wordpress_delta.md`
+- **사업 SoT:** `.cursor/sot/01-project-context.md` + `.cursor/sot/02-wordpress-delta.md`
 - **디자인 판단 보조:** `.cursor/rules/25-uiux-design-director.mdc` (SoT 하위 · WP/테마 glob · always 아님)
-- **WP 구현 델타:** `WORDPRESS_TRANSITION_CHANGES.md` (CMS·보안·QA · 디렉터와 병행 시 SoT 우선)
-- **서브페이지:** `WORDPRESS_SUBPAGE_UIUX_INSTRUCTION.md`
-- **토큰·취향:** `design-tokens-master.md` · `design-do-dont.md` (A~F 포함)
+- **WP 구현 델타:** `.cursor/sot/03-wordpress-transition.md` (CMS·보안·QA · 디렉터와 병행 시 SoT 우선)
+- **서브페이지:** `.cursor/sot/04-wordpress-subpage.md`
+- **토큰·취향:** `.cursor/sot/05-design-tokens.md` · `.cursor/sot/06-design-do-dont.md` (A~F 포함)
 - **디자인 입력:** 기획서·바이브 우선 · 피그마는 **줄 때만** `30`
 - **QA PASS 전** 완료 선언 금지 (`50` + WP QA)
-- SoT: **rules + active-track + `_logs` + PROJECT_CONTEXT**
+- SoT: **rules + `.cursor/sot/` + active-track + `_logs`**
 - 절차: `20-harness-workflow.mdc` · 기록: `_logs/README.md`
 
 ## 작업 전 컨텍스트 (필요한 것만)
 
 0. `active-track` · 라우터  
 1. 사용자 요청 · 기획서  
-2. `PROJECT_CONTEXT` (+ WP 델타) · `WORDPRESS_TRANSITION` · (서브면) `WORDPRESS_SUBPAGE` · `design-do-dont`  
+2. `.cursor/sot/01-project-context` (+ WP 델타) · `.cursor/sot/03-wordpress-transition` · (서브면) `.cursor/sot/04-wordpress-subpage` · `.cursor/sot/06-design-do-dont`  
 3. Active rules · `70` (WP) · 디자인 작업 시 `25-uiux-design-director`  
 4. `_logs` 빠른 조회  
 5. 토큰·아이콘(`_icons/` → 테마 `assets/icons/`)  
@@ -31,9 +31,9 @@ alwaysApply: true
 ## 충돌 시 우선순위
 
 1. 최신 사용자 지시  
-2. `PROJECT_CONTEXT` + WP 델타 · 확정 콘텐츠 · 기획서  
-3. `design-tokens-master` · `design-do-dont` (A~F)  
-4. `WORDPRESS_TRANSITION` · `WORDPRESS_SUBPAGE`  
+2. `.cursor/sot/01-project-context` + WP 델타 · 확정 콘텐츠 · 기획서  
+3. `.cursor/sot/05-design-tokens` · `.cursor/sot/06-design-do-dont` (A~F)  
+4. `.cursor/sot/03-wordpress-transition` · `.cursor/sot/04-wordpress-subpage`  
 5. active rules (`70` 등)  
 6. `25-uiux-design-director` (디자인 판단)  
 7. `decision-log`  
