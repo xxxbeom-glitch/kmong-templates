@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech ISS 좌측 텍스트 메뉴 + 카드 1.9
+
+- 레퍼런스 `#2` 패턴: Swiper pagination을 세로 텍스트 메뉴로 · `slidesPerView: 1.9`
+- `section-iss.php` · `home-iss.css` · `iss-slider.js` · `preview/home-hero.html`
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech-redesign-01 GNB `gnb-full-expand`
 
 - `inc/menus.php` · `template-parts/site-header.php` — IA + 메가패널·딤·모바일 아코디언

@@ -33,6 +33,18 @@
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **`gnb-full-expand`** | 딤 20% · 닫기 220ms · `@1024` 아코디언 |
+| rathontech ISS | **좌 pagination 텍스트 + 우 1.9 카드** | onetenth `#2` 패턴 · 카피/토큰 유지 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech-redesign-01 ISS · 좌메뉴+카드 슬라이더
+
+| # | 결정 |
+|---|------|
+| 1 | 왼쪽 = Swiper **pagination bullet을 텍스트 메뉴**로 (실탭 아님) |
+| 2 | 오른쪽 = `slidesPerView: 1.9` · `spaceBetween: 20` · 다음 카드 피크 |
+| 3 | 클릭 ↔ 슬라이드 인덱스 동기화 (Swiper 기본) |
+| 4 | MO: 상단 가로 스크롤 칩 · PC: 세로 리스트 |
 
 ---
 
