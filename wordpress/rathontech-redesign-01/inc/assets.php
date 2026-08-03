@@ -67,6 +67,12 @@ function rathon_enqueue_assets() {
       array('rathon-home-hero'),
       rathon_asset_ver('css/home-iss.css')
     );
+    wp_enqueue_style(
+      'rathon-home-eco',
+      rathon_asset_uri('css/home-ecosystem.css'),
+      array('rathon-home-iss'),
+      rathon_asset_ver('css/home-ecosystem.css')
+    );
   }
 
   if (is_page_template('page-templates/product-rathon-iam.php') || is_page('rathon-iam')) {
