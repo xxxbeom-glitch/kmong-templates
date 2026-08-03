@@ -34,26 +34,3 @@
     </div>
   </div>
 </section>
-
-<section class="trust-strip" aria-label="<?php echo esc_attr__('신뢰 근거', 'rathontech-redesign-01'); ?>">
-  <div class="u-container">
-    <ul class="trust-strip__list">
-      <li class="trust-strip__item">
-        <p class="trust-strip__value"><?php echo esc_html__('2002', 'rathontech-redesign-01'); ?></p>
-        <p class="trust-strip__label"><?php echo esc_html__('창립', 'rathontech-redesign-01'); ?></p>
-      </li>
-      <li class="trust-strip__item">
-        <p class="trust-strip__value"><?php echo esc_html__('GS 인증', 'rathontech-redesign-01'); ?></p>
-        <p class="trust-strip__label"><?php echo esc_html__('제품 보유', 'rathontech-redesign-01'); ?></p>
-      </li>
-      <li class="trust-strip__item">
-        <p class="trust-strip__value"><?php echo esc_html__('국제 CC', 'rathontech-redesign-01'); ?></p>
-        <p class="trust-strip__label"><?php echo esc_html__('인증 제품 보유', 'rathontech-redesign-01'); ?></p>
-      </li>
-      <li class="trust-strip__item">
-        <p class="trust-strip__value"><?php echo esc_html__('KCMVP', 'rathontech-redesign-01'); ?></p>
-        <p class="trust-strip__label"><?php echo esc_html__('검증필 암호모듈', 'rathontech-redesign-01'); ?></p>
-      </li>
-    </ul>
-  </div>
-</section>
