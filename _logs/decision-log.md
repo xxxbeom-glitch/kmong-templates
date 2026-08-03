@@ -32,8 +32,21 @@
 | Design Director | `.cursor/rules/25-uiux-design-director.mdc` | SoT 하위 · always 아님 |
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
-| rathontech GNB | **`gnb-full-expand`** | 딤 20% · 닫기 220ms · `@1024` 아코디언 |
+| rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
 | rathontech ISS | **좌 pagination 텍스트 + 우 1.9 카드** | onetenth `#2` 패턴 · 카피/토큰 유지 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech GNB · thePAY 로직으로 전환
+
+| # | 결정 |
+|---|------|
+| 1 | **폐기:** `gnb-full-expand` 전 열 동시 노출 |
+| 2 | **채택:** [thePAY](https://www.thepay010.com/KOR/home) — 패널 **배경은 전체 폭**, 2depth는 **호버한 1depth만** |
+| 3 | 2depth 리스트는 해당 1depth **라벨 시작점에 정렬** |
+| 4 | 딤 20% · 닫기 220ms 유지 |
+
+[template rathontech-redesign-01] header: gnb-pattern — full-bleed-active-only (thePAY)
 
 ---
 

@@ -50,7 +50,11 @@
     });
   });
 
-  /* PC gnb-full-expand */
+  /**
+   * PC GNB — thePAY-style:
+   * full-width bar BG, but only the active 1depth's 2depth list is visible
+   * (shared panel shell + single active column under trigger).
+   */
   function initHeaderMega() {
     var header = document.querySelector('[data-header-mega]');
     if (!header) return;
@@ -66,15 +70,20 @@
     var cols = header.querySelectorAll('.site-header__mega-col');
     var closeDelay = 220;
     var closeTimer = null;
+    var activeIndex = -1;
 
     if (!panel || !megaList || !triggers.length) return;
 
     function setActive(index) {
+      activeIndex = index;
       items.forEach(function (item, i) {
         item.classList.toggle('is-active', i === index);
       });
       triggers.forEach(function (trigger, i) {
         trigger.setAttribute('aria-expanded', i === index ? 'true' : 'false');
+      });
+      cols.forEach(function (col, i) {
+        col.classList.toggle('is-active', i === index);
       });
     }
 
@@ -91,45 +100,25 @@
       return Math.max(maxW, 80);
     }
 
+    /** Align only the active column under its 1depth label */
     function syncMegaAlignment() {
+      if (activeIndex < 0) return;
+
+      var item = items[activeIndex];
+      var col = cols[activeIndex];
+      if (!item || !col) return;
+
+      var trigger = item.querySelector('.site-header__trigger, .site-header__link');
+      if (!trigger) return;
+
       var listRect = megaList.getBoundingClientRect();
-      var colGap = 28;
-      var maxBottom = 0;
-      var cursor = 0;
-      var metrics = [];
+      var triggerRect = trigger.getBoundingClientRect();
+      var contentW = measureColContentWidth(col);
+      var left = triggerRect.left - listRect.left;
 
-      /* 1) 라벨 기준 이상적 left + 콘텐츠 실제 너비 측정 */
-      items.forEach(function (item, i) {
-        var trigger = item.querySelector('.site-header__trigger, .site-header__link');
-        var col = cols[i];
-        if (!trigger || !col) {
-          metrics.push(null);
-          return;
-        }
-
-        col.style.width = 'max-content';
-        col.style.left = '0';
-
-        metrics.push({
-          col: col,
-          idealLeft: trigger.getBoundingClientRect().left - listRect.left,
-          contentW: measureColContentWidth(col),
-        });
-      });
-
-      /* 2) 겹치지 않도록: max(라벨 left, 이전 열 끝+gap), 너비=콘텐츠 */
-      metrics.forEach(function (m) {
-        if (!m) return;
-        var left = Math.max(m.idealLeft, cursor);
-        m.col.style.left = left + 'px';
-        m.col.style.width = m.contentW + 'px';
-        cursor = left + m.contentW + colGap;
-        maxBottom = Math.max(maxBottom, m.col.offsetHeight);
-      });
-
-      if (maxBottom > 0) {
-        megaList.style.minHeight = maxBottom + 'px';
-      }
+      col.style.left = left + 'px';
+      col.style.width = contentW + 'px';
+      megaList.style.minHeight = col.offsetHeight + 'px';
     }
 
     function closeMega() {
@@ -163,6 +152,9 @@
       item.addEventListener('mouseenter', function () {
         if (header.classList.contains('is-mega-open')) {
           setActive(i);
+          window.requestAnimationFrame(function () {
+            syncMegaAlignment();
+          });
           return;
         }
         openMega(i);

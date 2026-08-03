@@ -1,6 +1,7 @@
 <?php
 /**
- * Site header — gnb-full-expand (46 / 45).
+ * Site header — full-bleed mega bar, active 1depth 2depth only (thePAY-style).
+ * Pattern note: shared panel shell + single visible column (decision-log).
  */
 $home     = rathon_url();
 $contact  = rathon_url('contact');

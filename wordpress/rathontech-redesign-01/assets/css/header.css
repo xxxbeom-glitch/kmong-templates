@@ -143,6 +143,13 @@
   top: 0;
   list-style: none;
   box-sizing: border-box;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-header__mega-col.is-active {
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .site-header__mega-sub {

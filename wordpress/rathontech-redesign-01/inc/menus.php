@@ -1,6 +1,7 @@
 <?php
 /**
- * GNB IA — planning §4-1. Pattern: gnb-full-expand (46 / 45).
+ * GNB IA — planning §4-1.
+ * PC: full-width bar + active 1depth children only (thePAY-style).
  */
 
 if (!defined('ABSPATH')) {

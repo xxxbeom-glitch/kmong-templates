@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-08-03 — [wordpress] rathontech GNB thePAY 로직 (활성 1depth만)
+
+- 메가 패널 배경은 전체 폭 유지 · 2depth는 `.is-active` 열만 표시
+- `nav.js` 정렬 = 활성 열만 1depth 라벨 아래 · `header.css` 비가시 열 숨김
+
+---
+
 ## 2026-08-03 — [wordpress] rathontech ISS 좌측 텍스트 메뉴 + 카드 1.9
 
 - 레퍼런스 `#2` 패턴: Swiper pagination을 세로 텍스트 메뉴로 · `slidesPerView: 1.9`
