@@ -22,7 +22,7 @@ Gate 1 계약을 받아 **메인 히어로**와 **Rathon-IAM 첫 구간**만 PC�
 |------|------|
 | slug | `rathontech-redesign-01` |
 | CMS | A안(동반 플러그인 CPT) **설계 전제만** · 코드/플러그인 **미구현** (Gate 4) |
-| Signature | 메인 히어로 연결 그래프만 · CSS 1회 드로잉 · GSAP 미사용 |
+| Signature | 보류 — 히어로는 미디어 배경 중심 · 그래프 오브제 없음 |
 | §17 18화면 | 범위 유지 · **이번은 2화면 패밀리 시작만** |
 
 ---
@@ -32,7 +32,7 @@ Gate 1 계약을 받아 **메인 히어로**와 **Rathon-IAM 첫 구간**만 PC�
 ### 한 것
 
 1. 테마 스캐폴드 (`style.css` · `functions.php` · header/footer · enqueue)
-2. **메인 히어로** — 카피 · CTA · Identity 연결 그래프 · Trust strip
+2. **메인 히어로** — full-bleed 미디어 배경 · 왼쪽 카피 · 고스트 CTA · Trust strip
 3. **Rathon-IAM** — 브레드 · Product Hero · 생애주기 표현 · Overview 3블록
 4. 정적 미리보기 HTML (WP 없이도 PC·MO 확인)
 5. Playwright로 PC(1440)·MO(390) 화면 확인
@@ -65,7 +65,7 @@ Gate 1 계약을 받아 **메인 히어로**와 **Rathon-IAM 첫 구간**만 PC�
 
 - Eyebrow / H1 / Lead = 기획 §5 초안
 - CTA: 상담 · 도입사례
-- PC: 가로 SVG 연결 그래프 · MO: 4노드 세로 리스트
+- PC/MO: 어두운 미디어 스테이지 + 왼쪽 카피 + 아웃라인 CTA
 - Trust: 2002 · GS · CC · KCMVP (문구만)
 
 **미리보기:** `preview/home-hero.html`
