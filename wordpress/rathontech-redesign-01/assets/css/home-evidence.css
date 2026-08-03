@@ -11,13 +11,24 @@
   margin-bottom: var(--section-head-gap);
 }
 
+/* Section head pattern: title 1줄 + lead 1줄 */
 .home-evidence__title {
-  margin: 0;
+  margin: 0 0 var(--space-4);
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
   letter-spacing: var(--text-h2-letter);
   color: var(--color-text-primary);
+  word-break: keep-all;
+}
+
+.home-evidence__lead {
+  margin: 0;
+  font-size: var(--text-body1-size);
+  line-height: var(--text-body1-line);
+  font-weight: var(--text-body1-weight);
+  color: var(--color-text-secondary);
+  word-break: keep-all;
 }
 
 .home-evidence__grid {

@@ -50,15 +50,9 @@
   max-width: 42em;
 }
 
-.home-company__cta-eyebrow {
-  margin: 0 0 var(--space-3);
-  font-size: var(--text-body4-size);
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
+/* Section head pattern: title 1줄 + lead 1줄 */
 .home-company__cta-title {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-4);
   font-size: clamp(28px, 2.8vw, 44px);
   line-height: 1.41;
   font-weight: 700;
@@ -70,9 +64,9 @@
 .home-company__cta-lead {
   margin: 0 auto;
   max-width: 36em;
-  font-size: var(--text-body3-size);
-  line-height: var(--text-body3-line);
-  font-weight: 400;
+  font-size: var(--text-body1-size);
+  line-height: var(--text-body1-line);
+  font-weight: var(--text-body1-weight);
   color: var(--color-text-inverse-soft);
   word-break: keep-all;
 }

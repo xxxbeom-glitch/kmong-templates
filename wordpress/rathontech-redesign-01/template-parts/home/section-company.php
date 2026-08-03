@@ -15,7 +15,6 @@ $cta_image = rathon_asset('images/hero/dynamic-wang-irn9H9-Kfq4-unsplash.jpg');
     <span class="home-company__cta-veil" aria-hidden="true"></span>
     <div class="u-container home-company__cta-inner">
       <div class="home-company__cta-copy">
-        <p class="home-company__cta-eyebrow"><?php echo esc_html__('Online Inquiry', 'rathontech-redesign-01'); ?></p>
         <h2 id="home-cta-title" class="home-company__cta-title">
           <?php echo esc_html__('우리 조직의 계정·권한·인증 환경을 점검해보세요', 'rathontech-redesign-01'); ?>
         </h2>

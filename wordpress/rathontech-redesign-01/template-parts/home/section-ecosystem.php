@@ -31,7 +31,6 @@ $eco_cards = array(
 <section class="home-eco" aria-labelledby="home-eco-title">
   <div class="u-container">
     <header class="home-eco__head">
-      <p class="home-eco__eyebrow"><?php echo esc_html__('Product Ecosystem', 'rathontech-redesign-01'); ?></p>
       <h2 id="home-eco-title" class="home-eco__title">
         <?php echo esc_html__('솔루션을 실제로 만드는 제품군', 'rathontech-redesign-01'); ?>
       </h2>

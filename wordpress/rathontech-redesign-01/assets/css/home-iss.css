@@ -13,18 +13,9 @@
   width: 100%;
 }
 
-.home-iss__eyebrow {
-  margin: 0 0 var(--space-4);
-  font-size: var(--text-eyebrow-size);
-  line-height: var(--text-eyebrow-line);
-  font-weight: var(--text-eyebrow-weight);
-  letter-spacing: var(--text-eyebrow-letter);
-  text-transform: none;
-  color: var(--color-text-primary);
-}
-
+/* Section head pattern: title 1줄 + lead 1줄 */
 .home-iss__title {
-  margin: 0 0 var(--space-5);
+  margin: 0 0 var(--space-4);
   max-width: none;
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
@@ -39,8 +30,9 @@
 .home-iss__lead {
   margin: 0;
   max-width: none;
-  font-size: var(--text-body3-size);
-  line-height: var(--text-body3-line);
+  font-size: var(--text-body1-size);
+  line-height: var(--text-body1-line);
+  font-weight: var(--text-body1-weight);
   color: var(--color-text-secondary);
   word-break: keep-all;
   overflow-wrap: normal;

@@ -105,6 +105,9 @@ $initial    = $evidence_pages[0];
       <h2 id="home-evidence-title" class="home-evidence__title">
         <?php echo esc_html__('도입 증거', 'rathontech-redesign-01'); ?>
       </h2>
+      <p class="home-evidence__lead">
+        <?php echo esc_html__('대표 도입사례로 적용 결과를 확인하세요.', 'rathontech-redesign-01'); ?>
+      </p>
     </header>
 
     <ul class="home-evidence__grid" data-evidence-grid>
