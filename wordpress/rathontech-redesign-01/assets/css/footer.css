@@ -3,13 +3,13 @@
 .site-footer {
   background: var(--color-bg-inverse);
   color: var(--color-text-inverse);
-  padding: var(--space-28) 0 var(--space-20);
+  padding: var(--section-pad-y) 0 var(--space-20);
 }
 
 .site-footer__inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-28);
+  gap: var(--space-16);
   min-height: 320px;
 }
 
@@ -126,11 +126,11 @@
 
 @media (min-width: 1024px) {
   .site-footer {
-    padding: var(--space-32) 0 var(--space-28);
+    padding: var(--section-pad-y-lg) 0 var(--section-pad-y);
   }
 
   .site-footer__inner {
-    min-height: 420px;
-    gap: var(--space-40);
+    min-height: 360px;
+    gap: var(--space-20);
   }
 }

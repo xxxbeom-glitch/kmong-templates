@@ -106,6 +106,7 @@
   --color-text-link: var(--gray-500);
   --color-text-link-hover: var(--gray-700);
 
+  /* Space scale — NW mid steps: 10 · 16 · 20 · 36 · 40 */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -113,25 +114,25 @@
   --space-5: 20px;
   --space-6: 24px;
   --space-8: 32px;
+  --space-9: 36px;
   --space-10: 40px;
   --space-12: 48px;
   --space-16: 64px;
   --space-20: 80px;
   --space-24: 96px;
   --space-28: 120px;
-  --space-32: 160px;
+  --space-32: 140px; /* NW large block */
+  --space-36: 160px;
   --space-40: 200px;
-  --space-48: 230px;
-  --space-52: 260px;
 
-  /* Section rhythm — KEOC PC (~215–260 top, generous bottom) */
-  --section-pad-y: var(--space-48);
-  --section-pad-y-lg: var(--space-52);
-  --section-pad-y-end: var(--space-32);
-  --section-head-gap: 60px;
+  /* Section rhythm — Naver Works PC (100~160) */
+  --section-pad-y: 100px;
+  --section-pad-y-lg: 160px;
+  --section-pad-y-end: 100px;
+  --section-head-gap: 40px;
 
-  --card-padding: 45px;
-  --card-gap: 30px;
+  --card-padding: 40px;
+  --card-gap: 20px;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -140,13 +141,13 @@
   --shadow-sm: 0 1px 2px rgb(17 17 17 / 0.06);
   --shadow-md: 0 8px 24px rgb(17 17 17 / 0.08);
 
-  --container-max: 1600px;
+  --container-max: 1538px;
   --container-px-mobile: 16px;
   --container-px-tablet: 32px;
-  /* ~4% gutter at 1440 ≈ 57px */
-  --container-px-desktop: 57px;
+  /* NW desktop gutter */
+  --container-px-desktop: 70px;
 
-  --header-h: 110px;
+  --header-h: 65px;
   --bp-mo: 767px;
   --bp-tab: 1023px;
   --bp-pc: 1024px;
@@ -160,13 +161,13 @@
     --text-h3-size: 20px;
     --text-body1-size: 17px;
     --text-eyebrow-size: 22px;
-    --section-pad-y: var(--space-24);
-    --section-pad-y-lg: var(--space-28);
-    --section-pad-y-end: var(--space-20);
-    --section-head-gap: var(--space-12);
-    --card-padding: var(--space-8);
-    --card-gap: var(--space-6);
-    --header-h: 80px;
+    --section-pad-y: 80px;
+    --section-pad-y-lg: 100px;
+    --section-pad-y-end: 80px;
+    --section-head-gap: 32px;
+    --card-padding: 28px;
+    --card-gap: 16px;
+    --header-h: 60px;
   }
 }
 
@@ -180,12 +181,12 @@
     --text-body2-size: 18px;
     --text-body3-size: 16px;
     --text-eyebrow-size: 20px;
-    --section-pad-y: var(--space-16);
-    --section-pad-y-lg: var(--space-20);
-    --section-pad-y-end: var(--space-16);
-    --section-head-gap: var(--space-10);
-    --card-padding: var(--space-6);
-    --card-gap: var(--space-5);
-    --header-h: 64px;
+    --section-pad-y: 64px;
+    --section-pad-y-lg: 80px;
+    --section-pad-y-end: 64px;
+    --section-head-gap: 24px;
+    --card-padding: 20px;
+    --card-gap: 12px;
+    --header-h: 56px;
   }
 }

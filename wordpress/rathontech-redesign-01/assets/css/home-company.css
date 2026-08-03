@@ -141,8 +141,8 @@
 
   .home-company__cta-inner {
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: var(--space-12);
-    padding: 80px 72px;
+    gap: var(--space-10);
+    padding: var(--space-10) var(--space-9);
   }
 
   .home-company__cta-actions {
