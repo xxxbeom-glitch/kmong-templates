@@ -2,7 +2,7 @@
 
 .home-media {
   padding: var(--section-pad-y) 0;
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-base);
   color: var(--color-text-primary);
 }
 
