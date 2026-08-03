@@ -4,8 +4,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: min(64vh, 640px);
-  padding: calc(var(--header-h) + var(--space-16)) 0 var(--space-20);
+  min-height: 480px;
+  height: auto;
+  padding: calc(var(--header-h) + var(--space-12)) 0 var(--space-16);
   overflow: hidden;
   color: var(--color-text-inverse);
   background: var(--color-bg-inverse);
@@ -85,8 +86,8 @@
 
 @media (max-width: 767px) {
   .home-hero {
-    min-height: min(56vh, 480px);
-    padding: calc(var(--header-h) + var(--space-8)) 0 var(--space-16);
+    min-height: 400px;
+    padding: calc(var(--header-h) + var(--space-8)) 0 var(--space-12);
   }
 
   .home-hero__title {
@@ -109,8 +110,9 @@
 
 @media (min-width: 1024px) {
   .home-hero {
-    min-height: min(72vh, 760px);
-    padding: calc(var(--header-h) + var(--space-24)) 0 var(--section-pad-y);
+    min-height: 520px;
+    max-height: none;
+    padding: calc(var(--header-h) + var(--space-16)) 0 var(--space-20);
   }
 }
 
