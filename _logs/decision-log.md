@@ -36,7 +36,7 @@
 | rathontech ISS | **`scroll-pin-multi-step` · 카피 2세트** | pin+scrub · MO 스택 |
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
 | rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
-| rathontech 증거 대체 | **신뢰 Quiet Zone(인증 사실)** | 도입증거 카드 삭제 · 가짜 로고 없음 |
+| rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
 
 ---
 
@@ -46,7 +46,7 @@
 |---|------|
 | 1 | veil 토큰: soft(히어로) / media(ISS) / strong(CTA) |
 | 2 | on-dark 버튼은 `btn--primary-on-dark` · `btn--secondary-on-dark` 공용 |
-| 3 | 도입증거 카드 삭제 후 Quiet Zone = 인증·창립 사실 4항 (로고 없음) |
+| 3 | Quiet Zone(신뢰의 근거) **삭제** · 히어로 Trust Snapshot만 유지 |
 | 4 | 히어로 Trust Snapshot = 기획 확인 사실 4줄 |
 
 ---
