@@ -1,15 +1,8 @@
 <?php
 /**
- * Gate 2 — Main hero: full-bleed media + trust snapshot.
+ * Gate 2 — Main hero: full-bleed media layout, project tokens for UI.
  */
 $hero_image = rathon_asset('images/hero/milad-fakurian-eRbgsJ0Ec0o-unsplash.jpg');
-
-$hero_trust = array(
-  __('2002년 창립', 'rathontech-redesign-01'),
-  __('GS 인증 제품 보유', 'rathontech-redesign-01'),
-  __('국제 CC 인증 제품 보유', 'rathontech-redesign-01'),
-  __('KCMVP 검증필 암호모듈 보유', 'rathontech-redesign-01'),
-);
 ?>
 <section class="home-hero" aria-labelledby="home-hero-title">
   <div class="home-hero__media" aria-hidden="true">
@@ -42,13 +35,8 @@ $hero_trust = array(
           <?php echo esc_html__('도입사례 확인하기', 'rathontech-redesign-01'); ?>
         </a>
       </div>
-      <ul class="home-hero__trust" aria-label="<?php echo esc_attr__('신뢰 근거', 'rathontech-redesign-01'); ?>">
-        <?php foreach ($hero_trust as $fact) : ?>
-          <li class="home-hero__trust-item"><?php echo esc_html($fact); ?></li>
-        <?php endforeach; ?>
-      </ul>
     </div>
   </div>
 </section>
 <?php
-unset($hero_image, $hero_trust, $fact);
+unset($hero_image);

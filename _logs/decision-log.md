@@ -46,8 +46,8 @@
 |---|------|
 | 1 | veil 토큰: soft(히어로) / media(ISS) / strong(CTA) |
 | 2 | on-dark 버튼은 `btn--primary-on-dark` · `btn--secondary-on-dark` 공용 |
-| 3 | Quiet Zone(신뢰의 근거) **삭제** · 히어로 Trust Snapshot만 유지 |
-| 4 | 히어로 Trust Snapshot = 기획 확인 사실 4줄 |
+| 3 | Quiet Zone(신뢰의 근거) **삭제** |
+| 4 | 히어로 Trust Snapshot도 **삭제** |
 
 ---
 
