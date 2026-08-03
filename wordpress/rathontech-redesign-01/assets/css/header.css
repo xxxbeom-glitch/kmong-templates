@@ -1,10 +1,11 @@
 /* Site header — gnb-full-expand */
 
 .site-header {
+  --header-surface: rgb(255 254 252 / 0.96);
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgb(255 254 252 / 0.96);
+  background: var(--header-surface);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border-light);
 }
@@ -114,9 +115,10 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background: var(--color-bg-base);
+  background: var(--header-surface);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border-light);
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
 }
 
 .site-header.is-mega-open .site-header__mega {
