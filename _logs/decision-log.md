@@ -33,8 +33,17 @@
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
-| rathontech ISS | **좌 pagination 텍스트 + 우 1.9 카드** | onetenth `#2` 패턴 · 카피/토큰 유지 |
+| rathontech ISS | **좌 타이틀 목차 + 카드 4장 · 1.9** | 기획 문제 축 4 · 클릭 이동 |
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech ISS 카드 4개
+
+| # | 결정 |
+|---|------|
+| 1 | ISS 카드 **4개** (기획 문제 축) — 암호·컨설팅 제외 |
+| 2 | 좌측 목차 = 각 카드 **타이틀** · 클릭 시 해당 슬라이드로 이동 |
 
 ---
 
