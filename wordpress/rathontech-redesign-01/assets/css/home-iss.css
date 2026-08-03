@@ -38,11 +38,13 @@
 
 .home-iss__lead {
   margin: 0;
-  max-width: 36em;
+  max-width: none;
   font-size: var(--text-body3-size);
   line-height: var(--text-body3-line);
   color: rgb(245 245 245 / 0.72);
   word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
 }
 
 .home-iss__slider-shell {
