@@ -1,4 +1,4 @@
-/* Home — Media Hub: title+tabs top · board list (no thumbnails) */
+/* Home — Media Hub: section head · board list (no thumbnails) */
 
 .home-media {
   padding: var(--section-pad-y) 0;
@@ -10,16 +10,8 @@
   margin-bottom: var(--section-head-gap);
 }
 
-.home-media__head-row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-6);
-  margin-bottom: var(--space-4);
-}
-
 .home-media__title {
-  margin: 0;
+  margin: 0 0 var(--space-4);
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
@@ -38,71 +30,11 @@
   word-break: keep-all;
 }
 
-.home-media__tabs {
-  flex-shrink: 0;
-}
-
-.home-media__tab-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-4) var(--space-5);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.home-media__tab {
-  position: relative;
-  padding: 0 0 var(--space-2);
-  border: 0;
-  background: transparent;
-  color: var(--color-text-muted);
-  font-family: inherit;
-  font-size: var(--text-body1-size);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.4;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.home-media__tab::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: transparent;
-  transition: background-color 0.2s ease;
-}
-
-.home-media__tab:hover {
-  color: var(--color-text-primary);
-}
-
-.home-media__tab.is-active {
-  color: var(--color-text-primary);
-}
-
-.home-media__tab.is-active::after {
-  background: var(--color-text-primary);
-}
-
-.home-media__tab:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
-}
-
 .home-media__list {
   margin: 0;
   padding: 0;
   list-style: none;
   border-top: 1px solid var(--color-border-default);
-}
-
-.home-media__item.is-hidden {
-  display: none;
 }
 
 .home-media__row {
@@ -170,17 +102,6 @@
 }
 
 @media (min-width: 768px) {
-  .home-media__head-row {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-8);
-  }
-
-  .home-media__tabs {
-    margin-left: auto;
-  }
-
   .home-media__row {
     grid-template-columns: 5.5rem minmax(0, 1fr) 6.5rem;
     grid-template-areas: "cat title date";
@@ -214,8 +135,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-media__tab,
-  .home-media__tab::after,
   .home-media__row,
   .home-media__row-title {
     transition: none;

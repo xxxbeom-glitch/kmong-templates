@@ -279,60 +279,39 @@
     <section class="home-media" aria-labelledby="home-media-title" data-media>
       <div class="u-container">
         <header class="home-media__head">
-          <div class="home-media__head-row">
-            <h2 id="home-media-title" class="home-media__title">미디어허브</h2>
-            <nav class="home-media__tabs" aria-label="미디어 카테고리">
-              <ul class="home-media__tab-list" role="tablist">
-                <li role="presentation">
-                  <button type="button" class="home-media__tab is-active" role="tab" aria-selected="true" data-media-filter="all">전체</button>
-                </li>
-                <li role="presentation">
-                  <button type="button" class="home-media__tab" role="tab" aria-selected="false" data-media-filter="notice">공지</button>
-                </li>
-                <li role="presentation">
-                  <button type="button" class="home-media__tab" role="tab" aria-selected="false" data-media-filter="product">제품소식</button>
-                </li>
-                <li role="presentation">
-                  <button type="button" class="home-media__tab" role="tab" aria-selected="false" data-media-filter="tech">기술소식</button>
-                </li>
-                <li role="presentation">
-                  <button type="button" class="home-media__tab" role="tab" aria-selected="false" data-media-filter="company">회사소식</button>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <h2 id="home-media-title" class="home-media__title">미디어허브</h2>
           <p class="home-media__lead">기업의 최신 소식과 다양한 콘텐츠를 한 곳에서 만나보세요.</p>
         </header>
-        <ul class="home-media__list" data-media-grid>
-          <li class="home-media__item" data-media-cat="notice">
+        <ul class="home-media__list">
+          <li class="home-media__item">
             <a class="home-media__row" href="#">
               <span class="home-media__cat">공지</span>
               <span class="home-media__row-title">라톤테크 공식 홈페이지 개편 안내</span>
               <time class="home-media__date" datetime="2026-08-01">2026.08.01</time>
             </a>
           </li>
-          <li class="home-media__item" data-media-cat="notice">
+          <li class="home-media__item">
             <a class="home-media__row" href="#">
               <span class="home-media__cat">공지</span>
               <span class="home-media__row-title">고객 문의 및 기술지원 접수 방법 안내</span>
               <time class="home-media__date" datetime="2026-07-24">2026.07.24</time>
             </a>
           </li>
-          <li class="home-media__item" data-media-cat="product">
+          <li class="home-media__item">
             <a class="home-media__row" href="#">
               <span class="home-media__cat">제품소식</span>
               <span class="home-media__row-title">Rathon-IAM 주요 기능 업데이트 안내</span>
               <time class="home-media__date" datetime="2026-07-15">2026.07.15</time>
             </a>
           </li>
-          <li class="home-media__item" data-media-cat="tech">
+          <li class="home-media__item">
             <a class="home-media__row" href="#">
               <span class="home-media__cat">기술소식</span>
               <span class="home-media__row-title">통합 계정관리로 시작하는 접근 보안 체계</span>
               <time class="home-media__date" datetime="2026-07-03">2026.07.03</time>
             </a>
           </li>
-          <li class="home-media__item" data-media-cat="company">
+          <li class="home-media__item">
             <a class="home-media__row" href="#">
               <span class="home-media__cat">회사소식</span>
               <span class="home-media__row-title">라톤테크 정보보호 기술 연구개발 현황</span>
@@ -435,7 +414,6 @@
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/nav.js"></script>
   <script src="../assets/js/iss-slider.js"></script>
-  <script src="../assets/js/media-filter.js"></script>
   <script src="../assets/js/evidence-pager.js"></script>
 </body>
 </html>
