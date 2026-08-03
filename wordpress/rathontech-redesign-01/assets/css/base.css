@@ -12,10 +12,10 @@ html {
 body {
   margin: 0;
   font-family: var(--font-primary);
-  font-size: var(--text-body4-size);
-  line-height: var(--text-body4-line);
-  font-weight: 400;
-  color: var(--color-text-secondary);
+  font-size: var(--text-body3-size);
+  line-height: var(--text-body3-line);
+  font-weight: var(--text-body3-weight);
+  color: var(--color-text-primary);
   background: var(--color-bg-base);
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;

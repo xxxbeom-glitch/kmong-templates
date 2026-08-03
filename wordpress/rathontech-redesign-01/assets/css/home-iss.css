@@ -18,7 +18,7 @@
   font-size: var(--text-eyebrow-size);
   line-height: var(--text-eyebrow-line);
   font-weight: var(--text-eyebrow-weight);
-  letter-spacing: 0;
+  letter-spacing: var(--text-eyebrow-letter);
   text-transform: none;
   color: var(--color-text-inverse);
 }
@@ -29,7 +29,7 @@
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--text-h2-letter);
   color: var(--color-text-inverse);
   word-break: keep-all;
   overflow-wrap: normal;
@@ -109,6 +109,7 @@
   font-size: var(--text-h3-size);
   font-weight: var(--text-h3-weight);
   line-height: var(--text-h3-line);
+  letter-spacing: var(--text-h3-letter);
   color: var(--color-text-inverse);
 }
 

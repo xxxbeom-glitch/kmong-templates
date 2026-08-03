@@ -16,7 +16,7 @@
   font-size: var(--text-h2-size);
   line-height: var(--text-h2-line);
   font-weight: var(--text-h2-weight);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--text-h2-letter);
   color: var(--color-text-inverse);
 }
 
@@ -72,8 +72,9 @@
 .home-evidence__label {
   display: block;
   font-size: var(--text-body2-size);
-  font-weight: 600;
-  line-height: 1.4;
+  font-weight: var(--text-body2-weight);
+  line-height: var(--text-body2-line);
+  letter-spacing: -0.02em;
   color: var(--color-text-inverse);
 }
 

@@ -20,7 +20,7 @@ function rathon_asset_ver($relative) {
 function rathon_enqueue_assets() {
   wp_enqueue_style(
     'rathon-fonts',
-    'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
+    'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css',
     array(),
     null
   );
