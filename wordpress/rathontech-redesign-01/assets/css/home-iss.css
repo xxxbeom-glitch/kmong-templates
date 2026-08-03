@@ -38,12 +38,12 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: var(--space-10);
   min-height: auto;
   padding-block: var(--section-pad-y-lg);
-  text-align: center;
+  text-align: left;
 }
 
 .home-iss__copy {
@@ -51,7 +51,7 @@
   width: 100%;
   max-width: min(90vw, 72rem);
   min-height: 6rem;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 .home-iss__step {
@@ -65,19 +65,19 @@
   font-weight: var(--text-h2-weight);
   letter-spacing: var(--text-h2-letter);
   color: var(--color-text-inverse);
-  text-align: center;
+  text-align: left;
   word-break: keep-all;
 }
 
 .home-iss__lead {
-  margin: 0 auto;
-  max-width: 36em;
+  margin: 0;
+  max-width: none;
   font-size: var(--text-body1-size);
   line-height: var(--text-body1-line);
   font-weight: var(--text-body1-weight);
   color: var(--color-text-inverse-soft);
-  text-align: center;
-  word-break: keep-all;
+  text-align: left;
+  white-space: nowrap;
 }
 
 /* PC: stacked fade steps · taller than default section, not full-viewport */
@@ -96,7 +96,7 @@
     inset: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
