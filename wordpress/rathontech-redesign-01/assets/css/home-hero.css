@@ -46,8 +46,9 @@
   position: relative;
   z-index: 2;
   max-width: 720px;
-  margin-inline: auto 0;
+  margin-inline: 0;
   width: 100%;
+  text-align: left;
 }
 
 .home-hero__title {
