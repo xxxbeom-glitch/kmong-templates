@@ -1,4 +1,4 @@
-/* Home Section 2 — scroll-pin-multi-step + video BG */
+/* Home Section 2 — ISS video BG + stacked copy steps (wheel in home-wheel.js) */
 
 .home-iss {
   position: relative;
@@ -80,7 +80,7 @@
   white-space: nowrap;
 }
 
-/* PC pin: stacked fade steps */
+/* PC: stacked fade steps (wheel-driven; no ScrollTrigger pin) */
 @media (min-width: 768px) {
   .home-iss__frame {
     min-height: 100svh;

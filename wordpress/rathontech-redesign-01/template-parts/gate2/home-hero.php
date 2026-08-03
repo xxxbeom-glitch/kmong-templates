@@ -4,7 +4,7 @@
  */
 $hero_image = rathon_asset('images/hero/milad-fakurian-eRbgsJ0Ec0o-unsplash.jpg');
 ?>
-<section class="home-hero" aria-labelledby="home-hero-title" data-hero-snap data-hero-snap-next="[data-iss-pin]">
+<section class="home-hero" aria-labelledby="home-hero-title" data-hero-snap>
   <div class="home-hero__media" aria-hidden="true">
     <img
       class="home-hero__media-img"

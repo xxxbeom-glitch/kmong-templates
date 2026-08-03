@@ -33,13 +33,25 @@
 | 제작 SoT 경로 | `.cursor/sot/01`~`06` | 루트 비움 |
 | 사업 검증 경로 | `.cursor/business/01`~`02` | 제작과 분리 |
 | rathontech GNB | **full-bleed + active-only 2depth** (thePAY) | 배경 전체 · 하위는 선택 1depth만 |
-| rathontech ISS | **`scroll-pin-multi-step` · 카피 2세트** | pin+scrub · MO 스택 |
+| rathontech ISS | **휠 스텝 카피 2세트** · MO 스택 | `home-wheel.js` · ST pin 없음 |
 | rathontech 타이포 웨이트 | **Medium / Semibold / Bold** | 500 / 600 / 700 · Regular 미사용 |
 | rathontech 홈 서페이스 | **inverse → base → muted → base → CTA** | veil: soft/media/strong 토큰 |
 | rathontech 증거 대체 | **없음(섹션 삭제)** | Quiet Zone·도입증거 모두 제외 · 히어로 trust만 유지 |
 | rathontech CTA 버튼 | **블루 Primary · sm/md/lg · slide hover** | fill hover `#0062d6` · `button-text-slide-hover` |
-| rathontech 히어로 휠 | **반자동 스냅 → ISS** | PC · reduced-motion 제외 · `hero-snap.js` |
-| rathontech ISS pin | **home-wheel** · 반자동은 히어로→ISS만 | ISS→다음=자연 스크롤 |
+| rathontech 히어로 휠 | **반자동 스냅 → ISS만** | PC · `home-wheel.js` · reduced-motion 제외 |
+| rathontech ISS→다음 | **자연 스크롤** (스냅 없음) | 마지막 카피 후 hold 해제 |
+
+---
+
+## 2026-08-03 — [wordpress] rathontech 홈 코드 정리
+
+| # | 결정 |
+|---|------|
+| 1 | ScrollTrigger enqueue 제거 (미사용) · GSAP는 히어로 스냅만 |
+| 2 | `hero-snap.js` 삭제 · `iss-slider.js` → `iss-video.js` |
+| 3 | `home-ecosystem.css` UTF-8 재저장 |
+| 4 | decision 빠른조회를 실제 휠 동작에 맞춤 (pin/scrub·에코 스냅 기록 폐기) |
+| 5 | 버튼 색 호버는 fine-pointer MQ 안 |
 
 ---
 
@@ -47,7 +59,9 @@
 
 | # | 결정 |
 |---|------|
-| 1 | PC: 휠 1회 → 2번째 카피 · 다시 1회 → 에코 섹션 스냅 |
+| 1 | PC: 휠 1제스처 → 다음 카피 · 마지막 카피 이후는 **자연 스크롤** |
+| 2 | 카피 전환 직후 같은 스와이프 잔여는 hold로 차단 |
+| 3 | scrub/ScrollTrigger pin 없음 · MO·reduced-motion은 스택 |
 | 2 | 휠 업: 카피 되돌리기 → 1번에서 히어로 복귀 |
 | 3 | scrub/ScrollTrigger pin 제거 · MO·reduced-motion은 기존 스택 |
 

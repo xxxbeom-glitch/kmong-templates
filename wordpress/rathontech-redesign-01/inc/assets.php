@@ -91,17 +91,10 @@ function rathon_enqueue_assets() {
       true
     );
     wp_enqueue_script(
-      'rathon-scrolltrigger',
-      'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',
-      array('rathon-gsap'),
-      '3.12.5',
-      true
-    );
-    wp_enqueue_script(
-      'rathon-iss-slider',
-      rathon_asset_uri('js/iss-slider.js'),
+      'rathon-iss-video',
+      rathon_asset_uri('js/iss-video.js'),
       array(),
-      rathon_asset_ver('js/iss-slider.js'),
+      rathon_asset_ver('js/iss-video.js'),
       true
     );
     wp_enqueue_script(

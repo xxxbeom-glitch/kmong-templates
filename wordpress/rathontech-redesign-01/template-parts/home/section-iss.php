@@ -1,7 +1,8 @@
 <?php
 /**
  * Home Section 2 — Identity Security System.
- * Wheel-step on PC: 1 wheel = next copy, next wheel = leave to eco.
+ * PC: home-wheel.js steps copies; last copy then natural scroll.
+ * MO: both copies stacked (no wheel hijack).
  */
 
 $iss_steps = array(
@@ -22,7 +23,6 @@ $iss_video = rathon_asset_uri('videos/12421435_960_540_30fps.mp4');
   aria-labelledby="home-iss-title"
   data-iss-pin
   data-iss-next=".home-eco"
-  data-iss-steps="<?php echo esc_attr((string) count($iss_steps)); ?>"
 >
   <div class="home-iss__pin">
     <div class="home-iss__media" aria-hidden="true">
