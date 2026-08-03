@@ -61,11 +61,33 @@ function rathon_enqueue_assets() {
       array('rathon-header'),
       rathon_asset_ver('css/home-hero.css')
     );
+
+    wp_enqueue_style(
+      'rathon-swiper',
+      'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+      array(),
+      '11'
+    );
+    wp_enqueue_script(
+      'rathon-swiper',
+      'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+      array(),
+      '11',
+      true
+    );
+
     wp_enqueue_style(
       'rathon-home-iss',
       rathon_asset_uri('css/home-iss.css'),
-      array('rathon-home-hero'),
+      array('rathon-home-hero', 'rathon-swiper'),
       rathon_asset_ver('css/home-iss.css')
+    );
+    wp_enqueue_script(
+      'rathon-iss-slider',
+      rathon_asset_uri('js/iss-slider.js'),
+      array('rathon-swiper'),
+      rathon_asset_ver('js/iss-slider.js'),
+      true
     );
     wp_enqueue_style(
       'rathon-home-eco',
