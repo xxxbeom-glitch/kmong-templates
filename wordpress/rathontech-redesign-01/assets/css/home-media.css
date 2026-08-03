@@ -122,7 +122,7 @@
 
 @media (min-width: 1024px) {
   .home-media {
-    padding: var(--section-pad-y-lg) 0 var(--section-pad-y);
+    padding: var(--section-pad-y) 0;
   }
 
   .home-media__row {
